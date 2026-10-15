@@ -1,0 +1,481 @@
+{
+  "schema": "feedbackbench.flow_confirmation_protocol.v1",
+  "spec": {
+    "name": "SmolVLA prospective full10 versus noise2 confirmation v2",
+    "question": "Does two-step sampling from fresh noise retain success while reducing flow NFE on fresh initial states?",
+    "primary": {
+      "methods": [
+        "full10",
+        "noise2"
+      ],
+      "pairs": 8,
+      "task_clusters": 4,
+      "initial_states": [
+        41,
+        43
+      ],
+      "metrics": [
+        "success",
+        "nfe_per_replan",
+        "seconds_per_replan"
+      ]
+    },
+    "origin_scope": "Hypothesis motivated by completed v1; v1 outcomes are exploratory and are not pooled with confirmation.",
+    "freshness": {
+      "previous_project_initial_states": [
+        0,
+        1,
+        2,
+        11,
+        29
+      ],
+      "scope": "New relative to our studies, not proven unseen in upstream pretraining."
+    },
+    "execution": {
+      "threads": 2,
+      "interop_threads": 1,
+      "image_size": 360,
+      "warmup_calls": 2,
+      "warmup": "First newly executed case observation; reset again before its scored episode.",
+      "replan_interval": 10,
+      "temporal_ensemble": false,
+      "simulation_control_hz": 20,
+      "noise_pairing": "One identical-shape noise draw per decision after resetting seed1000 per episode.",
+      "termination": "Official success or original full horizon; no wall-clock early exit.",
+      "suite_horizons": {
+        "libero_spatial": 280,
+        "libero_object": 280,
+        "libero_goal": 300,
+        "libero_10": 520
+      },
+      "order": "Rotate first method by (task_index + initial_index) modulo2; four blocks start each method."
+    },
+    "limitations": [
+      "Four known pretrained tasks and eight paired initial states, not a full benchmark.",
+      "Small sample cannot establish equivalence or noninferiority.",
+      "Shared-host synchronous CPU timings do not demonstrate real-time deployment.",
+      "No caches, training, GPU, paid cloud, or real robot."
+    ],
+    "cases": [
+      {
+        "model": "smolvla",
+        "suite": "libero_spatial",
+        "task_id": 1,
+        "init_state_id": 41,
+        "seed": 1000,
+        "condition": "clean",
+        "method": "full10",
+        "num_steps": 10,
+        "scheduler": {
+          "mode": "fixed",
+          "fixed_interval": 10,
+          "temporal_ensemble": false
+        },
+        "record_video": true,
+        "split": "confirmation",
+        "id": "smolvla__libero_spatial__1__41__clean__full10"
+      },
+      {
+        "model": "smolvla",
+        "suite": "libero_spatial",
+        "task_id": 1,
+        "init_state_id": 41,
+        "seed": 1000,
+        "condition": "clean",
+        "method": "noise2",
+        "num_steps": 2,
+        "scheduler": {
+          "mode": "fixed",
+          "fixed_interval": 10,
+          "temporal_ensemble": false
+        },
+        "record_video": true,
+        "split": "confirmation",
+        "id": "smolvla__libero_spatial__1__41__clean__noise2"
+      },
+      {
+        "model": "smolvla",
+        "suite": "libero_spatial",
+        "task_id": 1,
+        "init_state_id": 43,
+        "seed": 1000,
+        "condition": "clean",
+        "method": "noise2",
+        "num_steps": 2,
+        "scheduler": {
+          "mode": "fixed",
+          "fixed_interval": 10,
+          "temporal_ensemble": false
+        },
+        "record_video": true,
+        "split": "confirmation",
+        "id": "smolvla__libero_spatial__1__43__clean__noise2"
+      },
+      {
+        "model": "smolvla",
+        "suite": "libero_spatial",
+        "task_id": 1,
+        "init_state_id": 43,
+        "seed": 1000,
+        "condition": "clean",
+        "method": "full10",
+        "num_steps": 10,
+        "scheduler": {
+          "mode": "fixed",
+          "fixed_interval": 10,
+          "temporal_ensemble": false
+        },
+        "record_video": true,
+        "split": "confirmation",
+        "id": "smolvla__libero_spatial__1__43__clean__full10"
+      },
+      {
+        "model": "smolvla",
+        "suite": "libero_object",
+        "task_id": 1,
+        "init_state_id": 41,
+        "seed": 1000,
+        "condition": "clean",
+        "method": "noise2",
+        "num_steps": 2,
+        "scheduler": {
+          "mode": "fixed",
+          "fixed_interval": 10,
+          "temporal_ensemble": false
+        },
+        "record_video": true,
+        "split": "confirmation",
+        "id": "smolvla__libero_object__1__41__clean__noise2"
+      },
+      {
+        "model": "smolvla",
+        "suite": "libero_object",
+        "task_id": 1,
+        "init_state_id": 41,
+        "seed": 1000,
+        "condition": "clean",
+        "method": "full10",
+        "num_steps": 10,
+        "scheduler": {
+          "mode": "fixed",
+          "fixed_interval": 10,
+          "temporal_ensemble": false
+        },
+        "record_video": true,
+        "split": "confirmation",
+        "id": "smolvla__libero_object__1__41__clean__full10"
+      },
+      {
+        "model": "smolvla",
+        "suite": "libero_object",
+        "task_id": 1,
+        "init_state_id": 43,
+        "seed": 1000,
+        "condition": "clean",
+        "method": "full10",
+        "num_steps": 10,
+        "scheduler": {
+          "mode": "fixed",
+          "fixed_interval": 10,
+          "temporal_ensemble": false
+        },
+        "record_video": true,
+        "split": "confirmation",
+        "id": "smolvla__libero_object__1__43__clean__full10"
+      },
+      {
+        "model": "smolvla",
+        "suite": "libero_object",
+        "task_id": 1,
+        "init_state_id": 43,
+        "seed": 1000,
+        "condition": "clean",
+        "method": "noise2",
+        "num_steps": 2,
+        "scheduler": {
+          "mode": "fixed",
+          "fixed_interval": 10,
+          "temporal_ensemble": false
+        },
+        "record_video": true,
+        "split": "confirmation",
+        "id": "smolvla__libero_object__1__43__clean__noise2"
+      },
+      {
+        "model": "smolvla",
+        "suite": "libero_goal",
+        "task_id": 1,
+        "init_state_id": 41,
+        "seed": 1000,
+        "condition": "clean",
+        "method": "full10",
+        "num_steps": 10,
+        "scheduler": {
+          "mode": "fixed",
+          "fixed_interval": 10,
+          "temporal_ensemble": false
+        },
+        "record_video": true,
+        "split": "confirmation",
+        "id": "smolvla__libero_goal__1__41__clean__full10"
+      },
+      {
+        "model": "smolvla",
+        "suite": "libero_goal",
+        "task_id": 1,
+        "init_state_id": 41,
+        "seed": 1000,
+        "condition": "clean",
+        "method": "noise2",
+        "num_steps": 2,
+        "scheduler": {
+          "mode": "fixed",
+          "fixed_interval": 10,
+          "temporal_ensemble": false
+        },
+        "record_video": true,
+        "split": "confirmation",
+        "id": "smolvla__libero_goal__1__41__clean__noise2"
+      },
+      {
+        "model": "smolvla",
+        "suite": "libero_goal",
+        "task_id": 1,
+        "init_state_id": 43,
+        "seed": 1000,
+        "condition": "clean",
+        "method": "noise2",
+        "num_steps": 2,
+        "scheduler": {
+          "mode": "fixed",
+          "fixed_interval": 10,
+          "temporal_ensemble": false
+        },
+        "record_video": true,
+        "split": "confirmation",
+        "id": "smolvla__libero_goal__1__43__clean__noise2"
+      },
+      {
+        "model": "smolvla",
+        "suite": "libero_goal",
+        "task_id": 1,
+        "init_state_id": 43,
+        "seed": 1000,
+        "condition": "clean",
+        "method": "full10",
+        "num_steps": 10,
+        "scheduler": {
+          "mode": "fixed",
+          "fixed_interval": 10,
+          "temporal_ensemble": false
+        },
+        "record_video": true,
+        "split": "confirmation",
+        "id": "smolvla__libero_goal__1__43__clean__full10"
+      },
+      {
+        "model": "smolvla",
+        "suite": "libero_10",
+        "task_id": 1,
+        "init_state_id": 41,
+        "seed": 1000,
+        "condition": "clean",
+        "method": "noise2",
+        "num_steps": 2,
+        "scheduler": {
+          "mode": "fixed",
+          "fixed_interval": 10,
+          "temporal_ensemble": false
+        },
+        "record_video": true,
+        "split": "confirmation",
+        "id": "smolvla__libero_10__1__41__clean__noise2"
+      },
+      {
+        "model": "smolvla",
+        "suite": "libero_10",
+        "task_id": 1,
+        "init_state_id": 41,
+        "seed": 1000,
+        "condition": "clean",
+        "method": "full10",
+        "num_steps": 10,
+        "scheduler": {
+          "mode": "fixed",
+          "fixed_interval": 10,
+          "temporal_ensemble": false
+        },
+        "record_video": true,
+        "split": "confirmation",
+        "id": "smolvla__libero_10__1__41__clean__full10"
+      },
+      {
+        "model": "smolvla",
+        "suite": "libero_10",
+        "task_id": 1,
+        "init_state_id": 43,
+        "seed": 1000,
+        "condition": "clean",
+        "method": "full10",
+        "num_steps": 10,
+        "scheduler": {
+          "mode": "fixed",
+          "fixed_interval": 10,
+          "temporal_ensemble": false
+        },
+        "record_video": true,
+        "split": "confirmation",
+        "id": "smolvla__libero_10__1__43__clean__full10"
+      },
+      {
+        "model": "smolvla",
+        "suite": "libero_10",
+        "task_id": 1,
+        "init_state_id": 43,
+        "seed": 1000,
+        "condition": "clean",
+        "method": "noise2",
+        "num_steps": 2,
+        "scheduler": {
+          "mode": "fixed",
+          "fixed_interval": 10,
+          "temporal_ensemble": false
+        },
+        "record_video": true,
+        "split": "confirmation",
+        "id": "smolvla__libero_10__1__43__clean__noise2"
+      }
+    ]
+  },
+  "sources": {
+    "scripts/run_flow_confirmation.py": "edd5be34031ee2ca52e199d3861083b971aeeb33256027ece414ca8ea30580b6",
+    "scripts/run.py": "950cf01a77c1acbe7b98bc18d3e7435f6591b9191dbd26f8c0da535af7bcd280",
+    "src/embodied_research/__init__.py": "6a75c285a4efbdb9de48fab2a22d66ceb71ff3abe311a5155c326fdff0f09ef0",
+    "src/embodied_research/cache_policy.py": "7b704cfe37a89b5a71aa2b47da9f09d9f67ab76bca442d740a72d62eda9362ab",
+    "src/embodied_research/cache_sampler.py": "df547b4b4cf56822b7cbad4e282dba8996b2745bb906fe541ad7ead533592cd3",
+    "src/embodied_research/action_cache.py": "5710536aefce85b3d33b6e841920312ed726bee43e2020ec0916f87738ce722d",
+    "src/embodied_research/experiment.py": "da83af6ce069fc74a727f3c790bc59e7089e2bc53e4e8fe87e797219d44b3cf3",
+    "src/embodied_research/policies.py": "ad036be156049e9721ddf892e4e7ad8e66ee0e88c181cc66a125c0b76712f66a",
+    "src/embodied_research/runtime.py": "4296c85ae0060f9b6137872c6e88ed69fce49964cd1b5207da1a19c413f0b1f5",
+    "src/embodied_research/simulator.py": "3fa8762b03bd9dd85f426242714d3422bc19f6fc7f9d9444fd4cac4785ad95d3",
+    "src/embodied_research/scheduling.py": "6698253906434d6e2523b4ad3a77c18ae448872558fed341360858f6417f64ce",
+    "scripts/summarize_flow_confirmation.py": "4a82f8cf816286429a984e6b813836bdf43de334c05d074cd8b2d090d4532adc",
+    "scripts/summarize_cache_study.py": "09dd33324401bdd18ac69051af0c612c279ca56d51054399d9f10b19185143ba",
+    "docs/FLOW_CONFIRMATION_PROTOCOL.md": "ab9d6306e65acb129a149cf1636ea3fb13fc08d81a7a30f869f65f761989c2f2"
+  },
+  "runtime_versions": {
+    "torch": "2.7.1+cpu",
+    "torchvision": "0.22.1+cpu",
+    "numpy": "2.2.6",
+    "mujoco": "3.3.2",
+    "robosuite": "1.4.0",
+    "hf-libero": "0.1.4",
+    "lerobot": "0.6.1",
+    "transformers": "5.5.4",
+    "safetensors": "0.8.0"
+  },
+  "artifacts": {
+    "upstream_commit": "64c3cc8be364eb62df4f9fdc4bdccb1be9d1118e",
+    "models": {
+      "smolvla": {
+        "revision": "6721902bc4d61e50a3bfdb11dfb4cb626f05d102",
+        "files": {
+          "README.md": "8f0505f851e9bec50a1ba37e5776f69bf12f7c8f5307f796deff026fb3761963",
+          "config.json": "e346a63094732ea28e05b08302a218306cf6541960b663a3cb4b6948e4efe6e0",
+          "model.safetensors": "71d9563c8295284acba8fc2d5c19de000d6fe9ba58a406832af7ef3d221ed52f",
+          "policy_postprocessor.json": "ad2d22405cb63be4932c4a4d9a69bc9953df02a01235c5f420b679dbe6bfe7c5",
+          "policy_postprocessor_step_1_unnormalizer_processor.safetensors": "7008ba73c73887e5a7e631d478de9563ec5a0c51b7f0327f2530d7326c4b039e",
+          "policy_preprocessor.json": "29267ff4423fcce93bbd76ad0f386905f9de5d267ca13379a5795a514a81b7a9",
+          "policy_preprocessor_step_5_normalizer_processor.safetensors": "7008ba73c73887e5a7e631d478de9563ec5a0c51b7f0327f2530d7326c4b039e"
+        }
+      },
+      "smolvlm_assets": {
+        "revision": "7b375e1b73b11138ff12fe22c8f2822d8fe03467",
+        "files": {
+          "added_tokens.json": "74135b8664b56088c0006f1c8e848d79a8eba003411f72ebf1dc2ee96227be3a",
+          "chat_template.json": "b585e3598909a5687f9f9d738d35223724dedef256b9b274e1cbfb32b13c74bf",
+          "config.json": "ea6bc1237e96247f6258de3e202e2e62b93d6f386dc47e7b36b5588bf3a15e17",
+          "generation_config.json": "34835060c9f0f74d1acb456cc72ca32746d3843d9eb5f578f9cbffac1d2eb840",
+          "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+          "preprocessor_config.json": "149e315d9410368e5491455bb06e0f763426e9e56cca731c13b24404a29b6374",
+          "processor_config.json": "f3ad45028447b3562b4752be0d5916d6806c1ef589091a469608dcf0faa1737c",
+          "special_tokens_map.json": "2dfea2a426162316ff1567c82bc6d36d9690cd9f90455f075c77daca78b45c60",
+          "tokenizer.json": "5ece781dc8d2b2f3e2f289ca0ae50b17cfc27dd27bfe7971bb8241e0b964331a",
+          "tokenizer_config.json": "dd9ce2ab89a3dd881bd9378f1a79b943a064b9275a7e1706d5b7b47b68977913",
+          "vocab.json": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79"
+        }
+      }
+    },
+    "assets_revision": "0b3ea86be5fe169d0fd036ae63d1070ec09e90f6",
+    "assets_manifest_sha256": "1d59e339a7159e738c8e38aab5a703ab022a3607fc085835c09a431e0e604d42"
+  },
+  "origin": {
+    "files": {
+      "outputs/campaign/campaign_freeze.json": "84fb379e4eef3ce4436857f324989554da5c8753a228f2e717cee420e906e842",
+      "outputs/frontier/cache_study/protocol.json": "d6fdccfe2078323d0dffbd7e806620a1a69e8d986c2a05f06b15a9423487fe2d",
+      "outputs/frontier/cache_study/report.json": "7232c81fb0c2da3cdab702a4076bb53a61d0c775bb6ff1091d933f990500f873",
+      "outputs/frontier/cache_study/exports.json": "3e4eda84146325ba28b519b1c197829e5b3af3e4dd6e0a116387645e28782712"
+    },
+    "v1_protocol_fingerprint": "aa7226e19feef89f972207d22fc0e087b8d9e2bbd44c3761103f73e9ae821bc5",
+    "use": "Hypothesis origin only; no predecessor rollout contributes to confirmation denominators."
+  },
+  "initial_states": {
+    "distribution": "hf-libero",
+    "version": "0.1.4",
+    "inspection": "zipfile+pickletools structural inspection; no pickle execution, Torch import or environment",
+    "task_map_sha256": "0c950df0a785aa55de968bb38ccd865d2017f71ddbe6f48cfd05ac0742b6d62d",
+    "benchmark_source_sha256": "9c07414d4c75f5de50d9c8b3fefbda81ae72b3eae158c1af1d115e77063efd18",
+    "tasks": [
+      {
+        "suite": "libero_spatial",
+        "task_id": 1,
+        "task_name": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_plate",
+        "package_relative_path": "libero/libero/init_files/libero_spatial/pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_plate.pruned_init",
+        "sha256": "9b6927b6ef03460ab055141e1a1154ad85e5e290058d8ed3a8a314aff911f864",
+        "shape": [
+          50,
+          92
+        ],
+        "count": 50
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 1,
+        "task_name": "pick_up_the_cream_cheese_and_place_it_in_the_basket",
+        "package_relative_path": "libero/libero/init_files/libero_object/pick_up_the_cream_cheese_and_place_it_in_the_basket.pruned_init",
+        "sha256": "5ea5483bca8abd80a8f1935e2c60570d60eaaf6a985c283d62805b46fb76aa94",
+        "shape": [
+          50,
+          110
+        ],
+        "count": 50
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 1,
+        "task_name": "put_the_bowl_on_the_stove",
+        "package_relative_path": "libero/libero/init_files/libero_goal/put_the_bowl_on_the_stove.pruned_init",
+        "sha256": "7c1819725af8d08988078d6efb98ddb6dbefadb2e6d20df4ed23a2074f4d9ed1",
+        "shape": [
+          50,
+          79
+        ],
+        "count": 50
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 1,
+        "task_name": "LIVING_ROOM_SCENE2_put_both_the_cream_cheese_box_and_the_butter_in_the_basket",
+        "package_relative_path": "libero/libero/init_files/libero_10/LIVING_ROOM_SCENE2_put_both_the_cream_cheese_box_and_the_butter_in_the_basket.pruned_init",
+        "sha256": "f8ac06ea8f43bb328d40cba1e6a9767da2f8f5386fd7ff3f845c64a96bf6d2ce",
+        "shape": [
+          50,
+          123
+        ],
+        "count": 50
+      }
+    ]
+  },
+  "fingerprint": "813efc115c410af42323fb9a7be4ed0b7f1fb474fcfaa227d483fc7b830fda84",
+  "created_at": "2026-10-15T02:22:03.113564+00:00"
+}

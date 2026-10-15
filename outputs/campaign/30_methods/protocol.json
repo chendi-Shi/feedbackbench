@@ -1,0 +1,2743 @@
+{
+  "plan": {
+    "name": "held-out-method-comparison",
+    "models": [
+      {
+        "name": "minerva",
+        "methods": [
+          {
+            "name": "fixed1",
+            "scheduler": {
+              "mode": "fixed",
+              "fixed_interval": 1,
+              "temporal_ensemble": true,
+              "ensemble_coeff": 0.01
+            }
+          },
+          {
+            "name": "fixed4",
+            "scheduler": {
+              "mode": "fixed",
+              "fixed_interval": 4,
+              "temporal_ensemble": true,
+              "ensemble_coeff": 0.01
+            }
+          },
+          {
+            "name": "fixed8",
+            "scheduler": {
+              "mode": "fixed",
+              "fixed_interval": 8,
+              "temporal_ensemble": true,
+              "ensemble_coeff": 0.01
+            }
+          },
+          {
+            "name": "fixed15",
+            "scheduler": {
+              "mode": "fixed",
+              "fixed_interval": 15,
+              "temporal_ensemble": true,
+              "ensemble_coeff": 0.01
+            }
+          },
+          {
+            "name": "adaptive",
+            "scheduler": {
+              "mode": "adaptive",
+              "min_interval": 2,
+              "max_interval": 15,
+              "temporal_ensemble": true,
+              "ensemble_coeff": 0.01,
+              "vision_threshold": 0.015,
+              "gripper_threshold": 0.001
+            }
+          },
+          {
+            "name": "no_vision",
+            "scheduler": {
+              "mode": "adaptive",
+              "min_interval": 2,
+              "max_interval": 15,
+              "temporal_ensemble": true,
+              "ensemble_coeff": 0.01,
+              "vision_threshold": 0.015,
+              "gripper_threshold": 0.001,
+              "use_vision": false
+            }
+          },
+          {
+            "name": "no_gripper",
+            "scheduler": {
+              "mode": "adaptive",
+              "min_interval": 2,
+              "max_interval": 15,
+              "temporal_ensemble": true,
+              "ensemble_coeff": 0.01,
+              "vision_threshold": 0.015,
+              "gripper_threshold": 0.001,
+              "use_gripper": false
+            }
+          },
+          {
+            "name": "no_ensemble",
+            "scheduler": {
+              "mode": "adaptive",
+              "min_interval": 2,
+              "max_interval": 15,
+              "temporal_ensemble": false,
+              "ensemble_coeff": 0.01,
+              "vision_threshold": 0.015,
+              "gripper_threshold": 0.001
+            }
+          }
+        ]
+      }
+    ],
+    "tasks": [
+      {
+        "suite": "libero_spatial",
+        "task_id": 1,
+        "record_video": true
+      },
+      {
+        "suite": "libero_spatial",
+        "task_id": 6,
+        "record_video": false
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 1,
+        "record_video": false
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 6,
+        "record_video": false
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 1,
+        "record_video": false
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 6,
+        "record_video": false
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 1,
+        "record_video": false
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 6,
+        "record_video": false
+      }
+    ],
+    "initial_states": [
+      11,
+      29
+    ],
+    "conditions": [
+      "clean"
+    ],
+    "seed": 1000,
+    "threads": 2,
+    "image_size": 360,
+    "warmup_calls": 2,
+    "rotate_method_order": true,
+    "split": "held-out test",
+    "question": "How does feedback frequency affect task success and inference cost on a fixed CPU policy?",
+    "hypothesis": "Observation-triggered replanning may preserve success with fewer inference calls; a negative result is allowed.",
+    "limitations": [
+      "Frozen published checkpoint; no retraining-seed claim.",
+      "Known tasks and published held-out initial states; not unseen-language generalization.",
+      "Simulation pauses during inference; delay4 is prescribed sensor delay, not asynchronous real-time control.",
+      "Calls are the primary compute proxy. Wall-clock measurements on a shared laptop are descriptive.",
+      "Few initial states per task; screening evidence, not a full published benchmark reproduction."
+    ],
+    "selected_on_development": "adaptive_low"
+  },
+  "sources": {
+    "experiment.py": "da83af6ce069fc74a727f3c790bc59e7089e2bc53e4e8fe87e797219d44b3cf3",
+    "policies.py": "ad036be156049e9721ddf892e4e7ad8e66ee0e88c181cc66a125c0b76712f66a",
+    "runtime.py": "4296c85ae0060f9b6137872c6e88ed69fce49964cd1b5207da1a19c413f0b1f5",
+    "simulator.py": "3fa8762b03bd9dd85f426242714d3422bc19f6fc7f9d9444fd4cac4785ad95d3",
+    "scheduling.py": "6698253906434d6e2523b4ad3a77c18ae448872558fed341360858f6417f64ce"
+  },
+  "runtime_versions": {
+    "torch": "2.7.1+cpu",
+    "torchvision": "0.22.1+cpu",
+    "numpy": "2.2.6",
+    "mujoco": "3.3.2",
+    "robosuite": "1.4.0",
+    "hf-libero": "0.1.4",
+    "lerobot": "0.6.1",
+    "transformers": "5.5.4",
+    "safetensors": "0.8.0"
+  },
+  "artifacts": {
+    "upstream_commit": "64c3cc8be364eb62df4f9fdc4bdccb1be9d1118e",
+    "models": {
+      "minerva": {
+        "revision": "1b4fb1743f00a7d8eb87c7059c446447907d12bf",
+        "files": {
+          "config.json": "bbd0e5bc61d3ce2e002f2d0889f90f4af1cc7193a0ad65629f7ece14e2eac276",
+          "model.safetensors": "f173def4c0b11030161486401dce52e63471d4180c248779678eaa6952c32da5",
+          "policy_postprocessor.json": "697e6bf50a3f99b0677a9e797babb5ce2e0d17acf8fcd15596ba3ac0bc7a5a72",
+          "policy_postprocessor_step_0_unnormalizer_processor.safetensors": "a002c0df7f79c5b169c5a899ad151d4ea1bed246c7d82bd93ed1556558d517a9",
+          "policy_preprocessor.json": "7b095590a92959edb15083469bb0d27f13094c8fe0cd816633173fd96f612ba1",
+          "policy_preprocessor_step_4_normalizer_processor.safetensors": "f98234b21ce8ffacf1b86657f3cf8e24ac6c31ebcd6a3b83cecd484439674306",
+          "train_config.json": "517dd29d692bf959070ccbda2d7faad1dd4437ff132607faa6bff281639c27ec",
+          "README.md": "2c70b086ff31e41da03adcd216b9c110ba78931994347f74e1a6954392628c73"
+        }
+      }
+    },
+    "assets_revision": "0b3ea86be5fe169d0fd036ae63d1070ec09e90f6",
+    "assets_manifest_sha256": "1d59e339a7159e738c8e38aab5a703ab022a3607fc085835c09a431e0e604d42"
+  },
+  "cases": [
+    {
+      "model": "minerva",
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed1",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 1,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": true,
+      "id": "minerva__libero_spatial__1__11__clean__fixed1"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed4",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 4,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": true,
+      "id": "minerva__libero_spatial__1__11__clean__fixed4"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed8",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 8,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": true,
+      "id": "minerva__libero_spatial__1__11__clean__fixed8"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed15",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": true,
+      "id": "minerva__libero_spatial__1__11__clean__fixed15"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "adaptive",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001
+      },
+      "record_video": true,
+      "id": "minerva__libero_spatial__1__11__clean__adaptive"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_vision",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001,
+        "use_vision": false
+      },
+      "record_video": true,
+      "id": "minerva__libero_spatial__1__11__clean__no_vision"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_gripper",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001,
+        "use_gripper": false
+      },
+      "record_video": true,
+      "id": "minerva__libero_spatial__1__11__clean__no_gripper"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_ensemble",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": false,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001
+      },
+      "record_video": true,
+      "id": "minerva__libero_spatial__1__11__clean__no_ensemble"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed4",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 4,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_spatial__1__29__clean__fixed4"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed8",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 8,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_spatial__1__29__clean__fixed8"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed15",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_spatial__1__29__clean__fixed15"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "adaptive",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001
+      },
+      "record_video": false,
+      "id": "minerva__libero_spatial__1__29__clean__adaptive"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_vision",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001,
+        "use_vision": false
+      },
+      "record_video": false,
+      "id": "minerva__libero_spatial__1__29__clean__no_vision"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_gripper",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001,
+        "use_gripper": false
+      },
+      "record_video": false,
+      "id": "minerva__libero_spatial__1__29__clean__no_gripper"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_ensemble",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": false,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001
+      },
+      "record_video": false,
+      "id": "minerva__libero_spatial__1__29__clean__no_ensemble"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed1",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 1,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_spatial__1__29__clean__fixed1"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed4",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 4,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_spatial__6__11__clean__fixed4"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed8",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 8,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_spatial__6__11__clean__fixed8"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed15",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_spatial__6__11__clean__fixed15"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "adaptive",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001
+      },
+      "record_video": false,
+      "id": "minerva__libero_spatial__6__11__clean__adaptive"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_vision",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001,
+        "use_vision": false
+      },
+      "record_video": false,
+      "id": "minerva__libero_spatial__6__11__clean__no_vision"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_gripper",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001,
+        "use_gripper": false
+      },
+      "record_video": false,
+      "id": "minerva__libero_spatial__6__11__clean__no_gripper"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_ensemble",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": false,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001
+      },
+      "record_video": false,
+      "id": "minerva__libero_spatial__6__11__clean__no_ensemble"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed1",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 1,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_spatial__6__11__clean__fixed1"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed8",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 8,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_spatial__6__29__clean__fixed8"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed15",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_spatial__6__29__clean__fixed15"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "adaptive",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001
+      },
+      "record_video": false,
+      "id": "minerva__libero_spatial__6__29__clean__adaptive"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_vision",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001,
+        "use_vision": false
+      },
+      "record_video": false,
+      "id": "minerva__libero_spatial__6__29__clean__no_vision"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_gripper",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001,
+        "use_gripper": false
+      },
+      "record_video": false,
+      "id": "minerva__libero_spatial__6__29__clean__no_gripper"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_ensemble",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": false,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001
+      },
+      "record_video": false,
+      "id": "minerva__libero_spatial__6__29__clean__no_ensemble"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed1",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 1,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_spatial__6__29__clean__fixed1"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed4",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 4,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_spatial__6__29__clean__fixed4"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_object",
+      "task_id": 1,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed8",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 8,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_object__1__11__clean__fixed8"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_object",
+      "task_id": 1,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed15",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_object__1__11__clean__fixed15"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_object",
+      "task_id": 1,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "adaptive",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001
+      },
+      "record_video": false,
+      "id": "minerva__libero_object__1__11__clean__adaptive"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_object",
+      "task_id": 1,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_vision",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001,
+        "use_vision": false
+      },
+      "record_video": false,
+      "id": "minerva__libero_object__1__11__clean__no_vision"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_object",
+      "task_id": 1,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_gripper",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001,
+        "use_gripper": false
+      },
+      "record_video": false,
+      "id": "minerva__libero_object__1__11__clean__no_gripper"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_object",
+      "task_id": 1,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_ensemble",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": false,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001
+      },
+      "record_video": false,
+      "id": "minerva__libero_object__1__11__clean__no_ensemble"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_object",
+      "task_id": 1,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed1",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 1,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_object__1__11__clean__fixed1"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_object",
+      "task_id": 1,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed4",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 4,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_object__1__11__clean__fixed4"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_object",
+      "task_id": 1,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed15",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_object__1__29__clean__fixed15"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_object",
+      "task_id": 1,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "adaptive",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001
+      },
+      "record_video": false,
+      "id": "minerva__libero_object__1__29__clean__adaptive"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_object",
+      "task_id": 1,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_vision",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001,
+        "use_vision": false
+      },
+      "record_video": false,
+      "id": "minerva__libero_object__1__29__clean__no_vision"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_object",
+      "task_id": 1,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_gripper",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001,
+        "use_gripper": false
+      },
+      "record_video": false,
+      "id": "minerva__libero_object__1__29__clean__no_gripper"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_object",
+      "task_id": 1,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_ensemble",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": false,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001
+      },
+      "record_video": false,
+      "id": "minerva__libero_object__1__29__clean__no_ensemble"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_object",
+      "task_id": 1,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed1",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 1,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_object__1__29__clean__fixed1"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_object",
+      "task_id": 1,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed4",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 4,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_object__1__29__clean__fixed4"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_object",
+      "task_id": 1,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed8",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 8,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_object__1__29__clean__fixed8"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_object",
+      "task_id": 6,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed15",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_object__6__11__clean__fixed15"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_object",
+      "task_id": 6,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "adaptive",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001
+      },
+      "record_video": false,
+      "id": "minerva__libero_object__6__11__clean__adaptive"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_object",
+      "task_id": 6,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_vision",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001,
+        "use_vision": false
+      },
+      "record_video": false,
+      "id": "minerva__libero_object__6__11__clean__no_vision"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_object",
+      "task_id": 6,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_gripper",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001,
+        "use_gripper": false
+      },
+      "record_video": false,
+      "id": "minerva__libero_object__6__11__clean__no_gripper"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_object",
+      "task_id": 6,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_ensemble",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": false,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001
+      },
+      "record_video": false,
+      "id": "minerva__libero_object__6__11__clean__no_ensemble"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_object",
+      "task_id": 6,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed1",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 1,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_object__6__11__clean__fixed1"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_object",
+      "task_id": 6,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed4",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 4,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_object__6__11__clean__fixed4"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_object",
+      "task_id": 6,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed8",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 8,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_object__6__11__clean__fixed8"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_object",
+      "task_id": 6,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "adaptive",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001
+      },
+      "record_video": false,
+      "id": "minerva__libero_object__6__29__clean__adaptive"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_object",
+      "task_id": 6,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_vision",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001,
+        "use_vision": false
+      },
+      "record_video": false,
+      "id": "minerva__libero_object__6__29__clean__no_vision"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_object",
+      "task_id": 6,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_gripper",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001,
+        "use_gripper": false
+      },
+      "record_video": false,
+      "id": "minerva__libero_object__6__29__clean__no_gripper"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_object",
+      "task_id": 6,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_ensemble",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": false,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001
+      },
+      "record_video": false,
+      "id": "minerva__libero_object__6__29__clean__no_ensemble"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_object",
+      "task_id": 6,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed1",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 1,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_object__6__29__clean__fixed1"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_object",
+      "task_id": 6,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed4",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 4,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_object__6__29__clean__fixed4"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_object",
+      "task_id": 6,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed8",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 8,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_object__6__29__clean__fixed8"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_object",
+      "task_id": 6,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed15",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_object__6__29__clean__fixed15"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_goal",
+      "task_id": 1,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "adaptive",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001
+      },
+      "record_video": false,
+      "id": "minerva__libero_goal__1__11__clean__adaptive"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_goal",
+      "task_id": 1,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_vision",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001,
+        "use_vision": false
+      },
+      "record_video": false,
+      "id": "minerva__libero_goal__1__11__clean__no_vision"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_goal",
+      "task_id": 1,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_gripper",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001,
+        "use_gripper": false
+      },
+      "record_video": false,
+      "id": "minerva__libero_goal__1__11__clean__no_gripper"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_goal",
+      "task_id": 1,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_ensemble",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": false,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001
+      },
+      "record_video": false,
+      "id": "minerva__libero_goal__1__11__clean__no_ensemble"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_goal",
+      "task_id": 1,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed1",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 1,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_goal__1__11__clean__fixed1"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_goal",
+      "task_id": 1,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed4",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 4,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_goal__1__11__clean__fixed4"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_goal",
+      "task_id": 1,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed8",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 8,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_goal__1__11__clean__fixed8"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_goal",
+      "task_id": 1,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed15",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_goal__1__11__clean__fixed15"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_goal",
+      "task_id": 1,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_vision",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001,
+        "use_vision": false
+      },
+      "record_video": false,
+      "id": "minerva__libero_goal__1__29__clean__no_vision"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_goal",
+      "task_id": 1,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_gripper",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001,
+        "use_gripper": false
+      },
+      "record_video": false,
+      "id": "minerva__libero_goal__1__29__clean__no_gripper"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_goal",
+      "task_id": 1,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_ensemble",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": false,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001
+      },
+      "record_video": false,
+      "id": "minerva__libero_goal__1__29__clean__no_ensemble"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_goal",
+      "task_id": 1,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed1",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 1,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_goal__1__29__clean__fixed1"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_goal",
+      "task_id": 1,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed4",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 4,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_goal__1__29__clean__fixed4"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_goal",
+      "task_id": 1,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed8",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 8,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_goal__1__29__clean__fixed8"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_goal",
+      "task_id": 1,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed15",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_goal__1__29__clean__fixed15"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_goal",
+      "task_id": 1,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "adaptive",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001
+      },
+      "record_video": false,
+      "id": "minerva__libero_goal__1__29__clean__adaptive"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_goal",
+      "task_id": 6,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_vision",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001,
+        "use_vision": false
+      },
+      "record_video": false,
+      "id": "minerva__libero_goal__6__11__clean__no_vision"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_goal",
+      "task_id": 6,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_gripper",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001,
+        "use_gripper": false
+      },
+      "record_video": false,
+      "id": "minerva__libero_goal__6__11__clean__no_gripper"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_goal",
+      "task_id": 6,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_ensemble",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": false,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001
+      },
+      "record_video": false,
+      "id": "minerva__libero_goal__6__11__clean__no_ensemble"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_goal",
+      "task_id": 6,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed1",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 1,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_goal__6__11__clean__fixed1"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_goal",
+      "task_id": 6,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed4",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 4,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_goal__6__11__clean__fixed4"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_goal",
+      "task_id": 6,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed8",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 8,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_goal__6__11__clean__fixed8"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_goal",
+      "task_id": 6,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed15",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_goal__6__11__clean__fixed15"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_goal",
+      "task_id": 6,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "adaptive",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001
+      },
+      "record_video": false,
+      "id": "minerva__libero_goal__6__11__clean__adaptive"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_goal",
+      "task_id": 6,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_gripper",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001,
+        "use_gripper": false
+      },
+      "record_video": false,
+      "id": "minerva__libero_goal__6__29__clean__no_gripper"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_goal",
+      "task_id": 6,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_ensemble",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": false,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001
+      },
+      "record_video": false,
+      "id": "minerva__libero_goal__6__29__clean__no_ensemble"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_goal",
+      "task_id": 6,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed1",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 1,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_goal__6__29__clean__fixed1"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_goal",
+      "task_id": 6,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed4",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 4,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_goal__6__29__clean__fixed4"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_goal",
+      "task_id": 6,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed8",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 8,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_goal__6__29__clean__fixed8"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_goal",
+      "task_id": 6,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed15",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_goal__6__29__clean__fixed15"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_goal",
+      "task_id": 6,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "adaptive",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001
+      },
+      "record_video": false,
+      "id": "minerva__libero_goal__6__29__clean__adaptive"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_goal",
+      "task_id": 6,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_vision",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001,
+        "use_vision": false
+      },
+      "record_video": false,
+      "id": "minerva__libero_goal__6__29__clean__no_vision"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_10",
+      "task_id": 1,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_gripper",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001,
+        "use_gripper": false
+      },
+      "record_video": false,
+      "id": "minerva__libero_10__1__11__clean__no_gripper"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_10",
+      "task_id": 1,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_ensemble",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": false,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001
+      },
+      "record_video": false,
+      "id": "minerva__libero_10__1__11__clean__no_ensemble"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_10",
+      "task_id": 1,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed1",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 1,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_10__1__11__clean__fixed1"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_10",
+      "task_id": 1,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed4",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 4,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_10__1__11__clean__fixed4"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_10",
+      "task_id": 1,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed8",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 8,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_10__1__11__clean__fixed8"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_10",
+      "task_id": 1,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed15",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_10__1__11__clean__fixed15"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_10",
+      "task_id": 1,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "adaptive",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001
+      },
+      "record_video": false,
+      "id": "minerva__libero_10__1__11__clean__adaptive"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_10",
+      "task_id": 1,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_vision",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001,
+        "use_vision": false
+      },
+      "record_video": false,
+      "id": "minerva__libero_10__1__11__clean__no_vision"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_10",
+      "task_id": 1,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_ensemble",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": false,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001
+      },
+      "record_video": false,
+      "id": "minerva__libero_10__1__29__clean__no_ensemble"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_10",
+      "task_id": 1,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed1",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 1,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_10__1__29__clean__fixed1"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_10",
+      "task_id": 1,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed4",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 4,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_10__1__29__clean__fixed4"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_10",
+      "task_id": 1,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed8",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 8,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_10__1__29__clean__fixed8"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_10",
+      "task_id": 1,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed15",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_10__1__29__clean__fixed15"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_10",
+      "task_id": 1,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "adaptive",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001
+      },
+      "record_video": false,
+      "id": "minerva__libero_10__1__29__clean__adaptive"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_10",
+      "task_id": 1,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_vision",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001,
+        "use_vision": false
+      },
+      "record_video": false,
+      "id": "minerva__libero_10__1__29__clean__no_vision"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_10",
+      "task_id": 1,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_gripper",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001,
+        "use_gripper": false
+      },
+      "record_video": false,
+      "id": "minerva__libero_10__1__29__clean__no_gripper"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_10",
+      "task_id": 6,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_ensemble",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": false,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001
+      },
+      "record_video": false,
+      "id": "minerva__libero_10__6__11__clean__no_ensemble"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_10",
+      "task_id": 6,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed1",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 1,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_10__6__11__clean__fixed1"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_10",
+      "task_id": 6,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed4",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 4,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_10__6__11__clean__fixed4"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_10",
+      "task_id": 6,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed8",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 8,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_10__6__11__clean__fixed8"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_10",
+      "task_id": 6,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed15",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_10__6__11__clean__fixed15"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_10",
+      "task_id": 6,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "adaptive",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001
+      },
+      "record_video": false,
+      "id": "minerva__libero_10__6__11__clean__adaptive"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_10",
+      "task_id": 6,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_vision",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001,
+        "use_vision": false
+      },
+      "record_video": false,
+      "id": "minerva__libero_10__6__11__clean__no_vision"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_10",
+      "task_id": 6,
+      "init_state_id": 11,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_gripper",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001,
+        "use_gripper": false
+      },
+      "record_video": false,
+      "id": "minerva__libero_10__6__11__clean__no_gripper"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_10",
+      "task_id": 6,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed1",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 1,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_10__6__29__clean__fixed1"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_10",
+      "task_id": 6,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed4",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 4,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_10__6__29__clean__fixed4"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_10",
+      "task_id": 6,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed8",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 8,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_10__6__29__clean__fixed8"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_10",
+      "task_id": 6,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "fixed15",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01
+      },
+      "record_video": false,
+      "id": "minerva__libero_10__6__29__clean__fixed15"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_10",
+      "task_id": 6,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "adaptive",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001
+      },
+      "record_video": false,
+      "id": "minerva__libero_10__6__29__clean__adaptive"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_10",
+      "task_id": 6,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_vision",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001,
+        "use_vision": false
+      },
+      "record_video": false,
+      "id": "minerva__libero_10__6__29__clean__no_vision"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_10",
+      "task_id": 6,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_gripper",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": true,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001,
+        "use_gripper": false
+      },
+      "record_video": false,
+      "id": "minerva__libero_10__6__29__clean__no_gripper"
+    },
+    {
+      "model": "minerva",
+      "suite": "libero_10",
+      "task_id": 6,
+      "init_state_id": 29,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "no_ensemble",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "adaptive",
+        "min_interval": 2,
+        "max_interval": 15,
+        "temporal_ensemble": false,
+        "ensemble_coeff": 0.01,
+        "vision_threshold": 0.015,
+        "gripper_threshold": 0.001
+      },
+      "record_video": false,
+      "id": "minerva__libero_10__6__29__clean__no_ensemble"
+    }
+  ],
+  "fingerprint": "e0be2a83756834f71898de3fbbd6adea4a9bb93d301c8180d0f535d2ba20677a",
+  "question": "How does feedback frequency affect task success and inference cost on a fixed CPU policy?",
+  "hypothesis": "Observation-triggered replanning may preserve success with fewer inference calls; a negative result is allowed.",
+  "split": "held-out test",
+  "limitations": [
+    "Frozen published checkpoint; no retraining-seed claim.",
+    "Known tasks and published held-out initial states; not unseen-language generalization.",
+    "Simulation pauses during inference; delay4 is prescribed sensor delay, not asynchronous real-time control.",
+    "Calls are the primary compute proxy. Wall-clock measurements on a shared laptop are descriptive.",
+    "Few initial states per task; screening evidence, not a full published benchmark reproduction."
+  ],
+  "created_at": "2026-10-14T05:16:29.128771+00:00"
+}

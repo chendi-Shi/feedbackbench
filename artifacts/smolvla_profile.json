@@ -1,0 +1,131 @@
+{
+  "status": "passed",
+  "policy": {
+    "name": "smolvla",
+    "revision": "6721902bc4d61e50a3bfdb11dfb4cb626f05d102",
+    "model_sha256": "71d9563c8295284acba8fc2d5c19de000d6fe9ba58a406832af7ef3d221ed52f",
+    "device": "cpu",
+    "dtype": "float32",
+    "parameters": 604934176,
+    "n_observation_steps": 1,
+    "chunk_length": 50,
+    "n_action_steps": 1,
+    "num_steps": 10,
+    "temporal_ensemble_coeff": null,
+    "temporal_ensemble_applies_to": "upstream select_action only",
+    "scheduled_chunks_use_temporal_ensemble": false,
+    "conditioning": "language",
+    "load_seconds": 35.12474550000479,
+    "strict_checkpoint_load": true,
+    "skipped_discarded_random_initialization": true,
+    "loading_audit": {
+      "checkpoint_state_tensors": 788,
+      "exact_state_keys_and_shapes": true,
+      "nonpersistent_buffers": {
+        "model.vlm_with_expert.vlm.model.text_model.rotary_emb.original_inv_freq": {
+          "shape": [
+            32
+          ],
+          "sha256": "4dcfda84ce763abe24a92bbf6718c1b03753068a39a15aaf8ae5ac2fdc6ca266",
+          "matches_closed_form": true
+        },
+        "model.vlm_with_expert.vlm.model.text_model.rotary_emb.inv_freq": {
+          "shape": [
+            32
+          ],
+          "sha256": "4dcfda84ce763abe24a92bbf6718c1b03753068a39a15aaf8ae5ac2fdc6ca266",
+          "matches_closed_form": true
+        },
+        "model.vlm_with_expert.lm_expert.rotary_emb.original_inv_freq": {
+          "shape": [
+            32
+          ],
+          "sha256": "4dcfda84ce763abe24a92bbf6718c1b03753068a39a15aaf8ae5ac2fdc6ca266",
+          "matches_closed_form": true
+        },
+        "model.vlm_with_expert.lm_expert.rotary_emb.inv_freq": {
+          "shape": [
+            32
+          ],
+          "sha256": "4dcfda84ce763abe24a92bbf6718c1b03753068a39a15aaf8ae5ac2fdc6ca266",
+          "matches_closed_form": true
+        }
+      }
+    },
+    "camera_flip": "performed once by simulator, never by this adapter"
+  },
+  "threads": 2,
+  "torch_version": "2.7.1+cpu",
+  "total_load_seconds": 152.92325020000135,
+  "rss_after_load_bytes": 2984423424,
+  "measurement_scope": "single real LIBERO observation CPU feasibility; not rollout success",
+  "rss_bytes": 2749927424,
+  "observation": {
+    "source": "artifacts\\policy_smoke_observation.npz",
+    "task": "pick up the black bowl between the plate and the ramekin and place it on the plate",
+    "shapes": {
+      "observation.images.image": [
+        3,
+        360,
+        360
+      ],
+      "observation.images.image2": [
+        3,
+        360,
+        360
+      ],
+      "observation.state": [
+        8
+      ]
+    }
+  },
+  "warmup_timing": {
+    "preprocess_seconds": 0.0651618000047165,
+    "inference_seconds": 179.33878689999983,
+    "postprocess_seconds": 0.002605499998026062
+  },
+  "chunk_shape": [
+    50,
+    7
+  ],
+  "chunk_first_action": [
+    0.42745351791381836,
+    0.313943088054657,
+    0.17459902167320251,
+    -0.01845969818532467,
+    0.021683529019355774,
+    0.010336083360016346,
+    -0.9996305704116821
+  ],
+  "first_action_upstream_parity_max_abs_error": 0.0,
+  "samples": [
+    {
+      "wall_seconds": 24.113503200002015,
+      "preprocess_seconds": 0.007182700006524101,
+      "inference_seconds": 24.105946100004076,
+      "postprocess_seconds": 0.0002674999996088445,
+      "action_l2": 9.410390853881836
+    },
+    {
+      "wall_seconds": 13.685170899996592,
+      "preprocess_seconds": 0.005524499996681698,
+      "inference_seconds": 13.67861239999911,
+      "postprocess_seconds": 0.00031660000240663067,
+      "action_l2": 9.688827514648438
+    },
+    {
+      "wall_seconds": 20.44142240000656,
+      "preprocess_seconds": 0.005500400002347305,
+      "inference_seconds": 20.434891900004004,
+      "postprocess_seconds": 0.00032189999910769984,
+      "action_l2": 9.396688461303711
+    }
+  ],
+  "wall_seconds_median": 20.44142240000656,
+  "wall_seconds_p95": 23.74629512000247,
+  "measurement_caveats": [
+    "Background memory pressure changed during this run; a local llama-server was stopped with user authorization. The 179.34-second warm-up is excluded from the three-repetition summary.",
+    "Only three repeats on one saved real LIBERO observation were measured. The median and range describe this feasibility sample; the empirical p95 is not a stable deployment latency estimate.",
+    "These measurements establish successful pretrained CPU inference and upstream action parity; they do not measure closed-loop task success or real-time control."
+  ]
+}

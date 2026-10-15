@@ -1,0 +1,1999 @@
+{
+  "model": "minerva",
+  "suite": "libero_spatial",
+  "task_id": 1,
+  "init_state_id": 11,
+  "seed": 1000,
+  "condition": "clean",
+  "method": "fixed1",
+  "num_steps": 10,
+  "scheduler": {
+    "mode": "fixed",
+    "fixed_interval": 1,
+    "temporal_ensemble": true,
+    "ensemble_coeff": 0.01
+  },
+  "record_video": true,
+  "id": "minerva__libero_spatial__1__11__clean__fixed1",
+  "status": "complete",
+  "task": "pick up the black bowl next to the ramekin and place it on the plate",
+  "success": true,
+  "steps": 103,
+  "horizon": 280,
+  "terminated": true,
+  "truncated": false,
+  "inference_calls": 103,
+  "policy_inference_seconds": 16.75064579989703,
+  "preprocess_seconds": 2.333435200038366,
+  "scheduler_seconds": 0.5331693000189262,
+  "scheduler_seconds_scope": "controller overhead: action postprocessing, queues, ensembling, scheduling and bookkeeping",
+  "simulator_seconds": 38.16889409998839,
+  "wall_seconds": 66.36061179998796,
+  "control_ms_p50": 94.74440000485629,
+  "control_ms_p95": 667.3508099949684,
+  "initial_robot_state": [
+    -0.2136281281709671,
+    0.007029218133538961,
+    1.164075255393982,
+    3.1398839950561523,
+    -7.016514427959919e-05,
+    -0.09159748256206512,
+    0.03872266411781311,
+    -0.03872290998697281
+  ],
+  "initial_image_sha256": "4e5797c5596f9fd274026d51a98c94ff8cdb6c5a8e2c098be105a855d5772a38",
+  "final_robot_state": [
+    0.0685543417930603,
+    0.24288409948349,
+    0.9358400106430054,
+    3.0771687030792236,
+    -0.21792760491371155,
+    0.288999080657959,
+    0.0024291309528052807,
+    -0.0047612264752388
+  ],
+  "model_info": {
+    "name": "minerva",
+    "revision": "1b4fb1743f00a7d8eb87c7059c446447907d12bf",
+    "model_sha256": "f173def4c0b11030161486401dce52e63471d4180c248779678eaa6952c32da5",
+    "device": "cpu",
+    "dtype": "float32",
+    "parameters": 545048,
+    "n_observation_steps": 2,
+    "chunk_length": 15,
+    "n_action_steps": 1,
+    "num_steps": null,
+    "temporal_ensemble_coeff": 0.01,
+    "temporal_ensemble_applies_to": "upstream select_action only",
+    "scheduled_chunks_use_temporal_ensemble": false,
+    "conditioning": "closed_set_task_id",
+    "load_seconds": 0.14010610000696033,
+    "strict_checkpoint_load": true,
+    "skipped_discarded_random_initialization": false,
+    "loading_audit": null,
+    "camera_flip": "performed once by simulator, never by this adapter"
+  },
+  "environment": {
+    "suite": "libero_spatial",
+    "task_id": 1,
+    "task": "pick up the black bowl next to the ramekin and place it on the plate",
+    "horizon": 280,
+    "control_hz": 20,
+    "control_mode": "relative",
+    "hard_reset": true,
+    "settle_steps": 10,
+    "image_size": 360,
+    "images_flipped_hw_once": true,
+    "policy_state": "eef_xyz + eef_axis_angle + gripper_qpos (8 values)",
+    "object_state_exposed_to_policy": false
+  },
+  "scheduler_config": {
+    "mode": "fixed",
+    "fixed_interval": 1,
+    "min_interval": 2,
+    "max_interval": 15,
+    "vision_threshold": 0.04,
+    "gripper_threshold": 0.02,
+    "use_vision": true,
+    "use_gripper": true,
+    "temporal_ensemble": true,
+    "ensemble_coeff": 0.01,
+    "horizon": 280,
+    "thumbnail_size": 16,
+    "front_image_key": "observation.images.image",
+    "state_key": "observation.state"
+  },
+  "decisions": {
+    "config": {
+      "mode": "fixed",
+      "fixed_interval": 1,
+      "min_interval": 2,
+      "max_interval": 15,
+      "vision_threshold": 0.04,
+      "gripper_threshold": 0.02,
+      "use_vision": true,
+      "use_gripper": true,
+      "temporal_ensemble": true,
+      "ensemble_coeff": 0.01,
+      "horizon": 280,
+      "thumbnail_size": 16,
+      "front_image_key": "observation.images.image",
+      "state_key": "observation.state"
+    },
+    "steps": 103,
+    "horizon_reached": false,
+    "inference_requests": 103,
+    "chunks_received": 103,
+    "pending_inference": false,
+    "inference_calls_per_100_steps": 100.0,
+    "trigger_counts": {
+      "initial": 1,
+      "fixed_interval": 102
+    },
+    "plan_steps": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102
+    ],
+    "completed_replan_intervals": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "executed_chunk_spans": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "events": [
+      {
+        "step": 0,
+        "requested": true,
+        "reasons": [
+          "initial"
+        ],
+        "steps_since_plan": null,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 1,
+        "used_predictions": 1
+      },
+      {
+        "step": 1,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 2,
+        "used_predictions": 2
+      },
+      {
+        "step": 2,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 3,
+        "used_predictions": 3
+      },
+      {
+        "step": 3,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 4,
+        "used_predictions": 4
+      },
+      {
+        "step": 4,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 5,
+        "used_predictions": 5
+      },
+      {
+        "step": 5,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 6,
+        "used_predictions": 6
+      },
+      {
+        "step": 6,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 7,
+        "used_predictions": 7
+      },
+      {
+        "step": 7,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 8,
+        "used_predictions": 8
+      },
+      {
+        "step": 8,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 9,
+        "used_predictions": 9
+      },
+      {
+        "step": 9,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 10,
+        "used_predictions": 10
+      },
+      {
+        "step": 10,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 11,
+        "used_predictions": 11
+      },
+      {
+        "step": 11,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 12,
+        "used_predictions": 12
+      },
+      {
+        "step": 12,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 13,
+        "used_predictions": 13
+      },
+      {
+        "step": 13,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 14,
+        "used_predictions": 14
+      },
+      {
+        "step": 14,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 15,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 16,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 17,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 18,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 19,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 20,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 21,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 22,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 23,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 24,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 25,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 26,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 27,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 28,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 29,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 30,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 31,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 32,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 33,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 34,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 35,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 36,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 37,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 38,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 39,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 40,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 41,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 42,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 43,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 44,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 45,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 46,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 47,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 48,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 49,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 50,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 51,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 52,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 53,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 54,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 55,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 56,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 57,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 58,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 59,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 60,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 61,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 62,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 63,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 64,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 65,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 66,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 67,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 68,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 69,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 70,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 71,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 72,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 73,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 74,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 75,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 76,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 77,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 78,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 79,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 80,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 81,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 82,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 83,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 84,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 85,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 86,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 87,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 88,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 89,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 90,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 91,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 92,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 93,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 94,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 95,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 96,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 97,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 98,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 99,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 100,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 101,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      },
+      {
+        "step": 102,
+        "requested": true,
+        "reasons": [
+          "fixed_interval"
+        ],
+        "steps_since_plan": 1,
+        "image_delta": null,
+        "gripper_delta": null,
+        "chunk_received": true,
+        "action_returned": true,
+        "chunk_length": 15,
+        "active_predictions": 15,
+        "used_predictions": 15
+      }
+    ]
+  },
+  "video": "rollout.gif",
+  "finished_at": "2026-10-14T05:17:56.622077+00:00",
+  "wall_time_scope": "reset + control + physics + camera rendering; excludes model load and GIF encoding",
+  "protocol_fingerprint": "e0be2a83756834f71898de3fbbd6adea4a9bb93d301c8180d0f535d2ba20677a"
+}

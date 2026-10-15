@@ -1,0 +1,1509 @@
+{
+  "status": "passed_quantized_forward",
+  "variant": "cpu_qwen_dynamic_int8_bf16_embedding_fp32_action",
+  "started_at": "2026-10-15T05:22:30.379515+00:00",
+  "script_sha256": "a9d92ea008b9b766e44719c15f341555764ebb55ba37ae2e0cf266b808561ccf",
+  "script_snapshot": "artifacts/frontier/vlajepa_int8_probe_20261015.source.py",
+  "base_script": {
+    "path": "scripts/probe_vlajepa.py",
+    "sha256": "502d4f5af68575f8cb7b8045dad3cd480f4a65309c9f1938af143f897a2ff33b",
+    "snapshot_path": "artifacts/frontier/vlajepa_int8_probe_20261015.base_source.py"
+  },
+  "inference_executed": true,
+  "forward_started": true,
+  "forward_calls": 1,
+  "scope": "one real LIBERO observation; changed numeric implementation, not parity or task success",
+  "lerobot_revision": "ae2b57f12223c8c5184fcd814eb63cd9ce7de203",
+  "policy_revision": "735d9f692981e286ade093b5046627eda876e5d0",
+  "platform": "win32",
+  "python": "3.12.14",
+  "threads": 2,
+  "timings": {
+    "imports_seconds": 26.93580170000496,
+    "meta_construction_seconds": 6.342076100001577,
+    "load_and_quantize_seconds": 101.35116749999725,
+    "preprocess_seconds": 0.016654799997922964,
+    "forward_seconds": 6.953655299999809,
+    "sections": {
+      "qwen_preprocessing": {
+        "calls": 1,
+        "seconds": 0.13199270000040997
+      },
+      "qwen_forward": {
+        "calls": 1,
+        "seconds": 5.6514476999946055
+      },
+      "flow_action_head": {
+        "calls": 1,
+        "seconds": 1.1485977999982424
+      }
+    }
+  },
+  "theoretical_parameter_payload_bytes": 3072709660,
+  "numeric_changes": [
+    "300 Qwen Linear INT8 weights; CPU kernel dynamically quantizes activations; external FP32",
+    "shared BF16 token embedding storage, lookup outputs cast FP32",
+    "other Qwen tensors FP32; official Qwen CPU BF16 autocast disabled",
+    "complete action head FP32, original four flow steps",
+    "training-only world-model omitted as in base probe"
+  ],
+  "guard": {
+    "min_free_gib_before_import_and_loading": 4.25,
+    "max_rss_gib": 5.0,
+    "min_runtime_free_gib": 0.5,
+    "reason": "separate 2.862-GiB theoretical quantized payload; original BF16 probe guards unchanged"
+  },
+  "preflight": {
+    "available_bytes": 5905793024,
+    "required_available_bytes": 4563402752.0
+  },
+  "manifest": {
+    "path": "models/vlajepa/manifest.json",
+    "sha256": "7d0b65927a53e284de607bb6502b1dc1145d8defc7c4f7f22d157e51c21cd700",
+    "files_verified": 664,
+    "checkpoint_complete": true,
+    "snapshot_path": "artifacts/frontier/vlajepa_int8_probe_20261015.inputs.json"
+  },
+  "dependencies": {
+    "versions": {
+      "torch": "2.7.1+cpu",
+      "torchvision": "0.22.1+cpu",
+      "transformers": "5.5.4",
+      "safetensors": "0.8.0",
+      "accelerate": "1.15.0",
+      "numpy": "2.2.6",
+      "psutil": "7.2.2",
+      "diffusers": "0.39.0",
+      "importlib_metadata": "8.7.1",
+      "filelock": "4.1.1",
+      "httpx": "0.28.1",
+      "huggingface-hub": "1.33.0",
+      "regex": "2026.9.29",
+      "requests": "2.34.2",
+      "Pillow": "12.3.0",
+      "zipp": "4.1.1"
+    },
+    "failures": []
+  },
+  "construction": {
+    "constructor_changes": [
+      "Qwen3VLForConditionalGeneration.from_pretrained -> same class._from_config"
+    ],
+    "world_model_enabled": false,
+    "reason": "training-only modules never called by official predict_action",
+    "buffers": [
+      {
+        "name": "model._action_token_ids_t",
+        "shape": [
+          28
+        ],
+        "dtype": "torch.int64",
+        "rule": "official expanded tokenizer action-token IDs"
+      },
+      {
+        "name": "model.qwen.model.model.visual.rotary_pos_emb.inv_freq",
+        "shape": [
+          16
+        ],
+        "dtype": "torch.float32",
+        "rule": "official vision rotary constructor formula"
+      },
+      {
+        "name": "model.qwen.model.model.language_model.rotary_emb.original_inv_freq",
+        "shape": [
+          64
+        ],
+        "dtype": "torch.float32",
+        "rule": "official text rotary constructor formula"
+      },
+      {
+        "name": "model.qwen.model.model.language_model.rotary_emb.inv_freq",
+        "shape": [
+          64
+        ],
+        "dtype": "torch.float32",
+        "rule": "official text rotary constructor formula"
+      }
+    ]
+  },
+  "schema": {
+    "path": "artifacts/frontier/vlajepa_int8_probe_20261015.schema.json",
+    "sha256": "28a1ec487f2181fdccc4b269a35fed5b9521c5bc0702b18ab5bb500afd37fd7c",
+    "active_elements": 2593879303,
+    "skipped_elements": 487618944
+  },
+  "pre_materialization": {
+    "available_bytes": 6277275648,
+    "required_available_bytes": 4563402752.0
+  },
+  "loading": {
+    "all_required_inference_keys_consumed": true,
+    "all_source_tensors_finite": true,
+    "native_tied_word_embeddings": true,
+    "linear_modules": 300,
+    "linear_elements": 1811939328,
+    "linear_bias_elements": 245760,
+    "theoretical_parameter_payload_bytes": 3072709660,
+    "payload_excludes": [
+      "packed-kernel metadata/alignment",
+      "runtime/activations",
+      "temporary conversion buffers"
+    ],
+    "largest_linear_fp32_weight_bytes": 67108864,
+    "quantized_engine": "x86",
+    "supported_engines": [
+      "none",
+      "onednn",
+      "x86",
+      "fbgemm"
+    ],
+    "buffers": [
+      {
+        "name": "model._action_token_ids_t",
+        "shape": [
+          28
+        ],
+        "dtype": "torch.int64",
+        "rule": "official expanded tokenizer action-token IDs"
+      },
+      {
+        "name": "model.qwen.model.model.visual.rotary_pos_emb.inv_freq",
+        "shape": [
+          16
+        ],
+        "dtype": "torch.float32",
+        "rule": "official vision rotary constructor formula"
+      },
+      {
+        "name": "model.qwen.model.model.language_model.rotary_emb.original_inv_freq",
+        "shape": [
+          64
+        ],
+        "dtype": "torch.float32",
+        "rule": "official text rotary constructor formula"
+      },
+      {
+        "name": "model.qwen.model.model.language_model.rotary_emb.inv_freq",
+        "shape": [
+          64
+        ],
+        "dtype": "torch.float32",
+        "rule": "official text rotary constructor formula"
+      }
+    ],
+    "path": "artifacts/frontier/vlajepa_int8_probe_20261015.loading.json",
+    "sha256": "8a5501f23e0c1a40f0120df8df8701547d16c0f1d1567f668e5ea54844b3f12d"
+  },
+  "rss_after_load_bytes": 3696209920,
+  "attention_implementation": {
+    "text": "sdpa",
+    "vision": "sdpa"
+  },
+  "observation": {
+    "path": "artifacts/policy_smoke_observation.npz",
+    "sha256": "114121b20b8103cfcdcf4906ac1938e6fc13ab1da9f45801bef586557687a0aa",
+    "task": "pick up the black bowl between the plate and the ramekin and place it on the plate",
+    "camera_orientation": "already prepared by official LIBERO adapter; no additional flip"
+  },
+  "forward_started_at": "2026-10-15T05:25:38.903521+00:00",
+  "forward_returned_at": "2026-10-15T05:25:45.860939+00:00",
+  "quantized_forward_audit": {
+    "module_calls": {
+      "model.qwen.model.model.visual.blocks.0.attn.qkv": 1,
+      "model.qwen.model.model.visual.blocks.0.attn.proj": 1,
+      "model.qwen.model.model.visual.blocks.0.mlp.linear_fc1": 1,
+      "model.qwen.model.model.visual.blocks.0.mlp.linear_fc2": 1,
+      "model.qwen.model.model.visual.blocks.1.attn.qkv": 1,
+      "model.qwen.model.model.visual.blocks.1.attn.proj": 1,
+      "model.qwen.model.model.visual.blocks.1.mlp.linear_fc1": 1,
+      "model.qwen.model.model.visual.blocks.1.mlp.linear_fc2": 1,
+      "model.qwen.model.model.visual.blocks.2.attn.qkv": 1,
+      "model.qwen.model.model.visual.blocks.2.attn.proj": 1,
+      "model.qwen.model.model.visual.blocks.2.mlp.linear_fc1": 1,
+      "model.qwen.model.model.visual.blocks.2.mlp.linear_fc2": 1,
+      "model.qwen.model.model.visual.blocks.3.attn.qkv": 1,
+      "model.qwen.model.model.visual.blocks.3.attn.proj": 1,
+      "model.qwen.model.model.visual.blocks.3.mlp.linear_fc1": 1,
+      "model.qwen.model.model.visual.blocks.3.mlp.linear_fc2": 1,
+      "model.qwen.model.model.visual.blocks.4.attn.qkv": 1,
+      "model.qwen.model.model.visual.blocks.4.attn.proj": 1,
+      "model.qwen.model.model.visual.blocks.4.mlp.linear_fc1": 1,
+      "model.qwen.model.model.visual.blocks.4.mlp.linear_fc2": 1,
+      "model.qwen.model.model.visual.blocks.5.attn.qkv": 1,
+      "model.qwen.model.model.visual.blocks.5.attn.proj": 1,
+      "model.qwen.model.model.visual.blocks.5.mlp.linear_fc1": 1,
+      "model.qwen.model.model.visual.blocks.5.mlp.linear_fc2": 1,
+      "model.qwen.model.model.visual.deepstack_merger_list.0.linear_fc1": 1,
+      "model.qwen.model.model.visual.deepstack_merger_list.0.linear_fc2": 1,
+      "model.qwen.model.model.visual.blocks.6.attn.qkv": 1,
+      "model.qwen.model.model.visual.blocks.6.attn.proj": 1,
+      "model.qwen.model.model.visual.blocks.6.mlp.linear_fc1": 1,
+      "model.qwen.model.model.visual.blocks.6.mlp.linear_fc2": 1,
+      "model.qwen.model.model.visual.blocks.7.attn.qkv": 1,
+      "model.qwen.model.model.visual.blocks.7.attn.proj": 1,
+      "model.qwen.model.model.visual.blocks.7.mlp.linear_fc1": 1,
+      "model.qwen.model.model.visual.blocks.7.mlp.linear_fc2": 1,
+      "model.qwen.model.model.visual.blocks.8.attn.qkv": 1,
+      "model.qwen.model.model.visual.blocks.8.attn.proj": 1,
+      "model.qwen.model.model.visual.blocks.8.mlp.linear_fc1": 1,
+      "model.qwen.model.model.visual.blocks.8.mlp.linear_fc2": 1,
+      "model.qwen.model.model.visual.blocks.9.attn.qkv": 1,
+      "model.qwen.model.model.visual.blocks.9.attn.proj": 1,
+      "model.qwen.model.model.visual.blocks.9.mlp.linear_fc1": 1,
+      "model.qwen.model.model.visual.blocks.9.mlp.linear_fc2": 1,
+      "model.qwen.model.model.visual.blocks.10.attn.qkv": 1,
+      "model.qwen.model.model.visual.blocks.10.attn.proj": 1,
+      "model.qwen.model.model.visual.blocks.10.mlp.linear_fc1": 1,
+      "model.qwen.model.model.visual.blocks.10.mlp.linear_fc2": 1,
+      "model.qwen.model.model.visual.blocks.11.attn.qkv": 1,
+      "model.qwen.model.model.visual.blocks.11.attn.proj": 1,
+      "model.qwen.model.model.visual.blocks.11.mlp.linear_fc1": 1,
+      "model.qwen.model.model.visual.blocks.11.mlp.linear_fc2": 1,
+      "model.qwen.model.model.visual.deepstack_merger_list.1.linear_fc1": 1,
+      "model.qwen.model.model.visual.deepstack_merger_list.1.linear_fc2": 1,
+      "model.qwen.model.model.visual.blocks.12.attn.qkv": 1,
+      "model.qwen.model.model.visual.blocks.12.attn.proj": 1,
+      "model.qwen.model.model.visual.blocks.12.mlp.linear_fc1": 1,
+      "model.qwen.model.model.visual.blocks.12.mlp.linear_fc2": 1,
+      "model.qwen.model.model.visual.blocks.13.attn.qkv": 1,
+      "model.qwen.model.model.visual.blocks.13.attn.proj": 1,
+      "model.qwen.model.model.visual.blocks.13.mlp.linear_fc1": 1,
+      "model.qwen.model.model.visual.blocks.13.mlp.linear_fc2": 1,
+      "model.qwen.model.model.visual.blocks.14.attn.qkv": 1,
+      "model.qwen.model.model.visual.blocks.14.attn.proj": 1,
+      "model.qwen.model.model.visual.blocks.14.mlp.linear_fc1": 1,
+      "model.qwen.model.model.visual.blocks.14.mlp.linear_fc2": 1,
+      "model.qwen.model.model.visual.blocks.15.attn.qkv": 1,
+      "model.qwen.model.model.visual.blocks.15.attn.proj": 1,
+      "model.qwen.model.model.visual.blocks.15.mlp.linear_fc1": 1,
+      "model.qwen.model.model.visual.blocks.15.mlp.linear_fc2": 1,
+      "model.qwen.model.model.visual.blocks.16.attn.qkv": 1,
+      "model.qwen.model.model.visual.blocks.16.attn.proj": 1,
+      "model.qwen.model.model.visual.blocks.16.mlp.linear_fc1": 1,
+      "model.qwen.model.model.visual.blocks.16.mlp.linear_fc2": 1,
+      "model.qwen.model.model.visual.blocks.17.attn.qkv": 1,
+      "model.qwen.model.model.visual.blocks.17.attn.proj": 1,
+      "model.qwen.model.model.visual.blocks.17.mlp.linear_fc1": 1,
+      "model.qwen.model.model.visual.blocks.17.mlp.linear_fc2": 1,
+      "model.qwen.model.model.visual.deepstack_merger_list.2.linear_fc1": 1,
+      "model.qwen.model.model.visual.deepstack_merger_list.2.linear_fc2": 1,
+      "model.qwen.model.model.visual.blocks.18.attn.qkv": 1,
+      "model.qwen.model.model.visual.blocks.18.attn.proj": 1,
+      "model.qwen.model.model.visual.blocks.18.mlp.linear_fc1": 1,
+      "model.qwen.model.model.visual.blocks.18.mlp.linear_fc2": 1,
+      "model.qwen.model.model.visual.blocks.19.attn.qkv": 1,
+      "model.qwen.model.model.visual.blocks.19.attn.proj": 1,
+      "model.qwen.model.model.visual.blocks.19.mlp.linear_fc1": 1,
+      "model.qwen.model.model.visual.blocks.19.mlp.linear_fc2": 1,
+      "model.qwen.model.model.visual.blocks.20.attn.qkv": 1,
+      "model.qwen.model.model.visual.blocks.20.attn.proj": 1,
+      "model.qwen.model.model.visual.blocks.20.mlp.linear_fc1": 1,
+      "model.qwen.model.model.visual.blocks.20.mlp.linear_fc2": 1,
+      "model.qwen.model.model.visual.blocks.21.attn.qkv": 1,
+      "model.qwen.model.model.visual.blocks.21.attn.proj": 1,
+      "model.qwen.model.model.visual.blocks.21.mlp.linear_fc1": 1,
+      "model.qwen.model.model.visual.blocks.21.mlp.linear_fc2": 1,
+      "model.qwen.model.model.visual.blocks.22.attn.qkv": 1,
+      "model.qwen.model.model.visual.blocks.22.attn.proj": 1,
+      "model.qwen.model.model.visual.blocks.22.mlp.linear_fc1": 1,
+      "model.qwen.model.model.visual.blocks.22.mlp.linear_fc2": 1,
+      "model.qwen.model.model.visual.blocks.23.attn.qkv": 1,
+      "model.qwen.model.model.visual.blocks.23.attn.proj": 1,
+      "model.qwen.model.model.visual.blocks.23.mlp.linear_fc1": 1,
+      "model.qwen.model.model.visual.blocks.23.mlp.linear_fc2": 1,
+      "model.qwen.model.model.visual.merger.linear_fc1": 1,
+      "model.qwen.model.model.visual.merger.linear_fc2": 1,
+      "model.qwen.model.model.language_model.layers.0.self_attn.q_proj": 1,
+      "model.qwen.model.model.language_model.layers.0.self_attn.k_proj": 1,
+      "model.qwen.model.model.language_model.layers.0.self_attn.v_proj": 1,
+      "model.qwen.model.model.language_model.layers.0.self_attn.o_proj": 1,
+      "model.qwen.model.model.language_model.layers.0.mlp.gate_proj": 1,
+      "model.qwen.model.model.language_model.layers.0.mlp.up_proj": 1,
+      "model.qwen.model.model.language_model.layers.0.mlp.down_proj": 1,
+      "model.qwen.model.model.language_model.layers.1.self_attn.q_proj": 1,
+      "model.qwen.model.model.language_model.layers.1.self_attn.k_proj": 1,
+      "model.qwen.model.model.language_model.layers.1.self_attn.v_proj": 1,
+      "model.qwen.model.model.language_model.layers.1.self_attn.o_proj": 1,
+      "model.qwen.model.model.language_model.layers.1.mlp.gate_proj": 1,
+      "model.qwen.model.model.language_model.layers.1.mlp.up_proj": 1,
+      "model.qwen.model.model.language_model.layers.1.mlp.down_proj": 1,
+      "model.qwen.model.model.language_model.layers.2.self_attn.q_proj": 1,
+      "model.qwen.model.model.language_model.layers.2.self_attn.k_proj": 1,
+      "model.qwen.model.model.language_model.layers.2.self_attn.v_proj": 1,
+      "model.qwen.model.model.language_model.layers.2.self_attn.o_proj": 1,
+      "model.qwen.model.model.language_model.layers.2.mlp.gate_proj": 1,
+      "model.qwen.model.model.language_model.layers.2.mlp.up_proj": 1,
+      "model.qwen.model.model.language_model.layers.2.mlp.down_proj": 1,
+      "model.qwen.model.model.language_model.layers.3.self_attn.q_proj": 1,
+      "model.qwen.model.model.language_model.layers.3.self_attn.k_proj": 1,
+      "model.qwen.model.model.language_model.layers.3.self_attn.v_proj": 1,
+      "model.qwen.model.model.language_model.layers.3.self_attn.o_proj": 1,
+      "model.qwen.model.model.language_model.layers.3.mlp.gate_proj": 1,
+      "model.qwen.model.model.language_model.layers.3.mlp.up_proj": 1,
+      "model.qwen.model.model.language_model.layers.3.mlp.down_proj": 1,
+      "model.qwen.model.model.language_model.layers.4.self_attn.q_proj": 1,
+      "model.qwen.model.model.language_model.layers.4.self_attn.k_proj": 1,
+      "model.qwen.model.model.language_model.layers.4.self_attn.v_proj": 1,
+      "model.qwen.model.model.language_model.layers.4.self_attn.o_proj": 1,
+      "model.qwen.model.model.language_model.layers.4.mlp.gate_proj": 1,
+      "model.qwen.model.model.language_model.layers.4.mlp.up_proj": 1,
+      "model.qwen.model.model.language_model.layers.4.mlp.down_proj": 1,
+      "model.qwen.model.model.language_model.layers.5.self_attn.q_proj": 1,
+      "model.qwen.model.model.language_model.layers.5.self_attn.k_proj": 1,
+      "model.qwen.model.model.language_model.layers.5.self_attn.v_proj": 1,
+      "model.qwen.model.model.language_model.layers.5.self_attn.o_proj": 1,
+      "model.qwen.model.model.language_model.layers.5.mlp.gate_proj": 1,
+      "model.qwen.model.model.language_model.layers.5.mlp.up_proj": 1,
+      "model.qwen.model.model.language_model.layers.5.mlp.down_proj": 1,
+      "model.qwen.model.model.language_model.layers.6.self_attn.q_proj": 1,
+      "model.qwen.model.model.language_model.layers.6.self_attn.k_proj": 1,
+      "model.qwen.model.model.language_model.layers.6.self_attn.v_proj": 1,
+      "model.qwen.model.model.language_model.layers.6.self_attn.o_proj": 1,
+      "model.qwen.model.model.language_model.layers.6.mlp.gate_proj": 1,
+      "model.qwen.model.model.language_model.layers.6.mlp.up_proj": 1,
+      "model.qwen.model.model.language_model.layers.6.mlp.down_proj": 1,
+      "model.qwen.model.model.language_model.layers.7.self_attn.q_proj": 1,
+      "model.qwen.model.model.language_model.layers.7.self_attn.k_proj": 1,
+      "model.qwen.model.model.language_model.layers.7.self_attn.v_proj": 1,
+      "model.qwen.model.model.language_model.layers.7.self_attn.o_proj": 1,
+      "model.qwen.model.model.language_model.layers.7.mlp.gate_proj": 1,
+      "model.qwen.model.model.language_model.layers.7.mlp.up_proj": 1,
+      "model.qwen.model.model.language_model.layers.7.mlp.down_proj": 1,
+      "model.qwen.model.model.language_model.layers.8.self_attn.q_proj": 1,
+      "model.qwen.model.model.language_model.layers.8.self_attn.k_proj": 1,
+      "model.qwen.model.model.language_model.layers.8.self_attn.v_proj": 1,
+      "model.qwen.model.model.language_model.layers.8.self_attn.o_proj": 1,
+      "model.qwen.model.model.language_model.layers.8.mlp.gate_proj": 1,
+      "model.qwen.model.model.language_model.layers.8.mlp.up_proj": 1,
+      "model.qwen.model.model.language_model.layers.8.mlp.down_proj": 1,
+      "model.qwen.model.model.language_model.layers.9.self_attn.q_proj": 1,
+      "model.qwen.model.model.language_model.layers.9.self_attn.k_proj": 1,
+      "model.qwen.model.model.language_model.layers.9.self_attn.v_proj": 1,
+      "model.qwen.model.model.language_model.layers.9.self_attn.o_proj": 1,
+      "model.qwen.model.model.language_model.layers.9.mlp.gate_proj": 1,
+      "model.qwen.model.model.language_model.layers.9.mlp.up_proj": 1,
+      "model.qwen.model.model.language_model.layers.9.mlp.down_proj": 1,
+      "model.qwen.model.model.language_model.layers.10.self_attn.q_proj": 1,
+      "model.qwen.model.model.language_model.layers.10.self_attn.k_proj": 1,
+      "model.qwen.model.model.language_model.layers.10.self_attn.v_proj": 1,
+      "model.qwen.model.model.language_model.layers.10.self_attn.o_proj": 1,
+      "model.qwen.model.model.language_model.layers.10.mlp.gate_proj": 1,
+      "model.qwen.model.model.language_model.layers.10.mlp.up_proj": 1,
+      "model.qwen.model.model.language_model.layers.10.mlp.down_proj": 1,
+      "model.qwen.model.model.language_model.layers.11.self_attn.q_proj": 1,
+      "model.qwen.model.model.language_model.layers.11.self_attn.k_proj": 1,
+      "model.qwen.model.model.language_model.layers.11.self_attn.v_proj": 1,
+      "model.qwen.model.model.language_model.layers.11.self_attn.o_proj": 1,
+      "model.qwen.model.model.language_model.layers.11.mlp.gate_proj": 1,
+      "model.qwen.model.model.language_model.layers.11.mlp.up_proj": 1,
+      "model.qwen.model.model.language_model.layers.11.mlp.down_proj": 1,
+      "model.qwen.model.model.language_model.layers.12.self_attn.q_proj": 1,
+      "model.qwen.model.model.language_model.layers.12.self_attn.k_proj": 1,
+      "model.qwen.model.model.language_model.layers.12.self_attn.v_proj": 1,
+      "model.qwen.model.model.language_model.layers.12.self_attn.o_proj": 1,
+      "model.qwen.model.model.language_model.layers.12.mlp.gate_proj": 1,
+      "model.qwen.model.model.language_model.layers.12.mlp.up_proj": 1,
+      "model.qwen.model.model.language_model.layers.12.mlp.down_proj": 1,
+      "model.qwen.model.model.language_model.layers.13.self_attn.q_proj": 1,
+      "model.qwen.model.model.language_model.layers.13.self_attn.k_proj": 1,
+      "model.qwen.model.model.language_model.layers.13.self_attn.v_proj": 1,
+      "model.qwen.model.model.language_model.layers.13.self_attn.o_proj": 1,
+      "model.qwen.model.model.language_model.layers.13.mlp.gate_proj": 1,
+      "model.qwen.model.model.language_model.layers.13.mlp.up_proj": 1,
+      "model.qwen.model.model.language_model.layers.13.mlp.down_proj": 1,
+      "model.qwen.model.model.language_model.layers.14.self_attn.q_proj": 1,
+      "model.qwen.model.model.language_model.layers.14.self_attn.k_proj": 1,
+      "model.qwen.model.model.language_model.layers.14.self_attn.v_proj": 1,
+      "model.qwen.model.model.language_model.layers.14.self_attn.o_proj": 1,
+      "model.qwen.model.model.language_model.layers.14.mlp.gate_proj": 1,
+      "model.qwen.model.model.language_model.layers.14.mlp.up_proj": 1,
+      "model.qwen.model.model.language_model.layers.14.mlp.down_proj": 1,
+      "model.qwen.model.model.language_model.layers.15.self_attn.q_proj": 1,
+      "model.qwen.model.model.language_model.layers.15.self_attn.k_proj": 1,
+      "model.qwen.model.model.language_model.layers.15.self_attn.v_proj": 1,
+      "model.qwen.model.model.language_model.layers.15.self_attn.o_proj": 1,
+      "model.qwen.model.model.language_model.layers.15.mlp.gate_proj": 1,
+      "model.qwen.model.model.language_model.layers.15.mlp.up_proj": 1,
+      "model.qwen.model.model.language_model.layers.15.mlp.down_proj": 1,
+      "model.qwen.model.model.language_model.layers.16.self_attn.q_proj": 1,
+      "model.qwen.model.model.language_model.layers.16.self_attn.k_proj": 1,
+      "model.qwen.model.model.language_model.layers.16.self_attn.v_proj": 1,
+      "model.qwen.model.model.language_model.layers.16.self_attn.o_proj": 1,
+      "model.qwen.model.model.language_model.layers.16.mlp.gate_proj": 1,
+      "model.qwen.model.model.language_model.layers.16.mlp.up_proj": 1,
+      "model.qwen.model.model.language_model.layers.16.mlp.down_proj": 1,
+      "model.qwen.model.model.language_model.layers.17.self_attn.q_proj": 1,
+      "model.qwen.model.model.language_model.layers.17.self_attn.k_proj": 1,
+      "model.qwen.model.model.language_model.layers.17.self_attn.v_proj": 1,
+      "model.qwen.model.model.language_model.layers.17.self_attn.o_proj": 1,
+      "model.qwen.model.model.language_model.layers.17.mlp.gate_proj": 1,
+      "model.qwen.model.model.language_model.layers.17.mlp.up_proj": 1,
+      "model.qwen.model.model.language_model.layers.17.mlp.down_proj": 1,
+      "model.qwen.model.model.language_model.layers.18.self_attn.q_proj": 1,
+      "model.qwen.model.model.language_model.layers.18.self_attn.k_proj": 1,
+      "model.qwen.model.model.language_model.layers.18.self_attn.v_proj": 1,
+      "model.qwen.model.model.language_model.layers.18.self_attn.o_proj": 1,
+      "model.qwen.model.model.language_model.layers.18.mlp.gate_proj": 1,
+      "model.qwen.model.model.language_model.layers.18.mlp.up_proj": 1,
+      "model.qwen.model.model.language_model.layers.18.mlp.down_proj": 1,
+      "model.qwen.model.model.language_model.layers.19.self_attn.q_proj": 1,
+      "model.qwen.model.model.language_model.layers.19.self_attn.k_proj": 1,
+      "model.qwen.model.model.language_model.layers.19.self_attn.v_proj": 1,
+      "model.qwen.model.model.language_model.layers.19.self_attn.o_proj": 1,
+      "model.qwen.model.model.language_model.layers.19.mlp.gate_proj": 1,
+      "model.qwen.model.model.language_model.layers.19.mlp.up_proj": 1,
+      "model.qwen.model.model.language_model.layers.19.mlp.down_proj": 1,
+      "model.qwen.model.model.language_model.layers.20.self_attn.q_proj": 1,
+      "model.qwen.model.model.language_model.layers.20.self_attn.k_proj": 1,
+      "model.qwen.model.model.language_model.layers.20.self_attn.v_proj": 1,
+      "model.qwen.model.model.language_model.layers.20.self_attn.o_proj": 1,
+      "model.qwen.model.model.language_model.layers.20.mlp.gate_proj": 1,
+      "model.qwen.model.model.language_model.layers.20.mlp.up_proj": 1,
+      "model.qwen.model.model.language_model.layers.20.mlp.down_proj": 1,
+      "model.qwen.model.model.language_model.layers.21.self_attn.q_proj": 1,
+      "model.qwen.model.model.language_model.layers.21.self_attn.k_proj": 1,
+      "model.qwen.model.model.language_model.layers.21.self_attn.v_proj": 1,
+      "model.qwen.model.model.language_model.layers.21.self_attn.o_proj": 1,
+      "model.qwen.model.model.language_model.layers.21.mlp.gate_proj": 1,
+      "model.qwen.model.model.language_model.layers.21.mlp.up_proj": 1,
+      "model.qwen.model.model.language_model.layers.21.mlp.down_proj": 1,
+      "model.qwen.model.model.language_model.layers.22.self_attn.q_proj": 1,
+      "model.qwen.model.model.language_model.layers.22.self_attn.k_proj": 1,
+      "model.qwen.model.model.language_model.layers.22.self_attn.v_proj": 1,
+      "model.qwen.model.model.language_model.layers.22.self_attn.o_proj": 1,
+      "model.qwen.model.model.language_model.layers.22.mlp.gate_proj": 1,
+      "model.qwen.model.model.language_model.layers.22.mlp.up_proj": 1,
+      "model.qwen.model.model.language_model.layers.22.mlp.down_proj": 1,
+      "model.qwen.model.model.language_model.layers.23.self_attn.q_proj": 1,
+      "model.qwen.model.model.language_model.layers.23.self_attn.k_proj": 1,
+      "model.qwen.model.model.language_model.layers.23.self_attn.v_proj": 1,
+      "model.qwen.model.model.language_model.layers.23.self_attn.o_proj": 1,
+      "model.qwen.model.model.language_model.layers.23.mlp.gate_proj": 1,
+      "model.qwen.model.model.language_model.layers.23.mlp.up_proj": 1,
+      "model.qwen.model.model.language_model.layers.23.mlp.down_proj": 1,
+      "model.qwen.model.model.language_model.layers.24.self_attn.q_proj": 1,
+      "model.qwen.model.model.language_model.layers.24.self_attn.k_proj": 1,
+      "model.qwen.model.model.language_model.layers.24.self_attn.v_proj": 1,
+      "model.qwen.model.model.language_model.layers.24.self_attn.o_proj": 1,
+      "model.qwen.model.model.language_model.layers.24.mlp.gate_proj": 1,
+      "model.qwen.model.model.language_model.layers.24.mlp.up_proj": 1,
+      "model.qwen.model.model.language_model.layers.24.mlp.down_proj": 1,
+      "model.qwen.model.model.language_model.layers.25.self_attn.q_proj": 1,
+      "model.qwen.model.model.language_model.layers.25.self_attn.k_proj": 1,
+      "model.qwen.model.model.language_model.layers.25.self_attn.v_proj": 1,
+      "model.qwen.model.model.language_model.layers.25.self_attn.o_proj": 1,
+      "model.qwen.model.model.language_model.layers.25.mlp.gate_proj": 1,
+      "model.qwen.model.model.language_model.layers.25.mlp.up_proj": 1,
+      "model.qwen.model.model.language_model.layers.25.mlp.down_proj": 1,
+      "model.qwen.model.model.language_model.layers.26.self_attn.q_proj": 1,
+      "model.qwen.model.model.language_model.layers.26.self_attn.k_proj": 1,
+      "model.qwen.model.model.language_model.layers.26.self_attn.v_proj": 1,
+      "model.qwen.model.model.language_model.layers.26.self_attn.o_proj": 1,
+      "model.qwen.model.model.language_model.layers.26.mlp.gate_proj": 1,
+      "model.qwen.model.model.language_model.layers.26.mlp.up_proj": 1,
+      "model.qwen.model.model.language_model.layers.26.mlp.down_proj": 1,
+      "model.qwen.model.model.language_model.layers.27.self_attn.q_proj": 1,
+      "model.qwen.model.model.language_model.layers.27.self_attn.k_proj": 1,
+      "model.qwen.model.model.language_model.layers.27.self_attn.v_proj": 1,
+      "model.qwen.model.model.language_model.layers.27.self_attn.o_proj": 1,
+      "model.qwen.model.model.language_model.layers.27.mlp.gate_proj": 1,
+      "model.qwen.model.model.language_model.layers.27.mlp.up_proj": 1,
+      "model.qwen.model.model.language_model.layers.27.mlp.down_proj": 1
+    },
+    "all_observed_inputs": "CPU float32",
+    "distinct_modules_executed": 300
+  },
+  "flow_steps": 4,
+  "batch_size": 1,
+  "actions": {
+    "path": "artifacts/frontier/vlajepa_int8_probe_20261015.actions.npz",
+    "sha256": "d6556d8a6fdf1c26245a25e8f7404bb121743f171f5d7b0eddbbf0f981595e15",
+    "shape": [
+      1,
+      7,
+      7
+    ],
+    "first_environment_action": [
+      0.0937643051147461,
+      0.11054706573486328,
+      0.037219345569610596,
+      -0.0013522207736968994,
+      -0.0005820691585540771,
+      0.007858067750930786,
+      -1.0
+    ]
+  },
+  "memory": {
+    "peak_rss_bytes": 3781103616,
+    "minimum_available_bytes": 2679341056,
+    "sampling_seconds": 1.0,
+    "samples": [
+      {
+        "utc": "2026-10-15T05:22:31.416819+00:00",
+        "rss_bytes": 35069952,
+        "available_bytes": 5883613184
+      },
+      {
+        "utc": "2026-10-15T05:22:32.431353+00:00",
+        "rss_bytes": 35074048,
+        "available_bytes": 6010916864
+      },
+      {
+        "utc": "2026-10-15T05:22:33.445033+00:00",
+        "rss_bytes": 35074048,
+        "available_bytes": 5875232768
+      },
+      {
+        "utc": "2026-10-15T05:22:34.454297+00:00",
+        "rss_bytes": 35074048,
+        "available_bytes": 5860130816
+      },
+      {
+        "utc": "2026-10-15T05:22:35.466735+00:00",
+        "rss_bytes": 35074048,
+        "available_bytes": 6147371008
+      },
+      {
+        "utc": "2026-10-15T05:22:36.474287+00:00",
+        "rss_bytes": 35074048,
+        "available_bytes": 6217650176
+      },
+      {
+        "utc": "2026-10-15T05:22:37.490628+00:00",
+        "rss_bytes": 35074048,
+        "available_bytes": 6088634368
+      },
+      {
+        "utc": "2026-10-15T05:22:38.500109+00:00",
+        "rss_bytes": 35074048,
+        "available_bytes": 6097063936
+      },
+      {
+        "utc": "2026-10-15T05:22:39.508841+00:00",
+        "rss_bytes": 39292928,
+        "available_bytes": 6120513536
+      },
+      {
+        "utc": "2026-10-15T05:22:40.513865+00:00",
+        "rss_bytes": 35074048,
+        "available_bytes": 6121033728
+      },
+      {
+        "utc": "2026-10-15T05:22:41.518377+00:00",
+        "rss_bytes": 35074048,
+        "available_bytes": 6111920128
+      },
+      {
+        "utc": "2026-10-15T05:22:42.533947+00:00",
+        "rss_bytes": 35074048,
+        "available_bytes": 6058049536
+      },
+      {
+        "utc": "2026-10-15T05:22:43.539391+00:00",
+        "rss_bytes": 35074048,
+        "available_bytes": 6529843200
+      },
+      {
+        "utc": "2026-10-15T05:22:44.540156+00:00",
+        "rss_bytes": 35074048,
+        "available_bytes": 6366126080
+      },
+      {
+        "utc": "2026-10-15T05:22:45.545175+00:00",
+        "rss_bytes": 35078144,
+        "available_bytes": 6402281472
+      },
+      {
+        "utc": "2026-10-15T05:22:46.593394+00:00",
+        "rss_bytes": 43474944,
+        "available_bytes": 6355898368
+      },
+      {
+        "utc": "2026-10-15T05:22:47.597604+00:00",
+        "rss_bytes": 42823680,
+        "available_bytes": 6399619072
+      },
+      {
+        "utc": "2026-10-15T05:22:48.602574+00:00",
+        "rss_bytes": 39276544,
+        "available_bytes": 6577229824
+      },
+      {
+        "utc": "2026-10-15T05:22:49.621631+00:00",
+        "rss_bytes": 42598400,
+        "available_bytes": 6334693376
+      },
+      {
+        "utc": "2026-10-15T05:22:50.629435+00:00",
+        "rss_bytes": 39276544,
+        "available_bytes": 6328270848
+      },
+      {
+        "utc": "2026-10-15T05:22:51.634636+00:00",
+        "rss_bytes": 39276544,
+        "available_bytes": 6532263936
+      },
+      {
+        "utc": "2026-10-15T05:22:52.639785+00:00",
+        "rss_bytes": 43479040,
+        "available_bytes": 6428794880
+      },
+      {
+        "utc": "2026-10-15T05:22:53.644992+00:00",
+        "rss_bytes": 39280640,
+        "available_bytes": 6415613952
+      },
+      {
+        "utc": "2026-10-15T05:22:54.650908+00:00",
+        "rss_bytes": 42455040,
+        "available_bytes": 6364405760
+      },
+      {
+        "utc": "2026-10-15T05:22:55.661175+00:00",
+        "rss_bytes": 39284736,
+        "available_bytes": 6411173888
+      },
+      {
+        "utc": "2026-10-15T05:22:56.665063+00:00",
+        "rss_bytes": 39284736,
+        "available_bytes": 6493544448
+      },
+      {
+        "utc": "2026-10-15T05:22:57.672851+00:00",
+        "rss_bytes": 43483136,
+        "available_bytes": 6426718208
+      },
+      {
+        "utc": "2026-10-15T05:22:58.679170+00:00",
+        "rss_bytes": 39284736,
+        "available_bytes": 6419734528
+      },
+      {
+        "utc": "2026-10-15T05:22:59.691486+00:00",
+        "rss_bytes": 40099840,
+        "available_bytes": 6508580864
+      },
+      {
+        "utc": "2026-10-15T05:23:00.698101+00:00",
+        "rss_bytes": 39333888,
+        "available_bytes": 6542868480
+      },
+      {
+        "utc": "2026-10-15T05:23:01.699042+00:00",
+        "rss_bytes": 35819520,
+        "available_bytes": 6647869440
+      },
+      {
+        "utc": "2026-10-15T05:23:02.699384+00:00",
+        "rss_bytes": 36208640,
+        "available_bytes": 6586249216
+      },
+      {
+        "utc": "2026-10-15T05:23:03.714837+00:00",
+        "rss_bytes": 37224448,
+        "available_bytes": 6619738112
+      },
+      {
+        "utc": "2026-10-15T05:23:04.719502+00:00",
+        "rss_bytes": 36208640,
+        "available_bytes": 6528249856
+      },
+      {
+        "utc": "2026-10-15T05:23:05.721544+00:00",
+        "rss_bytes": 36687872,
+        "available_bytes": 6535729152
+      },
+      {
+        "utc": "2026-10-15T05:23:06.732460+00:00",
+        "rss_bytes": 36208640,
+        "available_bytes": 6570676224
+      },
+      {
+        "utc": "2026-10-15T05:23:07.742049+00:00",
+        "rss_bytes": 36212736,
+        "available_bytes": 6692458496
+      },
+      {
+        "utc": "2026-10-15T05:23:08.753249+00:00",
+        "rss_bytes": 36212736,
+        "available_bytes": 6589079552
+      },
+      {
+        "utc": "2026-10-15T05:23:09.764691+00:00",
+        "rss_bytes": 36212736,
+        "available_bytes": 6589939712
+      },
+      {
+        "utc": "2026-10-15T05:23:10.779935+00:00",
+        "rss_bytes": 36212736,
+        "available_bytes": 6545100800
+      },
+      {
+        "utc": "2026-10-15T05:23:11.788720+00:00",
+        "rss_bytes": 36212736,
+        "available_bytes": 6530699264
+      },
+      {
+        "utc": "2026-10-15T05:23:12.798874+00:00",
+        "rss_bytes": 36220928,
+        "available_bytes": 6520381440
+      },
+      {
+        "utc": "2026-10-15T05:23:13.807193+00:00",
+        "rss_bytes": 36220928,
+        "available_bytes": 6547333120
+      },
+      {
+        "utc": "2026-10-15T05:23:14.822262+00:00",
+        "rss_bytes": 36220928,
+        "available_bytes": 6551199744
+      },
+      {
+        "utc": "2026-10-15T05:23:15.834841+00:00",
+        "rss_bytes": 36220928,
+        "available_bytes": 6642520064
+      },
+      {
+        "utc": "2026-10-15T05:23:16.844548+00:00",
+        "rss_bytes": 38342656,
+        "available_bytes": 6710726656
+      },
+      {
+        "utc": "2026-10-15T05:23:17.856159+00:00",
+        "rss_bytes": 37163008,
+        "available_bytes": 6562717696
+      },
+      {
+        "utc": "2026-10-15T05:23:18.859601+00:00",
+        "rss_bytes": 36229120,
+        "available_bytes": 6536892416
+      },
+      {
+        "utc": "2026-10-15T05:23:19.871921+00:00",
+        "rss_bytes": 36229120,
+        "available_bytes": 6604595200
+      },
+      {
+        "utc": "2026-10-15T05:23:20.876236+00:00",
+        "rss_bytes": 36229120,
+        "available_bytes": 6577819648
+      },
+      {
+        "utc": "2026-10-15T05:23:21.876280+00:00",
+        "rss_bytes": 36229120,
+        "available_bytes": 6670987264
+      },
+      {
+        "utc": "2026-10-15T05:23:22.884028+00:00",
+        "rss_bytes": 36229120,
+        "available_bytes": 6645682176
+      },
+      {
+        "utc": "2026-10-15T05:23:23.885816+00:00",
+        "rss_bytes": 36233216,
+        "available_bytes": 6641598464
+      },
+      {
+        "utc": "2026-10-15T05:23:24.889853+00:00",
+        "rss_bytes": 99684352,
+        "available_bytes": 6576373760
+      },
+      {
+        "utc": "2026-10-15T05:23:25.892932+00:00",
+        "rss_bytes": 145604608,
+        "available_bytes": 6542041088
+      },
+      {
+        "utc": "2026-10-15T05:23:26.895592+00:00",
+        "rss_bytes": 162738176,
+        "available_bytes": 6519431168
+      },
+      {
+        "utc": "2026-10-15T05:23:27.900122+00:00",
+        "rss_bytes": 173506560,
+        "available_bytes": 6531829760
+      },
+      {
+        "utc": "2026-10-15T05:23:28.911105+00:00",
+        "rss_bytes": 188887040,
+        "available_bytes": 6469033984
+      },
+      {
+        "utc": "2026-10-15T05:23:29.920236+00:00",
+        "rss_bytes": 204193792,
+        "available_bytes": 6616219648
+      },
+      {
+        "utc": "2026-10-15T05:23:30.936301+00:00",
+        "rss_bytes": 220008448,
+        "available_bytes": 6455623680
+      },
+      {
+        "utc": "2026-10-15T05:23:31.938460+00:00",
+        "rss_bytes": 241717248,
+        "available_bytes": 6432038912
+      },
+      {
+        "utc": "2026-10-15T05:23:32.948164+00:00",
+        "rss_bytes": 257724416,
+        "available_bytes": 6417182720
+      },
+      {
+        "utc": "2026-10-15T05:23:33.969987+00:00",
+        "rss_bytes": 271085568,
+        "available_bytes": 6369456128
+      },
+      {
+        "utc": "2026-10-15T05:23:34.983142+00:00",
+        "rss_bytes": 278540288,
+        "available_bytes": 6353010688
+      },
+      {
+        "utc": "2026-10-15T05:23:35.987891+00:00",
+        "rss_bytes": 289693696,
+        "available_bytes": 6333677568
+      },
+      {
+        "utc": "2026-10-15T05:23:37.023457+00:00",
+        "rss_bytes": 301125632,
+        "available_bytes": 6453919744
+      },
+      {
+        "utc": "2026-10-15T05:23:38.036520+00:00",
+        "rss_bytes": 302747648,
+        "available_bytes": 6437171200
+      },
+      {
+        "utc": "2026-10-15T05:23:39.043234+00:00",
+        "rss_bytes": 308707328,
+        "available_bytes": 6415220736
+      },
+      {
+        "utc": "2026-10-15T05:23:40.054014+00:00",
+        "rss_bytes": 317992960,
+        "available_bytes": 6478262272
+      },
+      {
+        "utc": "2026-10-15T05:23:41.054524+00:00",
+        "rss_bytes": 319791104,
+        "available_bytes": 6449594368
+      },
+      {
+        "utc": "2026-10-15T05:23:42.069156+00:00",
+        "rss_bytes": 320999424,
+        "available_bytes": 6440271872
+      },
+      {
+        "utc": "2026-10-15T05:23:43.070659+00:00",
+        "rss_bytes": 330833920,
+        "available_bytes": 6448648192
+      },
+      {
+        "utc": "2026-10-15T05:23:44.075369+00:00",
+        "rss_bytes": 353787904,
+        "available_bytes": 6431404032
+      },
+      {
+        "utc": "2026-10-15T05:23:45.075677+00:00",
+        "rss_bytes": 366710784,
+        "available_bytes": 6393655296
+      },
+      {
+        "utc": "2026-10-15T05:23:46.084481+00:00",
+        "rss_bytes": 374697984,
+        "available_bytes": 6332387328
+      },
+      {
+        "utc": "2026-10-15T05:23:47.087350+00:00",
+        "rss_bytes": 380821504,
+        "available_bytes": 6294302720
+      },
+      {
+        "utc": "2026-10-15T05:23:48.101525+00:00",
+        "rss_bytes": 386105344,
+        "available_bytes": 6320013312
+      },
+      {
+        "utc": "2026-10-15T05:23:49.102997+00:00",
+        "rss_bytes": 400924672,
+        "available_bytes": 6312562688
+      },
+      {
+        "utc": "2026-10-15T05:23:50.104745+00:00",
+        "rss_bytes": 417153024,
+        "available_bytes": 6353498112
+      },
+      {
+        "utc": "2026-10-15T05:23:51.134648+00:00",
+        "rss_bytes": 423804928,
+        "available_bytes": 6268166144
+      },
+      {
+        "utc": "2026-10-15T05:23:52.167731+00:00",
+        "rss_bytes": 471900160,
+        "available_bytes": 6208040960
+      },
+      {
+        "utc": "2026-10-15T05:23:53.237653+00:00",
+        "rss_bytes": 528048128,
+        "available_bytes": 6052397056
+      },
+      {
+        "utc": "2026-10-15T05:23:54.316201+00:00",
+        "rss_bytes": 528048128,
+        "available_bytes": 6092263424
+      },
+      {
+        "utc": "2026-10-15T05:23:55.437273+00:00",
+        "rss_bytes": 527986688,
+        "available_bytes": 6216732672
+      },
+      {
+        "utc": "2026-10-15T05:23:56.473359+00:00",
+        "rss_bytes": 527990784,
+        "available_bytes": 6207676416
+      },
+      {
+        "utc": "2026-10-15T05:23:57.488258+00:00",
+        "rss_bytes": 520982528,
+        "available_bytes": 6268428288
+      },
+      {
+        "utc": "2026-10-15T05:23:58.489543+00:00",
+        "rss_bytes": 520982528,
+        "available_bytes": 6275067904
+      },
+      {
+        "utc": "2026-10-15T05:23:59.495776+00:00",
+        "rss_bytes": 803708928,
+        "available_bytes": 5981974528
+      },
+      {
+        "utc": "2026-10-15T05:24:00.497629+00:00",
+        "rss_bytes": 1094963200,
+        "available_bytes": 5670690816
+      },
+      {
+        "utc": "2026-10-15T05:24:01.499017+00:00",
+        "rss_bytes": 1783627776,
+        "available_bytes": 5113126912
+      },
+      {
+        "utc": "2026-10-15T05:24:02.509159+00:00",
+        "rss_bytes": 1783627776,
+        "available_bytes": 4988977152
+      },
+      {
+        "utc": "2026-10-15T05:24:03.517205+00:00",
+        "rss_bytes": 1778876416,
+        "available_bytes": 4980027392
+      },
+      {
+        "utc": "2026-10-15T05:24:04.524196+00:00",
+        "rss_bytes": 1848135680,
+        "available_bytes": 4893421568
+      },
+      {
+        "utc": "2026-10-15T05:24:05.530393+00:00",
+        "rss_bytes": 1880817664,
+        "available_bytes": 4850311168
+      },
+      {
+        "utc": "2026-10-15T05:24:06.539223+00:00",
+        "rss_bytes": 1913782272,
+        "available_bytes": 4918845440
+      },
+      {
+        "utc": "2026-10-15T05:24:07.540754+00:00",
+        "rss_bytes": 1941307392,
+        "available_bytes": 4862464000
+      },
+      {
+        "utc": "2026-10-15T05:24:08.547260+00:00",
+        "rss_bytes": 1965613056,
+        "available_bytes": 4885983232
+      },
+      {
+        "utc": "2026-10-15T05:24:09.553233+00:00",
+        "rss_bytes": 1998372864,
+        "available_bytes": 4779061248
+      },
+      {
+        "utc": "2026-10-15T05:24:10.562463+00:00",
+        "rss_bytes": 2033840128,
+        "available_bytes": 4902514688
+      },
+      {
+        "utc": "2026-10-15T05:24:11.574204+00:00",
+        "rss_bytes": 2051919872,
+        "available_bytes": 4706254848
+      },
+      {
+        "utc": "2026-10-15T05:24:12.582695+00:00",
+        "rss_bytes": 2090840064,
+        "available_bytes": 4667060224
+      },
+      {
+        "utc": "2026-10-15T05:24:13.589405+00:00",
+        "rss_bytes": 2105540608,
+        "available_bytes": 4662550528
+      },
+      {
+        "utc": "2026-10-15T05:24:14.595515+00:00",
+        "rss_bytes": 2129907712,
+        "available_bytes": 4593135616
+      },
+      {
+        "utc": "2026-10-15T05:24:15.601296+00:00",
+        "rss_bytes": 2208342016,
+        "available_bytes": 4654448640
+      },
+      {
+        "utc": "2026-10-15T05:24:16.609725+00:00",
+        "rss_bytes": 2240036864,
+        "available_bytes": 4416344064
+      },
+      {
+        "utc": "2026-10-15T05:24:17.625721+00:00",
+        "rss_bytes": 2251296768,
+        "available_bytes": 4368875520
+      },
+      {
+        "utc": "2026-10-15T05:24:18.640578+00:00",
+        "rss_bytes": 2269282304,
+        "available_bytes": 4489814016
+      },
+      {
+        "utc": "2026-10-15T05:24:19.644261+00:00",
+        "rss_bytes": 2262892544,
+        "available_bytes": 4507586560
+      },
+      {
+        "utc": "2026-10-15T05:24:20.650869+00:00",
+        "rss_bytes": 2312630272,
+        "available_bytes": 4619558912
+      },
+      {
+        "utc": "2026-10-15T05:24:21.658886+00:00",
+        "rss_bytes": 2252095488,
+        "available_bytes": 4514594816
+      },
+      {
+        "utc": "2026-10-15T05:24:22.659470+00:00",
+        "rss_bytes": 2303713280,
+        "available_bytes": 4446298112
+      },
+      {
+        "utc": "2026-10-15T05:24:23.667578+00:00",
+        "rss_bytes": 2340007936,
+        "available_bytes": 4404850688
+      },
+      {
+        "utc": "2026-10-15T05:24:24.677043+00:00",
+        "rss_bytes": 2361700352,
+        "available_bytes": 4366086144
+      },
+      {
+        "utc": "2026-10-15T05:24:25.681738+00:00",
+        "rss_bytes": 2391068672,
+        "available_bytes": 4312330240
+      },
+      {
+        "utc": "2026-10-15T05:24:26.697565+00:00",
+        "rss_bytes": 2341916672,
+        "available_bytes": 4293775360
+      },
+      {
+        "utc": "2026-10-15T05:24:27.700794+00:00",
+        "rss_bytes": 2419687424,
+        "available_bytes": 4245180416
+      },
+      {
+        "utc": "2026-10-15T05:24:28.702179+00:00",
+        "rss_bytes": 2440138752,
+        "available_bytes": 4247986176
+      },
+      {
+        "utc": "2026-10-15T05:24:29.716171+00:00",
+        "rss_bytes": 2433769472,
+        "available_bytes": 4212551680
+      },
+      {
+        "utc": "2026-10-15T05:24:30.723952+00:00",
+        "rss_bytes": 2469240832,
+        "available_bytes": 4421013504
+      },
+      {
+        "utc": "2026-10-15T05:24:31.729619+00:00",
+        "rss_bytes": 2481827840,
+        "available_bytes": 4203110400
+      },
+      {
+        "utc": "2026-10-15T05:24:32.740660+00:00",
+        "rss_bytes": 2455597056,
+        "available_bytes": 4209106944
+      },
+      {
+        "utc": "2026-10-15T05:24:33.747165+00:00",
+        "rss_bytes": 2531422208,
+        "available_bytes": 4192899072
+      },
+      {
+        "utc": "2026-10-15T05:24:34.756336+00:00",
+        "rss_bytes": 2546577408,
+        "available_bytes": 4107255808
+      },
+      {
+        "utc": "2026-10-15T05:24:35.768343+00:00",
+        "rss_bytes": 2570534912,
+        "available_bytes": 4060110848
+      },
+      {
+        "utc": "2026-10-15T05:24:36.779124+00:00",
+        "rss_bytes": 2569486336,
+        "available_bytes": 4140105728
+      },
+      {
+        "utc": "2026-10-15T05:24:37.782447+00:00",
+        "rss_bytes": 2559066112,
+        "available_bytes": 4100325376
+      },
+      {
+        "utc": "2026-10-15T05:24:38.789852+00:00",
+        "rss_bytes": 2581868544,
+        "available_bytes": 4125286400
+      },
+      {
+        "utc": "2026-10-15T05:24:39.806449+00:00",
+        "rss_bytes": 2594455552,
+        "available_bytes": 4020277248
+      },
+      {
+        "utc": "2026-10-15T05:24:40.819548+00:00",
+        "rss_bytes": 2611531776,
+        "available_bytes": 4168044544
+      },
+      {
+        "utc": "2026-10-15T05:24:41.825903+00:00",
+        "rss_bytes": 2657681408,
+        "available_bytes": 3963392000
+      },
+      {
+        "utc": "2026-10-15T05:24:42.841499+00:00",
+        "rss_bytes": 2692366336,
+        "available_bytes": 3931635712
+      },
+      {
+        "utc": "2026-10-15T05:24:43.842279+00:00",
+        "rss_bytes": 2713038848,
+        "available_bytes": 3887378432
+      },
+      {
+        "utc": "2026-10-15T05:24:44.851093+00:00",
+        "rss_bytes": 2738212864,
+        "available_bytes": 3840991232
+      },
+      {
+        "utc": "2026-10-15T05:24:45.851304+00:00",
+        "rss_bytes": 2704261120,
+        "available_bytes": 3969708032
+      },
+      {
+        "utc": "2026-10-15T05:24:46.855246+00:00",
+        "rss_bytes": 2771030016,
+        "available_bytes": 3748593664
+      },
+      {
+        "utc": "2026-10-15T05:24:47.861225+00:00",
+        "rss_bytes": 2787282944,
+        "available_bytes": 3710304256
+      },
+      {
+        "utc": "2026-10-15T05:24:48.872394+00:00",
+        "rss_bytes": 2784243712,
+        "available_bytes": 3957903360
+      },
+      {
+        "utc": "2026-10-15T05:24:49.906658+00:00",
+        "rss_bytes": 2782355456,
+        "available_bytes": 3772882944
+      },
+      {
+        "utc": "2026-10-15T05:24:50.908552+00:00",
+        "rss_bytes": 2784452608,
+        "available_bytes": 3755159552
+      },
+      {
+        "utc": "2026-10-15T05:24:51.914187+00:00",
+        "rss_bytes": 2834890752,
+        "available_bytes": 3749593088
+      },
+      {
+        "utc": "2026-10-15T05:24:52.925223+00:00",
+        "rss_bytes": 2878619648,
+        "available_bytes": 3656310784
+      },
+      {
+        "utc": "2026-10-15T05:24:53.925704+00:00",
+        "rss_bytes": 2898022400,
+        "available_bytes": 3818442752
+      },
+      {
+        "utc": "2026-10-15T05:24:54.934933+00:00",
+        "rss_bytes": 2889928704,
+        "available_bytes": 3628728320
+      },
+      {
+        "utc": "2026-10-15T05:24:55.943857+00:00",
+        "rss_bytes": 2930311168,
+        "available_bytes": 3646615552
+      },
+      {
+        "utc": "2026-10-15T05:24:56.946218+00:00",
+        "rss_bytes": 2936709120,
+        "available_bytes": 3690639360
+      },
+      {
+        "utc": "2026-10-15T05:24:57.955642+00:00",
+        "rss_bytes": 2978353152,
+        "available_bytes": 3616796672
+      },
+      {
+        "utc": "2026-10-15T05:24:58.958816+00:00",
+        "rss_bytes": 2948976640,
+        "available_bytes": 3752513536
+      },
+      {
+        "utc": "2026-10-15T05:24:59.961185+00:00",
+        "rss_bytes": 2957631488,
+        "available_bytes": 3614670848
+      },
+      {
+        "utc": "2026-10-15T05:25:00.966362+00:00",
+        "rss_bytes": 2987036672,
+        "available_bytes": 3565346816
+      },
+      {
+        "utc": "2026-10-15T05:25:01.971663+00:00",
+        "rss_bytes": 3047415808,
+        "available_bytes": 3567173632
+      },
+      {
+        "utc": "2026-10-15T05:25:02.978298+00:00",
+        "rss_bytes": 3065995264,
+        "available_bytes": 3532648448
+      },
+      {
+        "utc": "2026-10-15T05:25:03.985701+00:00",
+        "rss_bytes": 3089072128,
+        "available_bytes": 3455799296
+      },
+      {
+        "utc": "2026-10-15T05:25:04.994151+00:00",
+        "rss_bytes": 3090587648,
+        "available_bytes": 3443253248
+      },
+      {
+        "utc": "2026-10-15T05:25:06.000495+00:00",
+        "rss_bytes": 3117694976,
+        "available_bytes": 3693371392
+      },
+      {
+        "utc": "2026-10-15T05:25:07.014837+00:00",
+        "rss_bytes": 3126083584,
+        "available_bytes": 3453784064
+      },
+      {
+        "utc": "2026-10-15T05:25:08.017814+00:00",
+        "rss_bytes": 3110735872,
+        "available_bytes": 3414728704
+      },
+      {
+        "utc": "2026-10-15T05:25:09.019499+00:00",
+        "rss_bytes": 3183022080,
+        "available_bytes": 3453988864
+      },
+      {
+        "utc": "2026-10-15T05:25:10.021359+00:00",
+        "rss_bytes": 3196657664,
+        "available_bytes": 3349520384
+      },
+      {
+        "utc": "2026-10-15T05:25:11.028507+00:00",
+        "rss_bytes": 3166445568,
+        "available_bytes": 3358658560
+      },
+      {
+        "utc": "2026-10-15T05:25:12.035713+00:00",
+        "rss_bytes": 3214790656,
+        "available_bytes": 3341189120
+      },
+      {
+        "utc": "2026-10-15T05:25:13.049295+00:00",
+        "rss_bytes": 3252547584,
+        "available_bytes": 3249684480
+      },
+      {
+        "utc": "2026-10-15T05:25:14.065616+00:00",
+        "rss_bytes": 3211436032,
+        "available_bytes": 3263733760
+      },
+      {
+        "utc": "2026-10-15T05:25:15.067960+00:00",
+        "rss_bytes": 3279597568,
+        "available_bytes": 3199909888
+      },
+      {
+        "utc": "2026-10-15T05:25:16.082247+00:00",
+        "rss_bytes": 3302670336,
+        "available_bytes": 3153682432
+      },
+      {
+        "utc": "2026-10-15T05:25:17.093750+00:00",
+        "rss_bytes": 3267735552,
+        "available_bytes": 3301044224
+      },
+      {
+        "utc": "2026-10-15T05:25:18.099044+00:00",
+        "rss_bytes": 3316084736,
+        "available_bytes": 3176628224
+      },
+      {
+        "utc": "2026-10-15T05:25:19.107570+00:00",
+        "rss_bytes": 3328671744,
+        "available_bytes": 3056582656
+      },
+      {
+        "utc": "2026-10-15T05:25:20.112210+00:00",
+        "rss_bytes": 3299414016,
+        "available_bytes": 3050893312
+      },
+      {
+        "utc": "2026-10-15T05:25:21.119049+00:00",
+        "rss_bytes": 3337371648,
+        "available_bytes": 2983911424
+      },
+      {
+        "utc": "2026-10-15T05:25:22.133298+00:00",
+        "rss_bytes": 3341565952,
+        "available_bytes": 3036614656
+      },
+      {
+        "utc": "2026-10-15T05:25:23.147078+00:00",
+        "rss_bytes": 3392610304,
+        "available_bytes": 3073495040
+      },
+      {
+        "utc": "2026-10-15T05:25:24.156809+00:00",
+        "rss_bytes": 3368980480,
+        "available_bytes": 3082313728
+      },
+      {
+        "utc": "2026-10-15T05:25:25.168467+00:00",
+        "rss_bytes": 3434680320,
+        "available_bytes": 3115470848
+      },
+      {
+        "utc": "2026-10-15T05:25:26.179261+00:00",
+        "rss_bytes": 3442647040,
+        "available_bytes": 2994450432
+      },
+      {
+        "utc": "2026-10-15T05:25:27.191780+00:00",
+        "rss_bytes": 3489521664,
+        "available_bytes": 3052175360
+      },
+      {
+        "utc": "2026-10-15T05:25:28.203514+00:00",
+        "rss_bytes": 3480600576,
+        "available_bytes": 3002597376
+      },
+      {
+        "utc": "2026-10-15T05:25:29.215161+00:00",
+        "rss_bytes": 3476705280,
+        "available_bytes": 2984796160
+      },
+      {
+        "utc": "2026-10-15T05:25:30.225913+00:00",
+        "rss_bytes": 3537014784,
+        "available_bytes": 2990460928
+      },
+      {
+        "utc": "2026-10-15T05:25:31.241165+00:00",
+        "rss_bytes": 3543932928,
+        "available_bytes": 2958114816
+      },
+      {
+        "utc": "2026-10-15T05:25:32.255823+00:00",
+        "rss_bytes": 3590832128,
+        "available_bytes": 2959990784
+      },
+      {
+        "utc": "2026-10-15T05:25:33.269193+00:00",
+        "rss_bytes": 3607113728,
+        "available_bytes": 2884567040
+      },
+      {
+        "utc": "2026-10-15T05:25:34.270782+00:00",
+        "rss_bytes": 3621576704,
+        "available_bytes": 2983849984
+      },
+      {
+        "utc": "2026-10-15T05:25:35.278909+00:00",
+        "rss_bytes": 3644674048,
+        "available_bytes": 2788397056
+      },
+      {
+        "utc": "2026-10-15T05:25:36.283681+00:00",
+        "rss_bytes": 3616874496,
+        "available_bytes": 2790551552
+      },
+      {
+        "utc": "2026-10-15T05:25:37.285217+00:00",
+        "rss_bytes": 3670724608,
+        "available_bytes": 2811252736
+      },
+      {
+        "utc": "2026-10-15T05:25:38.292157+00:00",
+        "rss_bytes": 3708506112,
+        "available_bytes": 2769780736
+      },
+      {
+        "utc": "2026-10-15T05:25:39.297180+00:00",
+        "rss_bytes": 3677462528,
+        "available_bytes": 2866708480
+      },
+      {
+        "utc": "2026-10-15T05:25:40.298534+00:00",
+        "rss_bytes": 3678203904,
+        "available_bytes": 2810101760
+      },
+      {
+        "utc": "2026-10-15T05:25:41.306251+00:00",
+        "rss_bytes": 3686600704,
+        "available_bytes": 2766184448
+      },
+      {
+        "utc": "2026-10-15T05:25:42.311293+00:00",
+        "rss_bytes": 3715948544,
+        "available_bytes": 2707746816
+      },
+      {
+        "utc": "2026-10-15T05:25:43.315945+00:00",
+        "rss_bytes": 3737206784,
+        "available_bytes": 2717720576
+      },
+      {
+        "utc": "2026-10-15T05:25:44.324844+00:00",
+        "rss_bytes": 3765911552,
+        "available_bytes": 2681028608
+      },
+      {
+        "utc": "2026-10-15T05:25:45.332199+00:00",
+        "rss_bytes": 3781103616,
+        "available_bytes": 2679341056
+      }
+    ]
+  },
+  "finished_at": "2026-10-15T05:25:45.924601+00:00"
+}

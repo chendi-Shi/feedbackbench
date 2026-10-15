@@ -1,0 +1,86 @@
+{
+  "cache_sha256": "b1cf871011dc8787d3491d22dcd6bbe2a8333dad33f4067d4456050fdc217f29",
+  "entry_case_ids": [
+    "smolvla__libero_spatial__1__1__clean__full10",
+    "smolvla__libero_spatial__1__1__clean__full10",
+    "smolvla__libero_spatial__1__1__clean__full10",
+    "smolvla__libero_spatial__1__1__clean__full10",
+    "smolvla__libero_spatial__1__1__clean__full10",
+    "smolvla__libero_spatial__1__1__clean__full10",
+    "smolvla__libero_spatial__1__1__clean__full10",
+    "smolvla__libero_spatial__1__1__clean__full10",
+    "smolvla__libero_spatial__1__1__clean__full10",
+    "smolvla__libero_object__1__1__clean__full10",
+    "smolvla__libero_object__1__1__clean__full10",
+    "smolvla__libero_object__1__1__clean__full10",
+    "smolvla__libero_object__1__1__clean__full10",
+    "smolvla__libero_object__1__1__clean__full10",
+    "smolvla__libero_object__1__1__clean__full10",
+    "smolvla__libero_object__1__1__clean__full10",
+    "smolvla__libero_object__1__1__clean__full10",
+    "smolvla__libero_object__1__1__clean__full10",
+    "smolvla__libero_object__1__1__clean__full10",
+    "smolvla__libero_object__1__1__clean__full10",
+    "smolvla__libero_object__1__1__clean__full10",
+    "smolvla__libero_goal__1__1__clean__full10",
+    "smolvla__libero_goal__1__1__clean__full10",
+    "smolvla__libero_goal__1__1__clean__full10",
+    "smolvla__libero_goal__1__1__clean__full10",
+    "smolvla__libero_goal__1__1__clean__full10",
+    "smolvla__libero_goal__1__1__clean__full10",
+    "smolvla__libero_goal__1__1__clean__full10",
+    "smolvla__libero_goal__1__1__clean__full10",
+    "smolvla__libero_goal__1__1__clean__full10"
+  ],
+  "entry_count": 30,
+  "format": "feedbackbench.action_cache",
+  "manifest_sha256": "20f4f791cf9115ef6eb2e8d5e4486279b110e4d692ce38dce46f524f7fba1594",
+  "npz_sha256": "11fe43408e7de141537b147718825b95e449b56cd8f114b6c08e83e3dc6a7611",
+  "provenance_sha256": "fe67ea1d168a87deb5d99ea551c17ed39ff6565b9dcbe669cf706b9699dddaf7",
+  "spec": {
+    "capacity": 3000,
+    "latent_shape": [
+      50,
+      7
+    ],
+    "projection": {
+      "algorithm": "balanced_sparse_ternary_pcg64_floyd_v1",
+      "config": {
+        "density": 0.01,
+        "input_dim": 169920,
+        "output_dim": 500,
+        "seed": 20261014
+      },
+      "nonzeros_per_row": 1700
+    },
+    "provenance": {
+      "development_case_ids": [
+        "smolvla__libero_spatial__1__1__clean__full10",
+        "smolvla__libero_object__1__1__clean__full10",
+        "smolvla__libero_goal__1__1__clean__full10",
+        "smolvla__libero_10__1__1__clean__full10"
+      ],
+      "feature_contract": {
+        "dtype": "float32",
+        "hidden_size": 960,
+        "image_feature_keys": [
+          "observation.images.image",
+          "observation.images.image2"
+        ],
+        "image_tokens": 128,
+        "input_dim": 169920,
+        "language_slots": 48,
+        "layout": "image tokens, language padded after VLM to tokenizer_max_length, encoded state token",
+        "padding": "masked outputs set to zero",
+        "source": "SmolVLA final normalized VLM prefix output",
+        "state_tokens": 1,
+        "version": 1
+      },
+      "flow_time": 0.0,
+      "model_revision": "6721902bc4d61e50a3bfdb11dfb4cb626f05d102",
+      "model_sha256": "71d9563c8295284acba8fc2d5c19de000d6fe9ba58a406832af7ef3d221ed52f"
+    },
+    "threshold": 0.95
+  },
+  "version": 1
+}

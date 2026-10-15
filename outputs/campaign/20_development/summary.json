@@ -1,0 +1,540 @@
+{
+  "schema_version": 1,
+  "partial": false,
+  "planned_episodes": 32,
+  "completed_episodes": 32,
+  "error_episodes": 0,
+  "missing_episodes": 0,
+  "missing_ids": [],
+  "error_ids": [],
+  "models": [
+    "minerva"
+  ],
+  "tasks": 4,
+  "successes": 29,
+  "total_wall_seconds": 1890.1177041999908,
+  "groups": [
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "adaptive_high",
+      "tasks": 4,
+      "episodes": 8,
+      "successes": 6,
+      "failures": 2,
+      "macro_task_success": 0.75,
+      "episode_success": 0.75,
+      "mean_inference_calls": 18.625,
+      "mean_steps": 204.875,
+      "inference_calls_per_100_steps": 9.090909090909092,
+      "mean_model_seconds": 1.9175468249886762,
+      "total_wall_seconds": 547.8615291000169,
+      "mean_timings": {
+        "policy_inference_seconds": 1.9175468249886762,
+        "preprocess_seconds": 2.019674812476296,
+        "scheduler_seconds": 1.3015053875096783,
+        "simulator_seconds": 54.9672969375315,
+        "wall_seconds": 68.48269113750212
+      },
+      "per_task": [
+        {
+          "suite": "libero_10",
+          "task_id": 0,
+          "task": "put both the alphabet soup and the tomato sauce in the basket",
+          "episodes": 2,
+          "successes": 1,
+          "success_rate": 0.5,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 0,
+          "task": "open the middle drawer of the cabinet",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 0,
+          "task": "pick up the alphabet soup and place it in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 0,
+          "task": "pick up the black bowl between the plate and the ramekin and place it on the plate",
+          "episodes": 2,
+          "successes": 1,
+          "success_rate": 0.5,
+          "initial_states": 2
+        }
+      ]
+    },
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "adaptive_low",
+      "tasks": 4,
+      "episodes": 8,
+      "successes": 8,
+      "failures": 0,
+      "macro_task_success": 1.0,
+      "episode_success": 1.0,
+      "mean_inference_calls": 24.625,
+      "mean_steps": 145.0,
+      "inference_calls_per_100_steps": 16.982758620689655,
+      "mean_model_seconds": 2.4504741499931697,
+      "total_wall_seconds": 416.7033620999864,
+      "mean_timings": {
+        "policy_inference_seconds": 2.4504741499931697,
+        "preprocess_seconds": 1.6615535999735584,
+        "scheduler_seconds": 1.0135285750529874,
+        "simulator_seconds": 38.31602469995414,
+        "wall_seconds": 52.0879202624983
+      },
+      "per_task": [
+        {
+          "suite": "libero_10",
+          "task_id": 0,
+          "task": "put both the alphabet soup and the tomato sauce in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 0,
+          "task": "open the middle drawer of the cabinet",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 0,
+          "task": "pick up the alphabet soup and place it in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 0,
+          "task": "pick up the black bowl between the plate and the ramekin and place it on the plate",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        }
+      ]
+    },
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "adaptive_medium",
+      "tasks": 4,
+      "episodes": 8,
+      "successes": 7,
+      "failures": 1,
+      "macro_task_success": 0.875,
+      "episode_success": 0.875,
+      "mean_inference_calls": 18.75,
+      "mean_steps": 171.375,
+      "inference_calls_per_100_steps": 10.940919037199125,
+      "mean_model_seconds": 1.9401738500000647,
+      "total_wall_seconds": 494.59383659999,
+      "mean_timings": {
+        "policy_inference_seconds": 1.9401738500000647,
+        "preprocess_seconds": 1.8889426624755288,
+        "scheduler_seconds": 1.2023139625216572,
+        "simulator_seconds": 48.87966778745613,
+        "wall_seconds": 61.82422957499875
+      },
+      "per_task": [
+        {
+          "suite": "libero_10",
+          "task_id": 0,
+          "task": "put both the alphabet soup and the tomato sauce in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 0,
+          "task": "open the middle drawer of the cabinet",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 0,
+          "task": "pick up the alphabet soup and place it in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 0,
+          "task": "pick up the black bowl between the plate and the ramekin and place it on the plate",
+          "episodes": 2,
+          "successes": 1,
+          "success_rate": 0.5,
+          "initial_states": 2
+        }
+      ]
+    },
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "fixed8",
+      "tasks": 4,
+      "episodes": 8,
+      "successes": 8,
+      "failures": 0,
+      "macro_task_success": 1.0,
+      "episode_success": 1.0,
+      "mean_inference_calls": 18.5,
+      "mean_steps": 145.5,
+      "inference_calls_per_100_steps": 12.714776632302405,
+      "mean_model_seconds": 3.082175362493217,
+      "total_wall_seconds": 430.9589763999975,
+      "mean_timings": {
+        "policy_inference_seconds": 3.082175362493217,
+        "preprocess_seconds": 2.871200987503471,
+        "scheduler_seconds": 1.1813675499797682,
+        "simulator_seconds": 40.19205636250081,
+        "wall_seconds": 53.869872049999685
+      },
+      "per_task": [
+        {
+          "suite": "libero_10",
+          "task_id": 0,
+          "task": "put both the alphabet soup and the tomato sauce in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 0,
+          "task": "open the middle drawer of the cabinet",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 0,
+          "task": "pick up the alphabet soup and place it in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 0,
+          "task": "pick up the black bowl between the plate and the ramekin and place it on the plate",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        }
+      ]
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "adaptive_high",
+      "baseline": "fixed8",
+      "paired_tasks": 4,
+      "paired_episodes": 8,
+      "unmatched_candidate": 0,
+      "unmatched_baseline": 0,
+      "candidate_macro_success": 0.75,
+      "baseline_macro_success": 1.0,
+      "macro_success_difference": -0.25,
+      "task_cluster_95ci": [
+        -0.5,
+        0.0
+      ],
+      "bootstrap_resamples": 2000,
+      "bootstrap_seed": 20261014,
+      "candidate_wins": 0,
+      "baseline_wins": 2,
+      "ties": 6,
+      "candidate_mean_calls": 18.625,
+      "baseline_mean_calls": 18.5,
+      "inference_call_reduction": -0.006756756756756799,
+      "mean_model_seconds_difference": -1.1646285375045409,
+      "small_task_count": true,
+      "per_task": [
+        {
+          "suite": "libero_10",
+          "task_id": 0,
+          "pairs": 2,
+          "candidate_success": 0.5,
+          "baseline_success": 1.0,
+          "difference": -0.5
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 0,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 0,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 0,
+          "pairs": 2,
+          "candidate_success": 0.5,
+          "baseline_success": 1.0,
+          "difference": -0.5
+        }
+      ]
+    },
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "adaptive_low",
+      "baseline": "fixed8",
+      "paired_tasks": 4,
+      "paired_episodes": 8,
+      "unmatched_candidate": 0,
+      "unmatched_baseline": 0,
+      "candidate_macro_success": 1.0,
+      "baseline_macro_success": 1.0,
+      "macro_success_difference": 0.0,
+      "task_cluster_95ci": [
+        0.0,
+        0.0
+      ],
+      "bootstrap_resamples": 2000,
+      "bootstrap_seed": 20261014,
+      "candidate_wins": 0,
+      "baseline_wins": 0,
+      "ties": 8,
+      "candidate_mean_calls": 24.625,
+      "baseline_mean_calls": 18.5,
+      "inference_call_reduction": -0.33108108108108114,
+      "mean_model_seconds_difference": -0.6317012125000474,
+      "small_task_count": true,
+      "per_task": [
+        {
+          "suite": "libero_10",
+          "task_id": 0,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 0,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 0,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 0,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        }
+      ]
+    },
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "adaptive_medium",
+      "baseline": "fixed8",
+      "paired_tasks": 4,
+      "paired_episodes": 8,
+      "unmatched_candidate": 0,
+      "unmatched_baseline": 0,
+      "candidate_macro_success": 0.875,
+      "baseline_macro_success": 1.0,
+      "macro_success_difference": -0.125,
+      "task_cluster_95ci": [
+        -0.375,
+        0.0
+      ],
+      "bootstrap_resamples": 2000,
+      "bootstrap_seed": 20261014,
+      "candidate_wins": 0,
+      "baseline_wins": 1,
+      "ties": 7,
+      "candidate_mean_calls": 18.75,
+      "baseline_mean_calls": 18.5,
+      "inference_call_reduction": -0.013513513513513598,
+      "mean_model_seconds_difference": -1.1420015124931524,
+      "small_task_count": true,
+      "per_task": [
+        {
+          "suite": "libero_10",
+          "task_id": 0,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 0,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 0,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 0,
+          "pairs": 2,
+          "candidate_success": 0.5,
+          "baseline_success": 1.0,
+          "difference": -0.5
+        }
+      ]
+    }
+  ],
+  "ablation_comparisons": [],
+  "warnings": [
+    "任务簇少于 10 个，跨任务效应和置信区间不稳定；不能据此声称普遍优于基线。"
+  ],
+  "input_sha256": {
+    "protocol.json": "b07ee9da6f6a0c6c15baea62fb468fc1c052959c9a107911950f834b67579158",
+    "episodes/minerva__libero_10__0__1__clean__adaptive_high/result.json": "9d795e9c7bd0060f7503429251ed32200df427dd6b9f707f993de203d49aab42",
+    "episodes/minerva__libero_10__0__1__clean__adaptive_low/result.json": "37efe65dde7dfab6370f0d614c2e935bf20736241d096d581838d1a8258f167d",
+    "episodes/minerva__libero_10__0__1__clean__adaptive_medium/result.json": "0a6456fbb1ef84f05aa30c86c899946915230a5fc155c56126e3cdcdbfb05fa8",
+    "episodes/minerva__libero_10__0__1__clean__fixed8/result.json": "d863dc92d37ffea905bcb062642617786efba1d6150754c5ce1b6c338b0428d1",
+    "episodes/minerva__libero_10__0__2__clean__adaptive_high/result.json": "b142fecaf94b9343fddd044cdc18525318217d734a16e89f46075a3e205cecd4",
+    "episodes/minerva__libero_10__0__2__clean__adaptive_low/result.json": "c25396118e73519cd10a63437b56009f9f32d646c3c6f8db8633f1197c1706a1",
+    "episodes/minerva__libero_10__0__2__clean__adaptive_medium/result.json": "61a72702575fb3ff837dfdd32d576ba8c50016166146fa5f4dc2a8b2d5e53b75",
+    "episodes/minerva__libero_10__0__2__clean__fixed8/result.json": "21d622d9338ecfb8cc7f72cd9a8a4a240109edc1a5cf55e451b01ca7f469b0b9",
+    "episodes/minerva__libero_goal__0__1__clean__adaptive_high/result.json": "e95a25f31845325033f083e32b32a71292a8c295b7f281f21ac2daa78992a7a3",
+    "episodes/minerva__libero_goal__0__1__clean__adaptive_low/result.json": "8fc78e44fc715a4e10293049b6ae8c1570e43497f0bde2f3bdc136d07563e745",
+    "episodes/minerva__libero_goal__0__1__clean__adaptive_medium/result.json": "3e639a67822e91cc3c6d53dc8f0fb89b99b024466b4c04eb938059aa11ad7775",
+    "episodes/minerva__libero_goal__0__1__clean__fixed8/result.json": "d7b9fa7ed4e1ee675f934ce406981c67dac83b69f8a058c693ae7f8a79094a87",
+    "episodes/minerva__libero_goal__0__2__clean__adaptive_high/result.json": "f06599a35766d4a20941d0870eec349367f2228743b3f924bb67ba00e0f4fe0e",
+    "episodes/minerva__libero_goal__0__2__clean__adaptive_low/result.json": "f2996eeb6b8b8df12e0a43e8f4973306562fab4616224b6dbeb9a719dc307da6",
+    "episodes/minerva__libero_goal__0__2__clean__adaptive_medium/result.json": "c3b9de658e31b801dced7e2adcf5f60db9876a171480bb71f6a13f9857d4e799",
+    "episodes/minerva__libero_goal__0__2__clean__fixed8/result.json": "92f9602a6f8172a4fb09033a75ae9b085b175f6e9b8e10f1204e0d6f382206f2",
+    "episodes/minerva__libero_object__0__1__clean__adaptive_high/result.json": "146863a9f91df5c7ab991e2b89205aecb773397621af4df0b9131c24ad710cf5",
+    "episodes/minerva__libero_object__0__1__clean__adaptive_low/result.json": "7b1de8a896f4641fc766680517eb3b6626ca63323b34ef7552816eb304a492e3",
+    "episodes/minerva__libero_object__0__1__clean__adaptive_medium/result.json": "00088b1242fab855300ca3d15fbdf3326908e1b4bf317088ac529a42a1ad7aaa",
+    "episodes/minerva__libero_object__0__1__clean__fixed8/result.json": "ef13a03cf1cbfd848cc1a44f9db44d9267e023fc9c357493089c3c58d4165ff1",
+    "episodes/minerva__libero_object__0__2__clean__adaptive_high/result.json": "a9909d43b7200b0c28c3fa19a8b31183d674394583e96adcc8842d58b1168c84",
+    "episodes/minerva__libero_object__0__2__clean__adaptive_low/result.json": "dcece8f0b001c0dd62d8756679fd49f0390d014198a8e5ca35d4d14c45d4d0d5",
+    "episodes/minerva__libero_object__0__2__clean__adaptive_medium/result.json": "443e18d0a1425ddd86795da83ecac8fd8df03d90af6715723c4c7903e311404a",
+    "episodes/minerva__libero_object__0__2__clean__fixed8/result.json": "6f07cfe70da1655f706f58817669c1461f73c26d4f41bb9eca269a3990887172",
+    "episodes/minerva__libero_spatial__0__1__clean__adaptive_high/result.json": "837cb4c1504d2d48534aca0b0734f6adb32f31f684b293804511e4b11d92f585",
+    "episodes/minerva__libero_spatial__0__1__clean__adaptive_low/result.json": "3da56cb6fb40d8980096709bda3d3e793f9ff166a051c4b45ccbf98c9cadf2ce",
+    "episodes/minerva__libero_spatial__0__1__clean__adaptive_medium/result.json": "ba7133ad4e7f63781f50a14a195dec2d922cb0b69e02233e5013d7e6a90c4192",
+    "episodes/minerva__libero_spatial__0__1__clean__fixed8/result.json": "1d4060f98fbb6ac8a2e421d947866f147825d99e601da07bd8e71d02ca632a6d",
+    "episodes/minerva__libero_spatial__0__2__clean__adaptive_high/result.json": "6cb26e3fed6b12f4530a3c67bdc26c75e44ab28500ba8ecd59cd3294a33b05e2",
+    "episodes/minerva__libero_spatial__0__2__clean__adaptive_low/result.json": "bcbd94b2c9579dc83439d206dab577ef12c4b6971931edbf5c89c5bff4cb1dc3",
+    "episodes/minerva__libero_spatial__0__2__clean__adaptive_medium/result.json": "9e7f2e352cba1782f97ccb60d417606f49222b1d626fdbeec60660624707b5e1",
+    "episodes/minerva__libero_spatial__0__2__clean__fixed8/result.json": "7ede0b226f6de3afc966d65d5034867e550c838e05142d025ef1fed32fe10f1f"
+  },
+  "initial_state_parity": {
+    "blocks": 8,
+    "image_checked_blocks": 8,
+    "state_checked_blocks": 8,
+    "image_method_comparisons": 24,
+    "state_method_comparisons": 24,
+    "proprio_rtol": 1e-06,
+    "proprio_atol": 1e-07,
+    "blocks_without_image_evidence": 0,
+    "blocks_without_state_evidence": 0
+  },
+  "estimand": "equal-weight (suite,task_id) means over observed init-state/seed trials",
+  "uncertainty": "2000 task-cluster percentile bootstrap draws; fixed observed trials and model checkpoints",
+  "experiment_name": "development-calibration",
+  "heatmap_groups": [
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "adaptive_high"
+    },
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "adaptive_low"
+    },
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "adaptive_medium"
+    },
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "fixed8"
+    }
+  ],
+  "heatmap_tasks": [
+    {
+      "suite": "libero_10",
+      "task_id": 0
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 0
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 0
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 0
+    }
+  ]
+}

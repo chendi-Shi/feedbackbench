@@ -1,0 +1,401 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>预训练机器人策略 · 实验报告</title>
+<style>
+:root{color-scheme:light;--ink:#172d40;--muted:#587080;--teal:#097c83;--line:#dce5ea}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);background:#f2f6f8;font:16px/1.65 system-ui,"Microsoft YaHei",sans-serif}
+main{max-width:1280px;margin:auto;padding:44px 28px 72px}header{padding:28px 0;border-bottom:3px solid var(--teal)}
+h1{font-size:clamp(26px,4vw,40px);line-height:1.3;margin:8px 0 16px}h2{margin:0 0 18px;font-size:23px}
+p{margin:12px 0}section{background:white;border:1px solid var(--line);border-radius:12px;padding:28px;margin-top:24px}
+.eyebrow{letter-spacing:.14em;color:var(--teal);font-weight:700;font-size:13px}.muted,figcaption{color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:24px 0}.card{background:white;border:1px solid var(--line);border-radius:10px;padding:18px}
+.card b{display:block;font-size:28px;line-height:1.25}.card span{font-size:13px;color:var(--muted)}
+.warning{background:#fff8e9;border-left:4px solid #b68123;padding:12px 20px;margin:20px 0}.warning:empty{display:none}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;vertical-align:top;padding:12px 10px;border-bottom:1px solid var(--line)}
+th{background:#edf4f6;white-space:nowrap}td{font-variant-numeric:tabular-nums}.scroll{overflow-x:auto}
+figure{margin:24px 0}figure img{display:block;width:100%;height:auto;border:1px solid var(--line);background:white}figcaption{font-size:13px;margin-top:8px}
+.videos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.videos figure{margin:10px 0}
+a{color:var(--teal);text-underline-offset:3px}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#edf4f6;padding:18px;border-radius:8px;font-size:12px;line-height:1.55}
+summary{cursor:pointer;font-weight:600;padding:10px 0}li{margin:8px 0}footer{padding-top:28px;font-size:13px;color:var(--muted)}
+@media(max-width:750px){main{padding:20px 12px 40px}section{padding:18px}.cards{grid-template-columns:repeat(2,1fr)}.videos{grid-template-columns:1fr}}
+</style></head><body><main><header><div class="eyebrow">PRETRAINED ROBOT POLICIES / REPRODUCIBLE CPU STUDY</div>
+<h1>预训练机器人策略 · 实验报告</h1><p>How does feedback frequency affect task success and inference cost on a fixed CPU policy?</p></header><div class="cards"><div class="card"><b>32 / 32</b><span>完成 / 计划回合</span></div><div class="card"><b>4</b><span>已完成任务簇</span></div><div class="card"><b>1</b><span>实际评估模型</span></div><div class="card"><b>31.5</b><span>完成回合累计墙钟 / 分钟</span></div></div><div class="warning"><p>任务簇少于 10 个，跨任务效应和置信区间不稳定；不能据此声称普遍优于基线。</p></div><section><h2>研究问题与实验边界</h2><p><strong>预声明假设：</strong>Observation-triggered replanning may preserve success with fewer inference calls; a negative result is allowed.</p><p>本项目研究公开预训练策略在基准任务中的闭环执行与推理预算。已知任务的保留初态评估不等于新技能泛化，也不等于真机或通用 VLA 能力验证。调度规则是候选工程启发式，不声称算法首创或 SOTA。</p><p>当前数据：完成 32 回合，错误 0 回合，缺失 0 回合。失败回合按原样保留；完整报告要求全部计划回合产生有效结果。</p><details><summary>冻结协议与划分</summary><pre>{
+  &quot;plan&quot;: {
+    &quot;name&quot;: &quot;development-calibration&quot;,
+    &quot;models&quot;: [
+      {
+        &quot;name&quot;: &quot;minerva&quot;,
+        &quot;methods&quot;: [
+          {
+            &quot;name&quot;: &quot;fixed8&quot;,
+            &quot;scheduler&quot;: {
+              &quot;mode&quot;: &quot;fixed&quot;,
+              &quot;fixed_interval&quot;: 8,
+              &quot;temporal_ensemble&quot;: true,
+              &quot;ensemble_coeff&quot;: 0.01
+            }
+          },
+          {
+            &quot;name&quot;: &quot;adaptive_low&quot;,
+            &quot;scheduler&quot;: {
+              &quot;mode&quot;: &quot;adaptive&quot;,
+              &quot;min_interval&quot;: 2,
+              &quot;max_interval&quot;: 15,
+              &quot;temporal_ensemble&quot;: true,
+              &quot;ensemble_coeff&quot;: 0.01,
+              &quot;vision_threshold&quot;: 0.015,
+              &quot;gripper_threshold&quot;: 0.001
+            }
+          },
+          {
+            &quot;name&quot;: &quot;adaptive_medium&quot;,
+            &quot;scheduler&quot;: {
+              &quot;mode&quot;: &quot;adaptive&quot;,
+              &quot;min_interval&quot;: 2,
+              &quot;max_interval&quot;: 15,
+              &quot;temporal_ensemble&quot;: true,
+              &quot;ensemble_coeff&quot;: 0.01,
+              &quot;vision_threshold&quot;: 0.04,
+              &quot;gripper_threshold&quot;: 0.003
+            }
+          },
+          {
+            &quot;name&quot;: &quot;adaptive_high&quot;,
+            &quot;scheduler&quot;: {
+              &quot;mode&quot;: &quot;adaptive&quot;,
+              &quot;min_interval&quot;: 2,
+              &quot;max_interval&quot;: 15,
+              &quot;temporal_ensemble&quot;: true,
+              &quot;ensemble_coeff&quot;: 0.01,
+              &quot;vision_threshold&quot;: 0.08,
+              &quot;gripper_threshold&quot;: 0.01
+            }
+          }
+        ]
+      }
+    ],
+    &quot;tasks&quot;: [
+      {
+        &quot;suite&quot;: &quot;libero_spatial&quot;,
+        &quot;task_id&quot;: 0
+      },
+      {
+        &quot;suite&quot;: &quot;libero_object&quot;,
+        &quot;task_id&quot;: 0
+      },
+      {
+        &quot;suite&quot;: &quot;libero_goal&quot;,
+        &quot;task_id&quot;: 0
+      },
+      {
+        &quot;suite&quot;: &quot;libero_10&quot;,
+        &quot;task_id&quot;: 0
+      }
+    ],
+    &quot;initial_states&quot;: [
+      1,
+      2
+    ],
+    &quot;conditions&quot;: [
+      &quot;clean&quot;
+    ],
+    &quot;seed&quot;: 1000,
+    &quot;threads&quot;: 2,
+    &quot;image_size&quot;: 360,
+    &quot;warmup_calls&quot;: 2,
+    &quot;rotate_method_order&quot;: true,
+    &quot;split&quot;: &quot;development only; these tasks/initials do not enter the method comparison&quot;,
+    &quot;question&quot;: &quot;How does feedback frequency affect task success and inference cost on a fixed CPU policy?&quot;,
+    &quot;hypothesis&quot;: &quot;Observation-triggered replanning may preserve success with fewer inference calls; a negative result is allowed.&quot;,
+    &quot;limitations&quot;: [
+      &quot;Frozen published checkpoint; no retraining-seed claim.&quot;,
+      &quot;Known tasks and published held-out initial states; not unseen-language generalization.&quot;,
+      &quot;Simulation pauses during inference; delay4 is prescribed sensor delay, not asynchronous real-time control.&quot;,
+      &quot;Calls are the primary compute proxy. Wall-clock measurements on a shared laptop are descriptive.&quot;,
+      &quot;Few initial states per task; screening evidence, not a full published benchmark reproduction.&quot;
+    ],
+    &quot;selection_rule&quot;: &quot;Among candidates with development macro success &gt;= fixed8, choose lowest mean inference calls; ties use higher success then lexical method name. If none qualifies, choose highest success, then lowest calls, then lexical name. Freeze the selected configuration before test.&quot;
+  },
+  &quot;sources&quot;: {
+    &quot;experiment.py&quot;: &quot;da83af6ce069fc74a727f3c790bc59e7089e2bc53e4e8fe87e797219d44b3cf3&quot;,
+    &quot;policies.py&quot;: &quot;ad036be156049e9721ddf892e4e7ad8e66ee0e88c181cc66a125c0b76712f66a&quot;,
+    &quot;runtime.py&quot;: &quot;4296c85ae0060f9b6137872c6e88ed69fce49964cd1b5207da1a19c413f0b1f5&quot;,
+    &quot;simulator.py&quot;: &quot;3fa8762b03bd9dd85f426242714d3422bc19f6fc7f9d9444fd4cac4785ad95d3&quot;,
+    &quot;scheduling.py&quot;: &quot;6698253906434d6e2523b4ad3a77c18ae448872558fed341360858f6417f64ce&quot;
+  },
+  &quot;runtime_versions&quot;: {
+    &quot;torch&quot;: &quot;2.7.1+cpu&quot;,
+    &quot;torchvision&quot;: &quot;0.22.1+cpu&quot;,
+    &quot;numpy&quot;: &quot;2.2.6&quot;,
+    &quot;mujoco&quot;: &quot;3.3.2&quot;,
+    &quot;robosuite&quot;: &quot;1.4.0&quot;,
+    &quot;hf-libero&quot;: &quot;0.1.4&quot;,
+    &quot;lerobot&quot;: &quot;0.6.1&quot;,
+    &quot;transformers&quot;: &quot;5.5.4&quot;,
+    &quot;safetensors&quot;: &quot;0.8.0&quot;
+  },
+  &quot;artifacts&quot;: {
+    &quot;upstream_commit&quot;: &quot;64c3cc8be364eb62df4f9fdc4bdccb1be9d1118e&quot;,
+    &quot;models&quot;: {
+      &quot;minerva&quot;: {
+        &quot;revision&quot;: &quot;1b4fb1743f00a7d8eb87c7059c446447907d12bf&quot;,
+        &quot;files&quot;: {
+          &quot;config.json&quot;: &quot;bbd0e5bc61d3ce2e002f2d0889f90f4af1cc7193a0ad65629f7ece14e2eac276&quot;,
+          &quot;model.safetensors&quot;: &quot;f173def4c0b11030161486401dce52e63471d4180c248779678eaa6952c32da5&quot;,
+          &quot;policy_postprocessor.json&quot;: &quot;697e6bf50a3f99b0677a9e797babb5ce2e0d17acf8fcd15596ba3ac0bc7a5a72&quot;,
+          &quot;policy_postprocessor_step_0_unnormalizer_processor.safetensors&quot;: &quot;a002c0df7f79c5b169c5a899ad151d4ea1bed246c7d82bd93ed1556558d517a9&quot;,
+          &quot;policy_preprocessor.json&quot;: &quot;7b095590a92959edb15083469bb0d27f13094c8fe0cd816633173fd96f612ba1&quot;,
+          &quot;policy_preprocessor_step_4_normalizer_processor.safetensors&quot;: &quot;f98234b21ce8ffacf1b86657f3cf8e24ac6c31ebcd6a3b83cecd484439674306&quot;,
+          &quot;train_config.json&quot;: &quot;517dd29d692bf959070ccbda2d7faad1dd4437ff132607faa6bff281639c27ec&quot;,
+          &quot;README.md&quot;: &quot;2c70b086ff31e41da03adcd216b9c110ba78931994347f74e1a6954392628c73&quot;
+        }
+      }
+    },
+    &quot;assets_revision&quot;: &quot;0b3ea86be5fe169d0fd036ae63d1070ec09e90f6&quot;,
+    &quot;assets_manifest_sha256&quot;: &quot;1d59e339a7159e738c8e38aab5a703ab022a3607fc085835c09a431e0e604d42&quot;
+  },
+  &quot;fingerprint&quot;: &quot;2acd9c8d822b28275d502b4c6e63e5f098d8a8680774859ff24f596677c6b6b6&quot;,
+  &quot;question&quot;: &quot;How does feedback frequency affect task success and inference cost on a fixed CPU policy?&quot;,
+  &quot;hypothesis&quot;: &quot;Observation-triggered replanning may preserve success with fewer inference calls; a negative result is allowed.&quot;,
+  &quot;split&quot;: &quot;development only; these tasks/initials do not enter the method comparison&quot;,
+  &quot;limitations&quot;: [
+    &quot;Frozen published checkpoint; no retraining-seed claim.&quot;,
+    &quot;Known tasks and published held-out initial states; not unseen-language generalization.&quot;,
+    &quot;Simulation pauses during inference; delay4 is prescribed sensor delay, not asynchronous real-time control.&quot;,
+    &quot;Calls are the primary compute proxy. Wall-clock measurements on a shared laptop are descriptive.&quot;,
+    &quot;Few initial states per task; screening evidence, not a full published benchmark reproduction.&quot;
+  ],
+  &quot;created_at&quot;: &quot;2026-10-14T04:44:31.999312+00:00&quot;
+}</pre></details></section><section><h2>执行方法与可复现实现</h2><p>预训练模型输出动作块；统一调度器决定何时重新推理以及如何使用仍有效的历史预测。fixed8 指本实验统一执行器的固定 8 步对照，不自动等同原论文默认评测结果。观察变化策略只使用当前与过去的相机和夹爪观测，不读取任务成功标志、奖励或真实物体位置。</p><p>方法间共用配对初态、种子和模型权重；具体阈值、执行间隔、时间集成开关以及回合上限见实际配置。候选阈值应只在开发集确定，并在正式测试前冻结。</p><details><summary>已执行方法的实际配置</summary><pre>{
+  &quot;minerva / clean / adaptive_high&quot;: [
+    {
+      &quot;mode&quot;: &quot;adaptive&quot;,
+      &quot;fixed_interval&quot;: 8,
+      &quot;min_interval&quot;: 2,
+      &quot;max_interval&quot;: 15,
+      &quot;vision_threshold&quot;: 0.08,
+      &quot;gripper_threshold&quot;: 0.01,
+      &quot;use_vision&quot;: true,
+      &quot;use_gripper&quot;: true,
+      &quot;temporal_ensemble&quot;: true,
+      &quot;ensemble_coeff&quot;: 0.01,
+      &quot;horizon&quot;: 520,
+      &quot;thumbnail_size&quot;: 16,
+      &quot;front_image_key&quot;: &quot;observation.images.image&quot;,
+      &quot;state_key&quot;: &quot;observation.state&quot;
+    },
+    {
+      &quot;mode&quot;: &quot;adaptive&quot;,
+      &quot;fixed_interval&quot;: 8,
+      &quot;min_interval&quot;: 2,
+      &quot;max_interval&quot;: 15,
+      &quot;vision_threshold&quot;: 0.08,
+      &quot;gripper_threshold&quot;: 0.01,
+      &quot;use_vision&quot;: true,
+      &quot;use_gripper&quot;: true,
+      &quot;temporal_ensemble&quot;: true,
+      &quot;ensemble_coeff&quot;: 0.01,
+      &quot;horizon&quot;: 300,
+      &quot;thumbnail_size&quot;: 16,
+      &quot;front_image_key&quot;: &quot;observation.images.image&quot;,
+      &quot;state_key&quot;: &quot;observation.state&quot;
+    },
+    {
+      &quot;mode&quot;: &quot;adaptive&quot;,
+      &quot;fixed_interval&quot;: 8,
+      &quot;min_interval&quot;: 2,
+      &quot;max_interval&quot;: 15,
+      &quot;vision_threshold&quot;: 0.08,
+      &quot;gripper_threshold&quot;: 0.01,
+      &quot;use_vision&quot;: true,
+      &quot;use_gripper&quot;: true,
+      &quot;temporal_ensemble&quot;: true,
+      &quot;ensemble_coeff&quot;: 0.01,
+      &quot;horizon&quot;: 280,
+      &quot;thumbnail_size&quot;: 16,
+      &quot;front_image_key&quot;: &quot;observation.images.image&quot;,
+      &quot;state_key&quot;: &quot;observation.state&quot;
+    }
+  ],
+  &quot;minerva / clean / adaptive_low&quot;: [
+    {
+      &quot;mode&quot;: &quot;adaptive&quot;,
+      &quot;fixed_interval&quot;: 8,
+      &quot;min_interval&quot;: 2,
+      &quot;max_interval&quot;: 15,
+      &quot;vision_threshold&quot;: 0.015,
+      &quot;gripper_threshold&quot;: 0.001,
+      &quot;use_vision&quot;: true,
+      &quot;use_gripper&quot;: true,
+      &quot;temporal_ensemble&quot;: true,
+      &quot;ensemble_coeff&quot;: 0.01,
+      &quot;horizon&quot;: 520,
+      &quot;thumbnail_size&quot;: 16,
+      &quot;front_image_key&quot;: &quot;observation.images.image&quot;,
+      &quot;state_key&quot;: &quot;observation.state&quot;
+    },
+    {
+      &quot;mode&quot;: &quot;adaptive&quot;,
+      &quot;fixed_interval&quot;: 8,
+      &quot;min_interval&quot;: 2,
+      &quot;max_interval&quot;: 15,
+      &quot;vision_threshold&quot;: 0.015,
+      &quot;gripper_threshold&quot;: 0.001,
+      &quot;use_vision&quot;: true,
+      &quot;use_gripper&quot;: true,
+      &quot;temporal_ensemble&quot;: true,
+      &quot;ensemble_coeff&quot;: 0.01,
+      &quot;horizon&quot;: 300,
+      &quot;thumbnail_size&quot;: 16,
+      &quot;front_image_key&quot;: &quot;observation.images.image&quot;,
+      &quot;state_key&quot;: &quot;observation.state&quot;
+    },
+    {
+      &quot;mode&quot;: &quot;adaptive&quot;,
+      &quot;fixed_interval&quot;: 8,
+      &quot;min_interval&quot;: 2,
+      &quot;max_interval&quot;: 15,
+      &quot;vision_threshold&quot;: 0.015,
+      &quot;gripper_threshold&quot;: 0.001,
+      &quot;use_vision&quot;: true,
+      &quot;use_gripper&quot;: true,
+      &quot;temporal_ensemble&quot;: true,
+      &quot;ensemble_coeff&quot;: 0.01,
+      &quot;horizon&quot;: 280,
+      &quot;thumbnail_size&quot;: 16,
+      &quot;front_image_key&quot;: &quot;observation.images.image&quot;,
+      &quot;state_key&quot;: &quot;observation.state&quot;
+    }
+  ],
+  &quot;minerva / clean / adaptive_medium&quot;: [
+    {
+      &quot;mode&quot;: &quot;adaptive&quot;,
+      &quot;fixed_interval&quot;: 8,
+      &quot;min_interval&quot;: 2,
+      &quot;max_interval&quot;: 15,
+      &quot;vision_threshold&quot;: 0.04,
+      &quot;gripper_threshold&quot;: 0.003,
+      &quot;use_vision&quot;: true,
+      &quot;use_gripper&quot;: true,
+      &quot;temporal_ensemble&quot;: true,
+      &quot;ensemble_coeff&quot;: 0.01,
+      &quot;horizon&quot;: 520,
+      &quot;thumbnail_size&quot;: 16,
+      &quot;front_image_key&quot;: &quot;observation.images.image&quot;,
+      &quot;state_key&quot;: &quot;observation.state&quot;
+    },
+    {
+      &quot;mode&quot;: &quot;adaptive&quot;,
+      &quot;fixed_interval&quot;: 8,
+      &quot;min_interval&quot;: 2,
+      &quot;max_interval&quot;: 15,
+      &quot;vision_threshold&quot;: 0.04,
+      &quot;gripper_threshold&quot;: 0.003,
+      &quot;use_vision&quot;: true,
+      &quot;use_gripper&quot;: true,
+      &quot;temporal_ensemble&quot;: true,
+      &quot;ensemble_coeff&quot;: 0.01,
+      &quot;horizon&quot;: 300,
+      &quot;thumbnail_size&quot;: 16,
+      &quot;front_image_key&quot;: &quot;observation.images.image&quot;,
+      &quot;state_key&quot;: &quot;observation.state&quot;
+    },
+    {
+      &quot;mode&quot;: &quot;adaptive&quot;,
+      &quot;fixed_interval&quot;: 8,
+      &quot;min_interval&quot;: 2,
+      &quot;max_interval&quot;: 15,
+      &quot;vision_threshold&quot;: 0.04,
+      &quot;gripper_threshold&quot;: 0.003,
+      &quot;use_vision&quot;: true,
+      &quot;use_gripper&quot;: true,
+      &quot;temporal_ensemble&quot;: true,
+      &quot;ensemble_coeff&quot;: 0.01,
+      &quot;horizon&quot;: 280,
+      &quot;thumbnail_size&quot;: 16,
+      &quot;front_image_key&quot;: &quot;observation.images.image&quot;,
+      &quot;state_key&quot;: &quot;observation.state&quot;
+    }
+  ],
+  &quot;minerva / clean / fixed8&quot;: [
+    {
+      &quot;mode&quot;: &quot;fixed&quot;,
+      &quot;fixed_interval&quot;: 8,
+      &quot;min_interval&quot;: 2,
+      &quot;max_interval&quot;: 15,
+      &quot;vision_threshold&quot;: 0.04,
+      &quot;gripper_threshold&quot;: 0.02,
+      &quot;use_vision&quot;: true,
+      &quot;use_gripper&quot;: true,
+      &quot;temporal_ensemble&quot;: true,
+      &quot;ensemble_coeff&quot;: 0.01,
+      &quot;horizon&quot;: 520,
+      &quot;thumbnail_size&quot;: 16,
+      &quot;front_image_key&quot;: &quot;observation.images.image&quot;,
+      &quot;state_key&quot;: &quot;observation.state&quot;
+    },
+    {
+      &quot;mode&quot;: &quot;fixed&quot;,
+      &quot;fixed_interval&quot;: 8,
+      &quot;min_interval&quot;: 2,
+      &quot;max_interval&quot;: 15,
+      &quot;vision_threshold&quot;: 0.04,
+      &quot;gripper_threshold&quot;: 0.02,
+      &quot;use_vision&quot;: true,
+      &quot;use_gripper&quot;: true,
+      &quot;temporal_ensemble&quot;: true,
+      &quot;ensemble_coeff&quot;: 0.01,
+      &quot;horizon&quot;: 300,
+      &quot;thumbnail_size&quot;: 16,
+      &quot;front_image_key&quot;: &quot;observation.images.image&quot;,
+      &quot;state_key&quot;: &quot;observation.state&quot;
+    },
+    {
+      &quot;mode&quot;: &quot;fixed&quot;,
+      &quot;fixed_interval&quot;: 8,
+      &quot;min_interval&quot;: 2,
+      &quot;max_interval&quot;: 15,
+      &quot;vision_threshold&quot;: 0.04,
+      &quot;gripper_threshold&quot;: 0.02,
+      &quot;use_vision&quot;: true,
+      &quot;use_gripper&quot;: true,
+      &quot;temporal_ensemble&quot;: true,
+      &quot;ensemble_coeff&quot;: 0.01,
+      &quot;horizon&quot;: 280,
+      &quot;thumbnail_size&quot;: 16,
+      &quot;front_image_key&quot;: &quot;observation.images.image&quot;,
+      &quot;state_key&quot;: &quot;observation.state&quot;
+    }
+  ]
+}</pre></details></section><section><h2>成功率与推理成本</h2><div class="scroll"><table><thead><tr><th>模型</th><th>条件</th><th>方法</th><th>任务 / 回合</th><th>任务宏成功率</th><th>成功 / 回合</th><th>均值调用数</th><th>均值步数</th><th>调用 / 百步</th><th>均值模型耗时 / 秒</th><th>累计墙钟 / 分</th></tr></thead><tbody><tr><td>minerva</td><td>clean</td><td>adaptive_high</td><td>4 / 8</td><td>75.0%</td><td>6 / 8</td><td>18.6</td><td>204.9</td><td>9.1</td><td>1.92</td><td>9.13</td></tr><tr><td>minerva</td><td>clean</td><td>adaptive_low</td><td>4 / 8</td><td>100.0%</td><td>8 / 8</td><td>24.6</td><td>145.0</td><td>17.0</td><td>2.45</td><td>6.95</td></tr><tr><td>minerva</td><td>clean</td><td>adaptive_medium</td><td>4 / 8</td><td>87.5%</td><td>7 / 8</td><td>18.8</td><td>171.4</td><td>10.9</td><td>1.94</td><td>8.24</td></tr><tr><td>minerva</td><td>clean</td><td>fixed8</td><td>4 / 8</td><td>100.0%</td><td>8 / 8</td><td>18.5</td><td>145.5</td><td>12.7</td><td>3.08</td><td>7.18</td></tr></tbody></table></div><p class="muted">任务宏成功率先在每个 (suite, task_id) 内求初态/种子平均，再等权平均任务。成功计数为回合计数；调用数与模型耗时为回合均值。累计墙钟为完成回合耗时之和，不代表包含安装、下载和全部进程启动的项目总工时。成功提前结束会减少回合调用数；因此另列实际执行步数与每百步调用率。不同推理预算的结果应作为质量—成本曲线解释。</p></section><section><h2>运行成本分解</h2><div class="scroll"><table><thead><tr><th>模型 / 条件 / 方法</th><th>模型推理</th><th>预处理</th><th>控制辅助开销（含反归一化/队列/集成）</th><th>仿真</th><th>墙钟</th></tr></thead><tbody><tr><td>minerva / clean / adaptive_high</td><td>1.918</td><td>2.020</td><td>1.302</td><td>54.967</td><td>68.483</td></tr><tr><td>minerva / clean / adaptive_low</td><td>2.450</td><td>1.662</td><td>1.014</td><td>38.316</td><td>52.088</td></tr><tr><td>minerva / clean / adaptive_medium</td><td>1.940</td><td>1.889</td><td>1.202</td><td>48.880</td><td>61.824</td></tr><tr><td>minerva / clean / fixed8</td><td>3.082</td><td>2.871</td><td>1.181</td><td>40.192</td><td>53.870</td></tr></tbody></table></div><p class="muted">所有数值为每回合平均秒数，直接来自原始计时字段。墙钟包含该回合其他开销；此表不把推理调用次数视作不同模型之间等价的计算量。</p></section><section><h2>与固定 8 步基线的配对对照</h2><div class="scroll"><table><thead><tr><th>模型 / 条件 / 方法</th><th>任务 / 配对</th><th>差异 / 百分点</th><th>任务簇 95% CI</th><th>胜 / 负 / 平</th><th>调用数减少</th><th>未配对候选 / 基线</th></tr></thead><tbody><tr><td>minerva / clean / adaptive_high</td><td>4 / 8</td><td>-25.0</td><td>[-50.0, +0.0]</td><td>0 / 2 / 6</td><td>-0.7%</td><td>0 / 0</td></tr><tr><td>minerva / clean / adaptive_low</td><td>4 / 8</td><td>+0.0</td><td>[+0.0, +0.0]</td><td>0 / 0 / 8</td><td>-33.1%</td><td>0 / 0</td></tr><tr><td>minerva / clean / adaptive_medium</td><td>4 / 8</td><td>-12.5</td><td>[-37.5, +0.0]</td><td>0 / 1 / 7</td><td>-1.4%</td><td>0 / 0</td></tr></tbody></table></div><p class="muted">按模型、条件、任务、初态和随机种子严格配对。差异为候选减基线。95% 区间用固定种子进行 2,000 次任务簇重采样，保持同任务试验一起出现；该区间以现有初态和模型权重为条件，不包括训练随机性或真机迁移的不确定性。少于两个任务不计算区间；少量任务的区间不能证明结论稳定。</p><p class="muted">零宽度任务簇区间（例如 [0, 0]）可能只是已观察任务的配对平均效应没有变异；双方在全部已测回合成功时就会出现这种情况。这不证明两种方法等效或非劣效，也不表示真实不确定性为零。</p></section><section><h2>可导出图表</h2><figure><img src="figures/task_method_success.svg" alt="全部任务 × 方法：单任务成功率；i 为不同初态数，e 为完成回合数；灰格缺失不按失败计"><figcaption>全部任务 × 方法：单任务成功率；i 为不同初态数，e 为完成回合数；灰格缺失不按失败计 · <a href="figures/task_method_success.svg">SVG</a> / <a href="figures/task_method_success.png">PNG</a></figcaption></figure><figure><img src="figures/task_macro_success.svg" alt="任务宏平均成功率（描述性统计）"><figcaption>任务宏平均成功率（描述性统计） · <a href="figures/task_macro_success.svg">SVG</a> / <a href="figures/task_macro_success.png">PNG</a></figcaption></figure><figure><img src="figures/quality_budget.svg" alt="成功率与实际推理预算（不能将不同预算直接视为方法收益）"><figcaption>成功率与实际推理预算（不能将不同预算直接视为方法收益） · <a href="figures/quality_budget.svg">SVG</a> / <a href="figures/quality_budget.png">PNG</a></figcaption></figure><figure><img src="figures/paired_differences.svg" alt="对固定 8 步基线的配对差异与任务簇区间"><figcaption>对固定 8 步基线的配对差异与任务簇区间 · <a href="figures/paired_differences.svg">SVG</a> / <a href="figures/paired_differences.png">PNG</a></figcaption></figure></section><section><h2>逐回合证据与回放</h2><p><a href="protocol.json">冻结实验协议</a> · <a href="summary.json">统计结果与输入 SHA-256</a></p><p>回放展示遵循协议顺序，最多展示前六条已保存录像；所有录像均在下表链接，不按成功挑选。</p><div class="videos"></div><details><summary>逐回合记录（包括缺失与错误）</summary><div class="scroll"><table><thead><tr><th>模型 / 任务 / 方法</th><th>初态 / 种子</th><th>状态 / 结果</th><th>证据</th></tr></thead><tbody><tr><td>minerva / libero_spatial:0 / fixed8</td><td>1 / 1000</td><td>complete / 成功</td><td><a href="episodes/minerva__libero_spatial__0__1__clean__fixed8/result.json">原始 JSON</a></td></tr><tr><td>minerva / libero_spatial:0 / adaptive_low</td><td>1 / 1000</td><td>complete / 成功</td><td><a href="episodes/minerva__libero_spatial__0__1__clean__adaptive_low/result.json">原始 JSON</a></td></tr><tr><td>minerva / libero_spatial:0 / adaptive_medium</td><td>1 / 1000</td><td>complete / 成功</td><td><a href="episodes/minerva__libero_spatial__0__1__clean__adaptive_medium/result.json">原始 JSON</a></td></tr><tr><td>minerva / libero_spatial:0 / adaptive_high</td><td>1 / 1000</td><td>complete / 成功</td><td><a href="episodes/minerva__libero_spatial__0__1__clean__adaptive_high/result.json">原始 JSON</a></td></tr><tr><td>minerva / libero_spatial:0 / adaptive_low</td><td>2 / 1000</td><td>complete / 成功</td><td><a href="episodes/minerva__libero_spatial__0__2__clean__adaptive_low/result.json">原始 JSON</a></td></tr><tr><td>minerva / libero_spatial:0 / adaptive_medium</td><td>2 / 1000</td><td>complete / 失败</td><td><a href="episodes/minerva__libero_spatial__0__2__clean__adaptive_medium/result.json">原始 JSON</a></td></tr><tr><td>minerva / libero_spatial:0 / adaptive_high</td><td>2 / 1000</td><td>complete / 失败</td><td><a href="episodes/minerva__libero_spatial__0__2__clean__adaptive_high/result.json">原始 JSON</a></td></tr><tr><td>minerva / libero_spatial:0 / fixed8</td><td>2 / 1000</td><td>complete / 成功</td><td><a href="episodes/minerva__libero_spatial__0__2__clean__fixed8/result.json">原始 JSON</a></td></tr><tr><td>minerva / libero_object:0 / adaptive_low</td><td>1 / 1000</td><td>complete / 成功</td><td><a href="episodes/minerva__libero_object__0__1__clean__adaptive_low/result.json">原始 JSON</a></td></tr><tr><td>minerva / libero_object:0 / adaptive_medium</td><td>1 / 1000</td><td>complete / 成功</td><td><a href="episodes/minerva__libero_object__0__1__clean__adaptive_medium/result.json">原始 JSON</a></td></tr><tr><td>minerva / libero_object:0 / adaptive_high</td><td>1 / 1000</td><td>complete / 成功</td><td><a href="episodes/minerva__libero_object__0__1__clean__adaptive_high/result.json">原始 JSON</a></td></tr><tr><td>minerva / libero_object:0 / fixed8</td><td>1 / 1000</td><td>complete / 成功</td><td><a href="episodes/minerva__libero_object__0__1__clean__fixed8/result.json">原始 JSON</a></td></tr><tr><td>minerva / libero_object:0 / adaptive_medium</td><td>2 / 1000</td><td>complete / 成功</td><td><a href="episodes/minerva__libero_object__0__2__clean__adaptive_medium/result.json">原始 JSON</a></td></tr><tr><td>minerva / libero_object:0 / adaptive_high</td><td>2 / 1000</td><td>complete / 成功</td><td><a href="episodes/minerva__libero_object__0__2__clean__adaptive_high/result.json">原始 JSON</a></td></tr><tr><td>minerva / libero_object:0 / fixed8</td><td>2 / 1000</td><td>complete / 成功</td><td><a href="episodes/minerva__libero_object__0__2__clean__fixed8/result.json">原始 JSON</a></td></tr><tr><td>minerva / libero_object:0 / adaptive_low</td><td>2 / 1000</td><td>complete / 成功</td><td><a href="episodes/minerva__libero_object__0__2__clean__adaptive_low/result.json">原始 JSON</a></td></tr><tr><td>minerva / libero_goal:0 / adaptive_medium</td><td>1 / 1000</td><td>complete / 成功</td><td><a href="episodes/minerva__libero_goal__0__1__clean__adaptive_medium/result.json">原始 JSON</a></td></tr><tr><td>minerva / libero_goal:0 / adaptive_high</td><td>1 / 1000</td><td>complete / 成功</td><td><a href="episodes/minerva__libero_goal__0__1__clean__adaptive_high/result.json">原始 JSON</a></td></tr><tr><td>minerva / libero_goal:0 / fixed8</td><td>1 / 1000</td><td>complete / 成功</td><td><a href="episodes/minerva__libero_goal__0__1__clean__fixed8/result.json">原始 JSON</a></td></tr><tr><td>minerva / libero_goal:0 / adaptive_low</td><td>1 / 1000</td><td>complete / 成功</td><td><a href="episodes/minerva__libero_goal__0__1__clean__adaptive_low/result.json">原始 JSON</a></td></tr><tr><td>minerva / libero_goal:0 / adaptive_high</td><td>2 / 1000</td><td>complete / 成功</td><td><a href="episodes/minerva__libero_goal__0__2__clean__adaptive_high/result.json">原始 JSON</a></td></tr><tr><td>minerva / libero_goal:0 / fixed8</td><td>2 / 1000</td><td>complete / 成功</td><td><a href="episodes/minerva__libero_goal__0__2__clean__fixed8/result.json">原始 JSON</a></td></tr><tr><td>minerva / libero_goal:0 / adaptive_low</td><td>2 / 1000</td><td>complete / 成功</td><td><a href="episodes/minerva__libero_goal__0__2__clean__adaptive_low/result.json">原始 JSON</a></td></tr><tr><td>minerva / libero_goal:0 / adaptive_medium</td><td>2 / 1000</td><td>complete / 成功</td><td><a href="episodes/minerva__libero_goal__0__2__clean__adaptive_medium/result.json">原始 JSON</a></td></tr><tr><td>minerva / libero_10:0 / adaptive_high</td><td>1 / 1000</td><td>complete / 成功</td><td><a href="episodes/minerva__libero_10__0__1__clean__adaptive_high/result.json">原始 JSON</a></td></tr><tr><td>minerva / libero_10:0 / fixed8</td><td>1 / 1000</td><td>complete / 成功</td><td><a href="episodes/minerva__libero_10__0__1__clean__fixed8/result.json">原始 JSON</a></td></tr><tr><td>minerva / libero_10:0 / adaptive_low</td><td>1 / 1000</td><td>complete / 成功</td><td><a href="episodes/minerva__libero_10__0__1__clean__adaptive_low/result.json">原始 JSON</a></td></tr><tr><td>minerva / libero_10:0 / adaptive_medium</td><td>1 / 1000</td><td>complete / 成功</td><td><a href="episodes/minerva__libero_10__0__1__clean__adaptive_medium/result.json">原始 JSON</a></td></tr><tr><td>minerva / libero_10:0 / fixed8</td><td>2 / 1000</td><td>complete / 成功</td><td><a href="episodes/minerva__libero_10__0__2__clean__fixed8/result.json">原始 JSON</a></td></tr><tr><td>minerva / libero_10:0 / adaptive_low</td><td>2 / 1000</td><td>complete / 成功</td><td><a href="episodes/minerva__libero_10__0__2__clean__adaptive_low/result.json">原始 JSON</a></td></tr><tr><td>minerva / libero_10:0 / adaptive_medium</td><td>2 / 1000</td><td>complete / 成功</td><td><a href="episodes/minerva__libero_10__0__2__clean__adaptive_medium/result.json">原始 JSON</a></td></tr><tr><td>minerva / libero_10:0 / adaptive_high</td><td>2 / 1000</td><td>complete / 失败</td><td><a href="episodes/minerva__libero_10__0__2__clean__adaptive_high/result.json">原始 JSON</a></td></tr></tbody></table></div></details><details><summary>配对初始图像与机器人状态一致性审计</summary><pre>{
+  &quot;blocks&quot;: 8,
+  &quot;image_checked_blocks&quot;: 8,
+  &quot;state_checked_blocks&quot;: 8,
+  &quot;image_method_comparisons&quot;: 24,
+  &quot;state_method_comparisons&quot;: 24,
+  &quot;proprio_rtol&quot;: 1e-06,
+  &quot;proprio_atol&quot;: 1e-07,
+  &quot;blocks_without_image_evidence&quot;: 0,
+  &quot;blocks_without_state_evidence&quot;: 0
+}</pre></details></section><section><h2>模型与限制</h2><ul><li>Frozen published checkpoint; no retraining-seed claim.</li><li>Known tasks and published held-out initial states; not unseen-language generalization.</li><li>Simulation pauses during inference; delay4 is prescribed sensor delay, not asynchronous real-time control.</li><li>Calls are the primary compute proxy. Wall-clock measurements on a shared laptop are descriptive.</li><li>Few initial states per task; screening evidence, not a full published benchmark reproduction.</li><li>完整性检查验证协议与记录一致，不替代模型实现审计或外部复现。</li><li>若在同一保留测试集上选择阈值、方法或检查点，就不能将其继续视为未使用测试集。</li></ul><details><summary>实际模型元数据</summary><pre>{
+  &quot;minerva&quot;: {
+    &quot;name&quot;: &quot;minerva&quot;,
+    &quot;revision&quot;: &quot;1b4fb1743f00a7d8eb87c7059c446447907d12bf&quot;,
+    &quot;model_sha256&quot;: &quot;f173def4c0b11030161486401dce52e63471d4180c248779678eaa6952c32da5&quot;,
+    &quot;device&quot;: &quot;cpu&quot;,
+    &quot;dtype&quot;: &quot;float32&quot;,
+    &quot;parameters&quot;: 545048,
+    &quot;n_observation_steps&quot;: 2,
+    &quot;chunk_length&quot;: 15,
+    &quot;n_action_steps&quot;: 1,
+    &quot;num_steps&quot;: null,
+    &quot;temporal_ensemble_coeff&quot;: 0.01,
+    &quot;temporal_ensemble_applies_to&quot;: &quot;upstream select_action only&quot;,
+    &quot;scheduled_chunks_use_temporal_ensemble&quot;: false,
+    &quot;conditioning&quot;: &quot;closed_set_task_id&quot;,
+    &quot;load_seconds&quot;: 0.11847460000717547,
+    &quot;strict_checkpoint_load&quot;: true,
+    &quot;skipped_discarded_random_initialization&quot;: false,
+    &quot;loading_audit&quot;: null,
+    &quot;camera_flip&quot;: &quot;performed once by simulator, never by this adapter&quot;
+  }
+}</pre></details></section><footer>本页由冻结协议和原始试验记录生成；输入文件 SHA-256 位于 summary.json。图表使用 Matplotlib，无外部 CDN。</footer></main></body></html>

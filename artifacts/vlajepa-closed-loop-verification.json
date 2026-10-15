@@ -1,0 +1,66 @@
+{
+  "schema": "feedbackbench.vlajepa_closed_loop_engineering_verification.v1",
+  "implementation_validation": "passed",
+  "robot_episode_execution": "blocked_preflight",
+  "planned_robot_episodes": 4,
+  "executed_robot_episodes": 0,
+  "tests": {
+    "tests": 47,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "scope": "44 unit/evidence tests plus 3 tiny real Torch adapter tests, no pretrained-policy rollouts",
+    "path": "artifacts/vlajepa-closed-loop-interface-tests.xml",
+    "sha256": "2e466505b93ffd41bab7e5484a104fe267d5b056a0e95bff78fb2d82898aa3cb"
+  },
+  "frozen_source_checks": {
+    "outputs/campaign/campaign_freeze.json": {
+      "status": "passed",
+      "sources_checked": 9,
+      "protocol_sha256": "84fb379e4eef3ce4436857f324989554da5c8753a228f2e717cee420e906e842"
+    },
+    "outputs/frontier/cache_study/protocol.json": {
+      "status": "passed",
+      "sources_checked": 9,
+      "protocol_sha256": "d6fdccfe2078323d0dffbd7e806620a1a69e8d986c2a05f06b15a9423487fe2d"
+    },
+    "outputs/frontier/flow_confirmation/protocol.json": {
+      "status": "passed",
+      "sources_checked": 14,
+      "protocol_sha256": "f8dbeebf4fbd28d60051745e801a3619ba72f5f089d18e92f7ee2d9065a33371"
+    },
+    "outputs/frontier/vlajepa_closed_loop/protocol.json": {
+      "status": "passed",
+      "sources_checked": 13,
+      "protocol_sha256": "4d224fff3d5eefe446b391f953e9a0af333ff9c3850eac14d811ec00952fb190"
+    }
+  },
+  "preserved_archives": {
+    "feedbackbench-frontier.zip": {
+      "status": "unchanged",
+      "sha256": "b355f8624871e70c524198ee3a34e5e2d1bf7203cbb652e2fc7ddbeb31e65c9e"
+    },
+    "feedbackbench-continuation.zip": {
+      "status": "unchanged",
+      "sha256": "7d440c6cdf18b8ba546d30f177aa71f2bc40f0f3c641e6ec40fdc80bfc927858"
+    }
+  },
+  "memory_preflight": {
+    "available_bytes": 3927801856,
+    "required_bytes": 5368709120.0,
+    "weights_loaded": false,
+    "run_record": "outputs/frontier/vlajepa_closed_loop/runs/run_0001.json",
+    "run_record_sha256": "6989cd87fa63adf2d1c3a90d80b58fdf954785de383142ac407f4679c46b5d37"
+  },
+  "interface_smoke": {
+    "status": "passed_interface_smoke",
+    "scope": "real simulator, saved official processors and one no-op step; no policy weights/inference, not scored",
+    "operator_record_sha256": "541d3e27674b2dd828f1e9adbb385d5466295c545cd1adc3a9d4e1ad2e995dd9"
+  },
+  "ruff": "passed all three newly added Python files",
+  "limitations": [
+    "No new VLA-JEPA closed-loop outcome exists",
+    "Previous single-forward INT8 result remains separate",
+    "All other projects left running; no automatic background resumption claimed"
+  ]
+}

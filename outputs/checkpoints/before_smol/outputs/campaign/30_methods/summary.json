@@ -1,0 +1,2705 @@
+{
+  "schema_version": 1,
+  "partial": false,
+  "planned_episodes": 128,
+  "completed_episodes": 128,
+  "error_episodes": 0,
+  "missing_episodes": 0,
+  "missing_ids": [],
+  "error_ids": [],
+  "models": [
+    "minerva"
+  ],
+  "tasks": 8,
+  "successes": 124,
+  "total_wall_seconds": 7198.150544299846,
+  "groups": [
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "adaptive",
+      "tasks": 8,
+      "episodes": 16,
+      "successes": 15,
+      "failures": 1,
+      "macro_task_success": 0.9375,
+      "episode_success": 0.9375,
+      "mean_inference_calls": 36.5625,
+      "mean_steps": 161.5,
+      "inference_calls_per_100_steps": 22.639318885448915,
+      "mean_model_seconds": 4.068470062496999,
+      "total_wall_seconds": 817.7648859999899,
+      "mean_timings": {
+        "policy_inference_seconds": 4.068470062496999,
+        "preprocess_seconds": 1.6569846562433668,
+        "scheduler_seconds": 1.0554361874928873,
+        "simulator_seconds": 36.51145785625249,
+        "wall_seconds": 51.11030537499937
+      },
+      "per_task": [
+        {
+          "suite": "libero_10",
+          "task_id": 1,
+          "task": "put both the cream cheese box and the butter in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_10",
+          "task_id": 6,
+          "task": "put the white mug on the plate and put the chocolate pudding to the right of the plate",
+          "episodes": 2,
+          "successes": 1,
+          "success_rate": 0.5,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 1,
+          "task": "put the bowl on the stove",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 6,
+          "task": "put the cream cheese in the bowl",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 1,
+          "task": "pick up the cream cheese and place it in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 6,
+          "task": "pick up the butter and place it in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 1,
+          "task": "pick up the black bowl next to the ramekin and place it on the plate",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 6,
+          "task": "pick up the black bowl next to the cookie box and place it on the plate",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        }
+      ]
+    },
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "fixed1",
+      "tasks": 8,
+      "episodes": 16,
+      "successes": 15,
+      "failures": 1,
+      "macro_task_success": 0.9375,
+      "episode_success": 0.9375,
+      "mean_inference_calls": 161.125,
+      "mean_steps": 161.125,
+      "inference_calls_per_100_steps": 100.0,
+      "mean_model_seconds": 26.26418001877937,
+      "total_wall_seconds": 1215.0833321999817,
+      "mean_timings": {
+        "policy_inference_seconds": 26.26418001877937,
+        "preprocess_seconds": 2.268740512504337,
+        "scheduler_seconds": 0.6359862811923449,
+        "simulator_seconds": 38.7989744999968,
+        "wall_seconds": 75.94270826249885
+      },
+      "per_task": [
+        {
+          "suite": "libero_10",
+          "task_id": 1,
+          "task": "put both the cream cheese box and the butter in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_10",
+          "task_id": 6,
+          "task": "put the white mug on the plate and put the chocolate pudding to the right of the plate",
+          "episodes": 2,
+          "successes": 1,
+          "success_rate": 0.5,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 1,
+          "task": "put the bowl on the stove",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 6,
+          "task": "put the cream cheese in the bowl",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 1,
+          "task": "pick up the cream cheese and place it in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 6,
+          "task": "pick up the butter and place it in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 1,
+          "task": "pick up the black bowl next to the ramekin and place it on the plate",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 6,
+          "task": "pick up the black bowl next to the cookie box and place it on the plate",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        }
+      ]
+    },
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "fixed15",
+      "tasks": 8,
+      "episodes": 16,
+      "successes": 16,
+      "failures": 0,
+      "macro_task_success": 1.0,
+      "episode_success": 1.0,
+      "mean_inference_calls": 10.1875,
+      "mean_steps": 148.4375,
+      "inference_calls_per_100_steps": 6.863157894736842,
+      "mean_model_seconds": 1.192148174999602,
+      "total_wall_seconds": 744.2960665999854,
+      "mean_timings": {
+        "policy_inference_seconds": 1.192148174999602,
+        "preprocess_seconds": 1.7651509374854868,
+        "scheduler_seconds": 0.6549600062662648,
+        "simulator_seconds": 35.21111062499949,
+        "wall_seconds": 46.518504162499084
+      },
+      "per_task": [
+        {
+          "suite": "libero_10",
+          "task_id": 1,
+          "task": "put both the cream cheese box and the butter in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_10",
+          "task_id": 6,
+          "task": "put the white mug on the plate and put the chocolate pudding to the right of the plate",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 1,
+          "task": "put the bowl on the stove",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 6,
+          "task": "put the cream cheese in the bowl",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 1,
+          "task": "pick up the cream cheese and place it in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 6,
+          "task": "pick up the butter and place it in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 1,
+          "task": "pick up the black bowl next to the ramekin and place it on the plate",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 6,
+          "task": "pick up the black bowl next to the cookie box and place it on the plate",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        }
+      ]
+    },
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "fixed4",
+      "tasks": 8,
+      "episodes": 16,
+      "successes": 16,
+      "failures": 0,
+      "macro_task_success": 1.0,
+      "episode_success": 1.0,
+      "mean_inference_calls": 37.0,
+      "mean_steps": 145.9375,
+      "inference_calls_per_100_steps": 25.353319057815845,
+      "mean_model_seconds": 6.018141337486668,
+      "total_wall_seconds": 841.7953989999951,
+      "mean_timings": {
+        "policy_inference_seconds": 6.018141337486668,
+        "preprocess_seconds": 1.895217837477503,
+        "scheduler_seconds": 0.7243837188125326,
+        "simulator_seconds": 35.87531625002612,
+        "wall_seconds": 52.61221243749969
+      },
+      "per_task": [
+        {
+          "suite": "libero_10",
+          "task_id": 1,
+          "task": "put both the cream cheese box and the butter in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_10",
+          "task_id": 6,
+          "task": "put the white mug on the plate and put the chocolate pudding to the right of the plate",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 1,
+          "task": "put the bowl on the stove",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 6,
+          "task": "put the cream cheese in the bowl",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 1,
+          "task": "pick up the cream cheese and place it in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 6,
+          "task": "pick up the butter and place it in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 1,
+          "task": "pick up the black bowl next to the ramekin and place it on the plate",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 6,
+          "task": "pick up the black bowl next to the cookie box and place it on the plate",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        }
+      ]
+    },
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "fixed8",
+      "tasks": 8,
+      "episodes": 16,
+      "successes": 16,
+      "failures": 0,
+      "macro_task_success": 1.0,
+      "episode_success": 1.0,
+      "mean_inference_calls": 18.9375,
+      "mean_steps": 147.6875,
+      "inference_calls_per_100_steps": 12.822683030046552,
+      "mean_model_seconds": 5.650127400001111,
+      "total_wall_seconds": 862.4427640999929,
+      "mean_timings": {
+        "policy_inference_seconds": 5.650127400001111,
+        "preprocess_seconds": 2.4970727562549655,
+        "scheduler_seconds": 0.982859431259385,
+        "simulator_seconds": 37.01276670622974,
+        "wall_seconds": 53.90267275624956
+      },
+      "per_task": [
+        {
+          "suite": "libero_10",
+          "task_id": 1,
+          "task": "put both the cream cheese box and the butter in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_10",
+          "task_id": 6,
+          "task": "put the white mug on the plate and put the chocolate pudding to the right of the plate",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 1,
+          "task": "put the bowl on the stove",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 6,
+          "task": "put the cream cheese in the bowl",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 1,
+          "task": "pick up the cream cheese and place it in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 6,
+          "task": "pick up the butter and place it in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 1,
+          "task": "pick up the black bowl next to the ramekin and place it on the plate",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 6,
+          "task": "pick up the black bowl next to the cookie box and place it on the plate",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        }
+      ]
+    },
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "no_ensemble",
+      "tasks": 8,
+      "episodes": 16,
+      "successes": 15,
+      "failures": 1,
+      "macro_task_success": 0.9375,
+      "episode_success": 0.9375,
+      "mean_inference_calls": 39.625,
+      "mean_steps": 162.3125,
+      "inference_calls_per_100_steps": 24.412783981517133,
+      "mean_model_seconds": 4.507667281272916,
+      "total_wall_seconds": 869.4217776000005,
+      "mean_timings": {
+        "policy_inference_seconds": 4.507667281272916,
+        "preprocess_seconds": 1.875309406274937,
+        "scheduler_seconds": 1.1322224937121064,
+        "simulator_seconds": 39.25516245002291,
+        "wall_seconds": 54.33886110000003
+      },
+      "per_task": [
+        {
+          "suite": "libero_10",
+          "task_id": 1,
+          "task": "put both the cream cheese box and the butter in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_10",
+          "task_id": 6,
+          "task": "put the white mug on the plate and put the chocolate pudding to the right of the plate",
+          "episodes": 2,
+          "successes": 1,
+          "success_rate": 0.5,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 1,
+          "task": "put the bowl on the stove",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 6,
+          "task": "put the cream cheese in the bowl",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 1,
+          "task": "pick up the cream cheese and place it in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 6,
+          "task": "pick up the butter and place it in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 1,
+          "task": "pick up the black bowl next to the ramekin and place it on the plate",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 6,
+          "task": "pick up the black bowl next to the cookie box and place it on the plate",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        }
+      ]
+    },
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "no_gripper",
+      "tasks": 8,
+      "episodes": 16,
+      "successes": 15,
+      "failures": 1,
+      "macro_task_success": 0.9375,
+      "episode_success": 0.9375,
+      "mean_inference_calls": 26.4375,
+      "mean_steps": 167.0,
+      "inference_calls_per_100_steps": 15.830838323353293,
+      "mean_model_seconds": 5.334854774999258,
+      "total_wall_seconds": 959.9970805999328,
+      "mean_timings": {
+        "policy_inference_seconds": 5.334854774999258,
+        "preprocess_seconds": 2.0981867125246936,
+        "scheduler_seconds": 1.3008675937544467,
+        "simulator_seconds": 42.51650347501982,
+        "wall_seconds": 59.9998175374958
+      },
+      "per_task": [
+        {
+          "suite": "libero_10",
+          "task_id": 1,
+          "task": "put both the cream cheese box and the butter in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_10",
+          "task_id": 6,
+          "task": "put the white mug on the plate and put the chocolate pudding to the right of the plate",
+          "episodes": 2,
+          "successes": 1,
+          "success_rate": 0.5,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 1,
+          "task": "put the bowl on the stove",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 6,
+          "task": "put the cream cheese in the bowl",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 1,
+          "task": "pick up the cream cheese and place it in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 6,
+          "task": "pick up the butter and place it in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 1,
+          "task": "pick up the black bowl next to the ramekin and place it on the plate",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 6,
+          "task": "pick up the black bowl next to the cookie box and place it on the plate",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        }
+      ]
+    },
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "no_vision",
+      "tasks": 8,
+      "episodes": 16,
+      "successes": 16,
+      "failures": 0,
+      "macro_task_success": 1.0,
+      "episode_success": 1.0,
+      "mean_inference_calls": 19.875,
+      "mean_steps": 152.8125,
+      "inference_calls_per_100_steps": 13.006134969325153,
+      "mean_model_seconds": 5.433266812502552,
+      "total_wall_seconds": 887.3492381999677,
+      "mean_timings": {
+        "policy_inference_seconds": 5.433266812502552,
+        "preprocess_seconds": 2.327565593755935,
+        "scheduler_seconds": 0.9233107437603394,
+        "simulator_seconds": 39.586188468763794,
+        "wall_seconds": 55.45932738749798
+      },
+      "per_task": [
+        {
+          "suite": "libero_10",
+          "task_id": 1,
+          "task": "put both the cream cheese box and the butter in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_10",
+          "task_id": 6,
+          "task": "put the white mug on the plate and put the chocolate pudding to the right of the plate",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 1,
+          "task": "put the bowl on the stove",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 6,
+          "task": "put the cream cheese in the bowl",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 1,
+          "task": "pick up the cream cheese and place it in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 6,
+          "task": "pick up the butter and place it in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 1,
+          "task": "pick up the black bowl next to the ramekin and place it on the plate",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 6,
+          "task": "pick up the black bowl next to the cookie box and place it on the plate",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0,
+          "initial_states": 2
+        }
+      ]
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "adaptive",
+      "baseline": "fixed8",
+      "paired_tasks": 8,
+      "paired_episodes": 16,
+      "unmatched_candidate": 0,
+      "unmatched_baseline": 0,
+      "candidate_macro_success": 0.9375,
+      "baseline_macro_success": 1.0,
+      "macro_success_difference": -0.0625,
+      "task_cluster_95ci": [
+        -0.1875,
+        0.0
+      ],
+      "bootstrap_resamples": 2000,
+      "bootstrap_seed": 20261014,
+      "candidate_wins": 0,
+      "baseline_wins": 1,
+      "ties": 15,
+      "candidate_mean_calls": 36.5625,
+      "baseline_mean_calls": 18.9375,
+      "inference_call_reduction": -0.9306930693069306,
+      "mean_model_seconds_difference": -1.5816573375041116,
+      "small_task_count": true,
+      "per_task": [
+        {
+          "suite": "libero_10",
+          "task_id": 1,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_10",
+          "task_id": 6,
+          "pairs": 2,
+          "candidate_success": 0.5,
+          "baseline_success": 1.0,
+          "difference": -0.5
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 1,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 6,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 1,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 6,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 1,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 6,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        }
+      ]
+    },
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "fixed1",
+      "baseline": "fixed8",
+      "paired_tasks": 8,
+      "paired_episodes": 16,
+      "unmatched_candidate": 0,
+      "unmatched_baseline": 0,
+      "candidate_macro_success": 0.9375,
+      "baseline_macro_success": 1.0,
+      "macro_success_difference": -0.0625,
+      "task_cluster_95ci": [
+        -0.1875,
+        0.0
+      ],
+      "bootstrap_resamples": 2000,
+      "bootstrap_seed": 20261014,
+      "candidate_wins": 0,
+      "baseline_wins": 1,
+      "ties": 15,
+      "candidate_mean_calls": 161.125,
+      "baseline_mean_calls": 18.9375,
+      "inference_call_reduction": -7.5082508250825075,
+      "mean_model_seconds_difference": 20.61405261877826,
+      "small_task_count": true,
+      "per_task": [
+        {
+          "suite": "libero_10",
+          "task_id": 1,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_10",
+          "task_id": 6,
+          "pairs": 2,
+          "candidate_success": 0.5,
+          "baseline_success": 1.0,
+          "difference": -0.5
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 1,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 6,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 1,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 6,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 1,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 6,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        }
+      ]
+    },
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "fixed15",
+      "baseline": "fixed8",
+      "paired_tasks": 8,
+      "paired_episodes": 16,
+      "unmatched_candidate": 0,
+      "unmatched_baseline": 0,
+      "candidate_macro_success": 1.0,
+      "baseline_macro_success": 1.0,
+      "macro_success_difference": 0.0,
+      "task_cluster_95ci": [
+        0.0,
+        0.0
+      ],
+      "bootstrap_resamples": 2000,
+      "bootstrap_seed": 20261014,
+      "candidate_wins": 0,
+      "baseline_wins": 0,
+      "ties": 16,
+      "candidate_mean_calls": 10.1875,
+      "baseline_mean_calls": 18.9375,
+      "inference_call_reduction": 0.4620462046204621,
+      "mean_model_seconds_difference": -4.457979225001509,
+      "small_task_count": true,
+      "per_task": [
+        {
+          "suite": "libero_10",
+          "task_id": 1,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_10",
+          "task_id": 6,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 1,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 6,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 1,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 6,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 1,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 6,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        }
+      ]
+    },
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "fixed4",
+      "baseline": "fixed8",
+      "paired_tasks": 8,
+      "paired_episodes": 16,
+      "unmatched_candidate": 0,
+      "unmatched_baseline": 0,
+      "candidate_macro_success": 1.0,
+      "baseline_macro_success": 1.0,
+      "macro_success_difference": 0.0,
+      "task_cluster_95ci": [
+        0.0,
+        0.0
+      ],
+      "bootstrap_resamples": 2000,
+      "bootstrap_seed": 20261014,
+      "candidate_wins": 0,
+      "baseline_wins": 0,
+      "ties": 16,
+      "candidate_mean_calls": 37.0,
+      "baseline_mean_calls": 18.9375,
+      "inference_call_reduction": -0.9537953795379539,
+      "mean_model_seconds_difference": 0.3680139374855571,
+      "small_task_count": true,
+      "per_task": [
+        {
+          "suite": "libero_10",
+          "task_id": 1,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_10",
+          "task_id": 6,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 1,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 6,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 1,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 6,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 1,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 6,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        }
+      ]
+    },
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "no_ensemble",
+      "baseline": "fixed8",
+      "paired_tasks": 8,
+      "paired_episodes": 16,
+      "unmatched_candidate": 0,
+      "unmatched_baseline": 0,
+      "candidate_macro_success": 0.9375,
+      "baseline_macro_success": 1.0,
+      "macro_success_difference": -0.0625,
+      "task_cluster_95ci": [
+        -0.1875,
+        0.0
+      ],
+      "bootstrap_resamples": 2000,
+      "bootstrap_seed": 20261014,
+      "candidate_wins": 0,
+      "baseline_wins": 1,
+      "ties": 15,
+      "candidate_mean_calls": 39.625,
+      "baseline_mean_calls": 18.9375,
+      "inference_call_reduction": -1.0924092409240922,
+      "mean_model_seconds_difference": -1.142460118728195,
+      "small_task_count": true,
+      "per_task": [
+        {
+          "suite": "libero_10",
+          "task_id": 1,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_10",
+          "task_id": 6,
+          "pairs": 2,
+          "candidate_success": 0.5,
+          "baseline_success": 1.0,
+          "difference": -0.5
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 1,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 6,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 1,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 6,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 1,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 6,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        }
+      ]
+    },
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "no_gripper",
+      "baseline": "fixed8",
+      "paired_tasks": 8,
+      "paired_episodes": 16,
+      "unmatched_candidate": 0,
+      "unmatched_baseline": 0,
+      "candidate_macro_success": 0.9375,
+      "baseline_macro_success": 1.0,
+      "macro_success_difference": -0.0625,
+      "task_cluster_95ci": [
+        -0.1875,
+        0.0
+      ],
+      "bootstrap_resamples": 2000,
+      "bootstrap_seed": 20261014,
+      "candidate_wins": 0,
+      "baseline_wins": 1,
+      "ties": 15,
+      "candidate_mean_calls": 26.4375,
+      "baseline_mean_calls": 18.9375,
+      "inference_call_reduction": -0.39603960396039595,
+      "mean_model_seconds_difference": -0.31527262500185316,
+      "small_task_count": true,
+      "per_task": [
+        {
+          "suite": "libero_10",
+          "task_id": 1,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_10",
+          "task_id": 6,
+          "pairs": 2,
+          "candidate_success": 0.5,
+          "baseline_success": 1.0,
+          "difference": -0.5
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 1,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 6,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 1,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 6,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 1,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 6,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        }
+      ]
+    },
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "no_vision",
+      "baseline": "fixed8",
+      "paired_tasks": 8,
+      "paired_episodes": 16,
+      "unmatched_candidate": 0,
+      "unmatched_baseline": 0,
+      "candidate_macro_success": 1.0,
+      "baseline_macro_success": 1.0,
+      "macro_success_difference": 0.0,
+      "task_cluster_95ci": [
+        0.0,
+        0.0
+      ],
+      "bootstrap_resamples": 2000,
+      "bootstrap_seed": 20261014,
+      "candidate_wins": 0,
+      "baseline_wins": 0,
+      "ties": 16,
+      "candidate_mean_calls": 19.875,
+      "baseline_mean_calls": 18.9375,
+      "inference_call_reduction": -0.04950495049504955,
+      "mean_model_seconds_difference": -0.21686058749855874,
+      "small_task_count": true,
+      "per_task": [
+        {
+          "suite": "libero_10",
+          "task_id": 1,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_10",
+          "task_id": 6,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 1,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 6,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 1,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 6,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 1,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 6,
+          "pairs": 2,
+          "candidate_success": 1.0,
+          "baseline_success": 1.0,
+          "difference": 0.0
+        }
+      ]
+    }
+  ],
+  "ablation_comparisons": [
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "no_vision",
+      "baseline": "adaptive",
+      "paired_tasks": 8,
+      "paired_episodes": 16,
+      "unmatched_baseline": 0,
+      "unmatched_candidate": 0,
+      "macro_success_difference": 0.0625,
+      "task_cluster_95ci": [
+        0.0,
+        0.1875
+      ],
+      "candidate_mean_calls": 19.875,
+      "baseline_mean_calls": 36.5625,
+      "mean_calls_difference": -16.6875,
+      "macro_calls_difference": -16.6875,
+      "mean_model_seconds_difference": 1.364796750005553,
+      "candidate_wins": 1,
+      "baseline_wins": 0,
+      "ties": 15,
+      "bootstrap_resamples": 2000,
+      "bootstrap_seed": 20261014,
+      "small_task_count": true,
+      "per_task": [
+        {
+          "suite": "libero_10",
+          "task_id": 1,
+          "pairs": 2,
+          "baseline_success": 1.0,
+          "candidate_success": 1.0,
+          "difference": 0.0,
+          "mean_calls_difference": -57.5
+        },
+        {
+          "suite": "libero_10",
+          "task_id": 6,
+          "pairs": 2,
+          "baseline_success": 0.5,
+          "candidate_success": 1.0,
+          "difference": 0.5,
+          "mean_calls_difference": -41.5
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 1,
+          "pairs": 2,
+          "baseline_success": 1.0,
+          "candidate_success": 1.0,
+          "difference": 0.0,
+          "mean_calls_difference": -2.5
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 6,
+          "pairs": 2,
+          "baseline_success": 1.0,
+          "candidate_success": 1.0,
+          "difference": 0.0,
+          "mean_calls_difference": -5.0
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 1,
+          "pairs": 2,
+          "baseline_success": 1.0,
+          "candidate_success": 1.0,
+          "difference": 0.0,
+          "mean_calls_difference": -5.0
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 6,
+          "pairs": 2,
+          "baseline_success": 1.0,
+          "candidate_success": 1.0,
+          "difference": 0.0,
+          "mean_calls_difference": -2.0
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 1,
+          "pairs": 2,
+          "baseline_success": 1.0,
+          "candidate_success": 1.0,
+          "difference": 0.0,
+          "mean_calls_difference": -3.5
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 6,
+          "pairs": 2,
+          "baseline_success": 1.0,
+          "candidate_success": 1.0,
+          "difference": 0.0,
+          "mean_calls_difference": -16.5
+        }
+      ],
+      "per_pair": [
+        {
+          "suite": "libero_10",
+          "task_id": 1,
+          "task": "put both the cream cheese box and the butter in the basket",
+          "init_state_id": 11,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_10__1__11__clean__adaptive",
+          "candidate_id": "minerva__libero_10__1__11__clean__no_vision",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 86,
+          "candidate_calls": 29,
+          "calls_difference": -57
+        },
+        {
+          "suite": "libero_10",
+          "task_id": 1,
+          "task": "put both the cream cheese box and the butter in the basket",
+          "init_state_id": 29,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_10__1__29__clean__adaptive",
+          "candidate_id": "minerva__libero_10__1__29__clean__no_vision",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 87,
+          "candidate_calls": 29,
+          "calls_difference": -58
+        },
+        {
+          "suite": "libero_10",
+          "task_id": 6,
+          "task": "put the white mug on the plate and put the chocolate pudding to the right of the plate",
+          "init_state_id": 11,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_10__6__11__clean__adaptive",
+          "candidate_id": "minerva__libero_10__6__11__clean__no_vision",
+          "baseline_success": false,
+          "candidate_success": true,
+          "success_difference": 1,
+          "baseline_calls": 103,
+          "candidate_calls": 44,
+          "calls_difference": -59
+        },
+        {
+          "suite": "libero_10",
+          "task_id": 6,
+          "task": "put the white mug on the plate and put the chocolate pudding to the right of the plate",
+          "init_state_id": 29,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_10__6__29__clean__adaptive",
+          "candidate_id": "minerva__libero_10__6__29__clean__no_vision",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 68,
+          "candidate_calls": 44,
+          "calls_difference": -24
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 1,
+          "task": "put the bowl on the stove",
+          "init_state_id": 11,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_goal__1__11__clean__adaptive",
+          "candidate_id": "minerva__libero_goal__1__11__clean__no_vision",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 16,
+          "candidate_calls": 14,
+          "calls_difference": -2
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 1,
+          "task": "put the bowl on the stove",
+          "init_state_id": 29,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_goal__1__29__clean__adaptive",
+          "candidate_id": "minerva__libero_goal__1__29__clean__no_vision",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 14,
+          "candidate_calls": 11,
+          "calls_difference": -3
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 6,
+          "task": "put the cream cheese in the bowl",
+          "init_state_id": 11,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_goal__6__11__clean__adaptive",
+          "candidate_id": "minerva__libero_goal__6__11__clean__no_vision",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 29,
+          "candidate_calls": 25,
+          "calls_difference": -4
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 6,
+          "task": "put the cream cheese in the bowl",
+          "init_state_id": 29,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_goal__6__29__clean__adaptive",
+          "candidate_id": "minerva__libero_goal__6__29__clean__no_vision",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 17,
+          "candidate_calls": 11,
+          "calls_difference": -6
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 1,
+          "task": "pick up the cream cheese and place it in the basket",
+          "init_state_id": 11,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_object__1__11__clean__adaptive",
+          "candidate_id": "minerva__libero_object__1__11__clean__no_vision",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 20,
+          "candidate_calls": 14,
+          "calls_difference": -6
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 1,
+          "task": "pick up the cream cheese and place it in the basket",
+          "init_state_id": 29,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_object__1__29__clean__adaptive",
+          "candidate_id": "minerva__libero_object__1__29__clean__no_vision",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 19,
+          "candidate_calls": 15,
+          "calls_difference": -4
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 6,
+          "task": "pick up the butter and place it in the basket",
+          "init_state_id": 11,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_object__6__11__clean__adaptive",
+          "candidate_id": "minerva__libero_object__6__11__clean__no_vision",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 17,
+          "candidate_calls": 15,
+          "calls_difference": -2
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 6,
+          "task": "pick up the butter and place it in the basket",
+          "init_state_id": 29,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_object__6__29__clean__adaptive",
+          "candidate_id": "minerva__libero_object__6__29__clean__no_vision",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 17,
+          "candidate_calls": 15,
+          "calls_difference": -2
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 1,
+          "task": "pick up the black bowl next to the ramekin and place it on the plate",
+          "init_state_id": 11,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_spatial__1__11__clean__adaptive",
+          "candidate_id": "minerva__libero_spatial__1__11__clean__no_vision",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 16,
+          "candidate_calls": 12,
+          "calls_difference": -4
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 1,
+          "task": "pick up the black bowl next to the ramekin and place it on the plate",
+          "init_state_id": 29,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_spatial__1__29__clean__adaptive",
+          "candidate_id": "minerva__libero_spatial__1__29__clean__no_vision",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 17,
+          "candidate_calls": 14,
+          "calls_difference": -3
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 6,
+          "task": "pick up the black bowl next to the cookie box and place it on the plate",
+          "init_state_id": 11,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_spatial__6__11__clean__adaptive",
+          "candidate_id": "minerva__libero_spatial__6__11__clean__no_vision",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 29,
+          "candidate_calls": 13,
+          "calls_difference": -16
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 6,
+          "task": "pick up the black bowl next to the cookie box and place it on the plate",
+          "init_state_id": 29,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_spatial__6__29__clean__adaptive",
+          "candidate_id": "minerva__libero_spatial__6__29__clean__no_vision",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 30,
+          "candidate_calls": 13,
+          "calls_difference": -17
+        }
+      ],
+      "changed_component": "use_vision",
+      "difference_direction": "variant minus full adaptive"
+    },
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "no_gripper",
+      "baseline": "adaptive",
+      "paired_tasks": 8,
+      "paired_episodes": 16,
+      "unmatched_baseline": 0,
+      "unmatched_candidate": 0,
+      "macro_success_difference": 0.0,
+      "task_cluster_95ci": [
+        0.0,
+        0.0
+      ],
+      "candidate_mean_calls": 26.4375,
+      "baseline_mean_calls": 36.5625,
+      "mean_calls_difference": -10.125,
+      "macro_calls_difference": -10.125,
+      "mean_model_seconds_difference": 1.2663847125022585,
+      "candidate_wins": 1,
+      "baseline_wins": 1,
+      "ties": 14,
+      "bootstrap_resamples": 2000,
+      "bootstrap_seed": 20261014,
+      "small_task_count": true,
+      "per_task": [
+        {
+          "suite": "libero_10",
+          "task_id": 1,
+          "pairs": 2,
+          "baseline_success": 1.0,
+          "candidate_success": 1.0,
+          "difference": 0.0,
+          "mean_calls_difference": -13.0
+        },
+        {
+          "suite": "libero_10",
+          "task_id": 6,
+          "pairs": 2,
+          "baseline_success": 0.5,
+          "candidate_success": 0.5,
+          "difference": 0.0,
+          "mean_calls_difference": -29.5
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 1,
+          "pairs": 2,
+          "baseline_success": 1.0,
+          "candidate_success": 1.0,
+          "difference": 0.0,
+          "mean_calls_difference": -6.5
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 6,
+          "pairs": 2,
+          "baseline_success": 1.0,
+          "candidate_success": 1.0,
+          "difference": 0.0,
+          "mean_calls_difference": -10.0
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 1,
+          "pairs": 2,
+          "baseline_success": 1.0,
+          "candidate_success": 1.0,
+          "difference": 0.0,
+          "mean_calls_difference": -6.0
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 6,
+          "pairs": 2,
+          "baseline_success": 1.0,
+          "candidate_success": 1.0,
+          "difference": 0.0,
+          "mean_calls_difference": -5.5
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 1,
+          "pairs": 2,
+          "baseline_success": 1.0,
+          "candidate_success": 1.0,
+          "difference": 0.0,
+          "mean_calls_difference": -5.5
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 6,
+          "pairs": 2,
+          "baseline_success": 1.0,
+          "candidate_success": 1.0,
+          "difference": 0.0,
+          "mean_calls_difference": -5.0
+        }
+      ],
+      "per_pair": [
+        {
+          "suite": "libero_10",
+          "task_id": 1,
+          "task": "put both the cream cheese box and the butter in the basket",
+          "init_state_id": 11,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_10__1__11__clean__adaptive",
+          "candidate_id": "minerva__libero_10__1__11__clean__no_gripper",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 86,
+          "candidate_calls": 73,
+          "calls_difference": -13
+        },
+        {
+          "suite": "libero_10",
+          "task_id": 1,
+          "task": "put both the cream cheese box and the butter in the basket",
+          "init_state_id": 29,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_10__1__29__clean__adaptive",
+          "candidate_id": "minerva__libero_10__1__29__clean__no_gripper",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 87,
+          "candidate_calls": 74,
+          "calls_difference": -13
+        },
+        {
+          "suite": "libero_10",
+          "task_id": 6,
+          "task": "put the white mug on the plate and put the chocolate pudding to the right of the plate",
+          "init_state_id": 11,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_10__6__11__clean__adaptive",
+          "candidate_id": "minerva__libero_10__6__11__clean__no_gripper",
+          "baseline_success": false,
+          "candidate_success": true,
+          "success_difference": 1,
+          "baseline_calls": 103,
+          "candidate_calls": 53,
+          "calls_difference": -50
+        },
+        {
+          "suite": "libero_10",
+          "task_id": 6,
+          "task": "put the white mug on the plate and put the chocolate pudding to the right of the plate",
+          "init_state_id": 29,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_10__6__29__clean__adaptive",
+          "candidate_id": "minerva__libero_10__6__29__clean__no_gripper",
+          "baseline_success": true,
+          "candidate_success": false,
+          "success_difference": -1,
+          "baseline_calls": 68,
+          "candidate_calls": 59,
+          "calls_difference": -9
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 1,
+          "task": "put the bowl on the stove",
+          "init_state_id": 11,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_goal__1__11__clean__adaptive",
+          "candidate_id": "minerva__libero_goal__1__11__clean__no_gripper",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 16,
+          "candidate_calls": 9,
+          "calls_difference": -7
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 1,
+          "task": "put the bowl on the stove",
+          "init_state_id": 29,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_goal__1__29__clean__adaptive",
+          "candidate_id": "minerva__libero_goal__1__29__clean__no_gripper",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 14,
+          "candidate_calls": 8,
+          "calls_difference": -6
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 6,
+          "task": "put the cream cheese in the bowl",
+          "init_state_id": 11,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_goal__6__11__clean__adaptive",
+          "candidate_id": "minerva__libero_goal__6__11__clean__no_gripper",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 29,
+          "candidate_calls": 14,
+          "calls_difference": -15
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 6,
+          "task": "put the cream cheese in the bowl",
+          "init_state_id": 29,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_goal__6__29__clean__adaptive",
+          "candidate_id": "minerva__libero_goal__6__29__clean__no_gripper",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 17,
+          "candidate_calls": 12,
+          "calls_difference": -5
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 1,
+          "task": "pick up the cream cheese and place it in the basket",
+          "init_state_id": 11,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_object__1__11__clean__adaptive",
+          "candidate_id": "minerva__libero_object__1__11__clean__no_gripper",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 20,
+          "candidate_calls": 14,
+          "calls_difference": -6
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 1,
+          "task": "pick up the cream cheese and place it in the basket",
+          "init_state_id": 29,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_object__1__29__clean__adaptive",
+          "candidate_id": "minerva__libero_object__1__29__clean__no_gripper",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 19,
+          "candidate_calls": 13,
+          "calls_difference": -6
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 6,
+          "task": "pick up the butter and place it in the basket",
+          "init_state_id": 11,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_object__6__11__clean__adaptive",
+          "candidate_id": "minerva__libero_object__6__11__clean__no_gripper",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 17,
+          "candidate_calls": 11,
+          "calls_difference": -6
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 6,
+          "task": "pick up the butter and place it in the basket",
+          "init_state_id": 29,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_object__6__29__clean__adaptive",
+          "candidate_id": "minerva__libero_object__6__29__clean__no_gripper",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 17,
+          "candidate_calls": 12,
+          "calls_difference": -5
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 1,
+          "task": "pick up the black bowl next to the ramekin and place it on the plate",
+          "init_state_id": 11,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_spatial__1__11__clean__adaptive",
+          "candidate_id": "minerva__libero_spatial__1__11__clean__no_gripper",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 16,
+          "candidate_calls": 11,
+          "calls_difference": -5
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 1,
+          "task": "pick up the black bowl next to the ramekin and place it on the plate",
+          "init_state_id": 29,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_spatial__1__29__clean__adaptive",
+          "candidate_id": "minerva__libero_spatial__1__29__clean__no_gripper",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 17,
+          "candidate_calls": 11,
+          "calls_difference": -6
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 6,
+          "task": "pick up the black bowl next to the cookie box and place it on the plate",
+          "init_state_id": 11,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_spatial__6__11__clean__adaptive",
+          "candidate_id": "minerva__libero_spatial__6__11__clean__no_gripper",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 29,
+          "candidate_calls": 24,
+          "calls_difference": -5
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 6,
+          "task": "pick up the black bowl next to the cookie box and place it on the plate",
+          "init_state_id": 29,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_spatial__6__29__clean__adaptive",
+          "candidate_id": "minerva__libero_spatial__6__29__clean__no_gripper",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 30,
+          "candidate_calls": 25,
+          "calls_difference": -5
+        }
+      ],
+      "changed_component": "use_gripper",
+      "difference_direction": "variant minus full adaptive"
+    },
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "no_ensemble",
+      "baseline": "adaptive",
+      "paired_tasks": 8,
+      "paired_episodes": 16,
+      "unmatched_baseline": 0,
+      "unmatched_candidate": 0,
+      "macro_success_difference": 0.0,
+      "task_cluster_95ci": [
+        0.0,
+        0.0
+      ],
+      "candidate_mean_calls": 39.625,
+      "baseline_mean_calls": 36.5625,
+      "mean_calls_difference": 3.0625,
+      "macro_calls_difference": 3.0625,
+      "mean_model_seconds_difference": 0.43919721877591655,
+      "candidate_wins": 1,
+      "baseline_wins": 1,
+      "ties": 14,
+      "bootstrap_resamples": 2000,
+      "bootstrap_seed": 20261014,
+      "small_task_count": true,
+      "per_task": [
+        {
+          "suite": "libero_10",
+          "task_id": 1,
+          "pairs": 2,
+          "baseline_success": 1.0,
+          "candidate_success": 1.0,
+          "difference": 0.0,
+          "mean_calls_difference": 0.0
+        },
+        {
+          "suite": "libero_10",
+          "task_id": 6,
+          "pairs": 2,
+          "baseline_success": 0.5,
+          "candidate_success": 0.5,
+          "difference": 0.0,
+          "mean_calls_difference": 23.5
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 1,
+          "pairs": 2,
+          "baseline_success": 1.0,
+          "candidate_success": 1.0,
+          "difference": 0.0,
+          "mean_calls_difference": 1.0
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 6,
+          "pairs": 2,
+          "baseline_success": 1.0,
+          "candidate_success": 1.0,
+          "difference": 0.0,
+          "mean_calls_difference": -0.5
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 1,
+          "pairs": 2,
+          "baseline_success": 1.0,
+          "candidate_success": 1.0,
+          "difference": 0.0,
+          "mean_calls_difference": 2.0
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 6,
+          "pairs": 2,
+          "baseline_success": 1.0,
+          "candidate_success": 1.0,
+          "difference": 0.0,
+          "mean_calls_difference": -0.5
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 1,
+          "pairs": 2,
+          "baseline_success": 1.0,
+          "candidate_success": 1.0,
+          "difference": 0.0,
+          "mean_calls_difference": -1.0
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 6,
+          "pairs": 2,
+          "baseline_success": 1.0,
+          "candidate_success": 1.0,
+          "difference": 0.0,
+          "mean_calls_difference": 0.0
+        }
+      ],
+      "per_pair": [
+        {
+          "suite": "libero_10",
+          "task_id": 1,
+          "task": "put both the cream cheese box and the butter in the basket",
+          "init_state_id": 11,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_10__1__11__clean__adaptive",
+          "candidate_id": "minerva__libero_10__1__11__clean__no_ensemble",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 86,
+          "candidate_calls": 86,
+          "calls_difference": 0
+        },
+        {
+          "suite": "libero_10",
+          "task_id": 1,
+          "task": "put both the cream cheese box and the butter in the basket",
+          "init_state_id": 29,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_10__1__29__clean__adaptive",
+          "candidate_id": "minerva__libero_10__1__29__clean__no_ensemble",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 87,
+          "candidate_calls": 87,
+          "calls_difference": 0
+        },
+        {
+          "suite": "libero_10",
+          "task_id": 6,
+          "task": "put the white mug on the plate and put the chocolate pudding to the right of the plate",
+          "init_state_id": 11,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_10__6__11__clean__adaptive",
+          "candidate_id": "minerva__libero_10__6__11__clean__no_ensemble",
+          "baseline_success": false,
+          "candidate_success": true,
+          "success_difference": 1,
+          "baseline_calls": 103,
+          "candidate_calls": 60,
+          "calls_difference": -43
+        },
+        {
+          "suite": "libero_10",
+          "task_id": 6,
+          "task": "put the white mug on the plate and put the chocolate pudding to the right of the plate",
+          "init_state_id": 29,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_10__6__29__clean__adaptive",
+          "candidate_id": "minerva__libero_10__6__29__clean__no_ensemble",
+          "baseline_success": true,
+          "candidate_success": false,
+          "success_difference": -1,
+          "baseline_calls": 68,
+          "candidate_calls": 158,
+          "calls_difference": 90
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 1,
+          "task": "put the bowl on the stove",
+          "init_state_id": 11,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_goal__1__11__clean__adaptive",
+          "candidate_id": "minerva__libero_goal__1__11__clean__no_ensemble",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 16,
+          "candidate_calls": 17,
+          "calls_difference": 1
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 1,
+          "task": "put the bowl on the stove",
+          "init_state_id": 29,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_goal__1__29__clean__adaptive",
+          "candidate_id": "minerva__libero_goal__1__29__clean__no_ensemble",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 14,
+          "candidate_calls": 15,
+          "calls_difference": 1
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 6,
+          "task": "put the cream cheese in the bowl",
+          "init_state_id": 11,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_goal__6__11__clean__adaptive",
+          "candidate_id": "minerva__libero_goal__6__11__clean__no_ensemble",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 29,
+          "candidate_calls": 28,
+          "calls_difference": -1
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 6,
+          "task": "put the cream cheese in the bowl",
+          "init_state_id": 29,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_goal__6__29__clean__adaptive",
+          "candidate_id": "minerva__libero_goal__6__29__clean__no_ensemble",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 17,
+          "candidate_calls": 17,
+          "calls_difference": 0
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 1,
+          "task": "pick up the cream cheese and place it in the basket",
+          "init_state_id": 11,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_object__1__11__clean__adaptive",
+          "candidate_id": "minerva__libero_object__1__11__clean__no_ensemble",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 20,
+          "candidate_calls": 21,
+          "calls_difference": 1
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 1,
+          "task": "pick up the cream cheese and place it in the basket",
+          "init_state_id": 29,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_object__1__29__clean__adaptive",
+          "candidate_id": "minerva__libero_object__1__29__clean__no_ensemble",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 19,
+          "candidate_calls": 22,
+          "calls_difference": 3
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 6,
+          "task": "pick up the butter and place it in the basket",
+          "init_state_id": 11,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_object__6__11__clean__adaptive",
+          "candidate_id": "minerva__libero_object__6__11__clean__no_ensemble",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 17,
+          "candidate_calls": 16,
+          "calls_difference": -1
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 6,
+          "task": "pick up the butter and place it in the basket",
+          "init_state_id": 29,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_object__6__29__clean__adaptive",
+          "candidate_id": "minerva__libero_object__6__29__clean__no_ensemble",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 17,
+          "candidate_calls": 17,
+          "calls_difference": 0
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 1,
+          "task": "pick up the black bowl next to the ramekin and place it on the plate",
+          "init_state_id": 11,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_spatial__1__11__clean__adaptive",
+          "candidate_id": "minerva__libero_spatial__1__11__clean__no_ensemble",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 16,
+          "candidate_calls": 15,
+          "calls_difference": -1
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 1,
+          "task": "pick up the black bowl next to the ramekin and place it on the plate",
+          "init_state_id": 29,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_spatial__1__29__clean__adaptive",
+          "candidate_id": "minerva__libero_spatial__1__29__clean__no_ensemble",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 17,
+          "candidate_calls": 16,
+          "calls_difference": -1
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 6,
+          "task": "pick up the black bowl next to the cookie box and place it on the plate",
+          "init_state_id": 11,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_spatial__6__11__clean__adaptive",
+          "candidate_id": "minerva__libero_spatial__6__11__clean__no_ensemble",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 29,
+          "candidate_calls": 29,
+          "calls_difference": 0
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 6,
+          "task": "pick up the black bowl next to the cookie box and place it on the plate",
+          "init_state_id": 29,
+          "seed": 1000,
+          "baseline_id": "minerva__libero_spatial__6__29__clean__adaptive",
+          "candidate_id": "minerva__libero_spatial__6__29__clean__no_ensemble",
+          "baseline_success": true,
+          "candidate_success": true,
+          "success_difference": 0,
+          "baseline_calls": 30,
+          "candidate_calls": 30,
+          "calls_difference": 0
+        }
+      ],
+      "changed_component": "temporal_ensemble",
+      "difference_direction": "variant minus full adaptive"
+    }
+  ],
+  "warnings": [
+    "任务簇少于 10 个，跨任务效应和置信区间不稳定；不能据此声称普遍优于基线。"
+  ],
+  "input_sha256": {
+    "protocol.json": "2be0dec290fed7795348703b3b40bb0ab81b43b78054f316f5c0701f85288f2b",
+    "episodes/minerva__libero_10__1__11__clean__adaptive/result.json": "58743a3789b96896d1fb99591960c489b21cfd479688077b7e8a01bbf6201949",
+    "episodes/minerva__libero_10__1__11__clean__fixed1/result.json": "c2bdfceedd2afbe545f19621d149823cb9c45a0a482e460ae4370cfdd9e72748",
+    "episodes/minerva__libero_10__1__11__clean__fixed15/result.json": "f3aa9e1a0521cac813f389ad0010b0573a2f87185aff21d4e9121c45ab4d3f53",
+    "episodes/minerva__libero_10__1__11__clean__fixed4/result.json": "a15f417e72591018264c10fd5a76e14bf1bca693fefda6a505c88b7cd6e20301",
+    "episodes/minerva__libero_10__1__11__clean__fixed8/result.json": "797433164f0a728160dafe7a8e65ebd52743a98cd8ad214dbe424a7bd3a34940",
+    "episodes/minerva__libero_10__1__11__clean__no_ensemble/result.json": "d598e5fd47b1a167bce7f4bc333924d5323e584ce58936f93c37bf7e8c0c7191",
+    "episodes/minerva__libero_10__1__11__clean__no_gripper/result.json": "c6aa48de474c8200d5ce89d41b4be659091eb4be535b39fc6822000605568e6a",
+    "episodes/minerva__libero_10__1__11__clean__no_vision/result.json": "535f656c24628c1274e75bdf109ce1fade1accf41b93a80d4c5c9b1a9620122d",
+    "episodes/minerva__libero_10__1__29__clean__adaptive/result.json": "8f92f81abc3f0403ea95d8246458f1669aed50721a7e30abc1e6442caf4f528c",
+    "episodes/minerva__libero_10__1__29__clean__fixed1/result.json": "059863ce2fd70ce34d5300b613793e742bec702820e2c42403e55dfbb9c7bf40",
+    "episodes/minerva__libero_10__1__29__clean__fixed15/result.json": "bf40fee8905a77252b1a8245dcc616755eff8f4b1175da8008b34774f098f56d",
+    "episodes/minerva__libero_10__1__29__clean__fixed4/result.json": "d122e2b09767d63e5acfa08d2df7ec4a29baa8c6aab5972dad996f43af126fe2",
+    "episodes/minerva__libero_10__1__29__clean__fixed8/result.json": "995d1d12a897a8c3b60b494314ceb96906e864354cabf1440f644b9a1c84584d",
+    "episodes/minerva__libero_10__1__29__clean__no_ensemble/result.json": "4c75823464d34a90d27349a729a6a8ecd1c2377dfba72c5fa52697ae043cd1e8",
+    "episodes/minerva__libero_10__1__29__clean__no_gripper/result.json": "177ff19b692ef95993e8654a49f49302fb803ade75bb360936fd4c0b0abfffcd",
+    "episodes/minerva__libero_10__1__29__clean__no_vision/result.json": "5640309803b56b2b2c35d7361a80437b59700dd30f344783bd26237f1532a14c",
+    "episodes/minerva__libero_10__6__11__clean__adaptive/result.json": "2af06a873c0dd8a92a9a90ebb33c1defe64bebb11941acb0f6ecbdfdca9be61e",
+    "episodes/minerva__libero_10__6__11__clean__fixed1/result.json": "b9dad562e3ac2d629b0bb273cba0aa3fa870a8a69c6f4a4574ba63ad4d842f8a",
+    "episodes/minerva__libero_10__6__11__clean__fixed15/result.json": "d11fff6c5b38b48369c15ef75644bf5058025e9def3945a5b33bab60cbb579d6",
+    "episodes/minerva__libero_10__6__11__clean__fixed4/result.json": "9b7a1e264773a1527051b90df741b4e106787e871b77dfb8b18a563f95588322",
+    "episodes/minerva__libero_10__6__11__clean__fixed8/result.json": "e43f0801d53de0472e2c908ee67427cef6b853890c8161a7005d3c2024b608c5",
+    "episodes/minerva__libero_10__6__11__clean__no_ensemble/result.json": "e44ec4babdd90bbffff9c2f1074a40a1b8706a4eab6f51a6f8a36d00e792746e",
+    "episodes/minerva__libero_10__6__11__clean__no_gripper/result.json": "9b87bf5ab822c7a90ae1620e0b1bbb8a3c8445c018774590a8a26ebd464c4938",
+    "episodes/minerva__libero_10__6__11__clean__no_vision/result.json": "2d2bc69910a5474a476737c9b3afeea121a8aebbb872f88fa81d7ae986e0dc42",
+    "episodes/minerva__libero_10__6__29__clean__adaptive/result.json": "f2e0bedd6e95f1fe7b4d061bf74094e85147ae3533cea3fe3aa194e102a3fcdc",
+    "episodes/minerva__libero_10__6__29__clean__fixed1/result.json": "52c126dff03c2b10786f01613723869ffc002d9043a7814e3f2b93342714aaac",
+    "episodes/minerva__libero_10__6__29__clean__fixed15/result.json": "d714932b4935937eb8aa24118f963f9da3fc5410bd25782c7d88309c470ecb43",
+    "episodes/minerva__libero_10__6__29__clean__fixed4/result.json": "cb58c1adfb11facca681613489acc6bcbe4f808178d27754310ed65c8f87b263",
+    "episodes/minerva__libero_10__6__29__clean__fixed8/result.json": "219f63e1db7c6c78f8a8e119ce8e7985166e09075c4f43d3425a6a578e1b7a69",
+    "episodes/minerva__libero_10__6__29__clean__no_ensemble/result.json": "8ccbb3d407cae5d7145b0190c730945251df3e27fc089994df70ce49cd8a771a",
+    "episodes/minerva__libero_10__6__29__clean__no_gripper/result.json": "2d02d426deb0eda33390f8149ca36625b51d4396f939818807ffb627271c2734",
+    "episodes/minerva__libero_10__6__29__clean__no_vision/result.json": "98f7151f060112d04904524dcec2ea48d013aec5f40e9439f51453c3b572492c",
+    "episodes/minerva__libero_goal__1__11__clean__adaptive/result.json": "32479d8b5d876a44320b05626239ee9d28700c0dba8588374666ddbedb5f18cb",
+    "episodes/minerva__libero_goal__1__11__clean__fixed1/result.json": "9a1c46da2952f26df52048dd38c94c831bfd67fdb526184533d337a2284ee2a5",
+    "episodes/minerva__libero_goal__1__11__clean__fixed15/result.json": "219d6b099464b675034e8dc39940dbb1a9a2fcf04bdb7311168f3b60007b175b",
+    "episodes/minerva__libero_goal__1__11__clean__fixed4/result.json": "78b40ab5316de0a26a0ff62542017ef6d338efaa321346dd0b098ba4fd216b29",
+    "episodes/minerva__libero_goal__1__11__clean__fixed8/result.json": "1c369eba0bb7d87d79af3dcc99afcd901c55e1369f7076aa42a1f957edf7be79",
+    "episodes/minerva__libero_goal__1__11__clean__no_ensemble/result.json": "d7c48b72bf1ef93bb55c1bf7071b97eb2356a6188416770d61fc4a08fb90c33e",
+    "episodes/minerva__libero_goal__1__11__clean__no_gripper/result.json": "733c53e316e38fb1c0d20de7352ef59c678c9d907caf4c00425997f875b05044",
+    "episodes/minerva__libero_goal__1__11__clean__no_vision/result.json": "f045e2f784a5729ab26154efba82858b3d138fec2eed567c950442e66810746b",
+    "episodes/minerva__libero_goal__1__29__clean__adaptive/result.json": "ec4f395b94c51c3f4e28637f1364668ef28a26a94a53d0aa5d7f4dbc772779fb",
+    "episodes/minerva__libero_goal__1__29__clean__fixed1/result.json": "a984695b7e4eb1f1d76dddb7cf6324819e319278ad9e1a7d1afde7756dfb12a4",
+    "episodes/minerva__libero_goal__1__29__clean__fixed15/result.json": "de0221807a1775fe644529bc7c8148c9bb06a50cd7aaa40d18f4f2f9e06b0a1e",
+    "episodes/minerva__libero_goal__1__29__clean__fixed4/result.json": "1116a6677cb12519c6ef2b7ebeab3628a6b3dc28e6fb2d7e35875d3d3b658fb7",
+    "episodes/minerva__libero_goal__1__29__clean__fixed8/result.json": "0757355b3bad51d6d6ef7adc5d8c9c8a66a858454ef88bc6ead5c5277c532531",
+    "episodes/minerva__libero_goal__1__29__clean__no_ensemble/result.json": "f50f978202f26e7949073c19d58c36ac478f2e9beced2b575170ec0c6e1a6544",
+    "episodes/minerva__libero_goal__1__29__clean__no_gripper/result.json": "e260efe29f8cc47b3eaed552d729720a8b214a23e11c242fe9a3067d6aae7852",
+    "episodes/minerva__libero_goal__1__29__clean__no_vision/result.json": "d4c91b9895cb617b5e1d840204f1b109a8bd187d77572ef7b064e21696152540",
+    "episodes/minerva__libero_goal__6__11__clean__adaptive/result.json": "b716cfa247486aa2f964a06f770023d2a042c23cabca23482fdffe6169b95f7c",
+    "episodes/minerva__libero_goal__6__11__clean__fixed1/result.json": "03ae193e1fb47d49be6a830d1eedde737240a6d0d8e0dabfed06d1041b7aa326",
+    "episodes/minerva__libero_goal__6__11__clean__fixed15/result.json": "b256c6cfe0a3f7ba5155cbccbaaed7c3519b8eca168503b604d8642e47ad785d",
+    "episodes/minerva__libero_goal__6__11__clean__fixed4/result.json": "a5bea5ea559ec2316f9a5090def413072af78cec265f083c94b73b9e6405cf26",
+    "episodes/minerva__libero_goal__6__11__clean__fixed8/result.json": "d95461f8faf42cca1374b0a814790afe9287b635a80f0493e78faf4132dee3c0",
+    "episodes/minerva__libero_goal__6__11__clean__no_ensemble/result.json": "ab8dfa437f7f60a92b91007670863199e7d4092f55a9772fcb000f69c9e8bcff",
+    "episodes/minerva__libero_goal__6__11__clean__no_gripper/result.json": "b537c10a79cdc0bc49ebf21994f944a982aa6f959aa81be5ddd4819e73bff876",
+    "episodes/minerva__libero_goal__6__11__clean__no_vision/result.json": "cf34b131ffed9566b60e327b0bddd264aa05333eb35a6897cd3e23b98718754e",
+    "episodes/minerva__libero_goal__6__29__clean__adaptive/result.json": "6e9ca151612ffcbae934b20eb5d8380b7787744d8f750bf7591690a2f7232ae0",
+    "episodes/minerva__libero_goal__6__29__clean__fixed1/result.json": "a653db05d486a6997009a075dd98d154c599777da9f6a995dc7fb0266b98d47d",
+    "episodes/minerva__libero_goal__6__29__clean__fixed15/result.json": "a7425a14a7ff7290539dcadb9588778503633c02415d6c6a6ba05e3ee93d9bfb",
+    "episodes/minerva__libero_goal__6__29__clean__fixed4/result.json": "991f9d5497621df9c5d1b9fb43beb948e8642b8e8b7b5ae6e24ba3bc9aac52ea",
+    "episodes/minerva__libero_goal__6__29__clean__fixed8/result.json": "864b18643b939394299480c0de8a868a2e918e52bea6678fe33182d7feaef5ba",
+    "episodes/minerva__libero_goal__6__29__clean__no_ensemble/result.json": "fa3a88302324beda9266821084da110daf1577c7d6c991b83207f6ebfccaca67",
+    "episodes/minerva__libero_goal__6__29__clean__no_gripper/result.json": "9314605607d3d4be6930a09b44064fd782358bc034f958fb7bcaec999d43d987",
+    "episodes/minerva__libero_goal__6__29__clean__no_vision/result.json": "7b16c7b5cde1a2057b50411dd7758a5d69629bfb63d8a9d42d067c89e2d83805",
+    "episodes/minerva__libero_object__1__11__clean__adaptive/result.json": "f366a1e7d0151a58c89faea9581dddc920e700319308f780a51e0cf35bf06851",
+    "episodes/minerva__libero_object__1__11__clean__fixed1/result.json": "c889ec7abc021e8b7ebefbaa59b3c7f149891777e4d8e5cfc359f6268c65c40e",
+    "episodes/minerva__libero_object__1__11__clean__fixed15/result.json": "50f72085e3d8f8109065ca7f5356897cf92cfced59c50c19dca2b576f0aebdf9",
+    "episodes/minerva__libero_object__1__11__clean__fixed4/result.json": "04c41d3a869fdc12b5e3d83e3d5cb42e9f7814d3a1bfb594a97aa032ae96604b",
+    "episodes/minerva__libero_object__1__11__clean__fixed8/result.json": "9514ec9c146a650336809674fafc9a502e6f508098dd2351d977fbda0f4a943d",
+    "episodes/minerva__libero_object__1__11__clean__no_ensemble/result.json": "c206a8b66ba3424aaf7f9190c7d77dd8b3449eda2cf36e744ac7386a34153f0f",
+    "episodes/minerva__libero_object__1__11__clean__no_gripper/result.json": "d1226939c33aa22f326eb066ef3fb3b44bc1d2f849fdcea52a36d189d7834690",
+    "episodes/minerva__libero_object__1__11__clean__no_vision/result.json": "c8e1b548c003a25d55b25f83fc757faec5350833a3f3f239dcf212bf252351e5",
+    "episodes/minerva__libero_object__1__29__clean__adaptive/result.json": "fb47c10b6ef7ecf56fc3e50389afb0b294f0c76187a9fd6d8f19ff8ac2635fae",
+    "episodes/minerva__libero_object__1__29__clean__fixed1/result.json": "548b055edd65cf2158fc004c922349018b1b2b2a7b24823aa2649ad7e7cc80c0",
+    "episodes/minerva__libero_object__1__29__clean__fixed15/result.json": "2c8507eb60f7d3d1c5dc5675784eb1c607a714b582e0acd9131809772252a528",
+    "episodes/minerva__libero_object__1__29__clean__fixed4/result.json": "a6551eb40bf9d7a668aeb067c8ac421b2ac0990444d71c1f7197f548e5e53928",
+    "episodes/minerva__libero_object__1__29__clean__fixed8/result.json": "f6e0c16eca2c3cd44bac4af44489adb469d618d2e73fdafe5c94638a8d235de2",
+    "episodes/minerva__libero_object__1__29__clean__no_ensemble/result.json": "7a52bd9e04c0a727a4184935c0e3823bb4a3704954fb745909b4a0ab9606693c",
+    "episodes/minerva__libero_object__1__29__clean__no_gripper/result.json": "076677ce4e59bb5360a52cf6cb805b68b296445e6a4006aec54847112f23549e",
+    "episodes/minerva__libero_object__1__29__clean__no_vision/result.json": "3545a3a2c5ab06cec1fc2e5dde9afe28e35a327294a4cfaf2fd74d97dfcd5862",
+    "episodes/minerva__libero_object__6__11__clean__adaptive/result.json": "c95cadcfe95409811225e7c0ef59a157c184f4c9b58a41bf40758ee2eb4cfcf4",
+    "episodes/minerva__libero_object__6__11__clean__fixed1/result.json": "0e6cbdf3208abd2b6514b326ac5c71c50c8bac009088ca635d41dfe8d2caaacf",
+    "episodes/minerva__libero_object__6__11__clean__fixed15/result.json": "f10588bb9799cb65bba6758214f2e84ff07ab9e5e978ba4d4270e33f24556283",
+    "episodes/minerva__libero_object__6__11__clean__fixed4/result.json": "5cb53e3052488c6ed4e0da9d29e06c1c14b0e44ba12ff90428ffa1bc10fd0170",
+    "episodes/minerva__libero_object__6__11__clean__fixed8/result.json": "ffd4e773dd45483781c7e91c6e05aea5d198560e337f1f3782e6628cbcbcf6ad",
+    "episodes/minerva__libero_object__6__11__clean__no_ensemble/result.json": "7398a419336cf2ea69e8a62be0163160010316dee2cbf1bb27eed4ff3fb234db",
+    "episodes/minerva__libero_object__6__11__clean__no_gripper/result.json": "e3ebf3f2a3c3a5fa730ffb42798df10786c38109ff7e127a812ab99b99e05a6a",
+    "episodes/minerva__libero_object__6__11__clean__no_vision/result.json": "b4aa92824b1709872466b44779f2622adccae5fe2b053db768cd98818eaf8b1d",
+    "episodes/minerva__libero_object__6__29__clean__adaptive/result.json": "e5e38ec299828dbb2d7a5a0510dd8ef869240ddb89b5ec98e6cb4df517eca7d1",
+    "episodes/minerva__libero_object__6__29__clean__fixed1/result.json": "fd833c1aea541cfd0037335ca93b8c61189f6c7a06e1bc2b67377002b8629289",
+    "episodes/minerva__libero_object__6__29__clean__fixed15/result.json": "176d1dff92e91b5e4be1e1c529f384fa479c03cd5f5790109ed44fd9d6d955f3",
+    "episodes/minerva__libero_object__6__29__clean__fixed4/result.json": "912a830d434b88b3e3964e2e2bc19986eb96011cbd224aa703f9db226f9d2b43",
+    "episodes/minerva__libero_object__6__29__clean__fixed8/result.json": "43bfbb361f4762b521260bf34db94f679d96f5542f4c5321f6daf47d06c65452",
+    "episodes/minerva__libero_object__6__29__clean__no_ensemble/result.json": "063e9be918add4880c258fdb66d4d376912a5e944bf1af7502a5e9a0aa68ac3e",
+    "episodes/minerva__libero_object__6__29__clean__no_gripper/result.json": "dddc06e74669263a3e52fc4b059e9df9473966ff0ba553f1b97843b5d3c29952",
+    "episodes/minerva__libero_object__6__29__clean__no_vision/result.json": "c50b5a2a082fe97f543bea5a117f914cca3e3e8f3dcece7e84754ec1af8df9fc",
+    "episodes/minerva__libero_spatial__1__11__clean__adaptive/result.json": "ecd80fd74f82f5794fb47dda67c48365a58fc1786577bd8966673d0c150d6507",
+    "episodes/minerva__libero_spatial__1__11__clean__fixed1/result.json": "2338fdf4e9f9d6918c2ecd485057edee24b3d64c556d23993da33a2b9cf2f128",
+    "episodes/minerva__libero_spatial__1__11__clean__fixed15/result.json": "f25df2d2d0cb861a85d2d7b8c404c65146e2f8a2d6104540f9f325468d91125f",
+    "episodes/minerva__libero_spatial__1__11__clean__fixed4/result.json": "1a8e4daecd026f35ea266d03522b7a48731370349915f99c56cde6be07902bdb",
+    "episodes/minerva__libero_spatial__1__11__clean__fixed8/result.json": "7b84e54aa1b948e4242f78a38edcda45ddb1d4002a85c6a02c7a306392b02f84",
+    "episodes/minerva__libero_spatial__1__11__clean__no_ensemble/result.json": "2ac95451c089de9839427484df18dfe02e5bffe4c0bba3a52c76679c6c9c9d07",
+    "episodes/minerva__libero_spatial__1__11__clean__no_gripper/result.json": "dbd7d085f87d938b07d3f20b7c0df58066b77bd5479cc1aee1d06783e9c2f0ad",
+    "episodes/minerva__libero_spatial__1__11__clean__no_vision/result.json": "1860e70f5b744448f8bd27bc6a0e7ce5c50cf443a8c723080be401d96322614c",
+    "episodes/minerva__libero_spatial__1__29__clean__adaptive/result.json": "fdba5788e177af81b9761a4c78a1b6fba329c921c1720f8944ba9663937f7400",
+    "episodes/minerva__libero_spatial__1__29__clean__fixed1/result.json": "52fa25d24e216205696fe78ecf36442e2a048ec222dc3ddfb11ab5b246fa57a6",
+    "episodes/minerva__libero_spatial__1__29__clean__fixed15/result.json": "f4bec4ccc21c6cc34506cee672862f158f81217bc2e51ef420e53db8ffe3485c",
+    "episodes/minerva__libero_spatial__1__29__clean__fixed4/result.json": "da18880f31454180950e47d933fa69434f9bf16b66f9c188fd471983e023931d",
+    "episodes/minerva__libero_spatial__1__29__clean__fixed8/result.json": "71d8d47ce85766adbfbef0b0a65d85db6eec9a22981f8cc2be4fb9b50749dad2",
+    "episodes/minerva__libero_spatial__1__29__clean__no_ensemble/result.json": "ce637ead0342572f27f43f31f8849130beb9c55679d8958a85fc301299da8ba6",
+    "episodes/minerva__libero_spatial__1__29__clean__no_gripper/result.json": "7391d5afe277980874b5efd15cb9adcde3c1a9abd01c9b05216cc11db5d8d0a7",
+    "episodes/minerva__libero_spatial__1__29__clean__no_vision/result.json": "5ccdea670afa03befc5e0685e593530e1441b8c8e1fb39a559b66e468321e205",
+    "episodes/minerva__libero_spatial__6__11__clean__adaptive/result.json": "57366f3cdf6dc23cea34ffccea98b45b309b6bf5b42928eda2edfe69af37675b",
+    "episodes/minerva__libero_spatial__6__11__clean__fixed1/result.json": "3d5ff36c170f62c4d27d5e7f518374fe7e7e386c741dddd5efbc6a545a5138be",
+    "episodes/minerva__libero_spatial__6__11__clean__fixed15/result.json": "5b30fab4c0bb0eed315603834e920366021f93cfdf40aac913ff3c4139fd62d0",
+    "episodes/minerva__libero_spatial__6__11__clean__fixed4/result.json": "35e4a09108d04b8877f374daa4a31ff57fbb3bcff2d6a5af38764f0b6255cdb7",
+    "episodes/minerva__libero_spatial__6__11__clean__fixed8/result.json": "445be769975d76e90b9422b3302b3a4e2c3429046f194fecdf8e971d76176409",
+    "episodes/minerva__libero_spatial__6__11__clean__no_ensemble/result.json": "9572f2dc215a5521a46d721e1344f5aa576bb604420138118ae65d1e668ee92f",
+    "episodes/minerva__libero_spatial__6__11__clean__no_gripper/result.json": "7e0964debd9ad02533903b7f124b3f1e80e8c5ea1d482cdeba6d213a8b5b4e73",
+    "episodes/minerva__libero_spatial__6__11__clean__no_vision/result.json": "194abdc5c3765f9f15550b6a0e73a1d93117cf28043c9ff8d2439c31c16b6390",
+    "episodes/minerva__libero_spatial__6__29__clean__adaptive/result.json": "32feae27031b8217143847a429a2416133df3d88e09d1c3b2e23327c753ad3dd",
+    "episodes/minerva__libero_spatial__6__29__clean__fixed1/result.json": "7c26a29f760fb1013df6930b0482b08931f4611a44558dbb246cb4f83e1b1cc2",
+    "episodes/minerva__libero_spatial__6__29__clean__fixed15/result.json": "4c133695c53001579459bb3f4871576d69df04ed62824733bcc4d0fbb6f43321",
+    "episodes/minerva__libero_spatial__6__29__clean__fixed4/result.json": "715ef4dc845c7b3ee0d36ca35dae2bbfedc484afe2fffc74969b71fd5aa1c3f2",
+    "episodes/minerva__libero_spatial__6__29__clean__fixed8/result.json": "969c6afc95a7ae04eba88a0c51b62df6c0130f3b83ca01b364180371e5fa271e",
+    "episodes/minerva__libero_spatial__6__29__clean__no_ensemble/result.json": "25dafd30a67a06652c9814a2b798aedd663879b7aa83b23c81f3004048a93f14",
+    "episodes/minerva__libero_spatial__6__29__clean__no_gripper/result.json": "ee8439e27c39d113b49d76ba5bde813b11d763854a234c3ccba92e76d23e0610",
+    "episodes/minerva__libero_spatial__6__29__clean__no_vision/result.json": "0f044ed78a33da20f4b32763a18967a3843055ecde3dbfda979b39a8353e8d00"
+  },
+  "initial_state_parity": {
+    "blocks": 16,
+    "image_checked_blocks": 16,
+    "state_checked_blocks": 16,
+    "image_method_comparisons": 112,
+    "state_method_comparisons": 112,
+    "proprio_rtol": 1e-06,
+    "proprio_atol": 1e-07,
+    "blocks_without_image_evidence": 0,
+    "blocks_without_state_evidence": 0
+  },
+  "estimand": "equal-weight (suite,task_id) means over observed init-state/seed trials",
+  "uncertainty": "2000 task-cluster percentile bootstrap draws; fixed observed trials and model checkpoints",
+  "experiment_name": "held-out-method-comparison",
+  "heatmap_groups": [
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "adaptive"
+    },
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "fixed1"
+    },
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "fixed15"
+    },
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "fixed4"
+    },
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "fixed8"
+    },
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "no_ensemble"
+    },
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "no_gripper"
+    },
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "no_vision"
+    }
+  ],
+  "heatmap_tasks": [
+    {
+      "suite": "libero_10",
+      "task_id": 1
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 6
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 1
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 6
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 1
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 6
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 1
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6
+    }
+  ]
+}

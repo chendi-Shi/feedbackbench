@@ -1,0 +1,242 @@
+{
+  "selected": "adaptive_low",
+  "baseline_success": 1.0,
+  "eligible": [
+    "adaptive_low"
+  ],
+  "scores": [
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "adaptive_high",
+      "tasks": 4,
+      "episodes": 8,
+      "successes": 6,
+      "failures": 2,
+      "macro_task_success": 0.75,
+      "episode_success": 0.75,
+      "mean_inference_calls": 18.625,
+      "mean_steps": 204.875,
+      "inference_calls_per_100_steps": 9.090909090909092,
+      "mean_model_seconds": 1.9175468249886762,
+      "total_wall_seconds": 547.8615291000169,
+      "mean_timings": {
+        "policy_inference_seconds": 1.9175468249886762,
+        "preprocess_seconds": 2.019674812476296,
+        "scheduler_seconds": 1.3015053875096783,
+        "simulator_seconds": 54.9672969375315,
+        "wall_seconds": 68.48269113750212
+      },
+      "per_task": [
+        {
+          "suite": "libero_10",
+          "task_id": 0,
+          "task": "put both the alphabet soup and the tomato sauce in the basket",
+          "episodes": 2,
+          "successes": 1,
+          "success_rate": 0.5
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 0,
+          "task": "open the middle drawer of the cabinet",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 0,
+          "task": "pick up the alphabet soup and place it in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 0,
+          "task": "pick up the black bowl between the plate and the ramekin and place it on the plate",
+          "episodes": 2,
+          "successes": 1,
+          "success_rate": 0.5
+        }
+      ]
+    },
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "adaptive_low",
+      "tasks": 4,
+      "episodes": 8,
+      "successes": 8,
+      "failures": 0,
+      "macro_task_success": 1.0,
+      "episode_success": 1.0,
+      "mean_inference_calls": 24.625,
+      "mean_steps": 145.0,
+      "inference_calls_per_100_steps": 16.982758620689655,
+      "mean_model_seconds": 2.4504741499931697,
+      "total_wall_seconds": 416.7033620999864,
+      "mean_timings": {
+        "policy_inference_seconds": 2.4504741499931697,
+        "preprocess_seconds": 1.6615535999735584,
+        "scheduler_seconds": 1.0135285750529874,
+        "simulator_seconds": 38.31602469995414,
+        "wall_seconds": 52.0879202624983
+      },
+      "per_task": [
+        {
+          "suite": "libero_10",
+          "task_id": 0,
+          "task": "put both the alphabet soup and the tomato sauce in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 0,
+          "task": "open the middle drawer of the cabinet",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 0,
+          "task": "pick up the alphabet soup and place it in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 0,
+          "task": "pick up the black bowl between the plate and the ramekin and place it on the plate",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0
+        }
+      ]
+    },
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "adaptive_medium",
+      "tasks": 4,
+      "episodes": 8,
+      "successes": 7,
+      "failures": 1,
+      "macro_task_success": 0.875,
+      "episode_success": 0.875,
+      "mean_inference_calls": 18.75,
+      "mean_steps": 171.375,
+      "inference_calls_per_100_steps": 10.940919037199125,
+      "mean_model_seconds": 1.9401738500000647,
+      "total_wall_seconds": 494.59383659999,
+      "mean_timings": {
+        "policy_inference_seconds": 1.9401738500000647,
+        "preprocess_seconds": 1.8889426624755288,
+        "scheduler_seconds": 1.2023139625216572,
+        "simulator_seconds": 48.87966778745613,
+        "wall_seconds": 61.82422957499875
+      },
+      "per_task": [
+        {
+          "suite": "libero_10",
+          "task_id": 0,
+          "task": "put both the alphabet soup and the tomato sauce in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 0,
+          "task": "open the middle drawer of the cabinet",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 0,
+          "task": "pick up the alphabet soup and place it in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 0,
+          "task": "pick up the black bowl between the plate and the ramekin and place it on the plate",
+          "episodes": 2,
+          "successes": 1,
+          "success_rate": 0.5
+        }
+      ]
+    },
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "fixed8",
+      "tasks": 4,
+      "episodes": 8,
+      "successes": 8,
+      "failures": 0,
+      "macro_task_success": 1.0,
+      "episode_success": 1.0,
+      "mean_inference_calls": 18.5,
+      "mean_steps": 145.5,
+      "inference_calls_per_100_steps": 12.714776632302405,
+      "mean_model_seconds": 3.082175362493217,
+      "total_wall_seconds": 430.9589763999975,
+      "mean_timings": {
+        "policy_inference_seconds": 3.082175362493217,
+        "preprocess_seconds": 2.871200987503471,
+        "scheduler_seconds": 1.1813675499797682,
+        "simulator_seconds": 40.19205636250081,
+        "wall_seconds": 53.869872049999685
+      },
+      "per_task": [
+        {
+          "suite": "libero_10",
+          "task_id": 0,
+          "task": "put both the alphabet soup and the tomato sauce in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0
+        },
+        {
+          "suite": "libero_goal",
+          "task_id": 0,
+          "task": "open the middle drawer of the cabinet",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0
+        },
+        {
+          "suite": "libero_object",
+          "task_id": 0,
+          "task": "pick up the alphabet soup and place it in the basket",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0
+        },
+        {
+          "suite": "libero_spatial",
+          "task_id": 0,
+          "task": "pick up the black bowl between the plate and the ramekin and place it on the plate",
+          "episodes": 2,
+          "successes": 2,
+          "success_rate": 1.0
+        }
+      ]
+    }
+  ],
+  "fallback_used": false,
+  "development_protocol_fingerprint": "2acd9c8d822b28275d502b4c6e63e5f098d8a8680774859ff24f596677c6b6b6",
+  "development_inputs_sha256": "281a8f67885321205545e08953550f2957dac6e557f73368d7d43212b722356c",
+  "rule": "Among candidates with development macro success >= fixed8, choose lowest mean inference calls; ties use higher success then lexical method name. If none qualifies, choose highest success, then lowest calls, then lexical name. Freeze the selected configuration before test.",
+  "test_results_read": false
+}

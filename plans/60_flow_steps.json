@@ -1,0 +1,63 @@
+{
+  "name": "flow-step-pilot",
+  "models": [
+    {
+      "name": "smolvla",
+      "methods": [
+        {
+          "name": "fixed15_steps5",
+          "scheduler": {
+            "mode": "fixed",
+            "fixed_interval": 15,
+            "temporal_ensemble": false,
+            "ensemble_coeff": 0.01
+          },
+          "num_steps": 5
+        }
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "record_video": true
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 1,
+      "record_video": false
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 1,
+      "record_video": false
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 1,
+      "record_video": false
+    }
+  ],
+  "initial_states": [
+    11
+  ],
+  "conditions": [
+    "clean"
+  ],
+  "seed": 1000,
+  "threads": 2,
+  "image_size": 360,
+  "warmup_calls": 2,
+  "rotate_method_order": true,
+  "split": "compare descriptively with the same fixed15 num_steps=10 cases in stage50",
+  "question": "How does feedback frequency affect task success and inference cost on a fixed CPU policy?",
+  "hypothesis": "Observation-triggered replanning may preserve success with fewer inference calls; a negative result is allowed.",
+  "limitations": [
+    "Frozen published checkpoint; no retraining-seed claim.",
+    "Known tasks and published held-out initial states; not unseen-language generalization.",
+    "Simulation pauses during inference; delay4 is prescribed sensor delay, not asynchronous real-time control.",
+    "Calls are the primary compute proxy. Wall-clock measurements on a shared laptop are descriptive.",
+    "Few initial states per task; screening evidence, not a full published benchmark reproduction."
+  ]
+}

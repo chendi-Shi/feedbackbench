@@ -1,0 +1,77 @@
+{
+  "schema": "feedbackbench.flow_replay_audit.v1",
+  "status": "passed_exact_replay",
+  "original": {
+    "study": "outputs/frontier/flow_confirmation",
+    "episode": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_spatial__1__43__clean__noise2",
+    "episode_id": "smolvla__libero_spatial__1__43__clean__noise2",
+    "protocol_sha256": "f8dbeebf4fbd28d60051745e801a3619ba72f5f089d18e92f7ee2d9065a33371",
+    "protocol_fingerprint": "813efc115c410af42323fb9a7be4ed0b7f1fb474fcfaa227d483fc7b830fda84",
+    "receipt_sha256": "f5f4be9dc201121aa117a472b6d1e3b78111064b30f6eb1ebdecd451103479cf",
+    "result_sha256": "a7e0c7db84397764f67f7b0597329b96ddc2c2ce9b74dc7a3563ba33fe128a71",
+    "files_sha256": {
+      "attempt.json": "314b483d68ab7be320198d2fceaca6abafae4a98559d3611790416d456d8ae8b",
+      "calls.json": "1e53e33590dc08b5d9f00b9a3091893e7dde2506d4fa3c9ada0e7610aeec028f",
+      "final.png": "a2f32500d3adb4d6922b7b02a63e58d619b345064c7f15eb0d251c5dc13d6344",
+      "initial.png": "de9317fc7629cd1f67bf2bab880ed73970688e001b660aae3f3d4dad952f9787",
+      "initial_wrist.png": "52e21d94a33bde0cb338c177843f07fd13455cd490543413e94cc7e239e928f7",
+      "result.json": "a7e0c7db84397764f67f7b0597329b96ddc2c2ce9b74dc7a3563ba33fe128a71",
+      "rollout.gif": "1e0dd9e3c9318ff3bc8a18c126126cdc136e3cf9317efbf8fd5b466d3fe5bd44",
+      "trajectory.npz": "a5b4a1ad2c90d3091bb94c013c00c07693cc703710a75b280090276035d6d773"
+    }
+  },
+  "sources_sha256": {
+    "scripts/replay_flow_episode.py": "0340569e1ea5b130c8dc2a9b08a7f3bee932dffa73995190fdc69e622412faa9",
+    "scripts/replay_episode.py": "774ea547a8f2058021ec716b82d14ac8f499cd1822c54f3c7ad796dbcdffd529",
+    "scripts/run_flow_confirmation.py": "edd5be34031ee2ca52e199d3861083b971aeeb33256027ece414ca8ea30580b6"
+  },
+  "runtime_versions": {
+    "torch": "2.7.1+cpu",
+    "torchvision": "0.22.1+cpu",
+    "numpy": "2.2.6",
+    "mujoco": "3.3.2",
+    "robosuite": "1.4.0",
+    "hf-libero": "0.1.4",
+    "lerobot": "0.6.1",
+    "transformers": "5.5.4",
+    "safetensors": "0.8.0"
+  },
+  "kind": "diagnostic saved-action replay",
+  "excluded_from_benchmark_counts": true,
+  "new_policy_inference_calls": 0,
+  "causal_attribution": "No cause of timing variation is established by this diagnostic.",
+  "finished_at": "2026-10-15T05:21:13.193207+00:00",
+  "steps": 280,
+  "success": false,
+  "all_robot_states_exact": true,
+  "actions_exact": true,
+  "initial_image_equal": true,
+  "initial_wrist_image_equal": true,
+  "final_image_equal": true,
+  "terminal_flags_equal": true,
+  "success_equal": true,
+  "source_evidence_unchanged": true,
+  "max_state_absolute_difference": 0.0,
+  "original_timings": {
+    "wall_seconds": 2237.266036000001,
+    "policy_inference_seconds": 207.87687880000885,
+    "simulator_seconds": 2022.183184100013
+  },
+  "replay_timings": {
+    "helper_elapsed_seconds": 134.23805290000018,
+    "simulator_seconds": 72.25786320002953,
+    "simulator_step_max_seconds": 1.172316200005298,
+    "scope": "step timings wrap the original simulator.step; helper elapsed also includes reset/rendering/GIF encoding."
+  },
+  "files_sha256": {
+    "attempt.json": "4caf2f3fff66802ddadc260c017840bbd92ce5b4ec93f6ff3840f849a20a59d7",
+    "wrapper_source.py": "0340569e1ea5b130c8dc2a9b08a7f3bee932dffa73995190fdc69e622412faa9",
+    "base_helper_source.py": "774ea547a8f2058021ec716b82d14ac8f499cd1822c54f3c7ad796dbcdffd529",
+    "replayed_trajectory.npz": "8b43fe577b0e2ba0c4d4a7a52b6a987487d2e850630c1ee6cdca5ca5839a1f83",
+    "initial.png": "de9317fc7629cd1f67bf2bab880ed73970688e001b660aae3f3d4dad952f9787",
+    "initial_wrist.png": "52e21d94a33bde0cb338c177843f07fd13455cd490543413e94cc7e239e928f7",
+    "final.png": "a2f32500d3adb4d6922b7b02a63e58d619b345064c7f15eb0d251c5dc13d6344",
+    "base/replay.gif": "1e0dd9e3c9318ff3bc8a18c126126cdc136e3cf9317efbf8fd5b466d3fe5bd44",
+    "base/replay_audit.json": "ef13dd4c931650babab5430292367cda20cb4734df5f56a2354b457cf2d262d1"
+  }
+}

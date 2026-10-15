@@ -1,0 +1,161 @@
+{
+  "name": "held-out-method-comparison",
+  "models": [
+    {
+      "name": "minerva",
+      "methods": [
+        {
+          "name": "fixed1",
+          "scheduler": {
+            "mode": "fixed",
+            "fixed_interval": 1,
+            "temporal_ensemble": true,
+            "ensemble_coeff": 0.01
+          }
+        },
+        {
+          "name": "fixed4",
+          "scheduler": {
+            "mode": "fixed",
+            "fixed_interval": 4,
+            "temporal_ensemble": true,
+            "ensemble_coeff": 0.01
+          }
+        },
+        {
+          "name": "fixed8",
+          "scheduler": {
+            "mode": "fixed",
+            "fixed_interval": 8,
+            "temporal_ensemble": true,
+            "ensemble_coeff": 0.01
+          }
+        },
+        {
+          "name": "fixed15",
+          "scheduler": {
+            "mode": "fixed",
+            "fixed_interval": 15,
+            "temporal_ensemble": true,
+            "ensemble_coeff": 0.01
+          }
+        },
+        {
+          "name": "adaptive",
+          "scheduler": {
+            "mode": "adaptive",
+            "min_interval": 2,
+            "max_interval": 15,
+            "temporal_ensemble": true,
+            "ensemble_coeff": 0.01,
+            "vision_threshold": 0.015,
+            "gripper_threshold": 0.001
+          }
+        },
+        {
+          "name": "no_vision",
+          "scheduler": {
+            "mode": "adaptive",
+            "min_interval": 2,
+            "max_interval": 15,
+            "temporal_ensemble": true,
+            "ensemble_coeff": 0.01,
+            "vision_threshold": 0.015,
+            "gripper_threshold": 0.001,
+            "use_vision": false
+          }
+        },
+        {
+          "name": "no_gripper",
+          "scheduler": {
+            "mode": "adaptive",
+            "min_interval": 2,
+            "max_interval": 15,
+            "temporal_ensemble": true,
+            "ensemble_coeff": 0.01,
+            "vision_threshold": 0.015,
+            "gripper_threshold": 0.001,
+            "use_gripper": false
+          }
+        },
+        {
+          "name": "no_ensemble",
+          "scheduler": {
+            "mode": "adaptive",
+            "min_interval": 2,
+            "max_interval": 15,
+            "temporal_ensemble": false,
+            "ensemble_coeff": 0.01,
+            "vision_threshold": 0.015,
+            "gripper_threshold": 0.001
+          }
+        }
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "record_video": true
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "record_video": false
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 1,
+      "record_video": false
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 6,
+      "record_video": false
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 1,
+      "record_video": false
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 6,
+      "record_video": false
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 1,
+      "record_video": false
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 6,
+      "record_video": false
+    }
+  ],
+  "initial_states": [
+    11,
+    29
+  ],
+  "conditions": [
+    "clean"
+  ],
+  "seed": 1000,
+  "threads": 2,
+  "image_size": 360,
+  "warmup_calls": 2,
+  "rotate_method_order": true,
+  "split": "held-out test",
+  "question": "How does feedback frequency affect task success and inference cost on a fixed CPU policy?",
+  "hypothesis": "Observation-triggered replanning may preserve success with fewer inference calls; a negative result is allowed.",
+  "limitations": [
+    "Frozen published checkpoint; no retraining-seed claim.",
+    "Known tasks and published held-out initial states; not unseen-language generalization.",
+    "Simulation pauses during inference; delay4 is prescribed sensor delay, not asynchronous real-time control.",
+    "Calls are the primary compute proxy. Wall-clock measurements on a shared laptop are descriptive.",
+    "Few initial states per task; screening evidence, not a full published benchmark reproduction."
+  ],
+  "selected_on_development": "adaptive_low"
+}

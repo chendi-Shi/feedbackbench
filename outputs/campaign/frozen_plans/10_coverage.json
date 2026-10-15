@@ -1,0 +1,237 @@
+{
+  "name": "40-task-coverage",
+  "models": [
+    {
+      "name": "minerva",
+      "methods": [
+        {
+          "name": "upstream",
+          "scheduler": null
+        }
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "suite": "libero_spatial",
+      "task_id": 0,
+      "record_video": true
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "record_video": false
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 2,
+      "record_video": false
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 3,
+      "record_video": false
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 4,
+      "record_video": false
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 5,
+      "record_video": false
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 6,
+      "record_video": false
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 7,
+      "record_video": false
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 8,
+      "record_video": false
+    },
+    {
+      "suite": "libero_spatial",
+      "task_id": 9,
+      "record_video": false
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 0,
+      "record_video": true
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 1,
+      "record_video": false
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 2,
+      "record_video": false
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 3,
+      "record_video": false
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 4,
+      "record_video": false
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 5,
+      "record_video": false
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 6,
+      "record_video": false
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 7,
+      "record_video": false
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 8,
+      "record_video": false
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 9,
+      "record_video": false
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 0,
+      "record_video": true
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 1,
+      "record_video": false
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 2,
+      "record_video": false
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 3,
+      "record_video": false
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 4,
+      "record_video": false
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 5,
+      "record_video": false
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 6,
+      "record_video": false
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 7,
+      "record_video": false
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 8,
+      "record_video": false
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 9,
+      "record_video": false
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 0,
+      "record_video": true
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 1,
+      "record_video": false
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 2,
+      "record_video": false
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 3,
+      "record_video": false
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 4,
+      "record_video": false
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 5,
+      "record_video": false
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 6,
+      "record_video": false
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 7,
+      "record_video": false
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 8,
+      "record_video": false
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 9,
+      "record_video": false
+    }
+  ],
+  "initial_states": [
+    0
+  ],
+  "conditions": [
+    "clean"
+  ],
+  "seed": 1000,
+  "threads": 2,
+  "image_size": 360,
+  "warmup_calls": 2,
+  "rotate_method_order": true,
+  "split": "coverage diagnostic; not used for selecting thresholds",
+  "question": "How does feedback frequency affect task success and inference cost on a fixed CPU policy?",
+  "hypothesis": "Observation-triggered replanning may preserve success with fewer inference calls; a negative result is allowed.",
+  "limitations": [
+    "Frozen published checkpoint; no retraining-seed claim.",
+    "Known tasks and published held-out initial states; not unseen-language generalization.",
+    "Simulation pauses during inference; delay4 is prescribed sensor delay, not asynchronous real-time control.",
+    "Calls are the primary compute proxy. Wall-clock measurements on a shared laptop are descriptive.",
+    "Few initial states per task; screening evidence, not a full published benchmark reproduction."
+  ]
+}

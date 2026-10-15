@@ -1,0 +1,40 @@
+{
+  "schema": "feedbackbench.flow_replay_attempt.v1",
+  "started_at": "2026-10-15T05:18:58.438406+00:00",
+  "original": {
+    "study": "outputs/frontier/flow_confirmation",
+    "episode": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_spatial__1__43__clean__noise2",
+    "episode_id": "smolvla__libero_spatial__1__43__clean__noise2",
+    "protocol_sha256": "f8dbeebf4fbd28d60051745e801a3619ba72f5f089d18e92f7ee2d9065a33371",
+    "protocol_fingerprint": "813efc115c410af42323fb9a7be4ed0b7f1fb474fcfaa227d483fc7b830fda84",
+    "receipt_sha256": "f5f4be9dc201121aa117a472b6d1e3b78111064b30f6eb1ebdecd451103479cf",
+    "result_sha256": "a7e0c7db84397764f67f7b0597329b96ddc2c2ce9b74dc7a3563ba33fe128a71",
+    "files_sha256": {
+      "attempt.json": "314b483d68ab7be320198d2fceaca6abafae4a98559d3611790416d456d8ae8b",
+      "calls.json": "1e53e33590dc08b5d9f00b9a3091893e7dde2506d4fa3c9ada0e7610aeec028f",
+      "final.png": "a2f32500d3adb4d6922b7b02a63e58d619b345064c7f15eb0d251c5dc13d6344",
+      "initial.png": "de9317fc7629cd1f67bf2bab880ed73970688e001b660aae3f3d4dad952f9787",
+      "initial_wrist.png": "52e21d94a33bde0cb338c177843f07fd13455cd490543413e94cc7e239e928f7",
+      "result.json": "a7e0c7db84397764f67f7b0597329b96ddc2c2ce9b74dc7a3563ba33fe128a71",
+      "rollout.gif": "1e0dd9e3c9318ff3bc8a18c126126cdc136e3cf9317efbf8fd5b466d3fe5bd44",
+      "trajectory.npz": "a5b4a1ad2c90d3091bb94c013c00c07693cc703710a75b280090276035d6d773"
+    }
+  },
+  "sources_sha256": {
+    "scripts/replay_flow_episode.py": "0340569e1ea5b130c8dc2a9b08a7f3bee932dffa73995190fdc69e622412faa9",
+    "scripts/replay_episode.py": "774ea547a8f2058021ec716b82d14ac8f499cd1822c54f3c7ad796dbcdffd529",
+    "scripts/run_flow_confirmation.py": "edd5be34031ee2ca52e199d3861083b971aeeb33256027ece414ca8ea30580b6"
+  },
+  "runtime_versions": {
+    "torch": "2.7.1+cpu",
+    "torchvision": "0.22.1+cpu",
+    "numpy": "2.2.6",
+    "mujoco": "3.3.2",
+    "robosuite": "1.4.0",
+    "hf-libero": "0.1.4",
+    "lerobot": "0.6.1",
+    "transformers": "5.5.4",
+    "safetensors": "0.8.0"
+  },
+  "scope": "Saved-action diagnostic only; no policy inference; excluded from the16 scored cases."
+}

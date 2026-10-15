@@ -1,0 +1,33 @@
+{
+  "protocol_fingerprint": "7a762b0d556f1b7e935e3237349891181ad1fd3de2463f0aac820fa72d2ee0b8",
+  "complete": false,
+  "planned": 4,
+  "completed": 0,
+  "successes": 0,
+  "task_failures": 0,
+  "statuses": {
+    "vlajepa_int8__libero_spatial__1__41__clean__native4_chunk7": "missing",
+    "vlajepa_int8__libero_object__1__41__clean__native4_chunk7": "missing",
+    "vlajepa_int8__libero_goal__1__41__clean__native4_chunk7": "missing",
+    "vlajepa_int8__libero_10__1__41__clean__native4_chunk7": "missing"
+  },
+  "results": [],
+  "limitations": [
+    "four known tasks, one previously used initial state each; no held-out generalization claim",
+    "changed numerics, no original BF16 comparison or quantization quality attribution",
+    "different checkpoint, action interval and source from SmolVLA; not a matched comparison",
+    "simulation pauses during inference; no real robot or real-time control claim",
+    "all successes, task failures, incomplete and runtime errors retained separately"
+  ],
+  "run_audits": [
+    {
+      "path": "runs/run_0001.json",
+      "sha256": "6989cd87fa63adf2d1c3a90d80b58fdf954785de383142ac407f4679c46b5d37",
+      "status": "blocked_preflight",
+      "weights_loaded": false,
+      "memory": {},
+      "load_quantize_seconds": null,
+      "imports_seconds": null
+    }
+  ]
+}

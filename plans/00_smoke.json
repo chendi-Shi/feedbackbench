@@ -1,0 +1,16 @@
+{
+  "name": "integration-smoke",
+  "question": "Can the unmodified pretrained MINERVA policy run the official full LIBERO episode on this Windows CPU machine?",
+  "hypothesis": "Infrastructure validation only; no claim about multi-task success or method improvement.",
+  "split": "integration; excluded from research comparisons",
+  "models": [{"name": "minerva", "methods": [{"name": "upstream", "scheduler": null}]}],
+  "tasks": [{"suite": "libero_spatial", "task_id": 0, "record_video": true}],
+  "initial_states": [0],
+  "conditions": ["clean"],
+  "seed": 1000,
+  "threads": 2,
+  "warmup_calls": 2,
+  "image_size": 360,
+  "rotate_method_order": true,
+  "limitations": ["One integration episode is not a benchmark result."]
+}

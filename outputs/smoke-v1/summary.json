@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "partial": false,
+  "planned_episodes": 1,
+  "completed_episodes": 1,
+  "error_episodes": 0,
+  "missing_episodes": 0,
+  "missing_ids": [],
+  "error_ids": [],
+  "models": [
+    "minerva"
+  ],
+  "tasks": 1,
+  "successes": 1,
+  "total_wall_seconds": 39.92826810000406,
+  "groups": [
+    {
+      "model": "minerva",
+      "condition": "clean",
+      "method": "upstream",
+      "tasks": 1,
+      "episodes": 1,
+      "successes": 1,
+      "failures": 0,
+      "macro_task_success": 1.0,
+      "episode_success": 1.0,
+      "mean_inference_calls": 75.0,
+      "mean_steps": 75.0,
+      "inference_calls_per_100_steps": 100.0,
+      "mean_model_seconds": 8.899874800023099,
+      "total_wall_seconds": 39.92826810000406,
+      "mean_timings": {
+        "policy_inference_seconds": 8.899874800023099,
+        "preprocess_seconds": 1.0281808999861823,
+        "scheduler_seconds": 0.03475490000710124,
+        "simulator_seconds": 23.947054100004607,
+        "wall_seconds": 39.92826810000406
+      },
+      "per_task": [
+        {
+          "suite": "libero_spatial",
+          "task_id": 0,
+          "task": "pick up the black bowl between the plate and the ramekin and place it on the plate",
+          "episodes": 1,
+          "successes": 1,
+          "success_rate": 1.0
+        }
+      ]
+    }
+  ],
+  "paired_comparisons": [],
+  "ablation_comparisons": [],
+  "warnings": [
+    "任务簇少于 10 个，跨任务效应和置信区间不稳定；不能据此声称普遍优于基线。"
+  ],
+  "input_sha256": {
+    "protocol.json": "86bc6dc89965fe193774c63ae5e9b529d06fb908a3e8f611690ec93ffcadf982",
+    "episodes/minerva__libero_spatial__0__0__clean__upstream/result.json": "feb71e13e9845ffe197f9d5186ecc771af05b98f0d5ff7252197e75df1c029e5"
+  },
+  "initial_state_parity": {
+    "blocks": 1,
+    "image_checked_blocks": 1,
+    "state_checked_blocks": 1,
+    "image_method_comparisons": 0,
+    "state_method_comparisons": 0,
+    "proprio_rtol": 1e-06,
+    "proprio_atol": 1e-07,
+    "blocks_without_image_evidence": 0,
+    "blocks_without_state_evidence": 0
+  },
+  "estimand": "equal-weight (suite,task_id) means over observed init-state/seed trials",
+  "uncertainty": "2000 task-cluster percentile bootstrap draws; fixed observed trials and model checkpoints",
+  "experiment_name": "integration-smoke"
+}

@@ -1,0 +1,30 @@
+{
+  "count": 52,
+  "feature_contract": {
+    "dtype": "float32",
+    "hidden_size": 960,
+    "image_feature_keys": [
+      "observation.images.image",
+      "observation.images.image2"
+    ],
+    "image_tokens": 128,
+    "input_dim": 169920,
+    "language_slots": 48,
+    "layout": "image tokens, language padded after VLM to tokenizer_max_length, encoded state token",
+    "padding": "masked outputs set to zero",
+    "source": "SmolVLA final normalized VLM prefix output",
+    "state_tokens": 1,
+    "version": 1
+  },
+  "latent_contract": {
+    "completed_steps": 8,
+    "dtype": "float32",
+    "full_num_steps": 10,
+    "native_time": 0.2,
+    "paper_tau": 0.8,
+    "remaining_nfe": 2,
+    "space": "normalized full max_action_dim, including internal padded channels",
+    "time_relation": "smolvla_t = 1 - paper_tau"
+  },
+  "scope": "candidate samples only; failed development episodes are never admitted"
+}

@@ -1,0 +1,24 @@
+{
+  "normalized_command": [
+    "python",
+    "-u",
+    "scripts/probe_vlajepa.py",
+    "run",
+    "--observation",
+    "artifacts/policy_smoke_observation.npz",
+    "--output",
+    "artifacts/frontier/vlajepa_real_probe.json",
+    "--threads",
+    "2"
+  ],
+  "exit_code": 3,
+  "result": "artifacts/frontier/vlajepa_real_probe.json",
+  "stdout_stderr_log": "artifacts/vlajepa-real-probe-console.log",
+  "stdout_stderr_bytes": 0,
+  "status": "blocked_preflight",
+  "model_parameters_materialized": false,
+  "inference_executed": false,
+  "available_gib": 5.768135070800781,
+  "required_gib": 6,
+  "reason": "Current available system RAM fell below the unchanged preflight threshold; this does not establish intrinsic hardware impossibility."
+}

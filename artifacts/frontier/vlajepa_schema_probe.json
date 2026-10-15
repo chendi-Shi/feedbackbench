@@ -1,0 +1,730 @@
+{
+  "status": "passed_schema_only",
+  "started_at": "2026-10-14T08:12:33.418601+00:00",
+  "script_sha256": "75a0da266807ce380ddc82e94d55425de851d1e4efb6c6cc42e3843399f2da9e",
+  "scope": "one real LIBERO observation, batch 1, four flow steps; not closed-loop success",
+  "lerobot_revision": "ae2b57f12223c8c5184fcd814eb63cd9ce7de203",
+  "policy_revision": "735d9f692981e286ade093b5046627eda876e5d0",
+  "platform": "win32",
+  "python": "3.12.14",
+  "threads": 2,
+  "theoretical_untied_inference_weight_bytes": 5498123292,
+  "timings": {
+    "imports_seconds": 73.15710719999333,
+    "meta_construction_seconds": 12.075807500004885
+  },
+  "preflight": {
+    "available_bytes": 6830747648,
+    "required_available_bytes": 1610612736.0
+  },
+  "manifest": {
+    "path": "models/vlajepa/manifest.pending.json",
+    "sha256": "ba061330c58f86ca250bbfa8e16c44ab9b4d33b0e203242c290323a3db452106",
+    "files_verified": 663,
+    "checkpoint_complete": false
+  },
+  "dependencies": {
+    "versions": {
+      "torch": "2.7.1+cpu",
+      "torchvision": "0.22.1+cpu",
+      "transformers": "5.5.4",
+      "safetensors": "0.8.0",
+      "accelerate": "1.15.0",
+      "numpy": "2.2.6",
+      "psutil": "7.2.2",
+      "diffusers": "0.39.0",
+      "importlib_metadata": "8.7.1",
+      "filelock": "4.1.1",
+      "httpx": "0.28.1",
+      "huggingface-hub": "1.33.0",
+      "regex": "2026.9.29",
+      "requests": "2.34.2",
+      "Pillow": "12.3.0",
+      "zipp": "4.1.1"
+    },
+    "failures": []
+  },
+  "implementation": "frontier/vendor/lerobot/src/lerobot/policies/vla_jepa/modeling_vla_jepa.py",
+  "construction": {
+    "constructor_changes": [
+      "Qwen3VLForConditionalGeneration.from_pretrained -> same class._from_config"
+    ],
+    "world_model_enabled": false,
+    "reason": "training-only modules never called by official predict_action",
+    "buffers": [
+      {
+        "name": "model._action_token_ids_t",
+        "shape": [
+          28
+        ],
+        "dtype": "torch.int64",
+        "rule": "official expanded tokenizer action-token IDs"
+      },
+      {
+        "name": "model.qwen.model.model.visual.rotary_pos_emb.inv_freq",
+        "shape": [
+          16
+        ],
+        "dtype": "torch.float32",
+        "rule": "official vision rotary constructor formula"
+      },
+      {
+        "name": "model.qwen.model.model.language_model.rotary_emb.original_inv_freq",
+        "shape": [
+          64
+        ],
+        "dtype": "torch.float32",
+        "rule": "official text rotary constructor formula"
+      },
+      {
+        "name": "model.qwen.model.model.language_model.rotary_emb.inv_freq",
+        "shape": [
+          64
+        ],
+        "dtype": "torch.float32",
+        "rule": "official text rotary constructor formula"
+      }
+    ]
+  },
+  "schema": {
+    "path": "artifacts/frontier/vlajepa_schema_probe.schema.json",
+    "sha256": "28a1ec487f2181fdccc4b269a35fed5b9521c5bc0702b18ab5bb500afd37fd7c",
+    "active_elements": 2593879303,
+    "skipped_elements": 487618944
+  },
+  "inference_executed": false,
+  "note": "Meta architecture only. This is not a pretrained forward result.",
+  "memory": {
+    "peak_rss_bytes": 534343680,
+    "minimum_available_bytes": 6063611904,
+    "sampling_seconds": 1.0,
+    "samples": [
+      {
+        "utc": "2026-10-14T08:12:34.428742+00:00",
+        "rss_bytes": 33144832,
+        "available_bytes": 6794846208
+      },
+      {
+        "utc": "2026-10-14T08:12:35.443751+00:00",
+        "rss_bytes": 31387648,
+        "available_bytes": 6800838656
+      },
+      {
+        "utc": "2026-10-14T08:12:36.448630+00:00",
+        "rss_bytes": 32120832,
+        "available_bytes": 6797471744
+      },
+      {
+        "utc": "2026-10-14T08:12:37.456085+00:00",
+        "rss_bytes": 32120832,
+        "available_bytes": 6777966592
+      },
+      {
+        "utc": "2026-10-14T08:12:38.457360+00:00",
+        "rss_bytes": 31526912,
+        "available_bytes": 6786469888
+      },
+      {
+        "utc": "2026-10-14T08:12:39.460054+00:00",
+        "rss_bytes": 31440896,
+        "available_bytes": 6798102528
+      },
+      {
+        "utc": "2026-10-14T08:12:40.472377+00:00",
+        "rss_bytes": 31678464,
+        "available_bytes": 6814236672
+      },
+      {
+        "utc": "2026-10-14T08:12:41.475869+00:00",
+        "rss_bytes": 31764480,
+        "available_bytes": 6824599552
+      },
+      {
+        "utc": "2026-10-14T08:12:42.481769+00:00",
+        "rss_bytes": 31768576,
+        "available_bytes": 6787031040
+      },
+      {
+        "utc": "2026-10-14T08:12:43.490141+00:00",
+        "rss_bytes": 31772672,
+        "available_bytes": 6796333056
+      },
+      {
+        "utc": "2026-10-14T08:12:44.493190+00:00",
+        "rss_bytes": 31891456,
+        "available_bytes": 6800990208
+      },
+      {
+        "utc": "2026-10-14T08:12:45.494522+00:00",
+        "rss_bytes": 31948800,
+        "available_bytes": 6792699904
+      },
+      {
+        "utc": "2026-10-14T08:12:46.496154+00:00",
+        "rss_bytes": 31948800,
+        "available_bytes": 6810251264
+      },
+      {
+        "utc": "2026-10-14T08:12:47.502846+00:00",
+        "rss_bytes": 31952896,
+        "available_bytes": 6795685888
+      },
+      {
+        "utc": "2026-10-14T08:12:48.511690+00:00",
+        "rss_bytes": 31981568,
+        "available_bytes": 6803656704
+      },
+      {
+        "utc": "2026-10-14T08:12:49.518821+00:00",
+        "rss_bytes": 31956992,
+        "available_bytes": 6803140608
+      },
+      {
+        "utc": "2026-10-14T08:12:50.524320+00:00",
+        "rss_bytes": 31956992,
+        "available_bytes": 6793355264
+      },
+      {
+        "utc": "2026-10-14T08:12:51.531871+00:00",
+        "rss_bytes": 31956992,
+        "available_bytes": 6790963200
+      },
+      {
+        "utc": "2026-10-14T08:12:52.539065+00:00",
+        "rss_bytes": 31956992,
+        "available_bytes": 6818926592
+      },
+      {
+        "utc": "2026-10-14T08:12:53.544880+00:00",
+        "rss_bytes": 35266560,
+        "available_bytes": 6753243136
+      },
+      {
+        "utc": "2026-10-14T08:12:54.557007+00:00",
+        "rss_bytes": 31956992,
+        "available_bytes": 6798733312
+      },
+      {
+        "utc": "2026-10-14T08:12:55.569297+00:00",
+        "rss_bytes": 31956992,
+        "available_bytes": 6804758528
+      },
+      {
+        "utc": "2026-10-14T08:12:56.572474+00:00",
+        "rss_bytes": 31956992,
+        "available_bytes": 6775586816
+      },
+      {
+        "utc": "2026-10-14T08:12:57.574026+00:00",
+        "rss_bytes": 31956992,
+        "available_bytes": 6782836736
+      },
+      {
+        "utc": "2026-10-14T08:12:58.588579+00:00",
+        "rss_bytes": 32014336,
+        "available_bytes": 6739398656
+      },
+      {
+        "utc": "2026-10-14T08:12:59.596928+00:00",
+        "rss_bytes": 31961088,
+        "available_bytes": 6737199104
+      },
+      {
+        "utc": "2026-10-14T08:13:00.609382+00:00",
+        "rss_bytes": 31961088,
+        "available_bytes": 6749204480
+      },
+      {
+        "utc": "2026-10-14T08:13:01.621427+00:00",
+        "rss_bytes": 31961088,
+        "available_bytes": 6735781888
+      },
+      {
+        "utc": "2026-10-14T08:13:02.636395+00:00",
+        "rss_bytes": 31961088,
+        "available_bytes": 6756765696
+      },
+      {
+        "utc": "2026-10-14T08:13:03.646625+00:00",
+        "rss_bytes": 32010240,
+        "available_bytes": 6709874688
+      },
+      {
+        "utc": "2026-10-14T08:13:04.658708+00:00",
+        "rss_bytes": 32010240,
+        "available_bytes": 6722904064
+      },
+      {
+        "utc": "2026-10-14T08:13:05.662397+00:00",
+        "rss_bytes": 32014336,
+        "available_bytes": 6751182848
+      },
+      {
+        "utc": "2026-10-14T08:13:06.666382+00:00",
+        "rss_bytes": 32018432,
+        "available_bytes": 6755627008
+      },
+      {
+        "utc": "2026-10-14T08:13:07.669498+00:00",
+        "rss_bytes": 32022528,
+        "available_bytes": 6779781120
+      },
+      {
+        "utc": "2026-10-14T08:13:08.674207+00:00",
+        "rss_bytes": 35307520,
+        "available_bytes": 6764789760
+      },
+      {
+        "utc": "2026-10-14T08:13:09.677544+00:00",
+        "rss_bytes": 32055296,
+        "available_bytes": 6743547904
+      },
+      {
+        "utc": "2026-10-14T08:13:10.683918+00:00",
+        "rss_bytes": 32833536,
+        "available_bytes": 6757396480
+      },
+      {
+        "utc": "2026-10-14T08:13:11.686423+00:00",
+        "rss_bytes": 32059392,
+        "available_bytes": 6715314176
+      },
+      {
+        "utc": "2026-10-14T08:13:12.688912+00:00",
+        "rss_bytes": 32059392,
+        "available_bytes": 6740074496
+      },
+      {
+        "utc": "2026-10-14T08:13:13.693393+00:00",
+        "rss_bytes": 32059392,
+        "available_bytes": 6746308608
+      },
+      {
+        "utc": "2026-10-14T08:13:14.695960+00:00",
+        "rss_bytes": 32215040,
+        "available_bytes": 6747705344
+      },
+      {
+        "utc": "2026-10-14T08:13:15.708859+00:00",
+        "rss_bytes": 32370688,
+        "available_bytes": 6769397760
+      },
+      {
+        "utc": "2026-10-14T08:13:16.711608+00:00",
+        "rss_bytes": 49520640,
+        "available_bytes": 6738456576
+      },
+      {
+        "utc": "2026-10-14T08:13:17.719407+00:00",
+        "rss_bytes": 85401600,
+        "available_bytes": 6688972800
+      },
+      {
+        "utc": "2026-10-14T08:13:18.721141+00:00",
+        "rss_bytes": 132685824,
+        "available_bytes": 6655528960
+      },
+      {
+        "utc": "2026-10-14T08:13:19.724675+00:00",
+        "rss_bytes": 147357696,
+        "available_bytes": 6660272128
+      },
+      {
+        "utc": "2026-10-14T08:13:20.729079+00:00",
+        "rss_bytes": 156753920,
+        "available_bytes": 6609633280
+      },
+      {
+        "utc": "2026-10-14T08:13:21.756058+00:00",
+        "rss_bytes": 164392960,
+        "available_bytes": 6614310912
+      },
+      {
+        "utc": "2026-10-14T08:13:22.758961+00:00",
+        "rss_bytes": 171900928,
+        "available_bytes": 6576123904
+      },
+      {
+        "utc": "2026-10-14T08:13:23.769808+00:00",
+        "rss_bytes": 172068864,
+        "available_bytes": 6595047424
+      },
+      {
+        "utc": "2026-10-14T08:13:24.784611+00:00",
+        "rss_bytes": 173764608,
+        "available_bytes": 6555131904
+      },
+      {
+        "utc": "2026-10-14T08:13:25.839782+00:00",
+        "rss_bytes": 181022720,
+        "available_bytes": 6527381504
+      },
+      {
+        "utc": "2026-10-14T08:13:26.846689+00:00",
+        "rss_bytes": 191119360,
+        "available_bytes": 6499770368
+      },
+      {
+        "utc": "2026-10-14T08:13:27.857584+00:00",
+        "rss_bytes": 198615040,
+        "available_bytes": 6461677568
+      },
+      {
+        "utc": "2026-10-14T08:13:28.869730+00:00",
+        "rss_bytes": 209813504,
+        "available_bytes": 6421393408
+      },
+      {
+        "utc": "2026-10-14T08:13:29.887011+00:00",
+        "rss_bytes": 214032384,
+        "available_bytes": 6413393920
+      },
+      {
+        "utc": "2026-10-14T08:13:30.895760+00:00",
+        "rss_bytes": 224468992,
+        "available_bytes": 6393540608
+      },
+      {
+        "utc": "2026-10-14T08:13:31.910959+00:00",
+        "rss_bytes": 235753472,
+        "available_bytes": 6459351040
+      },
+      {
+        "utc": "2026-10-14T08:13:32.932297+00:00",
+        "rss_bytes": 245108736,
+        "available_bytes": 6433415168
+      },
+      {
+        "utc": "2026-10-14T08:13:33.941586+00:00",
+        "rss_bytes": 255037440,
+        "available_bytes": 6420107264
+      },
+      {
+        "utc": "2026-10-14T08:13:34.942621+00:00",
+        "rss_bytes": 256888832,
+        "available_bytes": 6416158720
+      },
+      {
+        "utc": "2026-10-14T08:13:35.956657+00:00",
+        "rss_bytes": 257060864,
+        "available_bytes": 6429245440
+      },
+      {
+        "utc": "2026-10-14T08:13:36.960206+00:00",
+        "rss_bytes": 261312512,
+        "available_bytes": 6384701440
+      },
+      {
+        "utc": "2026-10-14T08:13:37.962215+00:00",
+        "rss_bytes": 272670720,
+        "available_bytes": 6391197696
+      },
+      {
+        "utc": "2026-10-14T08:13:38.977643+00:00",
+        "rss_bytes": 280420352,
+        "available_bytes": 6388797440
+      },
+      {
+        "utc": "2026-10-14T08:13:39.991099+00:00",
+        "rss_bytes": 287985664,
+        "available_bytes": 6363086848
+      },
+      {
+        "utc": "2026-10-14T08:13:41.010358+00:00",
+        "rss_bytes": 295354368,
+        "available_bytes": 6366633984
+      },
+      {
+        "utc": "2026-10-14T08:13:42.018341+00:00",
+        "rss_bytes": 302706688,
+        "available_bytes": 6353342464
+      },
+      {
+        "utc": "2026-10-14T08:13:43.037874+00:00",
+        "rss_bytes": 302870528,
+        "available_bytes": 6351794176
+      },
+      {
+        "utc": "2026-10-14T08:13:44.043265+00:00",
+        "rss_bytes": 302899200,
+        "available_bytes": 6302662656
+      },
+      {
+        "utc": "2026-10-14T08:13:45.052212+00:00",
+        "rss_bytes": 303673344,
+        "available_bytes": 6313828352
+      },
+      {
+        "utc": "2026-10-14T08:13:46.063047+00:00",
+        "rss_bytes": 307744768,
+        "available_bytes": 6295121920
+      },
+      {
+        "utc": "2026-10-14T08:13:47.081268+00:00",
+        "rss_bytes": 314884096,
+        "available_bytes": 6324703232
+      },
+      {
+        "utc": "2026-10-14T08:13:48.091320+00:00",
+        "rss_bytes": 316026880,
+        "available_bytes": 6289661952
+      },
+      {
+        "utc": "2026-10-14T08:13:49.095589+00:00",
+        "rss_bytes": 316067840,
+        "available_bytes": 6301818880
+      },
+      {
+        "utc": "2026-10-14T08:13:50.110716+00:00",
+        "rss_bytes": 317779968,
+        "available_bytes": 6294118400
+      },
+      {
+        "utc": "2026-10-14T08:13:51.125862+00:00",
+        "rss_bytes": 318513152,
+        "available_bytes": 6304444416
+      },
+      {
+        "utc": "2026-10-14T08:13:52.144533+00:00",
+        "rss_bytes": 319750144,
+        "available_bytes": 6251995136
+      },
+      {
+        "utc": "2026-10-14T08:13:53.151364+00:00",
+        "rss_bytes": 320442368,
+        "available_bytes": 6258372608
+      },
+      {
+        "utc": "2026-10-14T08:13:54.162625+00:00",
+        "rss_bytes": 321032192,
+        "available_bytes": 6276055040
+      },
+      {
+        "utc": "2026-10-14T08:13:55.170982+00:00",
+        "rss_bytes": 321064960,
+        "available_bytes": 6286778368
+      },
+      {
+        "utc": "2026-10-14T08:13:56.184204+00:00",
+        "rss_bytes": 321642496,
+        "available_bytes": 6255341568
+      },
+      {
+        "utc": "2026-10-14T08:13:57.186981+00:00",
+        "rss_bytes": 328372224,
+        "available_bytes": 6263857152
+      },
+      {
+        "utc": "2026-10-14T08:13:58.192062+00:00",
+        "rss_bytes": 341286912,
+        "available_bytes": 6237794304
+      },
+      {
+        "utc": "2026-10-14T08:13:59.202266+00:00",
+        "rss_bytes": 351604736,
+        "available_bytes": 6205300736
+      },
+      {
+        "utc": "2026-10-14T08:14:00.210344+00:00",
+        "rss_bytes": 361705472,
+        "available_bytes": 6172618752
+      },
+      {
+        "utc": "2026-10-14T08:14:01.226791+00:00",
+        "rss_bytes": 367157248,
+        "available_bytes": 6168301568
+      },
+      {
+        "utc": "2026-10-14T08:14:02.230811+00:00",
+        "rss_bytes": 369139712,
+        "available_bytes": 6146854912
+      },
+      {
+        "utc": "2026-10-14T08:14:03.257055+00:00",
+        "rss_bytes": 375545856,
+        "available_bytes": 6209081344
+      },
+      {
+        "utc": "2026-10-14T08:14:04.385345+00:00",
+        "rss_bytes": 386723840,
+        "available_bytes": 6176432128
+      },
+      {
+        "utc": "2026-10-14T08:14:05.394050+00:00",
+        "rss_bytes": 386727936,
+        "available_bytes": 6279585792
+      },
+      {
+        "utc": "2026-10-14T08:14:06.397956+00:00",
+        "rss_bytes": 386727936,
+        "available_bytes": 6293516288
+      },
+      {
+        "utc": "2026-10-14T08:14:07.406955+00:00",
+        "rss_bytes": 386727936,
+        "available_bytes": 6309355520
+      },
+      {
+        "utc": "2026-10-14T08:14:08.497328+00:00",
+        "rss_bytes": 391049216,
+        "available_bytes": 6290575360
+      },
+      {
+        "utc": "2026-10-14T08:14:09.512273+00:00",
+        "rss_bytes": 390787072,
+        "available_bytes": 6300725248
+      },
+      {
+        "utc": "2026-10-14T08:14:10.609459+00:00",
+        "rss_bytes": 388005888,
+        "available_bytes": 6291369984
+      },
+      {
+        "utc": "2026-10-14T08:14:11.637801+00:00",
+        "rss_bytes": 395513856,
+        "available_bytes": 6289178624
+      },
+      {
+        "utc": "2026-10-14T08:14:12.653042+00:00",
+        "rss_bytes": 396382208,
+        "available_bytes": 6243659776
+      },
+      {
+        "utc": "2026-10-14T08:14:13.662044+00:00",
+        "rss_bytes": 396816384,
+        "available_bytes": 6285426688
+      },
+      {
+        "utc": "2026-10-14T08:14:14.689978+00:00",
+        "rss_bytes": 400785408,
+        "available_bytes": 6279589888
+      },
+      {
+        "utc": "2026-10-14T08:14:15.701416+00:00",
+        "rss_bytes": 401477632,
+        "available_bytes": 6280998912
+      },
+      {
+        "utc": "2026-10-14T08:14:16.734853+00:00",
+        "rss_bytes": 402255872,
+        "available_bytes": 6279155712
+      },
+      {
+        "utc": "2026-10-14T08:14:17.750640+00:00",
+        "rss_bytes": 405745664,
+        "available_bytes": 6268186624
+      },
+      {
+        "utc": "2026-10-14T08:14:18.781555+00:00",
+        "rss_bytes": 406286336,
+        "available_bytes": 6265622528
+      },
+      {
+        "utc": "2026-10-14T08:14:19.794246+00:00",
+        "rss_bytes": 406548480,
+        "available_bytes": 6264975360
+      },
+      {
+        "utc": "2026-10-14T08:14:20.802982+00:00",
+        "rss_bytes": 412397568,
+        "available_bytes": 6253199360
+      },
+      {
+        "utc": "2026-10-14T08:14:21.816053+00:00",
+        "rss_bytes": 413171712,
+        "available_bytes": 6268145664
+      },
+      {
+        "utc": "2026-10-14T08:14:22.832131+00:00",
+        "rss_bytes": 414048256,
+        "available_bytes": 6260809728
+      },
+      {
+        "utc": "2026-10-14T08:14:23.873838+00:00",
+        "rss_bytes": 416440320,
+        "available_bytes": 6254247936
+      },
+      {
+        "utc": "2026-10-14T08:14:24.924553+00:00",
+        "rss_bytes": 417918976,
+        "available_bytes": 6202028032
+      },
+      {
+        "utc": "2026-10-14T08:14:25.934759+00:00",
+        "rss_bytes": 418361344,
+        "available_bytes": 6230372352
+      },
+      {
+        "utc": "2026-10-14T08:14:26.943214+00:00",
+        "rss_bytes": 428363776,
+        "available_bytes": 6223933440
+      },
+      {
+        "utc": "2026-10-14T08:14:27.957483+00:00",
+        "rss_bytes": 439488512,
+        "available_bytes": 6204821504
+      },
+      {
+        "utc": "2026-10-14T08:14:28.966339+00:00",
+        "rss_bytes": 439693312,
+        "available_bytes": 6196699136
+      },
+      {
+        "utc": "2026-10-14T08:14:30.245277+00:00",
+        "rss_bytes": 440320000,
+        "available_bytes": 6214995968
+      },
+      {
+        "utc": "2026-10-14T08:14:31.855761+00:00",
+        "rss_bytes": 518774784,
+        "available_bytes": 6120140800
+      },
+      {
+        "utc": "2026-10-14T08:14:32.998867+00:00",
+        "rss_bytes": 534343680,
+        "available_bytes": 6101344256
+      },
+      {
+        "utc": "2026-10-14T08:14:34.067254+00:00",
+        "rss_bytes": 534274048,
+        "available_bytes": 6128852992
+      },
+      {
+        "utc": "2026-10-14T08:14:35.195236+00:00",
+        "rss_bytes": 534265856,
+        "available_bytes": 6126518272
+      },
+      {
+        "utc": "2026-10-14T08:14:36.294169+00:00",
+        "rss_bytes": 534269952,
+        "available_bytes": 6113271808
+      },
+      {
+        "utc": "2026-10-14T08:14:37.322342+00:00",
+        "rss_bytes": 523091968,
+        "available_bytes": 6093156352
+      },
+      {
+        "utc": "2026-10-14T08:14:38.495514+00:00",
+        "rss_bytes": 534216704,
+        "available_bytes": 6114435072
+      },
+      {
+        "utc": "2026-10-14T08:14:39.629199+00:00",
+        "rss_bytes": 534233088,
+        "available_bytes": 6105845760
+      },
+      {
+        "utc": "2026-10-14T08:14:40.752608+00:00",
+        "rss_bytes": 534257664,
+        "available_bytes": 6107312128
+      },
+      {
+        "utc": "2026-10-14T08:14:41.766796+00:00",
+        "rss_bytes": 528756736,
+        "available_bytes": 6063611904
+      }
+    ]
+  },
+  "finished_at": "2026-10-14T08:14:41.820505+00:00"
+}

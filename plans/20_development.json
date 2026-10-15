@@ -1,0 +1,96 @@
+{
+  "name": "development-calibration",
+  "models": [
+    {
+      "name": "minerva",
+      "methods": [
+        {
+          "name": "fixed8",
+          "scheduler": {
+            "mode": "fixed",
+            "fixed_interval": 8,
+            "temporal_ensemble": true,
+            "ensemble_coeff": 0.01
+          }
+        },
+        {
+          "name": "adaptive_low",
+          "scheduler": {
+            "mode": "adaptive",
+            "min_interval": 2,
+            "max_interval": 15,
+            "temporal_ensemble": true,
+            "ensemble_coeff": 0.01,
+            "vision_threshold": 0.015,
+            "gripper_threshold": 0.001
+          }
+        },
+        {
+          "name": "adaptive_medium",
+          "scheduler": {
+            "mode": "adaptive",
+            "min_interval": 2,
+            "max_interval": 15,
+            "temporal_ensemble": true,
+            "ensemble_coeff": 0.01,
+            "vision_threshold": 0.04,
+            "gripper_threshold": 0.003
+          }
+        },
+        {
+          "name": "adaptive_high",
+          "scheduler": {
+            "mode": "adaptive",
+            "min_interval": 2,
+            "max_interval": 15,
+            "temporal_ensemble": true,
+            "ensemble_coeff": 0.01,
+            "vision_threshold": 0.08,
+            "gripper_threshold": 0.01
+          }
+        }
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "suite": "libero_spatial",
+      "task_id": 0
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 0
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 0
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 0
+    }
+  ],
+  "initial_states": [
+    1,
+    2
+  ],
+  "conditions": [
+    "clean"
+  ],
+  "seed": 1000,
+  "threads": 2,
+  "image_size": 360,
+  "warmup_calls": 2,
+  "rotate_method_order": true,
+  "split": "development only; these tasks/initials do not enter the method comparison",
+  "question": "How does feedback frequency affect task success and inference cost on a fixed CPU policy?",
+  "hypothesis": "Observation-triggered replanning may preserve success with fewer inference calls; a negative result is allowed.",
+  "limitations": [
+    "Frozen published checkpoint; no retraining-seed claim.",
+    "Known tasks and published held-out initial states; not unseen-language generalization.",
+    "Simulation pauses during inference; delay4 is prescribed sensor delay, not asynchronous real-time control.",
+    "Calls are the primary compute proxy. Wall-clock measurements on a shared laptop are descriptive.",
+    "Few initial states per task; screening evidence, not a full published benchmark reproduction."
+  ],
+  "selection_rule": "Among candidates with development macro success >= fixed8, choose lowest mean inference calls; ties use higher success then lexical method name. If none qualifies, choose highest success, then lowest calls, then lexical name. Freeze the selected configuration before test."
+}
