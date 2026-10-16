@@ -13,6 +13,8 @@
 ## 运行与内存记录
 
 - [运行原始记录](runs/run_0001.json)：`blocked_preflight`；每秒采样峰值 RSS `None` bytes，最低系统可用内存 `None` bytes。采样不能保证捕获瞬时峰值。
+- [运行原始记录](runs/run_0002.json)：`blocked_preflight`；每秒采样峰值 RSS `None` bytes，最低系统可用内存 `None` bytes。采样不能保证捕获瞬时峰值。
+- [运行原始记录](runs/run_0003.json)：`blocked_preflight`；每秒采样峰值 RSS `574111744` bytes，最低系统可用内存 `4872904704` bytes。采样不能保证捕获瞬时峰值。
 
 ## 实际调用延迟分布
 

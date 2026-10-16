@@ -10,7 +10,9 @@
     "vlajepa_int8_forward": "passed_single_forward",
     "vlajepa_closed_loop": "blocked_preflight",
     "vlajepa_closed_loop_planned": 4,
-    "vlajepa_closed_loop_executed": 0
+    "vlajepa_closed_loop_executed": 0,
+    "vlajepa_closed_loop_attempted": 0,
+    "vlajepa_closed_loop_completed": 0
   },
   "privacy": "Diagnostic exports may be redacted; source_sha256 describes the original local bytes.",
   "frozen_source_checks": {
@@ -45,10 +47,10 @@
       "redacted": false
     },
     "README.md": {
-      "sha256": "844fc8253610d4c519e9439907972feecc1cd3e0bbccf741e51c148a0a6794af",
-      "bytes": 18949,
-      "source_sha256": "844fc8253610d4c519e9439907972feecc1cd3e0bbccf741e51c148a0a6794af",
-      "source_bytes": 18949,
+      "sha256": "ec5c639c6bb48ee4bb81a180d1fa38364d423027d9221d25e0aa4b7e55e2ad62",
+      "bytes": 20555,
+      "source_sha256": "ec5c639c6bb48ee4bb81a180d1fa38364d423027d9221d25e0aa4b7e55e2ad62",
+      "source_bytes": 20555,
       "origin": "current_project",
       "redacted": false
     },
@@ -73,6 +75,14 @@
       "source_sha256": "08f8d0dc8ad866f8d779ea6f6220438ee9d1a3b1cea2c78600ed503a20cf0728",
       "source_bytes": 12984,
       "origin": "verified_continuation_archive"
+    },
+    "artifacts/closure-audit-20261016.json": {
+      "sha256": "b5d2a43bd995e36b35adda948882dd970decfde5eefd52f6eff2206963febe51",
+      "bytes": 3763,
+      "source_sha256": "b5d2a43bd995e36b35adda948882dd970decfde5eefd52f6eff2206963febe51",
+      "source_bytes": 3763,
+      "origin": "current_project",
+      "redacted": false
     },
     "artifacts/continuation-report-tests.xml": {
       "sha256": "74c7031a6c066d45fa857160fc239869e90f0f16d9c45ec29399d83dbc2bb992",
@@ -273,6 +283,22 @@
       "source_bytes": 0,
       "origin": "verified_continuation_archive"
     },
+    "artifacts/vlajepa-stage-completion-recovery-tests-20261016.xml": {
+      "sha256": "63171472c392883fbaef4b1bee27cc6635b75be37aedfaf80060a14db2fed0d2",
+      "bytes": 9910,
+      "source_sha256": "14cb14617eb16484ea53b75b0d779e8ef52e8a217d597d51c3489eac3268f572",
+      "source_bytes": 9903,
+      "origin": "current_project",
+      "redacted": true
+    },
+    "artifacts/vlajepa-stage-completion-tests-20261016.xml": {
+      "sha256": "5ee66af7ec584df22af5c3921a84976c9291e2bb2af29c3adf084ee38bd2e3b7",
+      "bytes": 9455,
+      "source_sha256": "5ea43e9a2ea6bd443c1322c3b16af7e9711d9148664be8f25b8c527ce1a5d0eb",
+      "source_bytes": 9448,
+      "origin": "current_project",
+      "redacted": true
+    },
     "assets/libero/asset_manifest.json": {
       "sha256": "2234602c8394264cf88a3c2c19a74e7d2b47aa85563846638a3c39bb5b104dce",
       "bytes": 186603,
@@ -369,10 +395,10 @@
       "redacted": false
     },
     "docs/GITHUB_PUBLICATION.md": {
-      "sha256": "5db237dd825fb88fad186dffd44fe59f84653313338f4fa5b3fa750db0f855f8",
-      "bytes": 2439,
-      "source_sha256": "5db237dd825fb88fad186dffd44fe59f84653313338f4fa5b3fa750db0f855f8",
-      "source_bytes": 2439,
+      "sha256": "1e31e3f01c54622081e3e1590dd3b13321bba29103ad4ca8b4108834cf6fbf22",
+      "bytes": 2821,
+      "source_sha256": "1e31e3f01c54622081e3e1590dd3b13321bba29103ad4ca8b4108834cf6fbf22",
+      "source_bytes": 2821,
       "origin": "current_project",
       "redacted": false
     },
@@ -441,10 +467,10 @@
       "redacted": false
     },
     "docs/VLAJEPA_CLOSED_LOOP_RESULTS.md": {
-      "sha256": "805e1f1d0bfeb691d8af488c5bbcaf3e618cf71340bdf9c4926fe4b9061eabd8",
-      "bytes": 8805,
-      "source_sha256": "805e1f1d0bfeb691d8af488c5bbcaf3e618cf71340bdf9c4926fe4b9061eabd8",
-      "source_bytes": 8805,
+      "sha256": "e46df7069d259531bdb873947ec7638ad9e7c927ff246ba5b0321a9be46d8864",
+      "bytes": 11184,
+      "source_sha256": "e46df7069d259531bdb873947ec7638ad9e7c927ff246ba5b0321a9be46d8864",
+      "source_bytes": 11184,
       "origin": "current_project",
       "redacted": false
     },
@@ -12850,18 +12876,18 @@
       "redacted": false
     },
     "outputs/frontier/vlajepa_closed_loop/report.json": {
-      "sha256": "f197c6daf4109347ad7c31d8ac19c5395ddfaf1db10f7f6a83e5bdb64504b8d0",
-      "bytes": 1347,
-      "source_sha256": "f197c6daf4109347ad7c31d8ac19c5395ddfaf1db10f7f6a83e5bdb64504b8d0",
-      "source_bytes": 1347,
+      "sha256": "c244ae484cfb18a06cc49b01ddbea1bb696cfdb27e9ec80af55c59dc1816661c",
+      "bytes": 2081,
+      "source_sha256": "c244ae484cfb18a06cc49b01ddbea1bb696cfdb27e9ec80af55c59dc1816661c",
+      "source_bytes": 2081,
       "origin": "current_project",
       "redacted": false
     },
     "outputs/frontier/vlajepa_closed_loop/report.md": {
-      "sha256": "14780a9cd7702848a26d441f255cca36d5e3caa079b590d88133f75562101cbf",
-      "bytes": 1128,
-      "source_sha256": "14780a9cd7702848a26d441f255cca36d5e3caa079b590d88133f75562101cbf",
-      "source_bytes": 1128,
+      "sha256": "f879ec233e16ee5b375311b876c15c9c9ddb8ce6d5b06244310e592c9a5b1860",
+      "bytes": 1511,
+      "source_sha256": "f879ec233e16ee5b375311b876c15c9c9ddb8ce6d5b06244310e592c9a5b1860",
+      "source_bytes": 1511,
       "origin": "current_project",
       "redacted": false
     },
@@ -12870,6 +12896,22 @@
       "bytes": 347,
       "source_sha256": "6989cd87fa63adf2d1c3a90d80b58fdf954785de383142ac407f4679c46b5d37",
       "source_bytes": 347,
+      "origin": "current_project",
+      "redacted": false
+    },
+    "outputs/frontier/vlajepa_closed_loop/runs/run_0002.json": {
+      "sha256": "7c9b87b10670efab2168407239b527fe1cc43731341c184c8c0412f168abf660",
+      "bytes": 347,
+      "source_sha256": "7c9b87b10670efab2168407239b527fe1cc43731341c184c8c0412f168abf660",
+      "source_bytes": 347,
+      "origin": "current_project",
+      "redacted": false
+    },
+    "outputs/frontier/vlajepa_closed_loop/runs/run_0003.json": {
+      "sha256": "8d811ff8cc7a5fe519b5e6555a475d1ceae2d9401391ec2512f4795b18eee6b8",
+      "bytes": 13925,
+      "source_sha256": "8d811ff8cc7a5fe519b5e6555a475d1ceae2d9401391ec2512f4795b18eee6b8",
+      "source_bytes": 13925,
       "origin": "current_project",
       "redacted": false
     },
@@ -13241,6 +13283,14 @@
       "bytes": 17395,
       "source_sha256": "b593dad7d5595eaa8b3689bf1fb9edebb2609b386e0a32394cbcabff2bfadc7b",
       "source_bytes": 17395,
+      "origin": "current_project",
+      "redacted": false
+    },
+    "scripts/complete_vlajepa_stage.py": {
+      "sha256": "13e0ea20ea8149cc72cf4690b2fdb5f96cad62ac6b63c5d3c209b9ecd8322020",
+      "bytes": 14314,
+      "source_sha256": "13e0ea20ea8149cc72cf4690b2fdb5f96cad62ac6b63c5d3c209b9ecd8322020",
+      "source_bytes": 14314,
       "origin": "current_project",
       "redacted": false
     },
@@ -13636,6 +13686,14 @@
       "origin": "current_project",
       "redacted": false
     },
+    "tests/test_complete_vlajepa_stage.py": {
+      "sha256": "6f46319d977d7920ee624bc2f5299bce188ed535ac3b10d1c3b2bb230a08cd07",
+      "bytes": 11572,
+      "source_sha256": "6f46319d977d7920ee624bc2f5299bce188ed535ac3b10d1c3b2bb230a08cd07",
+      "source_bytes": 11572,
+      "origin": "current_project",
+      "redacted": false
+    },
     "tests/test_continuation_packaging.py": {
       "sha256": "dc05e1ee95327bf2ce82e3643b3792bf50834441f17469cdc622f8eb5d814a07",
       "bytes": 25783,
@@ -13788,5 +13846,7 @@
       "origin": "current_project",
       "redacted": false
     }
-  }
+  },
+  "updated_at": "2026-10-16T02:34:37.331249+00:00",
+  "previous_commit": "724ebc70df58381053677190cbc45ca6feb08005"
 }

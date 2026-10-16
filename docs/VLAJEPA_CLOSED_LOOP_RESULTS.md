@@ -1,6 +1,6 @@
 # VLA-JEPA INT8 四任务闭环：准备状态与结果口径
 
-**2026-10-15：四回合协议已封存，闭环runner已实现，当前47项接口与单元测试通过；首轮正式入口因可用内存不足5GiB而退出，未加载权重，四个任务尚未开始。** 正式状态仍为 `blocked_preflight`，尚未恢复运行。四个回合是计划范围，不能把入口阻断写成0/4任务成功或四次任务失败。后续实际结果封存后更新本页。
+**2026-10-16：四回合尚未实际执行。** 首轮入口在2026-10-15因3.658GiB可用内存不足5GiB而退出；本轮第一次重试为4.198GiB。之后前台等待约9.5分钟，通过入口检查后导入运行库，但加载前仅剩4.545GiB，再次退出。三次正式记录均为 `blocked_preflight`、`weights_loaded=false`。四个回合是计划范围，不能把入口阻断写成0/4任务成功或四次任务失败。后续实际结果封存后更新本页。
 
 此前[一次真实观测的量化前向](../artifacts/frontier/vlajepa_int8_probe_20261015.json)已经通过，但当时没有推进环境或执行预测动作。本阶段要把同一数值变体接入LIBERO，反复“获取当前观察 → 预测七个动作 → 顺序执行 → 再观察”，检验完整任务过程。它研究的是VLA机器人策略，VLM是其中的图文理解主干，见[项目说明](VLA_PROJECT_OVERVIEW.md)。
 
@@ -11,10 +11,14 @@
 | 执行协议 | 四任务、初态、时限、动作接口、内存保护及来源已在执行前封存 | [书面协议](VLAJEPA_CLOSED_LOOP_PROTOCOL.md)、[实际冻结文件](../outputs/frontier/vlajepa_closed_loop/protocol.json) |
 | 运行器与只读核验 | 已实现逐回合执行、动作证据保存、封存校验及报告入口 | [runner](../scripts/run_vlajepa_closed_loop.py) |
 | 当前接口与单元测试 | **47 passed，0 failure，0 error，0 skipped**；44项单元测试加3项真实微型PyTorch动态INT8接口测试 | [当前XML](../artifacts/vlajepa-closed-loop-interface-tests.xml)、[单元测试源码](../tests/test_vlajepa_closed_loop.py)、[真实微型接口测试](../tests/test_vlajepa_closed_loop_adapter.py) |
+| 前台收尾入口 | **59 passed**；15项收尾流程模拟测试加44项既有单元测试，无新模型回合；各批次不加总 | [本轮XML](../artifacts/vlajepa-stage-completion-tests-20261016.xml)、[完成入口](../scripts/complete_vlajepa_stage.py)、[流程测试](../tests/test_complete_vlajepa_stage.py) |
+| Windows文件占用修复 | **62 passed**；18项流程模拟测试加44项既有单元测试，包含短暂共享锁重试、永久失败及独立终态回归 | [修复后XML](../artifacts/vlajepa-stage-completion-recovery-tests-20261016.xml)；首次59项记录保留，不相加 |
 | 首次定向测试 | **44 passed，0 failure，0 error，0 skipped**，保留首次批次 | [首次XML](../artifacts/vlajepa-closed-loop-tests.xml)；不与当前47项或历史566项相加 |
 | 代码检查 | 本轮runner及测试的Ruff检查通过 | 与上行实现和测试对应，不作为模型质量证据 |
 | 环境接口smoke | 无模型权重的单次no-op接口检查通过 | 仅检查环境接口；不计作任务样本，也不表示模型已加载 |
 | 首轮正式启动 | `blocked_preflight`，可用内存3.658GiB低于固定5GiB；`weights_loaded=false` | [运行原始记录](../outputs/frontier/vlajepa_closed_loop/runs/run_0001.json)；没有新任务结果 |
+| 第二次正式启动 | `blocked_preflight`，可用内存4.198GiB低于固定5GiB；`weights_loaded=false` | [第二次运行记录](../outputs/frontier/vlajepa_closed_loop/runs/run_0002.json)；未创建episode |
+| 第三次正式启动 | 通过入口检查，导入运行库后4.545GiB不足5GiB，`blocked_preflight`；未加载权重 | [第三次运行记录](../outputs/frontier/vlajepa_closed_loop/runs/run_0003.json)；无机器人动作或任务结果 |
 | 部分报告 | 计划4、已完成0、成功0、任务失败0；四个计划回合均为missing | [部分报告](../outputs/frontier/vlajepa_closed_loop/report.md)、[状态JSON](../outputs/frontier/vlajepa_closed_loop/report.json)；不是0/4成功率 |
 | 工程保存核验 | 实现验证通过；四份协议的冻结源码符合，两个既有ZIP哈希未变；实际任务执行仍为blocked | [独立验收记录](../artifacts/vlajepa-closed-loop-verification.json) |
 
@@ -48,6 +52,8 @@
 
 在项目已有固定依赖、上游源码、检查点和仿真资产准备完成后，从项目根目录执行。下面使用新的复现目录，保留本次原始证据：
 
+若继续项目内已有的四回合冻结阶段，可直接执行 `python scripts/run.py scripts/complete_vlajepa_stage.py --wait-seconds 600`。它最多在前台等待600秒达到固定5GiB门槛，然后串行调用原runner、报告和不带 `--partial` 的严格核验。只有四回合全部封存、报告和核验都确认完成，才返回0；部分/错误回合、锁冲突、等待超时或子命令失败都返回非零。默认不等待，不自动后台恢复，不清除锁或覆盖错误证据。每次操作日志写入新的 `.runtime/closed_loop_completion/` 子目录。
+
 ```powershell
 # 固定协议与来源，不启动模型回合。
 python scripts/run.py scripts/run_vlajepa_closed_loop.py --output outputs/reproduction-vlajepa-closed-loop --freeze-only
@@ -63,6 +69,8 @@ python scripts/run.py scripts/run_vlajepa_closed_loop.py --output outputs/reprod
 ```
 
 内存不足时等待系统自然恢复，不停止其它项目来满足门槛。内存保护只能退出自身进程；每秒采样不能保证捕捉所有瞬时峰值。完成并封存的回合可以核验后跳过；部分、错误或运行中保护退出的回合保留，不自动覆盖重跑。只有尚未开始的回合能在同一冻结协议下继续。
+
+本次前台等待采样范围约3.096–5.228GiB；约570秒时启动第三次正式入口，最终在导入后资源检查处退出。收尾过程中还遇到Windows文件占用导致日志原子替换失败：保留了旧快照和待写终态，确认进程退出后恢复错误终态；原始协议和实验记录未改。当前入口会对短暂共享访问拒绝做有界重试，永久失败则写独立错误终态并返回非零。[本轮审计](../artifacts/closure-audit-20261016.json)区分模型资源阻断、操作日志错误及修复后的模拟回归测试。严格四回合核验仍不通过，不能声明阶段完成。
 
 报告文件是该阶段目录内的 `report.json`、`report.md`、`episodes.csv`。当前已生成的是记录入口阻断和四个缺失回合的**部分报告**，不能作为完整闭环验证。由于尚无模型调用，推理耗时和运行内存采样也没有实际测量值，不能把缺失值当作零。逐回合动作、轨迹、图像及封存凭据只在实际回合运行后按过程保存。
 

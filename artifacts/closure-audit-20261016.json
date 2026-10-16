@@ -1,0 +1,97 @@
+{
+  "schema": "feedbackbench.closure_audit.v1",
+  "audited_at": "2026-10-16T02:34:01.968132+00:00",
+  "complete": false,
+  "studies": {
+    "cache_study": {
+      "status": "complete",
+      "counts": {
+        "planned": 28,
+        "complete": 28,
+        "missing": 0,
+        "unsealed": 0,
+        "error": 0
+      },
+      "report_sha256": "7232c81fb0c2da3cdab702a4076bb53a61d0c775bb6ff1091d933f990500f873",
+      "read_only_full_report_validation": "passed_this_turn"
+    },
+    "flow_confirmation": {
+      "status": "complete",
+      "counts": {
+        "planned": 16,
+        "complete": 16,
+        "missing": 0,
+        "unsealed": 0,
+        "error": 0
+      },
+      "report_sha256": "df3be95cfb1abeafceb056fc8e1ab7b2f12b95aa7daa950917a4c8d953ac468e",
+      "read_only_full_report_validation": "passed_this_turn"
+    },
+    "vlajepa_closed_loop": {
+      "complete": false,
+      "planned": 4,
+      "completed": 0,
+      "successes": 0,
+      "task_failures": 0,
+      "statuses": {
+        "vlajepa_int8__libero_spatial__1__41__clean__native4_chunk7": "missing",
+        "vlajepa_int8__libero_object__1__41__clean__native4_chunk7": "missing",
+        "vlajepa_int8__libero_goal__1__41__clean__native4_chunk7": "missing",
+        "vlajepa_int8__libero_10__1__41__clean__native4_chunk7": "missing"
+      },
+      "report_sha256": "c244ae484cfb18a06cc49b01ddbea1bb696cfdb27e9ec80af55c59dc1816661c"
+    }
+  },
+  "frozen_source_checks": {
+    "outputs/campaign/campaign_freeze.json": {
+      "sources_checked": 9,
+      "status": "passed",
+      "protocol_sha256": "84fb379e4eef3ce4436857f324989554da5c8753a228f2e717cee420e906e842"
+    },
+    "outputs/frontier/cache_study/protocol.json": {
+      "sources_checked": 9,
+      "status": "passed",
+      "protocol_sha256": "d6fdccfe2078323d0dffbd7e806620a1a69e8d986c2a05f06b15a9423487fe2d"
+    },
+    "outputs/frontier/flow_confirmation/protocol.json": {
+      "sources_checked": 14,
+      "status": "passed",
+      "protocol_sha256": "f8dbeebf4fbd28d60051745e801a3619ba72f5f089d18e92f7ee2d9065a33371"
+    },
+    "outputs/frontier/vlajepa_closed_loop/protocol.json": {
+      "sources_checked": 13,
+      "status": "passed",
+      "protocol_sha256": "4d224fff3d5eefe446b391f953e9a0af333ff9c3850eac14d811ec00952fb190"
+    }
+  },
+  "completion_workflow_tests": {
+    "tests": 62,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "sha256": "14cb14617eb16484ea53b75b0d779e8ef52e8a217d597d51c3489eac3268f572",
+    "scope": "18 mocked completion-flow tests including sharing-error recovery plus 44 existing unit tests; no pretrained-model episodes"
+  },
+  "foreground_completion": {
+    "status": "error_not_complete",
+    "exit_code": 1,
+    "started_at": "2026-10-16T02:17:37.779277+00:00",
+    "finished_at": "2026-10-16T02:28:42.626544+00:00",
+    "wait_seconds": 600.0,
+    "poll_seconds": 30.0,
+    "minimum_available_bytes": 5368709120,
+    "sample_count": 20,
+    "minimum_observed_available_bytes": 3324837888,
+    "maximum_observed_available_bytes": 5613883392,
+    "last_observed_available_bytes": 5613883392,
+    "child_count": 2,
+    "operator_record_sha256": "b84bbadeb6ec5242338940fc0ef713b98539bf745229adde29a1a71e06cd3d9e",
+    "atomic_write_failure": "PermissionError; exact pending terminal error record recovered after process exit",
+    "fix_validation": "bounded sharing-error retries and independent terminal failure record covered by regression tests"
+  },
+  "limitations": [
+    "A completed diagnostic is not a guarantee of task success.",
+    "Missing episodes and memory preflight exits are not task failures.",
+    "No cloud compute or interference with other projects."
+  ]
+}

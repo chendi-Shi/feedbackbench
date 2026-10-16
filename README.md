@@ -12,7 +12,7 @@ VLM 负责图像与语言的理解，是本项目 VLA 策略中的主干；动�
 
 **本轮继续推进：** 把已通过单次量化前向的 VLA-JEPA 接入真实 LIBERO 闭环，已冻结四个 suite 各 task1、init41，共 **计划4回合**；保留原四步动作采样，每执行7个动作重新观察和预测。首轮正式入口因 **3.658GiB可用内存低于5GiB门槛**而退出，未加载权重，四个任务尚未开始；见[新阶段状态与运行入口](docs/VLAJEPA_CLOSED_LOOP_RESULTS.md)。新的闭环成功与失败须等实际结果，不与既有 SmolVLA 的28回合或16回合合并，也不作为两模型的匹配性能比较。
 
-闭环接口准备已通过[47项测试](artifacts/vlajepa-closed-loop-interface-tests.xml)，其中3项使用真实微型PyTorch动态INT8模型，验证多次规划、新观察和随机数/动作对齐；这不是47个机器人任务，也不与历史566项相加。正式闭环状态仍为 `blocked_preflight`，尚未恢复运行。
+闭环接口准备已通过[47项测试](artifacts/vlajepa-closed-loop-interface-tests.xml)，其中3项使用真实微型PyTorch动态INT8模型，验证多次规划、新观察和随机数/动作对齐；这不是47个机器人任务，也不与历史566项相加。**2026-10-16 两次重试仍为 `blocked_preflight`**：第一次可用内存4.198GiB；随后前台等待约9.5分钟，达到入口门槛后启动，但运行库导入后只剩4.545GiB，再次被5GiB门槛阻止。两次均未加载权重，实际闭环仍为0回合。新增[前台收尾入口](scripts/complete_vlajepa_stage.py)把有限等待、执行、报告和严格核验串联起来，只有四回合全部封存且核验通过才返回成功；[首次59项测试](artifacts/vlajepa-stage-completion-tests-20261016.xml)包含15项收尾流程测试和44项既有单元测试，不与其它批次相加。
 
 **2026-10-15：新初态前瞻确认 16/16 回合完成，0 缺失、0 运行错误。** 在 8 组配对、4 个任务簇中，full10 成功 **4/8**、noise2 **5/8**；成功差 **+12.5 个百分点，任务簇 bootstrap 95% 区间 [0, 37.5]**。总 action-head NFE 从 **2050 降至 370（−81.95%）**，调用数从 205 降至 185；每回合平均调用耗时的任务等权配对差为 **−5.253 秒 [−10.743, −1.225]**。成功差只来自一个初态，两个长程初态双方均失败；不能据此证明非劣、普遍优越或稳定端到端加速。见[后续研究结果](docs/CONTINUATION_RESULTS.md)、[完整报告](outputs/frontier/flow_confirmation/report.md)及[项目展示指南](docs/PORTFOLIO_GUIDE.md)。
 
@@ -93,6 +93,10 @@ python scripts/run.py scripts/summarize_flow_confirmation.py --output outputs/re
 VLA-JEPA 的环境与下载是独立的可行性支线：`python scripts/run.py scripts/probe_vlajepa.py fetch --connections 4` 获取固定官方源码与检查点，`python scripts/run.py scripts/probe_vlajepa.py run --output outputs/reproduction-vlajepa.json` 做一次真实观测前向。加载前要求至少 6 GiB 可用内存；不满足时明确记录阻碍。该命令不是 LIBERO 闭环评测，且应与其它模型进程串行运行。
 
 独立 INT8 变体可用 `python scripts/run.py scripts/probe_vlajepa_int8.py --threads 2 --output artifacts/frontier/vlajepa_int8_repeat_01.json` 复现，要求新的输出名及固定内存门槛。它使用动态 INT8 Linear、BF16 embedding 存储并将其输出转为 FP32，其余推理部分为 FP32；内核还会量化激活，不能简称 W8A32。本次单观测前向通过不等于原生 BF16 质量保持或相对原生加速。
+
+已冻结的四回合闭环可用 `python scripts/run.py scripts/complete_vlajepa_stage.py --wait-seconds 600` 在前台续跑：最多等待600秒达到5GiB可用内存，之后串行执行原runner、生成报告并严格核验。等待超时、缺失、未封存、运行错误或锁冲突均返回非零；默认不等待，不创建后台任务，也不停止其它项目。部分或错误回合保留并要求检查，不能自动覆盖重跑。私有操作日志另存于 `.runtime/closed_loop_completion/`，实际回合证据仍在原输出目录。
+
+本轮实际等待暴露了Windows文件占用导致状态替换失败的问题，现已增加有限重试和独立失败终态，保留旧记录；[修复后62项测试](artifacts/vlajepa-stage-completion-recovery-tests-20261016.xml)全部通过，其中18项为收尾流程模拟测试。两组SmolVLA报告重新按原始证据核验通过；VLA-JEPA仍未完成，详见[本轮闭环审计](artifacts/closure-audit-20261016.json)。状态日志修复不构成新的机器人任务结果。
 
 单个计划的 `Run.ps1 run`（或 `feedbackbench run`）支持 `--limit N`，在该计划累计完成 N 个回合后正常退出；完整流程脚本 `run_campaign.py` 不接受此参数。再次使用相同命令会继续未完成回合；源码、依赖、计划或权重改变时，必须使用新的输出目录。错误记录会保留并停止运行，不能自动丢弃失败案例。
 
