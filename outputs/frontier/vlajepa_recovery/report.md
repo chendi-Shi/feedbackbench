@@ -7,6 +7,7 @@ The original interrupted attempt remains unsealed. This recovery does not form a
 ## Run and loading evidence
 
 - [Run](runs/run_0001.json): `blocked_preflight`; loading Nones; memory `{}`.
+- [Run](runs/run_0002.json): `blocked_preflight`; loading Nones; memory `{}`.
 
 ## Limitations
 

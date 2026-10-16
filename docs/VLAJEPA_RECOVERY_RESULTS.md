@@ -1,5 +1,11 @@
 # VLA-JEPA 长任务中断后恢复：启动门槛阻断
 
+**最新重试：2026-10-16 13:16（北京时间），仍为启动门槛阻断。** 按用户要求继续运行前，完成了[600秒前台内存观察](../artifacts/frontier/vlajepa_recovery_memory_wait_20261016_02.json)，41次采样的可用内存为1.463–3.035GiB，未达到5.75GiB门槛。随后真实调用原恢复入口，[第二次运行记录](../outputs/frontier/vlajepa_recovery/runs/run_0002.json)为`blocked_preflight`：可用374,013,952字节（0.348GiB），未加载权重、未执行重放或新增动作。没有停止其他项目或服务，没有更改页文件或冻结预算。
+
+更新后的[报告](../outputs/frontier/vlajepa_recovery/report.json)保留两次阻断，仍为计划1次恢复、完成0、缺失1。两次启动尝试不等于两个评测回合。[本次只读审计](../artifacts/vlajepa-recovery-validation-20261016-retry02.json)重新核对25份冻结源与130份原证据；严格完成核验仍明确失败。未重新运行模型或工程测试，不新增原57次调用之外的推理结果。
+
+以下保留首次尝试的详细记录；首次审计绑定当时的报告快照，最新报告与等待证据由上面的重试审计绑定。
+
 **2026-10-16实际终态：恢复入口因可用内存低于冻结门槛退出，未加载模型、重放动作或执行新预测。** [运行记录](../outputs/frontier/vlajepa_recovery/runs/run_0001.json)为 `blocked_preflight`，退出码3；系统可用内存 **6,146,363,392 字节（5.724 GiB）**，低于 **6,174,015,488 字节（5.75 GiB）**门槛，差27,652,096字节。[部分报告](../outputs/frontier/vlajepa_recovery/report.json)为计划1次恢复、完成0、缺失1、任务失败0、独立新增评测样本0，`complete=false`。本轮不降低门槛、不再启动新的运行方案；不能据此宣称长任务完成或恢复有效。
 
 本阶段已经实现[恢复入口及严格核验](../scripts/run_vlajepa_recovery.py)，并按[恢复协议](VLAJEPA_RECOVERY_PROTOCOL.md)正式冻结。[实际协议](../outputs/frontier/vlajepa_recovery/protocol.json)的指纹为 `04ca0526e94e67f01c6acb9538ed045a07678a50e8511938b58f95b3139bc86f`，绑定25个源文件以及原中止目录的130个文件。代码和协议已实现，不等于真实恢复已经验证。

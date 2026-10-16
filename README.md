@@ -132,7 +132,7 @@ python scripts/run.py scripts/run_vlajepa_long_horizon.py validate --output outp
 
 该入口在导入前和加载前要求5.75GiB系统可用内存，运行时保留0.5GiB余量保护；实际占用与结果见[独立报告](docs/VLAJEPA_LONG_HORIZON_RESULTS.md)。中止记录不可覆盖重跑。Windows文件占用的有限重试与独立终态有[62项历史测试](artifacts/vlajepa-stage-completion-recovery-tests-20261016.xml)；该[早期闭环审计](artifacts/closure-audit-20261016.json)只描述当时的阻断，不代表后续阶段状态。状态日志修复不构成机器人任务结果。
 
-长任务另有已冻结的[中断恢复入口](docs/VLAJEPA_RECOVERY_RESULTS.md)，绑定原398步证据，计划重放392步、重算边界模型调用并核对6步重叠后继续。实际尝试在5.724GiB可用内存处被5.75GiB门槛阻断，未加载模型或执行恢复动作。恢复实现有75项定向测试，但真实恢复尚未验证；严格完成核验正确返回失败。保有本机未脱敏原始证据且资源满足时，可运行以下命令；发布副本的完整性仍使用上述`verify_publication.py`核验。
+长任务另有已冻结的[中断恢复入口](docs/VLAJEPA_RECOVERY_RESULTS.md)，绑定原398步证据，计划重放392步、重算边界模型调用并核对6步重叠后继续。首次尝试在5.724GiB可用内存处被5.75GiB门槛阻断；随后又等待600秒并正式重试，第二次入口可用内存仅0.348GiB，仍未加载模型或执行恢复动作。恢复实现有75项定向测试，但真实恢复尚未验证；严格完成核验正确返回失败。保有本机未脱敏原始证据且资源满足时，可运行以下命令；发布副本的完整性仍使用上述`verify_publication.py`核验。
 
 ```powershell
 python scripts/run.py scripts/run_vlajepa_recovery.py run
