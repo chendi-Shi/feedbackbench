@@ -1,6 +1,6 @@
 # 前沿模型与本机复现边界
 
-**本机闭环进展（2026-10-16）：** VLA-JEPA的CPU数值变体现已完成三个任务的真实闭环，重复运行的动作与轨迹一致；第四个长程任务按[独立6GiB预算](VLAJEPA_LONG_HORIZON_RESULTS.md)记录结果。见[独立进程结果与限制](VLAJEPA_ISOLATED_RESULTS.md)。这只更新本机实测，不改变下文明确标注日期的上游发布状态，也不构成完整官方基准或原生精度复现。
+**本机闭环进展（2026-10-16）：** VLA-JEPA的CPU数值变体现已完成三个任务的真实闭环，重复运行的动作与轨迹一致；第四个长程任务的[独立6GiB尝试](VLAJEPA_LONG_HORIZON_RESULTS.md)中止后，在披露的[资源干预](VLAJEPA_RESOURCE_RELEASE_RESULTS.md)下完成[精确恢复](VLAJEPA_RECOVERY_RESULTS.md)，执行至520步时限但任务失败；原中止记录保留，恢复不增加独立评测样本。见[独立进程结果与限制](VLAJEPA_ISOLATED_RESULTS.md)。这只更新本机实测，不改变下文明确标注日期的上游发布状态，也不构成完整官方基准或原生精度复现。
 
 核对日期：**2026-10-14**。本项目当前约束是 **仅使用现有 Windows / Intel i5-1130G7 / 约 16 GB 系统内存 / 无 NVIDIA CUDA GPU 的电脑，零云费用**。下面的远程服务和 GPU 要求用于说明开放状态与可行性边界，不构成本项目的执行依赖。
 
@@ -50,13 +50,13 @@ Cosmos Edge 模型卡确有 **16 GB Jetson Thor T2000** 的测量，但该设备
 
 ## 本项目已有证据与新的本机选型
 
-**当前主线是 2026 ActionCache 方法向 SmolVLA 的独立本机迁移；VLA-JEPA 是另行隔离的 2026 模型可行性探针。** 前者研究缓存检索、动作续算、成功率与计算成本的关系，后者核实一个新模型是否能在现有 CPU / 内存上完成真实推理。两者均不依赖云 GPU 或付费 API，也不预设正结果。
+**截至2026-10-14的选型定位：主线是2026 ActionCache方法向SmolVLA的独立本机迁移；VLA-JEPA是另行隔离的原生BF16可行性探针。** 前者研究缓存检索、动作续算、成功率与计算成本的关系，后者核实一个新模型是否能在现有 CPU / 内存上完成真实推理。两者均不依赖云 GPU 或付费 API，也不预设正结果。
 
 | 本机路线 | 已有证据与边界 |
 |---|---|
 | MINERVA 基础设施基线 | 40 覆盖 + 32 开发 + 128 主比较 + 32 延迟，共 **232 个完整回合**。旧计划的 SmolVLA 12 回合和 flow-step 4 回合暂停且未尝试；不能称旧 248 回合全部完成。见 [基线完整结果](BASELINE_RESULTS.md) |
 | ActionCache → SmolVLA | **28/28回合已完成**：4开发+24测试；主比较full10 **7/8**、cache2 **6/8**，没有支持保持成功率并稳定加速。真实检查点原10步及8+2与上游逐位一致。采用独立 **offline frozen cache**，见[研究结果](RESULTS.md)、[冻结协议](CACHE_PROTOCOL.md)、[CPU profile](FRONTIER_CPU_PROFILE.md)；不把SmolVLA本身称为2026 SOTA |
-| VLA-JEPA 可行性探针 | 固定官方源码与完整 **6,163,212,550字节** checkpoint已下载并校验；真实前向入口执行后因 **5.768GiB可用内存低于固定6GiB门槛**而`blocked_preflight`退出，未构建模型、加载权重或执行前向。见[实际探针](../artifacts/frontier/vlajepa_real_probe.json)。这是当前可用RAM阻碍，不证明CPU移植本质不可能；历史meta检查仍只是结构证据 |
+| VLA-JEPA 原生BF16探针（2026-10-14） | 固定官方源码与完整 **6,163,212,550字节** checkpoint已下载并校验；真实前向入口执行后因 **5.768GiB可用内存低于固定6GiB门槛**而`blocked_preflight`退出，未构建模型、加载权重或执行前向。见[实际探针](../artifacts/frontier/vlajepa_real_probe.json)。这是当次可用RAM阻碍，不证明CPU移植本质不可能；历史meta检查仍只是结构证据 |
 
 [ActionCache 作者论文](https://arxiv.org/html/2607.06370v2) 的 v2 日期为 **2026-08-03**。本项目借鉴其动作状态检索与细化机制，独立加入开发集成功回合准入和测试不可更新的约束；没有采用作者代码，不能宣称复现论文在 π0.5 / GR00T 上的数字。原 MINERVA 调度研究的负结果作为基线保留，不混入新研究的模型、任务或回合分母。
 
@@ -64,6 +64,6 @@ Cosmos Edge 模型卡确有 **16 GB Jetson Thor T2000** 的测量，但该设备
 
 [V-JEPA Policy](https://arxiv.org/abs/2609.37250) 则首次提交于 **2026-09-29**。截至核对日，[作者仓库的 checkpoint release plan](https://github.com/breez3young/VJEPA-Policy#checkpoint-release-plan) 仍将 LIBERO、RoboCasa-GR1 策略及 DROID predictor 列为待发布；已公开的是代码与训练配方。本项目没有将 V-JEPA 2/2.1 的视觉编码器权重冒充完整策略权重，也不把 VLA-JEPA 的下载与实测归给 V-JEPA Policy。
 
-VLA-JEPA 探针固定 LeRobot commit `ae2b57f12223c8c5184fcd814eb63cd9ce7de203`、策略 revision `735d9f692981e286ade093b5046627eda876e5d0`、Qwen 元数据 revision `89644892e4d85e24eaac8bacfd4f463576704203`。代码与具体权重许可分别核实，见 [第三方前沿材料记录](THIRD_PARTY.md#前沿研究方法与隔离探针)。探针下载完整策略 checkpoint（包含训练模块）及 Qwen 配置/tokenizer，只实例化官方推理所需模块，不另外下载 Qwen 基础权重；运行要求独立重模型时段、加载前可用内存检查和进程内存监控。当前没有证据承诺其在这台电脑上的实际延迟或任务成功率。
+VLA-JEPA 探针固定 LeRobot commit `ae2b57f12223c8c5184fcd814eb63cd9ce7de203`、策略 revision `735d9f692981e286ade093b5046627eda876e5d0`、Qwen 元数据 revision `89644892e4d85e24eaac8bacfd4f463576704203`。代码与具体权重许可分别核实，见 [第三方前沿材料记录](THIRD_PARTY.md#前沿研究方法与隔离探针)。探针下载完整策略 checkpoint（包含训练模块）及 Qwen 配置/tokenizer，只实例化官方推理所需模块，不另外下载 Qwen 基础权重；运行要求独立重模型时段、加载前可用内存检查和进程内存监控。本段原生BF16探针没有实际前向或任务结果，不能据此承诺其延迟或成功率；后继CPU数值变体的实测见页首链接。
 
 在目前核实到的官方支持范围内，**没有证据支持上述 π0.5、GR00T N1.7、DreamZero 或 Cosmos 3 已在这台电脑完成复现**。这不等于证明任何 CPU 移植都不可能；它意味着不能把移植设想当成结果，也不能把收费算力、待审批 API 或其它硬件作为本次零云费用目标的隐含前提。

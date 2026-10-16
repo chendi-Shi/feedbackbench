@@ -10,7 +10,9 @@ VLM 负责图像与语言的理解，是本项目 VLA 策略中的主干；动�
 
 仅使用现有 **16 GB、无 NVIDIA GPU 的 Windows 电脑，零云费用**。模型权重保持冻结；没有训练基础模型。SmolVLA 是可在本机实验的公开策略，不称其为 2026 最新 SOTA。前沿开放模型及硬件边界见 [FRONTIER_LANDSCAPE](docs/FRONTIER_LANDSCAPE.md)。
 
-**2026-10-16：VLA-JEPA 已在本机真实完成空间、对象、目标三个机器人任务，并在独立进程中重复得到完全相同的动作与轨迹。** 三项分别在109、128、90步达到官方成功条件，共327个动作、48次模型规划、192次动作头求值。5.5GiB进程预算下的两个四任务阶段均在长程任务中止，仍为**计划4、完成3、未封存1**。随后独立6GiB长任务实际执行了398步、57次模型规划，但系统可用内存降到0.426GiB而中止，**没有完成520步，不计为任务失败**；见[单任务结果](docs/VLAJEPA_LONG_HORIZON_RESULTS.md)及[中断恢复验证](docs/VLAJEPA_RECOVERY_RESULTS.md)。不同协议和恢复记录不能写成同一次4/4或100%成功率。
+**2026-10-16：VLA-JEPA 已在本机成功完成空间、对象、目标三个机器人任务；长程任务也已恢复执行到520步时限，官方判定失败。** 三个成功任务分别执行109、128、90步，并在独立进程中重复得到相同动作与轨迹。长程任务此前在398步因系统余量不足中止；本次在额外[资源准备](docs/VLAJEPA_RESOURCE_RELEASE_RESULTS.md)后重放392步、精确核对6步重叠，再执行122个新动作，完成[严格恢复核验](artifacts/vlajepa-recovery-completion-audit-20261016.json)。本次实际运行19次模型前向（1次边界重算＋18次后续预测）、76次动作头求值，见[恢复结果与录像](docs/VLAJEPA_RECOVERY_RESULTS.md)。
+
+两个5.5GiB四任务阶段仍各为**计划4、完成成功3、未封存1**；原6GiB长任务的398步中断记录也保持不变。恢复完成不增加独立评测样本，不能把不同资源协议、重复执行与恢复拼成同一次4/4或一个总成功率。
 
 实现包含完整词表的分页embedding、256MiB模拟器arena及逐回合独立进程。分页变体在一个保存观察上与原INT8动作逐值相等；[978步保存动作重放](docs/LIBERO_ARENA_REPLAY_RESULTS.md)也保持状态、指定图像和终止标志一致，但**没有证明arena减少物理RSS**。[三个任务两轮执行的审计](artifacts/vlajepa-process-isolation-consistency-20261016.json)逐项核对了48次调用、RNG、动作、状态和图像。真实闭环、单次模型前向与保存动作重放分别统计。
 
@@ -35,7 +37,7 @@ VLM 负责图像与语言的理解，是本项目 VLA 策略中的主干；动�
 | VLA-JEPA 原生 BF16 | 官方 6.16 GB checkpoint 已完整下载并校验；[本次重试](artifacts/frontier/vlajepa_bf16_probe_20261015.json)因 **5.887 GiB < 固定 6 GiB 门槛**退出，没有构造、加载或前向；[历史记录](artifacts/frontier/vlajepa_real_probe.json)保留 |
 | VLA-JEPA 动态 INT8 | [一次真实观测前向通过](artifacts/frontier/vlajepa_int8_probe_20261015.json)，300/300 个量化 Linear 实际执行，四步 action head，输出 `(1,7,7)`；单次前向 **6.954s**，1秒采样最高 RSS **3.521GiB**。这是[独立数值变体](docs/CPU_VLAJEPA_INT8.md)的可行性证据，不证明稳定延迟、原生等价或闭环质量 |
 | VLA-JEPA 分页存储 | [真实单观测探针](artifacts/frontier/vlajepa_paged_probe_20261016.json)与原INT8动作逐值相等，采样最高RSS **2.929GiB**；首次分页闭环因系统可用内存 **0.447GiB** 中止，0动作、1未封存、3缺失；[结果与限制](docs/VLAJEPA_PAGED_RESULTS.md) |
-| VLA-JEPA 实际闭环 | [compact](docs/VLAJEPA_COMPACT_RESULTS.md)及[独立进程](docs/VLAJEPA_ISOLATED_RESULTS.md)各为计划4、完成成功3、未封存1；[6GiB单长任务](docs/VLAJEPA_LONG_HORIZON_RESULTS.md)执行398步后因系统余量不足中止，仍未封存；[独立审计](artifacts/vlajepa-long-horizon-audit-20261016.json)核对57次完整调用、228 NFE及398步动作前缀 |
+| VLA-JEPA 实际闭环 | [compact](docs/VLAJEPA_COMPACT_RESULTS.md)及[独立进程](docs/VLAJEPA_ISOLATED_RESULTS.md)各完成成功3项，长程项未封存；[独立6GiB长任务](docs/VLAJEPA_LONG_HORIZON_RESULTS.md)保存398步后中止。后继[恢复执行](docs/VLAJEPA_RECOVERY_RESULTS.md)已到520步，**完整执行、官方任务失败**，不改写原阶段结果 |
 | 保存动作重放 | spatial/init43/noise2 的 [280步重放与只读复核](outputs/replays/flow-spatial43-noise2/flow_replay_audit.json)通过：281个8维机器人状态、初始双相机和末帧像素、终止/失败标志一致；没有新模型调用，不增加评估分母 |
 | 已保存的基础实验 | MINERVA 四阶段 **232 回合**完成；原计划余下 16 回合未尝试，见[阶段变更记录](outputs/campaign/TRANSITION.md) |
 | 验证 | 后续完整单元测试 **566 passed、1 skipped，95.09s**，包含两项实际 INT8/BF16 小算子测试；[当前 XML](artifacts/continuation-unit-tests.xml)。原始 16 回合、报告只读重算及新重放复核通过。v1 [419 passed、1 skipped 历史 XML](artifacts/frontier-unit-tests.xml)单独保留；另行模型接入测试不加总 |
@@ -132,7 +134,7 @@ python scripts/run.py scripts/run_vlajepa_long_horizon.py validate --output outp
 
 该入口在导入前和加载前要求5.75GiB系统可用内存，运行时保留0.5GiB余量保护；实际占用与结果见[独立报告](docs/VLAJEPA_LONG_HORIZON_RESULTS.md)。中止记录不可覆盖重跑。Windows文件占用的有限重试与独立终态有[62项历史测试](artifacts/vlajepa-stage-completion-recovery-tests-20261016.xml)；该[早期闭环审计](artifacts/closure-audit-20261016.json)只描述当时的阻断，不代表后续阶段状态。状态日志修复不构成机器人任务结果。
 
-长任务另有已冻结的[中断恢复入口](docs/VLAJEPA_RECOVERY_RESULTS.md)，绑定原398步证据，计划重放392步、重算边界模型调用并核对6步重叠后继续。首次尝试在5.724GiB可用内存处被5.75GiB门槛阻断；随后又等待600秒并正式重试，第二次入口可用内存仅0.348GiB，仍未加载模型或执行恢复动作。恢复实现有75项定向测试，但真实恢复尚未验证；严格完成核验正确返回失败。保有本机未脱敏原始证据且资源满足时，可运行以下命令；发布副本的完整性仍使用上述`verify_publication.py`核验。
+长任务另有已冻结的[中断恢复入口](docs/VLAJEPA_RECOVERY_RESULTS.md)，绑定原398步证据。本次第六次启动在额外资源管理辅助下完成392步重放、6步重叠精确核对和122步新执行；严格`validate`返回0，官方成功为false。前五次预检阻断全部保留，恢复实现的75项历史定向测试与实际模型结果分开记录。以下入口依赖本机未脱敏原始证据；已封存结果不会再次执行模型。发布副本的完整性使用上述`verify_publication.py`核验，重新开展独立实验须采用新的输出与独立协议。
 
 ```powershell
 python scripts/run.py scripts/run_vlajepa_recovery.py run

@@ -1,8 +1,8 @@
 # FeedbackBench 后续研究：新初态前瞻确认结果
 
-**后续支线（2026-10-16）：** VLA-JEPA已产生独立的真实闭环证据，见[进程隔离结果](VLAJEPA_ISOLATED_RESULTS.md)与[单长任务资源实验](VLAJEPA_LONG_HORIZON_RESULTS.md)。本页继续只报告既有SmolVLA的16回合前瞻确认，不将后来的任务加入其分母。
+**后续支线（2026-10-16）：** VLA-JEPA已在空间、对象和目标任务取得真实闭环成功，见[进程隔离结果](VLAJEPA_ISOLATED_RESULTS.md)；中断的长程轨迹也已[恢复至520步时限](VLAJEPA_RECOVERY_RESULTS.md)，官方判定失败。本页继续只报告既有SmolVLA的16回合前瞻确认，不将后来的任务加入其分母。
 
-**2026-10-15：前瞻确认 16/16 回合已完成并封存，0 缺失、0 未封存、0 运行错误。** 本页依据[正式报告](../outputs/frontier/flow_confirmation/report.md)、[报告 JSON](../outputs/frontier/flow_confirmation/report.json)与逐回合原始证据。当前整套单元测试、报告只读重算及保存动作重放复核已通过；VLA-JEPA 动态 INT8 变体完成一次真实观测前向，原生 BF16 重试仍在内存门槛前退出。两者都不计入闭环评测分母。v1 结果继续以[原结果页](RESULTS.md)和[原报告](../outputs/frontier/cache_study/report.md)为准。
+**2026-10-15：前瞻确认 16/16 回合已完成并封存，0 缺失、0 未封存、0 运行错误。** 本页依据[正式报告](../outputs/frontier/flow_confirmation/report.md)、[报告 JSON](../outputs/frontier/flow_confirmation/report.json)与逐回合原始证据。截至10月15日，本页整套单元测试、报告只读重算及保存动作重放复核已通过；当时VLA-JEPA动态INT8探针完成一次真实观测前向，原生 BF16 重试仍在内存门槛前退出。两者都不计入闭环评测分母。v1 结果继续以[原结果页](RESULTS.md)和[原报告](../outputs/frontier/cache_study/report.md)为准。
 
 **noise2 成功 5/8，full10 成功 4/8；总 action-head NFE 从 2050 降至 370。** 任务等权成功差为 **+12.5 个百分点，4 个任务簇的 bootstrap 95% 区间 [0, 37.5]**。这组样本中没有 noise2 独自失败的配对，唯一成功差来自 object/init41；两个 LIBERO-10 初态双方都失败。结果显示该指定范围内更低的动作头预算和一个额外成功，不证明普遍优越、非劣或稳定端到端加速。
 
@@ -108,7 +108,7 @@ spatial/init43/noise2 的[保存动作重放](../outputs/replays/flow-spatial43-
 
 原生旧脚本在失败记录中可能没有 `inference_executed`。打包审计只有在源码快照绑定和返回后的计时字段足以支持时，才另记 `forward_returned_from_stage_evidence=true`；其它失败或运行中的情况保留未知，不改写原始 JSON。INT8 脚本把“开始调用”“调用返回”“动作验证通过”分别落盘；内存停止侧记也需同时保留。
 
-进一步的质量问题仍待另行实验：即使将来两条路径都能运行，单个观测也不足以证明量化质量或闭环表现，须预先设计匹配输入及完整闭环对照。本次不增加VLA-JEPA闭环成功率、不与SmolVLA的16回合混算。
+进一步的质量问题仍待另行实验：即使将来两条路径都能运行，单个观测也不足以证明量化质量或闭环表现，须预先设计匹配输入及完整闭环对照。本页10月15日探针不增加VLA-JEPA闭环样本；10月16日的真实闭环与恢复结果见页首链接，也不与SmolVLA的16回合混算。
 
 ## 研究与求职展示的组织方式
 
@@ -118,11 +118,11 @@ spatial/init43/noise2 的[保存动作重放](../outputs/replays/flow-spatial43-
 
 > 在单台 16 GB CPU 电脑上完成 ActionCache 思想向 SmolVLA 的独立迁移和 28 回合闭环研究，保留缓存未改善成功与计算权衡的负结果。由探索消融提出两步采样假设，预先冻结并完成 4 个任务簇、8 组新初态配对、16 回合的确认实验：noise2 与 full10 分别成功 5/8、4/8，总 action-head NFE 为 370、2050；同时报告仅一个差异初态、长程共同失败和共享负载下的计时限制，不将有限样本结论夸大为非劣或普遍加速。
 
-[当前完整单元测试](../artifacts/continuation-unit-tests.xml)为 **566 passed、1 skipped，95.09秒**，启用两项真实 INT8/BF16 小算子测试；未包含另行执行的 MINERVA 接入13项和 SmolVLA 严格加载1项，默认真实采样 parity 被跳过。Ruff 对 src/scripts/tests 与私有归档验证脚本检查通过。小算子通过不表示完整 VLA-JEPA 模型通过；旧 [419 项记录](../artifacts/frontier-unit-tests.xml)与[72项定向记录](../artifacts/continuation-targeted-tests.xml)保留各自批次，不加总成独立覆盖量。
+[10月15日完整单元测试](../artifacts/continuation-unit-tests.xml)为 **566 passed、1 skipped，95.09秒**，启用两项真实 INT8/BF16 小算子测试；未包含另行执行的 MINERVA 接入13项和 SmolVLA 严格加载1项，默认真实采样 parity 被跳过。Ruff 对 src/scripts/tests 与私有归档验证脚本检查通过。小算子通过不表示完整 VLA-JEPA 模型通过；旧 [419 项记录](../artifacts/frontier-unit-tests.xml)与[72项定向记录](../artifacts/continuation-targeted-tests.xml)保留各自批次，不加总成独立覆盖量。
 
 ## 交付目录与验收方法
 
-前瞻报告、当前测试、INT8单次前向与保存动作重放已有上述实际证据；原生BF16仍为明确的入口阻断。使用 `python scripts/run.py scripts/package_results.py --continuation --output deliverables/feedbackbench-continuation.zip` 生成新的独立证据包，不能覆盖v1证据包。交付以实际ZIP、旁置SHA与独立核验记录为准，命令说明不构成归档已审核的证据。生成后的目录结构如下：
+本页10月15日前瞻报告、当时测试、INT8单次前向与保存动作重放已有上述实际证据；原生BF16仍为明确的入口阻断。使用 `python scripts/run.py scripts/package_results.py --continuation --output deliverables/feedbackbench-continuation.zip` 生成新的独立证据包，不能覆盖v1证据包。交付以实际ZIP、旁置SHA与独立核验记录为准，命令说明不构成归档已审核的证据。生成后的目录结构如下：
 
 ```text
 feedbackbench/

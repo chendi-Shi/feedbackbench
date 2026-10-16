@@ -54,4 +54,6 @@ JSON与receipt写入的有界PermissionError重试只重试文件操作，不重
 
 中止后另做了[600秒只读内存观察](../artifacts/frontier/vlajepa_memory_wait_20261016.json)，41个样本中的可用内存为5.925–6.483GiB，未达到6.75GiB连续60秒的等待条件，因此没有启动从头重跑。观察未调用模型，不增加实验尝试或评测分母；[观察脚本原件](../artifacts/frontier/vlajepa_memory_wait_20261016.source.py)一并保留。
 
-后续[恢复协议](VLAJEPA_RECOVERY_PROTOCOL.md)尝试在新目录精确重放保存前缀、实际重算边界模型调用并继续执行，实际状态见[恢复结果页](VLAJEPA_RECOVERY_RESULTS.md)。恢复属于本次中断轨迹的连续性验证，不是新的独立样本，也不会把此处原始未封存记录改为完成。
+后继[恢复协议](VLAJEPA_RECOVERY_PROTOCOL.md)已在新目录完成：第6次启动精确重放前392步、实际重算边界模型调用并核对6步重叠，随后新增执行122步至520步完整时限；官方任务未成功，恢复结果是**完整执行的任务失败**。19次实际forward包含1次边界重算和18次新规划，共76NFE，独立receipt与原CLI严格验证通过，见[恢复结果页](VLAJEPA_RECOVERY_RESULTS.md)及[完成审计](../artifacts/vlajepa-recovery-completion-audit-20261016.json)。
+
+恢复启动前及导入后有用户授权的资源准备和working-set回收，包含额外controller对实际VLA子进程的一次`K32EmptyWorkingSet`，详见[资源干预记录](VLAJEPA_RESOURCE_RELEASE_RESULTS.md)。原冻结算法与阈值未改，但不能称资源流程完全无干预，也不能与本次中止轨迹直接比较RSS或速度。恢复仍属于原轨迹连续性验证，不是新的独立评测样本；本页原398步尝试及所有源文件保持未封存原状，不被后继结果改写为未中断完成。

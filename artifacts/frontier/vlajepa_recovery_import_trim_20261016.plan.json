@@ -1,0 +1,22 @@
+{
+  "schema": "feedbackbench.external_resource_intervention.v1",
+  "frozen_at": "2026-10-16T05:36:23.221326+00:00",
+  "source_sha256": "b53f7cde23f73ff22a07854ab8421e15a3db794f04d2688e7daa2a7aaca0a11f",
+  "source": "artifacts/frontier/vlajepa_recovery_import_trim_20261016.source.py",
+  "recovery_protocol_sha256": "eb2c96e0d2a6cae98c2b7f081ed060e926a7274ef421ff8412794674b58dba8c",
+  "recovery_fingerprint": "04ca0526e94e67f01c6acb9538ed045a07678a50e8511938b58f95b3139bc86f",
+  "expected_run": "outputs/frontier/vlajepa_recovery/runs/run_0005.json",
+  "trigger_stdout": "Constructing meta policy and checking the complete checkpoint schema",
+  "maximum_api_calls": 1,
+  "maximum_wall_seconds": 1200,
+  "operation": "K32EmptyWorkingSet only on our newly spawned actual recovery interpreter",
+  "identity": "new descendant, exact script argv, creation time, live process handle and building_meta run status",
+  "unchanged": "25 frozen sources, numerical settings, 5.75 GiB preflight, 6 GiB RSS and 0.5 GiB system floor",
+  "deviation": "Additional externally orchestrated resource management; not covered by the original 25-source fingerprint or a matched performance comparison",
+  "limitations": [
+    "stdout is not a synchronization barrier; the observed phase before and after the API is recorded.",
+    "Working-set pages may return; commit is not released; no guarantee that preflight or recovery succeeds.",
+    "No other process will be trimmed or stopped by this controller."
+  ],
+  "api_reference": "https://learn.microsoft.com/en-us/windows/win32/api/psapi/nf-psapi-emptyworkingset"
+}

@@ -1,0 +1,51 @@
+{
+  "status": "renderer_working_sets_released",
+  "started_at": "2026-10-16T05:26:06.865052+00:00",
+  "available_bytes_before": 5706272768,
+  "targets": [
+    {
+      "pid": 11176,
+      "created_at_epoch": 1792029620.3895583,
+      "process_name": "ChatGPT.exe",
+      "renderer_verified": true,
+      "success": true,
+      "winerror": 0,
+      "rss_bytes_before": 1175396352,
+      "rss_bytes_after": 7897088,
+      "private_bytes_before": 3358240768,
+      "private_bytes_after": 3358240768
+    },
+    {
+      "pid": 16276,
+      "created_at_epoch": 1792029627.9255767,
+      "process_name": "ChatGPT.exe",
+      "renderer_verified": true,
+      "success": true,
+      "winerror": 0,
+      "rss_bytes_before": 368869376,
+      "rss_bytes_after": 0,
+      "private_bytes_before": 1649483776,
+      "private_bytes_after": 1649483776
+    },
+    {
+      "pid": 17204,
+      "created_at_epoch": 1792029632.2504144,
+      "process_name": "ChatGPT.exe",
+      "renderer_verified": true,
+      "success": true,
+      "winerror": 0,
+      "rss_bytes_before": 261636096,
+      "rss_bytes_after": 0,
+      "private_bytes_before": 368607232,
+      "private_bytes_after": 368607232
+    }
+  ],
+  "terminated_processes": 0,
+  "limitations": [
+    "Working-set release can cause later page faults; it does not deallocate private committed memory.",
+    "No process limits, pagefile, model settings, or frozen experiment thresholds were changed."
+  ],
+  "api_reference": "https://learn.microsoft.com/en-us/windows/win32/api/psapi/nf-psapi-emptyworkingset",
+  "available_bytes_after": 6625255424,
+  "finished_at": "2026-10-16T05:26:10.109514+00:00"
+}

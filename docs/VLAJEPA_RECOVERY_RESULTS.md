@@ -1,55 +1,69 @@
-# VLA-JEPA 长任务中断后恢复：启动门槛阻断
+# VLA-JEPA 长任务中断后恢复：完整执行，任务失败
 
-**最新重试：2026-10-16 13:16（北京时间），仍为启动门槛阻断。** 按用户要求继续运行前，完成了[600秒前台内存观察](../artifacts/frontier/vlajepa_recovery_memory_wait_20261016_02.json)，41次采样的可用内存为1.463–3.035GiB，未达到5.75GiB门槛。随后真实调用原恢复入口，[第二次运行记录](../outputs/frontier/vlajepa_recovery/runs/run_0002.json)为`blocked_preflight`：可用374,013,952字节（0.348GiB），未加载权重、未执行重放或新增动作。没有停止其他项目或服务，没有更改页文件或冻结预算。
+**2026-10-16最新终态：第6次启动完成恢复，执行到520步时限并封存，官方任务未成功。** [当前报告](../outputs/frontier/vlajepa_recovery/report.json)为计划1次恢复、完成1、官方成功0、完整任务失败1，`complete=true`；[结果](../outputs/frontier/vlajepa_recovery/episodes/vlajepa_recovery__libero_10__1__41__clean__native4_chunk7/result.json)记录`success=false`、`terminated=false`、`truncated=true`。原CLI严格`validate`退出0。[完成审计](../artifacts/vlajepa-recovery-completion-audit-20261016.json)与[带阶段标记的录像](../outputs/frontier/vlajepa_recovery/episodes/vlajepa_recovery__libero_10__1__41__clean__native4_chunk7/rollout.gif)提供对应证据。
 
-更新后的[报告](../outputs/frontier/vlajepa_recovery/report.json)保留两次阻断，仍为计划1次恢复、完成0、缺失1。两次启动尝试不等于两个评测回合。[本次只读审计](../artifacts/vlajepa-recovery-validation-20261016-retry02.json)重新核对25份冻结源与130份原证据；严格完成核验仍明确失败。未重新运行模型或工程测试，不新增原57次调用之外的推理结果。
+这是原398步中断轨迹的恢复验证，**没有新增独立评测样本**。原`outputs/frontier/vlajepa_long_horizon`仍未封存；前三个独立进程任务与本次恢复可以按任务展示不同协议下的证据覆盖，不能合成同协议4/4或合并成功率。最新结果区分了工程执行完成与机器人任务成功：恢复完成，长任务失败。
 
-以下保留首次尝试的详细记录；首次审计绑定当时的报告快照，最新报告与等待证据由上面的重试审计绑定。
+## 实际执行与连续性检查
 
-**2026-10-16实际终态：恢复入口因可用内存低于冻结门槛退出，未加载模型、重放动作或执行新预测。** [运行记录](../outputs/frontier/vlajepa_recovery/runs/run_0001.json)为 `blocked_preflight`，退出码3；系统可用内存 **6,146,363,392 字节（5.724 GiB）**，低于 **6,174,015,488 字节（5.75 GiB）**门槛，差27,652,096字节。[部分报告](../outputs/frontier/vlajepa_recovery/report.json)为计划1次恢复、完成0、缺失1、任务失败0、独立新增评测样本0，`complete=false`。本轮不降低门槛、不再启动新的运行方案；不能据此宣称长任务完成或恢复有效。
+任务是`libero_10` task 1、init 41、seed 1000，指令为“put both the cream cheese box and the butter in the basket”。[恢复协议](VLAJEPA_RECOVERY_PROTOCOL.md)与[实际冻结文件](../outputs/frontier/vlajepa_recovery/protocol.json)指纹为`04ca0526e94e67f01c6acb9538ed045a07678a50e8511938b58f95b3139bc86f`，绑定25个源文件和原中止目录的130个文件。冻结的策略、处理器、控制算法和数值设置未修改；本次资源准备有额外干预，见下节，不能称资源执行流程完全未变。
 
-本阶段已经实现[恢复入口及严格核验](../scripts/run_vlajepa_recovery.py)，并按[恢复协议](VLAJEPA_RECOVERY_PROTOCOL.md)正式冻结。[实际协议](../outputs/frontier/vlajepa_recovery/protocol.json)的指纹为 `04ca0526e94e67f01c6acb9538ed045a07678a50e8511938b58f95b3139bc86f`，绑定25个源文件以及原中止目录的130个文件。代码和协议已实现，不等于真实恢复已经验证。
-
-## 原始尝试与恢复的关系
-
-[原单长任务](VLAJEPA_LONG_HORIZON_RESULTS.md)在系统可用内存降至 456,900,608 字节（0.426 GiB）时触发自身退出，当时自身 RSS 为 5,648,232,448 字节（5.260 GiB），未超过 6 GiB 上限。原目录保留 57 次完整模型调用、228 次动作头求值和 398 条持久化执行记录；它没有最终结果与封存凭据，仍是未完成尝试，不计为任务失败。[只读前缀审计](../artifacts/vlajepa-long-horizon-audit-20261016.json)验证了保存证据之间的一致性，未替代环境重放或完整实验验证。
-
-恢复针对同一个 `libero_10` task 1、init 41、seed 1000 的中断尝试。它是轨迹连续性与恢复可行性验证，**不是新的独立评测样本**。即使恢复达到终态，原目录也保持未封存；不得将其与另三个独立进程任务合并成同协议 4/4 或合并成功率。
-
-## 预先固定的检查与预算
-
-固定模型、处理器、相机、控制设置、任务初态及 520 步上限与原单长任务相同。模型导入前和加载前要求系统可用内存至少 5.75 GiB，运行时自身 RSS 上限 6 GiB，系统可用内存下限 0.5 GiB，每秒采样。本次在第一个门槛处退出，未进入模型导入和权重加载。以下各项是冻结的执行与核验要求，本轮均没有真实执行。
-
-| 阶段 | 必须保存的验证证据 | 当前状态 |
+| 执行部分 | 实际结果 | 证据与计数边界 |
 | --- | --- | --- |
-| 初态与保存动作重放 | 初态及第 1–392 步的 8 维机器人观测、双相机像素哈希、终止和成功标志精确一致 | 未执行，入口阻断 |
-| 边界模型重算 | 恢复 `call_0056` 保存的 forward 前 CPU RNG，实际重新执行模型；输入、RNG、噪声、模型动作和环境动作精确一致，300 个量化模块实际执行，4 次动作头求值 | 未执行，入口阻断 |
-| 重叠边界验证 | 重算动作块前 6 个动作对应第 393–398 步，逐步核对旧证据 | 未执行，入口阻断 |
-| 新执行 | 第 399 步使用重算动作块第 7 个动作，之后以当前观测调用模型，至官方成功或 520 步时限 | 未执行，入口阻断 |
-| 独立封存与验证 | 恢复结果、证据清单、封存凭据及严格验证；原目录保持未封存 | 无恢复回合目录或receipt；严格完成条件不满足 |
+| 初态与保存动作重放 | 初态及第1–392步精确核对通过 | 使用原动作，不重新调用模型；核对8维机器人观测、双相机像素哈希和终止/成功标志 |
+| 边界模型重算 | 恢复原`call_0056`的forward前CPU RNG，实际重算1次完整forward；5类数组逐值一致 | 输入状态、RNG、噪声、模型动作、环境动作全部精确一致，300个量化模块实际执行、4NFE；不推测不存在的after RNG |
+| 重叠边界 | 第393–398步共6步与原保存前缀精确相同 | 使用重算动作块前6个动作；边界真实forward后的RNG自然延续到后续调用 |
+| 新执行 | 第399–520步共122步 | 第399步执行重算块的第7个动作，之后按最新观察完成18次新规划 |
+| 模型实际调用 | 1次边界重算＋18次新规划＝19次，76NFE | 原57次历史调用另行保留，不能记成本次新调用；392步纯重放不计模型计算 |
+| 终态与封存 | 520/520步，任务失败；恢复receipt及严格验证通过 | 未提前达到官方成功谓词；原398步目录仍未封存 |
 
-原 NPZ 仅保存 forward **之前**的 CPU RNG，没有 after 状态。恢复必须保留边界真实重算后自然推进的 RNG，不能假定随机数消耗量或在继续前重新 reset 策略。原数据也未保存完整物理内部状态，因此上述精确检查只支持已保存的机器人观测、图像与标志一致，不支持完整 qpos/qvel 等内部状态等价结论。
+[逐步恢复检查](../outputs/frontier/vlajepa_recovery/episodes/vlajepa_recovery__libero_10__1__41__clean__native4_chunk7/recovery_checks.jsonl)包含初态和398步前缀比对；[边界证据](../outputs/frontier/vlajepa_recovery/episodes/vlajepa_recovery__libero_10__1__41__clean__native4_chunk7/boundary.json)为`exact_recomputed_boundary`。严格验证还核对边界实际after RNG与下一次调用before RNG一致、后续调用使用最新机器人状态和双相机、动作队列对应真实执行日志、初末图像、轨迹与逐文件receipt。
 
-## 本次终态与成本
+原数据没有保存完整qpos/qvel等物理内部状态，所以精确比较支持的是已保存机器人观测、图像和标志一致，不能写成完整物理内部状态等价。录像将前392步标为`SAVED ACTION REPLAY`、393–398步标为`RECOMPUTED OVERLAP`、399步起标为`NEW CONTINUATION`；它不是一次全新且未中断的520步模型运行。
 
-| 项目 | 当前证据 |
-| --- | --- |
-| 协议与输入身份 | 25个源、130个旧证据文件绑定于本页所列冻结指纹 |
-| 恢复实验状态、终止原因 | `blocked_preflight`，计划1、完成0、缺失1；入口可用内存5.724GiB低于5.75GiB |
-| 任务成功、终止/截断标志 | 未评定；没有完整任务失败或成功率分母 |
-| 纯重放步 / 重叠核对步 / 新执行步 | 均未执行，实际动作0；计划392/6/后续最多122不能记作已完成 |
-| 边界重算调用 / 后续新调用 / NFE | 均未执行，模型调用0；原57次历史调用没有变成本阶段调用 |
-| 加载 / 重放 / 边界重算 / 新推理 / 回合墙钟 | 均未进入，无阶段计时；报告为null或缺失，不填为实测0秒 |
-| RSS采样峰值 / 全程最低系统可用内存 | 无运行期采样汇总；5.724GiB是入口可用内存快照 |
-| arena容量、使用量与警告 | 未创建恢复环境，无本阶段仿真测量 |
-| 结果、receipt和视频 | 未产生；报告生成不代表恢复完成 |
+[arena记录](../outputs/frontier/vlajepa_recovery/episodes/vlajepa_recovery__libero_10__1__41__clean__native4_chunk7/arena_steps.jsonl)覆盖reset及520步，共521条，容量268,435,456字节，最高使用8,646,500字节，八项warning计数全部为0。已知上游reset可能吞掉持续warning异常的限制仍保留；本次实测零警告不等于所有异常路径均已验证。
 
-运行记录时间为04:43:29 UTC（北京时间12:43:29）。`weights_loaded=false`；该入口阻断与原长任务执行398步后的运行期内存保护属于不同阶段。恢复case状态是`missing`，不是新产生的未封存rollout。原长任务仍是1个未封存尝试，不能把这两种状态混写或都计为任务失败。
+## 资源干预与计时解释
 
-## 实现检查及其边界
+冻结预算仍为模型导入前、加载前可用内存至少5.75GiB，自身RSS上限6GiB，运行期系统可用内存下限0.5GiB，每秒采样。[run_0006](../outputs/frontier/vlajepa_recovery/runs/run_0006.json)记录入口可用6.468GiB、物化前可用5.916GiB，均通过原门槛。
 
-[恢复定向测试](../artifacts/vlajepa-recovery-tests-20261016.xml)为 **75 passed，0失败/错误/跳过，2.798秒**，覆盖精确观测/边界比较、来源绑定、392/398/399边界、实际调用分母与异常拒绝；轻量替身rollout测试没有加载真实模型或真实LIBERO环境。[发布校验器测试](../artifacts/publication-verifier-tests-20261016.xml)另为 **39 passed，1.066秒**；[同两组联合重跑](../artifacts/vlajepa-recovery-publication-tests-20261016.xml)为 **114 passed，3.730秒**，三份记录都为0失败/错误/跳过。联合重跑包含前两组，不将75、39和114再相加成228项独立测试。
+本次获得用户授权后，曾停止没有驻留模型的Ollama服务，并对若干桌面进程做working-set回收；第6次启动另外通过controller，在模型导入后、`building_meta`阶段，对识别出的实际VLA子进程调用**一次**`K32EmptyWorkingSet`。[桌面进程资源准备](../artifacts/frontier/vlajepa_recovery_resource_prep_20261016_retry06.json)及[子进程干预原始记录](../artifacts/frontier/vlajepa_recovery_import_trim_20261016_retry06.json)保留PID、创建时间、API结果和前后资源快照，详见[资源释放记录](VLAJEPA_RESOURCE_RELEASE_RESULTS.md)。额外controller属于原25个冻结源之外的资源干预，必须随结果披露。
 
-[实际严格核验记录](../artifacts/vlajepa-recovery-validation-20261016.json)确认25个冻结源、130个原证据文件及两阶段部分证据身份一致，同时明确 `strict_validation_passed=false`；严格命令退出码1，错误为 `Recovery incomplete; partial must be explicit`。其状态 `verified_blocked_recovery_not_complete` 表示核实了入口阻断与未完成事实。带partial的报告仅用于保留真实账目；没有真实重放、边界forward或恢复receipt，测试通过与报告生成均不能替代恢复可行性结果。
+该操作回收常驻工作集，没有证明私有内存被释放或算法内存需求降低，页面可再次进入工作集。本次不能作为“无外部资源干预”的运行，也不能与此前未干预的RSS或延迟作受控性能比较。算法源文件与保护阈值保持原样，不消除资源流程偏离这一事实。
 
-只有全部精确核验通过，后续达到官方成功或完整时限，并生成独立恢复凭据、通过严格验证，才可记录恢复完成。达到完整时限仍未成功才是完成的任务失败；资源保护、异常或未封存不算任务失败。结果仅用于这个已知初态的恢复可行性，不支持完整 LIBERO 基准性能、量化无损、未见任务泛化、稳定最低内存、真实机器人实时控制或 SOTA 结论。
+| 成本或资源 | 第6次启动的实际值 | 统计范围 |
+| --- | ---: | --- |
+| 模型导入 | 18.722秒 | 运行记录的imports阶段 |
+| 加载和量化 | 63.480秒 | 本进程重新加载固定检查点 |
+| reset及392步保存动作重放 | 75.773秒 | 含初态创建、渲染与前缀验证 |
+| 边界重算及6步重叠核对 | 6.393秒 | 包含真实边界forward和环境执行 |
+| 第399–520步新执行 | 93.174秒 | 包含后续真实规划、环境执行与记录 |
+| 恢复回合墙钟 | 175.340秒 | 上述三段之和；排除模型加载、GIF编码及外部资源准备 |
+| 19次完整forward总时间 | 79.807秒 | 已包含在回合墙钟，不能再次相加；不是全任务从头推理时间 |
+| 每秒采样最高RSS | 5,700,780,032字节（5.309GiB） | 受working-set回收影响，采样可能漏掉瞬时峰值 |
+| 每秒采样最低系统可用内存 | 1,011,326,976字节（0.942GiB） | 此次共享主机运行的观测值，不是稳定最低配置证明 |
+
+仿真在推理期间暂停，20Hz模拟控制不等于20Hz模型推理。重放省去此前56次模型调用，不能用本次175.340秒与原中断运行耗时相除宣称加速；导入、加载、录像编码、报告及资源准备也不能隐藏为零成本。
+
+## 前五次启动阻断与原中断记录
+
+五次阻断均保留，权重均未加载、没有重放或新执行动作，不是五个任务失败。第3、4次已完成模型依赖导入，在权重物化前的第二道门槛阻断；其余三次在入口门槛阻断。第6次首次产生恢复回合，启动次数不增加独立任务样本。
+
+| 启动记录 | 入口可用GiB | 加载前可用GiB | 当次终态 |
+| --- | ---: | ---: | --- |
+| [run_0001](../outputs/frontier/vlajepa_recovery/runs/run_0001.json) | 5.724 | 未进入 | `blocked_preflight`，入口未达5.75 |
+| [run_0002](../outputs/frontier/vlajepa_recovery/runs/run_0002.json) | 0.348 | 未进入 | `blocked_preflight`，入口未达5.75 |
+| [run_0003](../outputs/frontier/vlajepa_recovery/runs/run_0003.json) | 6.272 | 5.666 | `blocked_preflight`，导入后未达5.75 |
+| [run_0004](../outputs/frontier/vlajepa_recovery/runs/run_0004.json) | 6.241 | 5.746 | `blocked_preflight`，导入后未达5.75 |
+| [run_0005](../outputs/frontier/vlajepa_recovery/runs/run_0005.json) | 5.576 | 未进入 | `blocked_preflight`，入口未达5.75 |
+| [run_0006](../outputs/frontier/vlajepa_recovery/runs/run_0006.json) | 6.468 | 5.916 | 恢复完整封存，520步任务失败 |
+
+[首次阻断审计](../artifacts/vlajepa-recovery-validation-20261016.json)和[第二次阻断审计](../artifacts/vlajepa-recovery-validation-20261016-retry02.json)绑定的是当时报告快照，均真实记录`strict_validation_passed=false`。它们是历史记录，不能覆盖为成功，也不与最新严格验证相矛盾。第二次启动前的[600秒内存观察](../artifacts/frontier/vlajepa_recovery_memory_wait_20261016_02.json)有41次采样，可用1.463–3.035GiB，没有达到5.75GiB条件；等待不算模型运行。后续资源授权和操作按独立记录披露，不能把早期“未停止服务”的事实扩展到第6次启动。
+
+[原单长任务](VLAJEPA_LONG_HORIZON_RESULTS.md)在保存398步和57次完整forward后，由系统可用内存456,900,608字节（0.426GiB）触发保护；当时RSS5,648,232,448字节（5.260GiB）未超过6GiB。其[只读前缀审计](../artifacts/vlajepa-long-horizon-audit-20261016.json)与全部原文件继续保留，原目录仍没有最终receipt。原尝试是资源中断，恢复后的完整时限结果才是任务失败，两者分别报告。
+
+## 实现验证与结论范围
+
+[恢复定向测试](../artifacts/vlajepa-recovery-tests-20261016.xml)为75 passed、2.798秒；[发布校验器测试](../artifacts/publication-verifier-tests-20261016.xml)为39 passed、1.066秒；[同两组联合重跑](../artifacts/vlajepa-recovery-publication-tests-20261016.xml)为114 passed、3.730秒，均0失败/错误/跳过。联合重跑包含前两组，不重复相加。轻量替身测试仅验证实现契约；真实恢复依据本次实际forward、仿真前缀精确核对、后续执行、receipt与严格验证。
+
+本次支持在披露的资源干预条件下恢复这一已知初态的保存轨迹，并完整观察到官方任务失败。它不支持完整LIBERO benchmark、量化无损、原生BF16等价、未见任务泛化、稳定最低内存、真实机器人实时控制或SOTA结论。不同协议的三个成功任务与这次恢复失败可逐项展示，不能变成新的一组四任务独立评测。
