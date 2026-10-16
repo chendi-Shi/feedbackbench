@@ -1,0 +1,18 @@
+{
+  "status": "interrupted_before_policy_actions",
+  "completed_training_episodes": 0,
+  "executed_policy_actions": 0,
+  "completed_test_episodes": 0,
+  "original_protocol_sha256": "36257660bae210976c839d873e5ef9360940d53aade1e7421267896416a5a31f",
+  "original_campaign_fingerprint": "8914c918c32cf0615b86eb96e91609271379faaf70ade03c1fd9c87488f847a8",
+  "source_snapshot": {
+    "path": "artifacts/learned_compute/v2_integration_source_snapshot.zip",
+    "sha256": "2a63ab598079c7a5b782b815f0f8e057789b35923212019ea2d15924f57350d2",
+    "frozen_source_files_verified": 24
+  },
+  "worker_peak_rss_bytes": 5204606976,
+  "worker_minimum_available_bytes": 782278656,
+  "stop_stage": "sampling",
+  "explanation": "VLM context and first velocity computed; stopped before candidate collection/robot actions because system available memory fell below the unchanged 0.75 GiB guard.",
+  "next_revision": "v3: one own-worker startup working-set reclamation; all other gates and research design retained."
+}
