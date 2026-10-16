@@ -6,13 +6,19 @@ The research component is a trained inference-budget controller over a frozen, p
 
 Held-out tasks are held out from this new controller's fitting, tuning and calibration. This does not establish that the foundation policy's original pretraining never used those tasks or initial states.
 
-The preregistered design is in [the protocol document](LEARNED_COMPUTE_PROTOCOL.md). The actual frozen machine-readable protocol is `outputs/learned_compute/v4/protocol.json`; it binds sources, official task identities, inputs, runtime limits and the real-checkpoint parity receipt. Do not edit bound files during the campaign. A necessary behavioral bug fix requires a new protocol revision and explicit accounting of previous attempts, not alteration of old evidence. Do not mix this study with earlier ActionCache, VLA-JEPA or MINERVA results.
+The preregistered design is in [the protocol document](LEARNED_COMPUTE_PROTOCOL.md). The actual frozen machine-readable protocol is `outputs/learned_compute/v5/protocol.json`; it binds sources, official task identities, inputs, runtime limits and the real-checkpoint parity receipt. Do not edit bound files during the campaign. A necessary behavioral bug fix requires a new protocol revision and explicit accounting of previous attempts, not alteration of old evidence. Do not mix this study with earlier ActionCache, VLA-JEPA or MINERVA results.
 
 The initial v1 integration attempt stopped at the memory guard before the first action. It produced zero training trajectories. Its protocol, complete source snapshot and interruption evidence remain preserved. Revision 2 raises the startup free-memory requirement from 4 to 5.25 GiB and monitors the actual Python descendant of the Windows venv launcher. The per-process-tree limit remains 5.5 GiB and system free-memory limit remains 0.75 GiB; task splits, model, algorithm, horizon, seeds and deadline are unchanged. Standard garbage collection after simulator reset releases obsolete Python objects; no other application is stopped or trimmed.
 
 Revision 2 also stopped before its first action, after context preparation and the first velocity, with 0.728 GiB available. Revision 3 preserves that attempt and adds exactly one `K32EmptyWorkingSet(GetCurrentProcess())` call after simulator reset and before first inference. It touches only the model worker, evicts resident pages without changing tensor data, and is applied identically to every method. Before/after RSS and private bytes are recorded. Startup and subsequent page-fault costs remain in measured episode/inference wall time. The original resource guards remain; this is not a steady-state memory guarantee. The process monitor follows observed descendants with PID and creation-time checks; it is not Windows Job Object isolation, and its RSS sum can count shared pages more than once.
 
-The active revision is **v4**: the same single reclamation happens after model loading and **before** simulator construction. This avoids the startup overlap that stopped the second v3 case. The one completed v3 training trial (76 actions, official success) is archived with its source snapshot; it is not added to v4's denominator. The actual research settings and deadline remain unchanged. Do not resume v1/v2/v3 supervisors.
+Revision **v4**: the same single reclamation happens after model loading and **before** simulator construction. This avoids the startup overlap that stopped the second v3 case. The one completed v3 training trial (76 actions, official success) is archived with its source snapshot; it is not added to v4's denominator. The actual research settings and deadline remain unchanged. Do not resume v1/v2/v3/v4 supervisors.
+
+## Revision 5 reliability repair
+
+The active revision is **v5**. On 2026-10-16 the v4 supervisor exited when Windows denied atomic replacement of its status file (WinError 5). The specific locker or ACL cause is unknown. Its worker completed a third trajectory after the monitor exited. All three complete trajectories (76, 72, and 106 actions), original sources and receipts are preserved in `artifacts/learned_compute/v4_runtime_trial.zip`; two were promoted to collection and one remains a sealed attempt. No parent monitoring measurements are invented for the orphaned completion. They are excluded from v5.
+
+Revision 5 uses separately named supervisor, I/O helper and episode worker sources; the original v4 source files and frozen publication remain unchanged. Atomic replacement retries only Windows errors 5/32/33 for a total bounded 1.25 seconds, while retaining the complete old destination. Persistent status/control I/O failure requests an owned-worker stop, continues process-tree and resource monitoring through the existing grace period, then reports an actionable fault. It cannot silently orphan a worker or automatically spend further episode attempts on the same storage fault. The model, algorithm, splits, training configuration, resource limits and hard deadline are unchanged.
 
 ## Stages
 
@@ -28,13 +34,13 @@ The first velocity is reused by the chosen grid. Online actual NFE is exactly K,
 From the project root, use the existing environment Python to invoke:
 
 ```text
-python scripts/run.py scripts/run_budget_campaign.py status
-python scripts/run.py scripts/run_budget_campaign.py supervise
-python scripts/run.py scripts/run_budget_campaign.py verify
-python scripts/run.py scripts/run_budget_campaign.py report
+python scripts/run.py scripts/run_budget_campaign_v5.py status
+python scripts/run.py scripts/run_budget_campaign_v5.py supervise
+python scripts/run.py scripts/run_budget_campaign_v5.py verify
+python scripts/run.py scripts/run_budget_campaign_v5.py report
 ```
 
-`supervise` owns an exclusive lock, checks the frozen sources, and launches a fresh child process for each episode. On Windows the child has no visible terminal. A detached supervisor must also be launched hidden. `--max-episodes 1` runs one complete episode for the initial integration check. Status records include process IDs and creation times; always verify both before considering a process alive. Never launch a second supervisor or orphan duplicate model worker.
+`supervise` owns an exclusive lock, checks the frozen sources, and launches a fresh child process for each episode. On Windows the child has no visible terminal. A detached supervisor must also be launched hidden. `--max-episodes 1` runs one complete episode for the initial integration check. Status records include process IDs and creation times; always verify both before considering a process alive. Revision 5 also keeps append-only `process_ownership/*.jsonl` records; the status command checks every recorded identity and reports `live_owned_processes`. Empty or malformed ownership records fail closed for manual diagnosis. Training attempt numbers include reserved run/log/ownership files, so an early worker exit still consumes one of the three permitted attempts. Never launch a second supervisor or orphan duplicate model worker.
 
 The supervisor waits if RAM or disk capacity is insufficient. It never stops other projects. Per-episode interruptions stay under `attempts/`; completed evidence is sealed by SHA-256 receipt and moved into `collection/` or `evaluation/`. Completed official task failures are final evidence and are not retried for a better outcome. There are at most three attempts per case. A trained directory completed before a supervisor crash is revalidated and frozen; incomplete fitting is archived and deterministically rerun, with all test work still closed and at most three fitting attempts.
 

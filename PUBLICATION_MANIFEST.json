@@ -89,8 +89,8 @@
       "combined_with_previous_protocols": false
     },
     "learned_compute": {
-      "campaign_revision": 4,
-      "campaign_fingerprint": "0fe856a86b6f8649df85ece5cda6e16075a8ce6c9ab26347ab98eb56c64449b0",
+      "campaign_revision": 5,
+      "campaign_fingerprint": "f89f0052419dd56caef5603973362d5c2f26e48eaad920e47c80e9359c087f17",
       "counts": {
         "collection_episodes": 56,
         "evaluation_episodes": 360,
@@ -101,11 +101,11 @@
       },
       "deadline_utc": "2026-10-30T06:08:00Z",
       "status": "partial",
-      "snapshot_at": "2026-10-16T06:54:35.895222+00:00",
+      "snapshot_at": "2026-10-16T10:55:09.511519+00:00",
       "is_live_status": false,
       "trained_models_claimed": 0,
       "evaluated_test_episodes_claimed": 0,
-      "completed_collection_episodes": 1,
+      "completed_collection_episodes": 0,
       "v1_resource_interruption_preserved": true
     }
   },
@@ -122,7 +122,8 @@
     "outputs/frontier/vlajepa_isolated_closed_loop/protocol.json": 22,
     "outputs/frontier/vlajepa_long_horizon/protocol.json": 22,
     "outputs/frontier/vlajepa_recovery/protocol.json": 25,
-    "outputs/learned_compute/v4/protocol.json": 25
+    "outputs/learned_compute/v4/protocol.json": 25,
+    "outputs/learned_compute/v5/protocol.json": 30
   },
   "files": {
     ".gitattributes": {
@@ -150,10 +151,10 @@
       "redacted": false
     },
     "README.md": {
-      "sha256": "01a1a9c5fcc5345f686a797c7c700d1bfb957643dcc12b6d636eff57a9bd0651",
-      "bytes": 27483,
-      "source_sha256": "01a1a9c5fcc5345f686a797c7c700d1bfb957643dcc12b6d636eff57a9bd0651",
-      "source_bytes": 27483,
+      "sha256": "3e97c7d145ae48eac249e2c4fd94885f236d5cc0db0d57357084e01023a98286",
+      "bytes": 27441,
+      "source_sha256": "3e97c7d145ae48eac249e2c4fd94885f236d5cc0db0d57357084e01023a98286",
+      "source_bytes": 27441,
       "origin": "current_project",
       "redacted": false
     },
@@ -906,6 +907,14 @@
       "origin": "current_project",
       "redacted": false
     },
+    "artifacts/learned_compute/test_execution_v5_20261016.json": {
+      "sha256": "2fad39c774577b87bbbcacc20af03366e64838ccbbc3cc841eafc1290109a476",
+      "bytes": 649,
+      "source_sha256": "2fad39c774577b87bbbcacc20af03366e64838ccbbc3cc841eafc1290109a476",
+      "source_bytes": 649,
+      "origin": "current_project",
+      "redacted": false
+    },
     "artifacts/learned_compute/v1_integration_audit.json": {
       "sha256": "1f1360cf35b39855f49b1e6757cb2cc91b06a45b40d4a7f11af61a8174ba95b4",
       "bytes": 1015,
@@ -951,6 +960,22 @@
       "bytes": 895,
       "source_sha256": "cd663cf28c596e9a36221d1f8b8c186ec81b5b9389c084fa14f63614ff522b74",
       "source_bytes": 895,
+      "origin": "current_project",
+      "redacted": false
+    },
+    "artifacts/learned_compute/v4_runtime_trial.audit.json": {
+      "sha256": "f4af47e51a124c6c5c941913d30baf0379e763cc1de58b95cd793ae925efdeb4",
+      "bytes": 1937,
+      "source_sha256": "f4af47e51a124c6c5c941913d30baf0379e763cc1de58b95cd793ae925efdeb4",
+      "source_bytes": 1937,
+      "origin": "current_project",
+      "redacted": false
+    },
+    "artifacts/learned_compute/v4_runtime_trial.zip": {
+      "sha256": "5322a323b4afdc2ccc0ce49885e5cdfeadbbace9f29366f6732b154127e934e1",
+      "bytes": 9787329,
+      "source_sha256": "5322a323b4afdc2ccc0ce49885e5cdfeadbbace9f29366f6732b154127e934e1",
+      "source_bytes": 9787329,
       "origin": "current_project",
       "redacted": false
     },
@@ -1290,10 +1315,10 @@
       "redacted": false
     },
     "docs/LEARNED_COMPUTE_RUNBOOK.md": {
-      "sha256": "56c365c671cb11a3d988d2ddd3cc7b00821aafbc0da730ea11c38f2f08093d6e",
-      "bytes": 8434,
-      "source_sha256": "56c365c671cb11a3d988d2ddd3cc7b00821aafbc0da730ea11c38f2f08093d6e",
-      "source_bytes": 8434,
+      "sha256": "3f16d053bb9e7843d7dfc117862073afc1756e8ba4da2719adf32c128d75a5b6",
+      "bytes": 10107,
+      "source_sha256": "3f16d053bb9e7843d7dfc117862073afc1756e8ba4da2719adf32c128d75a5b6",
+      "source_bytes": 10107,
       "origin": "current_project",
       "redacted": false
     },
@@ -18258,6 +18283,22 @@
       "origin": "current_project",
       "redacted": false
     },
+    "outputs/learned_compute/v5/protocol.json": {
+      "sha256": "c96c36cec931881cfab8cc9d1be3bbd055a2e7e33b828d827b3ef21d6e9b39c5",
+      "bytes": 284717,
+      "source_sha256": "c96c36cec931881cfab8cc9d1be3bbd055a2e7e33b828d827b3ef21d6e9b39c5",
+      "source_bytes": 284717,
+      "origin": "current_project",
+      "redacted": false
+    },
+    "outputs/learned_compute/v5/report.json": {
+      "sha256": "56a5ef724667fecc58de0d4a0b06f39377b5c1a15966f846901e27644f2f7884",
+      "bytes": 110332,
+      "source_sha256": "56a5ef724667fecc58de0d4a0b06f39377b5c1a15966f846901e27644f2f7884",
+      "source_bytes": 110332,
+      "origin": "current_project",
+      "redacted": false
+    },
     "outputs/replays/fa-001/frame-0.png": {
       "sha256": "aa80830db4522e9092f6998d03b2feea724c5655c43b7a245abd5a15444ef944",
       "bytes": 100078,
@@ -18653,11 +18694,27 @@
       "origin": "current_project",
       "redacted": false
     },
+    "scripts/budget_campaign_common_v5.py": {
+      "sha256": "b45192418cdb22423a357a7b109a74b959f48b030df571a2086fb0befa497a1e",
+      "bytes": 2280,
+      "source_sha256": "b45192418cdb22423a357a7b109a74b959f48b030df571a2086fb0befa497a1e",
+      "source_bytes": 2280,
+      "origin": "current_project",
+      "redacted": false
+    },
     "scripts/budget_episode_worker.py": {
       "sha256": "c764fc40d95239559d70f2f9383a842067f83559aeac459983ec08dde3adf8f4",
       "bytes": 18062,
       "source_sha256": "c764fc40d95239559d70f2f9383a842067f83559aeac459983ec08dde3adf8f4",
       "source_bytes": 18062,
+      "origin": "current_project",
+      "redacted": false
+    },
+    "scripts/budget_episode_worker_v5.py": {
+      "sha256": "551e8c22c199ce23c7e32aceab6fa1a0318eae2bf2150ed05339b587fa3ea2ae",
+      "bytes": 18068,
+      "source_sha256": "551e8c22c199ce23c7e32aceab6fa1a0318eae2bf2150ed05339b587fa3ea2ae",
+      "source_bytes": 18068,
       "origin": "current_project",
       "redacted": false
     },
@@ -18850,6 +18907,14 @@
       "bytes": 27646,
       "source_sha256": "b766732dd1dde4479b0ad460e697bc46e22e348d79c849b52693c5125983b4fc",
       "source_bytes": 27646,
+      "origin": "current_project",
+      "redacted": false
+    },
+    "scripts/run_budget_campaign_v5.py": {
+      "sha256": "1b9ffe1552374fa177339853b5fbf9a4db561823a338630182c576a29b14471c",
+      "bytes": 37235,
+      "source_sha256": "1b9ffe1552374fa177339853b5fbf9a4db561823a338630182c576a29b14471c",
+      "source_bytes": 37235,
       "origin": "current_project",
       "redacted": false
     },
@@ -19141,11 +19206,27 @@
       "origin": "current_project",
       "redacted": false
     },
+    "tests/test_budget_io_v5.py": {
+      "sha256": "5216f2fceb0a6153bf3575d3785fe1d875db63bc3a17bc2543fd5fba54b5b39c",
+      "bytes": 3126,
+      "source_sha256": "5216f2fceb0a6153bf3575d3785fe1d875db63bc3a17bc2543fd5fba54b5b39c",
+      "source_bytes": 3126,
+      "origin": "current_project",
+      "redacted": false
+    },
     "tests/test_budget_learning.py": {
       "sha256": "4b2971d321bc1287ac9638f264de5832802d5eb78337911d241237b9457369f7",
       "bytes": 13300,
       "source_sha256": "4b2971d321bc1287ac9638f264de5832802d5eb78337911d241237b9457369f7",
       "source_bytes": 13300,
+      "origin": "current_project",
+      "redacted": false
+    },
+    "tests/test_budget_monitor_v5.py": {
+      "sha256": "4b2c18982fe7d797f5db27b06610f08bb5f317409e0956e3048c27fa7cfa88e9",
+      "bytes": 12877,
+      "source_sha256": "4b2c18982fe7d797f5db27b06610f08bb5f317409e0956e3048c27fa7cfa88e9",
+      "source_bytes": 12877,
       "origin": "current_project",
       "redacted": false
     },
@@ -19518,8 +19599,8 @@
       "redacted": false
     }
   },
-  "updated_at": "2026-10-16T06:54:35.891227+00:00",
-  "previous_commit": "bb74af6abc1effad43a83edee42a63ac6a4b58a6",
+  "updated_at": "2026-10-16T10:55:09.507402+00:00",
+  "previous_commit": "192010f3528343e0b4859a9840c87a5b7d5ece8a",
   "diagnostic_redaction_policy": {
     "allowlist": "isolated, long-horizon and recovery runs/run_NNNN.json only",
     "fields": "compatibility.patches[i].changes[j].after strings containing private local paths only",
