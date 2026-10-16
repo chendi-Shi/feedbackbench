@@ -1,5 +1,7 @@
 # FeedbackBench 后续研究：新初态前瞻确认结果
 
+**后续支线（2026-10-16）：** VLA-JEPA已产生独立的真实闭环证据，见[进程隔离结果](VLAJEPA_ISOLATED_RESULTS.md)与[单长任务资源实验](VLAJEPA_LONG_HORIZON_RESULTS.md)。本页继续只报告既有SmolVLA的16回合前瞻确认，不将后来的任务加入其分母。
+
 **2026-10-15：前瞻确认 16/16 回合已完成并封存，0 缺失、0 未封存、0 运行错误。** 本页依据[正式报告](../outputs/frontier/flow_confirmation/report.md)、[报告 JSON](../outputs/frontier/flow_confirmation/report.json)与逐回合原始证据。当前整套单元测试、报告只读重算及保存动作重放复核已通过；VLA-JEPA 动态 INT8 变体完成一次真实观测前向，原生 BF16 重试仍在内存门槛前退出。两者都不计入闭环评测分母。v1 结果继续以[原结果页](RESULTS.md)和[原报告](../outputs/frontier/cache_study/report.md)为准。
 
 **noise2 成功 5/8，full10 成功 4/8；总 action-head NFE 从 2050 降至 370。** 任务等权成功差为 **+12.5 个百分点，4 个任务簇的 bootstrap 95% 区间 [0, 37.5]**。这组样本中没有 noise2 独自失败的配对，唯一成功差来自 object/init41；两个 LIBERO-10 初态双方都失败。结果显示该指定范围内更低的动作头预算和一个额外成功，不证明普遍优越、非劣或稳定端到端加速。

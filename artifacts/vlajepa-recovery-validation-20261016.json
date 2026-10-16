@@ -1,0 +1,56 @@
+{
+  "status": "verified_blocked_recovery_not_complete",
+  "audited_at": "2026-10-16T04:45:24.156058+00:00",
+  "protocol_fingerprint": "04ca0526e94e67f01c6acb9538ed045a07678a50e8511938b58f95b3139bc86f",
+  "frozen_source_files_verified": 25,
+  "original_interrupted_source_files_bound": 130,
+  "original_partial_integrity_verified": true,
+  "recovery_partial_integrity_verified": true,
+  "strict_validation_passed": false,
+  "strict_validation_error": "Recovery incomplete; partial must be explicit",
+  "actual_command_exit_codes": {
+    "run": 3,
+    "report": 0,
+    "strict_validate": 1
+  },
+  "planned_recoveries": 1,
+  "completed_recoveries": 0,
+  "missing_recoveries": 1,
+  "official_successes": 0,
+  "completed_task_failures": 0,
+  "independent_benchmark_episodes": 0,
+  "weights_loaded": false,
+  "new_model_calls": 0,
+  "new_executed_actions": 0,
+  "available_bytes": 6146363392,
+  "minimum_available_bytes": 6174015488.0,
+  "torch_imported_by_audit": false,
+  "files": {
+    "outputs/frontier/vlajepa_recovery/inputs.json": {
+      "sha256": "7d0b65927a53e284de607bb6502b1dc1145d8defc7c4f7f22d157e51c21cd700",
+      "bytes": 184602
+    },
+    "outputs/frontier/vlajepa_recovery/protocol.json": {
+      "sha256": "eb2c96e0d2a6cae98c2b7f081ed060e926a7274ef421ff8412794674b58dba8c",
+      "bytes": 46453
+    },
+    "outputs/frontier/vlajepa_recovery/report.json": {
+      "sha256": "bb197f558a82267274008859c26531c2934944d43a44a6258e0b04afa563d852",
+      "bytes": 2346
+    },
+    "outputs/frontier/vlajepa_recovery/report.md": {
+      "sha256": "e066ee9d3ccea64aa6fe61b1de3e30d23db5ae515ffcb853cc893dd51c0a0486",
+      "bytes": 1914
+    },
+    "outputs/frontier/vlajepa_recovery/runs/run_0001.json": {
+      "sha256": "58477b2fa4b4aacd48dbd29c36bb1b91d6317d7f868f8a00bb4ce71f33469961",
+      "bytes": 347
+    }
+  },
+  "limitations": [
+    "Source and byte integrity do not establish an executed recovery.",
+    "The original 398-step interrupted attempt remains unsealed.",
+    "The blocked recovery is not a completed task failure or success.",
+    "No other project or service was stopped to satisfy the memory gate."
+  ]
+}

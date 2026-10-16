@@ -1,0 +1,45 @@
+{
+  "protocol_fingerprint": "c35bc7f4f94964ecd19313cbe0fb923ad4daf924692153b050189288e719fe3d",
+  "complete": false,
+  "planned": 4,
+  "completed": 0,
+  "successes": 0,
+  "task_failures": 0,
+  "statuses": {
+    "vlajepa_paged__libero_spatial__1__41__clean__native4_chunk7": "unsealed",
+    "vlajepa_paged__libero_object__1__41__clean__native4_chunk7": "missing",
+    "vlajepa_paged__libero_goal__1__41__clean__native4_chunk7": "missing",
+    "vlajepa_paged__libero_10__1__41__clean__native4_chunk7": "missing"
+  },
+  "results": [],
+  "limitations": [
+    "four known tasks, one previously used initial state each; no held-out generalization claim",
+    "changed numerics, no original BF16 comparison or quantization quality attribution",
+    "different checkpoint, action interval and source from SmolVLA; not a matched comparison",
+    "simulation pauses during inference; no real robot or real-time control claim",
+    "all successes, task failures, incomplete and runtime errors retained separately",
+    "Separate paging experiment; does not complete the frozen owned-embedding stage",
+    "3.5 GiB gate is an exploratory budget, not an established hardware minimum",
+    "One-observation exact action equality does not prove all-input equivalence"
+  ],
+  "run_audits": [
+    {
+      "path": "runs/run_0001.json",
+      "sha256": "4948c3e5cfc6647a4b0cca26fd5c29e108955090145f2bcf0f260c4a72149af1",
+      "status": "running_episodes",
+      "weights_loaded": true,
+      "memory": {},
+      "load_quantize_seconds": 78.88189829999465,
+      "imports_seconds": 19.743355200000224
+    },
+    {
+      "path": "runs/run_0001.memory_stop.json",
+      "sha256": "46d06a7b6d1f23d982bcd57013c51473fa310a14f0be1e34f46bf3b7486371a2",
+      "status": "stopped_memory_guard",
+      "weights_loaded": false,
+      "memory": {},
+      "load_quantize_seconds": null,
+      "imports_seconds": null
+    }
+  ]
+}

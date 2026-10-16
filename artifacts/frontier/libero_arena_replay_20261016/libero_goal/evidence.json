@@ -1,0 +1,99 @@
+{
+  "schema": "feedbackbench.libero_arena_case_evidence.v1",
+  "plan": {
+    "path": "artifacts/frontier/libero_arena_replay_20261016.plan.json",
+    "sha256": "23392c8714cd5dbf2d266d96060326e9757d040b50bb0455515ebb74ab710cf5"
+  },
+  "reference": {
+    "case": {
+      "model": "smolvla",
+      "suite": "libero_goal",
+      "task_id": 1,
+      "init_state_id": 41,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "full10",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 10,
+        "temporal_ensemble": false
+      },
+      "record_video": true,
+      "split": "confirmation",
+      "id": "smolvla__libero_goal__1__41__clean__full10"
+    },
+    "receipt": {
+      "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_goal__1__41__clean__full10/receipt.json",
+      "sha256": "e91e5cb063b2028d0613b913af8c4adfa10c4751c6034be1b7a403693f631643"
+    },
+    "files": {
+      "attempt.json": {
+        "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_goal__1__41__clean__full10/attempt.json",
+        "sha256": "326ea0b17ed8be55794395dc551bb7e8a263a8c8347860f0fe38a166e5bf2e25"
+      },
+      "calls.json": {
+        "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_goal__1__41__clean__full10/calls.json",
+        "sha256": "d25bd2c40b7c07b15e147b6ab372c70d02b08435ce6046a304c002be639507cc"
+      },
+      "final.png": {
+        "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_goal__1__41__clean__full10/final.png",
+        "sha256": "0078ca3b0ccbfe465412fee3003466922c781ab34bb4ff48920e2f199a613487"
+      },
+      "initial.png": {
+        "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_goal__1__41__clean__full10/initial.png",
+        "sha256": "6304b9513f3519a4bf22a4532dcf88920aae5293d1f949dcc10ded8117853f5c"
+      },
+      "initial_wrist.png": {
+        "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_goal__1__41__clean__full10/initial_wrist.png",
+        "sha256": "05562f2c0774d0b916c4b619e63cfc791d84873edc51bef63450a34990e4000d"
+      },
+      "result.json": {
+        "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_goal__1__41__clean__full10/result.json",
+        "sha256": "f22e7528b2594b7a82516b8edd949a7fe9c387b2db67e9cbd62e1f956a3180fb"
+      },
+      "rollout.gif": {
+        "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_goal__1__41__clean__full10/rollout.gif",
+        "sha256": "b897591a58f02b722f1473a952eb824373f6d5cb36f230e5ffd1152a0f6323d7"
+      },
+      "trajectory.npz": {
+        "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_goal__1__41__clean__full10/trajectory.npz",
+        "sha256": "f15e64a39cb0a14b9163e4dd11e3eca9807823198f9799b7686fcfd0fae6df6c"
+      }
+    }
+  },
+  "files": {
+    "arena_audit.json": {
+      "path": "artifacts/frontier/libero_arena_replay_20261016/libero_goal/arena_audit.json",
+      "sha256": "160e8fb3e42788737cf1e22dfe2335942a1923ec383a814ec8e21072b81f14c6"
+    },
+    "attempt.json": {
+      "path": "artifacts/frontier/libero_arena_replay_20261016/libero_goal/attempt.json",
+      "sha256": "679f69c452ace05f7c76b352d75c3a61b06f5a7010b93ccf66908e30bdf8486e"
+    },
+    "capacity.jsonl": {
+      "path": "artifacts/frontier/libero_arena_replay_20261016/libero_goal/capacity.jsonl",
+      "sha256": "07e0d34449750f1fe1a962ff347f8e602eb1128a6570a61cce6ee360267c8d5f"
+    },
+    "executed_steps.jsonl": {
+      "path": "artifacts/frontier/libero_arena_replay_20261016/libero_goal/executed_steps.jsonl",
+      "sha256": "4a72181833a49f98ea29a371bf5c6e01b2ba7a7cbe856ccf7d7df963d9df334c"
+    },
+    "final.png": {
+      "path": "artifacts/frontier/libero_arena_replay_20261016/libero_goal/final.png",
+      "sha256": "0078ca3b0ccbfe465412fee3003466922c781ab34bb4ff48920e2f199a613487"
+    },
+    "initial.png": {
+      "path": "artifacts/frontier/libero_arena_replay_20261016/libero_goal/initial.png",
+      "sha256": "6304b9513f3519a4bf22a4532dcf88920aae5293d1f949dcc10ded8117853f5c"
+    },
+    "initial_wrist.png": {
+      "path": "artifacts/frontier/libero_arena_replay_20261016/libero_goal/initial_wrist.png",
+      "sha256": "05562f2c0774d0b916c4b619e63cfc791d84873edc51bef63450a34990e4000d"
+    },
+    "trajectory.npz": {
+      "path": "artifacts/frontier/libero_arena_replay_20261016/libero_goal/trajectory.npz",
+      "sha256": "baf19a6215d8944801094c9f645a069ee322de4591effd81f3afbb4b55f849ff"
+    }
+  }
+}

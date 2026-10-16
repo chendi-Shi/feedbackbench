@@ -1,0 +1,46 @@
+{
+  "protocol_fingerprint": "1ee163c469021461d0d0da6b1b02368b9cf6e734ab6c81939daf99dab2cf7100",
+  "complete": false,
+  "planned": 1,
+  "completed": 0,
+  "successes": 0,
+  "task_failures": 0,
+  "statuses": {
+    "vlajepa_long_horizon__libero_10__1__41__clean__native4_chunk7": "unsealed"
+  },
+  "results": [],
+  "limitations": [
+    "changed numerics, no original BF16 comparison or quantization quality attribution",
+    "different checkpoint, action interval and source from SmolVLA; not a matched comparison",
+    "simulation pauses during inference; no real robot or real-time control claim",
+    "all successes, task failures, incomplete and runtime errors retained separately",
+    "Separate paging experiment; does not complete the frozen owned-embedding stage",
+    "One-observation exact action equality does not prove all-input equivalence",
+    "Independent successor to the interrupted paged-only attempt; all earlier failures retained",
+    "One selected previously used task and initial state; exploratory resource feasibility, not generalization",
+    "Independent one-case protocol and budget; cannot combine previous successes into a four-of-four experiment",
+    "Every earlier interrupted attempt remains retained separately; no automatic retry of unsealed evidence",
+    "Frozen engine stdout may display [1/4]; this protocol and all saved reports/progress plan exactly one case",
+    "Frozen LIBERO reset may swallow repeated native-warning exceptions; a hung reset requires external timeout"
+  ],
+  "run_audits": [
+    {
+      "path": "runs/run_0001.json",
+      "sha256": "4c8a5f7e10d5a3cab3ed16b565df6a3a254c7b425409a07bef70a8bdeb8a2692",
+      "status": "running_episodes",
+      "weights_loaded": true,
+      "memory": {},
+      "load_quantize_seconds": 71.23623360000784,
+      "imports_seconds": 35.94738209999923
+    },
+    {
+      "path": "runs/run_0001.memory_stop.json",
+      "sha256": "f4d9dc172acf0d9fdaff10a76202bbe56454a69510c76f361ddb3b8d98afe1e9",
+      "status": "stopped_memory_guard",
+      "weights_loaded": false,
+      "memory": {},
+      "load_quantize_seconds": null,
+      "imports_seconds": null
+    }
+  ]
+}

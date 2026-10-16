@@ -1,0 +1,317 @@
+{
+  "schema": "feedbackbench.libero_arena_replay_plan.v1",
+  "frozen_at": "2026-10-16T03:15:09.038429+00:00",
+  "sources": {
+    "scripts/probe_libero_arena.py": "3f8fffa016a7ea994768516acf4d47fcfa3514e007d386ea7b37a0a9a3a1d277",
+    "scripts/libero_arena_budget.py": "fb7bbb4c7169ce95b93a9a79a7046b3d14f331b5994898cf20332d55af6f6e82",
+    "scripts/probe_vlajepa.py": "502d4f5af68575f8cb7b8045dad3cd480f4a65309c9f1938af143f897a2ff33b",
+    "scripts/run.py": "950cf01a77c1acbe7b98bc18d3e7435f6591b9191dbd26f8c0da535af7bcd280",
+    "scripts/complete_vlajepa_stage.py": "13e0ea20ea8149cc72cf4690b2fdb5f96cad62ac6b63c5d3c209b9ecd8322020",
+    "scripts/run_flow_confirmation.py": "edd5be34031ee2ca52e199d3861083b971aeeb33256027ece414ca8ea30580b6",
+    "src/embodied_research/__init__.py": "6a75c285a4efbdb9de48fab2a22d66ceb71ff3abe311a5155c326fdff0f09ef0",
+    "src/embodied_research/cache_policy.py": "7b704cfe37a89b5a71aa2b47da9f09d9f67ab76bca442d740a72d62eda9362ab",
+    "src/embodied_research/cache_sampler.py": "df547b4b4cf56822b7cbad4e282dba8996b2745bb906fe541ad7ead533592cd3",
+    "src/embodied_research/action_cache.py": "5710536aefce85b3d33b6e841920312ed726bee43e2020ec0916f87738ce722d",
+    "src/embodied_research/experiment.py": "da83af6ce069fc74a727f3c790bc59e7089e2bc53e4e8fe87e797219d44b3cf3",
+    "src/embodied_research/policies.py": "ad036be156049e9721ddf892e4e7ad8e66ee0e88c181cc66a125c0b76712f66a",
+    "src/embodied_research/runtime.py": "4296c85ae0060f9b6137872c6e88ed69fce49964cd1b5207da1a19c413f0b1f5",
+    "src/embodied_research/simulator.py": "3fa8762b03bd9dd85f426242714d3422bc19f6fc7f9d9444fd4cac4785ad95d3",
+    "src/embodied_research/scheduling.py": "6698253906434d6e2523b4ad3a77c18ae448872558fed341360858f6417f64ce",
+    "scripts/summarize_flow_confirmation.py": "4a82f8cf816286429a984e6b813836bdf43de334c05d074cd8b2d090d4532adc",
+    "scripts/summarize_cache_study.py": "09dd33324401bdd18ac69051af0c612c279ca56d51054399d9f10b19185143ba",
+    "docs/FLOW_CONFIRMATION_PROTOCOL.md": "ab9d6306e65acb129a149cf1636ea3fb13fc08d81a7a30f869f65f761989c2f2",
+    "frontier/vendor/lerobot/src/lerobot/envs/libero.py": "97c984f12331527626812ec19967ef399e545535b3571becf044db2417ae9d71"
+  },
+  "references": {
+    "flow_protocol": {
+      "path": "outputs/frontier/flow_confirmation/protocol.json",
+      "sha256": "f8dbeebf4fbd28d60051745e801a3619ba72f5f089d18e92f7ee2d9065a33371"
+    },
+    "libero_spatial": {
+      "case": {
+        "model": "smolvla",
+        "suite": "libero_spatial",
+        "task_id": 1,
+        "init_state_id": 41,
+        "seed": 1000,
+        "condition": "clean",
+        "method": "full10",
+        "num_steps": 10,
+        "scheduler": {
+          "mode": "fixed",
+          "fixed_interval": 10,
+          "temporal_ensemble": false
+        },
+        "record_video": true,
+        "split": "confirmation",
+        "id": "smolvla__libero_spatial__1__41__clean__full10"
+      },
+      "receipt": {
+        "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_spatial__1__41__clean__full10/receipt.json",
+        "sha256": "0db334990f16d75caef015b7f46fd0d6bca21a8e5b0a97e529dcb03812b0ff78"
+      },
+      "files": {
+        "attempt.json": {
+          "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_spatial__1__41__clean__full10/attempt.json",
+          "sha256": "b810c6c1afe6e09484cb1b5ca07cc82c874e80717412e8b44b804577ade83c37"
+        },
+        "calls.json": {
+          "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_spatial__1__41__clean__full10/calls.json",
+          "sha256": "877f486fc5c5ea6cc153611e10e094849abcee2779eae46b28b40d90d5105d27"
+        },
+        "final.png": {
+          "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_spatial__1__41__clean__full10/final.png",
+          "sha256": "743e7ecdfe8a785b156bfccfff362b76ee48da984b4f888248e861e22aa3a93a"
+        },
+        "initial.png": {
+          "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_spatial__1__41__clean__full10/initial.png",
+          "sha256": "3c38faf28826242f797f2a7b9b134f76cfaf7b2d0d9febf6a15a7b0f13029db5"
+        },
+        "initial_wrist.png": {
+          "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_spatial__1__41__clean__full10/initial_wrist.png",
+          "sha256": "b9c10e8043f3b4f2bcb1ed041eab1e0882969b8a19a04c98468e2dfcaea1f82c"
+        },
+        "result.json": {
+          "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_spatial__1__41__clean__full10/result.json",
+          "sha256": "71ccffc228be158e0411151fd0e2813697fd41f103f0c1114f32c6a7e9f40b6b"
+        },
+        "rollout.gif": {
+          "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_spatial__1__41__clean__full10/rollout.gif",
+          "sha256": "d2ee111641b22afc3e8f9e4e1d1c83a40acd79c7e958e1b7492ffb9cbfd0f8a0"
+        },
+        "trajectory.npz": {
+          "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_spatial__1__41__clean__full10/trajectory.npz",
+          "sha256": "6cb400bb2406774e136de8c4890f81263d56cf96b564728d6cca7768291be606"
+        }
+      }
+    },
+    "libero_object": {
+      "case": {
+        "model": "smolvla",
+        "suite": "libero_object",
+        "task_id": 1,
+        "init_state_id": 41,
+        "seed": 1000,
+        "condition": "clean",
+        "method": "full10",
+        "num_steps": 10,
+        "scheduler": {
+          "mode": "fixed",
+          "fixed_interval": 10,
+          "temporal_ensemble": false
+        },
+        "record_video": true,
+        "split": "confirmation",
+        "id": "smolvla__libero_object__1__41__clean__full10"
+      },
+      "receipt": {
+        "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_object__1__41__clean__full10/receipt.json",
+        "sha256": "be7dbb56fdc9f17a3a374a25a114497c19301534e64687a0d2e291452b092a11"
+      },
+      "files": {
+        "attempt.json": {
+          "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_object__1__41__clean__full10/attempt.json",
+          "sha256": "c0ae383a1d79e2d531768ac7dcdfc88b45b6d07f3079465463d0bb07977dd97e"
+        },
+        "calls.json": {
+          "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_object__1__41__clean__full10/calls.json",
+          "sha256": "f705d536c14f8dcb956ab8b0438e4e51c03e2268facfd8cf6e28f1e88fa42db5"
+        },
+        "final.png": {
+          "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_object__1__41__clean__full10/final.png",
+          "sha256": "ad957bcb0ba662b71bffebf582e8b48bfbfd52c497f6743a3fa1012522e94ec0"
+        },
+        "initial.png": {
+          "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_object__1__41__clean__full10/initial.png",
+          "sha256": "1ecba4fb578f608bf601b020de569ab5ed18269b8117ef07ce0daf0d6afa0815"
+        },
+        "initial_wrist.png": {
+          "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_object__1__41__clean__full10/initial_wrist.png",
+          "sha256": "bb60c848d7b2205770492d5d8fe5ca75798389a818528924c5dd23dd0e9d7be0"
+        },
+        "result.json": {
+          "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_object__1__41__clean__full10/result.json",
+          "sha256": "a0cec1666d7e7ce4ab3f875b215fdc18f6d99855964b82c6acfd77622f0393d8"
+        },
+        "rollout.gif": {
+          "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_object__1__41__clean__full10/rollout.gif",
+          "sha256": "089fd1953297a38b562707efd69ebbb368d2c0913d2cb32e7fd3833b817ca400"
+        },
+        "trajectory.npz": {
+          "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_object__1__41__clean__full10/trajectory.npz",
+          "sha256": "829622420c79221d441ea8f10aea6f61a85035b21cafc8f95393625d0b87bb88"
+        }
+      }
+    },
+    "libero_goal": {
+      "case": {
+        "model": "smolvla",
+        "suite": "libero_goal",
+        "task_id": 1,
+        "init_state_id": 41,
+        "seed": 1000,
+        "condition": "clean",
+        "method": "full10",
+        "num_steps": 10,
+        "scheduler": {
+          "mode": "fixed",
+          "fixed_interval": 10,
+          "temporal_ensemble": false
+        },
+        "record_video": true,
+        "split": "confirmation",
+        "id": "smolvla__libero_goal__1__41__clean__full10"
+      },
+      "receipt": {
+        "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_goal__1__41__clean__full10/receipt.json",
+        "sha256": "e91e5cb063b2028d0613b913af8c4adfa10c4751c6034be1b7a403693f631643"
+      },
+      "files": {
+        "attempt.json": {
+          "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_goal__1__41__clean__full10/attempt.json",
+          "sha256": "326ea0b17ed8be55794395dc551bb7e8a263a8c8347860f0fe38a166e5bf2e25"
+        },
+        "calls.json": {
+          "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_goal__1__41__clean__full10/calls.json",
+          "sha256": "d25bd2c40b7c07b15e147b6ab372c70d02b08435ce6046a304c002be639507cc"
+        },
+        "final.png": {
+          "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_goal__1__41__clean__full10/final.png",
+          "sha256": "0078ca3b0ccbfe465412fee3003466922c781ab34bb4ff48920e2f199a613487"
+        },
+        "initial.png": {
+          "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_goal__1__41__clean__full10/initial.png",
+          "sha256": "6304b9513f3519a4bf22a4532dcf88920aae5293d1f949dcc10ded8117853f5c"
+        },
+        "initial_wrist.png": {
+          "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_goal__1__41__clean__full10/initial_wrist.png",
+          "sha256": "05562f2c0774d0b916c4b619e63cfc791d84873edc51bef63450a34990e4000d"
+        },
+        "result.json": {
+          "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_goal__1__41__clean__full10/result.json",
+          "sha256": "f22e7528b2594b7a82516b8edd949a7fe9c387b2db67e9cbd62e1f956a3180fb"
+        },
+        "rollout.gif": {
+          "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_goal__1__41__clean__full10/rollout.gif",
+          "sha256": "b897591a58f02b722f1473a952eb824373f6d5cb36f230e5ffd1152a0f6323d7"
+        },
+        "trajectory.npz": {
+          "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_goal__1__41__clean__full10/trajectory.npz",
+          "sha256": "f15e64a39cb0a14b9163e4dd11e3eca9807823198f9799b7686fcfd0fae6df6c"
+        }
+      }
+    },
+    "libero_10": {
+      "case": {
+        "model": "smolvla",
+        "suite": "libero_10",
+        "task_id": 1,
+        "init_state_id": 41,
+        "seed": 1000,
+        "condition": "clean",
+        "method": "full10",
+        "num_steps": 10,
+        "scheduler": {
+          "mode": "fixed",
+          "fixed_interval": 10,
+          "temporal_ensemble": false
+        },
+        "record_video": true,
+        "split": "confirmation",
+        "id": "smolvla__libero_10__1__41__clean__full10"
+      },
+      "receipt": {
+        "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_10__1__41__clean__full10/receipt.json",
+        "sha256": "92d1e36dd276d85753beb590730f5771fb3d5decf2324a6be1b227881975074a"
+      },
+      "files": {
+        "attempt.json": {
+          "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_10__1__41__clean__full10/attempt.json",
+          "sha256": "3054232cd38f44fc493fd7c946ac3550261371fe7dc92876a17e21d4ecd5a664"
+        },
+        "calls.json": {
+          "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_10__1__41__clean__full10/calls.json",
+          "sha256": "3abe10c930a5c028fba783011f42a8ae87b23408cfce2ffbeff5dd59f74847ea"
+        },
+        "final.png": {
+          "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_10__1__41__clean__full10/final.png",
+          "sha256": "d8d9c8998f6abdfb6593e53ab2c0e91310e7158549348ef6348b4fd86eaa64e2"
+        },
+        "initial.png": {
+          "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_10__1__41__clean__full10/initial.png",
+          "sha256": "fc57d97678c427c48192427c719dd5b9bce0a2b84630fbd0496283816f5cf7ca"
+        },
+        "initial_wrist.png": {
+          "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_10__1__41__clean__full10/initial_wrist.png",
+          "sha256": "561213a316512624d669392380dab2cf65bff6560d74e6bffeb62a9544047b9b"
+        },
+        "result.json": {
+          "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_10__1__41__clean__full10/result.json",
+          "sha256": "18ef57f82596e18bfe30b7572fee2f6f31b4ae754f8821c67edfc245ff42a9f0"
+        },
+        "rollout.gif": {
+          "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_10__1__41__clean__full10/rollout.gif",
+          "sha256": "cc23d1ff96cb7e02118fd869615895f8514d0996db3e10368dd726dfc550de7e"
+        },
+        "trajectory.npz": {
+          "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_10__1__41__clean__full10/trajectory.npz",
+          "sha256": "af706f69af890cb6ae3609a8578d9a712148fc08492f7aece3f6950450458715"
+        }
+      }
+    }
+  },
+  "cases": [
+    {
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "init_state_id": 41,
+      "seed": 1000,
+      "reference_id": "smolvla__libero_spatial__1__41__clean__full10",
+      "steps": 93
+    },
+    {
+      "suite": "libero_object",
+      "task_id": 1,
+      "init_state_id": 41,
+      "seed": 1000,
+      "reference_id": "smolvla__libero_object__1__41__clean__full10",
+      "steps": 280
+    },
+    {
+      "suite": "libero_goal",
+      "task_id": 1,
+      "init_state_id": 41,
+      "seed": 1000,
+      "reference_id": "smolvla__libero_goal__1__41__clean__full10",
+      "steps": 85
+    },
+    {
+      "suite": "libero_10",
+      "task_id": 1,
+      "init_state_id": 41,
+      "seed": 1000,
+      "reference_id": "smolvla__libero_10__1__41__clean__full10",
+      "steps": 520
+    }
+  ],
+  "configuration": {
+    "arena_bytes": 268435456,
+    "nconmax": 5000,
+    "image_size": 360,
+    "hard_reset": true,
+    "settle_steps": 10,
+    "threads": 2,
+    "interop_threads": 1
+  },
+  "comparison": "Exact float32 robot states, uint8 initial two cameras/final camera, and all terminal flags; zero tolerance",
+  "memory_guard": {
+    "maximum_rss_gib": 5.5,
+    "minimum_runtime_available_gib": 0.5,
+    "sampling_seconds": 1
+  },
+  "scope": "Replay all saved actions from four sealed trajectories; no policy inference; no new benchmark denominator",
+  "limitations": [
+    "Known saved trajectories only; not an all-input or all-trajectory physics proof",
+    "Memory/latency on a shared host are descriptive; no controlled speedup claim"
+  ]
+}

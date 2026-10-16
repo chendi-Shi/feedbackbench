@@ -2,15 +2,24 @@
 
 仓库：<https://github.com/chendi-Shi/feedbackbench>。首次发布设为私有；GitHub Actions 只支持手动触发，推送不会自动启动云端计算。
 
-本次 Git 快照包含当前源码、说明、测试、冻结协议与选定实验原始证据。旧 MINERVA 232 回合、SmolVLA 缓存研究 28 回合、前瞻确认 16 回合分别保存。VLA-JEPA 动态 INT8 单次真实前向已通过；其新闭环计划 4 回合、实际执行 0 回合，状态为 `blocked_preflight`。测试用例不是机器人评测回合。
+Git 快照按发布清单保存源码、说明、测试、冻结协议与选定实验原始证据。旧 MINERVA 232 回合、SmolVLA 缓存研究 28 回合、前瞻确认 16 回合分别保存。VLA-JEPA 的原始、分页、compact、独立进程和单长任务阶段各自保存预算及结果，不合并成功率。测试用例和保存动作重放不是机器人评测回合。
 
-2026-10-16增量更新加入前台收尾入口、文件占用恢复测试、两次新的资源阻断记录和[本轮闭环审计](../artifacts/closure-audit-20261016.json)。SmolVLA两组完整报告已从原始证据重新核验；VLA-JEPA仍未产生闭环任务结果。62项通过的是工程测试，不是机器人回合。原首次发布提交和冻结实验内容保留。
+历史提交 `a1111bd6c8c95e85a9b4c1b175bd0875caec1370` 保存了前台收尾入口、文件占用恢复测试、资源阻断和[当时的闭环审计](../artifacts/closure-audit-20261016.json)。当前增量在这个已核验基线之上保存以下证据；其实际版本由本文件所属 Git 提交确定，清单中的 `previous_commit` 指向基线。旧提交及冻结内容均保留。
+
+- [分页实验](VLAJEPA_PAGED_RESULTS.md)：真实单观测动作与原INT8逐值相同；首次闭环的系统可用内存保护中止也保留。
+- [arena重放](LIBERO_ARENA_REPLAY_RESULTS.md)：978个保存动作的状态、指定图像和终止标志一致；无新模型推理，未证实物理RSS收益。
+- [compact](VLAJEPA_COMPACT_RESULTS.md)及[独立进程](VLAJEPA_ISOLATED_RESULTS.md)：各计划4、完成成功3、内存中止未封存1；48次成对调用及327步轨迹有[精确一致性审计](../artifacts/vlajepa-process-isolation-consistency-20261016.json)。
+- [单长任务资源实验](VLAJEPA_LONG_HORIZON_RESULTS.md)：6GiB自身RSS预算下保存398步与57次完整推理，系统可用内存保护中止，未封存；[恢复验证](VLAJEPA_RECOVERY_RESULTS.md)另行记录，不能回填旧阶段或形成同协议4/4成绩。
+- [恢复入口](VLAJEPA_RECOVERY_RESULTS.md)：25个冻结源、130个原证据文件绑定；实际启动时5.724GiB低于5.75GiB门槛，未加载模型，0次新调用、0步动作，严格完成核验未通过。原中止状态保留。
+- 分页、arena/compact、进程隔离及单长任务的测试分别记录。恢复75项、发布校验器39项及两组联合重跑114项均通过；联合记录包含前两组，不重复相加，也不把测试批次计作模型或任务样本。
 
 发布内容以 [PUBLICATION_MANIFEST.json](../PUBLICATION_MANIFEST.json) 为准。该清单记录每个发布文件的 SHA-256、字节数和原始来源哈希；自身不计入其文件清单。诊断副本中的个人路径与主机名经过脱敏，原始证据中的哈希仍指向原始字节，清单同时提供导出字节身份。正式协议、轨迹、动作、结果与冻结源码保持原样。
 
-历史 continuation ZIP 的清单保留在 [publication/continuation-bundle-manifest.json](../publication/continuation-bundle-manifest.json)，只描述原 ZIP，不能用来校验更新后的整个 Git 仓库。原 ZIP SHA-256 为 `7d440c6cdf18b8ba546d30f177aa71f2bc40f0f3c641e6ec40fdc80bfc927858`。本次发布在其已核验内容上加入最新闭环执行器、协议、测试和内存阻断记录。历史检查点报告中的相对链接按其[原始上下文规则](../outputs/checkpoints/before_smol/README.md)解析。
+可用 `python scripts/verify_publication.py` 在下载的仓库中只读核验发布快照。它先核对每个导出文件的实际字节与哈希，再检查冻结源、回合receipt和独立进程账本；运行诊断的兼容性补丁文本若含本机路径，只允许清单明确标注的白名单字段脱敏。worker和历史审计保留原件哈希，校验器会把这类检查标为`source_binding_via_redaction_manifest`，与实际原始字节一致的检查区分。清单中的原件哈希是发布方声明的来源身份，不能用经过脱敏的字节重新推导或证明它。该发布完整性核验不启动模型，不替代原始数值轨迹审计，也不会把未封存实验改为完整。
 
-模型权重、虚拟环境、第三方源码、完整仿真资产、私有运行目录和大型 ZIP 不进入 Git。仓库中保留的小型模型/资产 manifest 记录下载身份；按 README 中的固定版本入口恢复运行环境。上游归属见 [THIRD_PARTY](THIRD_PARTY.md)。本项目尚未指定自身的开源许可证，私有发布不改变上游许可。
+历史 continuation ZIP 的清单保留在 [publication/continuation-bundle-manifest.json](../publication/continuation-bundle-manifest.json)，只描述原 ZIP，不能用来校验更新后的整个 Git 仓库。原 ZIP SHA-256 为 `7d440c6cdf18b8ba546d30f177aa71f2bc40f0f3c641e6ec40fdc80bfc927858`。历史检查点报告中的相对链接按其[原始上下文规则](../outputs/checkpoints/before_smol/README.md)解析。
+
+模型权重、虚拟环境、完整第三方源码树、完整仿真资产、私有运行目录和大型 ZIP 不进入 Git。arena 重放源身份审计单独保留固定 LeRobot 的未修改 `envs/libero.py` 与完整 LICENSE；其余第三方依赖仍由固定版本入口恢复。仓库中的小型模型/资产 manifest 记录下载身份，上游归属见 [THIRD_PARTY](THIRD_PARTY.md)。本项目尚未指定自身的开源许可证，私有发布不改变上游许可。
 
 本机发布使用 `deliverables/github/feedbackbench` 中的独立 Git 工作区，避免混入父目录的其他项目。研究运行目录的 `.gitignore` 继续排除自动生成的大目录；发布时只将已经核验、列入清单的文件精确加入 Git。不要在研究目录对整个输出目录使用强制添加，也不要向父目录的 NLP 仓库推送。
 

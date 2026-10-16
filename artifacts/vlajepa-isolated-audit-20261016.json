@@ -1,0 +1,1684 @@
+{
+  "schema": "feedbackbench.independent_isolated_audit.v1",
+  "audited_at": "2026-10-16T04:05:57.764784+00:00",
+  "status": "passed_partial_evidence_audit",
+  "scope": "Read-only validation of the terminated isolated four-case study, its unchanged sources, full sealed numeric traces, worker provenance and unsealed memory interruption. No model or environment execution.",
+  "torch_imported": false,
+  "protocol": {
+    "path": "outputs/frontier/vlajepa_isolated_closed_loop/protocol.json",
+    "sha256": "961373f12a7b3e217772d9b349721b6d55fa3525a117b66bf0af0577917e7d83",
+    "bytes": 11889
+  },
+  "protocol_fingerprint": "cf5de5849b5ae7a8cf299dff07532a2462720ed2df03e50cb2090746be530c51",
+  "inputs_snapshot": {
+    "path": "outputs/frontier/vlajepa_isolated_closed_loop/inputs.json",
+    "sha256": "7d0b65927a53e284de607bb6502b1dc1145d8defc7c4f7f22d157e51c21cd700",
+    "bytes": 184602
+  },
+  "frozen_sources": [
+    {
+      "path": "scripts/run_vlajepa_closed_loop.py",
+      "sha256": "6f43effd52de77348485ed3f99c0372c0983df5165ec346823b741d3e5302815",
+      "bytes": 40252
+    },
+    {
+      "path": "scripts/probe_vlajepa_int8.py",
+      "sha256": "a9d92ea008b9b766e44719c15f341555764ebb55ba37ae2e0cf266b808561ccf",
+      "bytes": 24527
+    },
+    {
+      "path": "scripts/probe_vlajepa.py",
+      "sha256": "502d4f5af68575f8cb7b8045dad3cd480f4a65309c9f1938af143f897a2ff33b",
+      "bytes": 42503
+    },
+    {
+      "path": "scripts/run.py",
+      "sha256": "950cf01a77c1acbe7b98bc18d3e7435f6591b9191dbd26f8c0da535af7bcd280",
+      "bytes": 2535
+    },
+    {
+      "path": "scripts/run_cache_study.py",
+      "sha256": "fcfe1688bcb5ad3ba4fc36afcc901bd0856a9a1a5873f55e1f37fc0d78b71068",
+      "bytes": 18950
+    },
+    {
+      "path": "scripts/run_flow_confirmation.py",
+      "sha256": "edd5be34031ee2ca52e199d3861083b971aeeb33256027ece414ca8ea30580b6",
+      "bytes": 31448
+    },
+    {
+      "path": "src/embodied_research/__init__.py",
+      "sha256": "6a75c285a4efbdb9de48fab2a22d66ceb71ff3abe311a5155c326fdff0f09ef0",
+      "bytes": 109
+    },
+    {
+      "path": "src/embodied_research/experiment.py",
+      "sha256": "da83af6ce069fc74a727f3c790bc59e7089e2bc53e4e8fe87e797219d44b3cf3",
+      "bytes": 17112
+    },
+    {
+      "path": "src/embodied_research/policies.py",
+      "sha256": "ad036be156049e9721ddf892e4e7ad8e66ee0e88c181cc66a125c0b76712f66a",
+      "bytes": 15962
+    },
+    {
+      "path": "src/embodied_research/runtime.py",
+      "sha256": "4296c85ae0060f9b6137872c6e88ed69fce49964cd1b5207da1a19c413f0b1f5",
+      "bytes": 10556
+    },
+    {
+      "path": "src/embodied_research/simulator.py",
+      "sha256": "3fa8762b03bd9dd85f426242714d3422bc19f6fc7f9d9444fd4cac4785ad95d3",
+      "bytes": 8126
+    },
+    {
+      "path": "src/embodied_research/scheduling.py",
+      "sha256": "6698253906434d6e2523b4ad3a77c18ae448872558fed341360858f6417f64ce",
+      "bytes": 15062
+    },
+    {
+      "path": "docs/VLAJEPA_CLOSED_LOOP_PROTOCOL.md",
+      "sha256": "63a1e0f5e5988a053a2e2e6c267a8087baed30c0393420ad0d3838b643bb764c",
+      "bytes": 3912
+    },
+    {
+      "path": "scripts/run_vlajepa_paged.py",
+      "sha256": "7cfb6ade9d2038812baa5403b5af4f84e79439f2672a7ca6adb49b1a74fc974f",
+      "bytes": 18241
+    },
+    {
+      "path": "scripts/vlajepa_paged_embedding.py",
+      "sha256": "238ac413d432d0807fa0b01ce9d9f25269c4a70d3857774ea1b809655a595bde",
+      "bytes": 9758
+    },
+    {
+      "path": "docs/VLAJEPA_PAGED_PROTOCOL.md",
+      "sha256": "c2c7711f693b6080e073d88388935aea27486e13a640938a457268e3eefddb32",
+      "bytes": 9290
+    },
+    {
+      "path": "scripts/run_vlajepa_compact.py",
+      "sha256": "33b6478209f314d63bf31584da5dda4ed7246170012212a89b5b165ffbc775f7",
+      "bytes": 15485
+    },
+    {
+      "path": "scripts/libero_arena_budget.py",
+      "sha256": "fb7bbb4c7169ce95b93a9a79a7046b3d14f331b5994898cf20332d55af6f6e82",
+      "bytes": 7853
+    },
+    {
+      "path": "scripts/probe_libero_arena.py",
+      "sha256": "3f8fffa016a7ea994768516acf4d47fcfa3514e007d386ea7b37a0a9a3a1d277",
+      "bytes": 15790
+    },
+    {
+      "path": "docs/VLAJEPA_COMPACT_PROTOCOL.md",
+      "sha256": "52355b75f9aa9238e75208485d520b6048ba67d808ad51a1386ae23c898e2796",
+      "bytes": 5736
+    },
+    {
+      "path": "scripts/run_vlajepa_isolated.py",
+      "sha256": "f25da0ad76846e49b887a4b01bfe72e1825a71ba6e3c194675264efa508822c2",
+      "bytes": 10805
+    },
+    {
+      "path": "docs/VLAJEPA_ISOLATED_PROTOCOL.md",
+      "sha256": "8a0772bc49398b13c38cad6de005c7ea94612d9f7c85a5a0ce934f15be166fe2",
+      "bytes": 5206
+    }
+  ],
+  "study": {
+    "planned": 4,
+    "completed": 3,
+    "successes": 3,
+    "completed_task_failures": 0,
+    "unsealed_memory_interruptions": 1,
+    "complete": false,
+    "policy_actions_in_completed_cases": 327,
+    "completed_forward_calls": 48,
+    "completed_forward_actual_nfe": 192
+  },
+  "cases": [
+    {
+      "id": "vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7",
+      "suite": "libero_spatial",
+      "status": "sealed_complete_verified",
+      "success": true,
+      "steps": 109,
+      "inference_calls": 16,
+      "actual_action_head_nfe": 64,
+      "all_300_quantized_modules_per_call": true,
+      "calls": [
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0000.json",
+            "sha256": "3ee1cc337b8844b42fcbd7762a6fa2791397bb43612b4e65d3f503e3f2be6b8d",
+            "bytes": 22354
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0000.npz",
+            "sha256": "7d4be78d36fa14e022af61fc3bbbf062c51bf8a02580075b5ccd700f9e764b39",
+            "bytes": 4852
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0001.json",
+            "sha256": "7ce522b5b0bd042136b45603e42309949e996bad9b485885fb55f87043b1b095",
+            "bytes": 22354
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0001.npz",
+            "sha256": "efb0357ca257397f4f6d79965a8d509d4bba067bc3c387fbd97e1cb6b8489445",
+            "bytes": 4854
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0002.json",
+            "sha256": "06c49545625300fb75158c78642e83847547356455f92b3340adaf8c3f4c6570",
+            "bytes": 22354
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0002.npz",
+            "sha256": "a9c45868261d58850a682464fb91a31868b0af5ea0f53744ff68ce97c96fad7f",
+            "bytes": 4856
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0003.json",
+            "sha256": "80232e39a93e948d6144d5346de26e0ce3591375e6f2de8d1665302b46041b39",
+            "bytes": 22354
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0003.npz",
+            "sha256": "05292244370a5b0a0d35951d97caacb22c40e28140be09455e9644651aa967a8",
+            "bytes": 4854
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0004.json",
+            "sha256": "3b54ea0e53bdfdb5b4d8dcbfb7e11c21ab30d07f0cbaddf37cbc6eff840a3461",
+            "bytes": 22356
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0004.npz",
+            "sha256": "1ceb276dd0f8add0bf99749f5de486cf1535bf2b10a506d8ffe251200d844a4b",
+            "bytes": 4857
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0005.json",
+            "sha256": "6d6a221ed61ec8e373455328146f4c7571c09341121c81cb47c3611ebb271c8f",
+            "bytes": 22354
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0005.npz",
+            "sha256": "762343e1ffaec4a62f9db7887c6b54d9e3a42f3d75e996de60f0bd7ecd9e8b58",
+            "bytes": 4851
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0006.json",
+            "sha256": "5e8c01e3e47f66227a75c5f005409ccf8a59ba3edd285d3e2f2ab29abba76ee5",
+            "bytes": 22354
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0006.npz",
+            "sha256": "7eff6faf0b3ac3dcb19ab70275e85d1d7677ced8b3857991e1964bb1a284a054",
+            "bytes": 4857
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0007.json",
+            "sha256": "7f52b23e64631912047e7d3d259bef0aa6e1b04aee7d5bada8e6feff8bdfab7c",
+            "bytes": 22355
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0007.npz",
+            "sha256": "5aff9a2b6145ace1f30cd97d596a87fae2258debf986af4b8a6266d94773b5a7",
+            "bytes": 4858
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0008.json",
+            "sha256": "9ab8927f8749637551279ab03e6a9407661471c4d04dd1dfa0d986f029180d28",
+            "bytes": 22354
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0008.npz",
+            "sha256": "ed9fd9682f9c0ea4aad6509330c75fb5e0c60c22428e835bc1d37b3bac2e264b",
+            "bytes": 4858
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0009.json",
+            "sha256": "9e768a9a818d207e18e0b0609b8043a4e5a4491d816b00f19a722666d560a464",
+            "bytes": 22355
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0009.npz",
+            "sha256": "075afadedcc97a8a125b3f0a367cf6f22092821a3c3816a5560f4ca86a83e0f4",
+            "bytes": 4854
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0010.json",
+            "sha256": "a3e0730b580a2ed7c9452b4554a08ca381b24f8d8f7d54c1e1ca03795cdbf208",
+            "bytes": 22355
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0010.npz",
+            "sha256": "087ab21d212e665f103f791664fd2046cbead11bdc0053158aad065f397b196b",
+            "bytes": 4859
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0011.json",
+            "sha256": "8645a22a74a06653f5ccbb5668f22b5a4320c78af8846612e2e39c0e8139f9d1",
+            "bytes": 22357
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0011.npz",
+            "sha256": "8e041b154c6fa2ec55e3fb4a98ca9ff352e0f2d1eb25c8c55675d5177aee509c",
+            "bytes": 4858
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0012.json",
+            "sha256": "30821d97c80e2312b89c76af6b46bc576c0465e5081dd2623d73f2ac41db99af",
+            "bytes": 22354
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0012.npz",
+            "sha256": "f2e991b8d8457630e241933cb9163356ff794c55e25c84538bbea38b248718ee",
+            "bytes": 4855
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0013.json",
+            "sha256": "2beed75ca20e51686ab64703f684bf9147c1ac3727cb36522a5e85620149a916",
+            "bytes": 22357
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0013.npz",
+            "sha256": "152097676e982f6ef6c09b1d452d8d03ef86210ebda0383584bb6270bebb6f4c",
+            "bytes": 4861
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0014.json",
+            "sha256": "b6323b3c16e76a6d12b4d2d646f368b492514328398936fb1cd68efffcb641e1",
+            "bytes": 22356
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0014.npz",
+            "sha256": "1331300f9fe711facc9afd1f7229000657fec44d84be36ffdc29e414f89fab8f",
+            "bytes": 4863
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0015.json",
+            "sha256": "7b65bce36195738e739eaddfdaf6ff5ab1ca4d586e0c1f03860731892aa0a2ef",
+            "bytes": 22356
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0015.npz",
+            "sha256": "557834a30d6cf118e88eeb131f641d14f89ca6bb8eb39ce57925df6e4f0d8bdf",
+            "bytes": 4858
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        }
+      ],
+      "arena_rows": 110,
+      "maximum_used_arena_bytes": 9453556,
+      "all_data_and_native_warning_counts_zero": true,
+      "receipt_all_hashes_match": true,
+      "executed_action_state_and_current_observation_trace_verified": true,
+      "worker": {
+        "path": "outputs/frontier/vlajepa_isolated_closed_loop/workers/worker_0001.json",
+        "sha256": "6dc2fafc508af2cc73a8141d9f8408155ca987e287251546e9e7a8966673415e",
+        "status": "complete",
+        "pid": 30096,
+        "process_create_time": 1792122087.426254,
+        "run_records": [
+          {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/runs/run_0001.json",
+            "sha256": "6ca747135520c69c10ece7e84c81676ee41031e285e5b8614fd80ddc53c6db0f"
+          }
+        ]
+      },
+      "files": {
+        "arena_initialization.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/arena_initialization.json",
+          "sha256": "6d8bf513153ab345b1bffe5373d38a5e0e3bb24ddd3cd230940aa4305e4077f2",
+          "bytes": 4740
+        },
+        "arena_steps.jsonl": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/arena_steps.jsonl",
+          "sha256": "5c18c1b85c98e062f9571b68c160d2d3ca5b88cce09dde5a2326828b4491a73b",
+          "bytes": 14740
+        },
+        "attempt.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/attempt.json",
+          "sha256": "0023dbfc307ac721ac091ee9d9a40eb13b78f6da5915dd2d696ced5e4aa5f9b1",
+          "bytes": 735
+        },
+        "call_0000.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0000.json",
+          "sha256": "3ee1cc337b8844b42fcbd7762a6fa2791397bb43612b4e65d3f503e3f2be6b8d",
+          "bytes": 22354
+        },
+        "call_0000.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0000.npz",
+          "sha256": "7d4be78d36fa14e022af61fc3bbbf062c51bf8a02580075b5ccd700f9e764b39",
+          "bytes": 4852
+        },
+        "call_0001.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0001.json",
+          "sha256": "7ce522b5b0bd042136b45603e42309949e996bad9b485885fb55f87043b1b095",
+          "bytes": 22354
+        },
+        "call_0001.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0001.npz",
+          "sha256": "efb0357ca257397f4f6d79965a8d509d4bba067bc3c387fbd97e1cb6b8489445",
+          "bytes": 4854
+        },
+        "call_0002.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0002.json",
+          "sha256": "06c49545625300fb75158c78642e83847547356455f92b3340adaf8c3f4c6570",
+          "bytes": 22354
+        },
+        "call_0002.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0002.npz",
+          "sha256": "a9c45868261d58850a682464fb91a31868b0af5ea0f53744ff68ce97c96fad7f",
+          "bytes": 4856
+        },
+        "call_0003.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0003.json",
+          "sha256": "80232e39a93e948d6144d5346de26e0ce3591375e6f2de8d1665302b46041b39",
+          "bytes": 22354
+        },
+        "call_0003.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0003.npz",
+          "sha256": "05292244370a5b0a0d35951d97caacb22c40e28140be09455e9644651aa967a8",
+          "bytes": 4854
+        },
+        "call_0004.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0004.json",
+          "sha256": "3b54ea0e53bdfdb5b4d8dcbfb7e11c21ab30d07f0cbaddf37cbc6eff840a3461",
+          "bytes": 22356
+        },
+        "call_0004.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0004.npz",
+          "sha256": "1ceb276dd0f8add0bf99749f5de486cf1535bf2b10a506d8ffe251200d844a4b",
+          "bytes": 4857
+        },
+        "call_0005.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0005.json",
+          "sha256": "6d6a221ed61ec8e373455328146f4c7571c09341121c81cb47c3611ebb271c8f",
+          "bytes": 22354
+        },
+        "call_0005.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0005.npz",
+          "sha256": "762343e1ffaec4a62f9db7887c6b54d9e3a42f3d75e996de60f0bd7ecd9e8b58",
+          "bytes": 4851
+        },
+        "call_0006.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0006.json",
+          "sha256": "5e8c01e3e47f66227a75c5f005409ccf8a59ba3edd285d3e2f2ab29abba76ee5",
+          "bytes": 22354
+        },
+        "call_0006.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0006.npz",
+          "sha256": "7eff6faf0b3ac3dcb19ab70275e85d1d7677ced8b3857991e1964bb1a284a054",
+          "bytes": 4857
+        },
+        "call_0007.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0007.json",
+          "sha256": "7f52b23e64631912047e7d3d259bef0aa6e1b04aee7d5bada8e6feff8bdfab7c",
+          "bytes": 22355
+        },
+        "call_0007.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0007.npz",
+          "sha256": "5aff9a2b6145ace1f30cd97d596a87fae2258debf986af4b8a6266d94773b5a7",
+          "bytes": 4858
+        },
+        "call_0008.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0008.json",
+          "sha256": "9ab8927f8749637551279ab03e6a9407661471c4d04dd1dfa0d986f029180d28",
+          "bytes": 22354
+        },
+        "call_0008.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0008.npz",
+          "sha256": "ed9fd9682f9c0ea4aad6509330c75fb5e0c60c22428e835bc1d37b3bac2e264b",
+          "bytes": 4858
+        },
+        "call_0009.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0009.json",
+          "sha256": "9e768a9a818d207e18e0b0609b8043a4e5a4491d816b00f19a722666d560a464",
+          "bytes": 22355
+        },
+        "call_0009.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0009.npz",
+          "sha256": "075afadedcc97a8a125b3f0a367cf6f22092821a3c3816a5560f4ca86a83e0f4",
+          "bytes": 4854
+        },
+        "call_0010.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0010.json",
+          "sha256": "a3e0730b580a2ed7c9452b4554a08ca381b24f8d8f7d54c1e1ca03795cdbf208",
+          "bytes": 22355
+        },
+        "call_0010.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0010.npz",
+          "sha256": "087ab21d212e665f103f791664fd2046cbead11bdc0053158aad065f397b196b",
+          "bytes": 4859
+        },
+        "call_0011.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0011.json",
+          "sha256": "8645a22a74a06653f5ccbb5668f22b5a4320c78af8846612e2e39c0e8139f9d1",
+          "bytes": 22357
+        },
+        "call_0011.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0011.npz",
+          "sha256": "8e041b154c6fa2ec55e3fb4a98ca9ff352e0f2d1eb25c8c55675d5177aee509c",
+          "bytes": 4858
+        },
+        "call_0012.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0012.json",
+          "sha256": "30821d97c80e2312b89c76af6b46bc576c0465e5081dd2623d73f2ac41db99af",
+          "bytes": 22354
+        },
+        "call_0012.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0012.npz",
+          "sha256": "f2e991b8d8457630e241933cb9163356ff794c55e25c84538bbea38b248718ee",
+          "bytes": 4855
+        },
+        "call_0013.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0013.json",
+          "sha256": "2beed75ca20e51686ab64703f684bf9147c1ac3727cb36522a5e85620149a916",
+          "bytes": 22357
+        },
+        "call_0013.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0013.npz",
+          "sha256": "152097676e982f6ef6c09b1d452d8d03ef86210ebda0383584bb6270bebb6f4c",
+          "bytes": 4861
+        },
+        "call_0014.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0014.json",
+          "sha256": "b6323b3c16e76a6d12b4d2d646f368b492514328398936fb1cd68efffcb641e1",
+          "bytes": 22356
+        },
+        "call_0014.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0014.npz",
+          "sha256": "1331300f9fe711facc9afd1f7229000657fec44d84be36ffdc29e414f89fab8f",
+          "bytes": 4863
+        },
+        "call_0015.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0015.json",
+          "sha256": "7b65bce36195738e739eaddfdaf6ff5ab1ca4d586e0c1f03860731892aa0a2ef",
+          "bytes": 22356
+        },
+        "call_0015.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/call_0015.npz",
+          "sha256": "557834a30d6cf118e88eeb131f641d14f89ca6bb8eb39ce57925df6e4f0d8bdf",
+          "bytes": 4858
+        },
+        "calls.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/calls.json",
+          "sha256": "358711e373ac11455cc189566d790981d3743b24140c55872b3ccf67a48f18d0",
+          "bytes": 2379
+        },
+        "executed_steps.jsonl": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/executed_steps.jsonl",
+          "sha256": "76393cc1e77e1215ab04b083961736d9d91bb1ba7d8ab4aa4895df023ca16760",
+          "bytes": 68681
+        },
+        "final.png": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/final.png",
+          "sha256": "46d9a7bd8bc4a1ab843fb35dac5257e21e853ef2bb29c04b4ed6b61a2dbc0d01",
+          "bytes": 121117
+        },
+        "initial.png": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/initial.png",
+          "sha256": "3c38faf28826242f797f2a7b9b134f76cfaf7b2d0d9febf6a15a7b0f13029db5",
+          "bytes": 118775
+        },
+        "initial_wrist.png": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/initial_wrist.png",
+          "sha256": "b9c10e8043f3b4f2bcb1ed041eab1e0882969b8a19a04c98468e2dfcaea1f82c",
+          "bytes": 96655
+        },
+        "receipt.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/receipt.json",
+          "sha256": "7db03f867dbdbc69f6b00014efb624a7c61cc174ad094af68aa1008c259c2a1f",
+          "bytes": 3976
+        },
+        "result.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/result.json",
+          "sha256": "8e7d56a745661a6d5b0902d3228b5c6ae54ca4df2238a2089e5f19dfe54ba2b8",
+          "bytes": 65053
+        },
+        "rollout.gif": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/rollout.gif",
+          "sha256": "5d0344c73cfc9c5eea92ac2169660cdd633e36b90d372a4c6d640c5a990f0e6b",
+          "bytes": 2157576
+        },
+        "trajectory.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_spatial__1__41__clean__native4_chunk7/trajectory.npz",
+          "sha256": "5046ae22016534d968e11a0889d5d62f7e4ad049289b50b2a002e20912d5c61f",
+          "bytes": 9046
+        }
+      }
+    },
+    {
+      "id": "vlajepa_isolated__libero_object__1__41__clean__native4_chunk7",
+      "suite": "libero_object",
+      "status": "sealed_complete_verified",
+      "success": true,
+      "steps": 128,
+      "inference_calls": 19,
+      "actual_action_head_nfe": 76,
+      "all_300_quantized_modules_per_call": true,
+      "calls": [
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0000.json",
+            "sha256": "fabcc549ba09672f8cb4b0f177ff84179cbc5f1b9f159bdfeb7a6dc680d4e860",
+            "bytes": 22334
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0000.npz",
+            "sha256": "f06f4badfc51530f11508957cab82b6e767f69e2df874bb8e6dde3714b605a07",
+            "bytes": 4854
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0001.json",
+            "sha256": "4cb8d17f5dba51cb93119243eb29bc228f77dcd1792c9600159e8ef3d42524f4",
+            "bytes": 22336
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0001.npz",
+            "sha256": "76e60a76258a15a2a1dff43be058682d97d4b2f07fcaec4d90cdc6f7f573558e",
+            "bytes": 4855
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0002.json",
+            "sha256": "9eb5a42a44efa0c13bbe5b3c395991d1199052dac3d2ab980587f0252bbd5046",
+            "bytes": 22338
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0002.npz",
+            "sha256": "81149b85bbec7ce4f48f3ba015cd77cdb3e54318a4f19066d57dda795bcafd91",
+            "bytes": 4854
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0003.json",
+            "sha256": "c398d96e39d3a148fc630fae219c89076dd7942d5270a432172aad310cdb2cfd",
+            "bytes": 22334
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0003.npz",
+            "sha256": "a981b2ae314ab23d8f8757eb58634fb84888c62f3c3c3dfbfef4b05fa5090bbc",
+            "bytes": 4857
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0004.json",
+            "sha256": "19e1a8c5ba7aebf2f1fe89d9ed554c59ceb7f140ce6ceb5ab8e05579632a1ac1",
+            "bytes": 22339
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0004.npz",
+            "sha256": "9acf599727d4527ed68e8c87d7a5fbe1bd15ec3ccca3598a802a3e73c79176da",
+            "bytes": 4858
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0005.json",
+            "sha256": "f6e76fb5fdc70272f6cb23f86909fdc725fbc484e35104eedc42128731890e4c",
+            "bytes": 22337
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0005.npz",
+            "sha256": "1014f10539b4e570c09a967c1f1a3ca9b26f53eac0fe81803ced6cd5d273ee86",
+            "bytes": 4852
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0006.json",
+            "sha256": "3dfcae52862595f31fd6d2139ca6cde6f41744962be8152cc29bb8f80090cea6",
+            "bytes": 22337
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0006.npz",
+            "sha256": "a92dc36538972c0fa8fb5e98b762ced048a496df23111e5d34994c6e11740829",
+            "bytes": 4856
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0007.json",
+            "sha256": "db2c685908b45b544b9034341628957afb0a2b973fbb3c353dd122bc575c22a2",
+            "bytes": 22337
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0007.npz",
+            "sha256": "b23439501a9e9c005627c32f689f8dd0b046ff1d6301210bdccbd4e205cd6767",
+            "bytes": 4855
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0008.json",
+            "sha256": "541668780492487e3d5be54ad598cdf2883f1ba660a42eb1edf73e89a38af2a6",
+            "bytes": 22338
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0008.npz",
+            "sha256": "5e8e74adddb4162c9cf869a5988f53e6838a944318d02013512dab2011a2089d",
+            "bytes": 4854
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0009.json",
+            "sha256": "13bb396067e8c62ad47142417e07b869770b27791c723dc57edbd2b09b316921",
+            "bytes": 22336
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0009.npz",
+            "sha256": "e50d8b5ad446941a2feb5f8466ae1bdb60c0e81fa26b63b488b8048570c7c7f0",
+            "bytes": 4852
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0010.json",
+            "sha256": "686183ec36a8a0ca0579348043b0270685c4d59847e1e67a789df00568d540ea",
+            "bytes": 22338
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0010.npz",
+            "sha256": "aa4d4c765523709fc26e6a2a0b3ded01b96ea60835b856cab3d8d5d031db5ecd",
+            "bytes": 4862
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0011.json",
+            "sha256": "6e1f72752bbd667f81c53c2baba2328c9ef7ec5aacd4ec6ba981f66838e920be",
+            "bytes": 22337
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0011.npz",
+            "sha256": "eaf7b7f71c59382fc8b9fec1e80a8a26eb05fdbc13fa0f82601831b3eb57065c",
+            "bytes": 4854
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0012.json",
+            "sha256": "143c4641bdb2619b77f138395d3a2639f068631109f69f9153fde52879b2d4f2",
+            "bytes": 22337
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0012.npz",
+            "sha256": "a569b743bae7a28ef4cdf7ba2b71a678d41eeef09867368d372f3e9b180e79b2",
+            "bytes": 4859
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0013.json",
+            "sha256": "74c6598cae635f7e85868d39f6e8f2a606d67463321b2ef682bf7da97bd05e55",
+            "bytes": 22338
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0013.npz",
+            "sha256": "1ee90c43944a2b5739b715958490d246dc3c08f74b37731143fb102163962cbc",
+            "bytes": 4862
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0014.json",
+            "sha256": "ca346a345cbf9a95b5f8881ccb4dccdb5665d0f71397d4c22e7b5c6b323de56d",
+            "bytes": 22337
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0014.npz",
+            "sha256": "9887e43b226ea1e793eedb4928a6a8b4a8ed5300080927303f7d75b4065c557a",
+            "bytes": 4858
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0015.json",
+            "sha256": "b01aba3128dbaec6a6d022097fe8d1647cbf82055566bb45d0869a634b40ccdf",
+            "bytes": 22339
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0015.npz",
+            "sha256": "6508cf85fe334637e6342a773c6e1c6b5c1f15ca3cc279a515a353cc47ea8d9a",
+            "bytes": 4858
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0016.json",
+            "sha256": "6c6e339bf8d3856a41e03820511dd0ac3a3b6408da2c719eb538a4dbaaefec06",
+            "bytes": 22338
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0016.npz",
+            "sha256": "31c50a8a4e61615cabf94a6087ebe555f2267caddf3d19e204f21b85a13f56a5",
+            "bytes": 4856
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0017.json",
+            "sha256": "fb1c54f9066e6504777a3700ac330d55ccac736ac30676fbdbbd942eca71c8a4",
+            "bytes": 22339
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0017.npz",
+            "sha256": "0eb70426515e08cef84c744502e62d282da707195612e186529f591f798ee39d",
+            "bytes": 4854
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0018.json",
+            "sha256": "cee5e71931a6f9e63c35e380dae29c33e38c16f7892f82a664973025edc0d865",
+            "bytes": 22339
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0018.npz",
+            "sha256": "84fe1387be67cdb8def506a08e2ac77a6ddf9b33acc486a7490169043e1a26e5",
+            "bytes": 4857
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        }
+      ],
+      "arena_rows": 129,
+      "maximum_used_arena_bytes": 4828844,
+      "all_data_and_native_warning_counts_zero": true,
+      "receipt_all_hashes_match": true,
+      "executed_action_state_and_current_observation_trace_verified": true,
+      "worker": {
+        "path": "outputs/frontier/vlajepa_isolated_closed_loop/workers/worker_0002.json",
+        "sha256": "84068769b16973146a96c25ca61a3413eaea8341027e8e78694a48280fcc55c5",
+        "status": "complete",
+        "pid": 23280,
+        "process_create_time": 1792122337.249447,
+        "run_records": [
+          {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/runs/run_0002.json",
+            "sha256": "1afde8698bd31b1beab32aa17d70e87ad4c945e8a77fc4790599725fa2833816"
+          }
+        ]
+      },
+      "files": {
+        "arena_initialization.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/arena_initialization.json",
+          "sha256": "0bc9341a8925d6dae449aa3c550cdae3bd35ab99d84fd724c1f5a2e383def6a0",
+          "bytes": 4734
+        },
+        "arena_steps.jsonl": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/arena_steps.jsonl",
+          "sha256": "6cf5b5708271ba7cb53d6a26a183f70e851d032680bba2785fc525dfaeca4946",
+          "bytes": 17302
+        },
+        "attempt.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/attempt.json",
+          "sha256": "91bd2b49e13d8d47840f527eb0dbc014d7b2ac685f1f2acf86627e6c0af919c3",
+          "bytes": 733
+        },
+        "call_0000.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0000.json",
+          "sha256": "fabcc549ba09672f8cb4b0f177ff84179cbc5f1b9f159bdfeb7a6dc680d4e860",
+          "bytes": 22334
+        },
+        "call_0000.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0000.npz",
+          "sha256": "f06f4badfc51530f11508957cab82b6e767f69e2df874bb8e6dde3714b605a07",
+          "bytes": 4854
+        },
+        "call_0001.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0001.json",
+          "sha256": "4cb8d17f5dba51cb93119243eb29bc228f77dcd1792c9600159e8ef3d42524f4",
+          "bytes": 22336
+        },
+        "call_0001.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0001.npz",
+          "sha256": "76e60a76258a15a2a1dff43be058682d97d4b2f07fcaec4d90cdc6f7f573558e",
+          "bytes": 4855
+        },
+        "call_0002.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0002.json",
+          "sha256": "9eb5a42a44efa0c13bbe5b3c395991d1199052dac3d2ab980587f0252bbd5046",
+          "bytes": 22338
+        },
+        "call_0002.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0002.npz",
+          "sha256": "81149b85bbec7ce4f48f3ba015cd77cdb3e54318a4f19066d57dda795bcafd91",
+          "bytes": 4854
+        },
+        "call_0003.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0003.json",
+          "sha256": "c398d96e39d3a148fc630fae219c89076dd7942d5270a432172aad310cdb2cfd",
+          "bytes": 22334
+        },
+        "call_0003.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0003.npz",
+          "sha256": "a981b2ae314ab23d8f8757eb58634fb84888c62f3c3c3dfbfef4b05fa5090bbc",
+          "bytes": 4857
+        },
+        "call_0004.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0004.json",
+          "sha256": "19e1a8c5ba7aebf2f1fe89d9ed554c59ceb7f140ce6ceb5ab8e05579632a1ac1",
+          "bytes": 22339
+        },
+        "call_0004.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0004.npz",
+          "sha256": "9acf599727d4527ed68e8c87d7a5fbe1bd15ec3ccca3598a802a3e73c79176da",
+          "bytes": 4858
+        },
+        "call_0005.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0005.json",
+          "sha256": "f6e76fb5fdc70272f6cb23f86909fdc725fbc484e35104eedc42128731890e4c",
+          "bytes": 22337
+        },
+        "call_0005.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0005.npz",
+          "sha256": "1014f10539b4e570c09a967c1f1a3ca9b26f53eac0fe81803ced6cd5d273ee86",
+          "bytes": 4852
+        },
+        "call_0006.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0006.json",
+          "sha256": "3dfcae52862595f31fd6d2139ca6cde6f41744962be8152cc29bb8f80090cea6",
+          "bytes": 22337
+        },
+        "call_0006.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0006.npz",
+          "sha256": "a92dc36538972c0fa8fb5e98b762ced048a496df23111e5d34994c6e11740829",
+          "bytes": 4856
+        },
+        "call_0007.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0007.json",
+          "sha256": "db2c685908b45b544b9034341628957afb0a2b973fbb3c353dd122bc575c22a2",
+          "bytes": 22337
+        },
+        "call_0007.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0007.npz",
+          "sha256": "b23439501a9e9c005627c32f689f8dd0b046ff1d6301210bdccbd4e205cd6767",
+          "bytes": 4855
+        },
+        "call_0008.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0008.json",
+          "sha256": "541668780492487e3d5be54ad598cdf2883f1ba660a42eb1edf73e89a38af2a6",
+          "bytes": 22338
+        },
+        "call_0008.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0008.npz",
+          "sha256": "5e8e74adddb4162c9cf869a5988f53e6838a944318d02013512dab2011a2089d",
+          "bytes": 4854
+        },
+        "call_0009.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0009.json",
+          "sha256": "13bb396067e8c62ad47142417e07b869770b27791c723dc57edbd2b09b316921",
+          "bytes": 22336
+        },
+        "call_0009.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0009.npz",
+          "sha256": "e50d8b5ad446941a2feb5f8466ae1bdb60c0e81fa26b63b488b8048570c7c7f0",
+          "bytes": 4852
+        },
+        "call_0010.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0010.json",
+          "sha256": "686183ec36a8a0ca0579348043b0270685c4d59847e1e67a789df00568d540ea",
+          "bytes": 22338
+        },
+        "call_0010.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0010.npz",
+          "sha256": "aa4d4c765523709fc26e6a2a0b3ded01b96ea60835b856cab3d8d5d031db5ecd",
+          "bytes": 4862
+        },
+        "call_0011.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0011.json",
+          "sha256": "6e1f72752bbd667f81c53c2baba2328c9ef7ec5aacd4ec6ba981f66838e920be",
+          "bytes": 22337
+        },
+        "call_0011.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0011.npz",
+          "sha256": "eaf7b7f71c59382fc8b9fec1e80a8a26eb05fdbc13fa0f82601831b3eb57065c",
+          "bytes": 4854
+        },
+        "call_0012.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0012.json",
+          "sha256": "143c4641bdb2619b77f138395d3a2639f068631109f69f9153fde52879b2d4f2",
+          "bytes": 22337
+        },
+        "call_0012.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0012.npz",
+          "sha256": "a569b743bae7a28ef4cdf7ba2b71a678d41eeef09867368d372f3e9b180e79b2",
+          "bytes": 4859
+        },
+        "call_0013.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0013.json",
+          "sha256": "74c6598cae635f7e85868d39f6e8f2a606d67463321b2ef682bf7da97bd05e55",
+          "bytes": 22338
+        },
+        "call_0013.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0013.npz",
+          "sha256": "1ee90c43944a2b5739b715958490d246dc3c08f74b37731143fb102163962cbc",
+          "bytes": 4862
+        },
+        "call_0014.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0014.json",
+          "sha256": "ca346a345cbf9a95b5f8881ccb4dccdb5665d0f71397d4c22e7b5c6b323de56d",
+          "bytes": 22337
+        },
+        "call_0014.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0014.npz",
+          "sha256": "9887e43b226ea1e793eedb4928a6a8b4a8ed5300080927303f7d75b4065c557a",
+          "bytes": 4858
+        },
+        "call_0015.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0015.json",
+          "sha256": "b01aba3128dbaec6a6d022097fe8d1647cbf82055566bb45d0869a634b40ccdf",
+          "bytes": 22339
+        },
+        "call_0015.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0015.npz",
+          "sha256": "6508cf85fe334637e6342a773c6e1c6b5c1f15ca3cc279a515a353cc47ea8d9a",
+          "bytes": 4858
+        },
+        "call_0016.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0016.json",
+          "sha256": "6c6e339bf8d3856a41e03820511dd0ac3a3b6408da2c719eb538a4dbaaefec06",
+          "bytes": 22338
+        },
+        "call_0016.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0016.npz",
+          "sha256": "31c50a8a4e61615cabf94a6087ebe555f2267caddf3d19e204f21b85a13f56a5",
+          "bytes": 4856
+        },
+        "call_0017.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0017.json",
+          "sha256": "fb1c54f9066e6504777a3700ac330d55ccac736ac30676fbdbbd942eca71c8a4",
+          "bytes": 22339
+        },
+        "call_0017.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0017.npz",
+          "sha256": "0eb70426515e08cef84c744502e62d282da707195612e186529f591f798ee39d",
+          "bytes": 4854
+        },
+        "call_0018.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0018.json",
+          "sha256": "cee5e71931a6f9e63c35e380dae29c33e38c16f7892f82a664973025edc0d865",
+          "bytes": 22339
+        },
+        "call_0018.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/call_0018.npz",
+          "sha256": "84fe1387be67cdb8def506a08e2ac77a6ddf9b33acc486a7490169043e1a26e5",
+          "bytes": 4857
+        },
+        "calls.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/calls.json",
+          "sha256": "589250841bdf9bdfa5ba70851f578029f56d6203221f0023314dc6a38c84672e",
+          "bytes": 2826
+        },
+        "executed_steps.jsonl": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/executed_steps.jsonl",
+          "sha256": "b26b4bcda024d9c5747693dfe5fc0d00fd20fa834f5514d1d0706f9fd69bb12b",
+          "bytes": 81047
+        },
+        "final.png": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/final.png",
+          "sha256": "02f06de32c7e91d717bafd67d16c53b723f1fa195cb47e534b5f7b92395155c5",
+          "bytes": 158004
+        },
+        "initial.png": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/initial.png",
+          "sha256": "1ecba4fb578f608bf601b020de569ab5ed18269b8117ef07ce0daf0d6afa0815",
+          "bytes": 155378
+        },
+        "initial_wrist.png": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/initial_wrist.png",
+          "sha256": "bb60c848d7b2205770492d5d8fe5ca75798389a818528924c5dd23dd0e9d7be0",
+          "bytes": 114359
+        },
+        "receipt.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/receipt.json",
+          "sha256": "54a0413899140f68dd3468d6d73966162cd60677c6ed9ad3d232bd50ca8d0de2",
+          "bytes": 4519
+        },
+        "result.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/result.json",
+          "sha256": "cad5de99d78c16fab249137c3301bcec52de8ceff1c5005b549af6126063cfba",
+          "bytes": 71907
+        },
+        "rollout.gif": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/rollout.gif",
+          "sha256": "70471a2778aeda131620c9291f43b8bd367eaab2efa957a20685abfa9bf6c6ca",
+          "bytes": 3114684
+        },
+        "trajectory.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_object__1__41__clean__native4_chunk7/trajectory.npz",
+          "sha256": "a20c4bae680538b0ecc200ef7b6c8c0888b6a52bb591fe65dc533e9bf3d5bf3f",
+          "bytes": 10191
+        }
+      }
+    },
+    {
+      "id": "vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7",
+      "suite": "libero_goal",
+      "status": "sealed_complete_verified",
+      "success": true,
+      "steps": 90,
+      "inference_calls": 13,
+      "actual_action_head_nfe": 52,
+      "all_300_quantized_modules_per_call": true,
+      "calls": [
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0000.json",
+            "sha256": "996c63ed2b070efebe071d819a22e5852f7e9b3c27365369191741cae5e71258",
+            "bytes": 22310
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0000.npz",
+            "sha256": "974d4a8630e1a4acf16c285df1e1406322202237a5247af30eadf308437b0ad9",
+            "bytes": 4853
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0001.json",
+            "sha256": "611363c5f0e7fe1bf96ad1ffc74f990457ac3bd345f2b39b744ae50c4da939d7",
+            "bytes": 22311
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0001.npz",
+            "sha256": "f5fced247e0c7ff51a3cc3964caac1ab6757e714ad82bd910dbeaae2dff0d229",
+            "bytes": 4855
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0002.json",
+            "sha256": "b09f56e1c97ee08f3f73a7ba7ac0665b7a517ada7f45794c49149699020f3814",
+            "bytes": 22310
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0002.npz",
+            "sha256": "0354dc1747a8929d69ee0dcec7d2b1546a39a62ac745c4893a457e7af80d030a",
+            "bytes": 4855
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0003.json",
+            "sha256": "42fa873fb111a3c03144f61a1bd74b867c2f4855808087a921254805cd55faa8",
+            "bytes": 22311
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0003.npz",
+            "sha256": "c9a30b1eeb30ad9a1451c9109654e44bce370143a18a770b984a2bd2edc176af",
+            "bytes": 4858
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0004.json",
+            "sha256": "798d02b861d212d8ec2f7d148b7e024b1c97c1b9928f5e18146943db0110d5ad",
+            "bytes": 22313
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0004.npz",
+            "sha256": "6986d06a66334aeada039ee59796acf2bef4cc3f2a6538add733ed4ac53ccfc9",
+            "bytes": 4857
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0005.json",
+            "sha256": "25d95b6a1e767deaa03fb83abc1edba3f44165c948ad04493083bf3d7735ea5c",
+            "bytes": 22313
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0005.npz",
+            "sha256": "8d3d34eb1d361787c86e0e6e9726fe639722f431a14aef9a14302bd53db7cb9b",
+            "bytes": 4857
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0006.json",
+            "sha256": "aac71c3c8deab788a877d277c873dd7a7476d478a06fba84dea14d2caf9741ff",
+            "bytes": 22311
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0006.npz",
+            "sha256": "505a153a744e1175eb88f4975b9751d767bd01457b154a2fd8d6447e5dec3d33",
+            "bytes": 4850
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0007.json",
+            "sha256": "340a2069964739061e522d4aa965600a0118af6635d57c972dbf9f3e60bfca57",
+            "bytes": 22311
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0007.npz",
+            "sha256": "672ede7b21133c55c32c2381037b3c18411ada839e8140e48596407fbef6ce07",
+            "bytes": 4850
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0008.json",
+            "sha256": "1c3d65f1f49dc769faad4eff32fb07e0cc8b7761ea0490c78232e6ba59ec3498",
+            "bytes": 22312
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0008.npz",
+            "sha256": "66bc29cc3e1f8f6677be1b30924c5c261ecba6c6e0f41705b25ab95fe5b1fcdd",
+            "bytes": 4857
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0009.json",
+            "sha256": "11b9bc30480bac126d2ec392cc65ef055733d06223ea923b6321c8ce20f53a42",
+            "bytes": 22311
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0009.npz",
+            "sha256": "a7c02012ba26c618b2ecf23448e40ccd730d0eb8af225a90221d56621c9a26c0",
+            "bytes": 4857
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0010.json",
+            "sha256": "d71cb62dd79cc7bf88b7268929720f9f2a82017ef8ad3d7c5f449d29d4a78215",
+            "bytes": 22313
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0010.npz",
+            "sha256": "7d00047024cd767e2455c548e94fc029c24d4637c31d81b20987896f1206fb9f",
+            "bytes": 4862
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0011.json",
+            "sha256": "8d7b179b44d270a999a51a4a0ee4b75659471fad614efc2596bfabfa4cf90122",
+            "bytes": 22312
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0011.npz",
+            "sha256": "a15491d12c3015dfb437542e6694a2009701c252a1bceef35834ba8d141b4af8",
+            "bytes": 4859
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        },
+        {
+          "call": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0012.json",
+            "sha256": "272ec9b7cd32e51eb0d23d3049256247925df770dcb2f9280db0eb91311d2135",
+            "bytes": 22313
+          },
+          "arrays": {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0012.npz",
+            "sha256": "57fa661f7bae9a48a4600204e438bca4d0f2cc28eebc431f8ea8a776eb36e4ab",
+            "bytes": 4866
+          },
+          "nfe": 4,
+          "quantized_module_count": 300
+        }
+      ],
+      "arena_rows": 91,
+      "maximum_used_arena_bytes": 5030332,
+      "all_data_and_native_warning_counts_zero": true,
+      "receipt_all_hashes_match": true,
+      "executed_action_state_and_current_observation_trace_verified": true,
+      "worker": {
+        "path": "outputs/frontier/vlajepa_isolated_closed_loop/workers/worker_0003.json",
+        "sha256": "1261287712d6dc5e3a59b9ab35fd996e720a96d2285b48e81baf6c3e4a15f2f3",
+        "status": "complete",
+        "pid": 19984,
+        "process_create_time": 1792122568.0667815,
+        "run_records": [
+          {
+            "path": "outputs/frontier/vlajepa_isolated_closed_loop/runs/run_0003.json",
+            "sha256": "34c2d00f9c8bc93e03bc4119dd0928c0efa1480e8b070c17a17d2377d30f3652"
+          }
+        ]
+      },
+      "files": {
+        "arena_initialization.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/arena_initialization.json",
+          "sha256": "8f32528fe728b190d69d0fd9ce59654a1ada54b85a0f73932ba7ac8f65ab27f4",
+          "bytes": 4734
+        },
+        "arena_steps.jsonl": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/arena_steps.jsonl",
+          "sha256": "376dd317816a88f8b69257e1aff14f5082b5cddb4f3973914d452bea9b01a491",
+          "bytes": 12172
+        },
+        "attempt.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/attempt.json",
+          "sha256": "6cb5e95834df5b51d1ad707d2f588b5396dccdbf502430bf3fe9c4bc476ca758",
+          "bytes": 729
+        },
+        "call_0000.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0000.json",
+          "sha256": "996c63ed2b070efebe071d819a22e5852f7e9b3c27365369191741cae5e71258",
+          "bytes": 22310
+        },
+        "call_0000.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0000.npz",
+          "sha256": "974d4a8630e1a4acf16c285df1e1406322202237a5247af30eadf308437b0ad9",
+          "bytes": 4853
+        },
+        "call_0001.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0001.json",
+          "sha256": "611363c5f0e7fe1bf96ad1ffc74f990457ac3bd345f2b39b744ae50c4da939d7",
+          "bytes": 22311
+        },
+        "call_0001.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0001.npz",
+          "sha256": "f5fced247e0c7ff51a3cc3964caac1ab6757e714ad82bd910dbeaae2dff0d229",
+          "bytes": 4855
+        },
+        "call_0002.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0002.json",
+          "sha256": "b09f56e1c97ee08f3f73a7ba7ac0665b7a517ada7f45794c49149699020f3814",
+          "bytes": 22310
+        },
+        "call_0002.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0002.npz",
+          "sha256": "0354dc1747a8929d69ee0dcec7d2b1546a39a62ac745c4893a457e7af80d030a",
+          "bytes": 4855
+        },
+        "call_0003.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0003.json",
+          "sha256": "42fa873fb111a3c03144f61a1bd74b867c2f4855808087a921254805cd55faa8",
+          "bytes": 22311
+        },
+        "call_0003.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0003.npz",
+          "sha256": "c9a30b1eeb30ad9a1451c9109654e44bce370143a18a770b984a2bd2edc176af",
+          "bytes": 4858
+        },
+        "call_0004.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0004.json",
+          "sha256": "798d02b861d212d8ec2f7d148b7e024b1c97c1b9928f5e18146943db0110d5ad",
+          "bytes": 22313
+        },
+        "call_0004.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0004.npz",
+          "sha256": "6986d06a66334aeada039ee59796acf2bef4cc3f2a6538add733ed4ac53ccfc9",
+          "bytes": 4857
+        },
+        "call_0005.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0005.json",
+          "sha256": "25d95b6a1e767deaa03fb83abc1edba3f44165c948ad04493083bf3d7735ea5c",
+          "bytes": 22313
+        },
+        "call_0005.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0005.npz",
+          "sha256": "8d3d34eb1d361787c86e0e6e9726fe639722f431a14aef9a14302bd53db7cb9b",
+          "bytes": 4857
+        },
+        "call_0006.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0006.json",
+          "sha256": "aac71c3c8deab788a877d277c873dd7a7476d478a06fba84dea14d2caf9741ff",
+          "bytes": 22311
+        },
+        "call_0006.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0006.npz",
+          "sha256": "505a153a744e1175eb88f4975b9751d767bd01457b154a2fd8d6447e5dec3d33",
+          "bytes": 4850
+        },
+        "call_0007.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0007.json",
+          "sha256": "340a2069964739061e522d4aa965600a0118af6635d57c972dbf9f3e60bfca57",
+          "bytes": 22311
+        },
+        "call_0007.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0007.npz",
+          "sha256": "672ede7b21133c55c32c2381037b3c18411ada839e8140e48596407fbef6ce07",
+          "bytes": 4850
+        },
+        "call_0008.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0008.json",
+          "sha256": "1c3d65f1f49dc769faad4eff32fb07e0cc8b7761ea0490c78232e6ba59ec3498",
+          "bytes": 22312
+        },
+        "call_0008.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0008.npz",
+          "sha256": "66bc29cc3e1f8f6677be1b30924c5c261ecba6c6e0f41705b25ab95fe5b1fcdd",
+          "bytes": 4857
+        },
+        "call_0009.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0009.json",
+          "sha256": "11b9bc30480bac126d2ec392cc65ef055733d06223ea923b6321c8ce20f53a42",
+          "bytes": 22311
+        },
+        "call_0009.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0009.npz",
+          "sha256": "a7c02012ba26c618b2ecf23448e40ccd730d0eb8af225a90221d56621c9a26c0",
+          "bytes": 4857
+        },
+        "call_0010.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0010.json",
+          "sha256": "d71cb62dd79cc7bf88b7268929720f9f2a82017ef8ad3d7c5f449d29d4a78215",
+          "bytes": 22313
+        },
+        "call_0010.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0010.npz",
+          "sha256": "7d00047024cd767e2455c548e94fc029c24d4637c31d81b20987896f1206fb9f",
+          "bytes": 4862
+        },
+        "call_0011.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0011.json",
+          "sha256": "8d7b179b44d270a999a51a4a0ee4b75659471fad614efc2596bfabfa4cf90122",
+          "bytes": 22312
+        },
+        "call_0011.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0011.npz",
+          "sha256": "a15491d12c3015dfb437542e6694a2009701c252a1bceef35834ba8d141b4af8",
+          "bytes": 4859
+        },
+        "call_0012.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0012.json",
+          "sha256": "272ec9b7cd32e51eb0d23d3049256247925df770dcb2f9280db0eb91311d2135",
+          "bytes": 22313
+        },
+        "call_0012.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/call_0012.npz",
+          "sha256": "57fa661f7bae9a48a4600204e438bca4d0f2cc28eebc431f8ea8a776eb36e4ab",
+          "bytes": 4866
+        },
+        "calls.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/calls.json",
+          "sha256": "9e9a9fea472f9b10ea564e2f15e13d4d220a7412698eb359ef6bacdecc3d039a",
+          "bytes": 1932
+        },
+        "executed_steps.jsonl": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/executed_steps.jsonl",
+          "sha256": "beb5cef32f03a697fe7fba206ccbb343d65792177affa49e1d87a9a08ed576a3",
+          "bytes": 56858
+        },
+        "final.png": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/final.png",
+          "sha256": "ad2f33f6a1e8745f39fd45fb0327dc98495e266bc69997f1aae75ed6714101bd",
+          "bytes": 116846
+        },
+        "initial.png": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/initial.png",
+          "sha256": "6304b9513f3519a4bf22a4532dcf88920aae5293d1f949dcc10ded8117853f5c",
+          "bytes": 115404
+        },
+        "initial_wrist.png": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/initial_wrist.png",
+          "sha256": "05562f2c0774d0b916c4b619e63cfc791d84873edc51bef63450a34990e4000d",
+          "bytes": 102030
+        },
+        "receipt.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/receipt.json",
+          "sha256": "7de2231826c2243bf1d658720c6396348a845046d4f37819892c46fc31d2db81",
+          "bytes": 3433
+        },
+        "result.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/result.json",
+          "sha256": "a1b0d6ad1fe8688fcbed08c3b5a6a49d0f9241ff963ee05361b3ed57b912cc78",
+          "bytes": 58073
+        },
+        "rollout.gif": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/rollout.gif",
+          "sha256": "a62f2a381a5537f3a7e4fc10a0de088d477d513104c5f4387715200d20b4dffb",
+          "bytes": 1710046
+        },
+        "trajectory.npz": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_goal__1__41__clean__native4_chunk7/trajectory.npz",
+          "sha256": "e6d2da6d7445a434db594eb7dc3410517ab0b2a2bf163048fe02699486e3b814",
+          "bytes": 7793
+        }
+      }
+    },
+    {
+      "id": "vlajepa_isolated__libero_10__1__41__clean__native4_chunk7",
+      "suite": "libero_10",
+      "status": "unsealed_memory_interruption_first_forward",
+      "success": null,
+      "executed_policy_actions": 0,
+      "completed_forward_calls": 0,
+      "started_forward_calls": 1,
+      "actual_action_head_nfe": null,
+      "reset_completed": true,
+      "initial_images_match_forward_input_hashes": true,
+      "arena_rows": 1,
+      "maximum_used_arena_bytes": 8646500,
+      "all_observed_data_and_native_warning_counts_zero": true,
+      "files": {
+        "arena_initialization.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_10__1__41__clean__native4_chunk7/arena_initialization.json",
+          "sha256": "6b28e7e2f13bbb6ada290b7c124f238e82791a0b1a4f02c959ea631ff1af591d",
+          "bytes": 4734
+        },
+        "arena_steps.jsonl": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_10__1__41__clean__native4_chunk7/arena_steps.jsonl",
+          "sha256": "1189b5da9aad592a9bacbf0d15fb2bac6d0e11d8d2557c7a8a4c0e82de38d85d",
+          "bytes": 132
+        },
+        "attempt.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_10__1__41__clean__native4_chunk7/attempt.json",
+          "sha256": "68d2d6d7a8ee9c6056632122b108b72db6e15a571c9d04a2b354327f95166e0e",
+          "bytes": 725
+        },
+        "call_0000.json": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_10__1__41__clean__native4_chunk7/call_0000.json",
+          "sha256": "df8df94972e0131091608df2221a009be1a2af4aa7501c20ceebf2b3f3e0f99c",
+          "bytes": 597
+        },
+        "initial.png": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_10__1__41__clean__native4_chunk7/initial.png",
+          "sha256": "fc57d97678c427c48192427c719dd5b9bce0a2b84630fbd0496283816f5cf7ca",
+          "bytes": 138390
+        },
+        "initial_wrist.png": {
+          "path": "outputs/frontier/vlajepa_isolated_closed_loop/episodes/vlajepa_isolated__libero_10__1__41__clean__native4_chunk7/initial_wrist.png",
+          "sha256": "561213a316512624d669392380dab2cf65bff6560d74e6bffeb62a9544047b9b",
+          "bytes": 126038
+        }
+      },
+      "worker": {
+        "path": "outputs/frontier/vlajepa_isolated_closed_loop/workers/worker_0004.json",
+        "sha256": "46f49ea2890f03d892a7a540022a740b61d01a7452b65ddb4082608af90f43fe",
+        "pid": 22716,
+        "process_create_time": 1792122768.9714253,
+        "run_records": []
+      },
+      "worker_raw_status": "started",
+      "worker_effective_status": "stopped_memory_guard",
+      "same_process_still_running": false,
+      "run_raw_status": "running_episodes",
+      "run_record": {
+        "path": "outputs/frontier/vlajepa_isolated_closed_loop/runs/run_0004.json",
+        "sha256": "e1e7cd19512ad3987e9f1f2bf37553f37b2cd039bcc31488c8971a0e88a18a03",
+        "bytes": 2278
+      },
+      "memory_stop": {
+        "path": "outputs/frontier/vlajepa_isolated_closed_loop/runs/run_0004.memory_stop.json",
+        "sha256": "7f25aa4a3833ebb8f1239a5082ab7085c147829e88a977432115b30014102ba8",
+        "bytes": 334,
+        "status": "stopped_memory_guard",
+        "utc": "2026-10-16T03:54:57.062270+00:00",
+        "pid": 22716,
+        "process_create_time": 1792122768.9714253,
+        "rss_bytes": 5908762624,
+        "available_bytes": 889200640,
+        "limits": {
+          "max_rss_bytes": 5905580032.0,
+          "min_available_bytes": 536870912.0
+        },
+        "action": "exit own process only"
+      },
+      "rss_gib": 5.502964019775391,
+      "available_gib": 0.8281326293945312,
+      "rss_over_limit_bytes": 3182592.0,
+      "free_memory_guard_triggered": false,
+      "active_lock": {
+        "path": "outputs/frontier/vlajepa_isolated_closed_loop/active.lock",
+        "sha256": "f2e697f635639ea9434cc85a9f156afddfd39e3bf6487f2c38dab257d9d41594",
+        "bytes": 64
+      },
+      "stale_record_explanation": "MemoryGuard persisted its stop sidecar and called os._exit(72), bypassing both base runner and isolated wrapper finally blocks. Raw started/running_episodes labels and lock are retained evidence; the process is confirmed exited, not active.",
+      "limitations": [
+        "Forward started but did not leave a returned action chunk or NPZ; no completed forward/NFE count can be asserted.",
+        "Official reset includes ten internal settle steps; zero policy actions refers to actions after reset.",
+        "Sampled stop RSS is not a complete observed peak because normal guard.finish did not run."
+      ]
+    }
+  ],
+  "posthoc_consistency": {
+    "path": "artifacts/vlajepa-process-isolation-consistency-20261016.json",
+    "sha256": "cf285b951042cf9c8f6ee9f91cf2ccd441969149e422ae3ce7b920b7bb26c7b7",
+    "bytes": 271188,
+    "overlapping_cases": 3,
+    "all_compared_arrays_images_and_trajectories_exact": true,
+    "scope": "Repeated known-case consistency only; no extra success denominator, training proof or unseen generalization."
+  },
+  "all_original_outputs_preserved": true,
+  "raw_worker_labels_are_historical": true,
+  "reporting_constraints": [
+    "Report three completed successes and one infrastructure interruption out of four planned cases; the matrix is incomplete.",
+    "The fourth worker is exited/stopped_memory_guard despite its preserved raw started label.",
+    "Do not label the fourth case as a completed robot failure, completed success, or active run.",
+    "Any successor with a 6 GiB cap is a new resource protocol, not completion of this 5.5 GiB-cap matrix.",
+    "Do not merge the three successes into a different cohort or discard the fourth attempt.",
+    "Known tasks/initial states only; no SOTA, held-out, BF16 fidelity, physical robot, real-time or stable-memory claim."
+  ],
+  "checkpoint_bytes_rehashed_by_this_audit": false
+}

@@ -1,5 +1,7 @@
 # VLA-JEPA 单机动态 INT8 推理方案
 
+**后续进展（2026-10-16）：** 本页保留原单观测量化探针的范围与测量。分页变体随后在[compact](VLAJEPA_COMPACT_RESULTS.md)和[独立进程](VLAJEPA_ISOLATED_RESULTS.md)中实际完成前三个任务；长程任务使用[独立6GiB资源协议](VLAJEPA_LONG_HORIZON_RESULTS.md)。后续真实闭环不改变本页的历史单次前向结论，也没有补出原生BF16质量对照。
+
 **2026-10-15：一次真实观测上的量化动作推理与后处理已通过。** 在 16 GB、无 NVIDIA GPU 的 Windows 电脑上，推理所需权重已真实加载，300/300 个 Qwen 动态 INT8 Linear 均实际执行；单次前向 **6.954 秒**，1 秒采样的进程 RSS 最大值约 **3.521 GiB**。这证明本次配置能产生通过输出检查的动作块，不代表闭环任务成功、质量保持、原精度等价或稳定部署性能。
 
 代码：[量化 probe](../scripts/probe_vlajepa_int8.py) · [对应测试](../tests/test_vlajepa_int8_probe.py) · [原 BF16 probe](../scripts/probe_vlajepa.py)。原 BF16 方案同日[再次尝试的记录](../artifacts/frontier/vlajepa_bf16_probe_20261015.json)为 `blocked_preflight`：可用内存约 **5.887 GiB**，低于原有 **6 GiB** 门槛，未构造模型、加载权重或执行前向。2026-10-14 的[首次阻断记录](../artifacts/frontier/vlajepa_real_probe.json)也保留，彼时可用内存约 5.768 GiB。这些是各次运行时的可用资源限制，不证明所有 CPU 都无法运行原精度模型。

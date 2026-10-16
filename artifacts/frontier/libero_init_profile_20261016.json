@@ -1,0 +1,213 @@
+{
+  "schema": "feedbackbench.libero_init_profile.v1",
+  "started_at": "2026-10-16T03:04:37.108688+00:00",
+  "scope": "One environment initialization/reset; no policy loaded and no policy actions executed",
+  "configuration": {
+    "suite": "libero_spatial",
+    "task_id": 1,
+    "init_state_id": 41,
+    "seed": 1000,
+    "image_size": 360,
+    "hard_reset": true,
+    "official_internal_settle_steps": 10,
+    "explicit_reset_calls": 1,
+    "explicit_policy_steps": 0
+  },
+  "guard": {
+    "maximum_rss_gib": 5.5,
+    "minimum_runtime_available_gib": 0.5,
+    "sampling_seconds": 1,
+    "exit_scope": "own process only"
+  },
+  "source": {
+    "path": ".runtime/profile_libero_init_20261016.py",
+    "sha256": "1156f59d84ded6f4cc5c151a9dc00f298aee96dd3da8b33c60055eb0d4a52730"
+  },
+  "snapshots": [
+    {
+      "stage": "before_runtime_imports",
+      "utc": "2026-10-16T03:04:37.111687+00:00",
+      "elapsed_seconds": 0.0007878000033088028,
+      "rss_bytes": 32894976,
+      "available_bytes": 6356144128
+    },
+    {
+      "stage": "after_runtime_imports",
+      "utc": "2026-10-16T03:04:52.623158+00:00",
+      "elapsed_seconds": 15.512333799997577,
+      "rss_bytes": 409878528,
+      "available_bytes": 5991219200
+    },
+    {
+      "stage": "before_environment_construction",
+      "utc": "2026-10-16T03:04:52.627220+00:00",
+      "elapsed_seconds": 15.515926199994283,
+      "rss_bytes": 409882624,
+      "available_bytes": 5990465536
+    },
+    {
+      "stage": "after_environment_construction",
+      "utc": "2026-10-16T03:04:52.650536+00:00",
+      "elapsed_seconds": 15.539409299992258,
+      "rss_bytes": 413978624,
+      "available_bytes": 5983436800
+    },
+    {
+      "stage": "before_mjr_context",
+      "utc": "2026-10-16T03:04:57.090417+00:00",
+      "elapsed_seconds": 19.979099299991503,
+      "rss_bytes": 1477910528,
+      "available_bytes": 4625829888,
+      "context_index": 1,
+      "model_offwidth": 640,
+      "model_offheight": 480,
+      "model_offsamples": 4,
+      "model_shadowsize": 4096,
+      "model_ntex": 16,
+      "model_ntexdata": 188804955,
+      "model_nbuffer": 284473166,
+      "data_narena": 1326448640
+    }
+  ],
+  "render_context_events": [
+    {
+      "stage": "before_mjr_context",
+      "utc": "2026-10-16T03:04:57.090417+00:00",
+      "elapsed_seconds": 19.979099299991503,
+      "rss_bytes": 1477910528,
+      "available_bytes": 4625829888,
+      "context_index": 1,
+      "model_offwidth": 640,
+      "model_offheight": 480,
+      "model_offsamples": 4,
+      "model_shadowsize": 4096,
+      "model_ntex": 16,
+      "model_ntexdata": 188804955,
+      "model_nbuffer": 284473166,
+      "data_narena": 1326448640,
+      "phase": "before"
+    }
+  ],
+  "status": "error",
+  "runtime_modules": {
+    "environment": {
+      "path": "frontier/vendor/lerobot/src/lerobot/envs/libero.py",
+      "sha256": "97c984f12331527626812ec19967ef399e545535b3571becf044db2417ae9d71"
+    },
+    "simulator": {
+      "path": "src/embodied_research/simulator.py",
+      "sha256": "3fa8762b03bd9dd85f426242714d3422bc19f6fc7f9d9444fd4cac4785ad95d3"
+    },
+    "frozen_runtime": {
+      "path": "src/embodied_research/runtime.py",
+      "sha256": "4296c85ae0060f9b6137872c6e88ed69fce49964cd1b5207da1a19c413f0b1f5"
+    }
+  },
+  "error_type": "PermissionError",
+  "error": "[WinError 5] 拒绝访问。: '<REDACTED_LOCAL_PATH>' -> '<REDACTED_LOCAL_PATH>'",
+  "traceback": "Traceback (most recent call last):\n  File \"<REDACTED_LOCAL_PATH>\", line 107, in main\n    observation = simulator.reset(seed=1000, init_state_id=41)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<REDACTED_LOCAL_PATH>\", line 127, in reset\n    raw, info = self.env.reset(seed=int(seed))\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<REDACTED_LOCAL_PATH>\", line 340, in reset\n    self._ensure_env()\n  File \"<REDACTED_LOCAL_PATH>\", line 267, in _ensure_env\n    env = OffScreenRenderEnv(\n          ^^^^^^^^^^^^^^^^^^^\n  File \"<REDACTED_LOCAL_PATH>\", line 161, in __init__\n    super().__init__(**kwargs)\n  File \"<REDACTED_LOCAL_PATH>\", line 56, in __init__\n    self.env = TASK_MAPPING[self.problem_name](\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<REDACTED_LOCAL_PATH>\", line 40, in __init__\n    super().__init__(bddl_file_name, *args, **kwargs)\n  File \"<REDACTED_LOCAL_PATH>\", line 137, in __init__\n    super().__init__(\n  File \"<REDACTED_LOCAL_PATH>\", line 162, in __init__\n    super().__init__(\n  File \"<REDACTED_LOCAL_PATH>\", line 214, in __init__\n    super().__init__(\n  File \"<REDACTED_LOCAL_PATH>\", line 143, in __init__\n    self._reset_internal()\n  File \"<REDACTED_LOCAL_PATH>\", line 737, in _reset_internal\n    super()._reset_internal()\n  File \"<REDACTED_LOCAL_PATH>\", line 510, in _reset_internal\n    super()._reset_internal()\n  File \"<REDACTED_LOCAL_PATH>\", line 296, in _reset_internal\n    render_context = MjRenderContextOffscreen(self.sim, device_id=self.render_gpu_device_id)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<REDACTED_LOCAL_PATH>\", line 210, in __init__\n    super().__init__(sim, offscreen=True, device_id=device_id, max_width=max_width, max_height=max_height)\n  File \"<REDACTED_LOCAL_PATH>\", line 109, in __init__\n    self._set_mujoco_context_and_buffers()\n  File \"<REDACTED_LOCAL_PATH>\", line 93, in measured_context\n    persist()\n  File \"<REDACTED_LOCAL_PATH>\", line 45, in persist\n    base.json_write(OUTPUT, record)\n  File \"<REDACTED_LOCAL_PATH>\", line 76, in json_write\n    os.replace(temporary, path)\nPermissionError: [WinError 5] 拒绝访问。: '<REDACTED_LOCAL_PATH>' -> '<REDACTED_LOCAL_PATH>'\n",
+  "memory": {
+    "peak_rss_bytes": 1091690496,
+    "minimum_available_bytes": 4948070400,
+    "sampling_seconds": 1.0,
+    "samples": [
+      {
+        "utc": "2026-10-16T03:04:38.123951+00:00",
+        "rss_bytes": 137687040,
+        "available_bytes": 6265905152
+      },
+      {
+        "utc": "2026-10-16T03:04:39.124823+00:00",
+        "rss_bytes": 163721216,
+        "available_bytes": 6239862784
+      },
+      {
+        "utc": "2026-10-16T03:04:40.142959+00:00",
+        "rss_bytes": 187412480,
+        "available_bytes": 6208688128
+      },
+      {
+        "utc": "2026-10-16T03:04:41.152568+00:00",
+        "rss_bytes": 211210240,
+        "available_bytes": 6197796864
+      },
+      {
+        "utc": "2026-10-16T03:04:42.162596+00:00",
+        "rss_bytes": 237539328,
+        "available_bytes": 6177587200
+      },
+      {
+        "utc": "2026-10-16T03:04:43.176655+00:00",
+        "rss_bytes": 255905792,
+        "available_bytes": 6159732736
+      },
+      {
+        "utc": "2026-10-16T03:04:44.184365+00:00",
+        "rss_bytes": 276656128,
+        "available_bytes": 6136594432
+      },
+      {
+        "utc": "2026-10-16T03:04:45.195683+00:00",
+        "rss_bytes": 294592512,
+        "available_bytes": 6118424576
+      },
+      {
+        "utc": "2026-10-16T03:04:46.196434+00:00",
+        "rss_bytes": 300466176,
+        "available_bytes": 6117949440
+      },
+      {
+        "utc": "2026-10-16T03:04:47.211597+00:00",
+        "rss_bytes": 313180160,
+        "available_bytes": 6103265280
+      },
+      {
+        "utc": "2026-10-16T03:04:48.222488+00:00",
+        "rss_bytes": 315707392,
+        "available_bytes": 6084820992
+      },
+      {
+        "utc": "2026-10-16T03:04:49.226190+00:00",
+        "rss_bytes": 317870080,
+        "available_bytes": 6075498496
+      },
+      {
+        "utc": "2026-10-16T03:04:50.247535+00:00",
+        "rss_bytes": 333033472,
+        "available_bytes": 6076280832
+      },
+      {
+        "utc": "2026-10-16T03:04:51.257587+00:00",
+        "rss_bytes": 359796736,
+        "available_bytes": 6053855232
+      },
+      {
+        "utc": "2026-10-16T03:04:52.268328+00:00",
+        "rss_bytes": 398467072,
+        "available_bytes": 5996576768
+      },
+      {
+        "utc": "2026-10-16T03:04:53.269995+00:00",
+        "rss_bytes": 493154304,
+        "available_bytes": 5795295232
+      },
+      {
+        "utc": "2026-10-16T03:04:54.273851+00:00",
+        "rss_bytes": 602759168,
+        "available_bytes": 5517742080
+      },
+      {
+        "utc": "2026-10-16T03:04:55.279800+00:00",
+        "rss_bytes": 883195904,
+        "available_bytes": 5271375872
+      },
+      {
+        "utc": "2026-10-16T03:04:56.281975+00:00",
+        "rss_bytes": 1091690496,
+        "available_bytes": 4948070400
+      }
+    ]
+  },
+  "finished_at": "2026-10-16T03:04:57.136861+00:00",
+  "elapsed_seconds": 20.025364500004798
+}

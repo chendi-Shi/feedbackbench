@@ -1,0 +1,4145 @@
+{
+  "created_at": "2026-10-14T08:05:07.629607+00:00",
+  "lerobot_revision": "ae2b57f12223c8c5184fcd814eb63cd9ce7de203",
+  "policy_revision": "735d9f692981e286ade093b5046627eda876e5d0",
+  "qwen_metadata_revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+  "scope": "CPU feasibility only; no base Qwen weights",
+  "files": [
+    {
+      "path": "models/vlajepa/qwen/README.md",
+      "bytes": 7136,
+      "sha256": "5fc5be1ca9a3910399bd6239ee5086ab5d82a2a59c5d2b00e887a8835cc110e4",
+      "git_blob_sha1": null
+    },
+    {
+      "path": "models/vlajepa/qwen/chat_template.json",
+      "bytes": 5502,
+      "sha256": "6f8a6a55027e3da5160105556cda5dd69f6423f1c32645f6730d32de7773d0c4",
+      "git_blob_sha1": null
+    },
+    {
+      "path": "models/vlajepa/qwen/config.json",
+      "bytes": 1505,
+      "sha256": "bec4b3d446efa05807365c9e1cec03ac590836879d02f3a6da879971154bdd3b",
+      "git_blob_sha1": null
+    },
+    {
+      "path": "models/vlajepa/qwen/generation_config.json",
+      "bytes": 269,
+      "sha256": "1e241830b48b397cb0900101421df5450baddc7adf01e5fc86b5615865f3bae4",
+      "git_blob_sha1": null
+    },
+    {
+      "path": "models/vlajepa/qwen/merges.txt",
+      "bytes": 1671839,
+      "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+      "git_blob_sha1": null
+    },
+    {
+      "path": "models/vlajepa/qwen/preprocessor_config.json",
+      "bytes": 390,
+      "sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516",
+      "git_blob_sha1": null
+    },
+    {
+      "path": "models/vlajepa/qwen/tokenizer.json",
+      "bytes": 7032403,
+      "sha256": "a5d85b6dcc535e6b93115a9ef287e6132fdbf30270da6218194ba742261173c7",
+      "git_blob_sha1": null
+    },
+    {
+      "path": "models/vlajepa/qwen/tokenizer_config.json",
+      "bytes": 10868,
+      "sha256": "c2da771801886ad9ae98181793ffd3dfb7f1af30f6f7c6a4e15d7dbba52e2399",
+      "git_blob_sha1": null
+    },
+    {
+      "path": "models/vlajepa/qwen/video_preprocessor_config.json",
+      "bytes": 385,
+      "sha256": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13",
+      "git_blob_sha1": null
+    },
+    {
+      "path": "models/vlajepa/qwen/vocab.json",
+      "bytes": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "git_blob_sha1": null
+    },
+    {
+      "path": "models/vlajepa/policy/README.md",
+      "bytes": 4670,
+      "sha256": "255371107ff33aa38e003f7b0f9f5fdf4c91fb4fdca5b43a75ac7c63b273cdbd",
+      "git_blob_sha1": null
+    },
+    {
+      "path": "models/vlajepa/policy/config.json",
+      "bytes": 2589,
+      "sha256": "c716d30311fd98d927154b5f49a675579091065686b8cccf5e463a19c2a8d393",
+      "git_blob_sha1": null
+    },
+    {
+      "path": "models/vlajepa/policy/policy_postprocessor.json",
+      "bytes": 1384,
+      "sha256": "a2f94aaec83fd510a87babb31e9fa64436eb6eca4e9767e2ff8d53dea17b8846",
+      "git_blob_sha1": null
+    },
+    {
+      "path": "models/vlajepa/policy/policy_postprocessor_step_2_unnormalizer_processor.safetensors",
+      "bytes": 1316,
+      "sha256": "840a296891a8a316541b54a963aa5a883fc26693accd54e7cce549249d83eac7",
+      "git_blob_sha1": null
+    },
+    {
+      "path": "models/vlajepa/policy/policy_preprocessor.json",
+      "bytes": 1327,
+      "sha256": "deeada8622800f662fedea622a415a81bd6cb5849ebd51b0eb0dd6892378fb4d",
+      "git_blob_sha1": null
+    },
+    {
+      "path": "models/vlajepa/policy/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "bytes": 1316,
+      "sha256": "840a296891a8a316541b54a963aa5a883fc26693accd54e7cce549249d83eac7",
+      "git_blob_sha1": null
+    },
+    {
+      "path": "frontier/vendor/lerobot/LICENSE",
+      "bytes": 29977,
+      "sha256": "9e108af26a7ae92a6d2cb0273856a4a0a84da8819c2cffee8b2657cc4f905718",
+      "git_blob_sha1": "93baf0c18936131979fdda6a38536cbcef0efccb"
+    },
+    {
+      "path": "frontier/vendor/lerobot/pyproject.toml",
+      "bytes": 24915,
+      "sha256": "ee430004b4a2b483bc6a7c7e2b5b668ede80145c50deb0bdd31b6b283cbc79da",
+      "git_blob_sha1": "6e81a02fc8ebd39020a1f2379bdfba696f5b1f63"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/__init__.py",
+      "bytes": 1965,
+      "sha256": "9de5fe33e0bf693e86e9bf55360942385a504a1baff224577a405ca91ea33838",
+      "git_blob_sha1": "df43e7172a888b8f8d950b10e234abd683cf4872"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/__version__.py",
+      "bytes": 834,
+      "sha256": "beb2aa5d785c7e7ccbcb910ec4688e2868423458e2a1aac7fd76c1e1a182a470",
+      "git_blob_sha1": "d12aafaa9e573f408ce0d06654b519ba97832738"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/annotations/__init__.py",
+      "bytes": 634,
+      "sha256": "4d6a30338277c65b6fa6de3f0e1696280067e6536903ff38cc669766645926a8",
+      "git_blob_sha1": "67782f192752b124a5fec11a68b11a6691263955"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/annotations/steerable_pipeline/__init__.py",
+      "bytes": 1429,
+      "sha256": "922c5621c285917ef71453af1c585c404dd308ac6e00b16de5a20765fc44e59a",
+      "git_blob_sha1": "a8da5e05e3476cc67bb8657128c47fa7fedb735b"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/annotations/steerable_pipeline/config.py",
+      "bytes": 10184,
+      "sha256": "5d1df0431cad138938c11cdccdb402b270bb0cb2c84cbde25c16a8d1744ff8fa",
+      "git_blob_sha1": "42825a2e2f3a315b51914310ffb8372e39cd7f27"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/annotations/steerable_pipeline/executor.py",
+      "bytes": 10551,
+      "sha256": "0662b5e9afe6c655d4d92e85bfdd53c38e96071a096ed9debcc16faa78ed2578",
+      "git_blob_sha1": "0be496f075de7fdff067f7af99ecc514ebb95697"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/annotations/steerable_pipeline/frames.py",
+      "bytes": 21150,
+      "sha256": "0c76a4081ae92ff8dd51772f1f7e943f0c35a06a63ed610b03fe78556d5f0e98",
+      "git_blob_sha1": "403581132a1fbae34f4fe331a254f2aaf038ff93"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/annotations/steerable_pipeline/modules/__init__.py",
+      "bytes": 910,
+      "sha256": "e824ff05ada8e8822eb6ff17e933e060d5a1bc25907daab621da37b8b0dcc60e",
+      "git_blob_sha1": "e9ff8ed23d9b1017450695a303ebe02cd18033d4"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/annotations/steerable_pipeline/modules/general_vqa.py",
+      "bytes": 11255,
+      "sha256": "ee218ad2ae5b4428f2a7e587a68ec5e097d9faa1604318f0c37c622067bdd447",
+      "git_blob_sha1": "da8ab312b1086a662beea8514bdf0bb944ac5aa9"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/annotations/steerable_pipeline/modules/interjections_and_speech.py",
+      "bytes": 9301,
+      "sha256": "e7f8eb31b25e21aef03f2a96cece6575a89564eef574eb236984a4a57054a33a",
+      "git_blob_sha1": "616f9ce1b7166d9902cb437b9bfc657bbd3ac083"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/annotations/steerable_pipeline/modules/plan_subtasks_memory.py",
+      "bytes": 36884,
+      "sha256": "48f44c050d4af251d6467dad71eb048b135eaf7d20e15a15d7b79ad741a1a68a",
+      "git_blob_sha1": "fa39b5f896316d7c8b907a062fc6d421a1ec00cf"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/annotations/steerable_pipeline/prompts/__init__.py",
+      "bytes": 1655,
+      "sha256": "9de4cdb19c6d7724c07d70d1641651f20a1181adb29a2b30312c65e597236385",
+      "git_blob_sha1": "de884f11de7953f6cdfb9eea0848c7056fb34f62"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/annotations/steerable_pipeline/prompts/interjections_initial_speech.txt",
+      "bytes": 423,
+      "sha256": "1fb06670a6d0fd220c4f22a7f65a8bd5c90b1afc60e3a1e10812171500b6f9fd",
+      "git_blob_sha1": "625ce920c897d8586034850cae424c627aec3f0a"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/annotations/steerable_pipeline/prompts/interjections_interjection.txt",
+      "bytes": 2068,
+      "sha256": "f8cfa71c6078c293a45e34a3681e2ab385db9f950a541c6af87dc3684f61cd17",
+      "git_blob_sha1": "4a4719f54e1d6cf427508e77230a6a318af997a0"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/annotations/steerable_pipeline/prompts/plan_memory.txt",
+      "bytes": 1661,
+      "sha256": "dd6a7f84249cafaf2271ea4b497166bcb489a455d9d28d2da0ff32ae2e0a9a5e",
+      "git_blob_sha1": "b5278368bcbd6332162de0a3dda42c7641edc761"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/annotations/steerable_pipeline/prompts/plan_subtask_describe.txt",
+      "bytes": 1208,
+      "sha256": "3d91d2fdf8308c31ff318eff0c86d0b4fed61e1e70225ec6647d822aec5d3e70",
+      "git_blob_sha1": "6b709e41dfb046b53d4b997ca7e437dd7acc5f06"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/annotations/steerable_pipeline/prompts/plan_subtask_relabel.txt",
+      "bytes": 1756,
+      "sha256": "b2f5e02f1f6a9869cef6104dfbb3a560ba1f3f07614bf2e935e3e7a90a14014b",
+      "git_blob_sha1": "336abfe05e1632fb8965540f5d3a959fb8999c2c"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/annotations/steerable_pipeline/prompts/plan_subtasks.txt",
+      "bytes": 3400,
+      "sha256": "498c246878c31414f75dd22f1d0710662391bc9cb05ac96bc98b97f3ce78b15d",
+      "git_blob_sha1": "8227245a46e589fad523cf868dc2f61ff25b6613"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/annotations/steerable_pipeline/prompts/plan_task_aug_axes.txt",
+      "bytes": 3113,
+      "sha256": "30a716033c281cdcbf7f5a17b8d6012bc733b100b3a28177baa8bebf383fb1d7",
+      "git_blob_sha1": "8b19a0a8e955d1e2274df1c2d3f8ef27de2a9eae"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/annotations/steerable_pipeline/prompts/plan_task_rephrasings.txt",
+      "bytes": 1056,
+      "sha256": "36f7b901eedc2f99c5f417ddfd379d246e04a8f6645613de7b24ec5481b5c1fc",
+      "git_blob_sha1": "602892bd3eb6eba17a701efcce17fb0016741aa6"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/annotations/steerable_pipeline/prompts/plan_video_task.txt",
+      "bytes": 703,
+      "sha256": "81efd86a973d6cdec8ece3d53f26d2338c7608a38efd0e06966bc0c263f60f50",
+      "git_blob_sha1": "fcaae7046130454c0a193f62b378c3a46b25677f"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/annotations/steerable_pipeline/prompts/vqa.txt",
+      "bytes": 1362,
+      "sha256": "78e6bce5702420ee0674040f2f6c9af7b63b8be2ea39084115ccadffcf748634",
+      "git_blob_sha1": "29e84244e28e38458efc164ffe8baa1d94aaed29"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/annotations/steerable_pipeline/reader.py",
+      "bytes": 7957,
+      "sha256": "ce72154129a85b1a1645ed3919ee18b4b1223f97cf0009ea25966c6f72b42ca7",
+      "git_blob_sha1": "942877553b837c4814f22aad75fe9d4dddc4aa50"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/annotations/steerable_pipeline/staging.py",
+      "bytes": 3195,
+      "sha256": "293dc0f1aaba842dcda3e3dc2178db65bb1c276935ace1d7a40099307efee95c",
+      "git_blob_sha1": "0b47c4dd62ed1280eb78616a545906120c3ac24e"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/annotations/steerable_pipeline/validator.py",
+      "bytes": 12936,
+      "sha256": "5133c9ae1705e8e103ad90fef63fce7612abea52befd4d23c88e3193ababf547",
+      "git_blob_sha1": "9eb4bbf51443dfdf7d44b807825a9af9799575fb"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/annotations/steerable_pipeline/vlm_client.py",
+      "bytes": 24641,
+      "sha256": "3aeeb78c4651be20066bedb7cfb8e3b41e5e0193bd328bfe5987a26897ecb03a",
+      "git_blob_sha1": "4d48cc27ff9d1177f33a2fc94b3121efcdb17de1"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/annotations/steerable_pipeline/writer.py",
+      "bytes": 13904,
+      "sha256": "855dabe6b1697c8e8f551d33efc8159089ea2b639601d6cb87ca73ded243350d",
+      "git_blob_sha1": "46f6491acd2b0c12a34be86e9100b4043196a657"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/cameras/__init__.py",
+      "bytes": 1195,
+      "sha256": "4ee5a05d9fde71186f58f7f1dd03203ec19ebca7cf0474a89350a6da3eb27b05",
+      "git_blob_sha1": "edf79587c3fff32e9226292a964384633cb5479d"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/cameras/camera.py",
+      "bytes": 6671,
+      "sha256": "5fc1ef834641f1cf6a8d1e851d9f92bd7f2eb4bd00a145f0cedf32cc02121dfd",
+      "git_blob_sha1": "5a0989a5e9470adbe69af0decc2c0f55e5668194"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/cameras/configs.py",
+      "bytes": 1883,
+      "sha256": "aeed57dbc542971d660da4917e54a1c2b232db0371fd9e535f7189d91149e492",
+      "git_blob_sha1": "0f49e0b7c9d04e730d49ae70709e958c5fc3d6e6"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/cameras/opencv/__init__.py",
+      "bytes": 755,
+      "sha256": "bcd30663067446f6c72beea9a9c7fdfda0c26889ba9476f10c0e77855bdfc64a",
+      "git_blob_sha1": "377dafc05f2475c9238f1e73a6bc4dc2c80d3de4"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/cameras/opencv/camera_opencv.py",
+      "bytes": 25716,
+      "sha256": "cc46f74788f16b907388c9924032cf5fea434ec17b366d01ec9867be735fc6f3",
+      "git_blob_sha1": "c991da5321cfef2983d334da2073cda214350c53"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/cameras/opencv/configuration_opencv.py",
+      "bytes": 3586,
+      "sha256": "2cedce42433f44333b12e21af71efb9efb52e88df7589a5363fb9a632d264dfe",
+      "git_blob_sha1": "8ae57fe3c8e6f435a0ffc4e8fe1e812f64564a5b"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/cameras/reachy2_camera/__init__.py",
+      "bytes": 768,
+      "sha256": "ae77b1d296297142f3e702f83c4d3aefd582d74c824b005880c599c10ee93199",
+      "git_blob_sha1": "d979a7db598a6c2dc5235404f4ea669fc55ae3ff"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/cameras/reachy2_camera/configuration_reachy2_camera.py",
+      "bytes": 3161,
+      "sha256": "f92ef6f67bc20e8de7a39d8ee34206af684060ba484925f861d24417d519eb22",
+      "git_blob_sha1": "b40bfe71bb396de212419f383c1b9c58bac19eed"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/cameras/reachy2_camera/reachy2_camera.py",
+      "bytes": 9252,
+      "sha256": "1294d94d790be10eb6165ae6a8c2a59bdc7415b440989316816eadafdd226b14",
+      "git_blob_sha1": "d7956a95633b6a3dd20c1b752b070c0383468280"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/cameras/realsense/__init__.py",
+      "bytes": 773,
+      "sha256": "0be403ef686e817125fd6d9f8ada1f15b16de1276245ca7faa976342c8850136",
+      "git_blob_sha1": "eb20c9973eb46f8d2c84e0346678026017a271c4"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/cameras/realsense/camera_realsense.py",
+      "bytes": 38590,
+      "sha256": "3272f128e15b67f27f86a92cb812175a674c490391a908acc8cbc61954aff731",
+      "git_blob_sha1": "5b531b20330d9ce44c84e0cb72b06dbc9bf44643"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/cameras/realsense/configuration_realsense.py",
+      "bytes": 4970,
+      "sha256": "d44d5b33571f085be2e8c4e058e104453ee841e3352a8d49faf08099e157285e",
+      "git_blob_sha1": "c4f1c0e83c666d69f717400d6dba88711620986d"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/cameras/utils.py",
+      "bytes": 2274,
+      "sha256": "26e439f192705a8be00b1bccbd4dcbf7df086f3dd73be0993bf9d7d385dd0344",
+      "git_blob_sha1": "cf5803d896ffaf9c98f6413a5bd131d625919279"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/cameras/zmq/__init__.py",
+      "bytes": 760,
+      "sha256": "1b42f41bac5fb6bb1b7a3a2894b1aac785aac33bc4810ca3766cadafb68a81a6",
+      "git_blob_sha1": "d760c5325f6bc1f9ae2d38ba49504bb5406b4992"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/cameras/zmq/camera_zmq.py",
+      "bytes": 13550,
+      "sha256": "7cf0bd4ac0d36976b672f56080680896661e7e57d466fe1aa899e65839cf8aef",
+      "git_blob_sha1": "cd32a117b83c48704d3460bee71a8b4bc9835653"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/cameras/zmq/configuration_zmq.py",
+      "bytes": 1495,
+      "sha256": "616e85ae8f9ebd001afe2f640c47721cbbb44713755bb8fbf97e1e93b9c87cd6",
+      "git_blob_sha1": "13690e14c834d8e8fe7e5a1754f74b8c9b6245b8"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/cameras/zmq/image_server.py",
+      "bytes": 6713,
+      "sha256": "59dbf41fedacd94db91bc0f09b8e2dbf6e9d37e4b8fc26719d6ea9eb025d844b",
+      "git_blob_sha1": "dac1d06be3a00b20cac76ad0ddcfbad6c118ccb8"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/common/__init__.py",
+      "bytes": 1188,
+      "sha256": "a2b6baac5624187155f84e660eed66f2c293918e80cbd115e47249e323180b89",
+      "git_blob_sha1": "782ef5b775c143c4d474c0a1a96a93c7494867da"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/common/control_utils.py",
+      "bytes": 9858,
+      "sha256": "d2ba8291ccfe84900c8ffaafec9555aed025fe7780afaf83857cca0e635a4f4b",
+      "git_blob_sha1": "301209431a3cefb00671cdde0239e3016d3682e3"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/common/train_utils.py",
+      "bytes": 39482,
+      "sha256": "7d74b34aaca6437dd2c8adcc1899cf4e0a072c32c63366f4761ee94e9814e10b",
+      "git_blob_sha1": "da067d27244e9b1ed3dd42657f22662176f15af8"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/common/wandb_utils.py",
+      "bytes": 9011,
+      "sha256": "360a32f9ae68d1021c36c8b418a5959f5021e82fc7a6bfc5bead7e9465fdc3b3",
+      "git_blob_sha1": "d414f4e50777403931b5dd498f48a3b299dce150"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/configs/__init__.py",
+      "bytes": 2368,
+      "sha256": "58d7874990f4b2ca7ab55f66bdf5743639f3cacd64e06caefc03c1ccd578c426",
+      "git_blob_sha1": "facc74944dc9cec9987618b60fe38815579a3f90"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/configs/accelerator.py",
+      "bytes": 15470,
+      "sha256": "a2a6f3b4d6f921a7d9561895d3bd0f47f816e469f7be2a40e89c0603b18831ca",
+      "git_blob_sha1": "082a4fe655a7e3372a45fd09472622e9655bebee"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/configs/dataset.py",
+      "bytes": 4942,
+      "sha256": "64fed1297b80056596f0c4bff4e609055dd416a6f3722b5a3658b32338154ae5",
+      "git_blob_sha1": "ac4a872d3f48f0899cfea24542e5493dcd032791"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/configs/default.py",
+      "bytes": 15883,
+      "sha256": "b02e08b7751bc850e4231e178cabac31afebf330513d68bea505a486d164ada5",
+      "git_blob_sha1": "b333558d5bcbd7fe3a9eb574632db1318f569d62"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/configs/eval.py",
+      "bytes": 3241,
+      "sha256": "c709b1420e67fab5eb4cee03d623debe3462e3d0bb39761a1b895646929f739d",
+      "git_blob_sha1": "c285025adfcb2ab44c1629fdc2c2a82b084cddcd"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/configs/parallelism.py",
+      "bytes": 8433,
+      "sha256": "36fa22e488323a27a36e7b6d5ddd7eb0fe7d4a92088fad8571740be234b630b1",
+      "git_blob_sha1": "cd8ec6cad03fdddaa2a74fe351fe1426c684b302"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/configs/parser.py",
+      "bytes": 18350,
+      "sha256": "fec4864c24e6e30be84005adef81f01bb0a7d62cdf79cb3fb6dadd319753c183",
+      "git_blob_sha1": "57e840407dba253a01cbd1d27a8e438946e21436"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/configs/policies.py",
+      "bytes": 10913,
+      "sha256": "069f07b1e807f77bfea718e84bf193185421166c316ba6719874bd5526974f56",
+      "git_blob_sha1": "96cbf473519d2ced0d25621fab3605746b18cf41"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/configs/recipes/subtask.yaml",
+      "bytes": 644,
+      "sha256": "d47f974367d0f79ca2f7b84da088746d15dc9e0ee7118fc2269f85b91a7879d5",
+      "git_blob_sha1": "c90ca8f78cadf60249c3bb6b3ba30471b97230f3"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/configs/recipes/subtask_joint.yaml",
+      "bytes": 755,
+      "sha256": "b1c812386deaa57862f34b4c37f996541e748799df73a83c5dbcfbdc17f801b3",
+      "git_blob_sha1": "a6852597bc231d1ccb52cb0733b29a518afcfbee"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/configs/recipes/subtask_mem.yaml",
+      "bytes": 1463,
+      "sha256": "f136f0601acb81fc5e2c1abdad3771eaf6ac32a5302f6fa939f95786a8cd1bc1",
+      "git_blob_sha1": "d12fe50091014cd3aec8162aeb4bd54709b6f203"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/configs/recipes/subtask_mem_vqa_speech.yaml",
+      "bytes": 3194,
+      "sha256": "2801d644cb9ffec42f36dbb5efa0f309b377cf4b88d9415bd835e18a606d5eb9",
+      "git_blob_sha1": "847093c847cf32a71ee83c05cea2369059d076ef"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/configs/rewards.py",
+      "bytes": 6274,
+      "sha256": "960ce7964584cabfc4352b337e9a062895c11a3e0694333e4136ac6122f4f0a9",
+      "git_blob_sha1": "ac417ca4adfd775b4c183c642b2f1ca97912f3d5"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/configs/train.py",
+      "bytes": 23645,
+      "sha256": "d47efff268a63d7300476031de573c49d6c5e666837c0a4a4c8e29224e16c8b6",
+      "git_blob_sha1": "9550f82ff85bba4a0adef3d6613562b939db3173"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/configs/types.py",
+      "bytes": 1440,
+      "sha256": "1354e7d24b19d5d4970064104f76d8c85570c204bf2d09e2b4402f93a994ad99",
+      "git_blob_sha1": "18359ef0575a4f560a65f21e2d6ddf534edc770f"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/configs/video.py",
+      "bytes": 14946,
+      "sha256": "8575fd0baabbc1c35acb7491871e4b146b9981c92686f4bc95721079f038f079",
+      "git_blob_sha1": "fee8cf171098aeba953afc8bb0f27f5529e8c1e5"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/data_processing/__init__.py",
+      "bytes": 821,
+      "sha256": "7e759afdd15bdd8a70975d50422b01a4afca2d0674cf6d69d9a519660792bffa",
+      "git_blob_sha1": "cd55d46fc055a901c19cfa32dd82fcb8abfbde76"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/data_processing/sarm_annotations/__init__.py",
+      "bytes": 796,
+      "sha256": "ac557936fe96dee688af5a329b5eee55e4b481baf411d2a26db276d6063de845",
+      "git_blob_sha1": "cd4c38f33de43e3ecf04ced6cdc05c4b66eb57de"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/data_processing/sarm_annotations/subtask_annotation.py",
+      "bytes": 47634,
+      "sha256": "194f184ac24dc57b78d566d66827a7db851ca1eada780e61346a049356e0aec7",
+      "git_blob_sha1": "f7214ef9acc54f8ed766fded637d14bd84f964a0"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/datasets/__init__.py",
+      "bytes": 3474,
+      "sha256": "a775fedd3152db2fd67408a748c282e32af4469850ec4a783df08b52e92282d1",
+      "git_blob_sha1": "6a4e8f844577e31c9d35453dbbfd5d2317357274"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/datasets/aggregate.py",
+      "bytes": 33740,
+      "sha256": "2da9e5473aef0a3d51466fdb8a3c2154a606959ed9f4c92ad2cd11b249d59498",
+      "git_blob_sha1": "a11404b32e2c9503cb86f05d1555ef867580f693"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/datasets/card_template.md",
+      "bytes": 1224,
+      "sha256": "f237ac3b54c0a87c99248fcc60d10abe4677c0e8775561f91348cd575819b9ff",
+      "git_blob_sha1": "1eced9f4c3dc0b8c39f3cacf1c5c804c183c20ac"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/datasets/compute_stats.py",
+      "bytes": 30860,
+      "sha256": "1086e891766d7330e3eae5e0e402161a9c6870e860c385941112dae1a01f2bb7",
+      "git_blob_sha1": "4f9236940111c2f66bd33625354a040c251abf54"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/datasets/dataset_metadata.py",
+      "bytes": 36746,
+      "sha256": "442780d582a0a8656ec3a6295b5930953ef6a16b06ed24f848ab64f083fce663",
+      "git_blob_sha1": "ba498762c2345bc86c35a16b8fcc69d5ad9f6fcc"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/datasets/dataset_reader.py",
+      "bytes": 23602,
+      "sha256": "dda405ac14244b44b3fc18cf380e1a0faf2afff007eefdc5e4ef6e62069f7068",
+      "git_blob_sha1": "3b08340e8838bdfe41621b3aaa246688bbb19944"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/datasets/dataset_tools.py",
+      "bytes": 83497,
+      "sha256": "46a508e710686b3abe3b651b2de33fa2db5e49c724d73fba45878a60debfceb7",
+      "git_blob_sha1": "16f30a5b611e8260b054ee8de37c1f724cb2447d"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/datasets/dataset_writer.py",
+      "bytes": 30988,
+      "sha256": "9151b19d3bd30b343b6917563b3c728d50cd629c9dbd4caf87c1becdc5824f8d",
+      "git_blob_sha1": "e36ca9a22340ca8bba34c910a944840e3fdb0165"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/datasets/depth_utils.py",
+      "bytes": 10808,
+      "sha256": "b1544eb58a2dc33bc8c94bd5a3651fc279fa0786af95375b25e255d32cfc1c5c",
+      "git_blob_sha1": "ff8046f95774c80775d75faea9d2542af411fa13"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/datasets/factory.py",
+      "bytes": 14298,
+      "sha256": "ee9580a1d17e6654f3ce18eec852022f229cb05a754df2fbc73431128c1c1f2b",
+      "git_blob_sha1": "534f362a6062653e896e1514ecd7f773a86f460d"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/datasets/feature_utils.py",
+      "bytes": 18053,
+      "sha256": "a9f97610f0fb530f0e05bce4813258315848901461de881573cf1c144b5dea87",
+      "git_blob_sha1": "4a37ddeaf3916639e1ba9eac0c65840d777b3cb2"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/datasets/image_writer.py",
+      "bytes": 10309,
+      "sha256": "41ff2772e5399b3ddc18f1981bbac2fe149d2d2d669a99903782d7b6afd72a69",
+      "git_blob_sha1": "04dbdb158a14f2b931bc62547004d84e9a4ac788"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/datasets/io_utils.py",
+      "bytes": 13922,
+      "sha256": "5179ceeb98cc9a1e5859fbcd4fc36e28cd9573a5a9aba26122fb1a86f2b59272",
+      "git_blob_sha1": "dbc07008d8d60bd9723fe4fc9ee028c8bb0befaa"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/datasets/lance_backend.py",
+      "bytes": 38522,
+      "sha256": "3526a1f5359d0deff4735548b321e62b821dba2a411c4528f54f4e01ac5dd5c3",
+      "git_blob_sha1": "4c41078236ff42993edf21f0efd83dd233e031ae"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/datasets/lance_utils.py",
+      "bytes": 13778,
+      "sha256": "1140720ad18c8875b0c335315776ee509d7733fb31a9fbd827e95e9455bb478b",
+      "git_blob_sha1": "0692ca429fb9c6fbb2a60d2ebd1b25dc21f2134a"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/datasets/language.py",
+      "bytes": 9561,
+      "sha256": "251f09d150c7058c166b2caa7c8fb0983978ce1188fa955e397a69fe87750587",
+      "git_blob_sha1": "3c0d37180b8cdda90264f56e0ce85455f51097b8"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/datasets/language_render.py",
+      "bytes": 20433,
+      "sha256": "60f3c72939a6edce42f2a45c185ebe850740cd1d87f949092eb18f1dfa5e5224",
+      "git_blob_sha1": "88239bb0df1f7214a4de8cc63727e55540214806"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/datasets/lerobot_dataset.py",
+      "bytes": 46584,
+      "sha256": "9837856f0b7611adb2ae71dc87922b2403b5f96c370a1a76925147036a2d5cf2",
+      "git_blob_sha1": "565ee16b0f2a9961ca41c28c570b4cddc1da75f6"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/datasets/multi_dataset.py",
+      "bytes": 9296,
+      "sha256": "e3aacab9b8b9e3dd1e38f54fc10a5dd10e3ebd9b9f537fcb3cbbc61dc839ff9d",
+      "git_blob_sha1": "cc15fdec7115e33bdf99c1db105197875ef50f4d"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/datasets/pipeline_features.py",
+      "bytes": 6002,
+      "sha256": "ebf9f208fd91c5b6f8d18229a3f3de6205bb6cd899503966a217b83a2e02644f",
+      "git_blob_sha1": "46311db9c3d847b53db0e47143e9065be284c7c9"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/datasets/pyav_utils.py",
+      "bytes": 8703,
+      "sha256": "d53792b446936f08527b598a89a65fc2ca5c002d9bb14e63015206dae5830023",
+      "git_blob_sha1": "7b7d1e5dea56a4919289e9df32bc3ac0f8cdc0b2"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/datasets/recipe.py",
+      "bytes": 14686,
+      "sha256": "05bf54bd3678cef59698af5ee70c3606b84d48acc42b7f66f5a8925358f146b6",
+      "git_blob_sha1": "542e9f411100f3f4016a39f2ab1036ac5981411a"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/datasets/sampler.py",
+      "bytes": 8565,
+      "sha256": "f715aaaa1118ef8901928f92975f7bc08bca412860f072bbcca84555303cc38e",
+      "git_blob_sha1": "aee6ce46d746db829aed77980b9a8f9dcd151b5b"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/datasets/storage.py",
+      "bytes": 6723,
+      "sha256": "315e6bcc4b4df7659fb28fd633daada5e3953717f833e20395a8688996704c62",
+      "git_blob_sha1": "dbf3042dd59079215546ab39c2c4fabd57e0cf18"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/datasets/streaming_dataset.py",
+      "bytes": 48144,
+      "sha256": "246e22165c496ea6657f04519f59ee5a5d8d2e613145e63767014622438e95df",
+      "git_blob_sha1": "2a9404b34fe8677823727286d25f639c10eb716f"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/datasets/streaming_sidecar.py",
+      "bytes": 11576,
+      "sha256": "69c4258ba7de8ea16df7605a68ef9f89723009d817062d53e1ee6df4dca459cb",
+      "git_blob_sha1": "53b44aa88c2d8c18785b7701f6ec47b4c30356f3"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/datasets/utils.py",
+      "bytes": 21528,
+      "sha256": "eec3acff71a45019b9f67c2d84b812601964dac0baf232a4541dc68c5442e60b",
+      "git_blob_sha1": "8096cd309a08bf2b589f22e64a6d585a61ad1069"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/datasets/video_utils.py",
+      "bytes": 55808,
+      "sha256": "5029b620e5188cfefd15971ad0c7c47940cd4a4e7e74f77d4e13e819400104a2",
+      "git_blob_sha1": "eb68f3194d633616024cf04c919c5fa2d6b2daf2"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/distributed/__init__.py",
+      "bytes": 1759,
+      "sha256": "8d3eca57a3717addabd77f64bbb739914a1eadf14db70c015632b2f6bb49ca53",
+      "git_blob_sha1": "b4ece6ebac962231ec3a12001c753bb73b6b156d"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/distributed/checkpoint.py",
+      "bytes": 11058,
+      "sha256": "933564f2af841099b750b8a7d82e2ba132ae118043509f2f22afcb21e2a800f6",
+      "git_blob_sha1": "d2ccb24feac5c1e6b5a7ff904ea5bba4c307ff16"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/distributed/factory.py",
+      "bytes": 6559,
+      "sha256": "baa8c935d915117c5ebda08a98e663ae6051a2022417e499e0b2ae38804c2610",
+      "git_blob_sha1": "7fde6fbd7ed73cd8ed9ea78e18146ddc3bff49de"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/distributed/parallel_dims.py",
+      "bytes": 4576,
+      "sha256": "9e589ad53ece49a4f9cff0bff252aed28dbf25e209dce27cd80475d05907c1fb",
+      "git_blob_sha1": "7a9c98661a0b7d2810791da3b726f7632ea2f2b1"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/distributed/utils.py",
+      "bytes": 3970,
+      "sha256": "471d8684033f5e582623419fd92182d7b2d7f4cfa68cdf3e3173bc0edf90772d",
+      "git_blob_sha1": "33616fa26140a7f5a9d3105cdc2161bbd35b6145"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/envs/__init__.py",
+      "bytes": 1570,
+      "sha256": "744b8993c1442bb96d81734039c6a53db718bf6d790b1cfed2d7b0d8a034f3fc",
+      "git_blob_sha1": "277fd04f4e1a2d6e3c822c80545ec54bd3f57759"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/envs/configs.py",
+      "bytes": 36243,
+      "sha256": "fd015a7f215f68d4869ac2ff91135d5faaf119b3615d861b2726bd3ecd001dac",
+      "git_blob_sha1": "5cd8a72ffb5cdf059783a92f7d16d97aae3835f0"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/envs/factory.py",
+      "bytes": 4957,
+      "sha256": "920fa600589b6e9a62e0240efa6a03301a955c54e0ce1a4a06ea59e7391ef299",
+      "git_blob_sha1": "317cf2e6fc887b59afeead3dd48005167e5acd38"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/envs/libero.py",
+      "bytes": 21921,
+      "sha256": "97c984f12331527626812ec19967ef399e545535b3571becf044db2417ae9d71",
+      "git_blob_sha1": "17fc22bbd8c32a953f9bcb6f7c9d2864bfda60da"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/envs/metaworld.py",
+      "bytes": 12876,
+      "sha256": "b585743796a3aae3e3e774477eed8e09c72828a31c9d70b77bc7907d9871bbc4",
+      "git_blob_sha1": "fabe428ef35f44687fa9ebf563bcee89af464b82"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/envs/metaworld_config.json",
+      "bytes": 7738,
+      "sha256": "dbff27dec134f1008153b714ff7113f3b0d09aed999e088420001f7384e9e876",
+      "git_blob_sha1": "dc87512b5887766db17def694a0a9a0083700b84"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/envs/robocasa.py",
+      "bytes": 17014,
+      "sha256": "867136619231f73cc8c203038369f6b24a6beede986d0abc2507151e72299558",
+      "git_blob_sha1": "f4f6ec8db401f80350751f7f50441a4623766d96"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/envs/robomme.py",
+      "bytes": 10272,
+      "sha256": "3722a43e7f1e4923505662146bb7891cf01f887bc8c24ad0503e60f61a71aa51",
+      "git_blob_sha1": "e3cdc2ef6896b374a14ee8152b0cc304dcdda3f6"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/envs/robotwin.py",
+      "bytes": 25371,
+      "sha256": "8f60195ae02d302eb660e71dc84a5bc797fc9641cbd931dc4d56eb49b381549f",
+      "git_blob_sha1": "62c7b82f874d5525f9b4ed6b5bbbb024b27c56fa"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/envs/utils.py",
+      "bytes": 19160,
+      "sha256": "193c5c8bdada224ea19acf0ea0b4dda68310291cf27e89ac1732423b77707d11",
+      "git_blob_sha1": "0b2c83d0ceb5b376239674f1776d7b2232d40f28"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/envs/vlabench.py",
+      "bytes": 23649,
+      "sha256": "2c14c0c551e72403bd567b44fdb7801d166d9eaa215c50b7b44fbc6f51be76e8",
+      "git_blob_sha1": "38e4c8e2a9ff3f1cab527d93f227bb0bed1a3951"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/inference/__init__.py",
+      "bytes": 2605,
+      "sha256": "f0913f067397dbd0d7cf03494c2f6f8ddc035bdbd865751789eb51784dee53cc",
+      "git_blob_sha1": "f6c4591ab7c74eda7d78ba67b066f07635e13053"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/inference/base.py",
+      "bytes": 26325,
+      "sha256": "bc7f802c7b8f47325ae0aed2aba4a5b17592491a5fe4a28319274815ef18ce0e",
+      "git_blob_sha1": "d7feee6af571f96c9faefc6c4d5f6f35f89bdaac"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/inference/chunk_settings.py",
+      "bytes": 2149,
+      "sha256": "16b117f039bd1afb63ff9cc07b405a435a4aa1f3270bb8a7c38391ead18ce00e",
+      "git_blob_sha1": "fe2f31c33d921c9d33347a95caec43b2864efdbd"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/inference/contracts.py",
+      "bytes": 5045,
+      "sha256": "417594853fa877ca73a44bb8eeceaedfbdc0e8ca254a760da5b71c367462d919",
+      "git_blob_sha1": "d4eb1c3dc51c2cae312beec21ca328677a038d6b"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/inference/dispatch.py",
+      "bytes": 5274,
+      "sha256": "1aa946b0096afefa68d1ad0a3e8a820ee5bb24c0ac31aaaa361261df8caa7c37",
+      "git_blob_sha1": "1dfe634f2d1e9eb58d750b373fdc5f9e65c87785"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/inference/execution.py",
+      "bytes": 27163,
+      "sha256": "fa631bb00a254096d6b8292c0870dc8e638148138e5d367c00e9d03ff1de3e8d",
+      "git_blob_sha1": "fb60f30ffc00292b8b31cd712ca20eb62c121511"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/inference/factory.py",
+      "bytes": 9291,
+      "sha256": "1c38a5ba517ab6242f0b3949615781ed0ecd0109c14e122b265720b6594ca381",
+      "git_blob_sha1": "148ec7e336277d83ab22b23fd03881a6521a9849"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/inference/policy_runner.py",
+      "bytes": 15467,
+      "sha256": "4a038a742dc5afcf47e69e72bf50f2161c01ef6ee7fab8898fe51381ad2fa929",
+      "git_blob_sha1": "c2a8f70c5549e656198f89c07f671973959af000"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/inference/prediction.py",
+      "bytes": 7582,
+      "sha256": "28f455cc1403ef40590c9b9959648ad4cfde8d41c16679ab36dfe59d7acf5ea0",
+      "git_blob_sha1": "dc64f5f79225789af64573a8e51eca7e3802314d"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/inference/rtc.py",
+      "bytes": 30931,
+      "sha256": "17f3a6710b4c1ecbdce84ae686dd258767c8868f8cbf70a2167c6cf925114ac8",
+      "git_blob_sha1": "2fb3c5c544a644bd5114a755769fed2a75f1e9f4"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/inference/sync.py",
+      "bytes": 6892,
+      "sha256": "cc33f0a0aa9d17c94fc1691b9db625c54ac78c70d9095e4049322d1cdb8a790a",
+      "git_blob_sha1": "2764865a604062c183384a1ef89871c3ce317dab"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/jobs/__init__.py",
+      "bytes": 1018,
+      "sha256": "33760132495da04fa209529e3af524284501ed7cb35392fb593a95f2851622de",
+      "git_blob_sha1": "4f9bd917461134605996289007321bd714485c1e"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/jobs/annotate.py",
+      "bytes": 8137,
+      "sha256": "ce83679bf766dd0bfbaa04f4acc3e6eb714b76f6db8ac764276dd34c10b417b2",
+      "git_blob_sha1": "d7baad0242e924073f4968e5af853322e282e761"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/jobs/dataset.py",
+      "bytes": 2330,
+      "sha256": "07d2b299d3a9321b27c5f3fcf68887bc2f0829bc9e415be7b2740a9476566e34",
+      "git_blob_sha1": "497f8445edc03be78ce4f895072796da2e9aea57"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/jobs/hf.py",
+      "bytes": 18729,
+      "sha256": "13156d0afeb2f0a78ff52bde4ab6be5106ca1dff5e9c3825d7d4e455371341b2",
+      "git_blob_sha1": "f008b3875726a9cc2175be9d20ba352d485a492f"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/lerobot_types.py",
+      "bytes": 2063,
+      "sha256": "2acd899d012aac32437b14892224e137c954adff1a4d4801ccbf54b1f2fc5e7b",
+      "git_blob_sha1": "abc6ba7d0c3e69349f6a22e61be3255cef15d705"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/model/__init__.py",
+      "bytes": 746,
+      "sha256": "d61bf54d9aa5796e99351c5b747621805426c16628433843de96d3f98dab8481",
+      "git_blob_sha1": "2f82e5053123b256f5e693714d8cd494c8b53063"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/model/kinematics.py",
+      "bytes": 5539,
+      "sha256": "1964a5d94b7aaff570762b3944331d861f112dce24428c0c67e2c2ab80db9a7a",
+      "git_blob_sha1": "b00a10d36535fe32d3f4cb03b9140dd962d03a19"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/motors/__init__.py",
+      "bytes": 773,
+      "sha256": "62eeea3be4a3f0e77dda40076e2420571dc3b3b564ae1f9f244811523d906fc4",
+      "git_blob_sha1": "63ac14a389033a8ad23907591671ce31d8425455"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/motors/calibration_gui.py",
+      "bytes": 14295,
+      "sha256": "ab3ec60f69fce544ca7adc8c71b77039d30f48153f1c72a4abe0918f6201cb0b",
+      "git_blob_sha1": "3410cb28ad06cce2ee547c71345958ccf34ab6f6"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/motors/damiao/__init__.py",
+      "bytes": 767,
+      "sha256": "b1d3255adaae35e2e4deff7ab1b52e69f09778da44e975d770cf3db36f4e0f23",
+      "git_blob_sha1": "5a98fa4d22cef7400a1744d65658f966a0b92d6e"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/motors/damiao/damiao.py",
+      "bytes": 33035,
+      "sha256": "5dcc363e2624746ba0318b25e86660c536b3b14ae96fbe132a25184ba0272283",
+      "git_blob_sha1": "afbec85d3e7e3b52b11dd53add47d08eeb04d3c5"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/motors/damiao/tables.py",
+      "bytes": 5351,
+      "sha256": "3c2be95b29fe25e2bb4c28384271ecd595e6aa1f15197ea4a1aa97568461089b",
+      "git_blob_sha1": "22d1624fae95bb98f1a8d587402ce44d1bf1bad7"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/motors/dynamixel/__init__.py",
+      "bytes": 858,
+      "sha256": "cf352a3be07389dcdff5e95696682f7684a50105753bd08d285cee73a00f9f92",
+      "git_blob_sha1": "01fcadf4ffaca5afbd927cb27e42aad0d0a34b71"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/motors/dynamixel/dynamixel.py",
+      "bytes": 11337,
+      "sha256": "6dd0c14c99f7bbd60e202094539e620347004c18cc1f0a2ad3c1be7710d6a37f",
+      "git_blob_sha1": "4502bd66807c46235987e4e6b8f8bd1cabc66095"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/motors/dynamixel/tables.py",
+      "bytes": 6697,
+      "sha256": "683b400f6199415df32beae1146a662015b6d4ad90bc6af3bdf8ddc8222324b9",
+      "git_blob_sha1": "0bdcf38610d71a4f7a747363bf4f20ca3b879eba"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/motors/encoding_utils.py",
+      "bytes": 2272,
+      "sha256": "5285eb2b3f62399e95a2fa4b2fcab631bcad547124e8cc9b6a61525148bc924a",
+      "git_blob_sha1": "195cdbe2c068b020c0b47cb81aa23bc5c3f9d82f"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/motors/feetech/__init__.py",
+      "bytes": 852,
+      "sha256": "fbe4b7f74bc74cc22d97a641c7c71a1b51c95a5b48ec366a71ad15fc16c6f587",
+      "git_blob_sha1": "6c06d8b953f1b83feb51b6ace9d5681c10f89cea"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/motors/feetech/feetech.py",
+      "bytes": 20069,
+      "sha256": "1baf7a04e258718120ba29d77a6111becb61681cbcf62798a4ecb23fe51ab510",
+      "git_blob_sha1": "c426e7d67cd67e837676388b0cb78d172eca8ca3"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/motors/feetech/tables.py",
+      "bytes": 7686,
+      "sha256": "3fc130b8969fee07a6c1021bb175cb6910935f9ed6b4ce31d6a21f3705fa97d0",
+      "git_blob_sha1": "6bd7a15c641dcc03bbba5f9ba174bf6ec594c532"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/motors/motors_bus.py",
+      "bytes": 49503,
+      "sha256": "6ce6109e32590ac2830f6995d13bb478b1a984695cc9ca59c0763ff091666393",
+      "git_blob_sha1": "f4a747b442a0fa425c5e24985b086e2145c6e352"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/motors/robstride/__init__.py",
+      "bytes": 776,
+      "sha256": "555eda25ffadfad48d9063521a687439010fdf17b2962d534fa9374a0a6676ff",
+      "git_blob_sha1": "4729b3968c02c9857d7a7ea7f21ed36d2e8a82df"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/motors/robstride/robstride.py",
+      "bytes": 43093,
+      "sha256": "952aea5dbf02fa06de328c383804ca27567b56bf36e4c8e454b6bb65c475e23d",
+      "git_blob_sha1": "359fc9385980299fa451735b5b8668b6993ca36b"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/motors/robstride/tables.py",
+      "bytes": 2717,
+      "sha256": "83409b59ce4dcb0eb87d7950dea8b09fa9e3e63148a43f168350dea55f20a054",
+      "git_blob_sha1": "06b90df3a3ca8e241a77aa395ff201d50884318d"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/optim/__init__.py",
+      "bytes": 2040,
+      "sha256": "884b6d51e97f591512859d32e2d45f3e44185007a098e4e44293fd4235a26932",
+      "git_blob_sha1": "6f5197074d2a50484652d3dcecd26eba0da57e11"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/optim/factory.py",
+      "bytes": 1768,
+      "sha256": "c4e1f98b36f9e20bf57458044c24fd088de45b008aeed43ca531d850c7fc98f7",
+      "git_blob_sha1": "ce519e0b20da786ba942734eee3073baa230ad33"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/optim/grad_scaler.py",
+      "bytes": 4034,
+      "sha256": "0570e12d9795f081f82b7087af513b5ca10cfd9fa350f1f34960e33236b56867",
+      "git_blob_sha1": "f1dcbc06119952c4e927b9bda9292bc6d1279eb8"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/optim/optimizers.py",
+      "bytes": 13926,
+      "sha256": "a7a5c282c88973c08d4f947b831f8dab679d2347f0fcca18283377af792fe957",
+      "git_blob_sha1": "820579c061c72faee539df5049b1885a6f3e45cd"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/optim/schedulers.py",
+      "bytes": 10926,
+      "sha256": "dbbe9ca43c914954ddf00dcb4589df9be8f21b17cdeb19af6bc44509e499bf6d",
+      "git_blob_sha1": "545336cecfefa03fe68cb03b294f116f37ebaff6"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/__init__.py",
+      "bytes": 4118,
+      "sha256": "a0f9b6c64958d56c2edbee3bf24c590b7167e29257d3ed19a7ddf997c55df1df",
+      "git_blob_sha1": "cd39e80eb1fb2bb6b7443179bd19f9cff4275460"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/act/README.md",
+      "bytes": 44,
+      "sha256": "31ac5eaed43f5de5729d6893cf2c848aa63f647dbefb4c3baae7236b45f923d8",
+      "git_blob_sha1": "04602009852778a28be44647b6e7ba445dae3a95"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/act/__init__.py",
+      "bytes": 815,
+      "sha256": "d0bc26699649050526405ca5fe331769a89d803d93ac847de9f34b57c8b1c863",
+      "git_blob_sha1": "44f15189f7908ef0f4aedab5b8b2b4dfab240a72"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/act/configuration_act.py",
+      "bytes": 8697,
+      "sha256": "35a60c0dd3c811b137b5eb035bdbd40d40e2c24ba0cda61756052e6e1c829282",
+      "git_blob_sha1": "b5c3d68f1f0ea498b19264379bf73982be809383"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/act/modeling_act.py",
+      "bytes": 35468,
+      "sha256": "83d954f79ccd3eaa6774dbea92524939c8ac08359bb355ba7cd37b8601e1e3af",
+      "git_blob_sha1": "d3f82d79c7b76b5841a2f0e4f62ab92f70b57a9e"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/act/processor_act.py",
+      "bytes": 1991,
+      "sha256": "247d3b13c93568c1fb35349716f8c3b6a53c2e7a5c8b098928471172b0bf0ef2",
+      "git_blob_sha1": "d3109aeb3b325f6e0b0d49a7caa83f26fedd7e21"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/chunk.py",
+      "bytes": 3737,
+      "sha256": "f26162e87d2bd529f7740590eb14021bc8884f9bee2ed367a7e609e37d7194a4",
+      "git_blob_sha1": "4ea29193177cf9862a1e6dc121291f2470c2ac06"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/common/flow_matching.py",
+      "bytes": 19484,
+      "sha256": "73f3e5525e492286729e42b68b0057167bef1ad4d5a4d76bd44073c3a50ac48a",
+      "git_blob_sha1": "dfd15bcd7e336d46d0d2fc606029ec948e4159fd"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/common/vla_utils.py",
+      "bytes": 9404,
+      "sha256": "88efbc82314a0ffd826f4693ff42fc580a5385424370b271351e2674cf0e33cb",
+      "git_blob_sha1": "8d62a554db4a1f327c5436069e9080796c6b0ecd"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/diffusion/README.md",
+      "bytes": 50,
+      "sha256": "6f0590a0619341b01dc72b6d61a90fdaa224c51ede9e9a553a8577903c9fadcd",
+      "git_blob_sha1": "d332d79c89ecbb7abca0ad9d2aefb3db409cbb3f"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/diffusion/__init__.py",
+      "bytes": 869,
+      "sha256": "ca07c649c6160418f7046e73e1fc64c9860736d860fe6f1699cf31dd22f6098b",
+      "git_blob_sha1": "4f6ee820aeb99399367a97a49658f5059c3669dd"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/diffusion/configuration_diffusion.py",
+      "bytes": 13491,
+      "sha256": "d5b9626e0e8156745e646cf81092263ba01a4f8d75a7ccdf37241d5b682ef8ad",
+      "git_blob_sha1": "eba395e93187bbfee7ea09c146abb6b86c2a114f"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/diffusion/modeling_diffusion.py",
+      "bytes": 36344,
+      "sha256": "67df153208a544d24e8b47c66304c989a6a853153b8c3955c884c10b32187654",
+      "git_blob_sha1": "17b1130940710fc7dcd95509aa7c8411ecf54a25"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/diffusion/processor_diffusion.py",
+      "bytes": 2137,
+      "sha256": "3838c38791a48ccfa29e34e93d722b05ea0f822554fbc2110ae011738b59b2cb",
+      "git_blob_sha1": "28d77dc83056cbc9df60d7b894212cec02ad5a5b"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/dm05/README.md",
+      "bytes": 45,
+      "sha256": "35c92a8d6e70fab8b6e6d1fa7adab94a876ecd768a3b6559c3a6720babc73404",
+      "git_blob_sha1": "2dc81f5450a9fe7bc2fa2fbea31b6f28646acfee"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/dm05/__init__.py",
+      "bytes": 869,
+      "sha256": "90c8d97fe055ad1a15feb0e7f22f4e5bd92dd310632dc2fb113bfc0ce0b6e9be",
+      "git_blob_sha1": "ea134e19499769539eda621f08a4278318e96912"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/dm05/configuration_dm05.py",
+      "bytes": 12360,
+      "sha256": "fe348f209cb06f02f59277c525db2b9719b3611033772908a50f846cb599c1d4",
+      "git_blob_sha1": "56286e69ac12ccc4fd6954829821f27c6e10fad2"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/dm05/core/__init__.py",
+      "bytes": 698,
+      "sha256": "c52f08981ca347ec43d98702ccba9649e7afc2c267543c3dd28e4438c88014a7",
+      "git_blob_sha1": "992aee26e259185ee24c98b0cd334b77e9709ae2"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/dm05/core/adapter.py",
+      "bytes": 2835,
+      "sha256": "a319423beab83a1c87e44e0f5b0f1cbfe873b5e46eea5b70fdf2d163493df364",
+      "git_blob_sha1": "d02da8afbe046711c7d2ee7d5a04e2b56aa8af61"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/dm05/core/modeling.py",
+      "bytes": 72204,
+      "sha256": "61826755eb1398e20faf283d9cc08bc3833ea85a139bd0ce5b1a587b008a92cc",
+      "git_blob_sha1": "975a687a6a61b52a80a9fb838b0e956e581e9d73"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/dm05/core/tokenization.py",
+      "bytes": 7808,
+      "sha256": "158c0df6dd9a01b7efdb7fd4bc7c27ad29ccb8b90e4a62194a619ed37007aa47",
+      "git_blob_sha1": "f0632b56809043779db220dd0ed2fb278c52049c"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/dm05/core/utils.py",
+      "bytes": 1520,
+      "sha256": "3d6b6351e3842817ee7928e53997780f57728d2e89174ce07a24464e540cec1a",
+      "git_blob_sha1": "659c3a0ac392e2fe54ed6595c1ad9b9316755714"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/dm05/modeling_dm05.py",
+      "bytes": 24759,
+      "sha256": "cf1e0ec7f9bb58c95193069a0e9c303263dd79dc946bf4626d25b4ce572ab100",
+      "git_blob_sha1": "90bf5ce9e8daa4a744160997d88c0eb942249618"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/dm05/processor_dm05.py",
+      "bytes": 19364,
+      "sha256": "d8f618eb19971f129cbf02b8fbdf3164fa710d17d5f8d28531d0bec8bcc6d584",
+      "git_blob_sha1": "c397afe04eb7248732cdf7af8e8568d260fd4142"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/eo1/README.md",
+      "bytes": 31,
+      "sha256": "3f5ddb32383b0bcfc360d4c5b3d3f7d7250795831e1753be5a6a38c2110b821d",
+      "git_blob_sha1": "3f36fd805a15a2392d5e11690267dfb88a492f6f"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/eo1/__init__.py",
+      "bytes": 226,
+      "sha256": "9e29a456732313203610af5123eabf7f2509fa68ea6a997fb34d7a1d71d17df8",
+      "git_blob_sha1": "8298affcd80b707fdf95a7cd6a33fc2b3f437f65"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/eo1/configuration_eo1.py",
+      "bytes": 10448,
+      "sha256": "624a082cda6df91585e254c43db44b334aff16aed09087e96c815be6da1d6cff",
+      "git_blob_sha1": "08698228a380584c79c7fab55a569a0cdd6a4bc6"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/eo1/modeling_eo1.py",
+      "bytes": 28732,
+      "sha256": "0bb7fa0a6ac94d0f32e1c2b16ee5009ae92acd53b9f83cbeea73384594c911d2",
+      "git_blob_sha1": "f928bd11349d3d9b0ccf97dbd509431d49a74e5f"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/eo1/processor_eo1.py",
+      "bytes": 20618,
+      "sha256": "f88c3e3e35621ef56eef41f1608e6e1526fd4c9d9cdd91cc19fa5839c892b5b3",
+      "git_blob_sha1": "6e78fdbd915a2fc929d88c38a8a15a3ae45be867"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/evo1/README.md",
+      "bytes": 45,
+      "sha256": "9f745509d152ed6b1ec6a69c28bad21a65471f24145e101785c5159958840103",
+      "git_blob_sha1": "6c4284fb98de7e535a1d350fa3cff5c72c9688b8"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/evo1/__init__.py",
+      "bytes": 824,
+      "sha256": "acb52744fed3005f999ef1d15846398b5246ac35458ea374200df3a57f0a2c43",
+      "git_blob_sha1": "581b2b8245904ce9ff36d603db5b677fcbe7b35b"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/evo1/configuration_evo1.py",
+      "bytes": 10845,
+      "sha256": "0f29dc565915a93646c3dc609932ea8af524d1945d7a5357bf2b42b6b857ab8c",
+      "git_blob_sha1": "0746944f8e6a91a352454a07e4161bb2e92fc61d"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/evo1/evo1_model.py",
+      "bytes": 8471,
+      "sha256": "14c955614a100f71a970863bcfacc7807681cc5ca806405f6a10aba43ebb8f0c",
+      "git_blob_sha1": "e14a1b630f5975e4d5be609fa715b1c9f49b22ec"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/evo1/flow_matching.py",
+      "bytes": 20581,
+      "sha256": "e5d56b64261309d834fc8260dfc0ba4c9b6c855836e317faea4f81722c6f2e8c",
+      "git_blob_sha1": "50a45b0bb578b04e5b8ffadc76127781a5fbea57"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/evo1/internvl3_embedder.py",
+      "bytes": 16560,
+      "sha256": "8bd2caad5733df729bbfc305eb862e4b85032397f4e0a8c63bffbf3bc79412c0",
+      "git_blob_sha1": "841b37c1b162347bb3da638a3bb2598b24273f6f"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/evo1/modeling_evo1.py",
+      "bytes": 22747,
+      "sha256": "526ce412e9ba991dbda9c81e59b88fcaf9a6f834df07fddd91679b5a2dbc2e7d",
+      "git_blob_sha1": "9e2ae4738a1d520194f81c02adc2257c62151544"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/evo1/processor_evo1.py",
+      "bytes": 18563,
+      "sha256": "d0dc94ff7938c3d99a8e5a43df855f4a3ecc0c246aacd0b128e4548ce8ee0d13",
+      "git_blob_sha1": "582eac9e652fbf0dbf515fd77b25e7993cb88bfe"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/factory.py",
+      "bytes": 22158,
+      "sha256": "16d58386674759814f3fbd3174f71a0750bcd92cfb34a9d3f29113dd69b9d4bc",
+      "git_blob_sha1": "3101458539d4bf976a70c29abcf700fe98ae2787"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/fastwam/README.md",
+      "bytes": 48,
+      "sha256": "6e453acea6579d3c3fe4899aedebdf293b3c9e4a89565a62f2d3684eb977dabd",
+      "git_blob_sha1": "d78b9ef361b06ee796f145bf22abd0f543c7e104"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/fastwam/__init__.py",
+      "bytes": 866,
+      "sha256": "d27feeba8d4e491e0610511e4bbfdb5fb997f5ce44e99eb328ef4d9fa9a57e5e",
+      "git_blob_sha1": "8488e7b7872beacd0083209a14d56a8d5a9be796"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/fastwam/configuration_fastwam.py",
+      "bytes": 18793,
+      "sha256": "ca94512bf9a2fd3b988b686e80d777901b8b4bd732b23409db4dbe4ea07bcd9e",
+      "git_blob_sha1": "12367c8224ed34e56f7eb3162cac2e20f1158c00"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/fastwam/modeling_fastwam.py",
+      "bytes": 20948,
+      "sha256": "9cd54f5443cfefb67190d02418a619a2e4562d1a36e488f3ca6ebd1e36f8de09",
+      "git_blob_sha1": "20810dc8a0c72ff778abc045c53ee0c52c01d163"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/fastwam/processor_fastwam.py",
+      "bytes": 4958,
+      "sha256": "b229c5e10a81dc087c0828e8457c6b766609f0261a426c92125c8857e8e2c566",
+      "git_blob_sha1": "fd46b9847b2b189d3d2640d4be85b6d11d9ab733"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/fastwam/wan/README.md",
+      "bytes": 1541,
+      "sha256": "3e2f4349d0fd70277cc452d6fdeeb66425ed8538bd78c0629168bab6225d9d50",
+      "git_blob_sha1": "7b7d6103309f78c3c7903b63cfdf4dc79f66e15a"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/fastwam/wan/__init__.py",
+      "bytes": 1044,
+      "sha256": "c6784d4796877bb54affcac618d2edae3a5eccd00fdf3c924515d28e760bf3eb",
+      "git_blob_sha1": "11c0aaf6febb49065e7dae6d8cd0f000dda6f304"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/fastwam/wan/adapters.py",
+      "bytes": 4581,
+      "sha256": "69338876ed16709f58dd26a0027e64b3ac4e160dc0219af80f6458451de46014",
+      "git_blob_sha1": "abcb1abe1fae78609461fe0629057f8f59f8d486"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/fastwam/wan/components.py",
+      "bytes": 6414,
+      "sha256": "f1627ad1d3ec9e4e7421bb17d93f8f2a6ac58a4ac3623163b61cd908780f0874",
+      "git_blob_sha1": "761d047af458344148dd3e0bb8584562b646315b"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/fastwam/wan/model.py",
+      "bytes": 12313,
+      "sha256": "17df8b01f5e35ff8ab8445b44c823ee03a6daea4d90285be8b0c5dc9a022c64d",
+      "git_blob_sha1": "329d1c48a2d4f8d6445612b09a733dbe684a33fa"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/fastwam/wan/modular.py",
+      "bytes": 82974,
+      "sha256": "4ae4daacee42945aa66c3a19ed418960646af39a4488d6074a71039e8ce93056",
+      "git_blob_sha1": "9e1f9f770c9bf7f61d40e14b57c098b1cb92c8c3"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/fastwam/wan/video_dit.py",
+      "bytes": 32900,
+      "sha256": "b03651ad411e23a2fcb1451f6e93ab6d01e9812d508c8bbb22aef7aa575a28bb",
+      "git_blob_sha1": "a98f06cde2a4cd6c4a45d9ec96c259c0ac7162b5"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/fineart_vla/README.md",
+      "bytes": 52,
+      "sha256": "d2dd24fd59d5170d465fcca75897ed93ccb4f4623b0e7eb3a6012ca44350f8a8",
+      "git_blob_sha1": "929c225317d92c0acbe6577e532dd12d9cdc7487"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/fineart_vla/__init__.py",
+      "bytes": 795,
+      "sha256": "8c820e192ba6cd1fc0ed6405a5aa8ff466fa970246c6518d2da7878722ceb06b",
+      "git_blob_sha1": "fa3fea10e56779b90876eaeec3ba45671ed21786"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/fineart_vla/configuration_fineart_vla.py",
+      "bytes": 9259,
+      "sha256": "9d664802b713c7bb7fa3d62c50a8f3fc8041ff553db6b21d299f426fa7edfdba",
+      "git_blob_sha1": "98eae98014f4399b903dcd676390e194372fffc1"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/fineart_vla/fit_fast_tokenizer.py",
+      "bytes": 21188,
+      "sha256": "0648940b93e5e9aad25d66bfb16b16809dfce747eb24351f4a5ed5641fb2f6b4",
+      "git_blob_sha1": "4310ae688ce6325a03034be2002d5260fd3f7b0a"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/fineart_vla/modeling_fineart_vla.py",
+      "bytes": 69256,
+      "sha256": "0a66b99bf8767f837ad1dc5218c233f6f3c954026d5d036bf94c2b6eb82619cc",
+      "git_blob_sha1": "b2a9d88600ee60793705c4a3817050a745b3d22f"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/fineart_vla/processor_fineart_vla.py",
+      "bytes": 20691,
+      "sha256": "5d3a3440c03756926d55a3ed20bd51fe8f67c92a2c52a7e9deb56fce66ddab6f",
+      "git_blob_sha1": "5c7310c4ebf7c5a91ffb588658c77a6e1f6f1ac3"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/flux3/README.md",
+      "bytes": 624,
+      "sha256": "f5d4a8485942d768100235da93f210cd9ef08a77f024082e4e79b7122e6190dd",
+      "git_blob_sha1": "9ea1b6fb160655799e92196fac0ababc3499443c"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/flux3/__init__.py",
+      "bytes": 825,
+      "sha256": "7bab6783e86cda3c5b69399e1f74b9039f8c149bcdc43bfd99834fff3660a027",
+      "git_blob_sha1": "13e295040433cd4853f3ffe499d4d96d8aefa0db"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/flux3/configuration_flux3.py",
+      "bytes": 21573,
+      "sha256": "3926c339e7923e0381c0ba4a14923f9ae156226acc9291c8a50c6a2a712dace7",
+      "git_blob_sha1": "f90c76e28506f5f1da0af9c43d0e4b6addfa0947"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/flux3/f3/__init__.py",
+      "bytes": 2185,
+      "sha256": "d0bb704999be5c95d949a9756893fd3c294ca5ec247356fb50d974d62ceec9e0",
+      "git_blob_sha1": "55af8c9543b710e95c841c24f1cde38cfaa96e38"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/flux3/f3/packing.py",
+      "bytes": 28091,
+      "sha256": "c603528adef2a004fd4ec31f23304e91d10cebcc1d7af792d3bc1164121c8294",
+      "git_blob_sha1": "bd86954cda09836a4effc7cdac11d21c5904f0b2"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/flux3/f3/positional.py",
+      "bytes": 5735,
+      "sha256": "a128eb1df874676bf91b7ed9dbb45f280ef821fd3b31e34596c6156ead442788",
+      "git_blob_sha1": "b1655e3733c71d902c7b4c25fcf6a7ea1f0ccb57"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/flux3/f3/runtime.py",
+      "bytes": 1137,
+      "sha256": "16b920a95d3e599fa638adfea1e056a37752c951663be36f069a348bf5f03bc7",
+      "git_blob_sha1": "0c19484a16c9e4755a926af2df5ecb3aa6c9f8a7"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/flux3/f3/sampling.py",
+      "bytes": 8711,
+      "sha256": "762415f4212703e27b36b56519b7c1338d788e506e66df269cb8d8247449f7cb",
+      "git_blob_sha1": "b0c1a37c7e1e48c8c5b07ceebc216f3bbdddcbce"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/flux3/f3/text_encoder.py",
+      "bytes": 6826,
+      "sha256": "334178b93b6bc6d00e547e85323c5bf2af608af7b539190703683e753159d525",
+      "git_blob_sha1": "84eaa4facefa88120ae8706cf2c87eed77218278"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/flux3/f3/transformer.py",
+      "bytes": 27354,
+      "sha256": "ff9c835a61e9efed473b49ef469f2aff10669e82075f11a9c3aca59d4db07de1",
+      "git_blob_sha1": "1c32a5621bc8c2cea8e3e9ad76cda3b183e73248"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/flux3/f3/video_vae.py",
+      "bytes": 39948,
+      "sha256": "42078f6880b8a571a56c017d85512ab2ca0179e13158cd1b409831ed6dc7f1df",
+      "git_blob_sha1": "d651462deec3e5e88f2fc882ca394ceb0118596d"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/flux3/f3/wiring.py",
+      "bytes": 12050,
+      "sha256": "785cadb3f0f951d7f86dc4bda9572ebb0764e90567db678de3c82629e427f72e",
+      "git_blob_sha1": "317c34905e6fcf5fc1b1fb56638919a4c828604a"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/flux3/modeling_flux3.py",
+      "bytes": 29618,
+      "sha256": "2d74aed793e60be51a606ec809cd9541ed9baccbd611e1ec091aedff13be2738",
+      "git_blob_sha1": "b857b1e06b5abd8e07a07ec7f6d22760de731ecb"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/flux3/processor_flux3.py",
+      "bytes": 23964,
+      "sha256": "77941d85b2bf7f65f4078ebf2b6b29f9f5d4874c7c1ca60d900d431f6e60e5d9",
+      "git_blob_sha1": "5e4796a39ebd385f4c49dcc33bb99551475d1241"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/flux3/utils.py",
+      "bytes": 2678,
+      "sha256": "10f8e5338bd6dd9dc22889cc1e618647b446994d898578a2f04e7a1dbe805560",
+      "git_blob_sha1": "0a49456bd2de59771a0a35c77bba42edd3092560"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/gaussian_actor/__init__.py",
+      "bytes": 910,
+      "sha256": "5f8e1db8e375b393f8721d856832f2247117de6026538e554424d76dfec75741",
+      "git_blob_sha1": "c3c5855ac92e473273bee9fe0f61e48b2f1a2d53"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/gaussian_actor/configuration_gaussian_actor.py",
+      "bytes": 8453,
+      "sha256": "a4cbe10947d6c92bc013eab14902f4847e8336e21b585d1a6dfe6b7eb06671c4",
+      "git_blob_sha1": "ed214c4c793a98c0851cd60d4ef2e5782d556613"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/gaussian_actor/modeling_gaussian_actor.py",
+      "bytes": 26060,
+      "sha256": "6955806fa452b8c7d60296c16c75969442b92b43e752580d7bc0959c7e831c78",
+      "git_blob_sha1": "49ce2a129b6dfe3113f27ad85a445fa9746bac93"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/gaussian_actor/processor_gaussian_actor.py",
+      "bytes": 2011,
+      "sha256": "57c51402ef725c29742ae2334e3b092cc150bb3998656ca800bf1352e0b1dbd0",
+      "git_blob_sha1": "fede487ff4066a526e24d49e1591cf43e35752f5"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/groot/README.md",
+      "bytes": 46,
+      "sha256": "ac8a74186b0eaf1e342c706cf09778c77b70bde93a45ad67c97ea3a51474ff26",
+      "git_blob_sha1": "ff4937f5c25888cda9942094ed36e684a72dd564"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/groot/__init__.py",
+      "bytes": 867,
+      "sha256": "40411dc2b519d34f96cd68bed78817d98f10905778eea58a18a0d539ce2cd79d",
+      "git_blob_sha1": "c8933ff56929676384496c10f485bfd1c8af6ba1"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/groot/action_head/__init__.py",
+      "bytes": 704,
+      "sha256": "50d4e230c4d2b54e6330df8362d92fbd50e728409c56dd03ea261c6cff611720",
+      "git_blob_sha1": "63ffc39e6e548e9f6fd6dd1a277dbe46f86d4946"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/groot/action_head/cross_attention_dit.py",
+      "bytes": 17340,
+      "sha256": "477fc82368fb6dbaf33ce6b0be79caa42ec4d4f3acf10ab72ad3e2c193420ac9",
+      "git_blob_sha1": "6974592402fe518d4f9f29391df60c02a125a95e"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/groot/configuration_groot.py",
+      "bytes": 23946,
+      "sha256": "fd72acf39b563754d535707ed385fe26d07d7aadd286b79087885c9fe389188f",
+      "git_blob_sha1": "10f8267e76a6d5799fb879be3c7dbaa898ecfc61"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/groot/groot_n1_7.py",
+      "bytes": 39606,
+      "sha256": "7152711a346491f1d28f7fe185d33390002cfa47331631637ebaf3de28f492fc",
+      "git_blob_sha1": "7db59f3b34e53d03683148f2bf57a860bf7960e1"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/groot/modeling_groot.py",
+      "bytes": 23676,
+      "sha256": "b95de1a52f5af70256943dbbbf5cbd5e81c078b9c7c0adc4d398e2229b8d3103",
+      "git_blob_sha1": "3f846c3b4a3b53669675699c50df057090d5f93d"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/groot/processor_groot.py",
+      "bytes": 111421,
+      "sha256": "ed198bba9dc0b239c17e72c7e697ae2d4c8ddaa550f3c720d582e7e0fbf5e02f",
+      "git_blob_sha1": "3250ccd5b7b79e65a9a0ed6965e22d620c3051b7"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/groot/utils.py",
+      "bytes": 9425,
+      "sha256": "d6599f2e1a3648a60aa41b2f2169627514231d07d67e5db81b48f4a3a3916f5b",
+      "git_blob_sha1": "9a65404fe85404380824d7a17ee2394f7df13ad0"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/lawam/README.md",
+      "bytes": 46,
+      "sha256": "78596cdaf0c73fdfeb69bfc1fbc5ca93e2abaec86147568a70ea905f8c7787f5",
+      "git_blob_sha1": "541551ca33a59927183f3968995b5bad55d5de6b"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/lawam/__init__.py",
+      "bytes": 848,
+      "sha256": "5a7d66aad3cd18e12961f136679958a57c70b2f99b8d28a676adaaeac594e053",
+      "git_blob_sha1": "0b54ad0b290ed61b06cf1568a21ba80c8f491bfc"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/lawam/configuration_lawam.py",
+      "bytes": 11766,
+      "sha256": "3a8b67b4174824b74cd9c65e721977bf8aa92e9efdf0b3aa755ec3faaf5044b3",
+      "git_blob_sha1": "c4fc82b02c219ffbac48f1790afc3d11bee1f149"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/lawam/lam_core/core/__init__.py",
+      "bytes": 669,
+      "sha256": "0346844d1e88e3a7dd25044f131ff36563b6e01d976fcffb223a5357841bbb5b",
+      "git_blob_sha1": "c6fa7e7e2867421e352d768d8db76823240c5ca7"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/lawam/lam_core/core/lam_model.py",
+      "bytes": 6390,
+      "sha256": "719f57f40ed6fa27d55c7afa7489245d4c5f706ac4d332f42e96288fff35ef0e",
+      "git_blob_sha1": "0fda728cfe6591c8184bf942ec70b834c84d0364"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/lawam/lam_core/core/utils/lam_decoder.py",
+      "bytes": 9234,
+      "sha256": "a100a91429bafe5fde63b193f16883de06730f8b51b853357cf0b4d76bd62950",
+      "git_blob_sha1": "66d0976066dd09c302950ad08de270195a53f03f"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/lawam/lam_core/core/utils/lam_encoder.py",
+      "bytes": 6473,
+      "sha256": "4b6e6f35e3e782324b3502e6388c00668e7e067945bdf08f330ff533dd9e94cf",
+      "git_blob_sha1": "88bd80b566dd4a0c979c54a6f7fec718678b09c9"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/lawam/lam_core/core/utils/modules.py",
+      "bytes": 6537,
+      "sha256": "2a051fe9fa17f0c65b4264f47b66eb065d11ed43342d610788e4195e9036f857",
+      "git_blob_sha1": "79631087d50abdb6d6c87adb0bce54a73bb463e3"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/lawam/lam_core/core/utils/pos_embs.py",
+      "bytes": 4981,
+      "sha256": "a8ff52b9a1abf1321dc5df6df7d1a12f545aacfb9b142d449fe8ceef759eadf2",
+      "git_blob_sha1": "a391387985413427eb8b845cc340a97d1d27f8ee"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/lawam/lam_core/core/vjepa_encoder.py",
+      "bytes": 5435,
+      "sha256": "0475f68814b05b21ce0db2d96e6e97a4594b3cd0117c4683be6b2518ec2d618c",
+      "git_blob_sha1": "81976bd88491a36d9f96b50a1fe951d1954ee8ad"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/lawam/lam_core/core/vq.py",
+      "bytes": 2430,
+      "sha256": "e17d16d01eb891c616469fe04e42c78433486247ac6495161da3ce3fb4024e1e",
+      "git_blob_sha1": "c6811d0aeaa60d3efb6c7090bd47f06dbb439ca8"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/lawam/latent_world/__init__.py",
+      "bytes": 663,
+      "sha256": "2b7f59a40bf4fe9d9671c8f06bf092d34107a8edcc440ca706b84d225215ffe6",
+      "git_blob_sha1": "d581fd57937284bc0c2c60fa872d9f2b95fea5c6"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/lawam/latent_world/batch_utils.py",
+      "bytes": 1844,
+      "sha256": "1a5e18d7e71ef72bf3b868eeb498b5f7e5d8e002003c336ef9e2924c6dbc9e50",
+      "git_blob_sha1": "568283f8e02c4b534588abe08da6a853d8863383"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/lawam/latent_world/processor_utils.py",
+      "bytes": 2680,
+      "sha256": "b5856a4ab759bde3d2c0c806023e68f1c721ef66494f6b8c80a73fc13d264ce2",
+      "git_blob_sha1": "2100b2af3b1bfd9d3eeb2f6dbdbdc37e2b78a9f4"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/lawam/latent_world/runtime/__init__.py",
+      "bytes": 669,
+      "sha256": "c41ed500d21044e75be17cfef83660bd0a9a21eaea8cf9a1522056c5a4dd523f",
+      "git_blob_sha1": "4aa9d0f8cb21230026904054ef7e1f8a8e4e6d3f"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/lawam/latent_world/runtime/freeze_policy.py",
+      "bytes": 3461,
+      "sha256": "3f22a86bc93a91db2446994d6d48eb6b75ffe9483aa9fa76fc3c6297fb31616a",
+      "git_blob_sha1": "61e26aed33b3a894bad72c6cbeb0aab310a91774"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/lawam/latent_world/types.py",
+      "bytes": 1776,
+      "sha256": "d18987a793c371802724688f3a47891b4239aa87d01e03cd8b92d2337c8dbfa4",
+      "git_blob_sha1": "842e6736060d7bd5f1b967e6430f16d274cf3e51"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/lawam/latent_world/vlm_adapter.py",
+      "bytes": 3781,
+      "sha256": "962653bc7dba00fdca206a3532448d810e989dda12fedc778aef28d3aa838c70",
+      "git_blob_sha1": "334cfcf0a55aef96172ac6448253a02049233b4c"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/lawam/modeling_lawam.py",
+      "bytes": 14693,
+      "sha256": "6674db37f11a1f74771d9ff0fe623f9c6914dfc3b2f041e50ec2911f042591e7",
+      "git_blob_sha1": "c9a16202aba2fa21dcadb9f30cc0f4f841cdc634"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/lawam/processor_lawam.py",
+      "bytes": 27870,
+      "sha256": "3b03d722cab325bde2a7b0da895db638b3f1ac408fbd3ea9279aadabfb2000de",
+      "git_blob_sha1": "7e119d7aa360091e327fd195cd7470add866ad14"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/lawam/utils.py",
+      "bytes": 1649,
+      "sha256": "0c3a8d359eb06650eceafc7d2f906c9693e6db97c7b3517aed4076855bfd7c8e",
+      "git_blob_sha1": "b64a3025d045d63fdc205fbde7b4d7fccbe7438f"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/lawam/vlas/__init__.py",
+      "bytes": 770,
+      "sha256": "a5f1f24c8fbec9c2b1b0b7995e51481221593e59c0619ccb1d4e8c059aca0346",
+      "git_blob_sha1": "b5aa6a6eb13e86a9a3783107af0ff2549c8ca06f"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/lawam/vlas/cross_attention_dit.py",
+      "bytes": 17911,
+      "sha256": "18e5a9b06f673fbbf95fb704d6a6df9117fc154c14f0a210a1be17c51ea8aa33",
+      "git_blob_sha1": "592ee199556783758e47ba3b6399a829ef4841eb"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/lawam/vlas/flowmatching_expert.py",
+      "bytes": 34154,
+      "sha256": "e8f39eb96c998ee7dc57e9962462afdef9654b46c8be10eafc735998112af7bf",
+      "git_blob_sha1": "7667d9176ec53810659580e8e25fa6498bc12f35"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/lawam/vlas/lawam.py",
+      "bytes": 30280,
+      "sha256": "bc7651da8559cd36572a2fd7dde144a4a83f05b5b0414048e16e50e3ada51606",
+      "git_blob_sha1": "08825ad171e04fc7476af3bbcff18ce603af0c5f"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/lawam/vlas/qwen3vl.py",
+      "bytes": 4865,
+      "sha256": "efdeb4afa13f46cdfc2ac604d11d3e7f1498353f8207169fdac1281dc9cd2fcc",
+      "git_blob_sha1": "5b178f6ce513e69cc94af6efc5581a5dc9f5fd28"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/lingbot_va/README.md",
+      "bytes": 38,
+      "sha256": "be7ce2c88ba4882e4954d57b8b66133fe99667b1687f4a0945bd4db15c276961",
+      "git_blob_sha1": "2ec3c82af7c94fc6e0bea73c4b606b7f62d0a950"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/lingbot_va/__init__.py",
+      "bytes": 897,
+      "sha256": "703fed8855d1f3ff8cad90fd104ef3820f4b6e4d6f90461c0a7f42e7ff0345b2",
+      "git_blob_sha1": "db2ab17d183d6436a83e2daf77d723965ebb5642"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/lingbot_va/configuration_lingbot_va.py",
+      "bytes": 7655,
+      "sha256": "dde8790e1111f2e2ca4ce5d48ddc08e2d26003c49d0e73ab15e57d22e9d705e0",
+      "git_blob_sha1": "412fc64ce95ed74ba9758cdd2098b43893bbb45d"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/lingbot_va/modeling_lingbot_va.py",
+      "bytes": 41350,
+      "sha256": "d3068f42e78106185575a049a575cd6611af859bbb38cef968772047ed1e5ea1",
+      "git_blob_sha1": "d38eeec706e4b46930f9c2a8bbc04a44d7d83017"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/lingbot_va/processor_lingbot_va.py",
+      "bytes": 2484,
+      "sha256": "7ab6db2d8af03fe56ccee82cd6991f454d25a77462753ce0375b3da84a34a8a1",
+      "git_blob_sha1": "2d7f2deaacba30b77bd68fc68fe9813a2f18cb0b"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/lingbot_va/utils.py",
+      "bytes": 45356,
+      "sha256": "0fedec8812fe70465593b7700e77951b0faaf81d705c8625b4261af885db99e5",
+      "git_blob_sha1": "02a1b5c4987b27453199b45e83ab4e73a3a95c8e"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/molmoact2/README.md",
+      "bytes": 37,
+      "sha256": "01de1f9b31f5e80a46e51fb0c7329ee2d9c48ae01c329131957e4ba083804c65",
+      "git_blob_sha1": "9756785d90ff3f951f789e2bcb7f82accdd6fe83"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/molmoact2/__init__.py",
+      "bytes": 921,
+      "sha256": "964eceb8042133545f5f91cd4d23dde6b1824b7941d2b09fd9ff406301d825f7",
+      "git_blob_sha1": "a4e7695c26cbbf6458cf834b2a8ab53c8846cf57"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/molmoact2/configuration_molmoact2.py",
+      "bytes": 24478,
+      "sha256": "a19033b2e2b3e44f500b2f217411796bb978f92e49f553ab68b6aa49783cab52",
+      "git_blob_sha1": "e968653405d300477e3d476be602e937f092503d"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/molmoact2/modeling_molmoact2.py",
+      "bytes": 98518,
+      "sha256": "5bb538fa189c1c6808da30f1c433422808c6396f28f7511560748b9c53ca6273",
+      "git_blob_sha1": "72cdf93c7e78d39cbafc1e8ca05f151cd6f32425"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/molmoact2/molmoact2_hf_model/__init__.py",
+      "bytes": 663,
+      "sha256": "56d2ad0c79feb6bafd187fa36bec41652e44e5e2169a0452579651bb05bfff7d",
+      "git_blob_sha1": "4436c9fda87f85a823c6670295a6a04e4bcfb72d"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/molmoact2/molmoact2_hf_model/action_tokenizer.py",
+      "bytes": 8623,
+      "sha256": "182dfed0c34ccf03341203c663abdd6d7b7a19bacb86c08d85fbd6ec209ac3bc",
+      "git_blob_sha1": "ff2c19fcc6c9cff6155f10190b6567f4069356e2"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/molmoact2/molmoact2_hf_model/configuration_molmoact2.py",
+      "bytes": 21269,
+      "sha256": "e5684e6d336578a35ab1bb7071e5b7b8333a1c9fb5f83d928f36855836c6a189",
+      "git_blob_sha1": "df5449befa627f03b76075de59550d7403185082"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/molmoact2/molmoact2_hf_model/image_processing_molmoact2.py",
+      "bytes": 23056,
+      "sha256": "9e71e5482ea7c88a19fcb29a270b83b3b37e8b288f7ceb152d5976c34567ff81",
+      "git_blob_sha1": "acc709cb526b1826658dd2c2352cb5bc2a7e6d35"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/molmoact2/molmoact2_hf_model/inference.py",
+      "bytes": 26648,
+      "sha256": "916439685160d083f2f53fe47c3360479e05ad02b544dbb9e3dcd02a5d05d331",
+      "git_blob_sha1": "58f729c846532343bec44fb2e849c4efebc8fb22"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/molmoact2/molmoact2_hf_model/modeling_molmoact2.py",
+      "bytes": 194809,
+      "sha256": "ac6446e10be2e0ab9ee5822874ca6498d764c289acb53d14262dd4ffd2a33c4b",
+      "git_blob_sha1": "13eb781bbbd06d89e5b713032c380c93d7dfde7f"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/molmoact2/molmoact2_hf_model/processing_molmoact2.py",
+      "bytes": 17912,
+      "sha256": "36a56458e7181c13ed3a0c5a5e9680a02fe7cca7bbfb2dbb21427cc8a631ae53",
+      "git_blob_sha1": "6a73d2465ef8f5a9e700a7c0aaa2bc84e39b5d93"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/molmoact2/molmoact2_hf_model/video_processing_molmoact2.py",
+      "bytes": 37932,
+      "sha256": "598f03a88d4b9b135e3bb2cf7584a54f23882a9e3f62a6ec6ba90f549bf79845",
+      "git_blob_sha1": "bf4e44ddeb3d00ce3c0ff731f959a1f7e893603e"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/molmoact2/processor_molmoact2.py",
+      "bytes": 58284,
+      "sha256": "4ccc54e13bd7a3099c9456076d830f573f6afecc5420c7a2bffb96196b522484",
+      "git_blob_sha1": "cc3a95814b9141a79e5d4d8c2ed3460a4dfae0a1"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/molmoact2/utils_molmoact2.py",
+      "bytes": 2246,
+      "sha256": "1ac0873382265ebbf0468b103724b779b2167fd430de390fc2f9e17dd7b7388f",
+      "git_blob_sha1": "7a3ae1c1b7311eb0c7cde773ccf9ee455305279b"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/multi_task_dit/README.md",
+      "bytes": 55,
+      "sha256": "03c0c8af93fb908f8d0638b08aa301a23ce87a629780eaa2e8cb9ec9a4201d06",
+      "git_blob_sha1": "0311278c939638284cfb39b858700b274e7bf8fa"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/multi_task_dit/__init__.py",
+      "bytes": 946,
+      "sha256": "898e6a9e6bc58568e97bb061d7db23e661f334d1f160f7678389c9d5029ba6b5",
+      "git_blob_sha1": "52a209d47141d639b64de8c31594d808f16826f4"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/multi_task_dit/configuration_multi_task_dit.py",
+      "bytes": 11621,
+      "sha256": "f8b798b06daa5e3086a6865710f5945c608622872c648584eed13cc7a8b3f83d",
+      "git_blob_sha1": "33be3113f66197d38084fab57c68202d85d9f724"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/multi_task_dit/modeling_multi_task_dit.py",
+      "bytes": 31242,
+      "sha256": "4e3238b5644a2366ea7bfa6445896b535f1f73dbb9c65ff14e556d7f099778ca",
+      "git_blob_sha1": "6300b2815c4974d958f00aaf4aefaadefa9374c3"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/multi_task_dit/processor_multi_task_dit.py",
+      "bytes": 2910,
+      "sha256": "162a38ec2bfc62337c49262f3de9bdc4f54306e39bc8a062d4ed46c0c6a438af",
+      "git_blob_sha1": "7cb49d4ea33be397b3d2216cbe0a482f53b36286"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/pi0/README.md",
+      "bytes": 44,
+      "sha256": "9f668e4a5771024ad27894e60bae73c8e6ca9725b1e6e9278a2acccc4dd50c13",
+      "git_blob_sha1": "1b6e0cda6785b59e4be8d0051a339dbace1f881e"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/pi0/__init__.py",
+      "bytes": 864,
+      "sha256": "22eadfdca8b5dee11b8fff07cb8a9093bc9374b85c18c7794e46b00043f4a47b",
+      "git_blob_sha1": "ea3095b4ec9d6d95d762ed47ad1f69047519a350"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/pi0/configuration_pi0.py",
+      "bytes": 7097,
+      "sha256": "ae65c140e37eae26cbe4bb553adecd6f45a91fbe80c0aa2946193b0d2ff6a733",
+      "git_blob_sha1": "24a8f9b0eb05d5d5714bb854bcb3653a026603d8"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/pi0/modeling_pi0.py",
+      "bytes": 48461,
+      "sha256": "e95697e269e5680222a37a66173efdacc9d82f0b1dfb8e0c2f62693086736728",
+      "git_blob_sha1": "6f33bcbf8648e0d7b44b0a2e016c6f8773809aba"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/pi0/processor_pi0.py",
+      "bytes": 5836,
+      "sha256": "9fd97a6346c27509c0998624ba02ce04f52b2ad099cd478d87586b34e9e92e72",
+      "git_blob_sha1": "13cbb57002e881f7686c123dadc18d4a55c3c179"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/pi05/README.md",
+      "bytes": 45,
+      "sha256": "0632c1c2f764bd24c4011a427852fdc5c7df75252428c18cf3d0c03f418b858a",
+      "git_blob_sha1": "87a7f551ee322589d133c24b8408c05ea600c81a"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/pi05/__init__.py",
+      "bytes": 873,
+      "sha256": "e70e27782532c2f871bf3fd812e43f796c11eb8193ff481dbeb4b2ef4a31b197",
+      "git_blob_sha1": "4f9a9de4af65c583cc0db4c1a089609b7a03d813"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/pi05/configuration_pi05.py",
+      "bytes": 9255,
+      "sha256": "70ae7b309be07ff4a26404f51c2a0e84ee3a6d94e19d1ae1f9f48205b65131b3",
+      "git_blob_sha1": "4ec8c0ca061da46a0502d2ec6e46292cc58a33d0"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/pi05/memory.py",
+      "bytes": 12161,
+      "sha256": "576d558d901968198fe6f6e4d43cce44ebdd7b432bf6be63c0529a9eba6c4a99",
+      "git_blob_sha1": "182a9b406de1e94b6e255af0843981d45970c027"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/pi05/modeling_pi05.py",
+      "bytes": 69580,
+      "sha256": "7cf56d77f29a0d3564bde7e7e1fa7333fffd0d81472d2d393cf2afea6967716c",
+      "git_blob_sha1": "a448648ccaa0ac528f6e57a3c87825642511ef90"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/pi05/processor_pi05.py",
+      "bytes": 7064,
+      "sha256": "ec5eacaefbbd4194d4989960c84639cdad5f69fc35eafb989dd097e19c79c993",
+      "git_blob_sha1": "59be0675922a88cfcb86906923c1d85968d2cbde"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/pi0_fast/__init__.py",
+      "bytes": 905,
+      "sha256": "92a84e39e2b016b5cba452765d3408047c82beeeed6612b7c474c51a97b80d7e",
+      "git_blob_sha1": "a0277da0fc12dc964bf0c978b8f0935e88b1eb54"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/pi0_fast/configuration_pi0_fast.py",
+      "bytes": 6874,
+      "sha256": "4374cdd854d215bd2b66f32ad2a3732d2667566eb9543529706c0409d1adaadf",
+      "git_blob_sha1": "1860deb457f2cb293ebeab0e13c71db9d48b9f95"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/pi0_fast/modeling_pi0_fast.py",
+      "bytes": 53467,
+      "sha256": "f5741f7668a6354ba86977d5730b37d900174f7836b8c1eaa6b85cfa8643de0e",
+      "git_blob_sha1": "1eeeb1e410cc65e85e52c70908caf024e09dca38"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/pi0_fast/processor_pi0_fast.py",
+      "bytes": 7183,
+      "sha256": "5234baec3701ae0733afce206db2df0358284824ad5d85120d5021e22ee28da5",
+      "git_blob_sha1": "90fea62d97331e89d330c2bb5b79f81307122203"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/pi_gemma.py",
+      "bytes": 16155,
+      "sha256": "8bfa462e151b8c8b5445c46373a1dd8aefb10483a62b381f1ebf863f2e79c015",
+      "git_blob_sha1": "8a8122f8ed7996d35776867d5d127fb5eb992351"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/pretrained.py",
+      "bytes": 27756,
+      "sha256": "76ef53bcd8d5ecf61a712f860d2f68bb1e797daece9c1b2dbaa397214aea7243",
+      "git_blob_sha1": "9c9a07c598129a5ff01bc7856368c18dea08addf"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/rtc/README.md",
+      "bytes": 44,
+      "sha256": "d41b3078219b1071e7b6f313aaee85bf72e4c1f6d9cf26aea3593b53e483e692",
+      "git_blob_sha1": "75d01b125197be8fe0d8eea695755c8598f6df51"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/rtc/__init__.py",
+      "bytes": 1206,
+      "sha256": "f59f9b92532c377b914ec745b58a0fa10c617c270b6ecf34c647258d80f2f111",
+      "git_blob_sha1": "71a0c94793346366e75da45c87fbe5d96cb75ef5"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/rtc/action_interpolator.py",
+      "bytes": 189,
+      "sha256": "e1611b326718c733689fb253847dbfaff53cc69e15fa10f372809b94f483ffd9",
+      "git_blob_sha1": "c30481d3b23a2c8dc8738d797b4d770afaf63075"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/rtc/action_queue.py",
+      "bytes": 14723,
+      "sha256": "9cf6207c92fb71efd4753003f330b7c72cca7c6f1d561180420584b53add36d0",
+      "git_blob_sha1": "5d58480506d1810851f6fb8549a6909094b08b5b"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/rtc/configuration_rtc.py",
+      "bytes": 3720,
+      "sha256": "21398dee6197714b7b1dafea66e32da05ce1c02ef1487999af65b4522a3cf223",
+      "git_blob_sha1": "fd003a5ef55080974fa77ab80b0cd1841617568f"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/rtc/debug_tracker.py",
+      "bytes": 9553,
+      "sha256": "cdd14c67cd882fb032dc8c3344f3ae6fc05db6a9197fe9b74f072673add5f2aa",
+      "git_blob_sha1": "1a0af843e97bdaf5facfbfb3c381fd1b9ecf1647"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/rtc/debug_visualizer.py",
+      "bytes": 4114,
+      "sha256": "06d9ca5c9ce6ed61dc7ac772e91a56513445ab4e6be27e239ef8a252480f1b5c",
+      "git_blob_sha1": "589c86c9595ddfd0daaba62b923f2d453aba00ef"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/rtc/latency_tracker.py",
+      "bytes": 2346,
+      "sha256": "3581e080edb215141ba145a2ee412bf27603a907c3cfd551d8137fc1cce18eaf",
+      "git_blob_sha1": "5f106bd53f236d2d3ed200c2c27d98ab159b9392"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/rtc/modeling_rtc.py",
+      "bytes": 11437,
+      "sha256": "8ef158bad72c2cbc853ddfbaee4c534eec96be8ad53ec7c34879d8f632411c92",
+      "git_blob_sha1": "cd1bdf8b2293fc508f59a421d9e7d2bf3ae1199b"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/rtc/relative.py",
+      "bytes": 2272,
+      "sha256": "1d2271242121565f28902d92acd176caefb90a9a49b7ae1507750cd626eaaba1",
+      "git_blob_sha1": "2c59fd26b4d72fdb5e9ee17a029e09efa2333714"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/smolvla/README.md",
+      "bytes": 48,
+      "sha256": "9aa0666e77cd7de3612c06c2f74a226e114921a1bc5bf367ecb36a0c32f37e98",
+      "git_blob_sha1": "f8de40269b8c6c93dc9d7c048102932c5e26cfa3"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/smolvla/__init__.py",
+      "bytes": 851,
+      "sha256": "0fcc03a2c5f20c656f26b34986a130e1a32899819e0cd68e4b4a5bd58781d0a4",
+      "git_blob_sha1": "690f15860fbb324a244e223f4188502af6af4e9c"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/smolvla/configuration_smolvla.py",
+      "bytes": 6080,
+      "sha256": "a9917627fffb13926d9ef58ca4d9d3aa36f7db8d6aa41fffffc274726b6fa030",
+      "git_blob_sha1": "04ea7185ce4287d3dc56fd2c8d7e0e5604afc898"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/smolvla/modeling_smolvla.py",
+      "bytes": 34867,
+      "sha256": "7a6be16c4130edbf39df6f8b2a648eafa928394fe141db53b183e67cd22465ba",
+      "git_blob_sha1": "8ebf7eecb77c0349631e7683cd9e1adb844103c4"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/smolvla/processor_smolvla.py",
+      "bytes": 2822,
+      "sha256": "b28e31c7b97c564edc6ad1aabe451fb59931b406ff7a6ed1fdff9d1af365d7ec",
+      "git_blob_sha1": "e924780cd36cffdd200301d0ff8091c1c7fec42e"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/smolvla/smolvlm_with_expert.py",
+      "bytes": 24255,
+      "sha256": "7a97d06b9aeb83d0f4a2990b32aec5086d38613feb2b39dd59105c9dc2f57141",
+      "git_blob_sha1": "551292e8a12b65a4e8907391ed1066fa35b38e6d"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/tdmpc/README.md",
+      "bytes": 46,
+      "sha256": "036b10e393c121f06080ed67fe68741ff83ea3ee1488c60f3d8d279db0863076",
+      "git_blob_sha1": "413ea87b8aa47343500041a62de97e6241a8b6cf"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/tdmpc/__init__.py",
+      "bytes": 833,
+      "sha256": "e756e52065e2296e2cf8983c48ae4560927b9bbc3694d48c369d9f0d7ad9bc17",
+      "git_blob_sha1": "5663e23c4b048ffe9f1d064b9942a8ed36512fc6"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/tdmpc/configuration_tdmpc.py",
+      "bytes": 10738,
+      "sha256": "a1a21e2f3e30aaa690ea9c56942ef4d1c672bd1e7c38e43793f0cdb8b91d4c46",
+      "git_blob_sha1": "d41e9f24cf1219f629c522723ad2fe1252a33413"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/tdmpc/modeling_tdmpc.py",
+      "bytes": 37764,
+      "sha256": "27414f634de0555b37335cb323c97d633ac65bf3ae97dd0e77ec2b71d25c76e7",
+      "git_blob_sha1": "b00778606cdd3f133705ff94341d0c4205c230a6"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/tdmpc/processor_tdmpc.py",
+      "bytes": 2002,
+      "sha256": "a2612848c54f76ed445a2cb7febd98d6bff74f71d6a1aa07ddc886e20ba13c10",
+      "git_blob_sha1": "08756e81960dd2172cd98f99ea28602e1e2df84c"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/utils.py",
+      "bytes": 10761,
+      "sha256": "79e0026f560657299fd4e16e5b71d190ef91de5a1ca4ac7df2d49e0af29d9fcf",
+      "git_blob_sha1": "3081eed36674b641c2eddeb2cec30ef37d518b92"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/vla_jepa/README.md",
+      "bytes": 49,
+      "sha256": "73ba1a801156947d4d0c66f3d33584e1c81f51679bc6b476b05d3d4d92e13e66",
+      "git_blob_sha1": "2aaa91ccaad1f288d7626ef3c4b9db46e3ff5a62"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/vla_jepa/__init__.py",
+      "bytes": 871,
+      "sha256": "8f3f07551293eb0ac6a9d334cfae769cbf643abfbcd716587235a3db2c9ab4d8",
+      "git_blob_sha1": "453a4c9a48d578f7ff27255da08076541aada6b7"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/vla_jepa/action_head.py",
+      "bytes": 14334,
+      "sha256": "65f2c30ccac625dc02801344f1ea6799198ad2a1a74cb5967ab62defdd9c975f",
+      "git_blob_sha1": "fd64881350d7b04bf2f63fe9b1ddc9201272b9ee"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/vla_jepa/configuration_vla_jepa.py",
+      "bytes": 13246,
+      "sha256": "a97fa0b5d748f0c3064348a50a224c1168cae93f64fe1d3feeed6fe58e55e739",
+      "git_blob_sha1": "a71c9c7199b4d3cea27e9ba9d3f370aae514f826"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/vla_jepa/modeling_vla_jepa.py",
+      "bytes": 29504,
+      "sha256": "ba4f4f4b7ae6dccd37e69a52b8780434954b77f01ca5b81101358924e8890f69",
+      "git_blob_sha1": "b90658e9fd029acca9ba41a557a1ea22f20b04e2"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/vla_jepa/processor_vla_jepa.py",
+      "bytes": 13925,
+      "sha256": "24df1599e0f95765df15d33a8c4ae3bb53068faf354cc5d3d588c15b08ffe49d",
+      "git_blob_sha1": "1b2c6f694a514c7768f6ce7644bcb9361747e4dc"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/vla_jepa/qwen_interface.py",
+      "bytes": 6548,
+      "sha256": "26050a81a6533f32cc7832f0799720f4ed20fb2d46b33a72e8e040f7cff82591",
+      "git_blob_sha1": "64c1726c59b18b958ce784ee4edff2c5d742e1b4"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/vla_jepa/world_model.py",
+      "bytes": 16808,
+      "sha256": "050b6bc0901c59fff8efaa5c3d18a6fe35d8ffe968c91c50624b57763d6f847c",
+      "git_blob_sha1": "107084b2d673477b502c8eb2563c8b106c324557"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/vqbet/README.md",
+      "bytes": 46,
+      "sha256": "923d0de3dc70661616f6240a8430588b07aa4b3ec2a1e746b03f63e91cc53f32",
+      "git_blob_sha1": "a4ae9291acc141f92748c46c158738f135feeb2d"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/vqbet/__init__.py",
+      "bytes": 833,
+      "sha256": "0f465a2efab482887fea5e21de9330fe7ccfcd8a3fadde0a9a6f6e15cf1a826b",
+      "git_blob_sha1": "842dd5d0b532212cca9b25cbaf390517158e1c53"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/vqbet/configuration_vqbet.py",
+      "bytes": 8937,
+      "sha256": "89538baf6fd2a6f3512a890c68fade0fe0d66685d0c15d6f9c595823c3e95aa2",
+      "git_blob_sha1": "e5c1754e8c47c7177fad64ea72e2ab2bb3681171"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/vqbet/modeling_vqbet.py",
+      "bytes": 45647,
+      "sha256": "4acc62546ccbf5fed871e8d8cf7399e6a2e4d093f537240c5b7d68280c0be5e4",
+      "git_blob_sha1": "86af2c0804b61555e972a6179622dfacd5059dad"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/vqbet/processor_vqbet.py",
+      "bytes": 2106,
+      "sha256": "f86d08b57e3a01c27b4b18ce1835f24c04936a6815d22c4b12bfa47adcfa7b51",
+      "git_blob_sha1": "68182db3f4f58309a9bd88be12fe609654e52d4b"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/vqbet/vqbet_utils.py",
+      "bytes": 53430,
+      "sha256": "ed40aa7610a3c7faf8e93882ee57c3b8f57d094b3b18bf76302c44c87f1e8b00",
+      "git_blob_sha1": "b4251b4950953284211bd27d1fbeea06515ca04d"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/wall_x/README.md",
+      "bytes": 48,
+      "sha256": "05492e65b689aa9cfd27cb533dc074a44628895ff0b5b86ab493a1f2b4d5708d",
+      "git_blob_sha1": "4426967dec8c249524d044299fcb012afa92f428"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/wall_x/__init__.py",
+      "bytes": 887,
+      "sha256": "ff86912cd44b06c838c023378b56ae4158b0c387f637db6e0eb25daf2274c3d6",
+      "git_blob_sha1": "16fd2c8ab899646a75aa479b3a52dfd55fa84a15"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/wall_x/configuration_wall_x.py",
+      "bytes": 9357,
+      "sha256": "76ca733ba6be2c36729d5c1bd00232bbf85ca140218e8e4199068f60f7945fb3",
+      "git_blob_sha1": "1ce5b2ae05a623e33293af921590bdbd7d3cf717"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/wall_x/constant.py",
+      "bytes": 1322,
+      "sha256": "90e367eaf24efccb3c50341e7bb658e7b600b43c2e65337033cdf9f1b02afbc9",
+      "git_blob_sha1": "4b2e503d490fbff4915203ca261cb5450b0da9d6"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/wall_x/modeling_wall_x.py",
+      "bytes": 91265,
+      "sha256": "160fb08c9c3b072f230982b1cb6543206ecad862e0f5c35d318bfb272171a1ff",
+      "git_blob_sha1": "97abfe8aa7237f76c53de4c767072142032e6dfa"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/wall_x/processor_wall_x.py",
+      "bytes": 22682,
+      "sha256": "9d0eda028a18872df6b35bbf4e4ce48cb6e596a843cd00d1493d92aeb0f03e0d",
+      "git_blob_sha1": "dab503a4439a3c188c80bd962e62cc328d59cfa0"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/wall_x/qwen_model/__init__.py",
+      "bytes": 1278,
+      "sha256": "e4d599240d10f358b3e0c5cbf8d2e2b512417d9f2a24059e1ae5ff6731d82210",
+      "git_blob_sha1": "7585ca48d4645d88a50528bbbb7888adbd5ac57f"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/wall_x/qwen_model/configuration_qwen2_5_vl.py",
+      "bytes": 3907,
+      "sha256": "25a024fac349b5ffb20ed75db7cb59b061d466db40a415a384075691e54a9c35",
+      "git_blob_sha1": "6f59e752fdd0331e74984066f551575431c94612"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/wall_x/qwen_model/qwen2_5_vl_moe.py",
+      "bytes": 16877,
+      "sha256": "0947fadf73ae43793385ed9eef95a2a5d7af595e0e5ce7eedea29f7c45bb615c",
+      "git_blob_sha1": "c1f020fd8b6d042dc679df6acf0529eee84ebe8c"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/wall_x/qwen_model/vision_attention.py",
+      "bytes": 8253,
+      "sha256": "43c07db46bcc71adf58671b05372f10303ba4f7f2b88d977308b9464502e3bd5",
+      "git_blob_sha1": "09e055b37834e364843d840355f7dd4e965d3c22"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/wall_x/utils.py",
+      "bytes": 27557,
+      "sha256": "34b6f93bc3b6dbe97ba675779bd7493661561496141457721b4debef7b0c20cc",
+      "git_blob_sha1": "9e15256725415800ae71d40ef897fb09dd4148bc"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/xvla/__init__.py",
+      "bytes": 388,
+      "sha256": "17f112f43d38f28a73f0f3d4aefe4ed9a813189057b496a152a955b9b390ecbc",
+      "git_blob_sha1": "58609e91c2bfffd1cb1c51ecc12d534a9e6016ae"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/xvla/action_hub.py",
+      "bytes": 20427,
+      "sha256": "86357301855bf28a27e2e7a8a0f6b79264a915786a94a2232b152cff586cf9bf",
+      "git_blob_sha1": "e8411de9dec17ef754617a0b4d79ed504255361e"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/xvla/configuration_xvla.py",
+      "bytes": 11114,
+      "sha256": "633847d2e79688555d7e6d4f409cb756d32a9ace4e57b617da2e59a199d5e2be",
+      "git_blob_sha1": "3f7d7158fe04d1875a21021159ecab723058678f"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/xvla/modeling_xvla.py",
+      "bytes": 26931,
+      "sha256": "6e909855433aa87454cacff36041d3e7d91049aef84904dd4553487891614e46",
+      "git_blob_sha1": "6382b28c48dedc84290f9ae4731547635bdc5fa1"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/xvla/processor_xvla.py",
+      "bytes": 19334,
+      "sha256": "2c4cabb2f3668b3587626061a8b30e709cd38e43b6432de00b0deee81e11ed95",
+      "git_blob_sha1": "d570fc78848593e34d66b8b46cd9049816890a88"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/xvla/soft_transformer.py",
+      "bytes": 14243,
+      "sha256": "92da48b75f7ba14583fe2be89f9eb15157361252084ae18643e279648db817cc",
+      "git_blob_sha1": "77ceb6e26a7b1587dcf6c4087f1a42dd292d2dc2"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/xvla/utils.py",
+      "bytes": 4113,
+      "sha256": "4693b9b0e1db410d05d730d17c2268d91534a887218b5c863a28f26ee3c6bf0e",
+      "git_blob_sha1": "bf31ffd82cf2f7a8cb4080401f92171075cbb103"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/processor/__init__.py",
+      "bytes": 6112,
+      "sha256": "1c8530c62cbdc27c9afb2a82bfdd77117bd2190976a88886d0f83284a1126c95",
+      "git_blob_sha1": "394021e70ed2c3b09cf1a54f7d00f4f594633c05"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/processor/batch_processor.py",
+      "bytes": 10317,
+      "sha256": "f94be6786bd1e34eabcd38d1f576bffb8ca6912912e60f21189f2a4c21d1950a",
+      "git_blob_sha1": "82618c0463bdb5ad4341284050f13ca01dadd18a"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/processor/converters.py",
+      "bytes": 14158,
+      "sha256": "51099b6ed8330f1b2fd88cf8afd3a09a4466e6a262d55e3151dbc38185ca75f4",
+      "git_blob_sha1": "b7688d92edd8c134d94e30dd00dd4033c580b65d"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/processor/delta_action_processor.py",
+      "bytes": 5862,
+      "sha256": "0a79af36a554e523ce6120a8fe5eebb5e49fd94c4d9b2afc515e4bb639d89205",
+      "git_blob_sha1": "bd05da806edcc1dc73808201119b1015144adf56"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/processor/device_processor.py",
+      "bytes": 7445,
+      "sha256": "2e98b89c039005e40baf31f7c1c82a5d946df39c2328ef999ac63c1dd5e8a287",
+      "git_blob_sha1": "9fd429292af805a6b9728dc7c859a54afdeeca23"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/processor/env_processor.py",
+      "bytes": 8324,
+      "sha256": "cf140f56d1da6bb1171c4543ad60aa5fe3656b0ced35b48bbe53d67152cd072d",
+      "git_blob_sha1": "2dfa6c663721de823889342aa623667fbb56c293"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/processor/factory.py",
+      "bytes": 9740,
+      "sha256": "0371c907999da91ddfe00c5cb5e39ea3d9a85c26ccf18ecf9fe3edf8047f76e4",
+      "git_blob_sha1": "81e2b6d6801a6821b2bed4252f227669ba43270e"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/processor/gym_action_processor.py",
+      "bytes": 4314,
+      "sha256": "3d2560c25b8ca0efedf96e76acc9f00ad152bc3bb1571e0a3454bfcd5c20439e",
+      "git_blob_sha1": "1eed89a713dc027802a14e57af8126926d20e764"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/processor/hil_processor.py",
+      "bytes": 25533,
+      "sha256": "87d694d2d9c5af47493f1846a2ec88bcb982cd4cd111b2a01816a71069cde73f",
+      "git_blob_sha1": "956857bed0dc8759c23903cf95a89a796d18ee57"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/processor/image_augmentation_processor.py",
+      "bytes": 6152,
+      "sha256": "e37e2b39c24f056f660d6ab6af32f0fe8182d2c115d42988d8329496445de475",
+      "git_blob_sha1": "64f91aaa73c1bbb3c41eb2dce7fef763eab04d73"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/processor/migrate_policy_normalization.py",
+      "bytes": 31852,
+      "sha256": "b5d30c7ff13dfeaaf95c7ada7cfe6b22ca0cc9aa0dcf617c18c221e5d83b03a8",
+      "git_blob_sha1": "4373cf9ff4341430add15fcacfae44f1190b906d"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/processor/newline_task_processor.py",
+      "bytes": 2437,
+      "sha256": "68ac6cabc262507bd1fd97471b07305d8129d2a826431293026cf83198ec0a5a",
+      "git_blob_sha1": "ea61bdd71f66e5c2b6242ebdaaee25face9f71d8"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/processor/normalize_processor.py",
+      "bytes": 25266,
+      "sha256": "0b4beb2b9743d47256be53e67330d05c8552f07258a06eeeade1c9bbf217558c",
+      "git_blob_sha1": "b0eafcef75e187887c8ea642cfe138f9cf8e79a9"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/processor/observation_processor.py",
+      "bytes": 8063,
+      "sha256": "5604f209d9e0ab38c2550b6458b08bb42e3d88d57790f811960f0abb2fe84eda",
+      "git_blob_sha1": "12d1f82a20f78ff6095900faa6cd1f2e5fed47cc"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/processor/pipeline.py",
+      "bytes": 90009,
+      "sha256": "43fa3f47ebe134e69bff2834c80edec00ec2c4396dc71a4caeef4a7921277a89",
+      "git_blob_sha1": "3cfdf680b27da74d75c9d1b4f8c7f69182c28b02"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/processor/policy_robot_bridge.py",
+      "bytes": 2664,
+      "sha256": "39c48c0333f4706e9556bcbaf8389ee02f254ccaba45bc501ad05ead8c2cab45",
+      "git_blob_sha1": "bd43c0e81a52c4b75c0c3029e110541484300c89"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/processor/relative_action_processor.py",
+      "bytes": 11752,
+      "sha256": "1c99f2a66649579cf6536d1970f71172b0b50bcb8decd226a9aa8969c0b0f171",
+      "git_blob_sha1": "3405402904cf15ca18227b3a3fe006d7936f9d53"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/processor/rename_processor.py",
+      "bytes": 4414,
+      "sha256": "e67dcb8f95d34ffde54e2884cdd0334768afc2392f3a5bd61c02164ad9e14d4d",
+      "git_blob_sha1": "d17f93dcd990861a2b5ade5914f4595e85eece16"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/processor/render_messages_processor.py",
+      "bytes": 15281,
+      "sha256": "ead5c7ccdcdc256bf23f76369415670015b659b7a52db94c5e2ae79a0dba62f2",
+      "git_blob_sha1": "2720716164529d0f281a3eb185340a27e3d26b2b"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/processor/tokenizer_processor.py",
+      "bytes": 25692,
+      "sha256": "dbea6bacc81efd63b4a4b04bc5c712334bd2a871f3f4586b46b592c59ed42cbb",
+      "git_blob_sha1": "ae226b6fb1941de2274c04c1e45859efe86af209"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/remote_inference/README.md",
+      "bytes": 56785,
+      "sha256": "bdbd93bed5589254b368643c341466ea8051e63f9c969c5d43ad459c9b4fcc0d",
+      "git_blob_sha1": "429fddebe814b57ce3c5d8a454e0448e228099e5"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/remote_inference/__init__.py",
+      "bytes": 1387,
+      "sha256": "27c302f0bb0eed02be68814265a683e8935d2956fdba5833107192795c4bc0a4",
+      "git_blob_sha1": "2f928c733fc7cce949aaf4be66b39078ab443bb3"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/remote_inference/chunk_contract.py",
+      "bytes": 2820,
+      "sha256": "f0ad126575421c73991faa26e41d51b61a7d0342c61ad26e0ec6809b276d7fb2",
+      "git_blob_sha1": "4717691e288c765237676be9f0e8ae78f36dbc19"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/remote_inference/client.py",
+      "bytes": 26978,
+      "sha256": "2d595ef4059ca863661798ee16ce619ee11f48ae91b916b147ec00e514b37c02",
+      "git_blob_sha1": "1e373a358ca7b47c63f8c8a2eb7586b0939fbf37"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/remote_inference/codec.py",
+      "bytes": 16042,
+      "sha256": "63548ea76c44cdf8eeed3b5b9de419418102dd1aa912c3910d4e02f02ebf2c98",
+      "git_blob_sha1": "8b867daf71f4e82e44e96c0dd0955ed4f35f7af5"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/remote_inference/configs.py",
+      "bytes": 5393,
+      "sha256": "7402a89fa54398e1cbbee1aa3c30932ce2ea144e687a7d13920202a743bb557a",
+      "git_blob_sha1": "34f3c448eef3cab919359dbabbbcee32d7b68e76"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/remote_inference/deployment.py",
+      "bytes": 9898,
+      "sha256": "d74d3a71e5d02f0db7077ffcb140da3f061e6c69100bf1885c34ba4db508915a",
+      "git_blob_sha1": "abc4ce624278712658c8553ad79d83f9707c896b"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/remote_inference/engine.py",
+      "bytes": 41080,
+      "sha256": "3508948b0e9b16bb3575b07854e4aa6aac50ed2fb5b28f845048fac5ba51b0df",
+      "git_blob_sha1": "c50f518be419575522f56a58446c24260c509477"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/remote_inference/protocol.py",
+      "bytes": 8097,
+      "sha256": "8cf9cf24c0f24ac6514553c49e5811cd1562de6908de03a5303b10f359c99c7d",
+      "git_blob_sha1": "58048f018bbfc9c2484f86dc984ad7af5be17bac"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/remote_inference/server.py",
+      "bytes": 50136,
+      "sha256": "0932b87f5b6471a314b54e6d586261f7ce3da3423fd356120cd42fd09976375e",
+      "git_blob_sha1": "d56fe1dee635449c9b45ea9ecff5dab2afa570f2"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rewards/__init__.py",
+      "bytes": 1593,
+      "sha256": "3c56ebcfff9c46acad6ecdca5febbf3f727679d039f9d40b94d6466ef278708a",
+      "git_blob_sha1": "093a34cb229e333db2597683be426e7e6eff0c52"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rewards/classifier/__init__.py",
+      "bytes": 858,
+      "sha256": "5e828a3de4eb20a52b70f09d0a25289eb0c1710266eab80c64cf5c91842ecd11",
+      "git_blob_sha1": "1504a9947c53bbdc759398ac699a544fbbe63347"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rewards/classifier/configuration_classifier.py",
+      "bytes": 2572,
+      "sha256": "67a01ce1fcca10d69b7216626d5a1de927e712465731818bc0559928f60bc93e",
+      "git_blob_sha1": "f1ccaacc65adc73872b9c2c6c3992f142463d516"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rewards/classifier/modeling_classifier.py",
+      "bytes": 10762,
+      "sha256": "e2c5b975337c54e102f54c5249f8fdee62d17a999328ee88b95507e09d34766e",
+      "git_blob_sha1": "4db313066f163be766055b8e8449ffcfa481a491"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rewards/classifier/processor_classifier.py",
+      "bytes": 2957,
+      "sha256": "b6b69f7e3eb8b05fbdea99d2608f2d9a6ddf7a35b90fbf48af38de01936b7cc7",
+      "git_blob_sha1": "6b32791978a6a34a63a1f772bde66c4ce2c74136"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rewards/factory.py",
+      "bytes": 10304,
+      "sha256": "cc8595c91e2bfbe5ec1dc4393d620586812dfae2d6ac32fbe7cc04037b2239da",
+      "git_blob_sha1": "1de25951f3475e7d096462a96f0f2e8c165046d5"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rewards/pretrained.py",
+      "bytes": 8628,
+      "sha256": "5ea8e55d859a5ad67544489512be51fd972d99b265b00bcfe430e259bc884168",
+      "git_blob_sha1": "3d2d0c8cc1dfa36f6ff8482aec2dae5c858b4aff"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rewards/robometer/__init__.py",
+      "bytes": 879,
+      "sha256": "983998165050c49a8d7b1e5fbc83cd430fae01e612f40f760530c9e0bb357af1",
+      "git_blob_sha1": "d20d92d37a107997d6b5785f6e3ede6294804770"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rewards/robometer/compute_rabc_weights.py",
+      "bytes": 12637,
+      "sha256": "b9acbedd668ca4bf4f383602c318a36e1f37bb8459ec2ea848233bb90b7bfb71",
+      "git_blob_sha1": "f429afe53a269b670c90397ea00141908d5f657c"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rewards/robometer/configuration_robometer.py",
+      "bytes": 7109,
+      "sha256": "5e27a39cd85cac42c8513636e5fe0e1c50619640bae9cd3f7920ea1cabd2938f",
+      "git_blob_sha1": "fdaf7c9fd566c7a09c536206faa54948c78e2183"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rewards/robometer/modeling_robometer.py",
+      "bytes": 20716,
+      "sha256": "5210a49124b08b7b2f663b9bdee83fbe4b0c985735dcaefc31123e0fc0022c77",
+      "git_blob_sha1": "be99e479f39f3281c5a46b62af6a10c0da75ecd8"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rewards/robometer/processor_robometer.py",
+      "bytes": 13739,
+      "sha256": "70bd0807494638cb1896dce37d6105106bbe3ef023293aa743e45542ef62121b",
+      "git_blob_sha1": "764833202352196d341bd76a88988c50f445b5ae"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rewards/sarm/__init__.py",
+      "bytes": 834,
+      "sha256": "1b64f3b992caf93fdd325464bf5c74d49a3167e32269da817cd1e3c47f098467",
+      "git_blob_sha1": "5d5afcfb243c77e5148a255bb6dccb096b2c7814"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rewards/sarm/compute_rabc_weights.py",
+      "bytes": 34777,
+      "sha256": "6c1695165d57f62cf09c5597b9492fe4ef5ee8655cbb51251866e918596ab9e9",
+      "git_blob_sha1": "b5baf7d9fa745810c0cd2298f982c0336e0770b8"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rewards/sarm/configuration_sarm.py",
+      "bytes": 9605,
+      "sha256": "61102ae6eecb0dffea94b57f138f68f76ac8e62c4cee9149f42e9c59010d697b",
+      "git_blob_sha1": "0d1f727f7a2bbba5117ec3ba5724a290bced389a"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rewards/sarm/modeling_sarm.py",
+      "bytes": 31826,
+      "sha256": "49adec2d0ef608e5fadc55f0cdf18b6002312ec24f5c44c5078e6517ff6fa712",
+      "git_blob_sha1": "34910ea65119e1a9d739bf7f1214241566db3ef0"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rewards/sarm/processor_sarm.py",
+      "bytes": 27162,
+      "sha256": "3365505ea64794b4d2807a231568d0b7c185496f1ecfd8d901c1fc8bd58efbef",
+      "git_blob_sha1": "e6dbf87c0c56cb4b6b9680a8d6fb0e8588b740bc"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rewards/sarm/rabc.py",
+      "bytes": 12050,
+      "sha256": "e789cd59a7e1ae4e896a584981ccf4dfe6456bc9dde404cd594b0bd9ddc847f1",
+      "git_blob_sha1": "8d7ce6bde4f1420be8b6703081d9f822748e8a89"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rewards/sarm/sarm_utils.py",
+      "bytes": 12542,
+      "sha256": "353631791fc97ceca261781d58a8679bb3378926eef50e45a3ceca096fdfd4c4",
+      "git_blob_sha1": "25e61277bafd0bd6643730688d966fe1fd2c2262"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rewards/topreward/__init__.py",
+      "bytes": 867,
+      "sha256": "37c601a773692c0ec466208b81d6cbc61eb666edab9be0379a8567032aab8850",
+      "git_blob_sha1": "9b03ca866bf37a03ec4cc927ee50adba335c68de"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rewards/topreward/compute_rabc_weights.py",
+      "bytes": 13076,
+      "sha256": "8012705054c09d7fb79eb4fca448739a2bc5d6be2542eb2e4dde605cc132351f",
+      "git_blob_sha1": "2646a2b92eb655c0aa9a564e2a9316fe0e6ffc8a"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rewards/topreward/configuration_topreward.py",
+      "bytes": 6402,
+      "sha256": "670dbeab412006eef296b63e1976a8fd67100764ab3f248c0423f54847b931a4",
+      "git_blob_sha1": "7302734c8d6996ad041bf18c7ec356fea68e28df"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rewards/topreward/modeling_topreward.py",
+      "bytes": 8262,
+      "sha256": "9d072a4dd8dd1e58de2e854620dcbbb99e631c98cbdf5839fafa9801a3334835",
+      "git_blob_sha1": "41d1a20029c4eb84332c4588bef5bdfa79399f69"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rewards/topreward/processor_topreward.py",
+      "bytes": 11614,
+      "sha256": "86badb9bdf98c95f0e0ec55f3df80fa40f87e15657f369f6af6de171bbf8f06e",
+      "git_blob_sha1": "cca3018736c0978675dc6c2a7c0c6b41d6b40533"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rl/__init__.py",
+      "bytes": 1659,
+      "sha256": "1afe8cdc7d494ff1fb8c06fd2fb5adf347da3d30b827afd253af928c34cf6178",
+      "git_blob_sha1": "8b2d18c54d9b8524fd68bfec066d8875fa62b8e1"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rl/actor.py",
+      "bytes": 28719,
+      "sha256": "747a0c833adc1a4ef70c1a4157d4d8997362b605f1fd55c3984165a6ba7155da",
+      "git_blob_sha1": "df703cc7b966b155eaff80d2123b2419408cda24"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rl/algorithms/__init__.py",
+      "bytes": 723,
+      "sha256": "2ec1fca589f6834ce07146e081b2716cbc036cbc5e2f9224c1b02c75dbed9cdd",
+      "git_blob_sha1": "c09bd26fc05160b48110a00c9299d9c77413b649"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rl/algorithms/base.py",
+      "bytes": 7434,
+      "sha256": "55479a10e8a08b6aae4329eccf38e71d76e75a425333f3ea2660548abb8a2de2",
+      "git_blob_sha1": "2c03bfc6e69736159e12e04ff5d6452c612a2d48"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rl/algorithms/configs.py",
+      "bytes": 5199,
+      "sha256": "5c00229aa8e46262dc6e0d49a46925de67a75022820ab9afae40d97aba0bdc37",
+      "git_blob_sha1": "48a033312856daf32d9ec847d02f2e7084dbcecb"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rl/algorithms/factory.py",
+      "bytes": 3440,
+      "sha256": "8ab3f0b13441b09156f618082e5c406ad31a3af1f5138b9b9a0b9604d8ebc731",
+      "git_blob_sha1": "2a5d9dea7ffd6f5e24deb4d202bbd5cbb3e809de"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rl/algorithms/sac/__init__.py",
+      "bytes": 752,
+      "sha256": "1a21a00577c87b5c20149adbd30b335384638bd017c7d30db34a63117e184357",
+      "git_blob_sha1": "9d076bcbb36100622f497b363b3e6b267e47681f"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rl/algorithms/sac/configuration_sac.py",
+      "bytes": 3805,
+      "sha256": "4d136dc4f18604624069d17a0157906e29b7f2ca05b7b65d601c55e06ba33763",
+      "git_blob_sha1": "c4e9b334a73b44241a92a202f802a925ed03bc16"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rl/algorithms/sac/sac_algorithm.py",
+      "bytes": 28818,
+      "sha256": "ee10cbc9764dfc00f964b680b325f12fb86b175c8c75940aaa9c59c55b38f802",
+      "git_blob_sha1": "31042596b8d2deb10bdef16ad0de182301904a76"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rl/buffer.py",
+      "bytes": 34529,
+      "sha256": "5167597f5c2d9b381febe9211c07eb8c249b71c27210aa4888839b341e0f805b",
+      "git_blob_sha1": "015868196e3e5f0911361c1173d9aa1e5d10dcfe"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rl/crop_dataset_roi.py",
+      "bytes": 11651,
+      "sha256": "50f71b67706eabf1a16076e98357fc0da6c5ecb7f10214636233d703ad807c08",
+      "git_blob_sha1": "eece13a4c9424fb18fc2a909379aebc1db1917ac"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rl/data_sources/__init__.py",
+      "bytes": 771,
+      "sha256": "e294c0ec9f11b84cddd7e7c80eb6e789079e00233e1506bffcdeea42400fddd7",
+      "git_blob_sha1": "0cd49cb2f98245616e50331896c1f3a34ff65f0f"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rl/data_sources/data_mixer.py",
+      "bytes": 3130,
+      "sha256": "8fd147b9957edc56d88a2a2e039e0ec7435ac4bdcfc405ed90a4c95bdb7b33d0",
+      "git_blob_sha1": "04d9691cc8e146e76af9637541345c5d3e9779b2"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rl/eval_policy.py",
+      "bytes": 2293,
+      "sha256": "0f0a2fe2043db5301b09725af4254f60133dd72a05567766a892e0d655c87ad0",
+      "git_blob_sha1": "0f42d7573a44a044acf22b15ee1e99fa1143ca42"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rl/gym_manipulator.py",
+      "bytes": 30434,
+      "sha256": "5a3000cf1b200c805a8a836c60008ab52f69ef519dcd817ad590876aea3a4394",
+      "git_blob_sha1": "03f7b4eea21ddc6bdb8a5bce9e55a2310c73de6e"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rl/joint_observations_processor.py",
+      "bytes": 7916,
+      "sha256": "3752cef40098c1eea53443fc6dc1fd57023ed9869105745cd973132c22003c60",
+      "git_blob_sha1": "dc677e26c16715a08d36d0c35d1e209aa00c3e7c"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rl/learner.py",
+      "bytes": 37039,
+      "sha256": "214ad9f22bb5e724b962d2604a8fe07bdb2a41f2332a9db012a8ab9ffcb995b4",
+      "git_blob_sha1": "b694e138e4cfb8ba4c2b39987edec51f81a70d31"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rl/learner_service.py",
+      "bytes": 4811,
+      "sha256": "d5c72d84b9cddbd7f08e183dfcfe38e9e6a0312fefa6b14e2543e2d2889101ae",
+      "git_blob_sha1": "7a4df71367bcbe44f2778dbb190f256f3605f3bb"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rl/queue.py",
+      "bytes": 1665,
+      "sha256": "fbfc76286938c6b3e707f78a69875f5fbd29ad09378af393303ded3bb40fb20a",
+      "git_blob_sha1": "864d798acadd13afec289f374b3167416c581843"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rl/train_rl.py",
+      "bytes": 1908,
+      "sha256": "fc07f48e870ce184dec99aa836c93cfccfb87b6c51c7b73da7223f5a3f7a3863",
+      "git_blob_sha1": "e5ae0f9f56746ab80699579a177b31efe343925d"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rl/trainer.py",
+      "bytes": 3441,
+      "sha256": "869ee55a7c8f83b7fff8b53c8aad6ab95e6cc4f104fc379be1a6f20aca082143",
+      "git_blob_sha1": "11847c8423aa2c14bebb63dd551141ec2012e2d1"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/__init__.py",
+      "bytes": 796,
+      "sha256": "6be001f847319f13c51cf2a6b7fb8c1fa12989abd8e9b856a49d4d93dce7d0bd",
+      "git_blob_sha1": "eb8b06fb8106e56dd0b1f0d088c20fe5f7333b7f"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/bi_openarm_follower/__init__.py",
+      "bytes": 810,
+      "sha256": "2645f2e7bb06d30fc9f472a2cbb85fe5bb4e595086ad66110d27f5512c1b8c5d",
+      "git_blob_sha1": "b1dcce4313e3d5b7b42ff091948326739d180b30"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/bi_openarm_follower/bi_openarm_follower.py",
+      "bytes": 7151,
+      "sha256": "520bf51b4378787307b02cb9ce06c0ad6fbcf262c887ebc113f7e1624e790d1f",
+      "git_blob_sha1": "ad79deab2e292a4ce321567458d6e40069b4e351"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/bi_openarm_follower/config_bi_openarm_follower.py",
+      "bytes": 1417,
+      "sha256": "da4d8ff2d07fa6adf7e720867471d53f1d34be1021a9315e38aafe4de39e946e",
+      "git_blob_sha1": "d1c9335a05d982f411801b72fe4a6d91c8d373fb"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/bi_rebot_b601_follower/__init__.py",
+      "bytes": 824,
+      "sha256": "da2f982d44ace45c520da3a860bbb385e2e65f9e6ccdde8a44a6573053a9a55c",
+      "git_blob_sha1": "8ef454f458ebc14b6f5c3bc5ffdc17b41a137ad2"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/bi_rebot_b601_follower/bi_rebot_b601_follower.py",
+      "bytes": 7037,
+      "sha256": "cac40e9b671a4cffda98d7ff3b7f8c206c975521e0199021dc595b99c38dcada",
+      "git_blob_sha1": "e032bbf16ef9ec3ea5038276d83cb1e55cc55b23"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/bi_rebot_b601_follower/config_bi_rebot_b601_follower.py",
+      "bytes": 1373,
+      "sha256": "b7224cd394edac3ecac3fff034d100914d9e7cab2031bf3943ff5d006dca5800",
+      "git_blob_sha1": "af1c48dbac6223a8f330bd5f01dae5fe69804522"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/bi_so_follower/__init__.py",
+      "bytes": 780,
+      "sha256": "9e3b0c89f380c1f5b24fbd697c4d125dd952ffd730c34e5e06a5180ca30a5ad0",
+      "git_blob_sha1": "1d63dcb2c0bab357ad57244e698cae56bd09c81a"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/bi_so_follower/bi_so_follower.py",
+      "bytes": 6531,
+      "sha256": "d2cb4318ad76aff30d86898ed160e09de4009f345e9e87bb3ad48210bcc3b579",
+      "git_blob_sha1": "d506f5afa6f2066fba40fc47bde43f3ff777c10f"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/bi_so_follower/config_bi_so_follower.py",
+      "bytes": 1312,
+      "sha256": "c7d7eea050dacbb205e56ccec6a3685260aa3e4b75966f714a2f52e48c64be29",
+      "git_blob_sha1": "0c68e7cb1292616eb5c6ec7545a85f327511190e"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/config.py",
+      "bytes": 1462,
+      "sha256": "65f420e72414df8717d4d2d0788d7e3584d7420f616e39b0d07af2098a877094",
+      "git_blob_sha1": "a85a831693c31fd13d3e19138887ee981a5cbc37"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/earthrover_mini_plus/__init__.py",
+      "bytes": 822,
+      "sha256": "5d8d6aaa64e48a99bad94c6d739f0917929bc60633b70d57f54b2ab4e24f52ac",
+      "git_blob_sha1": "60546cd41ad92fd4e77c059ff574cb1c9163082d"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/earthrover_mini_plus/config_earthrover_mini_plus.py",
+      "bytes": 1233,
+      "sha256": "31fc0be35ec4e94c3f96135ac8757ccb1bb22062eb8bdc4fa3d16f6f5c11e68e",
+      "git_blob_sha1": "5ed80476b752821b5aa715c8a05dc9d401fe8672"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/earthrover_mini_plus/earthrover_mini_plus.mdx",
+      "bytes": 48,
+      "sha256": "ba04c9296fe412d6901b884cbcc1f4a57ed0e39b89148545a4739c2a443830eb",
+      "git_blob_sha1": "37509e0a908ef8b69ca33fc8718f8052b63b0d79"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/earthrover_mini_plus/robot_earthrover_mini_plus.py",
+      "bytes": 21849,
+      "sha256": "0dc4737d982f3bdfe88976d0492d17ce0b43b0bd088db194ee698abfa7fb8069",
+      "git_blob_sha1": "91455de6a4607d9c5faa5d459c4fe0515254faa2"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/hope_jr/__init__.py",
+      "bytes": 847,
+      "sha256": "f56eaa72355a74d64c6c96fce6df45f843f3f4a7ada04e3eb836d44d444bd673",
+      "git_blob_sha1": "94fcf86e4f9d7ae30b8978cb4b8de027b49f61ea"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/hope_jr/config_hope_jr.py",
+      "bytes": 1790,
+      "sha256": "2667fb096d4614bde2a090925f640423db178e4edd6b7f339a3187a7530f2310",
+      "git_blob_sha1": "f2af5f47c5faa00de73dc633366d863afce5b73d"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/hope_jr/hope_jr.mdx",
+      "bytes": 35,
+      "sha256": "1eb7f29681816d75eb8481837b197ffd3397d3b3defb1c1ee2cb6015d4f233f9",
+      "git_blob_sha1": "a076e4754acc0f88e53320da293f2fc9ec2d06cf"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/hope_jr/hope_jr_arm.py",
+      "bytes": 7153,
+      "sha256": "1133c5ec7f4aa574cedd858437ecd2da3e69a55a7b4bc3803eafeb67428cdc19",
+      "git_blob_sha1": "40b06af22809705072c13070e688c9a24434b4f9"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/hope_jr/hope_jr_hand.py",
+      "bytes": 7645,
+      "sha256": "30a833d3a5ca1427f7e502c48457e6496eb09482f076710cef13b3d4e7bd123c",
+      "git_blob_sha1": "97ed87b34f0bf53dd37b07723f602395a7be27d9"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/koch_follower/__init__.py",
+      "bytes": 778,
+      "sha256": "8c16d081a502d0789c29a576535545a9108e3312fe1e6ecea682d12ab6ae07a4",
+      "git_blob_sha1": "8f443592482cb0eb4cc9f15fc4f42349cc50ca0f"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/koch_follower/config_koch_follower.py",
+      "bytes": 1458,
+      "sha256": "cf0fee4174c7a52527bd54ac696c48989d3856cb27a48049d18eca6393b880b0",
+      "git_blob_sha1": "02a95ef4eac1c6c7063133b77b7907b6a285f5b8"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/koch_follower/koch.mdx",
+      "bytes": 32,
+      "sha256": "4ee1b6cf6f2db0344c31d144f416c35702a7468c5479dd3755de5b091a02c75d",
+      "git_blob_sha1": "ef43feb06680f79223d511915a46e352d33ac480"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/koch_follower/koch_follower.py",
+      "bytes": 10874,
+      "sha256": "16b100fdc56e85acdbbd9aa86b199d6907fa6e3c81a07e56cef9eb42d0978061",
+      "git_blob_sha1": "2aeb4bd3395efcd55d8fbfe2b5bc52cb020b5ddf"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/lekiwi/__init__.py",
+      "bytes": 838,
+      "sha256": "f5c80a9f1a2e3092c2f585daa4b26ead2b8419e7382b5895f61a433dd78bee62",
+      "git_blob_sha1": "3d2191242825470300497da35de742a47693d706"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/lekiwi/config_lekiwi.py",
+      "bytes": 3724,
+      "sha256": "1c6b3ac708d15b616de85366e6a6ba9596cbe9f3fbfea4f09557d0ff4062dcec",
+      "git_blob_sha1": "b9d2474ceb3d7065ef6acbb7ab191239e4ae8f93"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/lekiwi/lekiwi.mdx",
+      "bytes": 34,
+      "sha256": "a9de676d07b3ccab99a4cde3444469a6d7b2bc623fa03fa55a640012a5849380",
+      "git_blob_sha1": "f651589989a9ba21671a17f076a54d00f0256a5e"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/lekiwi/lekiwi.py",
+      "bytes": 17287,
+      "sha256": "faee0ebf63ce09771795d32c4c2510ed75c0108eb1ee6f98426cf91c244a6345",
+      "git_blob_sha1": "8e8a3c640a523f12fd301b1b2df94e8229137f79"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/lekiwi/lekiwi_client.py",
+      "bytes": 13670,
+      "sha256": "dd10163cd8ead6ddb7f4bf334967af744f22fe1ebd459515f1efb6fd90a854c3",
+      "git_blob_sha1": "ba568f531083d2bea26df784c4c4385cecc965d2"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/lekiwi/lekiwi_host.py",
+      "bytes": 5047,
+      "sha256": "c46ac4ad3848b7b9d25ed887e0e29a604b72c337e2b4ad2c7573718d697c109a",
+      "git_blob_sha1": "4ab72c6c12d330dd28c3a3531ebdb6d7f7c7ed2e"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/omx_follower/__init__.py",
+      "bytes": 894,
+      "sha256": "4b0025084b6b2db694628cf97231dd9181d91055ba65f1b83423ab47dc2a65da",
+      "git_blob_sha1": "328ac8d80eefc44eaccfe1e4afbf5d995565705b"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/omx_follower/config_omx_follower.py",
+      "bytes": 1456,
+      "sha256": "784763a0ce77aa357983918c7b69490c8053ae4a6a0d559c81f186e71f15f9aa",
+      "git_blob_sha1": "db4179fdf0197ea5485bcbd64e56ec8619335956"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/omx_follower/omx_follower.py",
+      "bytes": 9954,
+      "sha256": "dfc9aef980a4c7b69207559af68c436d080ce993d7e2329eb3c6094a7fa1365d",
+      "git_blob_sha1": "8b1177094a3d0873d3dd4181fb1553609e22b647"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/openarm_follower/__init__.py",
+      "bytes": 852,
+      "sha256": "b06311aa94e353413db7fdee1e2cae290ecc53ea42e95aad50ba86fdb82f50d6",
+      "git_blob_sha1": "217432fd57522a5b712e53ab9598ef2022e5bebd"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/openarm_follower/config_openarm_follower.py",
+      "bytes": 4992,
+      "sha256": "456cc95337c619ef915b1262ea36296a1299efb2263f7e9aece4ff5925b6f96d",
+      "git_blob_sha1": "096ec320ff1d0f1dcde8660e030dbb66e7f9fa88"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/openarm_follower/openarm_follower.py",
+      "bytes": 13599,
+      "sha256": "2c638e80bc6062bc627f68e2661f810d06449c22ae8a8caa168a630872f2ee42",
+      "git_blob_sha1": "77e51fe200f3a71c61d5bcf6034673a8c8f5414f"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/reachy2/__init__.py",
+      "bytes": 1055,
+      "sha256": "04333907ef78bfa1ebbbaa6cdfc6105af5bb93b54078fbbd401dc292a85cad44",
+      "git_blob_sha1": "b7afd006d7f6aa064119e67ab271453e6168c538"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/reachy2/configuration_reachy2.py",
+      "bytes": 4422,
+      "sha256": "aa7275a09dc2d046828178ded4e2b546db68501ea2a6cc0f1e51d19b1cfcd5d2",
+      "git_blob_sha1": "8cb67a495ea2c96e7aa28d1274b98ee0ceab96d3"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/reachy2/robot_reachy2.py",
+      "bytes": 8384,
+      "sha256": "842a2d598a4282b0e7a8165171e654ebd9fff5c445df102211597b035df3a79a",
+      "git_blob_sha1": "fbcce306c9f1211742297f3777921c1bb8bd5620"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/rebot_b601_follower/__init__.py",
+      "bytes": 1028,
+      "sha256": "b8f3ba511ea80eeba74416c94c468039ef8a3a5c712a9e6315c9650a5d2092e7",
+      "git_blob_sha1": "67300eb74dee354b1684003a6700546d6d26f9d2"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/rebot_b601_follower/config_rebot_b601_follower.py",
+      "bytes": 4548,
+      "sha256": "145664dc3cf8ceb538ae662a1b9656b206bdec75ad51703e56a782e80d44d719",
+      "git_blob_sha1": "5c41cd2876ec704942c69a75e6764e0a3a526c4e"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/rebot_b601_follower/motor_family.py",
+      "bytes": 5232,
+      "sha256": "691a761e1929ee036d7c7f162a0280f9ea6e7c45b02d177cb7145c00b5fbfad9",
+      "git_blob_sha1": "3a62ce4f709b380f91c2f74d1d29275d16f1a55a"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/rebot_b601_follower/rebot_b601_follower.py",
+      "bytes": 19708,
+      "sha256": "8ec98723da7a61d8604abb55357f1f5fb30ccd4e80f46a8467d70a216d712c1c",
+      "git_blob_sha1": "468280d1a8809a1b4c7dceac7310c31327b28788"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/robot.py",
+      "bytes": 8012,
+      "sha256": "f582e095167454c5888b4fefe4d52ca29855cbff411c28cf8ed6f340a6e4acb4",
+      "git_blob_sha1": "c2797986c865f38fe39f1e284f92169e3e00581d"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/so_follower/__init__.py",
+      "bytes": 1018,
+      "sha256": "9ab5f3cec0ba50ce2ac48650563f9e75c6b9019f43313beba35d5772131d3774",
+      "git_blob_sha1": "45de205a88ad2ef3642064fcb7fbd3b406db062e"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/so_follower/config_so_follower.py",
+      "bytes": 2344,
+      "sha256": "65eecfc4eed9239abf65015e6b89cf0a1cb7d3bc34e5971eb83a034ac166d4f4",
+      "git_blob_sha1": "af4dda782b562064c1b80902ab5948b07ddc43de"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/so_follower/robot_kinematic_processor.py",
+      "bytes": 26675,
+      "sha256": "d505ca6104799d6f07d91cb759c051490941be2cf0fc00d0d5615628a73559b4",
+      "git_blob_sha1": "308424168a6a24dd62576fb4b5181c829e6a439b"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/so_follower/so100.md",
+      "bytes": 33,
+      "sha256": "18768d3be3d967902de387b0b89313c0e9111c115ea72e9836b3038a1c458f2e",
+      "git_blob_sha1": "ad1154e75a74a496aa74cb1ac1b545238d5174e4"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/so_follower/so101.md",
+      "bytes": 33,
+      "sha256": "44726e807c0a35dcfc1a6b4da8e2d847f3477da2d06e4f27686e07acaf7ac249",
+      "git_blob_sha1": "27b89266029afbf0aa59be195cc0b4b6ee93ac26"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/so_follower/so_follower.py",
+      "bytes": 11429,
+      "sha256": "bbc68a8a0cbb9b3cf2048f1d43ba9009387b71c69d6d446e1de6e97611ae26f8",
+      "git_blob_sha1": "bd63b496f868aa5b40fcb31f65d31f1dafbd926b"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/unitree_g1/__init__.py",
+      "bytes": 760,
+      "sha256": "c3a8c99dfb8d76b4a6df09c3cb33c2bbc02dc219a41d1bb655ff214f985b149b",
+      "git_blob_sha1": "ef3a9d05ec3b91a6553298ec2bbd0957248cb06a"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/unitree_g1/config_unitree_g1.py",
+      "bytes": 3570,
+      "sha256": "90b8d5bd9132af49a2611fb3026562029d59be17e4aaa4e898b525231deb2443",
+      "git_blob_sha1": "93c582eaf17d32b5b6b2b2a7446d3355451f22c0"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/unitree_g1/controllers/__init__.py",
+      "bytes": 1014,
+      "sha256": "3b0fe2fcd4a188882ef5def2c19f46280dac8f621b119109501d1a2a21735622",
+      "git_blob_sha1": "be1e100c2f7db175843dfa1572a97db45f006711"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/unitree_g1/controllers/gr00t_locomotion.py",
+      "bytes": 8065,
+      "sha256": "3809b09b23c03f5a6aa71910c68d566c0736d3943fe590aa10c06438d67c3932",
+      "git_blob_sha1": "3a8050a39e5c640c477e04fa129d6cac7b41cca1"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/unitree_g1/controllers/holosoma_locomotion.py",
+      "bytes": 7731,
+      "sha256": "4ceb58227137c427d346b94ad969cfbe7377cc585fcab40df6ec545f442378a1",
+      "git_blob_sha1": "9c7aa61f619c8b151e8e6fc71eeeadcb67fcf5d7"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/unitree_g1/controllers/sonic_whole_body.py",
+      "bytes": 10670,
+      "sha256": "94052b0e8cbe6daf713c22fade00887c8fb0c0163f3edb38398b62acd80c0eb5",
+      "git_blob_sha1": "50dfc2a0c94584a7449773001836b3fc7bd499bd"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/unitree_g1/g1_kinematics.py",
+      "bytes": 10963,
+      "sha256": "45eec371accf7ccb1a14ce80a19c22727b680bf94ddbffcb549b1787d9a2d52c",
+      "git_blob_sha1": "f57320a1173481b5f901a10a44a1013d1d482091"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/unitree_g1/g1_utils.py",
+      "bytes": 3989,
+      "sha256": "4c052d84fbedd324fe9cb1884d3b5d4e925d3eaca3f53a392262ec72869cf3cb",
+      "git_blob_sha1": "d05ac17669952a4af6f2cf66e43aa13a3c2b110b"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/unitree_g1/run_g1_server.py",
+      "bytes": 8486,
+      "sha256": "bde797e0ac7454f2b7ad869306b75ad23def4640589d20b4a11128cc7d32f066",
+      "git_blob_sha1": "b5bd0baf8494e9219e66776467fa6dde4ab055f4"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/unitree_g1/unitree_g1.py",
+      "bytes": 29408,
+      "sha256": "89ac2840a58b22677495b322cac43da7e41b8776eda1ebd3dd44efe2c1912786",
+      "git_blob_sha1": "87557057225a888f8d3808cd044d7e435af94946"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/unitree_g1/unitree_sdk2_socket.py",
+      "bytes": 6190,
+      "sha256": "94810ca18b05c7afb38f3c5c7be53a35ab49011ed45b76deee170ea2b2681d3c",
+      "git_blob_sha1": "4f0b787aac4d0f53a82d16c51ff20973260d2838"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/robots/utils.py",
+      "bytes": 4559,
+      "sha256": "bd74646bb4b59c62b037cad860731984cce902ef9acb5b7f594d44b6d96f71c2",
+      "git_blob_sha1": "b3874e5cf424ca5e42e3f5d2ba4b334f0fc6e93c"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rollout/__init__.py",
+      "bytes": 2629,
+      "sha256": "7d09ecfb2e465e0ff31f79d17ff602b00034b748e89f61546b0935d567fad4a7",
+      "git_blob_sha1": "297bc15ba655f006651719672e27a7f6c5c0ea7f"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rollout/configs.py",
+      "bytes": 19955,
+      "sha256": "9ece7691f0fa26425335a9ba932f6d49b53c1899010fba2a428811e7a041fa9a",
+      "git_blob_sha1": "b06840c2be5ef493bc69001abddc6221708427af"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rollout/context.py",
+      "bytes": 31051,
+      "sha256": "9986fc5774e3d5dd2985a195b3917a9fa144f610fc8f5106ec80f62a5863ebba",
+      "git_blob_sha1": "271a8f4a21a16a6da37b69888f6be6141683a1a3"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rollout/controller.py",
+      "bytes": 22651,
+      "sha256": "4c36b5961afd953ae47eced3061ff79464541125175c5cd552c738a2c1dbf65e",
+      "git_blob_sha1": "388f5a121a5a53c670de22f2e825a798609a74a0"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rollout/interactive.py",
+      "bytes": 18020,
+      "sha256": "6daf840fbe84aed58d980e5102112327ce23fc8ecdd95b9be0ec90ad381573c3",
+      "git_blob_sha1": "e2e217e9870bffaaab3e7d87b2a7dc7864111dea"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rollout/ring_buffer.py",
+      "bytes": 4064,
+      "sha256": "4ad909bcc58c4da8f78abc4f245583c02d690d691bc72692045397e7a67f6883",
+      "git_blob_sha1": "2c0a06301ea07a4f230aaeeebd84e8a513b3b24b"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rollout/robot_wrapper.py",
+      "bytes": 6423,
+      "sha256": "717dece22bebdcd4a2dd06c4298c7358035a4cb27165597b6bfda26ba3fe69e0",
+      "git_blob_sha1": "3cd6ebd8764e04a65171e59f4d54290cbca0293a"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rollout/strategies/__init__.py",
+      "bytes": 1328,
+      "sha256": "baba2433a3f51db9456b8b9234ad8f3b1520d341b2df513bf13206f836752ecd",
+      "git_blob_sha1": "fcb5bf1d836737328ba7d3a50a291128bed97468"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rollout/strategies/base.py",
+      "bytes": 3528,
+      "sha256": "fff2719f1539916a2b6bc37e9c014ff636ac94f9b9d71c1bcfe5c1a979336371",
+      "git_blob_sha1": "6bf1b43410ef6c0c6275319fcf7e4aa28e4ef453"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rollout/strategies/core.py",
+      "bytes": 24546,
+      "sha256": "c9ae5fb4c93d22835c8898f43b19cfb56559583fa4ea9e326befd123e733d8ab",
+      "git_blob_sha1": "969f1680fc96ae9651d5cf5b8fb931acf879d273"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rollout/strategies/dagger.py",
+      "bytes": 38275,
+      "sha256": "7d8c3c2b851d3d498e457fe60fbf79f034f169053a01261c3564667211013c5b",
+      "git_blob_sha1": "94d9b0a3614dc810e3835232b7b50ce11009d3e0"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rollout/strategies/episodic.py",
+      "bytes": 16504,
+      "sha256": "4a6f63c6e2e3feab58c666bf5fe87e041ac0f110ff078f14714cb2f24a0d7fe1",
+      "git_blob_sha1": "14368f7c72549e47e395325e9048370a300a8059"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rollout/strategies/factory.py",
+      "bytes": 2078,
+      "sha256": "e9f318f8efe1d3719d085b295b4dded17fee4c1ee4a63df52d574db7f4182c87",
+      "git_blob_sha1": "ed3471f77e54d4e434b4933259d3886ff1b59ad5"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rollout/strategies/highlight.py",
+      "bytes": 13454,
+      "sha256": "4b4bbf3610ba993a6b9dcdbd7aea17213928f3c238eab655ae61cdf3c2d64f11",
+      "git_blob_sha1": "3e3eb8089f92b16284e47e67fc78fcaa49d4f8cb"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/rollout/strategies/sentry.py",
+      "bytes": 15695,
+      "sha256": "93158d5a6055a263f7f4c519836fbab70242f4e8569152c6383651fbd14a7209",
+      "git_blob_sha1": "b89f52c9bbcb0c5b5a121cc60d1ed68f9303032c"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/scripts/augment_dataset_quantile_stats.py",
+      "bytes": 11652,
+      "sha256": "0e9e7593095e58fd813997ccd6d0653543f368d9c950b62dbbeb04ebb73f8655",
+      "git_blob_sha1": "673026e11232a4c9981006be9e78a9ee582ad1b8"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/scripts/convert_dataset_v21_to_v30.py",
+      "bytes": 20777,
+      "sha256": "de8cead24eed1880db766398e8c264ae66117431973252370cadb05658dae0c7",
+      "git_blob_sha1": "58941382aeb23b103ee6a10100947c3e0e9a4034"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/scripts/lerobot_annotate.py",
+      "bytes": 8678,
+      "sha256": "c2bf08088bdb4d6d6febf3c9ae3096839e5d4fa1194d7ac9758cd34abc44b0a4",
+      "git_blob_sha1": "0dd0a95c615466391bebd856230e0fd08125b583"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/scripts/lerobot_build_mp4_sidecar.py",
+      "bytes": 4885,
+      "sha256": "4f01eef7fcdd4a9cde33a95bddd26d22c2679cc0ca475bf3c289c5545fe2421b",
+      "git_blob_sha1": "32bfd0d7299ac62555a8b01a7e352c28b748db79"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/scripts/lerobot_calibrate.py",
+      "bytes": 3099,
+      "sha256": "e5fdbf165bea9f5d52290dda1d081ec33c4e2a785e8e57c83682af96ef38198e",
+      "git_blob_sha1": "d08fb191ed92f60d44ca9e7d9a75762ef219faf0"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/scripts/lerobot_convert_dcp.py",
+      "bytes": 7476,
+      "sha256": "d9051796aed5804b339ce1d2582aa7ee27772ab9997b4f53b5f59f6a12138da7",
+      "git_blob_sha1": "7007316c18f06fcc1aa92681dbc89a9fe74ff71b"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/scripts/lerobot_dataset_viz.py",
+      "bytes": 16202,
+      "sha256": "51d23a18561fcf37ba9995ded22eaaa0dcf969a969df33edbf498e91867010cc",
+      "git_blob_sha1": "40bfa6f4450e1d90ad988bb77931e7b1e3233c56"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/scripts/lerobot_edit_dataset.py",
+      "bytes": 33584,
+      "sha256": "6df63fc99eefbf4853e7e8dacb54ee33cca48d19c47f3f252e55a6be16f7c43b",
+      "git_blob_sha1": "d859ecdfda7c41de84377da363ebeec92acf9951"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/scripts/lerobot_eval.py",
+      "bytes": 49595,
+      "sha256": "2a5962b162e225c1621e5b4058f0d9f9c082eea0db42981dfebd40bf9c3e1c50",
+      "git_blob_sha1": "023759f94293c515ef3cc60966bb22fcbb967d05"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/scripts/lerobot_find_cameras.py",
+      "bytes": 11130,
+      "sha256": "b7e573bb82e853b85533ca26fb784829cf3203e21ea35bfeed19a07b0e75ea22",
+      "git_blob_sha1": "d86d27613976a5b8662f98048aadaaaa277ac6db"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/scripts/lerobot_find_joint_limits.py",
+      "bytes": 6948,
+      "sha256": "8b62071509e3eefbe7406d4aace6fecc43b73f54ee0940068c78cb86cf6586b5",
+      "git_blob_sha1": "b8bcc412621e6a96b3047d7c951131b754f1f70c"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/scripts/lerobot_find_port.py",
+      "bytes": 2221,
+      "sha256": "b2abc9b0f48ed075ab6ea4ccf0d4ae1c943f92a6ba25d8b07e4a1db96b61f69c",
+      "git_blob_sha1": "93065c4736019064a12edd1ef7fd760687e0443d"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/scripts/lerobot_imgtransform_viz.py",
+      "bytes": 5156,
+      "sha256": "efc57e75ab6061c50d5a35b1ad2aff95122d69cd7d525963cfdb9ab9468a5861",
+      "git_blob_sha1": "9db386740b8161990d137bc947956ab5376277ae"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/scripts/lerobot_info.py",
+      "bytes": 4164,
+      "sha256": "93727da76510005edabf7ee037cc395f80e219eed9138449f38bc099ca98b3cc",
+      "git_blob_sha1": "843485eaf9be081739a193929db5d8a35e93481b"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/scripts/lerobot_policy_server.py",
+      "bytes": 3302,
+      "sha256": "a758f63d24fdd0cb11d1bee16b54c3105d6383aa98c1c0afdb3ec5e8a886e5a1",
+      "git_blob_sha1": "ec73f6359d004b546e9060eaba66967e7f6adc2c"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/scripts/lerobot_record.py",
+      "bytes": 24841,
+      "sha256": "3f9469cbf219e33ae49ed18141e3bd5ffb44fe8127e1cc93819e3871a0d2ede8",
+      "git_blob_sha1": "820f00462139813d839cc417e3bde4d6041a4fed"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/scripts/lerobot_replay.py",
+      "bytes": 4293,
+      "sha256": "96ca675c1c42157074683a6cc2c5e8cb8b780dd107c028f1d1f9c46aa1a2a649",
+      "git_blob_sha1": "a103b346338254bddaa05733b592e46034a5999b"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/scripts/lerobot_rollout.py",
+      "bytes": 10352,
+      "sha256": "c6f0ea75716afdefffb886fbab8080339ede058586094f9ca05de0626bf5e6ac",
+      "git_blob_sha1": "3afd0e7f30eff510986d595b82a8410a0506d3ef"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/scripts/lerobot_setup_can.py",
+      "bytes": 11247,
+      "sha256": "3106ab86df6525c9256fa5aff0fd269b257ca13915049fad7c0b67edf0949231",
+      "git_blob_sha1": "b28fca44d2c03e0e72388ad9303425450c5cbe03"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/scripts/lerobot_setup_motors.py",
+      "bytes": 2615,
+      "sha256": "bc1d7e0eefe3697c4f21beb45dc9e7f59069c9c12447ffef8b07cb2674292892",
+      "git_blob_sha1": "6eaad02648b1f18df6933b15b144592c1ab90a23"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/scripts/lerobot_teleoperate.py",
+      "bytes": 11235,
+      "sha256": "4ae45f00e4b6c8fb7732154cbe539e4d77bb9c70b9e0ee004255283efbda5778",
+      "git_blob_sha1": "81bd98e65e7e6c376c19cdbfd4d27ee58efcfaf4"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/scripts/lerobot_train.py",
+      "bytes": 57925,
+      "sha256": "61de8a5794a149bd9e0cfe409178d58e5cebfc3d288fa0c04b27cdf8b7e83c02",
+      "git_blob_sha1": "d2b985ba4e14a0a5d2c7a06f39e5e46bea63290c"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/scripts/lerobot_train_tokenizer.py",
+      "bytes": 22883,
+      "sha256": "645a4983781f83ba4e0fd551d9a476b02b225dea75d4e23e0f9de970f99d62a1",
+      "git_blob_sha1": "520a4b1e1fd1e7827bab30fb324cb6d31edc13a6"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/streaming/__init__.py",
+      "bytes": 358,
+      "sha256": "7ad41106a6ad00ec9c15b97ad01323857d761100e48687eb6f2956c59b40eae2",
+      "git_blob_sha1": "5f70239b5b21c5823c10b3294228280147853ec7"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/streaming/episode_cache.py",
+      "bytes": 25493,
+      "sha256": "d94ce55a50ce6c30e827da2e597e63947f04b9385b6c907d40a1982e26a84485",
+      "git_blob_sha1": "c6a26e313ed5547928c6f6e1c5284671a8f8db09"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/streaming/episode_parquet.py",
+      "bytes": 6634,
+      "sha256": "70fcaa24dd962df3a8021318c73e3a6b4c4c313888f9b1c47fbc6262c5eae31c",
+      "git_blob_sha1": "2c85b6eaf1a66295c598ddfc25db763428f271fd"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/streaming/episode_pool.py",
+      "bytes": 9471,
+      "sha256": "51ec2737778cdff68a8546689da4845e3f7abe87735741642402a4f6eca013d8",
+      "git_blob_sha1": "68a3d2b8e9d0562ec9421da5ee8c8d099c55830b"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/streaming/location.py",
+      "bytes": 6052,
+      "sha256": "51dc175354d4ed9a726ebd6b26ba0996dbaf0edb02b31b212e9986e2b5b51578",
+      "git_blob_sha1": "300c582ddd074eeb7152d4bf7da55b43794031af"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/streaming/manifest.py",
+      "bytes": 17480,
+      "sha256": "0fb022ca8c8e09d9646261b435faf7af5d6c9dbc182012567ec9b5dbf10d6a51",
+      "git_blob_sha1": "07e187ae37c4142d6ea4a58e4c5fae65b06fc1ab"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/streaming/mp4.py",
+      "bytes": 37188,
+      "sha256": "d893c220bc08fff6e8828ecde7fb7e884508b88a716674bdd1563e36013f50bd",
+      "git_blob_sha1": "c82623f417a62b5eaad72ef1896de93087ed4959"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/streaming/range_fetch.py",
+      "bytes": 16323,
+      "sha256": "d8e8f9aa53c0e533a41f12c59c6579094074c8c96e5dacd58804d67e5bb563cb",
+      "git_blob_sha1": "3b76a86002dc9fe271b828a3b975bc49ccd0be7e"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/streaming/sidecar.py",
+      "bytes": 8848,
+      "sha256": "f73440f03d209f6d17fb883bd4c57631d1634c629e8ac2bec24bf9699ed9f9d6",
+      "git_blob_sha1": "bc05b8d315e64424cae9ce074bb6b5ebbb904cc2"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/streaming/sidecar_utils.py",
+      "bytes": 13504,
+      "sha256": "a3c7101957e1885b8a64ec0551ad98fd06618b7eb02d0c22c25b75bbc88cc6c4",
+      "git_blob_sha1": "0151f5b3f90089c34c34b615bb64c5c65f3165c2"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/__init__.py",
+      "bytes": 875,
+      "sha256": "1f9335d5abb5ec9790531a87fa5bbb35970bd8edd05fae72bc20a7c6c52df3b5",
+      "git_blob_sha1": "d66e4b67db9eb9686fdaa04e4798e98ed5b6792e"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/bi_openarm_leader/__init__.py",
+      "bytes": 798,
+      "sha256": "970919ed4dce135bfa3ca5a2151254f1b2a5e085e598a53b66228f43097dbecf",
+      "git_blob_sha1": "fe728b8265fa5978c63e60c062e837bb37499722"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/bi_openarm_leader/bi_openarm_leader.py",
+      "bytes": 4297,
+      "sha256": "b24e2eb1ea291f0dbc25efd93e6cfbe9106af39e771382ae87fec38b8ec456d9",
+      "git_blob_sha1": "09b43fb92f9aade3e1071f9be30f05ff9dffc239"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/bi_openarm_leader/config_bi_openarm_leader.py",
+      "bytes": 1043,
+      "sha256": "52cbb1d12a3eeb107e8f8783da163c810d7f7427af1290a4875416cf12d06802",
+      "git_blob_sha1": "6425c179a9dbd050cb72efff7710e244ba1ee54f"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/bi_openarm_mini/__init__.py",
+      "bytes": 786,
+      "sha256": "ffa184cc63f9f470c5bdf34ddce752729fb95044a53e7c5ec77e1bc8e9b7a112",
+      "git_blob_sha1": "ec1a2dbc8c8bca492325a23f02bf14ce234388a7"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/bi_openarm_mini/bi_openarm_mini.py",
+      "bytes": 3828,
+      "sha256": "a582eb929cb5a80c6c4976665b68ebb2e9830a1d315c1a34a28b9c8d103452ac",
+      "git_blob_sha1": "4e6f9fb904eb250013885e39cdd2c9fa9b532fc9"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/bi_openarm_mini/config_bi_openarm_mini.py",
+      "bytes": 1029,
+      "sha256": "561e4c36c66558850a2c864e12ed1b0f7330c7490646038654024dd66111de6d",
+      "git_blob_sha1": "f021eaa493b8ee7f291ad061b988c7a89954d0eb"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/bi_rebot_102_leader/__init__.py",
+      "bytes": 806,
+      "sha256": "a7b9f1478b049a49df2f4fc931f15c051ea5129fb8c579a74405f8456854413a",
+      "git_blob_sha1": "9b26d6e5993c0a4d55220dcb39e784c0b82f58b4"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/bi_rebot_102_leader/bi_rebot_102_leader.py",
+      "bytes": 3497,
+      "sha256": "bfd225a7b72d52348c475e4b4f3e4608c0b0cac86a4e1b542a906da1e27a6025",
+      "git_blob_sha1": "ebaf6e9c24de1517bec13150ff10da04a1201eff"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/bi_rebot_102_leader/config_bi_rebot_102_leader.py",
+      "bytes": 1063,
+      "sha256": "4ec7f40a5a9c1f15148391b8d90004e009b5c9b7903b3d9ae056757c01932abb",
+      "git_blob_sha1": "2503b102c78036cd07f0fca24ffb20548abfa28f"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/bi_so_leader/__init__.py",
+      "bytes": 768,
+      "sha256": "a9deeaa47c59ce1871b958d9ce4f13f2b6f0b60cc0f888810b471717f5bdac3b",
+      "git_blob_sha1": "1bb49fc7c52914565bc20f98de155ad8199866c1"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/bi_so_leader/bi_so_leader.py",
+      "bytes": 5342,
+      "sha256": "831b7e8cadf038c032864d942567882be8203f61cfede17d34b1f9435f299ff8",
+      "git_blob_sha1": "d1ec02001598e9834acbc43a5441c453c1ff9480"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/bi_so_leader/config_bi_so_leader.py",
+      "bytes": 996,
+      "sha256": "c2167aba87a3a58575e862dbce8db43154096850e90b5da94db48d242857953f",
+      "git_blob_sha1": "f477d0f266348965cddf257d2d870158ebdf0cdf"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/config.py",
+      "bytes": 1063,
+      "sha256": "cc9bacc17230e4c0d1532ee4c998a9d2aa4d6ec374f4606e7f447f1e3c94ba28",
+      "git_blob_sha1": "1b42b4edbe036a38d86174e2af881e1189f69020"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/gamepad/__init__.py",
+      "bytes": 785,
+      "sha256": "cef801b105caacb92721f3be6922abcd26c5174a79ab1be92cc06b9bd6a974cf",
+      "git_blob_sha1": "3c2709dc708eda829b8bf8ebb275f21d13f9c519"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/gamepad/configuration_gamepad.py",
+      "bytes": 969,
+      "sha256": "31f427c1ecfc0006fa5caf27dbb4e9fdc07f90eda2ac68f076efcd31fbbf1729",
+      "git_blob_sha1": "9a220deb7febfccbbfa1a2ada97ba6543c542d0d"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/gamepad/gamepad_utils.py",
+      "bytes": 17742,
+      "sha256": "32201e25ee71fcaecbd14511289c7deae1aeae6075206cb68b69b9f253637795",
+      "git_blob_sha1": "22dbb7cca6a4ce28ef33aea737fecd596564309a"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/gamepad/teleop_gamepad.py",
+      "bytes": 6525,
+      "sha256": "66092a00ad90f87ac3dd553f8a3f65e9a7160559b45e71521da57a9806e963c6",
+      "git_blob_sha1": "66296d704203c7cd9d82be44ec494b98915db905"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/homunculus/__init__.py",
+      "bytes": 1017,
+      "sha256": "954c3e1ddc9ab6ab8d1746b2faa8a8518108e683ea0e6c029b3d2892d2d76d07",
+      "git_blob_sha1": "ee1544e4c68bd93a3e6d0b182ad42dea8d5ea55c"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/homunculus/config_homunculus.py",
+      "bytes": 1245,
+      "sha256": "4d73d21d5d1fc6ec80ece3e0a05b2319ee07a7de48bb5b2e42e45b963db72f8e",
+      "git_blob_sha1": "da465215ab700bf82d665dbe63c2ff48d132d3c8"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/homunculus/homunculus_arm.py",
+      "bytes": 12162,
+      "sha256": "cce7ecd7c9d74243956b3564608de6678dc5b63ae670d01b249a5ae1017e1a21",
+      "git_blob_sha1": "c2012963f16907fea101f97fe76bd4e2c0f8ed03"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/homunculus/homunculus_glove.py",
+      "bytes": 13368,
+      "sha256": "961949289838661d63084e1f0e46f405d6ed58b388f9d9cdb6543432856805fc",
+      "git_blob_sha1": "12785beeca6940cd5e8d60a971363ec01d82ec9b"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/homunculus/joints_translation.py",
+      "bytes": 2865,
+      "sha256": "727e1a242f1c913b337090fe1ccca146a93abdbbe3aa0130ed76a073affab13b",
+      "git_blob_sha1": "f14f7b3ef5b1d4d84bb9f3e6caa411d667775566"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/keyboard/__init__.py",
+      "bytes": 1058,
+      "sha256": "1a83c9d7194110f8252dc6475efb3872b4d2f6db847e223b08f0b0c3dd5a8fb4",
+      "git_blob_sha1": "c6b123b78018a5949cf12250cc313dcad839a71c"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/keyboard/configuration_keyboard.py",
+      "bytes": 2490,
+      "sha256": "0a178bf8d9226ed7421123df8e18f2055f60abe262a78a54a9f766b703794ad0",
+      "git_blob_sha1": "158717434edec9dabc3061dbf6ca724bee3d23a7"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/keyboard/teleop_keyboard.py",
+      "bytes": 15765,
+      "sha256": "3e553c4df7dc87a603cd6ab43a4a1174b6bd318d9a0db0ebf60001742917e380",
+      "git_blob_sha1": "460e97a880bb7e23e108cf2dfd1c960d9275b305"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/koch_leader/__init__.py",
+      "bytes": 766,
+      "sha256": "d4e10132864f4a88a6c1319569e80eaf6daf217805bdecb639749be79d3f0a63",
+      "git_blob_sha1": "7176649eca6c19d028adc9ea4029e5b0fe68e5f6"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/koch_leader/config_koch_leader.py",
+      "bytes": 1087,
+      "sha256": "56c35642f5b7910d1e8865be003f4285111f4c061329e82518451e13d6648fad",
+      "git_blob_sha1": "64aaae123581f1f7ff310b68ae234cd1ced3e872"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/koch_leader/koch_leader.py",
+      "bytes": 7741,
+      "sha256": "ab0a003e557d09bbe1ab3aaf2bf7f5125d3881b0e10321da5d6a95cd8fb164a2",
+      "git_blob_sha1": "683ae3b9253d9d1ddfbaa1d6895be63025768164"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/omx_leader/__init__.py",
+      "bytes": 760,
+      "sha256": "7bfa697de674898143918fc98c5894d1096a27ed97b9e4a378d541bc40bda0de",
+      "git_blob_sha1": "259e26143d3fb84cb0c742570ab40f09e6c481da"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/omx_leader/config_omx_leader.py",
+      "bytes": 1085,
+      "sha256": "cb1d8d4b776955edbb0370d5b9297014922b059f683a6d3d3988b27cff0e5f8d",
+      "git_blob_sha1": "a0eca38f7471be8a3af26378a259323a721ab3e6"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/omx_leader/omx_leader.py",
+      "bytes": 6982,
+      "sha256": "580ef8bf41b0a6d3c5a5459ee95028f257337ee9afc1974cdae5b320be4cfe1f",
+      "git_blob_sha1": "6f84d01f94aab961d139c918ad90c43abeb181bc"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/openarm_leader/__init__.py",
+      "bytes": 836,
+      "sha256": "1dda47ccb128b52e1e8efe4bdbdbafa55036fce87d4a7bd313049783566f8088",
+      "git_blob_sha1": "172cf82283d8411ac1d609604fab7cd9503058b3"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/openarm_leader/config_openarm_leader.py",
+      "bytes": 3399,
+      "sha256": "2a6b52cf134b8519b720cda46d9e276eb683221dca884e7c7f6abe75f8b27b64",
+      "git_blob_sha1": "8e3d480f6876456d87c231ca0bb58521f70a8b36"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/openarm_leader/openarm_leader.py",
+      "bytes": 8109,
+      "sha256": "f33cb4d31981e328601d6d7286400bdf2f578886a5aebade8dd26da553af863b",
+      "git_blob_sha1": "c65f3aab474de41b32ab45fdb213120a3c99f7f4"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/openarm_mini/__init__.py",
+      "bytes": 820,
+      "sha256": "87de20c7027f18fd776b8c75464d5cb75ad81e8c6023eca088d639ed063127d6",
+      "git_blob_sha1": "18f4566f3befbdd0000ff7eaa557e020802c1da5"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/openarm_mini/config_openarm_mini.py",
+      "bytes": 1272,
+      "sha256": "51d33a3259df71778d8f92bf683a66707fcae283eb6a2f1d7e97fbd8cd30cb87",
+      "git_blob_sha1": "74a8bf6061f90816442713355f5bd9f760c45802"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/openarm_mini/openarm_mini.py",
+      "bytes": 10089,
+      "sha256": "aa765c4a8a9b308ee24f7cb367ef90b10d60ec9131ab741044ed39f7de1f8902",
+      "git_blob_sha1": "dbc344dd5b3379c37a37fa1385cc0af02c493e76"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/phone/__init__.py",
+      "bytes": 741,
+      "sha256": "b338ca035ece667680c6254c57d316cf98fa3b552725c5a237219419be5d9a2c",
+      "git_blob_sha1": "2656a501484855b6d8bb7b69576df9247fbb2b26"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/phone/config_phone.py",
+      "bytes": 1076,
+      "sha256": "bcd93f16fb3ec07cc202970ecb467fee924251111e50630764da9a30690755ca",
+      "git_blob_sha1": "380d5f5ff0b5ec63ae02892572f89a2ff90fd469"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/phone/phone_processor.py",
+      "bytes": 4354,
+      "sha256": "03fe4da8b694f1748fd9c93dbd668d5a578f98ba6348ee8c82716b5b317a2278",
+      "git_blob_sha1": "c54b6dffece590c60c85e590a416622c6d025691"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/phone/teleop_phone.py",
+      "bytes": 17281,
+      "sha256": "ab24daef2e936b3c19f579de7e89ce98931ac3b70df3cbfa6ae2199c6d62f987",
+      "git_blob_sha1": "e09a40745b138cfc0682221073c7e86311f96441"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/reachy2_teleoperator/__init__.py",
+      "bytes": 1096,
+      "sha256": "046d1457f9f27e8f5693aa5b78881acfa1dd1c43ff036ddf6cc6f27c5834dac4",
+      "git_blob_sha1": "aab1aec1426c89129358d0cc8d477faa85608361"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/reachy2_teleoperator/config_reachy2_teleoperator.py",
+      "bytes": 1767,
+      "sha256": "71d44f6f816f90f6bc29f0a26f313f2cb5e0962c71c2dd94cfe81b432b3b4ea3",
+      "git_blob_sha1": "4e615d36328b17417b15bcb1c07f3b12c0665202"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/reachy2_teleoperator/reachy2_teleoperator.py",
+      "bytes": 5889,
+      "sha256": "e261a1b026e9b952906f89bdb18bf427ac1cc82093b77c82d3bf17a6339c1575",
+      "git_blob_sha1": "ae1cad4747f1ca3d8b2efc40817c4e77f3dcf2bc"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/rebot_102_leader/__init__.py",
+      "bytes": 868,
+      "sha256": "53f5847b3ab5f393b8e946267fa548520485420fbd52b17d6e58be1a1c970ff5",
+      "git_blob_sha1": "a13524707b275bac4af137ba919cb087244263e1"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/rebot_102_leader/config_rebot_102_leader.py",
+      "bytes": 2779,
+      "sha256": "cc0b3f84ee50b9bea0e9146b3f8382e6eb7e790f4dbee6d23878c2490ec57ae4",
+      "git_blob_sha1": "81a1c2c392572d0725bf49d18f298437a1ff60a5"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/rebot_102_leader/rebot_102_leader.py",
+      "bytes": 8995,
+      "sha256": "e2c911ed20cd8410775f9b73ac6c86e52fd79b1ec737dce2d8fdb4718f3984a5",
+      "git_blob_sha1": "e557991be3f0e4f0d8cc7c62b2492cbaabe19f14"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/so_leader/__init__.py",
+      "bytes": 988,
+      "sha256": "70096c09dfb14f3fa76cb4405e2dab608ea3ada0a74805131243d3b48d9ff0bd",
+      "git_blob_sha1": "26ef66677d2d6fe21187105204cd03d564bd401a"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/so_leader/config_so_leader.py",
+      "bytes": 1616,
+      "sha256": "2c301ca60995ed11c5ef228956712fbeecd24d3c0d46d87e84bc66bf93dc60ab",
+      "git_blob_sha1": "6f3d6cc947a2ddbaa1296d5d9c5008d438beccfb"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/so_leader/so100.md",
+      "bytes": 33,
+      "sha256": "18768d3be3d967902de387b0b89313c0e9111c115ea72e9836b3038a1c458f2e",
+      "git_blob_sha1": "ad1154e75a74a496aa74cb1ac1b545238d5174e4"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/so_leader/so101.md",
+      "bytes": 33,
+      "sha256": "44726e807c0a35dcfc1a6b4da8e2d847f3477da2d06e4f27686e07acaf7ac249",
+      "git_blob_sha1": "27b89266029afbf0aa59be195cc0b4b6ee93ac26"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/so_leader/so_leader.py",
+      "bytes": 7638,
+      "sha256": "af468b84a07a210852a7e8ab66e155d4d2296e6c333f95958f99ea9260013dda",
+      "git_blob_sha1": "d0c649166a44a7e8c094d4d27829ad12ee66cabb"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/teleoperator.py",
+      "bytes": 7456,
+      "sha256": "8e4911b719cf5793ee001e3c798bae4ae1bacd1f0e5ab9964501446ee5272afb",
+      "git_blob_sha1": "9368c97da61cf9d2a5c0cf60318cdf9e567d1964"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/unitree_g1/__init__.py",
+      "bytes": 1145,
+      "sha256": "edfde2ff369826f365d18e3ba8b8d8360d5fe97cef482549affde8dc1e73e6a0",
+      "git_blob_sha1": "5e67538b8db62e1d40f1b799b1e959a5bb68138d"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/unitree_g1/config_unitree_g1.py",
+      "bytes": 1296,
+      "sha256": "2ea32b66123e59b9a689165844a209b582b782b6e41f37ffcc022174b73c9f86",
+      "git_blob_sha1": "66c4e7f31b1f6364e87f832765cb6cbcf99ac67c"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/unitree_g1/exo_calib.py",
+      "bytes": 18835,
+      "sha256": "b86486aedeec9c97f82c25307a9a7737d2abd5fadb9e90a0cc98a51aa56ab414",
+      "git_blob_sha1": "5087c214f829668a8f4f531b423165fd91fb788c"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/unitree_g1/exo_ik.py",
+      "bytes": 12802,
+      "sha256": "c4f571fc5f709428423040dbce685fc8b9c12db8b4ea032634b678bd819892c7",
+      "git_blob_sha1": "6208269ed69fe764bb7aeffaa2fb69d253e35278"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/unitree_g1/exo_serial.py",
+      "bytes": 4270,
+      "sha256": "c2482c98cfdba10c75e80b2799316e180bec6909ffbd66e2219bc0577b9dc2b1",
+      "git_blob_sha1": "ce5492537dcd88aa05d6a02a29f05a6a48a201b1"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/unitree_g1/unitree_g1.py",
+      "bytes": 12591,
+      "sha256": "ff2d2d77b30d06f2cd157c7851facff57dddafa087290e687093464728372187",
+      "git_blob_sha1": "356b4f7742ea32415604f1df91267d13cbe1c8aa"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/teleoperators/utils.py",
+      "bytes": 4003,
+      "sha256": "19fb7d04f26766797f142989ab07e4fa0a8ff8736a8bfc731f1ace144022f243",
+      "git_blob_sha1": "0f0eaf07fec48d242fa0d67650b1b7f4c1219f47"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/templates/lerobot_modelcard_template.md",
+      "bytes": 15504,
+      "sha256": "e195a4206fdb3d4aa1eb32b689fd1b85c9cbc1a3746e3e40326076ab64a51b6f",
+      "git_blob_sha1": "373bfe5d7271e88a31ea98b13f78218cc631b849"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/templates/lerobot_rewardmodel_modelcard_template.md",
+      "bytes": 2832,
+      "sha256": "31c1f3de97fd4d8c5d2489072e50a133e7cb56d29b81a7208ff64397fac6709d",
+      "git_blob_sha1": "163aa530b5def6c68cec623439324cdede0c1bd1"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/transforms/__init__.py",
+      "bytes": 2397,
+      "sha256": "6ecfe53c4b2c542d40bdc5a8fd28a4aefc596c37d1b3d399997a9f5b0f46b37e",
+      "git_blob_sha1": "b93b0fd78cb269bad4b5b3c0d9bf6515e48507a2"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/transforms/deprecated.py",
+      "bytes": 7455,
+      "sha256": "0f14a086033b02854e5e8ad3b4c18c2f6afc224790c01c7d024fb858860adec1",
+      "git_blob_sha1": "b5a5aa5fac1ebdf01b23191a4722d149e7ee38f9"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/transforms/transforms.py",
+      "bytes": 79240,
+      "sha256": "d244fe063d073a589be7221894d36a6a982ab531847427ccaf75a35533e8a775",
+      "git_blob_sha1": "c5f772e6ad2571148693cd40939db0f0daf9f290"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/transport/__init__.py",
+      "bytes": 1311,
+      "sha256": "79f564ca4dba26483c1d8f7d458c9a916c4102bc5e075bc384934603d0b02add",
+      "git_blob_sha1": "27849b38ea20f73310860e6885b1b984ae163c66"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/transport/services.proto",
+      "bytes": 1756,
+      "sha256": "5250a4d9323c4d1ddb1716efef68cadd90ef9e8039a0915915c2bbbdc90f357e",
+      "git_blob_sha1": "39d93b168eaf60f11b13dd38b8a3a3c7723010da"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/transport/services_pb2.py",
+      "bytes": 2737,
+      "sha256": "b7b08dc3aa3cde007fc0da8d74ddd5a424613860b8daed7992ed97846a96f466",
+      "git_blob_sha1": "a5fc6f209568ebf30808d74fd543549dacd7b236"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/transport/services_pb2_grpc.py",
+      "bytes": 9321,
+      "sha256": "504b94791e8058308ac07e85081d740fa009923cb6dc1ead504840d170195ba0",
+      "git_blob_sha1": "9fd6990224837337c500a34292cb5f290b48de6d"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/transport/utils.py",
+      "bytes": 6641,
+      "sha256": "c9f666f36241ed61b1f0cee923fd8b0dc2f6ec27d35c4eb4f3f32fecaac5540f",
+      "git_blob_sha1": "2990e439e71fe0bee1d81d9385c565211e6cb766"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/transport/zenoh.py",
+      "bytes": 21917,
+      "sha256": "99f671db5875fb48b3499d5cf97998d7ca3731b284abcebe6d9f1644af3470e5",
+      "git_blob_sha1": "e4341fd06ec9e4a28ce81147705ba6ed585bd93b"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/utils/__init__.py",
+      "bytes": 2230,
+      "sha256": "91fcfc53f48635075d45b8ea1e72c6f6d320f79f3ee6f008f01995aa00bf8138",
+      "git_blob_sha1": "1403fd20bb7c0b54e5e9137e89f71b4f868d77d3"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/utils/action_interpolator.py",
+      "bytes": 5322,
+      "sha256": "3879afec081f84cf0a9a5530db417e4ff4490b12685a1387075afa7406fdccc3",
+      "git_blob_sha1": "8c4884f12a9847469e8c6b012778a7f306919fe3"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/utils/bimanual.py",
+      "bytes": 2109,
+      "sha256": "e2ce641efa926ee7edc85973095040f3f27ebdb0335df6edef4f174cb6df7f7f",
+      "git_blob_sha1": "1e212340b09be56bfdc0e543645c3562d38b16f4"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/utils/collate.py",
+      "bytes": 2597,
+      "sha256": "6247666ba1e0beff90b25f41a606c84195ab15f1537f8331c00988b31f3ea9dc",
+      "git_blob_sha1": "549083ecbc09bb8f82dc9db3fb4bc8410557fcd7"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/utils/constants.py",
+      "bytes": 4992,
+      "sha256": "f53937a19250cadb842ee3dc7196e65cee3a79b3dcd8791a061f1664d44b0722",
+      "git_blob_sha1": "f40c63bd9a56210a97dca59df37b2823bdc65091"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/utils/cycle_timer.py",
+      "bytes": 29452,
+      "sha256": "7d64face534e1bb4320414c2aa75af6e965b2e3480a7a464a3136e7c03b8036c",
+      "git_blob_sha1": "4671ab9aee41602325d1e66d1e4f83d8dfde4ae8"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/utils/decorators.py",
+      "bytes": 1359,
+      "sha256": "97b69134ae24bd306dd43bec4fa8792ad02405886d7fc146f4dd0202cbbd4d88",
+      "git_blob_sha1": "75171f63728b637e69530a89c1650b987327af06"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/utils/device_utils.py",
+      "bytes": 6567,
+      "sha256": "b4612793643feb15794cd55c39ba4671d2a1fa9f649116c91d563316cf6ace0c",
+      "git_blob_sha1": "bd6e84a24b2ff9268dc0d92c368e7e01605e2da8"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/utils/doctest_utils.py",
+      "bytes": 9169,
+      "sha256": "6b8b7efd73f4afb8c1f2f1b91dc302873a6a3c13b3874969a47f69ddd45b8445",
+      "git_blob_sha1": "32c22bc5d7824fffd2e8453b70b12edcfad3ced5"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/utils/errors.py",
+      "bytes": 1206,
+      "sha256": "5bab3b68cbbc88a764daaa103c488a08dcf2d61ef5274931fa3d6013d2a2ec4a",
+      "git_blob_sha1": "31b73eacabc8e1065fd536f0e8822b31869b644c"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/utils/eval_stats.py",
+      "bytes": 7177,
+      "sha256": "59ec89257b799278bd233a2e263ca13c09884f3bafc5baf31f6a3db801b27ebe",
+      "git_blob_sha1": "c2db379c19f457665bb461ec4efd39e3ff60ad99"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/utils/feature_utils.py",
+      "bytes": 9205,
+      "sha256": "312ed4eb29fa50f5a3e186e7579ccbf901cc60d2d757f623898b04789c7f2adc",
+      "git_blob_sha1": "b243be565ed5c8b287108571bf950c61a0aee6dd"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/utils/foxglove_visualization.py",
+      "bytes": 28268,
+      "sha256": "411ed59f812378d3a7ab5ee02c3c1878d9c1b68f10107700836d63e5ff5dc98b",
+      "git_blob_sha1": "50d7e2bd9fbc48b0b6e6bc61839b55576443b3b0"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/utils/hub.py",
+      "bytes": 11507,
+      "sha256": "1c9dc26020ce79a5584ef5345ca1fd99f1049334708ab3cf9545e9107c2e9474",
+      "git_blob_sha1": "8f7b17bbb92aad008b5ec9d187b0e6fa559dbc7e"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/utils/import_utils.py",
+      "bytes": 11704,
+      "sha256": "4e64b59352bedf2fee047652a9281ad8a9b715aa1d3ab086346ddb7a6a594ecd",
+      "git_blob_sha1": "6f5aa55d7911747c4d46b89fc19bbd830fb6f325"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/utils/io_utils.py",
+      "bytes": 6433,
+      "sha256": "3bc335531c77c8331d3727d05da8117ed298a6bd80266b4ae5ee2103bd9220a3",
+      "git_blob_sha1": "2e4dd87c090ff3cecf99fa911cef9407589a4159"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/utils/keyboard_input.py",
+      "bytes": 18328,
+      "sha256": "466e4a9878f8cf27c4b0d674ffbe63bcf9e3dc641e21f3abde8b69900a2ba11e",
+      "git_blob_sha1": "b53ab8ffab4fbc6fdbe19510bba397dfff923f8b"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/utils/language.py",
+      "bytes": 4786,
+      "sha256": "42e0206104b934182eb87ab69807d2dc66f7bb9dc6cdf194b3c84c24e127f229",
+      "git_blob_sha1": "f26c864103f2362f6c66264334bce7ad186f4f4a"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/utils/logging_utils.py",
+      "bytes": 10506,
+      "sha256": "7553a5e1af2c9b8ccef3b4a155a821d1e32b02213bb2ead7e4de912ed45f8e9e",
+      "git_blob_sha1": "94d644cf784f634a0d552e102bc4c86b37f7573a"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/utils/pedal.py",
+      "bytes": 2972,
+      "sha256": "5c1e02ace2a332e84e7aaa4884ce646da9624c119f731233e9296b152bd4c82f",
+      "git_blob_sha1": "88f3db1f939167a49887a2edb9bbf9d83942fd6c"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/utils/process.py",
+      "bytes": 4481,
+      "sha256": "dbb1850fb08067e7b602708a3d50657332bceabc41bdb2d85a9257a5474572a1",
+      "git_blob_sha1": "b050c5cab3d366b665b03ae07f29fd062cf8b744"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/utils/random_utils.py",
+      "bytes": 7729,
+      "sha256": "f0fcf24b91a293bc207fbc48882353c28d77ac1f867e80388c57ac70acf83ddf",
+      "git_blob_sha1": "b6699df0b8db1fe224c2e17f741aa9b00728d06b"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/utils/rerun_visualization.py",
+      "bytes": 7775,
+      "sha256": "f90faaad1e9b5bc16f71d7952c64bf653a26fd9281c5d1c474ca98c8d2dab3af",
+      "git_blob_sha1": "b99d7e5df57ea174ff5467450b4244479fa30a3f"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/utils/robot_utils.py",
+      "bytes": 2574,
+      "sha256": "f1519aca7ad1563112bbc45bdfb4d980ffe786feaba5ee1fb042a5ec0a2e1fb9",
+      "git_blob_sha1": "04b09a4fe77f947350f6916c39542149e26f7089"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/utils/rotation.py",
+      "bytes": 9569,
+      "sha256": "75120997af016ad1c29f9823edec3cb6eb9774f8274bdaf2753930e04f305bb2",
+      "git_blob_sha1": "280d33bf0d24e54fc462af6071d08dab170e8456"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/utils/sample_weighting.py",
+      "bytes": 8462,
+      "sha256": "88375dccc5a64f6f8f99f602226071533122ae3683ce8517bbcca3d3672188a4",
+      "git_blob_sha1": "83eec3126c0f90ce08b6dc8606ebac339cd4c40b"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/utils/stdin_input.py",
+      "bytes": 7037,
+      "sha256": "383679f3eb5a302f586b6b25f05bbafb7eea7fdc990e0bc5f956644020325ac5",
+      "git_blob_sha1": "ca0230bb6e5249e000847b5350140db813501eec"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/utils/transition.py",
+      "bytes": 3459,
+      "sha256": "afe201a901163817fe43c519acc61ce69ce774a8ab9877936a588abe480de3f3",
+      "git_blob_sha1": "cc8ae22b5f1525b8f32131bf600ef3277d9c7f45"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/utils/utils.py",
+      "bytes": 13049,
+      "sha256": "ea3e614e49defe6ef78026795c6a85713be571d279252c6ec80e2c12197add3a",
+      "git_blob_sha1": "f2c268ff740da58d6d95c3908af73307d0054a6f"
+    },
+    {
+      "path": "frontier/vendor/lerobot/src/lerobot/utils/visualization_utils.py",
+      "bytes": 3278,
+      "sha256": "70893e8be4e6260323f613ec064bfbc6e46a70ec1081429e1407eb97357d8d16",
+      "git_blob_sha1": "482342a03228996d36411100d15e383f5c461a7f"
+    },
+    {
+      "path": "models/vlajepa/policy/model.safetensors",
+      "bytes": 6163212550,
+      "sha256": "b2a163c16889f89fb1d5e570d95f5c62313c84d0ecebdd384cd87c35e9a8540c",
+      "git_blob_sha1": null
+    }
+  ],
+  "dependencies": {
+    "wheels": [
+      {
+        "path": ".runtime/frontier_deps/wheels/diffusers-0.39.0-py3-none-any.whl",
+        "bytes": 5631176,
+        "sha256": "912aca51b5787365110806e984d5555735bf8a461073bb8459029d0bca7870ef",
+        "git_blob_sha1": null,
+        "package": "diffusers",
+        "version": "0.39.0",
+        "requires_dist": [
+          "importlib_metadata",
+          "filelock",
+          "httpx<1.0.0",
+          "huggingface-hub<2.0,>=0.34.0",
+          "numpy",
+          "regex!=2019.12.17",
+          "requests",
+          "safetensors>=0.8.0",
+          "Pillow",
+          "urllib3<=2.0.0; extra == \"quality\"",
+          "isort>=5.5.4; extra == \"quality\"",
+          "ruff==0.9.10; extra == \"quality\"",
+          "hf-doc-builder>=0.3.0; extra == \"quality\"",
+          "hf-doc-builder>=0.3.0; extra == \"docs\"",
+          "accelerate>=0.31.0; extra == \"training\"",
+          "datasets; extra == \"training\"",
+          "protobuf<4,>=3.20.3; extra == \"training\"",
+          "tensorboard; extra == \"training\"",
+          "Jinja2; extra == \"training\"",
+          "peft>=0.17.0; extra == \"training\"",
+          "timm; extra == \"training\"",
+          "ftfy; extra == \"test\"",
+          "GitPython<3.1.19; extra == \"test\"",
+          "datasets; extra == \"test\"",
+          "Jinja2; extra == \"test\"",
+          "invisible-watermark>=0.2.0; extra == \"test\"",
+          "librosa; extra == \"test\"",
+          "llvmlite>=0.40.0; extra == \"test\"",
+          "numba>=0.57.0; extra == \"test\"",
+          "parameterized; extra == \"test\"",
+          "protobuf<4,>=3.20.3; extra == \"test\"",
+          "pytest; extra == \"test\"",
+          "pytest-timeout; extra == \"test\"",
+          "pytest-xdist; extra == \"test\"",
+          "requests-mock==1.10.0; extra == \"test\"",
+          "safetensors>=0.8.0; extra == \"test\"",
+          "sentencepiece!=0.1.92,>=0.1.91; extra == \"test\"",
+          "scipy; extra == \"test\"",
+          "tiktoken>=0.7.0; extra == \"test\"",
+          "torchsde; extra == \"test\"",
+          "torchvision; extra == \"test\"",
+          "transformers>=4.41.2; extra == \"test\"",
+          "phonemizer; extra == \"test\"",
+          "torch>=2.6; extra == \"torch\"",
+          "accelerate>=0.31.0; extra == \"torch\"",
+          "bitsandbytes>=0.43.3; extra == \"bitsandbytes\"",
+          "accelerate>=0.31.0; extra == \"bitsandbytes\"",
+          "gguf>=0.10.0; extra == \"gguf\"",
+          "accelerate>=0.31.0; extra == \"gguf\"",
+          "optimum_quanto>=0.2.6; extra == \"optimum-quanto\"",
+          "accelerate>=0.31.0; extra == \"optimum-quanto\"",
+          "torchao>=0.7.0; extra == \"torchao\"",
+          "accelerate>=0.31.0; extra == \"torchao\"",
+          "nvidia_modelopt[hf]>=0.33.1; extra == \"nvidia-modelopt\"",
+          "flashpack; extra == \"flashpack\"",
+          "jax>=0.4.1; extra == \"flax\"",
+          "jaxlib>=0.4.1; extra == \"flax\"",
+          "flax>=0.4.1; extra == \"flax\"",
+          "urllib3<=2.0.0; extra == \"dev\"",
+          "isort>=5.5.4; extra == \"dev\"",
+          "ruff==0.9.10; extra == \"dev\"",
+          "hf-doc-builder>=0.3.0; extra == \"dev\"",
+          "ftfy; extra == \"dev\"",
+          "GitPython<3.1.19; extra == \"dev\"",
+          "datasets; extra == \"dev\"",
+          "Jinja2; extra == \"dev\"",
+          "invisible-watermark>=0.2.0; extra == \"dev\"",
+          "librosa; extra == \"dev\"",
+          "llvmlite>=0.40.0; extra == \"dev\"",
+          "numba>=0.57.0; extra == \"dev\"",
+          "parameterized; extra == \"dev\"",
+          "protobuf<4,>=3.20.3; extra == \"dev\"",
+          "pytest; extra == \"dev\"",
+          "pytest-timeout; extra == \"dev\"",
+          "pytest-xdist; extra == \"dev\"",
+          "requests-mock==1.10.0; extra == \"dev\"",
+          "safetensors>=0.8.0; extra == \"dev\"",
+          "sentencepiece!=0.1.92,>=0.1.91; extra == \"dev\"",
+          "scipy; extra == \"dev\"",
+          "tiktoken>=0.7.0; extra == \"dev\"",
+          "torchsde; extra == \"dev\"",
+          "torchvision; extra == \"dev\"",
+          "transformers>=4.41.2; extra == \"dev\"",
+          "phonemizer; extra == \"dev\"",
+          "accelerate>=0.31.0; extra == \"dev\"",
+          "datasets; extra == \"dev\"",
+          "protobuf<4,>=3.20.3; extra == \"dev\"",
+          "tensorboard; extra == \"dev\"",
+          "Jinja2; extra == \"dev\"",
+          "peft>=0.17.0; extra == \"dev\"",
+          "timm; extra == \"dev\"",
+          "hf-doc-builder>=0.3.0; extra == \"dev\"",
+          "torch>=2.6; extra == \"dev\"",
+          "accelerate>=0.31.0; extra == \"dev\"",
+          "jax>=0.4.1; extra == \"dev\"",
+          "jaxlib>=0.4.1; extra == \"dev\"",
+          "flax>=0.4.1; extra == \"dev\""
+        ]
+      },
+      {
+        "path": ".runtime/frontier_deps/wheels/importlib_metadata-8.7.1-py3-none-any.whl",
+        "bytes": 27865,
+        "sha256": "5a1f80bf1daa489495071efbb095d75a634cf28a8bc299581244063b53176151",
+        "git_blob_sha1": null,
+        "package": "importlib_metadata",
+        "version": "8.7.1",
+        "requires_dist": [
+          "zipp>=3.20",
+          "pytest!=8.1.*,>=6; extra == \"test\"",
+          "packaging; extra == \"test\"",
+          "pyfakefs; extra == \"test\"",
+          "flufl.flake8; extra == \"test\"",
+          "pytest-perf>=0.9.2; extra == \"test\"",
+          "jaraco.test>=5.4; extra == \"test\"",
+          "sphinx>=3.5; extra == \"doc\"",
+          "jaraco.packaging>=9.3; extra == \"doc\"",
+          "rst.linker>=1.9; extra == \"doc\"",
+          "furo; extra == \"doc\"",
+          "sphinx-lint; extra == \"doc\"",
+          "jaraco.tidelift>=1.4; extra == \"doc\"",
+          "ipython; extra == \"perf\"",
+          "pytest-checkdocs>=2.4; extra == \"check\"",
+          "pytest-ruff>=0.2.1; sys_platform != \"cygwin\" and extra == \"check\"",
+          "pytest-cov; extra == \"cover\"",
+          "pytest-enabler>=3.4; extra == \"enabler\"",
+          "pytest-mypy>=1.0.1; extra == \"type\"",
+          "mypy<1.19; platform_python_implementation == \"PyPy\" and extra == \"type\""
+        ]
+      }
+    ],
+    "audit": {
+      "versions": {
+        "torch": "2.7.1+cpu",
+        "torchvision": "0.22.1+cpu",
+        "transformers": "5.5.4",
+        "safetensors": "0.8.0",
+        "accelerate": "1.15.0",
+        "numpy": "2.2.6",
+        "psutil": "7.2.2",
+        "diffusers": "0.39.0",
+        "importlib_metadata": "8.7.1",
+        "filelock": "4.1.1",
+        "httpx": "0.28.1",
+        "huggingface-hub": "1.33.0",
+        "regex": "2026.9.29",
+        "requests": "2.34.2",
+        "Pillow": "12.3.0",
+        "zipp": "4.1.1"
+      },
+      "failures": []
+    }
+  },
+  "completed_at": "2026-10-14T09:22:07.704768+00:00",
+  "status": "verified"
+}

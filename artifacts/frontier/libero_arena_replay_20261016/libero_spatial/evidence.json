@@ -1,0 +1,99 @@
+{
+  "schema": "feedbackbench.libero_arena_case_evidence.v1",
+  "plan": {
+    "path": "artifacts/frontier/libero_arena_replay_20261016.plan.json",
+    "sha256": "23392c8714cd5dbf2d266d96060326e9757d040b50bb0455515ebb74ab710cf5"
+  },
+  "reference": {
+    "case": {
+      "model": "smolvla",
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "init_state_id": 41,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "full10",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 10,
+        "temporal_ensemble": false
+      },
+      "record_video": true,
+      "split": "confirmation",
+      "id": "smolvla__libero_spatial__1__41__clean__full10"
+    },
+    "receipt": {
+      "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_spatial__1__41__clean__full10/receipt.json",
+      "sha256": "0db334990f16d75caef015b7f46fd0d6bca21a8e5b0a97e529dcb03812b0ff78"
+    },
+    "files": {
+      "attempt.json": {
+        "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_spatial__1__41__clean__full10/attempt.json",
+        "sha256": "b810c6c1afe6e09484cb1b5ca07cc82c874e80717412e8b44b804577ade83c37"
+      },
+      "calls.json": {
+        "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_spatial__1__41__clean__full10/calls.json",
+        "sha256": "877f486fc5c5ea6cc153611e10e094849abcee2779eae46b28b40d90d5105d27"
+      },
+      "final.png": {
+        "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_spatial__1__41__clean__full10/final.png",
+        "sha256": "743e7ecdfe8a785b156bfccfff362b76ee48da984b4f888248e861e22aa3a93a"
+      },
+      "initial.png": {
+        "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_spatial__1__41__clean__full10/initial.png",
+        "sha256": "3c38faf28826242f797f2a7b9b134f76cfaf7b2d0d9febf6a15a7b0f13029db5"
+      },
+      "initial_wrist.png": {
+        "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_spatial__1__41__clean__full10/initial_wrist.png",
+        "sha256": "b9c10e8043f3b4f2bcb1ed041eab1e0882969b8a19a04c98468e2dfcaea1f82c"
+      },
+      "result.json": {
+        "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_spatial__1__41__clean__full10/result.json",
+        "sha256": "71ccffc228be158e0411151fd0e2813697fd41f103f0c1114f32c6a7e9f40b6b"
+      },
+      "rollout.gif": {
+        "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_spatial__1__41__clean__full10/rollout.gif",
+        "sha256": "d2ee111641b22afc3e8f9e4e1d1c83a40acd79c7e958e1b7492ffb9cbfd0f8a0"
+      },
+      "trajectory.npz": {
+        "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_spatial__1__41__clean__full10/trajectory.npz",
+        "sha256": "6cb400bb2406774e136de8c4890f81263d56cf96b564728d6cca7768291be606"
+      }
+    }
+  },
+  "files": {
+    "arena_audit.json": {
+      "path": "artifacts/frontier/libero_arena_replay_20261016/libero_spatial/arena_audit.json",
+      "sha256": "72785ee8d5167b74ac24b1a491cb5b629545792ff644e3ddb0f9c393435f948b"
+    },
+    "attempt.json": {
+      "path": "artifacts/frontier/libero_arena_replay_20261016/libero_spatial/attempt.json",
+      "sha256": "5670db8a7448c3b2b1d414f03623d98dff3469927e912be231d53dcf234cdea7"
+    },
+    "capacity.jsonl": {
+      "path": "artifacts/frontier/libero_arena_replay_20261016/libero_spatial/capacity.jsonl",
+      "sha256": "cb1dc2c70600095f5d53be1069912b106e620235d4a76ca1f84b88e8eb885417"
+    },
+    "executed_steps.jsonl": {
+      "path": "artifacts/frontier/libero_arena_replay_20261016/libero_spatial/executed_steps.jsonl",
+      "sha256": "810a21dc57c14306ee907eca910eb8d28a1c6fbe2a9ff4fcd8f851c8270db37e"
+    },
+    "final.png": {
+      "path": "artifacts/frontier/libero_arena_replay_20261016/libero_spatial/final.png",
+      "sha256": "743e7ecdfe8a785b156bfccfff362b76ee48da984b4f888248e861e22aa3a93a"
+    },
+    "initial.png": {
+      "path": "artifacts/frontier/libero_arena_replay_20261016/libero_spatial/initial.png",
+      "sha256": "3c38faf28826242f797f2a7b9b134f76cfaf7b2d0d9febf6a15a7b0f13029db5"
+    },
+    "initial_wrist.png": {
+      "path": "artifacts/frontier/libero_arena_replay_20261016/libero_spatial/initial_wrist.png",
+      "sha256": "b9c10e8043f3b4f2bcb1ed041eab1e0882969b8a19a04c98468e2dfcaea1f82c"
+    },
+    "trajectory.npz": {
+      "path": "artifacts/frontier/libero_arena_replay_20261016/libero_spatial/trajectory.npz",
+      "sha256": "8e9a629c058317007ff6f78f686ce1e1c7265be80c747199b2c35b84523b7954"
+    }
+  }
+}

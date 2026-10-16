@@ -1,0 +1,84 @@
+{
+  "schema": "feedbackbench.independent_paged_probe_audit.v1",
+  "audited_at": "2026-10-16T02:59:16.872277+00:00",
+  "status": "passed",
+  "scope": "read-only independent artifact/source/array audit; no model or environment executed by this audit",
+  "torch_imported": false,
+  "probe": {
+    "path": "artifacts/frontier/vlajepa_paged_probe_20261016.json",
+    "sha256": "443de66f040ef1f067cb3e8a068e8ef916e9ae89960f1633cdb19bc0d09b8894"
+  },
+  "plan": {
+    "path": "artifacts/frontier/vlajepa_paged_probe_20261016.plan.json",
+    "sha256": "60269a3605bbfd7607d6f0824ab9f80fa6e36fd7e0a2f811b5d37cf2d95eadeb",
+    "checked_sources": 16,
+    "all_sources_match": true
+  },
+  "original_frozen_protocol": {
+    "path": "outputs/frontier/vlajepa_closed_loop/protocol.json",
+    "fingerprint": "7a762b0d556f1b7e935e3237349891181ad1fd3de2463f0aac820fa72d2ee0b8",
+    "checked_sources": 13,
+    "all_sources_unchanged": true,
+    "inputs_snapshot_unchanged": true,
+    "completion_not_asserted": true
+  },
+  "action_comparison": {
+    "model_actions": {
+      "exact_equal": true,
+      "shape": [
+        1,
+        7,
+        7
+      ],
+      "dtype": "float32",
+      "different_elements": 0,
+      "maximum_absolute_difference": 0.0
+    },
+    "environment_actions": {
+      "exact_equal": true,
+      "shape": [
+        1,
+        7,
+        7
+      ],
+      "dtype": "float32",
+      "different_elements": 0,
+      "maximum_absolute_difference": 0.0
+    }
+  },
+  "actual_action_head_nfe": 4,
+  "actual_quantized_modules": 300,
+  "paging_runtime_mapping_count": 1,
+  "artifact_hashes_recomputed": [
+    "plan",
+    "reference_record",
+    "loader_snapshot",
+    "base_loader_snapshot",
+    "schema",
+    "loading",
+    "actions",
+    "observation",
+    "manifest_snapshot",
+    "current_manifest",
+    "reference_actions"
+  ],
+  "checkpoint_bytes_rehashed_by_this_audit": false,
+  "checkpoint_scope": "The probe records prior verification of 664 manifest files; this lightweight audit verifies the manifest and its snapshot, without rereading the 6.16 GB checkpoint during the concurrent closed-loop experiment.",
+  "memory_observations": {
+    "sampling_seconds": 1.0,
+    "paged_peak_rss_bytes": 3144630272,
+    "owned_reference_peak_rss_bytes": 3781103616,
+    "observed_peak_difference_bytes": 636473344,
+    "observed_peak_difference_gib": 0.5927619934082031,
+    "paged_preflight_available_bytes": 5442695168,
+    "paged_pre_materialization_available_bytes": 5204324352,
+    "paged_minimum_available_bytes": 2508206080
+  },
+  "limitations": [
+    "One known observation, one forward; no task success or all-input equivalence inference.",
+    "The compared probes ran at different host times; observed RSS and timing differences are not a controlled performance estimate.",
+    "The 3.5 GiB threshold was configured, but this passing probe had more available memory; it does not establish feasibility starting with only 3.5 GiB available.",
+    "One-second sampled peaks can miss transients.",
+    "The paged stage does not complete or replace the original owned-embedding frozen stage."
+  ]
+}

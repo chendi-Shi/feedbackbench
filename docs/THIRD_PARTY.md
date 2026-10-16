@@ -66,6 +66,8 @@ Windows 运行环境位于 `%LOCALAPPDATA%/FeedbackBench/`，项目 `.venv` 是�
 
 上述两个模型卡结论分别核对了本机保存的原始 README；LeRobot 代码的 Apache-2.0 不是推导权重许可的依据。探针文件和依赖记录见 [probe_vlajepa.py](../scripts/probe_vlajepa.py)：源码逐 Git blob 核验，模型/元数据逐文件 SHA-256 核验；完整策略文件已下载并通过校验，为 **6,163,212,550 字节**、SHA-256 `b2a163c16889f89fb1d5e570d95f5c62313c84d0ecebdd384cd87c35e9a8540c`。完整下载身份见 [manifest.json](../models/vlajepa/manifest.json)；下载通过本身不证明真实推理通过。
 
+2026-10-16 arena 重放的源身份审计额外保留该固定 LeRobot revision 的一个未修改环境文件 [libero.py](../frontier/vendor/lerobot/src/lerobot/envs/libero.py) 与完整 [LICENSE](../frontier/vendor/lerobot/LICENSE)。它们是上游源快照，供重放计划的 SHA 核对，不是本项目原创，也不是完整可运行的第三方安装；其余依赖仍由固定版本安装入口恢复。
+
 独立 overlay 只包含固定的纯 Python wheel：`diffusers==0.39.0`（SHA-256 `912aca51b5787365110806e984d5555735bf8a461073bb8459029d0bca7870ef`）及 `importlib_metadata==8.7.1`（`5a1f80bf1daa489495071efbb095d75a634cf28a8bc299581244063b53176151`），完整 wheel 与归属信息保存在 `.runtime/frontier_deps/`，不覆盖既有 venv 或冻结源码。源码、wheel、元数据及完整 checkpoint 的最终下载身份由探针 manifest 绑定；`manifest.pending.json` 保留下载进行时的历史记录及早期结构探针绑定。
 
 VLA-JEPA 的 [2026-02-10 作者论文](https://arxiv.org/abs/2602.10098) 与 [2026-09-29 V-JEPA Policy 作者论文](https://arxiv.org/abs/2609.37250) 分别归属各自作者。后者的 [作者仓库](https://github.com/breez3young/VJEPA-Policy#checkpoint-release-plan) 在核对时仍待发布完整策略权重；其 MIT 代码许可不能视为未发布权重的许可，也不能将 Meta 的 V-JEPA 编码器等同于完整控制策略。本项目本次未采用该仓库代码或策略权重。

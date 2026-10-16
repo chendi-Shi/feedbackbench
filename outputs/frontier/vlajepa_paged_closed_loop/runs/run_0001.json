@@ -1,0 +1,67 @@
+{
+  "status": "running_episodes",
+  "started_at": "2026-10-16T02:57:52.728938+00:00",
+  "protocol_fingerprint": "c35bc7f4f94964ecd19313cbe0fb923ad4daf924692153b050189288e719fe3d",
+  "available_bytes": 6023876608,
+  "minimum_available_bytes": 3758096384.0,
+  "imports_seconds": 19.743355200000224,
+  "actual_modules": {
+    "lerobot": {
+      "path": "frontier/vendor/lerobot/src/lerobot/__init__.py",
+      "sha256": "9de5fe33e0bf693e86e9bf55360942385a504a1baff224577a405ca91ea33838"
+    },
+    "environment": {
+      "path": "frontier/vendor/lerobot/src/lerobot/envs/libero.py",
+      "sha256": "97c984f12331527626812ec19967ef399e545535b3571becf044db2417ae9d71"
+    },
+    "policy": {
+      "path": "frontier/vendor/lerobot/src/lerobot/policies/vla_jepa/modeling_vla_jepa.py",
+      "sha256": "ba4f4f4b7ae6dccd37e69a52b8780434954b77f01ca5b81101358924e8890f69"
+    }
+  },
+  "pre_materialization_available_bytes": 5365075968,
+  "weights_loaded": true,
+  "load_quantize_seconds": 78.88189829999465,
+  "rss_after_load_bytes": 3118555136,
+  "construction": {
+    "constructor_changes": [
+      "Qwen3VLForConditionalGeneration.from_pretrained -> same class._from_config"
+    ],
+    "world_model_enabled": false,
+    "reason": "training-only modules never called by official predict_action",
+    "buffers": [
+      {
+        "name": "model._action_token_ids_t",
+        "shape": [
+          28
+        ],
+        "dtype": "torch.int64",
+        "rule": "official expanded tokenizer action-token IDs"
+      },
+      {
+        "name": "model.qwen.model.model.visual.rotary_pos_emb.inv_freq",
+        "shape": [
+          16
+        ],
+        "dtype": "torch.float32",
+        "rule": "official vision rotary constructor formula"
+      },
+      {
+        "name": "model.qwen.model.model.language_model.rotary_emb.original_inv_freq",
+        "shape": [
+          64
+        ],
+        "dtype": "torch.float32",
+        "rule": "official text rotary constructor formula"
+      },
+      {
+        "name": "model.qwen.model.model.language_model.rotary_emb.inv_freq",
+        "shape": [
+          64
+        ],
+        "dtype": "torch.float32",
+        "rule": "official text rotary constructor formula"
+      }
+    ]
+  }
+}

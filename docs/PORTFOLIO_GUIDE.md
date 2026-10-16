@@ -1,6 +1,8 @@
 # FeedbackBench：方法迁移、前瞻验证与求职展示
 
-当前主线：**将2026年ActionCache的动作状态检索与少步细化机制独立迁移到冻结SmolVLA，保留负结果，再对探索中出现的两步采样假设做新初态前瞻验证。** 项目仅使用一台约16GB、无CUDA的Windows电脑，零云费用。研究对象是推理方法与实验系统；没有训练基础模型，也不把既有SmolVLA称为2026 SOTA。
+当前有两条相连的工作线：**将2026年ActionCache机制迁移到SmolVLA并做前瞻确认；将固定VLA-JEPA检查点接入这台电脑上的真实机器人仿真闭环，验证受限资源下的执行与证据完整性。** 项目仅使用一台约16GB、无CUDA的Windows电脑，零云费用。研究对象是推理方法与实验系统；没有训练基础模型，也不把既有SmolVLA称为2026 SOTA。
+
+**VLA-JEPA闭环进展：2026-10-16，三个已知任务在compact和逐任务独立进程两个阶段均真实执行并封存成功。** 每阶段分别为109、128、90步，共327个执行动作、48次完整模型调用、192次动作头求值。只读对照两阶段的动作、机器人状态及48次调用的输入哈希、RNG、噪声和前后处理动作，均逐值相同；这是相同任务/初态的重复执行证据，不是六个不同任务。两个四回合设计的第四项均因资源保护未完成。独立6GiB预算的长任务随后保存57次完整调用和398步动作，因系统可用内存0.426GiB低于0.5GiB下限中止，仍为0完成、1未封存，不计任务失败。见[compact结果](VLAJEPA_COMPACT_RESULTS.md)、[独立进程结果](VLAJEPA_ISOLATED_RESULTS.md)、[长任务结果](VLAJEPA_LONG_HORIZON_RESULTS.md)与[分协议任务证据索引](../artifacts/vlajepa-task-coverage-20261016.json)。中断后的恢复入口已正式尝试，但5.724GiB可用内存低于5.75GiB冻结门槛，未加载模型或执行动作；恢复仍未完成，见[恢复结果页](VLAJEPA_RECOVERY_RESULTS.md)。
 
 **前瞻确认：2026-10-15，16/16回合封存，0运行错误、0缺失。** 固定初态41/43，4任务簇、8配对；full10成功 **4/8**、noise2 **5/8**，成功差 **+12.5pp [0,37.5]**。总action-head NFE由 **2050降至370（−81.95%）**，调用由205降至185；每回合平均调用耗时的任务等权差为 **−5.253s [−10.743,−1.225]**。成功差只来自object/init41；两个长程初态双方均失败，不能宣称普遍优越、非劣或稳定部署提速。见[后续结果](CONTINUATION_RESULTS.md)、[完整报告](../outputs/frontier/flow_confirmation/report.md)。
 
@@ -19,6 +21,10 @@
 | 分项计时、原始证据与导出报告完整性检查 | 区分动作头NFE降低、完整调用耗时和任务质量 | [CPU profile](FRONTIER_CPU_PROFILE.md)、[逐调用CSV](../outputs/frontier/cache_study/calls.csv) |
 | 从v1探索提出noise2假设，冻结新初态、方法顺序与分析源码后完成16回合 | 避免把选中方法的旧成绩包装成前瞻确认；保留完整失败horizon与4任务簇不确定性 | [前瞻协议](FLOW_CONFIRMATION_PROTOCOL.md)、[配对证据](../outputs/frontier/flow_confirmation/pairs.csv)、[完整结果](CONTINUATION_RESULTS.md) |
 | VLA-JEPA逐层流式加载、动态INT8转换与一次真实观测前向 | 在内存约束下验证明确的数值变体；分开记录原生BF16门槛阻断、量化前向和任务质量 | [INT8实际记录](../artifacts/frontier/vlajepa_int8_probe_20261015.json)、[数值方案](CPU_VLAJEPA_INT8.md)、[BF16重试](../artifacts/frontier/vlajepa_bf16_probe_20261015.json) |
+| 完整BF16 token embedding采用私有文件映射、分块有限性验证与Tensor存储生命周期管理，保持tied head；同观测、同随机种子的分页前向与原INT8动作逐值一致 | 避免预先分配约0.580GiB完整词表的自有字节缓冲；保留全部词表值和原量化/动作计算，实际内存表现单独采样核验 | [分页实现](../scripts/vlajepa_paged_embedding.py)、[真实动作对照](../artifacts/frontier/vlajepa_paged_probe_20261016.json)、[101项联合测试](../artifacts/vlajepa-paged-tests-20261016.xml) |
+| VLA-JEPA相机/语言/机器人状态→预测动作→真实环境执行→当前观察再规划；单进程和逐任务独立进程分别封存三个成功任务 | 将单次前向扩展为可审计闭环，分开处理任务成功、实验完成、资源中止与共享主机计时；原四回合计划缺口继续保留 | [compact部分证据审计](../artifacts/vlajepa-compact-audit-20261016.json)、[独立进程部分证据审计](../artifacts/vlajepa-isolated-audit-20261016.json) |
+| 为MuJoCo设定256MiB arena并实际重放四任务978个动作，核对保存状态、图像和标志；逐步记录容量与警告 | 容量限制先检查行为兼容，再进入模型闭环；不把容量缩小等同于物理RSS下降 | [arena实现](../scripts/libero_arena_budget.py)、[重放结果](LIBERO_ARENA_REPLAY_RESULTS.md) |
+| 将长任务中止前57次返回调用和398步动作做只读前缀审计，保留未封存状态 | 可定位实际中止边界、核对RNG/噪声/动作和最新观察；审计通过不冒充完整实验通过 | [审计入口](../scripts/audit_vlajepa_interrupted.py)、[前缀审计](../artifacts/vlajepa-long-horizon-audit-20261016.json)、[恢复协议](VLAJEPA_RECOVERY_PROTOCOL.md) |
 
 上游提供ActionCache方法思想、SmolVLA架构/权重、LeRobot处理器，以及LIBERO任务、初态、控制器和成功谓词。本项目贡献是独立迁移、验证、实验设计和可追溯实现，不声称首创动作缓存或复现作者全部代码与论文成绩。出处：[ActionCache作者论文](https://arxiv.org/html/2607.06370v2)；版本与许可见[THIRD_PARTY](THIRD_PARTY.md)。
 
@@ -54,10 +60,16 @@ cache2对noise2用于观察检索细化与单纯减步的区别，但两者miss�
 | [FA-001重放审计](../outputs/replays/fa-001/replay_audit.json) | 真实仿真动作重放**300步**，保存机器人状态最大绝对差**0.0**，成功/终止标志一致 | 是诊断动作重放，不是重新运行策略的独立评测，不增加分母 |
 | [spatial/init43新重放审计](../outputs/replays/flow-spatial43-noise2/flow_replay_audit.json) | **280动作、281个8维机器人本体状态**完全相同，初始双相机/末帧像素及终止/失败标志一致；实际重放和只读复核通过 | 不是完整物理世界状态或全部中间图像的等价；零模型调用、零新增评估回合，不能解释主机计时变化的原因 |
 | [VLA-JEPA量化前向](../artifacts/frontier/vlajepa_int8_probe_20261015.json) | `passed_quantized_forward`，300/300量化Linear实际执行；单次前向**6.954秒**，1秒采样最高RSS约**3.521GiB** | 一次真实观测、batch1、四步flow、输出`(1,7,7)`；不是稳定延迟、无损量化、原生等价或闭环质量证明 |
+| [VLA-JEPA分页前向与对照](../artifacts/frontier/vlajepa_paged_probe_20261016.json) | 完整`151936×2048` BF16词表，tied Parameter身份保持；300/300量化Linear执行、四步flow；模型动作与后处理动作均和原INT8参考**逐值相同、最大绝对差0.0**；1秒采样最高RSS约**2.929GiB** | 对照只覆盖同一已保存观测和随机种子；参考RSS约3.521GiB来自另一时间，不能归因全部差值或宣称稳定内存/速度收益；不是原生BF16等价或闭环质量证明 |
+| [分页加载与闭环契约联合测试](../artifacts/vlajepa-paged-tests-20261016.xml) | **101 passed，0失败/错误/跳过**，12.666秒；含30项真实小Torch存储测试、27项分页runner测试与44项既有闭环契约测试 | 检查逐值与alias、COW不写回、映射生命周期、非法元数据/非有限值拒绝及执行/证据契约；不与历史测试批次加总成独立覆盖量，不代替真实rollout |
+| [compact闭环](VLAJEPA_COMPACT_RESULTS.md)与[独立进程闭环](VLAJEPA_ISOLATED_RESULTS.md) | 各自三个任务成功封存，每阶段327动作、48次模型调用；固定四步flow，每次300量化模块实际执行；所有已封存回合arena警告为0 | 两个四回合阶段都只完成3项，第四项分别在初始化或首次前向因RSS中止；不能只删去中止项后称100%或完整四任务实验 |
+| [长任务保存前缀](VLAJEPA_LONG_HORIZON_RESULTS.md) | 57次完整调用、228NFE和398条动作通过只读一致性审计；系统可用内存保护中止，原证据保留 | 0完整回合、无receipt；不是任务失败或严格实验验证通过。未保存的后122步不能预测成功/失败 |
+
+分页单观测与最初初始化中止见[分页结果页](VLAJEPA_PAGED_RESULTS.md)，后继三个实际闭环任务以compact和独立进程证据为准。单观测parity、单元测试、已封存个例及未完成四任务设计分别报告；没有一个同协议四回合已全部完成的结果。
 
 VLA-JEPA（2026）的官方6.16GB checkpoint已完整下载并校验。实际执行真实前向入口后，因可用内存 **5.768GiB低于固定6GiB门槛**，以`blocked_preflight`退出（code3）；未构建模型、加载权重或执行前向。见[实际记录](../artifacts/frontier/vlajepa_real_probe.json)。这是本次可用内存限制，不能推断这台硬件永远无法运行，也不能把meta构造或下载写成部署成功。它与尚待发布完整策略权重的V-JEPA Policy不同，见[前沿模型核对](FRONTIER_LANDSCAPE.md)。
 
-上段是保留的历史BF16记录。[2026-10-15原生重试](../artifacts/frontier/vlajepa_bf16_probe_20261015.json)仍以`blocked_preflight`退出：**5.887GiB低于原6GiB门槛**，没有构造、加载或前向，原脚本未改。[独立动态INT8方案](CPU_VLAJEPA_INT8.md)随后完成一次真实观测前向：动态INT8 Linear、BF16 embedding存储及FP32输出，其余推理部分FP32；内核动态量化激活，不能简称W8A32。由于没有原生BF16实际输出作对照，不能宣称数值parity、质量保持或相对原生加速。
+上段是保留的历史BF16记录。[2026-10-15原生重试](../artifacts/frontier/vlajepa_bf16_probe_20261015.json)仍以`blocked_preflight`退出：**5.887GiB低于原6GiB门槛**，没有构造、加载或前向，原脚本未改。[独立动态INT8方案](CPU_VLAJEPA_INT8.md)随后完成一次真实观测前向：动态INT8 Linear、BF16 embedding存储及FP32输出，其余推理部分FP32；内核动态量化激活，不能简称W8A32。由于没有原生BF16实际输出作对照，不能宣称与原生BF16的数值parity、质量保持或相对原生加速。
 
 新spatial/init43保存动作重放耗时134.238秒，包含reset、渲染与GIF；原回合wall为2237.266秒，包含策略推理等不同工作，不能相除写成加速倍数。原simulator计时2022.183秒，重放`simulator.step`计时72.258秒，只支持指出阶段计时异常，不建立具体外部负载的因果结论。原正式失败保持不变。
 
@@ -71,7 +83,7 @@ VLA-JEPA（2026）的官方6.16GB checkpoint已完整下载并校验。实际执
 | 3:15–4:30 | 解释v1主比较7/8对6/8、23/163命中、NFE几乎不变，再说明noise2的4/4只是探索 | v1报告、缓存绑定和探索消融图 |
 | 4:30–5:45 | 在看到新结果前冻结init41/43与分析；报告4/8对5/8、2050对370NFE及4任务簇区间 | [前瞻协议](FLOW_CONFIRMATION_PROTOCOL.md)、[成功与预算图](../outputs/frontier/flow_confirmation/figures/flow_success_budget.png) |
 | 5:45–7:00 | 解释两长程初态双方失败、调用池p95升高与配对均值降低并存，以及不同计时阶段的波动 | [后续失败与计时分析](CONTINUATION_RESULTS.md)、[延迟图](../outputs/frontier/flow_confirmation/figures/flow_latency.png) |
-| 7:00–8:00 | 说明已验证的证据与资源边界，区分模型前向、量化质量、闭环结果和下一项问题 | BF16/INT8状态、上游归属、小样本限制；待验证事项单列 |
+| 7:00–8:00 | 展示VLA-JEPA三个真实闭环任务与长任务398步资源中止，解释精确前缀、恢复边界和独立样本计数 | [独立进程结果](VLAJEPA_ISOLATED_RESULTS.md)、[长任务结果](VLAJEPA_LONG_HORIZON_RESULTS.md)、[恢复状态](VLAJEPA_RECOVERY_RESULTS.md)；原生BF16与完整四任务证据仍缺失 |
 
 演示优先打开已封存证据，不现场启动长rollout。每个视频须能对应模型、任务、初态、方法、成功谓词和原始文件；用于说明的个例不代表整体成功率。
 
@@ -84,6 +96,9 @@ VLA-JEPA（2026）的官方6.16GB checkpoint已完整下载并校验。实际执
 | 28/28全部完成；主比较7/8对6/8，明确保留负结果 | 缓存提高成功率、证明非劣或稳定端到端加速 |
 | 新初态16/16前瞻确认，noise2 5/8、full10 4/8，总NFE下降81.95%，成功差只来自一对 | 新数据证明两步策略普遍优于十步；将前瞻与v1合并成更大成功率分母 |
 | VLA-JEPA动态INT8数值变体完成一次真实观测前向，记录动作与采样RSS | 官方原生部署成功；质量无损；6.954秒是稳定基准；相对BF16加速 |
+| 完整BF16词表分页后，在同观测同随机种子下与原INT8参考的两类动作逐值一致；记录新前向采样RSS约2.929GiB | 证明所有输入或闭环轨迹等价；证明INT8无损；跨时间单次RSS差值就是稳定节省；单观测parity就是四回合成功 |
+| 同一数值变体在两个阶段真实重新执行三个相同任务/初态，每阶段327动作48调用，已封存轨迹与调用数组精确重复 | 六个不同任务；同协议4/4；任务普遍100%成功；量化质量等同原生BF16 |
+| 长任务已保存398步、57次完整调用，因系统内存保护中止，保持未封存；恢复验证另行报告 | 将资源中止当任务失败；把只读前缀审计当完整验证；把恢复重放算新增独立评测样本 |
 | 首次同输入同噪声的前10个环境动作命令一致性诊断 | 全部50动作块误差；闭环后段仍同观测；误差低证明任务更好 |
 | 真实CPU分项成本，推理时仿真暂停 | 20Hz实时推理；除以50得到真实控制延迟；5倍减步等于系统5倍提速 |
 | 任务簇区间描述有限样本不确定性 | 零宽区间证明等价；8/8成功证明普遍非劣；已实现真机或未见任务泛化 |
@@ -115,7 +130,13 @@ VLA-JEPA（2026）的官方6.16GB checkpoint已完整下载并校验。实际执
 
 推理工程支线可单独表述为：
 
-> 基于固定官方VLA-JEPA检查点实现逐层流式加载和独立动态INT8数值变体，完成一次真实LIBERO观测的四步动作前向，300个量化Linear实际执行；保存源码、输入、加载审计、输出及内存采样。单次前向6.954秒、1秒采样最高RSS约3.521GiB，明确没有原生BF16输出对照或闭环质量结论。
+> 在16GB无CUDA电脑上，基于固定官方VLA-JEPA检查点实现逐层流式加载、动态INT8转换和完整BF16词表分页。用私有文件映射、分块有限性校验及Tensor生命周期管理替代约0.580GiB词表的自有缓冲，保持全部词表值、tied head和原四步flow计算。完成真实LIBERO观测前向，300个量化Linear实际执行；同观测、同随机种子下，模型动作与后处理动作均和原INT8参考逐值一致。通过101项加载、runner及闭环契约联合测试，保存源码、输入、输出、加载审计与内存采样；新前向1秒采样最高RSS约2.929GiB，原参考约3.521GiB来自另一时间，保留主机负载与采样差异，不宣称稳定节省或加速。此处parity不涉及原生BF16或闭环质量，闭环证据单列于[分页结果页](VLAJEPA_PAGED_RESULTS.md)。
+
+针对机器人算法与推理工程岗位，可以使用下面这一段，并能现场解释对应源码和证据：
+
+> 在单台16GB、无CUDA电脑上完成固定预训练VLA-JEPA数值变体的相机、语言与机器人状态到动作的仿真闭环接入，实现流式动态INT8加载、完整BF16词表分页和逐步证据封存。三个已知LIBERO任务在单进程与逐任务独立进程两个阶段均重新执行并成功，每阶段327个动作、48次模型规划；核对两阶段轨迹与调用数组精确一致，记录量化模块覆盖、四步flow、RNG、当前观察和资源采样。保留两个四任务阶段的第四项资源中止，以及独立长任务57次调用、398步后的系统内存中止；区分执行完成、任务成功与未封存状态，不将个例、重复执行或跨预算结果包装成完整基准或SOTA。
+
+恢复验证终态：入口因5.724GiB可用内存低于5.75GiB冻结门槛而阻断，未加载模型或执行动作，计划1次恢复、完成0、缺失1、独立新增样本0。[恢复协议](VLAJEPA_RECOVERY_PROTOCOL.md)及严格核验已实现，75项恢复测试和39项发布校验测试通过，同两组联合重跑114项通过，不能重复相加。协议要求精确核对392步保存动作重放、实际重算最后一次模型调用并验证6步重叠后继续，但本轮没有运行这些阶段；原长任务未封存状态保持不变。
 
 可另列已经完成的基线工作：
 

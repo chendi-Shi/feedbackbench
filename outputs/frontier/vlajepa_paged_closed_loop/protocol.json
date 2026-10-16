@@ -1,0 +1,245 @@
+{
+  "schema": "feedbackbench.vlajepa_closed_loop_protocol.v1",
+  "spec": {
+    "name": "VLA-JEPA paged BF16 embedding / dynamic INT8 four-task feasibility",
+    "variant": "cpu_qwen_dynamic_int8_paged_bf16_embedding_fp32_action",
+    "cases": [
+      {
+        "model": "vlajepa_paged",
+        "suite": "libero_spatial",
+        "task_id": 1,
+        "init_state_id": 41,
+        "seed": 1000,
+        "condition": "clean",
+        "method": "native4_chunk7",
+        "num_steps": 4,
+        "scheduler": {
+          "mode": "fixed",
+          "fixed_interval": 7,
+          "temporal_ensemble": false
+        },
+        "record_video": true,
+        "split": "paged_closed_loop_feasibility",
+        "id": "vlajepa_paged__libero_spatial__1__41__clean__native4_chunk7"
+      },
+      {
+        "model": "vlajepa_paged",
+        "suite": "libero_object",
+        "task_id": 1,
+        "init_state_id": 41,
+        "seed": 1000,
+        "condition": "clean",
+        "method": "native4_chunk7",
+        "num_steps": 4,
+        "scheduler": {
+          "mode": "fixed",
+          "fixed_interval": 7,
+          "temporal_ensemble": false
+        },
+        "record_video": true,
+        "split": "paged_closed_loop_feasibility",
+        "id": "vlajepa_paged__libero_object__1__41__clean__native4_chunk7"
+      },
+      {
+        "model": "vlajepa_paged",
+        "suite": "libero_goal",
+        "task_id": 1,
+        "init_state_id": 41,
+        "seed": 1000,
+        "condition": "clean",
+        "method": "native4_chunk7",
+        "num_steps": 4,
+        "scheduler": {
+          "mode": "fixed",
+          "fixed_interval": 7,
+          "temporal_ensemble": false
+        },
+        "record_video": true,
+        "split": "paged_closed_loop_feasibility",
+        "id": "vlajepa_paged__libero_goal__1__41__clean__native4_chunk7"
+      },
+      {
+        "model": "vlajepa_paged",
+        "suite": "libero_10",
+        "task_id": 1,
+        "init_state_id": 41,
+        "seed": 1000,
+        "condition": "clean",
+        "method": "native4_chunk7",
+        "num_steps": 4,
+        "scheduler": {
+          "mode": "fixed",
+          "fixed_interval": 7,
+          "temporal_ensemble": false
+        },
+        "record_video": true,
+        "split": "paged_closed_loop_feasibility",
+        "id": "vlajepa_paged__libero_10__1__41__clean__native4_chunk7"
+      }
+    ],
+    "horizons": {
+      "libero_spatial": 280,
+      "libero_object": 280,
+      "libero_goal": 300,
+      "libero_10": 520
+    },
+    "execution": {
+      "threads": 2,
+      "interop_threads": 1,
+      "image_size": 360,
+      "chunk_size": 7,
+      "flow_steps": 4,
+      "warmup_calls": 0,
+      "preprocessor": "pinned serialized pipeline; no extra image orientation transform",
+      "postprocessor": "pinned clip, pre-snap, unnormalize, binarize; no extra transform"
+    },
+    "memory_guard": {
+      "minimum_available_gib": 3.5,
+      "maximum_rss_gib": 5.5,
+      "minimum_runtime_available_gib": 0.5,
+      "sampling_seconds": 1
+    },
+    "limitations": [
+      "four known tasks, one previously used initial state each; no held-out generalization claim",
+      "changed numerics, no original BF16 comparison or quantization quality attribution",
+      "different checkpoint, action interval and source from SmolVLA; not a matched comparison",
+      "simulation pauses during inference; no real robot or real-time control claim",
+      "all successes, task failures, incomplete and runtime errors retained separately",
+      "Separate paging experiment; does not complete the frozen owned-embedding stage",
+      "3.5 GiB gate is an exploratory budget, not an established hardware minimum",
+      "One-observation exact action equality does not prove all-input equivalence"
+    ],
+    "paired_probe": {
+      "path": "artifacts/frontier/vlajepa_paged_probe_20261016.json",
+      "sha256": "443de66f040ef1f067cb3e8a068e8ef916e9ae89960f1633cdb19bc0d09b8894",
+      "plan_sha256": "60269a3605bbfd7607d6f0824ab9f80fa6e36fd7e0a2f811b5d37cf2d95eadeb"
+    },
+    "embedding_storage": {
+      "dtype": "BF16",
+      "shape": [
+        151936,
+        2048
+      ],
+      "bytes": 622329856,
+      "mapping": "copy_on_write",
+      "lookup_output": "FP32",
+      "lm_head_tied": true
+    }
+  },
+  "sources": {
+    "scripts/run_vlajepa_closed_loop.py": "6f43effd52de77348485ed3f99c0372c0983df5165ec346823b741d3e5302815",
+    "scripts/probe_vlajepa_int8.py": "a9d92ea008b9b766e44719c15f341555764ebb55ba37ae2e0cf266b808561ccf",
+    "scripts/probe_vlajepa.py": "502d4f5af68575f8cb7b8045dad3cd480f4a65309c9f1938af143f897a2ff33b",
+    "scripts/run.py": "950cf01a77c1acbe7b98bc18d3e7435f6591b9191dbd26f8c0da535af7bcd280",
+    "scripts/run_cache_study.py": "fcfe1688bcb5ad3ba4fc36afcc901bd0856a9a1a5873f55e1f37fc0d78b71068",
+    "scripts/run_flow_confirmation.py": "edd5be34031ee2ca52e199d3861083b971aeeb33256027ece414ca8ea30580b6",
+    "src/embodied_research/__init__.py": "6a75c285a4efbdb9de48fab2a22d66ceb71ff3abe311a5155c326fdff0f09ef0",
+    "src/embodied_research/experiment.py": "da83af6ce069fc74a727f3c790bc59e7089e2bc53e4e8fe87e797219d44b3cf3",
+    "src/embodied_research/policies.py": "ad036be156049e9721ddf892e4e7ad8e66ee0e88c181cc66a125c0b76712f66a",
+    "src/embodied_research/runtime.py": "4296c85ae0060f9b6137872c6e88ed69fce49964cd1b5207da1a19c413f0b1f5",
+    "src/embodied_research/simulator.py": "3fa8762b03bd9dd85f426242714d3422bc19f6fc7f9d9444fd4cac4785ad95d3",
+    "src/embodied_research/scheduling.py": "6698253906434d6e2523b4ad3a77c18ae448872558fed341360858f6417f64ce",
+    "docs/VLAJEPA_CLOSED_LOOP_PROTOCOL.md": "63a1e0f5e5988a053a2e2e6c267a8087baed30c0393420ad0d3838b643bb764c",
+    "scripts/run_vlajepa_paged.py": "7cfb6ade9d2038812baa5403b5af4f84e79439f2672a7ca6adb49b1a74fc974f",
+    "scripts/vlajepa_paged_embedding.py": "238ac413d432d0807fa0b01ce9d9f25269c4a70d3857774ea1b809655a595bde",
+    "docs/VLAJEPA_PAGED_PROTOCOL.md": "c2c7711f693b6080e073d88388935aea27486e13a640938a457268e3eefddb32"
+  },
+  "runtime_versions": {
+    "torch": "2.7.1+cpu",
+    "torchvision": "0.22.1+cpu",
+    "numpy": "2.2.6",
+    "mujoco": "3.3.2",
+    "robosuite": "1.4.0",
+    "hf-libero": "0.1.4",
+    "lerobot": "0.6.1",
+    "transformers": "5.5.4",
+    "safetensors": "0.8.0"
+  },
+  "inputs_sha256": "7d0b65927a53e284de607bb6502b1dc1145d8defc7c4f7f22d157e51c21cd700",
+  "dependencies": {
+    "versions": {
+      "torch": "2.7.1+cpu",
+      "torchvision": "0.22.1+cpu",
+      "transformers": "5.5.4",
+      "safetensors": "0.8.0",
+      "accelerate": "1.15.0",
+      "numpy": "2.2.6",
+      "psutil": "7.2.2",
+      "diffusers": "0.39.0",
+      "importlib_metadata": "8.7.1",
+      "filelock": "4.1.1",
+      "httpx": "0.28.1",
+      "huggingface-hub": "1.33.0",
+      "regex": "2026.9.29",
+      "requests": "2.34.2",
+      "Pillow": "12.3.0",
+      "zipp": "4.1.1"
+    },
+    "failures": []
+  },
+  "simulation_artifacts": {
+    "upstream_commit": "64c3cc8be364eb62df4f9fdc4bdccb1be9d1118e",
+    "models": {},
+    "assets_revision": "0b3ea86be5fe169d0fd036ae63d1070ec09e90f6",
+    "assets_manifest_sha256": "1d59e339a7159e738c8e38aab5a703ab022a3607fc085835c09a431e0e604d42"
+  },
+  "initial_states": {
+    "distribution": "hf-libero",
+    "version": "0.1.4",
+    "inspection": "zipfile+pickletools structural inspection; no pickle execution, Torch import or environment",
+    "task_map_sha256": "0c950df0a785aa55de968bb38ccd865d2017f71ddbe6f48cfd05ac0742b6d62d",
+    "benchmark_source_sha256": "9c07414d4c75f5de50d9c8b3fefbda81ae72b3eae158c1af1d115e77063efd18",
+    "tasks": [
+      {
+        "suite": "libero_spatial",
+        "task_id": 1,
+        "task_name": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_plate",
+        "package_relative_path": "libero/libero/init_files/libero_spatial/pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_plate.pruned_init",
+        "sha256": "9b6927b6ef03460ab055141e1a1154ad85e5e290058d8ed3a8a314aff911f864",
+        "shape": [
+          50,
+          92
+        ],
+        "count": 50
+      },
+      {
+        "suite": "libero_object",
+        "task_id": 1,
+        "task_name": "pick_up_the_cream_cheese_and_place_it_in_the_basket",
+        "package_relative_path": "libero/libero/init_files/libero_object/pick_up_the_cream_cheese_and_place_it_in_the_basket.pruned_init",
+        "sha256": "5ea5483bca8abd80a8f1935e2c60570d60eaaf6a985c283d62805b46fb76aa94",
+        "shape": [
+          50,
+          110
+        ],
+        "count": 50
+      },
+      {
+        "suite": "libero_goal",
+        "task_id": 1,
+        "task_name": "put_the_bowl_on_the_stove",
+        "package_relative_path": "libero/libero/init_files/libero_goal/put_the_bowl_on_the_stove.pruned_init",
+        "sha256": "7c1819725af8d08988078d6efb98ddb6dbefadb2e6d20df4ed23a2074f4d9ed1",
+        "shape": [
+          50,
+          79
+        ],
+        "count": 50
+      },
+      {
+        "suite": "libero_10",
+        "task_id": 1,
+        "task_name": "LIVING_ROOM_SCENE2_put_both_the_cream_cheese_box_and_the_butter_in_the_basket",
+        "package_relative_path": "libero/libero/init_files/libero_10/LIVING_ROOM_SCENE2_put_both_the_cream_cheese_box_and_the_butter_in_the_basket.pruned_init",
+        "sha256": "f8ac06ea8f43bb328d40cba1e6a9767da2f8f5386fd7ff3f845c64a96bf6d2ce",
+        "shape": [
+          50,
+          123
+        ],
+        "count": 50
+      }
+    ]
+  },
+  "frozen_at": "2026-10-16T02:57:36.816603+00:00",
+  "fingerprint": "c35bc7f4f94964ecd19313cbe0fb923ad4daf924692153b050189288e719fe3d"
+}

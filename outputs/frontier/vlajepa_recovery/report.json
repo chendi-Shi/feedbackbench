@@ -1,0 +1,43 @@
+{
+  "protocol_fingerprint": "04ca0526e94e67f01c6acb9538ed045a07678a50e8511938b58f95b3139bc86f",
+  "complete": false,
+  "planned": 1,
+  "completed": 0,
+  "successes": 0,
+  "task_failures": 0,
+  "statuses": {
+    "vlajepa_recovery__libero_10__1__41__clean__native4_chunk7": "missing"
+  },
+  "results": [],
+  "limitations": [
+    "changed numerics, no original BF16 comparison or quantization quality attribution",
+    "different checkpoint, action interval and source from SmolVLA; not a matched comparison",
+    "simulation pauses during inference; no real robot or real-time control claim",
+    "all successes, task failures, incomplete and runtime errors retained separately",
+    "Separate paging experiment; does not complete the frozen owned-embedding stage",
+    "One-observation exact action equality does not prove all-input equivalence",
+    "Independent successor to the interrupted paged-only attempt; all earlier failures retained",
+    "One selected previously used task and initial state; exploratory resource feasibility, not generalization",
+    "Independent one-case protocol and budget; cannot combine previous successes into a four-of-four experiment",
+    "Every earlier interrupted attempt remains retained separately; no automatic retry of unsealed evidence",
+    "Frozen engine stdout may display [1/4]; this protocol and all saved reports/progress plan exactly one case",
+    "Frozen LIBERO reset may swallow repeated native-warning exceptions; a hung reset requires external timeout",
+    "Recovery of an existing interrupted trajectory, not a new independent evaluation sample",
+    "Exact observable robot states and both camera hashes do not prove equality of unrecorded full MuJoCo internal state",
+    "Prefix replay and one repeated boundary forward are included in recovery wall time; original timing is not synthesized"
+  ],
+  "independent_benchmark_episodes": 0,
+  "evaluation_scope": "recovery_of_existing_interrupted_trajectory",
+  "recovery_counts": null,
+  "run_audits": [
+    {
+      "path": "runs/run_0001.json",
+      "sha256": "58477b2fa4b4aacd48dbd29c36bb1b91d6317d7f868f8a00bb4ce71f33469961",
+      "status": "blocked_preflight",
+      "weights_loaded": false,
+      "memory": {},
+      "load_quantize_seconds": null,
+      "imports_seconds": null
+    }
+  ]
+}

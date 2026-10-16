@@ -1,0 +1,83 @@
+{
+  "case": {
+    "model": "smolvla",
+    "suite": "libero_object",
+    "task_id": 1,
+    "init_state_id": 41,
+    "seed": 1000,
+    "condition": "clean",
+    "method": "full10",
+    "num_steps": 10,
+    "scheduler": {
+      "mode": "fixed",
+      "fixed_interval": 10,
+      "temporal_ensemble": false
+    },
+    "record_video": true,
+    "split": "confirmation",
+    "id": "smolvla__libero_object__1__41__clean__full10"
+  },
+  "reference": {
+    "case": {
+      "model": "smolvla",
+      "suite": "libero_object",
+      "task_id": 1,
+      "init_state_id": 41,
+      "seed": 1000,
+      "condition": "clean",
+      "method": "full10",
+      "num_steps": 10,
+      "scheduler": {
+        "mode": "fixed",
+        "fixed_interval": 10,
+        "temporal_ensemble": false
+      },
+      "record_video": true,
+      "split": "confirmation",
+      "id": "smolvla__libero_object__1__41__clean__full10"
+    },
+    "receipt": {
+      "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_object__1__41__clean__full10/receipt.json",
+      "sha256": "be7dbb56fdc9f17a3a374a25a114497c19301534e64687a0d2e291452b092a11"
+    },
+    "files": {
+      "attempt.json": {
+        "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_object__1__41__clean__full10/attempt.json",
+        "sha256": "c0ae383a1d79e2d531768ac7dcdfc88b45b6d07f3079465463d0bb07977dd97e"
+      },
+      "calls.json": {
+        "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_object__1__41__clean__full10/calls.json",
+        "sha256": "f705d536c14f8dcb956ab8b0438e4e51c03e2268facfd8cf6e28f1e88fa42db5"
+      },
+      "final.png": {
+        "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_object__1__41__clean__full10/final.png",
+        "sha256": "ad957bcb0ba662b71bffebf582e8b48bfbfd52c497f6743a3fa1012522e94ec0"
+      },
+      "initial.png": {
+        "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_object__1__41__clean__full10/initial.png",
+        "sha256": "1ecba4fb578f608bf601b020de569ab5ed18269b8117ef07ce0daf0d6afa0815"
+      },
+      "initial_wrist.png": {
+        "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_object__1__41__clean__full10/initial_wrist.png",
+        "sha256": "bb60c848d7b2205770492d5d8fe5ca75798389a818528924c5dd23dd0e9d7be0"
+      },
+      "result.json": {
+        "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_object__1__41__clean__full10/result.json",
+        "sha256": "a0cec1666d7e7ce4ab3f875b215fdc18f6d99855964b82c6acfd77622f0393d8"
+      },
+      "rollout.gif": {
+        "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_object__1__41__clean__full10/rollout.gif",
+        "sha256": "089fd1953297a38b562707efd69ebbb368d2c0913d2cb32e7fd3833b817ca400"
+      },
+      "trajectory.npz": {
+        "path": "outputs/frontier/flow_confirmation/episodes/smolvla__libero_object__1__41__clean__full10/trajectory.npz",
+        "sha256": "829622420c79221d441ea8f10aea6f61a85035b21cafc8f95393625d0b87bb88"
+      }
+    }
+  },
+  "plan": {
+    "path": "artifacts/frontier/libero_arena_replay_20261016.plan.json",
+    "sha256": "23392c8714cd5dbf2d266d96060326e9757d040b50bb0455515ebb74ab710cf5"
+  },
+  "started_at": "2026-10-16T03:15:56.521901+00:00"
+}

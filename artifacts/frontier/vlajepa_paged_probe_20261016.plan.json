@@ -1,0 +1,36 @@
+{
+  "schema": "feedbackbench.vlajepa_paged_probe_plan.v1",
+  "frozen_at": "2026-10-16T02:55:22.420114+00:00",
+  "variant": "cpu_qwen_dynamic_int8_paged_bf16_embedding_fp32_action",
+  "sources": {
+    "scripts/run_vlajepa_closed_loop.py": "6f43effd52de77348485ed3f99c0372c0983df5165ec346823b741d3e5302815",
+    "scripts/probe_vlajepa_int8.py": "a9d92ea008b9b766e44719c15f341555764ebb55ba37ae2e0cf266b808561ccf",
+    "scripts/probe_vlajepa.py": "502d4f5af68575f8cb7b8045dad3cd480f4a65309c9f1938af143f897a2ff33b",
+    "scripts/run.py": "950cf01a77c1acbe7b98bc18d3e7435f6591b9191dbd26f8c0da535af7bcd280",
+    "scripts/run_cache_study.py": "fcfe1688bcb5ad3ba4fc36afcc901bd0856a9a1a5873f55e1f37fc0d78b71068",
+    "scripts/run_flow_confirmation.py": "edd5be34031ee2ca52e199d3861083b971aeeb33256027ece414ca8ea30580b6",
+    "src/embodied_research/__init__.py": "6a75c285a4efbdb9de48fab2a22d66ceb71ff3abe311a5155c326fdff0f09ef0",
+    "src/embodied_research/experiment.py": "da83af6ce069fc74a727f3c790bc59e7089e2bc53e4e8fe87e797219d44b3cf3",
+    "src/embodied_research/policies.py": "ad036be156049e9721ddf892e4e7ad8e66ee0e88c181cc66a125c0b76712f66a",
+    "src/embodied_research/runtime.py": "4296c85ae0060f9b6137872c6e88ed69fce49964cd1b5207da1a19c413f0b1f5",
+    "src/embodied_research/simulator.py": "3fa8762b03bd9dd85f426242714d3422bc19f6fc7f9d9444fd4cac4785ad95d3",
+    "src/embodied_research/scheduling.py": "6698253906434d6e2523b4ad3a77c18ae448872558fed341360858f6417f64ce",
+    "docs/VLAJEPA_CLOSED_LOOP_PROTOCOL.md": "63a1e0f5e5988a053a2e2e6c267a8087baed30c0393420ad0d3838b643bb764c",
+    "scripts/run_vlajepa_paged.py": "7cfb6ade9d2038812baa5403b5af4f84e79439f2672a7ca6adb49b1a74fc974f",
+    "scripts/vlajepa_paged_embedding.py": "238ac413d432d0807fa0b01ce9d9f25269c4a70d3857774ea1b809655a595bde",
+    "docs/VLAJEPA_PAGED_PROTOCOL.md": "c2c7711f693b6080e073d88388935aea27486e13a640938a457268e3eefddb32"
+  },
+  "seed": 123,
+  "threads": 2,
+  "reference": {
+    "path": "artifacts/frontier/vlajepa_int8_probe_20261015.json",
+    "sha256": "7d9565ab05110a5cca4ba1230608dbf4fae135548cd4eb041420e8796e8aa647"
+  },
+  "observation_sha256": "114121b20b8103cfcdcf4906ac1938e6fc13ab1da9f45801bef586557687a0aa",
+  "reference_actions_sha256": "d6556d8a6fdf1c26245a25e8f7404bb121743f171f5d7b0eddbbf0f981595e15",
+  "comparison": "np.array_equal on both model_actions and environment_actions; no tolerance",
+  "minimum_available_gib": 3.5,
+  "maximum_rss_gib": 5.5,
+  "minimum_runtime_available_gib": 0.5,
+  "scope": "one known observation; storage equivalence and feasibility, not task success"
+}

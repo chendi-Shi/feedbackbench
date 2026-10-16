@@ -1,6 +1,8 @@
 # VLA-JEPA INT8 四任务闭环：准备状态与结果口径
 
-**2026-10-16：四回合尚未实际执行。** 首轮入口在2026-10-15因3.658GiB可用内存不足5GiB而退出；本轮第一次重试为4.198GiB。之后前台等待约9.5分钟，通过入口检查后导入运行库，但加载前仅剩4.545GiB，再次退出。三次正式记录均为 `blocked_preflight`、`weights_loaded=false`。四个回合是计划范围，不能把入口阻断写成0/4任务成功或四次任务失败。后续实际结果封存后更新本页。
+**2026-10-16：本原始 owned embedding 阶段的四回合尚未实际执行。** 首轮入口在2026-10-15因3.658GiB可用内存不足5GiB而退出；之后一次重试为4.198GiB，前台等待后启动的一次在导入后仅剩4.545GiB。最新第四次入口有5.136GiB，导入后仅剩4.586GiB，再次退出。四次正式记录均为 `blocked_preflight`、`weights_loaded=false`。四个回合是计划范围，不能把入口阻断写成0/4任务成功或四次任务失败。
+
+后续[分页 embedding 实验](VLAJEPA_PAGED_RESULTS.md)完成了单观测动作一致性检查；[compact闭环](VLAJEPA_COMPACT_RESULTS.md)与[独立进程闭环](VLAJEPA_ISOLATED_RESULTS.md)各完成三个真实任务，第四项分别因进程RSS保护中止。另有[单长程任务的6GiB预算实验](VLAJEPA_LONG_HORIZON_RESULTS.md)。这些阶段各自保留协议、结果和失败，不改变本页5GiB门槛，也不补足本阶段的四个缺失回合。
 
 此前[一次真实观测的量化前向](../artifacts/frontier/vlajepa_int8_probe_20261015.json)已经通过，但当时没有推进环境或执行预测动作。本阶段要把同一数值变体接入LIBERO，反复“获取当前观察 → 预测七个动作 → 顺序执行 → 再观察”，检验完整任务过程。它研究的是VLA机器人策略，VLM是其中的图文理解主干，见[项目说明](VLA_PROJECT_OVERVIEW.md)。
 
@@ -19,6 +21,7 @@
 | 首轮正式启动 | `blocked_preflight`，可用内存3.658GiB低于固定5GiB；`weights_loaded=false` | [运行原始记录](../outputs/frontier/vlajepa_closed_loop/runs/run_0001.json)；没有新任务结果 |
 | 第二次正式启动 | `blocked_preflight`，可用内存4.198GiB低于固定5GiB；`weights_loaded=false` | [第二次运行记录](../outputs/frontier/vlajepa_closed_loop/runs/run_0002.json)；未创建episode |
 | 第三次正式启动 | 通过入口检查，导入运行库后4.545GiB不足5GiB，`blocked_preflight`；未加载权重 | [第三次运行记录](../outputs/frontier/vlajepa_closed_loop/runs/run_0003.json)；无机器人动作或任务结果 |
+| 第四次正式启动 | 入口5.136GiB；导入后4.586GiB不足5GiB，`blocked_preflight`；未加载权重 | [第四次运行记录](../outputs/frontier/vlajepa_closed_loop/runs/run_0004.json)；无机器人动作或任务结果 |
 | 部分报告 | 计划4、已完成0、成功0、任务失败0；四个计划回合均为missing | [部分报告](../outputs/frontier/vlajepa_closed_loop/report.md)、[状态JSON](../outputs/frontier/vlajepa_closed_loop/report.json)；不是0/4成功率 |
 | 工程保存核验 | 实现验证通过；四份协议的冻结源码符合，两个既有ZIP哈希未变；实际任务执行仍为blocked | [独立验收记录](../artifacts/vlajepa-closed-loop-verification.json) |
 
@@ -72,7 +75,7 @@ python scripts/run.py scripts/run_vlajepa_closed_loop.py --output outputs/reprod
 
 本次前台等待采样范围约3.096–5.228GiB；约570秒时启动第三次正式入口，最终在导入后资源检查处退出。收尾过程中还遇到Windows文件占用导致日志原子替换失败：保留了旧快照和待写终态，确认进程退出后恢复错误终态；原始协议和实验记录未改。当前入口会对短暂共享访问拒绝做有界重试，永久失败则写独立错误终态并返回非零。[本轮审计](../artifacts/closure-audit-20261016.json)区分模型资源阻断、操作日志错误及修复后的模拟回归测试。严格四回合核验仍不通过，不能声明阶段完成。
 
-报告文件是该阶段目录内的 `report.json`、`report.md`、`episodes.csv`。当前已生成的是记录入口阻断和四个缺失回合的**部分报告**，不能作为完整闭环验证。由于尚无模型调用，推理耗时和运行内存采样也没有实际测量值，不能把缺失值当作零。逐回合动作、轨迹、图像及封存凭据只在实际回合运行后按过程保存。
+报告文件是该阶段目录内的 `report.json`、`report.md`、`episodes.csv`。当前已生成的是记录四次入口阻断和四个缺失回合的**部分报告**，不能作为完整闭环验证。第三、四次入口保留了导入阶段的内存采样；由于尚无模型调用或机器人动作，没有任务推理耗时及闭环运行内存测量，不能把缺失值当作零。逐回合动作、轨迹、图像及封存凭据只在实际回合运行后按过程保存。
 
 ## 最终结果怎样解释
 

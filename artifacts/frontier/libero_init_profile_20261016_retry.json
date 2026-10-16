@@ -1,0 +1,776 @@
+{
+  "schema": "feedbackbench.libero_init_profile.v1",
+  "started_at": "2026-10-16T03:07:00.358304+00:00",
+  "scope": "One environment initialization/reset; no policy loaded and no policy actions executed",
+  "configuration": {
+    "suite": "libero_spatial",
+    "task_id": 1,
+    "init_state_id": 41,
+    "seed": 1000,
+    "image_size": 360,
+    "hard_reset": true,
+    "official_internal_settle_steps": 10,
+    "explicit_reset_calls": 1,
+    "explicit_policy_steps": 0
+  },
+  "guard": {
+    "maximum_rss_gib": 5.5,
+    "minimum_runtime_available_gib": 0.5,
+    "sampling_seconds": 1,
+    "exit_scope": "own process only"
+  },
+  "source": {
+    "path": ".runtime/profile_libero_init_20261016_retry.py",
+    "sha256": "4fc9d9eb3a7145feb3c4aaabe087637efe4c9bbc0ebcc7e7a68f8ba20b0afb8f"
+  },
+  "previous_diagnostic": "artifacts/frontier/libero_init_profile_20261016.json",
+  "retry_reason": "Prior reset interrupted by transient Windows atomic-log replacement refusal; original record retained",
+  "snapshots": [
+    {
+      "stage": "before_runtime_imports",
+      "utc": "2026-10-16T03:07:00.361307+00:00",
+      "elapsed_seconds": 0.0011100000119768083,
+      "rss_bytes": 33157120,
+      "available_bytes": 6312624128
+    },
+    {
+      "stage": "after_runtime_imports",
+      "utc": "2026-10-16T03:07:12.179205+00:00",
+      "elapsed_seconds": 11.819089900003746,
+      "rss_bytes": 409731072,
+      "available_bytes": 5933551616
+    },
+    {
+      "stage": "before_environment_construction",
+      "utc": "2026-10-16T03:07:12.194266+00:00",
+      "elapsed_seconds": 11.834768400003668,
+      "rss_bytes": 409739264,
+      "available_bytes": 5933555712
+    },
+    {
+      "stage": "after_environment_construction",
+      "utc": "2026-10-16T03:07:12.217105+00:00",
+      "elapsed_seconds": 11.856466700002784,
+      "rss_bytes": 413822976,
+      "available_bytes": 5930790912
+    },
+    {
+      "stage": "before_mjr_context",
+      "utc": "2026-10-16T03:07:14.861729+00:00",
+      "elapsed_seconds": 14.5010384000052,
+      "rss_bytes": 1478160384,
+      "available_bytes": 4886401024,
+      "context_index": 1,
+      "model_offwidth": 640,
+      "model_offheight": 480,
+      "model_offsamples": 4,
+      "model_shadowsize": 4096,
+      "model_ntex": 16,
+      "model_ntexdata": 188804955,
+      "model_nbuffer": 284473166,
+      "data_narena": 1326448640,
+      "data_maxuse_arena": 9453556,
+      "data_maxuse_stack": 542000,
+      "data_ncon": 2220,
+      "data_nefc": 6672,
+      "warnings": [
+        {
+          "index": 0,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 1,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 2,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 3,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 4,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 5,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 6,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 7,
+          "number": 0,
+          "lastinfo": 0
+        }
+      ]
+    },
+    {
+      "stage": "after_mjr_context",
+      "utc": "2026-10-16T03:07:15.909658+00:00",
+      "elapsed_seconds": 15.549409300001571,
+      "rss_bytes": 2401517568,
+      "available_bytes": 4004474880,
+      "context_index": 1,
+      "offWidth": 640,
+      "offHeight": 480,
+      "offSamples": 4,
+      "shadowSize": 4096
+    },
+    {
+      "stage": "before_mjr_context",
+      "utc": "2026-10-16T03:07:18.715479+00:00",
+      "elapsed_seconds": 18.3553596999991,
+      "rss_bytes": 1540636672,
+      "available_bytes": 4865699840,
+      "context_index": 2,
+      "model_offwidth": 640,
+      "model_offheight": 480,
+      "model_offsamples": 4,
+      "model_shadowsize": 4096,
+      "model_ntex": 16,
+      "model_ntexdata": 188804955,
+      "model_nbuffer": 284473166,
+      "data_narena": 1326448640,
+      "data_maxuse_arena": 9453556,
+      "data_maxuse_stack": 542000,
+      "data_ncon": 2220,
+      "data_nefc": 6672,
+      "warnings": [
+        {
+          "index": 0,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 1,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 2,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 3,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 4,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 5,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 6,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 7,
+          "number": 0,
+          "lastinfo": 0
+        }
+      ]
+    },
+    {
+      "stage": "after_mjr_context",
+      "utc": "2026-10-16T03:07:18.998236+00:00",
+      "elapsed_seconds": 18.6375340000086,
+      "rss_bytes": 2450178048,
+      "available_bytes": 3955982336,
+      "context_index": 2,
+      "offWidth": 640,
+      "offHeight": 480,
+      "offSamples": 4,
+      "shadowSize": 4096
+    },
+    {
+      "stage": "before_mjr_context",
+      "utc": "2026-10-16T03:07:20.893939+00:00",
+      "elapsed_seconds": 20.533259800009546,
+      "rss_bytes": 1535811584,
+      "available_bytes": 4867162112,
+      "context_index": 3,
+      "model_offwidth": 640,
+      "model_offheight": 480,
+      "model_offsamples": 4,
+      "model_shadowsize": 4096,
+      "model_ntex": 16,
+      "model_ntexdata": 188804955,
+      "model_nbuffer": 284473166,
+      "data_narena": 1326448640,
+      "data_maxuse_arena": 9453556,
+      "data_maxuse_stack": 542000,
+      "data_ncon": 2220,
+      "data_nefc": 6672,
+      "warnings": [
+        {
+          "index": 0,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 1,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 2,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 3,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 4,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 5,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 6,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 7,
+          "number": 0,
+          "lastinfo": 0
+        }
+      ]
+    },
+    {
+      "stage": "after_mjr_context",
+      "utc": "2026-10-16T03:07:21.154390+00:00",
+      "elapsed_seconds": 20.79369440001028,
+      "rss_bytes": 2447659008,
+      "available_bytes": 3949891584,
+      "context_index": 3,
+      "offWidth": 640,
+      "offHeight": 480,
+      "offSamples": 4,
+      "shadowSize": 4096
+    },
+    {
+      "stage": "after_official_reset",
+      "utc": "2026-10-16T03:07:24.675334+00:00",
+      "elapsed_seconds": 24.314587700006086,
+      "rss_bytes": 2473123840,
+      "available_bytes": 3922403328,
+      "data_narena": 1326448640,
+      "data_maxuse_arena": 9453556,
+      "data_maxuse_stack": 542000,
+      "data_ncon": 87,
+      "data_nefc": 270,
+      "warnings": [
+        {
+          "index": 0,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 1,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 2,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 3,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 4,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 5,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 6,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 7,
+          "number": 0,
+          "lastinfo": 0
+        }
+      ]
+    },
+    {
+      "stage": "after_evidence_saved",
+      "utc": "2026-10-16T03:07:24.910608+00:00",
+      "elapsed_seconds": 24.550066399999196,
+      "rss_bytes": 2473558016,
+      "available_bytes": 3918266368
+    },
+    {
+      "stage": "after_gc_with_environment_alive",
+      "utc": "2026-10-16T03:07:25.041147+00:00",
+      "elapsed_seconds": 24.681136700004572,
+      "rss_bytes": 2473562112,
+      "available_bytes": 3918680064
+    },
+    {
+      "stage": "after_environment_closed",
+      "utc": "2026-10-16T03:07:25.847890+00:00",
+      "elapsed_seconds": 25.487989700006437,
+      "rss_bytes": 1483960320,
+      "available_bytes": 4858355712
+    },
+    {
+      "stage": "after_close_gc",
+      "utc": "2026-10-16T03:07:25.989846+00:00",
+      "elapsed_seconds": 25.62909520001267,
+      "rss_bytes": 1478852608,
+      "available_bytes": 4859777024
+    }
+  ],
+  "render_context_events": [
+    {
+      "stage": "before_mjr_context",
+      "utc": "2026-10-16T03:07:14.861729+00:00",
+      "elapsed_seconds": 14.5010384000052,
+      "rss_bytes": 1478160384,
+      "available_bytes": 4886401024,
+      "context_index": 1,
+      "model_offwidth": 640,
+      "model_offheight": 480,
+      "model_offsamples": 4,
+      "model_shadowsize": 4096,
+      "model_ntex": 16,
+      "model_ntexdata": 188804955,
+      "model_nbuffer": 284473166,
+      "data_narena": 1326448640,
+      "data_maxuse_arena": 9453556,
+      "data_maxuse_stack": 542000,
+      "data_ncon": 2220,
+      "data_nefc": 6672,
+      "warnings": [
+        {
+          "index": 0,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 1,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 2,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 3,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 4,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 5,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 6,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 7,
+          "number": 0,
+          "lastinfo": 0
+        }
+      ],
+      "phase": "before"
+    },
+    {
+      "stage": "after_mjr_context",
+      "utc": "2026-10-16T03:07:15.909658+00:00",
+      "elapsed_seconds": 15.549409300001571,
+      "rss_bytes": 2401517568,
+      "available_bytes": 4004474880,
+      "context_index": 1,
+      "offWidth": 640,
+      "offHeight": 480,
+      "offSamples": 4,
+      "shadowSize": 4096,
+      "phase": "after"
+    },
+    {
+      "stage": "before_mjr_context",
+      "utc": "2026-10-16T03:07:18.715479+00:00",
+      "elapsed_seconds": 18.3553596999991,
+      "rss_bytes": 1540636672,
+      "available_bytes": 4865699840,
+      "context_index": 2,
+      "model_offwidth": 640,
+      "model_offheight": 480,
+      "model_offsamples": 4,
+      "model_shadowsize": 4096,
+      "model_ntex": 16,
+      "model_ntexdata": 188804955,
+      "model_nbuffer": 284473166,
+      "data_narena": 1326448640,
+      "data_maxuse_arena": 9453556,
+      "data_maxuse_stack": 542000,
+      "data_ncon": 2220,
+      "data_nefc": 6672,
+      "warnings": [
+        {
+          "index": 0,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 1,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 2,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 3,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 4,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 5,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 6,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 7,
+          "number": 0,
+          "lastinfo": 0
+        }
+      ],
+      "phase": "before"
+    },
+    {
+      "stage": "after_mjr_context",
+      "utc": "2026-10-16T03:07:18.998236+00:00",
+      "elapsed_seconds": 18.6375340000086,
+      "rss_bytes": 2450178048,
+      "available_bytes": 3955982336,
+      "context_index": 2,
+      "offWidth": 640,
+      "offHeight": 480,
+      "offSamples": 4,
+      "shadowSize": 4096,
+      "phase": "after"
+    },
+    {
+      "stage": "before_mjr_context",
+      "utc": "2026-10-16T03:07:20.893939+00:00",
+      "elapsed_seconds": 20.533259800009546,
+      "rss_bytes": 1535811584,
+      "available_bytes": 4867162112,
+      "context_index": 3,
+      "model_offwidth": 640,
+      "model_offheight": 480,
+      "model_offsamples": 4,
+      "model_shadowsize": 4096,
+      "model_ntex": 16,
+      "model_ntexdata": 188804955,
+      "model_nbuffer": 284473166,
+      "data_narena": 1326448640,
+      "data_maxuse_arena": 9453556,
+      "data_maxuse_stack": 542000,
+      "data_ncon": 2220,
+      "data_nefc": 6672,
+      "warnings": [
+        {
+          "index": 0,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 1,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 2,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 3,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 4,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 5,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 6,
+          "number": 0,
+          "lastinfo": 0
+        },
+        {
+          "index": 7,
+          "number": 0,
+          "lastinfo": 0
+        }
+      ],
+      "phase": "before"
+    },
+    {
+      "stage": "after_mjr_context",
+      "utc": "2026-10-16T03:07:21.154390+00:00",
+      "elapsed_seconds": 20.79369440001028,
+      "rss_bytes": 2447659008,
+      "available_bytes": 3949891584,
+      "context_index": 3,
+      "offWidth": 640,
+      "offHeight": 480,
+      "offSamples": 4,
+      "shadowSize": 4096,
+      "phase": "after"
+    }
+  ],
+  "status": "complete_environment_only_diagnostic",
+  "runtime_modules": {
+    "environment": {
+      "path": "frontier/vendor/lerobot/src/lerobot/envs/libero.py",
+      "sha256": "97c984f12331527626812ec19967ef399e545535b3571becf044db2417ae9d71"
+    },
+    "simulator": {
+      "path": "src/embodied_research/simulator.py",
+      "sha256": "3fa8762b03bd9dd85f426242714d3422bc19f6fc7f9d9444fd4cac4785ad95d3"
+    },
+    "frozen_runtime": {
+      "path": "src/embodied_research/runtime.py",
+      "sha256": "4296c85ae0060f9b6137872c6e88ed69fce49964cd1b5207da1a19c413f0b1f5"
+    }
+  },
+  "reset_evidence": {
+    "arrays": {
+      "path": "artifacts/frontier/libero_init_profile_20261016_retry.npz",
+      "sha256": "46c145c7abb717f12a7c2e85ab170178a57ff07d4149c7aa9b02a4f940f317b7"
+    },
+    "task": "pick up the black bowl next to the ramekin and place it on the plate",
+    "simulator_steps": 0,
+    "metadata": {
+      "suite": "libero_spatial",
+      "task_id": 1,
+      "task": "pick up the black bowl next to the ramekin and place it on the plate",
+      "horizon": 280,
+      "control_hz": 20,
+      "control_mode": "relative",
+      "hard_reset": true,
+      "settle_steps": 10,
+      "image_size": 360,
+      "images_flipped_hw_once": true,
+      "policy_state": "eef_xyz + eef_axis_angle + gripper_qpos (8 values)",
+      "object_state_exposed_to_policy": false
+    },
+    "array_sha256": {
+      "observation.images.image": "64ef53830016af9910c798c767e71e1fc965a65cf742bbe8f73644a2f24e07f7",
+      "observation.images.image2": "d65a3e9011951b548420ddac16913295ec7a150aa80f5d1023ed8083fb761901",
+      "observation.state": "fefa5ab1730c7ae69f71acb1c2b29d06559605a5cd78c6068dd789aa122ef69a",
+      "task": "75da41b7b8a9c39973f9272f8fc091cb8e59210f7d94009ede8d99121a121b98",
+      "main_frame": "0c19025692894341d0373738e1a5d9199669e12378ed41a7b5dd5811bb40aaab",
+      "wrist_frame": "1c53cd0b32b7e29dcf72c6878d327875df53306631a6d6862f26268aed69ddad"
+    },
+    "robot_state": [
+      -0.20239952206611633,
+      0.007557596080005169,
+      1.1744343042373657,
+      3.139970064163208,
+      0.0032991208136081696,
+      -0.08674432337284088,
+      0.03872211277484894,
+      -0.03872346505522728
+    ]
+  },
+  "memory": {
+    "peak_rss_bytes": 2584920064,
+    "minimum_available_bytes": 3810578432,
+    "sampling_seconds": 1.0,
+    "samples": [
+      {
+        "utc": "2026-10-16T03:07:01.370191+00:00",
+        "rss_bytes": 144785408,
+        "available_bytes": 6228590592
+      },
+      {
+        "utc": "2026-10-16T03:07:02.377003+00:00",
+        "rss_bytes": 175624192,
+        "available_bytes": 6196076544
+      },
+      {
+        "utc": "2026-10-16T03:07:03.393984+00:00",
+        "rss_bytes": 211492864,
+        "available_bytes": 6115545088
+      },
+      {
+        "utc": "2026-10-16T03:07:04.407064+00:00",
+        "rss_bytes": 240791552,
+        "available_bytes": 5909209088
+      },
+      {
+        "utc": "2026-10-16T03:07:05.410745+00:00",
+        "rss_bytes": 256057344,
+        "available_bytes": 5900967936
+      },
+      {
+        "utc": "2026-10-16T03:07:06.418220+00:00",
+        "rss_bytes": 276803584,
+        "available_bytes": 5805559808
+      },
+      {
+        "utc": "2026-10-16T03:07:07.433089+00:00",
+        "rss_bytes": 298135552,
+        "available_bytes": 6044438528
+      },
+      {
+        "utc": "2026-10-16T03:07:08.446827+00:00",
+        "rss_bytes": 311742464,
+        "available_bytes": 6045343744
+      },
+      {
+        "utc": "2026-10-16T03:07:09.449607+00:00",
+        "rss_bytes": 317145088,
+        "available_bytes": 6025453568
+      },
+      {
+        "utc": "2026-10-16T03:07:10.450208+00:00",
+        "rss_bytes": 326893568,
+        "available_bytes": 6032076800
+      },
+      {
+        "utc": "2026-10-16T03:07:11.452976+00:00",
+        "rss_bytes": 369733632,
+        "available_bytes": 5979807744
+      },
+      {
+        "utc": "2026-10-16T03:07:12.456024+00:00",
+        "rss_bytes": 474144768,
+        "available_bytes": 5870194688
+      },
+      {
+        "utc": "2026-10-16T03:07:13.461768+00:00",
+        "rss_bytes": 772132864,
+        "available_bytes": 5582602240
+      },
+      {
+        "utc": "2026-10-16T03:07:14.468785+00:00",
+        "rss_bytes": 1133527040,
+        "available_bytes": 5224583168
+      },
+      {
+        "utc": "2026-10-16T03:07:15.908634+00:00",
+        "rss_bytes": 2401509376,
+        "available_bytes": 4004462592
+      },
+      {
+        "utc": "2026-10-16T03:07:16.917979+00:00",
+        "rss_bytes": 2436628480,
+        "available_bytes": 3962707968
+      },
+      {
+        "utc": "2026-10-16T03:07:17.927079+00:00",
+        "rss_bytes": 1602166784,
+        "available_bytes": 4799799296
+      },
+      {
+        "utc": "2026-10-16T03:07:18.997237+00:00",
+        "rss_bytes": 2450178048,
+        "available_bytes": 3955982336
+      },
+      {
+        "utc": "2026-10-16T03:07:20.031249+00:00",
+        "rss_bytes": 1513218048,
+        "available_bytes": 4876206080
+      },
+      {
+        "utc": "2026-10-16T03:07:21.153376+00:00",
+        "rss_bytes": 2447659008,
+        "available_bytes": 3950047232
+      },
+      {
+        "utc": "2026-10-16T03:07:22.166632+00:00",
+        "rss_bytes": 2584920064,
+        "available_bytes": 3810578432
+      },
+      {
+        "utc": "2026-10-16T03:07:23.172577+00:00",
+        "rss_bytes": 2469191680,
+        "available_bytes": 3926716416
+      },
+      {
+        "utc": "2026-10-16T03:07:24.178221+00:00",
+        "rss_bytes": 2469978112,
+        "available_bytes": 3925692416
+      },
+      {
+        "utc": "2026-10-16T03:07:25.181027+00:00",
+        "rss_bytes": 2434363392,
+        "available_bytes": 3950964736
+      }
+    ]
+  },
+  "finished_at": "2026-10-16T03:07:25.994169+00:00",
+  "elapsed_seconds": 25.633691200011526
+}
