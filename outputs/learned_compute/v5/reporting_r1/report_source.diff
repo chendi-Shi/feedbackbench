@@ -1,0 +1,30 @@
+--- scripts/budget_report.py
++++ scripts/budget_report_v5_r1.py
+@@ -84,7 +84,7 @@
+             raise ValueError("random calibrated baseline requires three calibration probabilities")
+         for value in probabilities:
+             _number(value, "calibration_budget_probability")
+-        if any(value > 1 for value in probabilities) or not math.isclose(sum(probabilities), 1, abs_tol=1e-9):
++        if any(value > 1 + 1e-9 for value in probabilities) or not math.isclose(sum(probabilities), 1, rel_tol=0, abs_tol=1e-9):
+             raise ValueError("calibration probabilities must sum to one")
+     elif probabilities is not None:
+         raise ValueError("learned controller must not bind random-baseline probabilities")
+@@ -322,15 +322,9 @@
+ 
+ 
+ def main(argv=None):
+-    parser = argparse.ArgumentParser(description=__doc__)
+-    parser.add_argument("--campaign", required=True, type=Path)
+-    parser.add_argument("--output", type=Path)
+-    args = parser.parse_args(argv)
+-    report = generate_report(args.campaign)
+-    write_json(args.output or args.campaign / "report.json", report)
+-    print(f"{report['status']}: {report['progress']['evaluation']['verified_complete']} / "
+-          f"{report['progress']['evaluation']['planned']} evaluation episodes verified")
+-    return 0
++    # All CLI writes require the frozen amendment and distinct output checks.
++    from run_budget_report_r1 import main as checked_main
++    return checked_main(argv)
+ 
+ 
+ if __name__ == "__main__":

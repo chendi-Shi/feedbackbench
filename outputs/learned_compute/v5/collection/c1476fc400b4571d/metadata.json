@@ -1,0 +1,239 @@
+{
+  "campaign_fingerprint": "f89f0052419dd56caef5603973362d5c2f26e48eaad920e47c80e9359c087f17",
+  "case": {
+    "behavior_budget": 2,
+    "case_id": "collect:libero_10:4:init0",
+    "duplicate_group": "c5c8a9f97507b72723bd7a8f924cb33bf75ce69c772772a68f30ce4724527549",
+    "initial_state_id": 0,
+    "paired_prediction_budgets": [
+      2,
+      4,
+      10
+    ],
+    "split": "train",
+    "suite": "libero_10",
+    "task_id": 4,
+    "task_key": "LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate",
+    "task_uid": "libero_10:4"
+  },
+  "case_id": "collect:libero_10:4:init0",
+  "checkpoint_id": "6721902bc4d61e50a3bfdb11dfb4cb626f05d102",
+  "feature_layout": {
+    "blocks": {
+      "encoded_state": {
+        "start": 1920,
+        "stop": 2880
+      },
+      "image_mean": {
+        "start": 0,
+        "stop": 960
+      },
+      "language_mean": {
+        "start": 960,
+        "stop": 1920
+      },
+      "noise_stats": {
+        "start": 2888,
+        "stop": 2902
+      },
+      "raw_state": {
+        "start": 2880,
+        "stop": 2888
+      },
+      "velocity_stats": {
+        "start": 2902,
+        "stop": 2916
+      }
+    },
+    "dtype": "float32",
+    "input_dim": 2916,
+    "modes": {
+      "full": {
+        "blocks": [
+          "image_mean",
+          "language_mean",
+          "encoded_state",
+          "raw_state",
+          "noise_stats",
+          "velocity_stats"
+        ],
+        "dimension": 2916
+      },
+      "no_probe": {
+        "blocks": [
+          "image_mean",
+          "language_mean",
+          "encoded_state",
+          "raw_state",
+          "noise_stats"
+        ],
+        "dimension": 2902
+      },
+      "proprio_probe": {
+        "blocks": [
+          "raw_state",
+          "noise_stats",
+          "velocity_stats"
+        ],
+        "dimension": 36
+      }
+    },
+    "pooling": "mean of valid image tokens; mean of valid language tokens; single encoded-state token",
+    "prefix_feature_contract": {
+      "dtype": "float32",
+      "hidden_size": 960,
+      "image_feature_keys": [
+        "observation.images.image",
+        "observation.images.image2"
+      ],
+      "image_tokens": 128,
+      "input_dim": 169920,
+      "language_slots": 48,
+      "layout": "image tokens, language padded after VLM to tokenizer_max_length, encoded state token",
+      "padding": "masked outputs set to zero",
+      "source": "SmolVLA final normalized VLM prefix output",
+      "state_tokens": 1,
+      "version": 1
+    },
+    "statistics": {
+      "action_rows": [
+        0,
+        10
+      ],
+      "channels": [
+        0,
+        7
+      ],
+      "ddof": 0,
+      "order": [
+        "per_channel_mean",
+        "per_channel_population_std"
+      ]
+    },
+    "version": 1
+  },
+  "feature_slices": {
+    "encoded_state": [
+      1920,
+      2880
+    ],
+    "image_mean": [
+      0,
+      960
+    ],
+    "language_mean": [
+      960,
+      1920
+    ],
+    "noise_stats": [
+      2888,
+      2902
+    ],
+    "raw_state": [
+      2880,
+      2888
+    ],
+    "velocity_stats": [
+      2902,
+      2916
+    ]
+  },
+  "method": null,
+  "official_task_key": "LIVING_ROOM_SCENE5_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate",
+  "phase": "collection",
+  "policy": {
+    "camera_flip": "performed once by simulator, never by this adapter",
+    "chunk_length": 50,
+    "conditioning": "language",
+    "device": "cpu",
+    "dtype": "float32",
+    "load_seconds": 1.99023480003234,
+    "loading_audit": {
+      "checkpoint_state_tensors": 788,
+      "exact_state_keys_and_shapes": true,
+      "nonpersistent_buffers": {
+        "model.vlm_with_expert.lm_expert.rotary_emb.inv_freq": {
+          "matches_closed_form": true,
+          "sha256": "4dcfda84ce763abe24a92bbf6718c1b03753068a39a15aaf8ae5ac2fdc6ca266",
+          "shape": [
+            32
+          ]
+        },
+        "model.vlm_with_expert.lm_expert.rotary_emb.original_inv_freq": {
+          "matches_closed_form": true,
+          "sha256": "4dcfda84ce763abe24a92bbf6718c1b03753068a39a15aaf8ae5ac2fdc6ca266",
+          "shape": [
+            32
+          ]
+        },
+        "model.vlm_with_expert.vlm.model.text_model.rotary_emb.inv_freq": {
+          "matches_closed_form": true,
+          "sha256": "4dcfda84ce763abe24a92bbf6718c1b03753068a39a15aaf8ae5ac2fdc6ca266",
+          "shape": [
+            32
+          ]
+        },
+        "model.vlm_with_expert.vlm.model.text_model.rotary_emb.original_inv_freq": {
+          "matches_closed_form": true,
+          "sha256": "4dcfda84ce763abe24a92bbf6718c1b03753068a39a15aaf8ae5ac2fdc6ca266",
+          "shape": [
+            32
+          ]
+        }
+      }
+    },
+    "model_sha256": "71d9563c8295284acba8fc2d5c19de000d6fe9ba58a406832af7ef3d221ed52f",
+    "n_action_steps": 1,
+    "n_observation_steps": 1,
+    "name": "smolvla",
+    "num_steps": 10,
+    "parameters": 604934176,
+    "revision": "6721902bc4d61e50a3bfdb11dfb4cb626f05d102",
+    "scheduled_chunks_use_temporal_ensemble": false,
+    "skipped_discarded_random_initialization": true,
+    "strict_checkpoint_load": true,
+    "temporal_ensemble_applies_to": "upstream select_action only",
+    "temporal_ensemble_coeff": null
+  },
+  "simulator": {
+    "control_hz": 20,
+    "control_mode": "relative",
+    "hard_reset": true,
+    "horizon": 520,
+    "image_size": 360,
+    "images_flipped_hw_once": true,
+    "object_state_exposed_to_policy": false,
+    "policy_state": "eef_xyz + eef_axis_angle + gripper_qpos (8 values)",
+    "settle_steps": 10,
+    "suite": "libero_10",
+    "task": "put the white mug on the left plate and put the yellow and white mug on the right plate",
+    "task_id": 4
+  },
+  "split": "train",
+  "started_at": "2026-10-20T09:03:00.176376+00:00",
+  "startup_memory": {
+    "after": {
+      "private_bytes": 3791646720,
+      "rss_bytes": 9183232,
+      "system_available_bytes": 4574547968
+    },
+    "before": {
+      "private_bytes": 3791646720,
+      "rss_bytes": 3092459520,
+      "system_available_bytes": 4384669696
+    },
+    "calls": 1,
+    "created": 1792486946.3509507,
+    "gc_objects_collected": 33,
+    "limitation": "working-set eviction, not tensor deallocation or a steady-state memory guarantee",
+    "phase": "once after model load, before simulator construction and first inference",
+    "pid": 26844,
+    "scope": "calling worker only via GetCurrentProcess; no other process handle",
+    "seconds": 0.64009519998217,
+    "success": true,
+    "supported": true,
+    "winerror": 0
+  },
+  "task_key": "libero_10:4",
+  "trained_binding": null
+}

@@ -48,6 +48,22 @@ The supervisor waits if RAM or disk capacity is insufficient. It never stops oth
 
 ## Scheduled continuation and publication
 
+### Reporting protocol amendment r1 (2026-10-20)
+
+The experiment remains **v5**, with all original sources, controllers, seeds, limits, and 360 planned evaluation cases unchanged. After evaluation started, publication cross-checking found that the original report rejects the calibrated floating-point probability `1.0000000000000004` because it is strictly greater than one. The frozen worker accepted this rounding error; recorded random-baseline budget choices reproduce with the original NumPy RNG formula. Completed task failures remain valid evidence and must not be rerun.
+
+The independent frozen amendment is `outputs/learned_compute/v5/reporting_r1/protocol.json`, revision **v5-report-r1**. It preserves the original protocol, report, 30 sources, existing receipt identities, trained manifest, exact source diff, and regression evidence. It changes only report validation of probability boundaries to an absolute tolerance of `1e-9`, keeps nonnegative/finite/length/sum/binding checks, and never normalizes or rewrites recorded probabilities. This is explicitly a reporting amendment made after test execution began, not a new experiment or a new denominator.
+
+For current progress and final completion, run:
+
+```text
+python scripts/run.py scripts/run_budget_report_r1.py --campaign outputs/learned_compute/v5
+```
+
+Read **`report_r1.json`** after this command and verify its reporting revision. The unchanged v5 supervisor still writes the original `report.json`; that report can reject valid random-baseline cases and is retained as original evidence, not used as the corrected completion criterion. Inspect both reports when diagnosing faults. The publisher uses a separate immutable report snapshot and only the receipt set named by that snapshot, so ongoing evaluation cannot change the export denominator midway. All publication and final decisions must use r1 while preserving the original report and amendment evidence.
+
+Nine trained policies selected fixed budget 4 under the preregistered calibration rule. This supplies no evidence of adaptive-budget benefit. Keep all seeds, ablations, task failures, and the full planned evaluation; do not tune from these test outcomes.
+
 An in-chat heartbeat checks the campaign every four hours until the deadline. It reads `status.json`, `report.json`, latest run audit and this document; verifies process identity; and restarts a stopped supervisor only when the frozen protocol permits continuation. If a genuine runtime error needs code changes, diagnose it before resuming. Do not silently lower resource limits, shorten horizons, remove failed tasks, or choose seeds from test results.
 
 When all planned work completes, or the deadline arrives, produce the final complete/partial report and pause the heartbeat. Report meaningful stage completions, actionable failures and final results. Routine unchanged resource waits do not need notifications.

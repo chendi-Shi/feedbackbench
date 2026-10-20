@@ -1,0 +1,217 @@
+{
+  "base_campaign_fingerprint": "f89f0052419dd56caef5603973362d5c2f26e48eaad920e47c80e9359c087f17",
+  "base_protocol_sha256": "c96c36cec931881cfab8cc9d1be3bbd055a2e7e33b828d827b3ef21d6e9b39c5",
+  "changed_after_test_started": true,
+  "completed_episodes_rerun": false,
+  "corrected_report": "report_r1.json",
+  "existing_collection_episodes": 56,
+  "existing_evaluation_episodes": 15,
+  "frozen_at": "2026-10-20T11:09:45.267379+00:00",
+  "new_experimental_denominator": false,
+  "numeric_rule_changes": {
+    "probability_sum_isclose": {
+      "after": {
+        "abs_tol": 1e-09,
+        "rel_tol": 0
+      },
+      "before": {
+        "abs_tol": 1e-09,
+        "rel_tol": 1e-09
+      }
+    },
+    "probability_upper_bound": {
+      "after": 1.000000001,
+      "before": 1
+    },
+    "unchanged": [
+      "finite numeric values",
+      "nonnegative values",
+      "three probabilities",
+      "trained manifest binding",
+      "selector binding",
+      "receipt verification"
+    ]
+  },
+  "original_report": "report.json",
+  "original_report_source_sha256": "682b226eb8b499b9a9960d5bfde13cb8340ebead240318cd32319345ba00f53b",
+  "planned_evaluation_episodes": 360,
+  "preserved_files": {
+    "base_protocol.json": {
+      "bytes": 284717,
+      "sha256": "c96c36cec931881cfab8cc9d1be3bbd055a2e7e33b828d827b3ef21d6e9b39c5"
+    },
+    "original_report_at_pause.json": {
+      "bytes": 155930,
+      "sha256": "48b897dc4229e1ae5b490c7960bd4c377fe86d77a5fb8ee49049a0eb87f54820"
+    },
+    "original_report_recomputed.json": {
+      "bytes": 155930,
+      "sha256": "e3f46f7f0b42782bffadf489db6e364bda724aa8b621fea58c711d61588e263a"
+    },
+    "pre_revision_evidence.json": {
+      "bytes": 14029,
+      "sha256": "9dcf4072a0358d526d4c65e1e0f63f53f75bec8726b77788a1021fbfa9bb1422"
+    },
+    "report_source.diff": {
+      "bytes": 1526,
+      "sha256": "239533338d2b29f6a8f98ac4ce4b92de9d0669032a0cfd4dec4c905fd1195411"
+    },
+    "source_snapshot/base/docs/LEARNED_COMPUTE_PROTOCOL.md": {
+      "bytes": 7822,
+      "sha256": "6fc909dd8a95172981572c22d5600105ea7d6dd64d013c268fce8aaa8fe2a588"
+    },
+    "source_snapshot/base/scripts/budget_campaign_common.py": {
+      "bytes": 8352,
+      "sha256": "8f0868fda06f25c016bc609011cecd0992d69d2cf70eabf20df4f2e227e6498b"
+    },
+    "source_snapshot/base/scripts/budget_campaign_common_v5.py": {
+      "bytes": 2280,
+      "sha256": "b45192418cdb22423a357a7b109a74b959f48b030df571a2086fb0befa497a1e"
+    },
+    "source_snapshot/base/scripts/budget_episode_worker.py": {
+      "bytes": 18062,
+      "sha256": "c764fc40d95239559d70f2f9383a842067f83559aeac459983ec08dde3adf8f4"
+    },
+    "source_snapshot/base/scripts/budget_episode_worker_v5.py": {
+      "bytes": 18068,
+      "sha256": "551e8c22c199ce23c7e32aceab6fa1a0318eae2bf2150ed05339b587fa3ea2ae"
+    },
+    "source_snapshot/base/scripts/budget_protocol.py": {
+      "bytes": 16805,
+      "sha256": "cd4759decfa0efec593089f9c7fdd2a09e25aa4d456c2af6745821403ac5c588"
+    },
+    "source_snapshot/base/scripts/budget_report.py": {
+      "bytes": 21139,
+      "sha256": "682b226eb8b499b9a9960d5bfde13cb8340ebead240318cd32319345ba00f53b"
+    },
+    "source_snapshot/base/scripts/budget_startup_memory.py": {
+      "bytes": 1886,
+      "sha256": "cc8a5f1e47ddb5eb2cbc72331358661c06391745ac45ab8f292803c4c499c6e3"
+    },
+    "source_snapshot/base/scripts/libero_arena_budget.py": {
+      "bytes": 7853,
+      "sha256": "fb7bbb4c7169ce95b93a9a79a7046b3d14f331b5994898cf20332d55af6f6e82"
+    },
+    "source_snapshot/base/scripts/run.py": {
+      "bytes": 2535,
+      "sha256": "950cf01a77c1acbe7b98bc18d3e7435f6591b9191dbd26f8c0da535af7bcd280"
+    },
+    "source_snapshot/base/scripts/run_budget_campaign.py": {
+      "bytes": 27646,
+      "sha256": "b766732dd1dde4479b0ad460e697bc46e22e348d79c849b52693c5125983b4fc"
+    },
+    "source_snapshot/base/scripts/run_budget_campaign_v5.py": {
+      "bytes": 37235,
+      "sha256": "1b9ffe1552374fa177339853b5fbf9a4db561823a338630182c576a29b14471c"
+    },
+    "source_snapshot/base/scripts/train_budget_selector.py": {
+      "bytes": 2094,
+      "sha256": "853a692d780c74d7ac20fcfa86d23dd57f7ba65bd24c3b3e42d7ebd36f4936ae"
+    },
+    "source_snapshot/base/scripts/validate_budget_sampler_real.py": {
+      "bytes": 15477,
+      "sha256": "b8eed29951beec0ba4ab095fc85ad7a224aa34945c4ecb724ef5412a4abd0697"
+    },
+    "source_snapshot/base/src/embodied_research/__init__.py": {
+      "bytes": 109,
+      "sha256": "6a75c285a4efbdb9de48fab2a22d66ceb71ff3abe311a5155c326fdff0f09ef0"
+    },
+    "source_snapshot/base/src/embodied_research/action_cache.py": {
+      "bytes": 22341,
+      "sha256": "5710536aefce85b3d33b6e841920312ed726bee43e2020ec0916f87738ce722d"
+    },
+    "source_snapshot/base/src/embodied_research/budget_learning.py": {
+      "bytes": 34718,
+      "sha256": "1b5862586732045a3e828076526400b3ab4a0f9e493097e6665864dd21a79fef"
+    },
+    "source_snapshot/base/src/embodied_research/budget_sampler.py": {
+      "bytes": 13851,
+      "sha256": "1438e3bb5e99f7d9cdb37e89c53ecd93653171b93c035d469e0ab23cde20be7b"
+    },
+    "source_snapshot/base/src/embodied_research/cache_sampler.py": {
+      "bytes": 17314,
+      "sha256": "df547b4b4cf56822b7cbad4e282dba8996b2745bb906fe541ad7ead533592cd3"
+    },
+    "source_snapshot/base/src/embodied_research/policies.py": {
+      "bytes": 15962,
+      "sha256": "ad036be156049e9721ddf892e4e7ad8e66ee0e88c181cc66a125c0b76712f66a"
+    },
+    "source_snapshot/base/src/embodied_research/runtime.py": {
+      "bytes": 10556,
+      "sha256": "4296c85ae0060f9b6137872c6e88ed69fce49964cd1b5207da1a19c413f0b1f5"
+    },
+    "source_snapshot/base/src/embodied_research/simulator.py": {
+      "bytes": 8126,
+      "sha256": "3fa8762b03bd9dd85f426242714d3422bc19f6fc7f9d9444fd4cac4785ad95d3"
+    },
+    "source_snapshot/base/tests/test_budget_io_v5.py": {
+      "bytes": 3126,
+      "sha256": "5216f2fceb0a6153bf3575d3785fe1d875db63bc3a17bc2543fd5fba54b5b39c"
+    },
+    "source_snapshot/base/tests/test_budget_learning.py": {
+      "bytes": 13300,
+      "sha256": "4b2971d321bc1287ac9638f264de5832802d5eb78337911d241237b9457369f7"
+    },
+    "source_snapshot/base/tests/test_budget_monitor_v5.py": {
+      "bytes": 12877,
+      "sha256": "4b2c18982fe7d797f5db27b06610f08bb5f317409e0956e3048c27fa7cfa88e9"
+    },
+    "source_snapshot/base/vendor/MINERVA/src/lerobot/envs/libero.py": {
+      "bytes": 22453,
+      "sha256": "569cdb296ba9fabaaa00c98f8313ecda8961d295c008b88d6fb7f49f27baed3f"
+    },
+    "source_snapshot/base/vendor/MINERVA/src/lerobot/policies/factory.py": {
+      "bytes": 21441,
+      "sha256": "3d4a40767a72de485509a7f99ecdb47589515629cb8ce3b2aaef1b4c321d5ed5"
+    },
+    "source_snapshot/base/vendor/MINERVA/src/lerobot/policies/smolvla/modeling_smolvla.py": {
+      "bytes": 33504,
+      "sha256": "184fbeee3b8da3e9efb75721c12fda16af81306c8c9c729e6dbc9705dfbc0872"
+    },
+    "source_snapshot/base/vendor/MINERVA/src/lerobot/policies/smolvla/smolvlm_with_expert.py": {
+      "bytes": 24335,
+      "sha256": "1f2abb181f2d68b4e4b5d03f4c27c7a3f9aca3d9b5127fab55ff250729d277ce"
+    },
+    "source_snapshot/base/vendor/MINERVA/src/lerobot/processor/pipeline.py": {
+      "bytes": 86397,
+      "sha256": "0d3d9405e61442a40074f59892bfad10e9a230e2d4a7aac74a841e3134c918bd"
+    },
+    "source_snapshot/revised/scripts/budget_report_v5_r1.py": {
+      "bytes": 20812,
+      "sha256": "a9b564453e288f4e3d11274a41599e7ce13b83198624f810410133eda08850bb"
+    },
+    "source_snapshot/revised/scripts/run_budget_report_r1.py": {
+      "bytes": 4145,
+      "sha256": "fd680330b9d9627ce75959d11e7c2f981722b1138b1b99087a20efdc67f0ce86"
+    },
+    "source_snapshot/revised/tests/test_budget_report_v5_r1.py": {
+      "bytes": 6083,
+      "sha256": "86dc2b6273cbcec8a87198d01c56333e600d5471f9ac0d261db9c1bfb8065f1b"
+    },
+    "source_snapshot/revised/tests/test_reporting_revision_entrypoint.py": {
+      "bytes": 10406,
+      "sha256": "99b5aeeb7d5e8c3a42b0f20f72e85ef946fc7e24240fefb13a079c7bb0a9f20a"
+    },
+    "trained_manifest_at_pause.json": {
+      "bytes": 11542,
+      "sha256": "81895ab8d6df52008669235af5e438260015628c27e1d7ba031680508315c658"
+    },
+    "validation.json": {
+      "bytes": 2373,
+      "sha256": "17bd74ca285414c3ddbc8a5d915615d8138efe08c97f5ffc66d25ec1f2d19218"
+    }
+  },
+  "prior_evidence_modified": false,
+  "raw_probabilities_modified": false,
+  "reason": "The original report rejects calibration probability 1.0000000000000004 at a strict upper bound; recorded execution accepts the rounding error.",
+  "revision_fingerprint": "295b80041806fcb30cf882181939d903d20bace33d1440746389ecd3fbe5e5b8",
+  "revision_id": "v5-report-r1",
+  "schema": "feedbackbench.reporting_revision.v1",
+  "scope": "Report validation and guarded CLI output only; no change to experiment execution, statistics, controllers, task definitions, thresholds, seeds, resource limits, or deadline.",
+  "sources": {
+    "scripts/budget_report_v5_r1.py": "a9b564453e288f4e3d11274a41599e7ce13b83198624f810410133eda08850bb",
+    "scripts/run_budget_report_r1.py": "fd680330b9d9627ce75959d11e7c2f981722b1138b1b99087a20efdc67f0ce86",
+    "tests/test_budget_report_v5_r1.py": "86dc2b6273cbcec8a87198d01c56333e600d5471f9ac0d261db9c1bfb8065f1b",
+    "tests/test_reporting_revision_entrypoint.py": "99b5aeeb7d5e8c3a42b0f20f72e85ef946fc7e24240fefb13a079c7bb0a9f20a"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "candidate_budgets": [
+    2,
+    4
+  ],
+  "claims": "no success, failure-probability, safety or cross-task coverage guarantee",
+  "objective": "MSE of log1p for all six nonnegative disagreement targets, including gripper fraction",
+  "probe_cost_accounting": "shared first velocity reused; deploy must verify actual NFE parity",
+  "reference_budget": 10,
+  "risk_scale_units": "normalized action discrepancy; not physical robot tolerances",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "selection": "epoch on tuning; residual and fixed policy on calibration; no seed/variant selection",
+  "target_names": [
+    "translation_rmse",
+    "rotation_rmse",
+    "gripper_sign_disagreement"
+  ],
+  "training": {
+    "batch_size": 256,
+    "epochs": 100,
+    "hidden_dim": 64,
+    "learning_rate": 0.001,
+    "max_mean_nfe": 4.0,
+    "residual_quantile": 0.9,
+    "risk_scales": [
+      0.05,
+      0.05,
+      0.1
+    ],
+    "threads": 2,
+    "thresholds": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0,
+      1.5,
+      2.0,
+      3.0,
+      4.0,
+      8.0,
+      16.0
+    ],
+    "weight_decay": 0.0001
+  },
+  "variants": [
+    "full",
+    "no_probe",
+    "proprio_probe"
+  ]
+}

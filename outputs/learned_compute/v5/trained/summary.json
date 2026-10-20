@@ -1,0 +1,276 @@
+{
+  "binding": {
+    "campaign_fingerprint": "f89f0052419dd56caef5603973362d5c2f26e48eaad920e47c80e9359c087f17",
+    "config_sha256": "a0be881443b5383e79951caaca36b18776a1dfa4cd8b085da72697c3cdda633c",
+    "data_fingerprint": "6fa1a35dc5cae5bfba0c10520844e9058165a5d77c161875909e5fec52073f24",
+    "sources": {
+      "scripts/train_budget_selector.py": {
+        "sha256": "853a692d780c74d7ac20fcfa86d23dd57f7ba65bd24c3b3e42d7ebd36f4936ae",
+        "snapshot": "source_snapshot/scripts/train_budget_selector.py"
+      },
+      "src/embodied_research/budget_learning.py": {
+        "sha256": "1b5862586732045a3e828076526400b3ab4a0f9e493097e6665864dd21a79fef",
+        "snapshot": "source_snapshot/src/embodied_research/budget_learning.py"
+      },
+      "tests/test_budget_learning.py": {
+        "sha256": "4b2971d321bc1287ac9638f264de5832802d5eb78337911d241237b9457369f7",
+        "snapshot": "source_snapshot/tests/test_budget_learning.py"
+      }
+    }
+  },
+  "completed_at": "2026-10-20T09:41:49.994610+00:00",
+  "models": [
+    {
+      "best_epoch": 77,
+      "checkpoint": "full_seed0/selector.pt",
+      "checkpoint_sha256": "af8f2fc6cf6dcea8d65240068bea38698d671bce3f3436180975f512d796722b",
+      "input_features": 2916,
+      "parameters": 191238,
+      "residual_quantile_value": 2.4758565241536825,
+      "seconds": 5.89100000000326,
+      "seed": 0,
+      "selection": {
+        "budget_probabilities": [
+          0.0,
+          1.0000000000000004,
+          0.0
+        ],
+        "feasible": true,
+        "mean_nfe": 4.000000000000002,
+        "policy": {
+          "fixed_budget": 4
+        },
+        "reference_disagreement_risk": 1.3806476128213079
+      },
+      "tuning_loss": 0.00490588369470068,
+      "variant": "full"
+    },
+    {
+      "best_epoch": 61,
+      "checkpoint": "full_seed1/selector.pt",
+      "checkpoint_sha256": "f1600475e420f4edbeb2d0883d31c48547713fb4a2ae5f8bd8dc305fc224d138",
+      "input_features": 2916,
+      "parameters": 191238,
+      "residual_quantile_value": 2.2574349316424396,
+      "seconds": 3.530999999959022,
+      "seed": 1,
+      "selection": {
+        "budget_probabilities": [
+          0.0,
+          1.0000000000000004,
+          0.0
+        ],
+        "feasible": true,
+        "mean_nfe": 4.000000000000002,
+        "policy": {
+          "fixed_budget": 4
+        },
+        "reference_disagreement_risk": 1.3806476128213079
+      },
+      "tuning_loss": 0.005440193170161718,
+      "variant": "full"
+    },
+    {
+      "best_epoch": 66,
+      "checkpoint": "full_seed2/selector.pt",
+      "checkpoint_sha256": "4112b86eb12b5bd37c45be8a2eb30f228f37d74eb4da3f5e4e6526d1712ba3b3",
+      "input_features": 2916,
+      "parameters": 191238,
+      "residual_quantile_value": 2.335243374109268,
+      "seconds": 3.922000000020489,
+      "seed": 2,
+      "selection": {
+        "budget_probabilities": [
+          0.0,
+          1.0000000000000004,
+          0.0
+        ],
+        "feasible": true,
+        "mean_nfe": 4.000000000000002,
+        "policy": {
+          "fixed_budget": 4
+        },
+        "reference_disagreement_risk": 1.3806476128213079
+      },
+      "tuning_loss": 0.005559686601054352,
+      "variant": "full"
+    },
+    {
+      "best_epoch": 93,
+      "checkpoint": "no_probe_seed0/selector.pt",
+      "checkpoint_sha256": "ea4b044b3969d5b929844f82ad6ce7122054fc214ea20250c26503118ae769b7",
+      "input_features": 2902,
+      "parameters": 190342,
+      "residual_quantile_value": 2.5457545279780858,
+      "seconds": 3.952999999979511,
+      "seed": 0,
+      "selection": {
+        "budget_probabilities": [
+          0.0,
+          1.0000000000000004,
+          0.0
+        ],
+        "feasible": true,
+        "mean_nfe": 4.000000000000002,
+        "policy": {
+          "fixed_budget": 4
+        },
+        "reference_disagreement_risk": 1.3806476128213079
+      },
+      "tuning_loss": 0.004728070573021016,
+      "variant": "no_probe"
+    },
+    {
+      "best_epoch": 84,
+      "checkpoint": "no_probe_seed1/selector.pt",
+      "checkpoint_sha256": "6ee0f51f88857aab9fc7cc5f2a92c72c8fb0676667e6e2825c1b6b05d93074f8",
+      "input_features": 2902,
+      "parameters": 190342,
+      "residual_quantile_value": 2.9395806789398193,
+      "seconds": 3.5469999999622814,
+      "seed": 1,
+      "selection": {
+        "budget_probabilities": [
+          0.0,
+          1.0000000000000004,
+          0.0
+        ],
+        "feasible": true,
+        "mean_nfe": 4.000000000000002,
+        "policy": {
+          "fixed_budget": 4
+        },
+        "reference_disagreement_risk": 1.3806476128213079
+      },
+      "tuning_loss": 0.0050340165461466874,
+      "variant": "no_probe"
+    },
+    {
+      "best_epoch": 100,
+      "checkpoint": "no_probe_seed2/selector.pt",
+      "checkpoint_sha256": "751b7d5203deba652cca42d7c29f340affb9bf1959e88b5d4bc4488d60be62d3",
+      "input_features": 2902,
+      "parameters": 190342,
+      "residual_quantile_value": 1.9629873316430884,
+      "seconds": 3.452999999979511,
+      "seed": 2,
+      "selection": {
+        "budget_probabilities": [
+          0.0,
+          1.0000000000000004,
+          0.0
+        ],
+        "feasible": true,
+        "mean_nfe": 4.000000000000002,
+        "policy": {
+          "fixed_budget": 4
+        },
+        "reference_disagreement_risk": 1.3806476128213079
+      },
+      "tuning_loss": 0.004313237350921731,
+      "variant": "no_probe"
+    },
+    {
+      "best_epoch": 89,
+      "checkpoint": "proprio_probe_seed0/selector.pt",
+      "checkpoint_sha256": "6a08d810db61fd4c1846d1a6c185ba2e0c734b04443d69b1d855050120d92076",
+      "input_features": 36,
+      "parameters": 6918,
+      "residual_quantile_value": 2.1613456365779107,
+      "seconds": 1.2179999999934807,
+      "seed": 0,
+      "selection": {
+        "budget_probabilities": [
+          0.0,
+          1.0000000000000004,
+          0.0
+        ],
+        "feasible": true,
+        "mean_nfe": 4.000000000000002,
+        "policy": {
+          "fixed_budget": 4
+        },
+        "reference_disagreement_risk": 1.3806476128213079
+      },
+      "tuning_loss": 0.0029158974851688597,
+      "variant": "proprio_probe"
+    },
+    {
+      "best_epoch": 95,
+      "checkpoint": "proprio_probe_seed1/selector.pt",
+      "checkpoint_sha256": "adb88df635d94b157f6d8875e5ca0152c2c1f6b45416f35213830c628434037d",
+      "input_features": 36,
+      "parameters": 6918,
+      "residual_quantile_value": 1.9317342333923484,
+      "seconds": 1.1880000000237487,
+      "seed": 1,
+      "selection": {
+        "budget_probabilities": [
+          0.0,
+          1.0000000000000004,
+          0.0
+        ],
+        "feasible": true,
+        "mean_nfe": 4.000000000000002,
+        "policy": {
+          "fixed_budget": 4
+        },
+        "reference_disagreement_risk": 1.3806476128213079
+      },
+      "tuning_loss": 0.0029525849043924458,
+      "variant": "proprio_probe"
+    },
+    {
+      "best_epoch": 86,
+      "checkpoint": "proprio_probe_seed2/selector.pt",
+      "checkpoint_sha256": "6ee758dd3b34ba17236d2c0b3f0aedb04dc9afa4c3f488dd08ffa4d525fc27da",
+      "input_features": 36,
+      "parameters": 6918,
+      "residual_quantile_value": 1.8248062959449998,
+      "seconds": 1.202999999979511,
+      "seed": 2,
+      "selection": {
+        "budget_probabilities": [
+          0.0,
+          1.0000000000000004,
+          0.0
+        ],
+        "feasible": true,
+        "mean_nfe": 4.000000000000002,
+        "policy": {
+          "fixed_budget": 4
+        },
+        "reference_disagreement_risk": 1.3806476128213079
+      },
+      "tuning_loss": 0.002658806057348747,
+      "variant": "proprio_probe"
+    }
+  ],
+  "runtime": {
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "numpy": "2.2.6",
+    "threads": 2,
+    "torch": "2.7.1+cpu"
+  },
+  "schema": "feedbackbench.budget_training_run.v1",
+  "split_counts": {
+    "calibration": {
+      "episodes": 8,
+      "samples": 121,
+      "tasks": 4
+    },
+    "train": {
+      "episodes": 40,
+      "samples": 893,
+      "tasks": 20
+    },
+    "tuning": {
+      "episodes": 8,
+      "samples": 153,
+      "tasks": 4
+    }
+  },
+  "started_at": "2026-10-20T09:41:14.300556+00:00",
+  "status": "complete"
+}
