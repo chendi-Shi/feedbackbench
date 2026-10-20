@@ -1,9 +1,28 @@
 {
   "attempts": {
-    "attempt_directories": 0,
+    "attempt_directories": 2,
     "failed_unsealed_attempts": 0,
     "included_in_success_denominator": false,
-    "records": [],
+    "records": [
+      {
+        "case_id": "collect:libero_object:2:init1",
+        "failures": [],
+        "path": "attempts/collection/f7b05a0546410df7/001",
+        "phase": "collection",
+        "resource_or_deadline_related": false,
+        "sealed_unpublished": false,
+        "status": "unsealed_status_unknown"
+      },
+      {
+        "case_id": "collect:libero_object:2:init1",
+        "failures": [],
+        "path": "attempts/collection/f7b05a0546410df7/002",
+        "phase": "collection",
+        "resource_or_deadline_related": false,
+        "sealed_unpublished": false,
+        "status": "unsealed_status_unknown"
+      }
+    ],
     "resource_or_deadline_attempts": 0,
     "sealed_unpublished_attempts": 0
   },
@@ -15,10 +34,87 @@
     "resource_attempts_are_task_failures": false
   },
   "evidence": {
-    "collection": [],
+    "collection": [
+      {
+        "case_id": "collect:libero_spatial:0:init0",
+        "receipt_sha256": "77aa2a8105f1acfbbfdaf6eefb7336d08191ec1f932bed1d898806c9ead00a99"
+      },
+      {
+        "case_id": "collect:libero_spatial:0:init1",
+        "receipt_sha256": "593996fd0b70af5db9d13d33fc53d64bc5a2826f99f52720c64b9d0ccf891998"
+      },
+      {
+        "case_id": "collect:libero_spatial:1:init0",
+        "receipt_sha256": "78c1bdaed8ba272950ba49e9f1cfdf336982cfb88da8b2513b0b3d7462ceee06"
+      },
+      {
+        "case_id": "collect:libero_spatial:1:init1",
+        "receipt_sha256": "e78487b242f4005c7a2e4fa3f28e5472fc236fc386f364dff4b749c9800cedc6"
+      },
+      {
+        "case_id": "collect:libero_spatial:2:init0",
+        "receipt_sha256": "4f5d2e8a5494cb9693e5bcfe4788ec6b6369d46077b0c8241ae2b213e43ec2c1"
+      },
+      {
+        "case_id": "collect:libero_spatial:2:init1",
+        "receipt_sha256": "31613afb45af78c4c26aa1e9c530098949d2b388bd843a4cc573d57101a6368d"
+      },
+      {
+        "case_id": "collect:libero_spatial:3:init0",
+        "receipt_sha256": "426beca105426aadc0ffd5b9e2ddae26becab062a15f2a6a00aea81155e11eab"
+      },
+      {
+        "case_id": "collect:libero_spatial:3:init1",
+        "receipt_sha256": "fcc98a11b3cf424496dd3be8be7d494466fec29cca2d768a437e6ec3437473eb"
+      },
+      {
+        "case_id": "collect:libero_spatial:4:init0",
+        "receipt_sha256": "9bc4123df9e60b22c1508f0e9feb8f6edca47bb192b72bd345a5c00b2f9e04c0"
+      },
+      {
+        "case_id": "collect:libero_spatial:4:init1",
+        "receipt_sha256": "4b99614b58dc549279a59a0822ce2e75d1235ab5a2e3830894d42b2f328fd183"
+      },
+      {
+        "case_id": "collect:libero_spatial:5:init0",
+        "receipt_sha256": "1812aa12e980457ec2ab7254c4eb156dd9d8a0eb8613ddc102b6ebb396992d28"
+      },
+      {
+        "case_id": "collect:libero_spatial:5:init1",
+        "receipt_sha256": "c51622f0fa56ed0a865d58e42c0893a54c9e5940fca2dee2a25087ae036489fe"
+      },
+      {
+        "case_id": "collect:libero_spatial:6:init0",
+        "receipt_sha256": "34b37047718460648515ca6bf2c361119f0e0eb5df35041109f79e153b90bb07"
+      },
+      {
+        "case_id": "collect:libero_spatial:6:init1",
+        "receipt_sha256": "8416e75549bc29e4ac3e48a99fd0f2f5a8ec4bc1771694eaf5f6ecf8949b37bb"
+      },
+      {
+        "case_id": "collect:libero_object:0:init0",
+        "receipt_sha256": "e2bbe7c93b38f29a50b60669afa365abe25812a97b848da1d994385fccf7eebe"
+      },
+      {
+        "case_id": "collect:libero_object:0:init1",
+        "receipt_sha256": "c161a5fb6845eb07796545453e73da847bec68e6ae93b53d939c36e3a6360aea"
+      },
+      {
+        "case_id": "collect:libero_object:1:init0",
+        "receipt_sha256": "d180ced5817425d655bfb45a0d14600e0b40e9057d1c6a9a6700d76ba4bb9d9d"
+      },
+      {
+        "case_id": "collect:libero_object:1:init1",
+        "receipt_sha256": "2be933de4948019f085bc0d30afcdfc8fb2987c2b85fbf7fd2aeab37bbc1c9f5"
+      },
+      {
+        "case_id": "collect:libero_object:2:init0",
+        "receipt_sha256": "e074b50830505a2f4e99d828ec897ce4ee75a472cf358089e17d4b73b972d2ba"
+      }
+    ],
     "evaluation": []
   },
-  "generated_at": "2026-10-16T10:54:41.046669+00:00",
+  "generated_at": "2026-10-20T06:59:10.538847+00:00",
   "methods": [
     {
       "budget_frequency_counts": {
@@ -2747,30 +2843,11 @@
   "progress": {
     "collection": {
       "complete": false,
-      "completed_successes": 0,
-      "completed_task_failures": 0,
+      "completed_successes": 15,
+      "completed_task_failures": 4,
       "invalid": [],
-      "missing": 56,
+      "missing": 37,
       "missing_case_ids": [
-        "collect:libero_spatial:0:init0",
-        "collect:libero_spatial:0:init1",
-        "collect:libero_spatial:1:init0",
-        "collect:libero_spatial:1:init1",
-        "collect:libero_spatial:2:init0",
-        "collect:libero_spatial:2:init1",
-        "collect:libero_spatial:3:init0",
-        "collect:libero_spatial:3:init1",
-        "collect:libero_spatial:4:init0",
-        "collect:libero_spatial:4:init1",
-        "collect:libero_spatial:5:init0",
-        "collect:libero_spatial:5:init1",
-        "collect:libero_spatial:6:init0",
-        "collect:libero_spatial:6:init1",
-        "collect:libero_object:0:init0",
-        "collect:libero_object:0:init1",
-        "collect:libero_object:1:init0",
-        "collect:libero_object:1:init1",
-        "collect:libero_object:2:init0",
         "collect:libero_object:2:init1",
         "collect:libero_object:3:init0",
         "collect:libero_object:3:init1",
@@ -2811,7 +2888,7 @@
       ],
       "planned": 56,
       "unexpected_directories": [],
-      "verified_complete": 0
+      "verified_complete": 19
     },
     "evaluation": {
       "complete": false,
