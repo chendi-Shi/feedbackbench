@@ -1,0 +1,127 @@
+{
+  "campaign_fingerprint": "f89f0052419dd56caef5603973362d5c2f26e48eaad920e47c80e9359c087f17",
+  "case": {
+    "case_id": "eval:libero_object:9:init43:no_probe_seed_1",
+    "duplicate_group": "f5a72ec89af46c90ff5cf74ffbfa071abe72fd0395f6b3d89f1d8c62f315d21d",
+    "initial_state_id": 43,
+    "method_id": "no_probe_seed_1",
+    "split": "test",
+    "suite": "libero_object",
+    "task_id": 9,
+    "task_key": "pick_up_the_orange_juice_and_place_it_in_the_basket",
+    "task_uid": "libero_object:9"
+  },
+  "case_id": "eval:libero_object:9:init43:no_probe_seed_1",
+  "checkpoint_id": "6721902bc4d61e50a3bfdb11dfb4cb626f05d102",
+  "method": {
+    "budget": null,
+    "family": "learned",
+    "feature_mode": "no_probe",
+    "method_id": "no_probe_seed_1",
+    "seed": 1
+  },
+  "official_task_key": "pick_up_the_orange_juice_and_place_it_in_the_basket",
+  "phase": "evaluation",
+  "policy": {
+    "camera_flip": "performed once by simulator, never by this adapter",
+    "chunk_length": 50,
+    "conditioning": "language",
+    "device": "cpu",
+    "dtype": "float32",
+    "load_seconds": 2.240368000115268,
+    "loading_audit": {
+      "checkpoint_state_tensors": 788,
+      "exact_state_keys_and_shapes": true,
+      "nonpersistent_buffers": {
+        "model.vlm_with_expert.lm_expert.rotary_emb.inv_freq": {
+          "matches_closed_form": true,
+          "sha256": "4dcfda84ce763abe24a92bbf6718c1b03753068a39a15aaf8ae5ac2fdc6ca266",
+          "shape": [
+            32
+          ]
+        },
+        "model.vlm_with_expert.lm_expert.rotary_emb.original_inv_freq": {
+          "matches_closed_form": true,
+          "sha256": "4dcfda84ce763abe24a92bbf6718c1b03753068a39a15aaf8ae5ac2fdc6ca266",
+          "shape": [
+            32
+          ]
+        },
+        "model.vlm_with_expert.vlm.model.text_model.rotary_emb.inv_freq": {
+          "matches_closed_form": true,
+          "sha256": "4dcfda84ce763abe24a92bbf6718c1b03753068a39a15aaf8ae5ac2fdc6ca266",
+          "shape": [
+            32
+          ]
+        },
+        "model.vlm_with_expert.vlm.model.text_model.rotary_emb.original_inv_freq": {
+          "matches_closed_form": true,
+          "sha256": "4dcfda84ce763abe24a92bbf6718c1b03753068a39a15aaf8ae5ac2fdc6ca266",
+          "shape": [
+            32
+          ]
+        }
+      }
+    },
+    "model_sha256": "71d9563c8295284acba8fc2d5c19de000d6fe9ba58a406832af7ef3d221ed52f",
+    "n_action_steps": 1,
+    "n_observation_steps": 1,
+    "name": "smolvla",
+    "num_steps": 10,
+    "parameters": 604934176,
+    "revision": "6721902bc4d61e50a3bfdb11dfb4cb626f05d102",
+    "scheduled_chunks_use_temporal_ensemble": false,
+    "skipped_discarded_random_initialization": true,
+    "strict_checkpoint_load": true,
+    "temporal_ensemble_applies_to": "upstream select_action only",
+    "temporal_ensemble_coeff": null
+  },
+  "simulator": {
+    "control_hz": 20,
+    "control_mode": "relative",
+    "hard_reset": true,
+    "horizon": 280,
+    "image_size": 360,
+    "images_flipped_hw_once": true,
+    "object_state_exposed_to_policy": false,
+    "policy_state": "eef_xyz + eef_axis_angle + gripper_qpos (8 values)",
+    "settle_steps": 10,
+    "suite": "libero_object",
+    "task": "pick up the orange juice and place it in the basket",
+    "task_id": 9
+  },
+  "split": "test",
+  "started_at": "2026-10-20T22:49:48.098549+00:00",
+  "startup_memory": {
+    "after": {
+      "private_bytes": 3791896576,
+      "rss_bytes": 999424,
+      "system_available_bytes": 4481617920
+    },
+    "before": {
+      "private_bytes": 3791896576,
+      "rss_bytes": 3092791296,
+      "system_available_bytes": 4326895616
+    },
+    "calls": 1,
+    "created": 1792536556.263743,
+    "gc_objects_collected": 33,
+    "limitation": "working-set eviction, not tensor deallocation or a steady-state memory guarantee",
+    "phase": "once after model load, before simulator construction and first inference",
+    "pid": 32024,
+    "scope": "calling worker only via GetCurrentProcess; no other process handle",
+    "seconds": 0.6322593999793753,
+    "success": true,
+    "supported": true,
+    "winerror": 0
+  },
+  "task_key": "libero_object:9",
+  "trained_binding": {
+    "calibration_budget_probabilities": null,
+    "manifest_sha256": "81895ab8d6df52008669235af5e438260015628c27e1d7ba031680508315c658",
+    "selector": {
+      "path": "trained/no_probe_seed1/selector.pt",
+      "sha256": "6ee0f51f88857aab9fc7cc5f2a92c72c8fb0676667e6e2825c1b6b05d93074f8"
+    }
+  }
+}

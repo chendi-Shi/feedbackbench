@@ -2,6 +2,8 @@
 
 The authorized work window ends at **2026-10-30 06:08 UTC / 14:08 China time**. This is a maximum deadline, not a promised positive result. Use only the existing local CPU computer, one experiment worker at a time, with no cloud spending and no interruption of other projects.
 
+**Completed on 2026-10-21 at 19:38 UTC (2026-10-22 03:38 China time).** All 56 collection episodes, nine frozen controllers and 360 evaluation episodes are complete. The supervisor and all recorded owned child identities have exited. Do not resume this completed campaign. Use the frozen reporting-r1 entry point below to verify existing evidence; the [final results](LEARNED_COMPUTE_RESULTS.md) explain the negative adaptive-budget finding and statistical limits. Older startup, recovery and reporting-amendment evidence remains separate and unchanged.
+
 The research component is a trained inference-budget controller over a frozen, pretrained SmolVLA. It predicts whether 2 or 4 Euler steps deviate from a 10-step reference, and chooses 2, 4 or 10 steps. The 10-step output is not ground-truth correctness. Only held-out closed-loop task success and measured cost can establish a useful result. The controller does not update the backbone or provide a safety guarantee.
 
 Held-out tasks are held out from this new controller's fitting, tuning and calibration. This does not establish that the foundation policy's original pretraining never used those tasks or initial states.

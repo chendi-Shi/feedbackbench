@@ -1,0 +1,127 @@
+{
+  "campaign_fingerprint": "f89f0052419dd56caef5603973362d5c2f26e48eaad920e47c80e9359c087f17",
+  "case": {
+    "case_id": "eval:libero_goal:9:init43:full_seed_0",
+    "duplicate_group": "310fb49f15f8894a34d48ec0a294c00466adfcdd4e3c3e35222493688d885de5",
+    "initial_state_id": 43,
+    "method_id": "full_seed_0",
+    "split": "test",
+    "suite": "libero_goal",
+    "task_id": 9,
+    "task_key": "put_the_wine_bottle_on_the_rack",
+    "task_uid": "libero_goal:9"
+  },
+  "case_id": "eval:libero_goal:9:init43:full_seed_0",
+  "checkpoint_id": "6721902bc4d61e50a3bfdb11dfb4cb626f05d102",
+  "method": {
+    "budget": null,
+    "family": "learned",
+    "feature_mode": "full",
+    "method_id": "full_seed_0",
+    "seed": 0
+  },
+  "official_task_key": "put_the_wine_bottle_on_the_rack",
+  "phase": "evaluation",
+  "policy": {
+    "camera_flip": "performed once by simulator, never by this adapter",
+    "chunk_length": 50,
+    "conditioning": "language",
+    "device": "cpu",
+    "dtype": "float32",
+    "load_seconds": 1.6689839001046494,
+    "loading_audit": {
+      "checkpoint_state_tensors": 788,
+      "exact_state_keys_and_shapes": true,
+      "nonpersistent_buffers": {
+        "model.vlm_with_expert.lm_expert.rotary_emb.inv_freq": {
+          "matches_closed_form": true,
+          "sha256": "4dcfda84ce763abe24a92bbf6718c1b03753068a39a15aaf8ae5ac2fdc6ca266",
+          "shape": [
+            32
+          ]
+        },
+        "model.vlm_with_expert.lm_expert.rotary_emb.original_inv_freq": {
+          "matches_closed_form": true,
+          "sha256": "4dcfda84ce763abe24a92bbf6718c1b03753068a39a15aaf8ae5ac2fdc6ca266",
+          "shape": [
+            32
+          ]
+        },
+        "model.vlm_with_expert.vlm.model.text_model.rotary_emb.inv_freq": {
+          "matches_closed_form": true,
+          "sha256": "4dcfda84ce763abe24a92bbf6718c1b03753068a39a15aaf8ae5ac2fdc6ca266",
+          "shape": [
+            32
+          ]
+        },
+        "model.vlm_with_expert.vlm.model.text_model.rotary_emb.original_inv_freq": {
+          "matches_closed_form": true,
+          "sha256": "4dcfda84ce763abe24a92bbf6718c1b03753068a39a15aaf8ae5ac2fdc6ca266",
+          "shape": [
+            32
+          ]
+        }
+      }
+    },
+    "model_sha256": "71d9563c8295284acba8fc2d5c19de000d6fe9ba58a406832af7ef3d221ed52f",
+    "n_action_steps": 1,
+    "n_observation_steps": 1,
+    "name": "smolvla",
+    "num_steps": 10,
+    "parameters": 604934176,
+    "revision": "6721902bc4d61e50a3bfdb11dfb4cb626f05d102",
+    "scheduled_chunks_use_temporal_ensemble": false,
+    "skipped_discarded_random_initialization": true,
+    "strict_checkpoint_load": true,
+    "temporal_ensemble_applies_to": "upstream select_action only",
+    "temporal_ensemble_coeff": null
+  },
+  "simulator": {
+    "control_hz": 20,
+    "control_mode": "relative",
+    "hard_reset": true,
+    "horizon": 300,
+    "image_size": 360,
+    "images_flipped_hw_once": true,
+    "object_state_exposed_to_policy": false,
+    "policy_state": "eef_xyz + eef_axis_angle + gripper_qpos (8 values)",
+    "settle_steps": 10,
+    "suite": "libero_goal",
+    "task": "put the wine bottle on the rack",
+    "task_id": 9
+  },
+  "split": "test",
+  "started_at": "2026-10-21T04:26:13.268659+00:00",
+  "startup_memory": {
+    "after": {
+      "private_bytes": 3791802368,
+      "rss_bytes": 966656,
+      "system_available_bytes": 4417744896
+    },
+    "before": {
+      "private_bytes": 3791802368,
+      "rss_bytes": 3092717568,
+      "system_available_bytes": 4346478592
+    },
+    "calls": 1,
+    "created": 1792556742.2280538,
+    "gc_objects_collected": 33,
+    "limitation": "working-set eviction, not tensor deallocation or a steady-state memory guarantee",
+    "phase": "once after model load, before simulator construction and first inference",
+    "pid": 24772,
+    "scope": "calling worker only via GetCurrentProcess; no other process handle",
+    "seconds": 0.4212572999531403,
+    "success": true,
+    "supported": true,
+    "winerror": 0
+  },
+  "task_key": "libero_goal:9",
+  "trained_binding": {
+    "calibration_budget_probabilities": null,
+    "manifest_sha256": "81895ab8d6df52008669235af5e438260015628c27e1d7ba031680508315c658",
+    "selector": {
+      "path": "trained/full_seed0/selector.pt",
+      "sha256": "af8f2fc6cf6dcea8d65240068bea38698d671bce3f3436180975f512d796722b"
+    }
+  }
+}

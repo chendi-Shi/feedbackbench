@@ -1,0 +1,61 @@
+{
+  "actual_nfe": 4,
+  "budget": 4,
+  "context_timings": {
+    "input_preparation_seconds": 0.03193719999399036,
+    "key_features_seconds": 0.0021382999839261174,
+    "prepare_seconds": 8.501355700020213,
+    "vision_prefix_seconds": 7.029977499973029,
+    "vlm_seconds": 1.437274800031446
+  },
+  "controller": {
+    "budget": 4,
+    "budget_probabilities": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "calibration_budget_probabilities": [
+      0.0,
+      1.0000000000000004,
+      0.0
+    ],
+    "predictions": [
+      [
+        0.12007469829985763,
+        0.23086420036878016,
+        0.041485754676118654
+      ],
+      [
+        0.05969676340754764,
+        0.050921418880328397,
+        0.037390550598894776
+      ]
+    ],
+    "seed": 0,
+    "upper_errors": [
+      [
+        0.24386752450754176,
+        0.3546570265764643,
+        0.28907140709148693
+      ],
+      [
+        0.18348958961523176,
+        0.17471424508801253,
+        0.284976203014263
+      ]
+    ],
+    "variant": "full"
+  },
+  "controller_seconds": 0.0006597000174224377,
+  "decision": 7,
+  "decision_wall_seconds": 9.915328399976715,
+  "executed_steps": 10,
+  "feature_seconds": 0.002307899994775653,
+  "noise_seed": 2008973747,
+  "probe_timings": {
+    "action_head_seconds": 0.39986730000237003,
+    "probe_seconds": 0.4014403000473976
+  },
+  "start_step": 70
+}

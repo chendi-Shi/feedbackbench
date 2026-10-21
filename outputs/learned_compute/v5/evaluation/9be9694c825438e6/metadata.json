@@ -1,0 +1,127 @@
+{
+  "campaign_fingerprint": "f89f0052419dd56caef5603973362d5c2f26e48eaad920e47c80e9359c087f17",
+  "case": {
+    "case_id": "eval:libero_spatial:8:init41:full_seed_2",
+    "duplicate_group": "70dd7c6751164f3a1a8547d839364640e5aceb3867e49d481627b83bb0dd2f04",
+    "initial_state_id": 41,
+    "method_id": "full_seed_2",
+    "split": "test",
+    "suite": "libero_spatial",
+    "task_id": 8,
+    "task_key": "pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate",
+    "task_uid": "libero_spatial:8"
+  },
+  "case_id": "eval:libero_spatial:8:init41:full_seed_2",
+  "checkpoint_id": "6721902bc4d61e50a3bfdb11dfb4cb626f05d102",
+  "method": {
+    "budget": null,
+    "family": "learned",
+    "feature_mode": "full",
+    "method_id": "full_seed_2",
+    "seed": 2
+  },
+  "official_task_key": "pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate",
+  "phase": "evaluation",
+  "policy": {
+    "camera_flip": "performed once by simulator, never by this adapter",
+    "chunk_length": 50,
+    "conditioning": "language",
+    "device": "cpu",
+    "dtype": "float32",
+    "load_seconds": 2.265762299997732,
+    "loading_audit": {
+      "checkpoint_state_tensors": 788,
+      "exact_state_keys_and_shapes": true,
+      "nonpersistent_buffers": {
+        "model.vlm_with_expert.lm_expert.rotary_emb.inv_freq": {
+          "matches_closed_form": true,
+          "sha256": "4dcfda84ce763abe24a92bbf6718c1b03753068a39a15aaf8ae5ac2fdc6ca266",
+          "shape": [
+            32
+          ]
+        },
+        "model.vlm_with_expert.lm_expert.rotary_emb.original_inv_freq": {
+          "matches_closed_form": true,
+          "sha256": "4dcfda84ce763abe24a92bbf6718c1b03753068a39a15aaf8ae5ac2fdc6ca266",
+          "shape": [
+            32
+          ]
+        },
+        "model.vlm_with_expert.vlm.model.text_model.rotary_emb.inv_freq": {
+          "matches_closed_form": true,
+          "sha256": "4dcfda84ce763abe24a92bbf6718c1b03753068a39a15aaf8ae5ac2fdc6ca266",
+          "shape": [
+            32
+          ]
+        },
+        "model.vlm_with_expert.vlm.model.text_model.rotary_emb.original_inv_freq": {
+          "matches_closed_form": true,
+          "sha256": "4dcfda84ce763abe24a92bbf6718c1b03753068a39a15aaf8ae5ac2fdc6ca266",
+          "shape": [
+            32
+          ]
+        }
+      }
+    },
+    "model_sha256": "71d9563c8295284acba8fc2d5c19de000d6fe9ba58a406832af7ef3d221ed52f",
+    "n_action_steps": 1,
+    "n_observation_steps": 1,
+    "name": "smolvla",
+    "num_steps": 10,
+    "parameters": 604934176,
+    "revision": "6721902bc4d61e50a3bfdb11dfb4cb626f05d102",
+    "scheduled_chunks_use_temporal_ensemble": false,
+    "skipped_discarded_random_initialization": true,
+    "strict_checkpoint_load": true,
+    "temporal_ensemble_applies_to": "upstream select_action only",
+    "temporal_ensemble_coeff": null
+  },
+  "simulator": {
+    "control_hz": 20,
+    "control_mode": "relative",
+    "hard_reset": true,
+    "horizon": 280,
+    "image_size": 360,
+    "images_flipped_hw_once": true,
+    "object_state_exposed_to_policy": false,
+    "policy_state": "eef_xyz + eef_axis_angle + gripper_qpos (8 values)",
+    "settle_steps": 10,
+    "suite": "libero_spatial",
+    "task": "pick up the black bowl next to the plate and place it on the plate",
+    "task_id": 8
+  },
+  "split": "test",
+  "started_at": "2026-10-20T12:19:04.700272+00:00",
+  "startup_memory": {
+    "after": {
+      "private_bytes": 3791212544,
+      "rss_bytes": 1003520,
+      "system_available_bytes": 4797419520
+    },
+    "before": {
+      "private_bytes": 3791212544,
+      "rss_bytes": 3092140032,
+      "system_available_bytes": 4719558656
+    },
+    "calls": 1,
+    "created": 1792498713.5142188,
+    "gc_objects_collected": 33,
+    "limitation": "working-set eviction, not tensor deallocation or a steady-state memory guarantee",
+    "phase": "once after model load, before simulator construction and first inference",
+    "pid": 19888,
+    "scope": "calling worker only via GetCurrentProcess; no other process handle",
+    "seconds": 0.7050540000200272,
+    "success": true,
+    "supported": true,
+    "winerror": 0
+  },
+  "task_key": "libero_spatial:8",
+  "trained_binding": {
+    "calibration_budget_probabilities": null,
+    "manifest_sha256": "81895ab8d6df52008669235af5e438260015628c27e1d7ba031680508315c658",
+    "selector": {
+      "path": "trained/full_seed2/selector.pt",
+      "sha256": "4112b86eb12b5bd37c45be8a2eb30f228f37d74eb4da3f5e4e6526d1712ba3b3"
+    }
+  }
+}
