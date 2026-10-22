@@ -1,0 +1,32 @@
+{
+  "byte_sizes": {
+    "docs/ACTION_DEVELOPMENT_REPRODUCTION.md": 9063,
+    "scripts/evaluate_action_development_public.py": 12390,
+    "scripts/reproduce_action_development.py": 20336,
+    "scripts/validate_action_demo_alignment_r2.py": 17020,
+    "tests/test_reproduce_action_development.py": 15087
+  },
+  "created_at": "2026-10-22T11:13:57.050899+00:00",
+  "executed_in_archived_development_run": false,
+  "files": {
+    "docs/ACTION_DEVELOPMENT_REPRODUCTION.md": "90246f277700bfca5e1111cf7bccf1e8d0e4d67d753806ba3b9ea0c511793d62",
+    "scripts/evaluate_action_development_public.py": "53ba0e5465604ca419b012b5ea122d050b166d863841fbc4a70cfa50d3219431",
+    "scripts/reproduce_action_development.py": "38070ea5f1ca40fab7047dadd0794fbdb50f7dfb5be8f6fdfbdee0b5660eb001",
+    "scripts/validate_action_demo_alignment_r2.py": "be836f84507b66a0b7ea72787c8980e9ffefe8600d95bd589fabd71db7398edf",
+    "tests/test_reproduce_action_development.py": "2fa7a85e06fdebd9a1a2b236f76c28e0479d4bf9e4ddd3f1577d4fe62972718c"
+  },
+  "finalized_at": "2026-10-22T11:19:53.538195+00:00",
+  "modifies_existing_frozen_protocols": false,
+  "original_deadline_utc": "2026-10-30T06:08:00Z",
+  "postdates_formal_protocol_freeze": true,
+  "review": "Independent read-only review; direct-worker lock bypass corrected, with regressions. Existing frozen sources unchanged.",
+  "schema": "feedbackbench.reproduction_source_release.v1",
+  "source_version": "action_development_public_v1",
+  "validation": {
+    "command": "python -m pytest tests/test_reproduce_action_development.py -q",
+    "junit_sha256": "d1aeb45e74242b7d41a25917936de8064cb28c7980f32885fd4fe233d9321efd",
+    "kind": "small local files and mocked supervision; no Torch/model/simulator/network execution",
+    "result": "passed",
+    "tests": 28
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "claims": {
+    "all_seed_results_retained": true,
+    "real_robot": false,
+    "same_domain_adaptation": true,
+    "training_loss_is_task_success": false,
+    "unseen_pretraining_tasks": false
+  },
+  "contrasts": {
+    "lora_minus_frozen_brightness075": {
+      "estimate": null,
+      "status": "pending_complete_pairs"
+    },
+    "lora_minus_frozen_clean": {
+      "estimate": null,
+      "status": "pending_complete_pairs"
+    },
+    "lora_minus_output_head_brightness075": {
+      "estimate": null,
+      "status": "pending_complete_pairs"
+    },
+    "lora_minus_output_head_clean": {
+      "estimate": null,
+      "status": "pending_complete_pairs"
+    }
+  },
+  "evaluation_completed": 0,
+  "evaluation_planned": 0,
+  "generated_at": "2026-10-22T10:31:26.642986+00:00",
+  "limitations": [
+    "Four fixed tasks and five paired initial states per task limit generalization and precision.",
+    "Foundation-model pretraining overlap with LIBERO is unknown.",
+    "Brightness stress is one controlled visual condition, not general robustness.",
+    "All training uses this CPU computer; the visual-language backbone stays frozen.",
+    "No efficacy claim is established by a partial run or a decreasing training loss."
+  ],
+  "missing_cases": [],
+  "protocol_sha256": "898defe26c537af63f5aa122423a9aee146d6708b5324669ba3561afafa76357",
+  "rates": [],
+  "schema": "feedbackbench.action_report.v1",
+  "sealed_receipts": [],
+  "status": "complete",
+  "trained_manifest_sha256": "5ba72a559f308a019807c0e58bc4b5b00b691614cd51a7664e06f08977e1beef",
+  "training_completed": 2,
+  "training_planned": 2
+}
