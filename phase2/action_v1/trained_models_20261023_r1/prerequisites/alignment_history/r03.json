@@ -1,0 +1,1390 @@
+{
+  "action_offset": 1,
+  "coverage": "single_source",
+  "diagnostic_revision": 3,
+  "dynamics_replay_verified": false,
+  "prior_observation_receipt": {
+    "path": "<PROJECT>\\.runtime\\action_alignment_spatial_v2.json",
+    "sha256": "7b289507c50c39d178bc60ad60b8a5f7884008725ddf8f3227c8c103aa43b77a",
+    "status": "needs_attention"
+  },
+  "publication_redactions": {
+    "fields": [
+      "/finished_unix",
+      "/owner_create_time",
+      "/owner_pid",
+      "/prior_observation_receipt/path",
+      "/records/0/replay/asset_relocations/0/resolved",
+      "/records/0/replay/asset_relocations/1/resolved",
+      "/records/0/replay/asset_relocations/2/resolved",
+      "/records/0/replay/asset_relocations/3/resolved",
+      "/records/0/replay/asset_relocations/4/resolved",
+      "/records/0/replay/asset_relocations/5/resolved",
+      "/records/0/replay/asset_relocations/6/resolved",
+      "/records/0/replay/asset_relocations/7/resolved",
+      "/records/0/replay/asset_relocations/8/resolved",
+      "/records/0/replay/asset_relocations/9/resolved",
+      "/records/0/replay/asset_relocations/10/resolved",
+      "/records/0/replay/asset_relocations/11/resolved",
+      "/records/0/replay/asset_relocations/12/resolved",
+      "/records/0/replay/asset_relocations/13/resolved",
+      "/records/0/replay/asset_relocations/14/resolved",
+      "/records/0/replay/asset_relocations/15/resolved",
+      "/records/0/replay/asset_relocations/16/resolved",
+      "/records/0/replay/asset_relocations/17/resolved",
+      "/records/0/replay/asset_relocations/18/resolved",
+      "/records/0/replay/asset_relocations/19/resolved",
+      "/records/0/replay/asset_relocations/20/resolved",
+      "/records/0/replay/asset_relocations/21/resolved",
+      "/records/0/replay/asset_relocations/22/resolved",
+      "/records/0/replay/asset_relocations/23/resolved",
+      "/records/0/replay/asset_relocations/24/resolved",
+      "/records/0/replay/asset_relocations/25/resolved",
+      "/records/0/replay/asset_relocations/26/resolved",
+      "/records/0/replay/asset_relocations/27/resolved",
+      "/records/0/replay/asset_relocations/28/resolved",
+      "/records/0/replay/asset_relocations/29/resolved",
+      "/records/0/replay/asset_relocations/30/resolved",
+      "/records/0/replay/asset_relocations/31/resolved",
+      "/records/0/replay/asset_relocations/32/resolved",
+      "/records/0/replay/asset_relocations/33/resolved",
+      "/records/0/replay/asset_relocations/34/resolved",
+      "/records/0/replay/asset_relocations/35/resolved",
+      "/records/0/replay/asset_relocations/36/resolved",
+      "/records/0/replay/asset_relocations/37/resolved",
+      "/records/0/replay/asset_relocations/38/resolved",
+      "/records/0/replay/asset_relocations/39/resolved",
+      "/records/0/replay/asset_relocations/40/resolved",
+      "/records/0/replay/asset_relocations/41/resolved",
+      "/records/0/replay/asset_relocations/42/resolved",
+      "/records/0/replay/asset_relocations/43/resolved",
+      "/records/0/replay/asset_relocations/44/resolved",
+      "/records/0/replay/asset_relocations/45/resolved",
+      "/records/0/replay/asset_relocations/46/resolved",
+      "/records/0/replay/asset_relocations/47/resolved",
+      "/records/0/replay/asset_relocations/48/resolved",
+      "/records/0/replay/asset_relocations/49/resolved",
+      "/records/0/replay/asset_relocations/50/resolved",
+      "/records/0/replay/asset_relocations/51/resolved",
+      "/records/0/replay/asset_relocations/52/resolved",
+      "/records/0/replay/asset_relocations/53/resolved",
+      "/records/0/replay/asset_relocations/54/resolved",
+      "/records/0/replay/asset_relocations/55/resolved",
+      "/records/0/replay/asset_relocations/56/resolved",
+      "/records/0/replay/asset_relocations/57/resolved",
+      "/records/0/replay/asset_relocations/58/resolved",
+      "/records/0/replay/asset_relocations/59/resolved",
+      "/records/0/replay/asset_relocations/60/resolved",
+      "/records/0/replay/asset_relocations/61/resolved",
+      "/records/0/replay/asset_relocations/62/resolved",
+      "/records/0/replay/asset_relocations/63/resolved",
+      "/records/0/replay/asset_relocations/64/resolved",
+      "/records/0/replay/asset_relocations/65/resolved",
+      "/records/0/replay/asset_relocations/66/resolved",
+      "/records/0/replay/asset_relocations/67/resolved",
+      "/records/0/replay/asset_relocations/68/resolved",
+      "/records/0/replay/asset_relocations/69/resolved",
+      "/records/0/replay/asset_relocations/70/resolved",
+      "/records/0/replay/asset_relocations/71/resolved",
+      "/records/0/replay/asset_relocations/72/resolved",
+      "/records/0/replay/asset_relocations/73/resolved",
+      "/records/0/replay/asset_relocations/74/resolved",
+      "/records/0/replay/asset_relocations/75/resolved",
+      "/records/0/replay/asset_relocations/76/resolved",
+      "/records/0/replay/asset_relocations/77/resolved",
+      "/records/0/replay/asset_relocations/78/resolved",
+      "/records/0/replay/asset_relocations/79/resolved",
+      "/records/0/replay/asset_relocations/80/resolved",
+      "/records/0/replay/asset_relocations/81/resolved",
+      "/records/0/replay/asset_relocations/82/resolved",
+      "/records/0/replay/asset_relocations/83/resolved",
+      "/records/0/replay/asset_relocations/84/resolved",
+      "/records/0/replay/asset_relocations/85/resolved",
+      "/records/0/replay/asset_relocations/86/resolved",
+      "/records/0/replay/asset_relocations/87/resolved",
+      "/records/0/replay/asset_relocations/88/resolved",
+      "/started_unix",
+      "/v1_receipt/path"
+    ],
+    "policy": "Local paths and process/timestamp identifiers only; numeric diagnostics and failed statuses preserved."
+  },
+  "records": [
+    {
+      "action_offset": 1,
+      "bytes": 1467540242,
+      "dataset_tag": "libero-v1",
+      "demonstrations": [
+        {
+          "action_offset": 1,
+          "checked_rows": 387,
+          "episode_key": "demo_0",
+          "frame_count": 388,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.04635181463032012,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999997229
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 335,
+          "episode_key": "demo_1",
+          "frame_count": 336,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.0507710495106779,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999997229
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 254,
+          "episode_key": "demo_2",
+          "frame_count": 255,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.04401855841337987,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 270,
+          "episode_key": "demo_3",
+          "frame_count": 271,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.04321447016795332,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 307,
+          "episode_key": "demo_4",
+          "frame_count": 308,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.04736485836198501,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 316,
+          "episode_key": "demo_5",
+          "frame_count": 317,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.04152927629139169,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999997229
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 260,
+          "episode_key": "demo_6",
+          "frame_count": 261,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.04242526308886818,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 311,
+          "episode_key": "demo_7",
+          "frame_count": 312,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.05328962150347841,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 295,
+          "episode_key": "demo_8",
+          "frame_count": 296,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.04029075935810944,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 229,
+          "episode_key": "demo_9",
+          "frame_count": 230,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.041328392764610644,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 285,
+          "episode_key": "demo_10",
+          "frame_count": 286,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.04280422359184488,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 249,
+          "episode_key": "demo_11",
+          "frame_count": 250,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.042774903884359006,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 258,
+          "episode_key": "demo_12",
+          "frame_count": 259,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.058349955588849145,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 287,
+          "episode_key": "demo_13",
+          "frame_count": 288,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.04352117033095393,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 284,
+          "episode_key": "demo_14",
+          "frame_count": 285,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.047917945189425826,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 238,
+          "episode_key": "demo_15",
+          "frame_count": 239,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.04221442412011678,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 273,
+          "episode_key": "demo_16",
+          "frame_count": 274,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.044651295362423404,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 285,
+          "episode_key": "demo_17",
+          "frame_count": 286,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.04752617421158156,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 281,
+          "episode_key": "demo_18",
+          "frame_count": 282,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.05426508965513799,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 303,
+          "episode_key": "demo_19",
+          "frame_count": 304,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.048023700587262574,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 338,
+          "episode_key": "demo_20",
+          "frame_count": 339,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.045653923722092316,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999997229
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 278,
+          "episode_key": "demo_21",
+          "frame_count": 279,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.04468960738909278,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 277,
+          "episode_key": "demo_22",
+          "frame_count": 278,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.05020174229004315,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 244,
+          "episode_key": "demo_23",
+          "frame_count": 245,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.044648724739828616,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 291,
+          "episode_key": "demo_24",
+          "frame_count": 292,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.04711453603308602,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 329,
+          "episode_key": "demo_25",
+          "frame_count": 330,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.07236909068872321,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999997229
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 299,
+          "episode_key": "demo_26",
+          "frame_count": 300,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.038557566112103814,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 263,
+          "episode_key": "demo_27",
+          "frame_count": 264,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.0456071805925958,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 299,
+          "episode_key": "demo_28",
+          "frame_count": 300,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.04247691887820482,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 254,
+          "episode_key": "demo_29",
+          "frame_count": 255,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.050305339890027057,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 283,
+          "episode_key": "demo_30",
+          "frame_count": 284,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.04050749921991903,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 279,
+          "episode_key": "demo_31",
+          "frame_count": 280,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.09686628990013443,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 339,
+          "episode_key": "demo_32",
+          "frame_count": 340,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.0415506638175378,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999997229
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 367,
+          "episode_key": "demo_33",
+          "frame_count": 368,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.08461684882274678,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999997229
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 273,
+          "episode_key": "demo_34",
+          "frame_count": 274,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.04347186638852257,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 275,
+          "episode_key": "demo_35",
+          "frame_count": 276,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.056766427133087216,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 344,
+          "episode_key": "demo_36",
+          "frame_count": 345,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.05302451857441426,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999997229
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 266,
+          "episode_key": "demo_37",
+          "frame_count": 267,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.041268642479357354,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 276,
+          "episode_key": "demo_38",
+          "frame_count": 277,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.06850423553117801,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 366,
+          "episode_key": "demo_39",
+          "frame_count": 367,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.05245556696817699,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999997229
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 264,
+          "episode_key": "demo_40",
+          "frame_count": 265,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.07055404204180088,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 292,
+          "episode_key": "demo_41",
+          "frame_count": 293,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.0558409285575463,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 296,
+          "episode_key": "demo_42",
+          "frame_count": 297,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.07441187138732276,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 269,
+          "episode_key": "demo_43",
+          "frame_count": 270,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.04798611697931543,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 316,
+          "episode_key": "demo_44",
+          "frame_count": 317,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.04757935676465408,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999997229
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 342,
+          "episode_key": "demo_45",
+          "frame_count": 343,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.05034712453260015,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999997229
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 362,
+          "episode_key": "demo_46",
+          "frame_count": 363,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.04514779523407819,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999997229
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 311,
+          "episode_key": "demo_47",
+          "frame_count": 312,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.054446839690210386,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 274,
+          "episode_key": "demo_48",
+          "frame_count": 275,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.048583323777186216,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        },
+        {
+          "action_offset": 1,
+          "checked_rows": 277,
+          "episode_key": "demo_49",
+          "frame_count": 278,
+          "next_state_max_abs": 0.0,
+          "same_state_max_abs": 0.04322429924184501,
+          "state_time_step_max": 0.0500000000000167,
+          "state_time_step_min": 0.04999999999999449
+        }
+      ],
+      "env_args": {
+        "bddl_file": "chiliocosm/bddl_files/libero_100/LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket.bddl",
+        "env_kwargs": {
+          "bddl_file_name": "chiliocosm/bddl_files/libero_100/LIVING_ROOM_SCENE2_put_both_the_alphabet_soup_and_the_tomato_sauce_in_the_basket.bddl",
+          "camera_depths": false,
+          "camera_heights": 128,
+          "camera_names": [
+            "robot0_eye_in_hand",
+            "agentview"
+          ],
+          "camera_segmentations": null,
+          "camera_widths": 128,
+          "control_freq": 20,
+          "controller_configs": {
+            "control_delta": true,
+            "damping_ratio": 1,
+            "damping_ratio_limits": [
+              0,
+              10
+            ],
+            "impedance_mode": "fixed",
+            "input_max": 1,
+            "input_min": -1,
+            "interpolation": null,
+            "kp": 150,
+            "kp_limits": [
+              0,
+              300
+            ],
+            "orientation_limits": null,
+            "output_max": [
+              0.05,
+              0.05,
+              0.05,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "output_min": [
+              -0.05,
+              -0.05,
+              -0.05,
+              -0.5,
+              -0.5,
+              -0.5
+            ],
+            "position_limits": null,
+            "ramp_ratio": 0.2,
+            "type": "OSC_POSE",
+            "uncouple_pos_ori": true
+          },
+          "has_offscreen_renderer": true,
+          "has_renderer": false,
+          "ignore_done": true,
+          "reward_shaping": true,
+          "robots": [
+            "Panda"
+          ],
+          "use_camera_obs": true
+        },
+        "env_name": "Libero_Living_Room_Tabletop_Manipulation",
+        "problem_name": "libero_living_room_tabletop_manipulation",
+        "type": 1
+      },
+      "image_convention": "opengl",
+      "path": "data/action_adaptation/study_v1/libero_10.hdf5",
+      "replay": {
+        "asset_relocations": [
+          {
+            "original": "/home/yifengz/workspace/libero-dev/chiliocosm/assets/scenes/../textures/seamless_wood_planks_floor.png",
+            "resolved": "<PROJECT>\\assets\\libero\\textures\\seamless_wood_planks_floor.png"
+          },
+          {
+            "original": "/home/yifengz/workspace/libero-dev/chiliocosm/assets/scenes/../textures/seamless_wood_planks_floor.png",
+            "resolved": "<PROJECT>\\assets\\libero\\textures\\seamless_wood_planks_floor.png"
+          },
+          {
+            "original": "/home/yifengz/workspace/libero-dev/chiliocosm/assets/scenes/../textures/seamless_wood_planks_floor.png",
+            "resolved": "<PROJECT>\\assets\\libero\\textures\\seamless_wood_planks_floor.png"
+          },
+          {
+            "original": "/home/yifengz/workspace/libero-dev/chiliocosm/assets/scenes/../textures/light-gray-plaster.png",
+            "resolved": "<PROJECT>\\assets\\libero\\textures\\light-gray-plaster.png"
+          },
+          {
+            "original": "/home/yifengz/workspace/libero-dev/chiliocosm/assets/scenes/living_room_table/living_room_table_texture.png",
+            "resolved": "<PROJECT>\\assets\\libero\\scenes\\living_room_table\\living_room_table_texture.png"
+          },
+          {
+            "original": "/home/yifengz/workspace/libero-dev/chiliocosm/assets/scenes/wall_decoration/wall_decoration_texture.png",
+            "resolved": "<PROJECT>\\assets\\libero\\scenes\\wall_decoration\\wall_decoration_texture.png"
+          },
+          {
+            "original": "/home/yifengz/workspace/libero-dev/chiliocosm/assets/scenes/living_room/living_room_wall_unit.png",
+            "resolved": "<PROJECT>\\assets\\libero\\scenes\\living_room\\living_room_wall_unit.png"
+          },
+          {
+            "original": "/home/yifengz/workspace/libero-dev/chiliocosm/assets/stable_hope_objects/alphabet_soup/texture_map.png",
+            "resolved": "<PROJECT>\\assets\\libero\\stable_hope_objects\\alphabet_soup\\texture_map.png"
+          },
+          {
+            "original": "/home/yifengz/workspace/libero-dev/chiliocosm/assets/stable_hope_objects/cream_cheese/texture_map.png",
+            "resolved": "<PROJECT>\\assets\\libero\\stable_hope_objects\\cream_cheese\\texture_map.png"
+          },
+          {
+            "original": "/home/yifengz/workspace/libero-dev/chiliocosm/assets/stable_hope_objects/tomato_sauce/texture_map.png",
+            "resolved": "<PROJECT>\\assets\\libero\\stable_hope_objects\\tomato_sauce\\texture_map.png"
+          },
+          {
+            "original": "/home/yifengz/workspace/libero-dev/chiliocosm/assets/stable_hope_objects/ketchup/texture_map.png",
+            "resolved": "<PROJECT>\\assets\\libero\\stable_hope_objects\\ketchup\\texture_map.png"
+          },
+          {
+            "original": "/home/yifengz/workspace/libero-dev/chiliocosm/assets/stable_hope_objects/orange_juice/texture_map.png",
+            "resolved": "<PROJECT>\\assets\\libero\\stable_hope_objects\\orange_juice\\texture_map.png"
+          },
+          {
+            "original": "/home/yifengz/workspace/libero-dev/chiliocosm/assets/stable_hope_objects/milk/texture_map.png",
+            "resolved": "<PROJECT>\\assets\\libero\\stable_hope_objects\\milk\\texture_map.png"
+          },
+          {
+            "original": "/home/yifengz/workspace/libero-dev/chiliocosm/assets/stable_hope_objects/butter/texture_map.png",
+            "resolved": "<PROJECT>\\assets\\libero\\stable_hope_objects\\butter\\texture_map.png"
+          },
+          {
+            "original": "/home/yifengz/workspace/libero-dev/chiliocosm/assets/stable_scanned_objects/basket/texture.png",
+            "resolved": "<PROJECT>\\assets\\libero\\stable_scanned_objects\\basket\\texture.png"
+          },
+          {
+            "original": "/home/yifengz/workspace/libero-dev/chiliocosm/assets/scenes/living_room_table/visual/living_room_table_vis.msh",
+            "resolved": "<PROJECT>\\assets\\libero\\scenes\\living_room_table\\visual\\living_room_table_vis.msh"
+          },
+          {
+            "original": "/home/yifengz/workspace/libero-dev/chiliocosm/assets/scenes/wall_decoration/visual/wall_decoration_vis.msh",
+            "resolved": "<PROJECT>\\assets\\libero\\scenes\\wall_decoration\\visual\\wall_decoration_vis.msh"
+          },
+          {
+            "original": "/home/yifengz/workspace/libero-dev/chiliocosm/assets/scenes/living_room/visual/living_room_vis.msh",
+            "resolved": "<PROJECT>\\assets\\libero\\scenes\\living_room\\visual\\living_room_vis.msh"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/meshes/link0.stl",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\meshes\\link0.stl"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/meshes/link1.stl",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\meshes\\link1.stl"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/meshes/link2.stl",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\meshes\\link2.stl"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/meshes/link3.stl",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\meshes\\link3.stl"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/meshes/link4.stl",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\meshes\\link4.stl"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/meshes/link5.stl",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\meshes\\link5.stl"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/meshes/link6.stl",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\meshes\\link6.stl"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/meshes/link7.stl",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\meshes\\link7.stl"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_0.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link0_vis\\link0_vis_0.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_1.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link0_vis\\link0_vis_1.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_2.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link0_vis\\link0_vis_2.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_3.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link0_vis\\link0_vis_3.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_4.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link0_vis\\link0_vis_4.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_5.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link0_vis\\link0_vis_5.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_6.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link0_vis\\link0_vis_6.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_7.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link0_vis\\link0_vis_7.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_8.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link0_vis\\link0_vis_8.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_9.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link0_vis\\link0_vis_9.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_10.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link0_vis\\link0_vis_10.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link0_vis/link0_vis_11.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link0_vis\\link0_vis_11.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link1_vis/link1_vis.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link1_vis\\link1_vis.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link2_vis/link2_vis.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link2_vis\\link2_vis.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link3_vis/link3_vis_0.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link3_vis\\link3_vis_0.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link3_vis/link3_vis_1.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link3_vis\\link3_vis_1.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link3_vis/link3_vis_2.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link3_vis\\link3_vis_2.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link3_vis/link3_vis_3.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link3_vis\\link3_vis_3.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link4_vis/link4_vis_0.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link4_vis\\link4_vis_0.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link4_vis/link4_vis_1.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link4_vis\\link4_vis_1.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link4_vis/link4_vis_2.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link4_vis\\link4_vis_2.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link4_vis/link4_vis_3.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link4_vis\\link4_vis_3.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link5_vis/link5_vis_0.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link5_vis\\link5_vis_0.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link5_vis/link5_vis_1.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link5_vis\\link5_vis_1.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link5_vis/link5_vis_2.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link5_vis\\link5_vis_2.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_0.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link6_vis\\link6_vis_0.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_1.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link6_vis\\link6_vis_1.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_2.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link6_vis\\link6_vis_2.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_3.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link6_vis\\link6_vis_3.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_4.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link6_vis\\link6_vis_4.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_5.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link6_vis\\link6_vis_5.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_6.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link6_vis\\link6_vis_6.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_7.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link6_vis\\link6_vis_7.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_8.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link6_vis\\link6_vis_8.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_9.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link6_vis\\link6_vis_9.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_10.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link6_vis\\link6_vis_10.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_11.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link6_vis\\link6_vis_11.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_12.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link6_vis\\link6_vis_12.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_13.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link6_vis\\link6_vis_13.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_14.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link6_vis\\link6_vis_14.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_15.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link6_vis\\link6_vis_15.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link6_vis/link6_vis_16.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link6_vis\\link6_vis_16.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_0.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link7_vis\\link7_vis_0.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_1.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link7_vis\\link7_vis_1.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_2.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link7_vis\\link7_vis_2.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_3.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link7_vis\\link7_vis_3.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_4.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link7_vis\\link7_vis_4.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_5.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link7_vis\\link7_vis_5.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_6.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link7_vis\\link7_vis_6.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/robots/panda/obj_meshes/link7_vis/link7_vis_7.obj",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\robots\\panda\\obj_meshes\\link7_vis\\link7_vis_7.obj"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/grippers/meshes/panda_gripper/hand.stl",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\grippers\\meshes\\panda_gripper\\hand.stl"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/grippers/meshes/panda_gripper/hand_vis.stl",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\grippers\\meshes\\panda_gripper\\hand_vis.stl"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/grippers/meshes/panda_gripper/finger.stl",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\grippers\\meshes\\panda_gripper\\finger.stl"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/grippers/meshes/panda_gripper/finger_vis.stl",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\grippers\\meshes\\panda_gripper\\finger_vis.stl"
+          },
+          {
+            "original": "/home/yifengz/workspace/robosuite-master/robosuite/models/assets/grippers/meshes/panda_gripper/finger_longer.stl",
+            "resolved": "<USER_HOME>\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\FeedbackBench\\env-8e4bc9996564\\Lib\\site-packages\\robosuite\\models\\assets\\grippers\\meshes\\panda_gripper\\finger_longer.stl"
+          },
+          {
+            "original": "/home/yifengz/workspace/libero-dev/chiliocosm/assets/stable_hope_objects/alphabet_soup/visual/textured_vis.msh",
+            "resolved": "<PROJECT>\\assets\\libero\\stable_hope_objects\\alphabet_soup\\visual\\textured_vis.msh"
+          },
+          {
+            "original": "/home/yifengz/workspace/libero-dev/chiliocosm/assets/stable_hope_objects/cream_cheese/visual/cream_cheese_vis.msh",
+            "resolved": "<PROJECT>\\assets\\libero\\stable_hope_objects\\cream_cheese\\visual\\cream_cheese_vis.msh"
+          },
+          {
+            "original": "/home/yifengz/workspace/libero-dev/chiliocosm/assets/stable_hope_objects/tomato_sauce/visual/textured_vis.msh",
+            "resolved": "<PROJECT>\\assets\\libero\\stable_hope_objects\\tomato_sauce\\visual\\textured_vis.msh"
+          },
+          {
+            "original": "/home/yifengz/workspace/libero-dev/chiliocosm/assets/stable_hope_objects/ketchup/visual/textured_vis.msh",
+            "resolved": "<PROJECT>\\assets\\libero\\stable_hope_objects\\ketchup\\visual\\textured_vis.msh"
+          },
+          {
+            "original": "/home/yifengz/workspace/libero-dev/chiliocosm/assets/stable_hope_objects/orange_juice/visual/textured_vis.msh",
+            "resolved": "<PROJECT>\\assets\\libero\\stable_hope_objects\\orange_juice\\visual\\textured_vis.msh"
+          },
+          {
+            "original": "/home/yifengz/workspace/libero-dev/chiliocosm/assets/stable_hope_objects/milk/visual/textured_vis.msh",
+            "resolved": "<PROJECT>\\assets\\libero\\stable_hope_objects\\milk\\visual\\textured_vis.msh"
+          },
+          {
+            "original": "/home/yifengz/workspace/libero-dev/chiliocosm/assets/stable_hope_objects/butter/visual/butter_vis.msh",
+            "resolved": "<PROJECT>\\assets\\libero\\stable_hope_objects\\butter\\visual\\butter_vis.msh"
+          },
+          {
+            "original": "/home/yifengz/workspace/libero-dev/chiliocosm/assets/stable_scanned_objects/basket/visual/basket_vis.msh",
+            "resolved": "<PROJECT>\\assets\\libero\\stable_scanned_objects\\basket\\visual\\basket_vis.msh"
+          }
+        ],
+        "dynamics_limitation": "Original isolated action replay metrics are retained but not a pass claim. PandaGripper.current_action is integrated hidden controller state absent from flattened MuJoCo states; resetting each sample does not restore it.",
+        "dynamics_replay_verified": false,
+        "model_xml_sha256": "cda0159ca5a268da126eb3403175f3ba1d93a6a17120846ac63f34783b223f46",
+        "mujoco_version": "3.3.2",
+        "normalization": "Original checkpoint preprocessor; no new gripper or controller scaling",
+        "pass_requirements": "All 50 demos have exact robot qpos/state mapping and 20Hz row adjacency; recorded-state plus native post-mj_step cache reconstruction passes unchanged EEF/gripper/camera thresholds; training arrays are never altered",
+        "policy_image_operation": "source raw RGB rotated 180 degrees once, as current policy_observation",
+        "relocated_xml_sha256": "b3a6e21798d0b8bd72101382aaa235e343e7e6816323d4561ebb559a6a58437c",
+        "sample_selection": "5 evenly spaced demo_0 rows",
+        "samples": [
+          {
+            "available_ram_bytes": 4623228928,
+            "cameras": {
+              "agentview_image": {
+                "best": "identity",
+                "mae_by_transform": {
+                  "horizontal": 0.15152284502983093,
+                  "identity": 0.007659074384719133,
+                  "rot180": 0.18565961718559265,
+                  "vertical": 0.1762833446264267
+                }
+              },
+              "robot0_eye_in_hand_image": {
+                "best": "identity",
+                "mae_by_transform": {
+                  "horizontal": 0.05101478099822998,
+                  "identity": 0.009180405177175999,
+                  "rot180": 0.0824243500828743,
+                  "vertical": 0.08005043864250183
+                }
+              }
+            },
+            "eef_max_abs": 0.0004360742852388688,
+            "gripper_max_abs": 0.005247481788801533,
+            "next_state_index": 1,
+            "next_state_max_abs": 0.0978486791600663,
+            "recorded_state_reconstruction": {
+              "cache_semantics": {
+                "evidence": "https://github.com/google-deepmind/mujoco/blob/main/doc/computation/index.rst#consistency-in-mjdata",
+                "integrator": "Euler",
+                "operation": "Inverse one fixed physics integration for derived-data cache; restore current qpos without forward",
+                "physics_timestep_seconds": 0.002
+              },
+              "cameras": {
+                "agentview_image": {
+                  "best": "identity",
+                  "mae_by_transform": {
+                    "horizontal": 0.1514667570590973,
+                    "identity": 0.0056980508379638195,
+                    "rot180": 0.18575894832611084,
+                    "vertical": 0.17633144557476044
+                  }
+                },
+                "robot0_eye_in_hand_image": {
+                  "best": "identity",
+                  "mae_by_transform": {
+                    "horizontal": 0.04778973013162613,
+                    "identity": 0.0019166634883731604,
+                    "rot180": 0.08289316296577454,
+                    "vertical": 0.08055578917264938
+                  }
+                }
+              },
+              "eef_max_abs": 3.552713678800501e-15,
+              "gripper_max_abs": 0.0,
+              "state_index": 1
+            },
+            "rss_bytes": 3010031616,
+            "source_action_index": 0,
+            "source_state_index": 0,
+            "stored_observation_index": 0
+          },
+          {
+            "available_ram_bytes": 4540276736,
+            "cameras": {
+              "agentview_image": {
+                "best": "identity",
+                "mae_by_transform": {
+                  "horizontal": 0.1835719645023346,
+                  "identity": 0.006800593342632055,
+                  "rot180": 0.19725868105888367,
+                  "vertical": 0.20393361151218414
+                }
+              },
+              "robot0_eye_in_hand_image": {
+                "best": "identity",
+                "mae_by_transform": {
+                  "horizontal": 0.09848744422197342,
+                  "identity": 0.006338560953736305,
+                  "rot180": 0.11366485059261322,
+                  "vertical": 0.09487990289926529
+                }
+              }
+            },
+            "eef_max_abs": 0.00043837552012206127,
+            "gripper_max_abs": 0.0020702377108613654,
+            "next_state_index": 97,
+            "next_state_max_abs": 0.3817868118997034,
+            "recorded_state_reconstruction": {
+              "cache_semantics": {
+                "evidence": "https://github.com/google-deepmind/mujoco/blob/main/doc/computation/index.rst#consistency-in-mjdata",
+                "integrator": "Euler",
+                "operation": "Inverse one fixed physics integration for derived-data cache; restore current qpos without forward",
+                "physics_timestep_seconds": 0.002
+              },
+              "cameras": {
+                "agentview_image": {
+                  "best": "identity",
+                  "mae_by_transform": {
+                    "horizontal": 0.18353846669197083,
+                    "identity": 0.005580368917435408,
+                    "rot180": 0.1972237378358841,
+                    "vertical": 0.20396266877651215
+                  }
+                },
+                "robot0_eye_in_hand_image": {
+                  "best": "identity",
+                  "mae_by_transform": {
+                    "horizontal": 0.09902191907167435,
+                    "identity": 0.0005241045146249235,
+                    "rot180": 0.11384843289852142,
+                    "vertical": 0.0949157327413559
+                  }
+                }
+              },
+              "eef_max_abs": 3.1086244689504383e-15,
+              "gripper_max_abs": 0.0,
+              "state_index": 97
+            },
+            "rss_bytes": 3005026304,
+            "source_action_index": 96,
+            "source_state_index": 96,
+            "stored_observation_index": 96
+          },
+          {
+            "available_ram_bytes": 4527534080,
+            "cameras": {
+              "agentview_image": {
+                "best": "identity",
+                "mae_by_transform": {
+                  "horizontal": 0.14884839951992035,
+                  "identity": 0.006106387823820114,
+                  "rot180": 0.2117433249950409,
+                  "vertical": 0.17745991051197052
+                }
+              },
+              "robot0_eye_in_hand_image": {
+                "best": "identity",
+                "mae_by_transform": {
+                  "horizontal": 0.10142558813095093,
+                  "identity": 0.0056422012858092785,
+                  "rot180": 0.1479651778936386,
+                  "vertical": 0.14414779841899872
+                }
+              }
+            },
+            "eef_max_abs": 0.0001645106975410593,
+            "gripper_max_abs": 0.00047983062863704573,
+            "next_state_index": 194,
+            "next_state_max_abs": 0.009579692171864641,
+            "recorded_state_reconstruction": {
+              "cache_semantics": {
+                "evidence": "https://github.com/google-deepmind/mujoco/blob/main/doc/computation/index.rst#consistency-in-mjdata",
+                "integrator": "Euler",
+                "operation": "Inverse one fixed physics integration for derived-data cache; restore current qpos without forward",
+                "physics_timestep_seconds": 0.002
+              },
+              "cameras": {
+                "agentview_image": {
+                  "best": "identity",
+                  "mae_by_transform": {
+                    "horizontal": 0.14864405989646912,
+                    "identity": 0.005520849023014307,
+                    "rot180": 0.21151521801948547,
+                    "vertical": 0.17733362317085266
+                  }
+                },
+                "robot0_eye_in_hand_image": {
+                  "best": "identity",
+                  "mae_by_transform": {
+                    "horizontal": 0.10166015475988388,
+                    "identity": 0.004242781084030867,
+                    "rot180": 0.14781630039215088,
+                    "vertical": 0.1440649926662445
+                  }
+                }
+              },
+              "eef_max_abs": 3.552713678800501e-15,
+              "gripper_max_abs": 0.0,
+              "state_index": 194
+            },
+            "rss_bytes": 3027881984,
+            "source_action_index": 193,
+            "source_state_index": 193,
+            "stored_observation_index": 193
+          },
+          {
+            "available_ram_bytes": 4594425856,
+            "cameras": {
+              "agentview_image": {
+                "best": "identity",
+                "mae_by_transform": {
+                  "horizontal": 0.16572090983390808,
+                  "identity": 0.00685269245877862,
+                  "rot180": 0.20975828170776367,
+                  "vertical": 0.20168057084083557
+                }
+              },
+              "robot0_eye_in_hand_image": {
+                "best": "identity",
+                "mae_by_transform": {
+                  "horizontal": 0.052295081317424774,
+                  "identity": 0.008719968609511852,
+                  "rot180": 0.07638107240200043,
+                  "vertical": 0.07419753074645996
+                }
+              }
+            },
+            "eef_max_abs": 0.0008980430571131903,
+            "gripper_max_abs": 0.006592083249851166,
+            "next_state_index": 290,
+            "next_state_max_abs": 0.7197323994121215,
+            "recorded_state_reconstruction": {
+              "cache_semantics": {
+                "evidence": "https://github.com/google-deepmind/mujoco/blob/main/doc/computation/index.rst#consistency-in-mjdata",
+                "integrator": "Euler",
+                "operation": "Inverse one fixed physics integration for derived-data cache; restore current qpos without forward",
+                "physics_timestep_seconds": 0.002
+              },
+              "cameras": {
+                "agentview_image": {
+                  "best": "identity",
+                  "mae_by_transform": {
+                    "horizontal": 0.16559763252735138,
+                    "identity": 0.005832327995449305,
+                    "rot180": 0.2096969336271286,
+                    "vertical": 0.20158810913562775
+                  }
+                },
+                "robot0_eye_in_hand_image": {
+                  "best": "identity",
+                  "mae_by_transform": {
+                    "horizontal": 0.05156178027391434,
+                    "identity": 0.0005769218550994992,
+                    "rot180": 0.0776425451040268,
+                    "vertical": 0.07519842684268951
+                  }
+                }
+              },
+              "eef_max_abs": 3.1086244689504383e-15,
+              "gripper_max_abs": 0.0,
+              "state_index": 290
+            },
+            "rss_bytes": 3029372928,
+            "source_action_index": 289,
+            "source_state_index": 289,
+            "stored_observation_index": 289
+          },
+          {
+            "available_ram_bytes": 4605808640,
+            "cameras": {
+              "agentview_image": {
+                "best": "identity",
+                "mae_by_transform": {
+                  "horizontal": 0.13596446812152863,
+                  "identity": 0.005559385288506746,
+                  "rot180": 0.18059656023979187,
+                  "vertical": 0.1594495177268982
+                }
+              },
+              "robot0_eye_in_hand_image": {
+                "best": "identity",
+                "mae_by_transform": {
+                  "horizontal": 0.1843070238828659,
+                  "identity": 0.011848319321870804,
+                  "rot180": 0.21900945901870728,
+                  "vertical": 0.17505952715873718
+                }
+              }
+            },
+            "eef_max_abs": 0.00043355301627123755,
+            "gripper_max_abs": 0.005230824183068854,
+            "next_state_index": 387,
+            "next_state_max_abs": 0.09901892575464973,
+            "recorded_state_reconstruction": {
+              "cache_semantics": {
+                "evidence": "https://github.com/google-deepmind/mujoco/blob/main/doc/computation/index.rst#consistency-in-mjdata",
+                "integrator": "Euler",
+                "operation": "Inverse one fixed physics integration for derived-data cache; restore current qpos without forward",
+                "physics_timestep_seconds": 0.002
+              },
+              "cameras": {
+                "agentview_image": {
+                  "best": "identity",
+                  "mae_by_transform": {
+                    "horizontal": 0.1358722299337387,
+                    "identity": 0.005240406841039658,
+                    "rot180": 0.1805555671453476,
+                    "vertical": 0.15940803289413452
+                  }
+                },
+                "robot0_eye_in_hand_image": {
+                  "best": "identity",
+                  "mae_by_transform": {
+                    "horizontal": 0.18170398473739624,
+                    "identity": 0.006144365295767784,
+                    "rot180": 0.21839989721775055,
+                    "vertical": 0.17461447417736053
+                  }
+                }
+              },
+              "eef_max_abs": 1.7763568394002505e-15,
+              "gripper_max_abs": 0.0,
+              "state_index": 387
+            },
+            "rss_bytes": 3030052864,
+            "source_action_index": 386,
+            "source_state_index": 386,
+            "stored_observation_index": 386
+          }
+        ],
+        "scope": "observation_action_alignment",
+        "status": "passed",
+        "thresholds": {
+          "camera_mae": 0.12,
+          "eef_max_abs": 0.001,
+          "gripper_max_abs": 0.001,
+          "next_state_max_abs": 0.01,
+          "orientation_margin": 0.01
+        }
+      },
+      "sha256": "3173ebc709b064683956b757ae8737909457d730aa305b23c5735292e59066af",
+      "status": "passed",
+      "suite": "libero_10",
+      "task_id": 0,
+      "task_uid": "libero_10:0"
+    }
+  ],
+  "scope": "observation_action_alignment",
+  "script_sha256": "cfc8d483ad4395dcbaeac682925c4d9d0cf2ea44e542fc3710c9fa750fb06c88",
+  "source_manifest_sha256": "7a87cb6b94f1f97aa6c9e8014e2b80017f85c230e536085bb0c5869f20d9b0d7",
+  "status": "passed",
+  "v1_receipt": {
+    "path": "<PROJECT>\\.runtime\\action_alignment_spatial_v1.json",
+    "sha256": "b7c58e5a55c0ddd6493fcd8eb79a195dc7a9e97edac90f4401ac3a8b3a8029b5",
+    "status": "needs_attention"
+  }
+}
