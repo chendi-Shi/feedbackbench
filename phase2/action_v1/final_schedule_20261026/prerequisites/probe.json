@@ -1,0 +1,43 @@
+{
+  "base_exactly_unchanged": true,
+  "base_sha256_after_reload": "2b4be4fd59643669c24628337722910982f114e83df23c008ee9fa0360d482a1",
+  "base_sha256_after_training": "2b4be4fd59643669c24628337722910982f114e83df23c008ee9fa0360d482a1",
+  "base_sha256_before": "2b4be4fd59643669c24628337722910982f114e83df23c008ee9fa0360d482a1",
+  "cache_parity": {
+    "atol": 1e-05,
+    "cached_loss": 0.35027289390563965,
+    "full_loss": 0.35027289390563965,
+    "loss_absolute_error": 0.0,
+    "ok": true,
+    "prefix_layers": 32,
+    "rtol": 0.0001,
+    "velocity_allclose": true,
+    "velocity_max_absolute_error": 0.0
+  },
+  "cache_used_for_optimizer_steps": false,
+  "checkpoint_sha256": "08abaa9c5e625620227706028e535e9a274e57163b01b897b1faaf6c561f4b20",
+  "closed_loop_success_evidence": false,
+  "limitations": [
+    "One expert observation/chunk is a feasibility probe, not a trained benchmark policy.",
+    "Dataset time alignment remains the source metadata's explicit probe assumption.",
+    "No claim of better robot task success; no benchmark episode is run here."
+  ],
+  "lora_b_changed": true,
+  "loss_after_last_update": 0.34067830443382263,
+  "loss_interpretation": "single-example fixed-noise optimization diagnostic, not task success",
+  "losses_before_each_update": [
+    0.35027289390563965,
+    0.3471970558166504,
+    0.34400641918182373
+  ],
+  "mode": "lora",
+  "optimizer_steps": 3,
+  "rank": 8,
+  "reload_actions_exact": true,
+  "reload_parameters_exact": true,
+  "same_noise_action_max_abs_change": 0.05208396911621094,
+  "seed": 0,
+  "status": "passed",
+  "training_path": "original policy.forward",
+  "zero_initialized_predictions_exact": true
+}

@@ -1,0 +1,45 @@
+{
+  "executed_in_archived_training_or_development": false,
+  "groups": {
+    "public_reproduction": {
+      "files": {
+        "docs/ACTION_DEVELOPMENT_REPRODUCTION.md": {
+          "sha256": "90246f277700bfca5e1111cf7bccf1e8d0e4d67d753806ba3b9ea0c511793d62",
+          "target": "reproduction/docs/ACTION_DEVELOPMENT_REPRODUCTION.md"
+        },
+        "scripts/evaluate_action_development_public.py": {
+          "sha256": "53ba0e5465604ca419b012b5ea122d050b166d863841fbc4a70cfa50d3219431",
+          "target": "reproduction/scripts/evaluate_action_development_public.py"
+        },
+        "scripts/reproduce_action_development.py": {
+          "sha256": "38070ea5f1ca40fab7047dadd0794fbdb50f7dfb5be8f6fdfbdee0b5660eb001",
+          "target": "reproduction/scripts/reproduce_action_development.py"
+        },
+        "scripts/validate_action_demo_alignment_r2.py": {
+          "sha256": "be836f84507b66a0b7ea72787c8980e9ffefe8600d95bd589fabd71db7398edf",
+          "target": "reproduction/scripts/validate_action_demo_alignment_r2.py"
+        },
+        "tests/test_reproduce_action_development.py": {
+          "sha256": "2fa7a85e06fdebd9a1a2b236f76c28e0479d4bf9e4ddd3f1577d4fe62972718c",
+          "target": "reproduction/tests/test_reproduce_action_development.py"
+        }
+      },
+      "release_manifest": "reproduction/docs/action_development_reproduction_sources.json",
+      "release_manifest_sha256": "13377ac86152caaf07d6dab60ab962292cab8f3c58715a425fd23f8ad2befc35"
+    },
+    "public_verifier": {
+      "files": {
+        "scripts/verify_action_publication.py": {
+          "sha256": "5f8eeeadeed2e2b4df6f3e5662cd42fc3d8bfc9f1cb6d7ab54842b1601ab81a6",
+          "target": "reproduction/scripts/verify_action_publication.py"
+        },
+        "tests/test_verify_action_publication.py": {
+          "sha256": "d12ee18c403e5aeab6f4acc1601cfc7ffddb67c81c7d5758ed751a1b55df855e",
+          "target": "reproduction/tests/test_verify_action_publication.py"
+        }
+      }
+    }
+  },
+  "outside_formal_source_inventory": true,
+  "schema": "feedbackbench.action_publication_supplements.v1"
+}

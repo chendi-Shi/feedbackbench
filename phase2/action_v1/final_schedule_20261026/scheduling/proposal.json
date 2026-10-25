@@ -1,0 +1,39 @@
+{
+  "schema": "feedbackbench.proposed_execution_revision.v1",
+  "status": "proposal_only_requires_user_decision",
+  "parent_protocol_sha256": "02f888259f1733177a58dfd29ad9660936e5c6e30f80ea6e26f2c37831426f03",
+  "parent_trained_manifest_sha256": "bf36458b883eb062a9e16a02a0d631f301e895a8a1a3025b01f7923678c4dd37",
+  "purpose": "Continue only previously unattempted cases while retaining the resource-exhausted case as missing in the original denominator.",
+  "changes": {
+    "resource_exhausted_case": "Keep as resource_missing, unknown success, preserve all three attempts; no fourth attempt.",
+    "eligible_cases": "The remaining 278 original unattempted cases, in their original order; completed frozen case never rerun.",
+    "denominator": 280,
+    "maximum_sealed_total": 279,
+    "completion_claim": "Original study remains partial because one case cannot be completed within its frozen attempt cap.",
+    "additional_scheduling_guard": "Require at least 6.0 GiB available for 60 continuous seconds before starting an evaluation worker; all original runtime guards remain enforced.",
+    "future_resource_exhaustion": "Apply the same prospective rule to every remaining case: preserve all attempts, mark unknown/resource_missing after three genuine resource interruptions, and continue original order without removing it from the 280-case denominator."
+  },
+  "unchanged": {
+    "training_and_checkpoints": "All six frozen final adapters; no retraining or checkpoint selection.",
+    "evaluation": "Original task/initial states/methods/conditions/native NFE/actions/success predicates/noise and full horizons.",
+    "attempt_cap_per_case": 3,
+    "runtime_reserve_gib": 0.75,
+    "disk_reserve_gib": 4,
+    "workers": 1,
+    "compute": "CPU only, zero cloud fees; do not stop or message other projects.",
+    "deadline_utc": "2026-10-30T06:08:00Z"
+  },
+  "implementation_requirements": [
+    "Archive original protocol/source/status and evidence before any separate revision.",
+    "New explicitly named scheduler/reporting revision; never edit the 41 frozen source files or parent results.",
+    "Explicit missing-case inventory and paired estimates withheld when required pairs are missing.",
+    "Test scheduler cap/terminal guards and audit all owned PID+creation-time identities before launch.",
+    "No execution until user accepts this change.",
+    "Dual-bind the original frozen protocol/trained manifest and the new scheduling revision SHA. Existing results keep their original receipt bindings.",
+    "Do not relax the original worker output-root guard; use an independently reviewed revision wrapper with explicit dual binding.",
+    "6 GiB for 60 seconds is a conservative candidate, not a demonstrated guarantee; all runtime protections still apply."
+  ],
+  "executed": false,
+  "supersedes_proposal_sha256": "18edc170c83869303abb1a8c858b1c6579abb7c5bbd32c12749006c0b190ba12",
+  "user_decision": "Asked via request_user_input_async this heartbeat; no answer received at time of this record. Do not execute dependent work without explicit acceptance."
+}

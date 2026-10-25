@@ -1,0 +1,933 @@
+{
+  "adapter_manifest": {
+    "base_fingerprint": "2b4be4fd59643669c24628337722910982f114e83df23c008ee9fa0360d482a1",
+    "bias_shape": [
+      32
+    ],
+    "device": "cpu",
+    "dtype": "float32",
+    "effective_supervised_parameters": 3367,
+    "frozen_rest_sha256": "846ecbee57e221370c39944893a4926750e30d66c56fbf75fd61e6be5e3ae9f2",
+    "head_path": "model.action_out_proj",
+    "initialization": "original_pretrained_head",
+    "metadata": {
+      "binding_sha256": "bcf43069109bf1dad129cf0f395bccba26290e1f255ea850255cb2d34c3d52dc",
+      "protocol_sha256": "02f888259f1733177a58dfd29ad9660936e5c6e30f80ea6e26f2c37831426f03",
+      "run_id": "output_head_s47",
+      "step": 2000
+    },
+    "mode": "output_head",
+    "original_head_sha256": "391dadd9c42e41f6a5b4982b738d62a9215ea7d2c3d8100a08556edf5c883184",
+    "recommended_weight_decay": 0.0,
+    "saved_head_sha256": "25e18eb5e22670fc3caf16d68a3be78b4c4a6e34821f60ca130a2b139568b3dd",
+    "schema": "feedbackbench.action_output_head.v1",
+    "seed": 47,
+    "supervised_output_rows": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "tensor_sha256": {
+      "bias": "9d799fa5829ef486c3a41624f97d62ae3354a7367e2f63cf12e15398e626cce3",
+      "weight": "063a61b34d30394b639ba8602060cd2ca8c8c5e0a52828d188789cde0be8df0e"
+    },
+    "trainable_parameters": 15392,
+    "training_route": "unmodified_policy_forward_flow_matching",
+    "weight_shape": [
+      32,
+      480
+    ]
+  },
+  "base_fingerprint": "2b4be4fd59643669c24628337722910982f114e83df23c008ee9fa0360d482a1",
+  "binding_sha256": "bcf43069109bf1dad129cf0f395bccba26290e1f255ea850255cb2d34c3d52dc",
+  "checkpoint_selection": "last protocol step; validation diagnostic only",
+  "closed_loop_success_claim": false,
+  "completed_steps": 2000,
+  "final_adapter_sha256": "e043f523d65fa190af0a3eec790976907185d007406b309a3d6383c70d616cc7",
+  "flow_time_distribution": "beta_1.5_1_scaled_0.999_plus_0.001",
+  "frozen_parameters_unchanged": true,
+  "mode": "output_head",
+  "policy_mode": "eval with adapter gradients",
+  "protocol_sha256": "02f888259f1733177a58dfd29ad9660936e5c6e30f80ea6e26f2c37831426f03",
+  "publication_kind": "summary; private optimizer/RNG and per-step logs omitted",
+  "run_id": "output_head_s47",
+  "schema": "feedbackbench.action_adaptation_train.v1",
+  "status": "complete",
+  "trainable_parameters": 15392,
+  "training_path": "original policy.forward; no prefix caching",
+  "validation_summary": {
+    "mean_loss_per_valid_action": 0.45686435597286157,
+    "samples": [
+      {
+        "demo_id": "libero_10_demo_41",
+        "loss": 0.3777145743370056,
+        "noise_seed": 100000,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_10_demo_41",
+        "loss": 0.6565005779266357,
+        "noise_seed": 100001,
+        "observation_index": 145,
+        "time": 0.5,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_10_demo_41",
+        "loss": 1.2751617431640625,
+        "noise_seed": 100002,
+        "observation_index": 291,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_10_demo_42",
+        "loss": 0.3843313455581665,
+        "noise_seed": 100003,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_10_demo_42",
+        "loss": 0.4131118357181549,
+        "noise_seed": 100004,
+        "observation_index": 147,
+        "time": 0.5,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_10_demo_42",
+        "loss": 0.7680962681770325,
+        "noise_seed": 100005,
+        "observation_index": 295,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_10_demo_43",
+        "loss": 0.3589684069156647,
+        "noise_seed": 100006,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_10_demo_43",
+        "loss": 0.2623533606529236,
+        "noise_seed": 100007,
+        "observation_index": 134,
+        "time": 0.5,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_10_demo_43",
+        "loss": 0.2890349328517914,
+        "noise_seed": 100008,
+        "observation_index": 268,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_10_demo_44",
+        "loss": 0.26342445611953735,
+        "noise_seed": 100009,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_10_demo_44",
+        "loss": 0.3797220289707184,
+        "noise_seed": 100010,
+        "observation_index": 157,
+        "time": 0.5,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_10_demo_44",
+        "loss": 0.08656885474920273,
+        "noise_seed": 100011,
+        "observation_index": 315,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_10_demo_45",
+        "loss": 0.33164289593696594,
+        "noise_seed": 100012,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_10_demo_45",
+        "loss": 0.26209568977355957,
+        "noise_seed": 100013,
+        "observation_index": 170,
+        "time": 0.5,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_10_demo_45",
+        "loss": 0.322642058134079,
+        "noise_seed": 100014,
+        "observation_index": 341,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_10_demo_46",
+        "loss": 0.4999692738056183,
+        "noise_seed": 100015,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_10_demo_46",
+        "loss": 0.5859273672103882,
+        "noise_seed": 100016,
+        "observation_index": 180,
+        "time": 0.5,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_10_demo_46",
+        "loss": 0.520630419254303,
+        "noise_seed": 100017,
+        "observation_index": 361,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_10_demo_47",
+        "loss": 0.563401460647583,
+        "noise_seed": 100018,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_10_demo_47",
+        "loss": 0.40118247270584106,
+        "noise_seed": 100019,
+        "observation_index": 155,
+        "time": 0.5,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_10_demo_47",
+        "loss": 0.10465651750564575,
+        "noise_seed": 100020,
+        "observation_index": 310,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_10_demo_48",
+        "loss": 0.3106241524219513,
+        "noise_seed": 100021,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_10_demo_48",
+        "loss": 0.24624134600162506,
+        "noise_seed": 100022,
+        "observation_index": 136,
+        "time": 0.5,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_10_demo_48",
+        "loss": 0.7102450132369995,
+        "noise_seed": 100023,
+        "observation_index": 273,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_10_demo_49",
+        "loss": 0.298907607793808,
+        "noise_seed": 100024,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_10_demo_49",
+        "loss": 0.47270843386650085,
+        "noise_seed": 100025,
+        "observation_index": 138,
+        "time": 0.5,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_10_demo_49",
+        "loss": 0.022459404543042183,
+        "noise_seed": 100026,
+        "observation_index": 276,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_goal_demo_41",
+        "loss": 0.4509998857975006,
+        "noise_seed": 100027,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_goal_demo_41",
+        "loss": 0.5996099710464478,
+        "noise_seed": 100028,
+        "observation_index": 67,
+        "time": 0.5,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_goal_demo_41",
+        "loss": 0.3222765624523163,
+        "noise_seed": 100029,
+        "observation_index": 134,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_goal_demo_42",
+        "loss": 0.4360083043575287,
+        "noise_seed": 100030,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_goal_demo_42",
+        "loss": 0.5318140387535095,
+        "noise_seed": 100031,
+        "observation_index": 64,
+        "time": 0.5,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_goal_demo_42",
+        "loss": 0.5139786601066589,
+        "noise_seed": 100032,
+        "observation_index": 129,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_goal_demo_43",
+        "loss": 0.5091142654418945,
+        "noise_seed": 100033,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_goal_demo_43",
+        "loss": 0.855598509311676,
+        "noise_seed": 100034,
+        "observation_index": 64,
+        "time": 0.5,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_goal_demo_43",
+        "loss": 1.1949045658111572,
+        "noise_seed": 100035,
+        "observation_index": 128,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_goal_demo_44",
+        "loss": 0.4396069347858429,
+        "noise_seed": 100036,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_goal_demo_44",
+        "loss": 0.4986523389816284,
+        "noise_seed": 100037,
+        "observation_index": 67,
+        "time": 0.5,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_goal_demo_44",
+        "loss": 0.592009425163269,
+        "noise_seed": 100038,
+        "observation_index": 135,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_goal_demo_45",
+        "loss": 0.49273815751075745,
+        "noise_seed": 100039,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_goal_demo_45",
+        "loss": 0.6406224966049194,
+        "noise_seed": 100040,
+        "observation_index": 67,
+        "time": 0.5,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_goal_demo_45",
+        "loss": 0.04778027534484863,
+        "noise_seed": 100041,
+        "observation_index": 134,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_goal_demo_46",
+        "loss": 0.3082593083381653,
+        "noise_seed": 100042,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_goal_demo_46",
+        "loss": 0.48191797733306885,
+        "noise_seed": 100043,
+        "observation_index": 61,
+        "time": 0.5,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_goal_demo_46",
+        "loss": 0.6371244788169861,
+        "noise_seed": 100044,
+        "observation_index": 122,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_goal_demo_47",
+        "loss": 0.36511948704719543,
+        "noise_seed": 100045,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_goal_demo_47",
+        "loss": 0.4276876449584961,
+        "noise_seed": 100046,
+        "observation_index": 62,
+        "time": 0.5,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_goal_demo_47",
+        "loss": 1.0946754217147827,
+        "noise_seed": 100047,
+        "observation_index": 125,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_goal_demo_48",
+        "loss": 0.3504197597503662,
+        "noise_seed": 100048,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_goal_demo_48",
+        "loss": 0.7387710213661194,
+        "noise_seed": 100049,
+        "observation_index": 70,
+        "time": 0.5,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_goal_demo_48",
+        "loss": 0.6029170751571655,
+        "noise_seed": 100050,
+        "observation_index": 141,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_goal_demo_49",
+        "loss": 0.3563463091850281,
+        "noise_seed": 100051,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_goal_demo_49",
+        "loss": 0.33268535137176514,
+        "noise_seed": 100052,
+        "observation_index": 63,
+        "time": 0.5,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_goal_demo_49",
+        "loss": 0.33090871572494507,
+        "noise_seed": 100053,
+        "observation_index": 127,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_object_demo_41",
+        "loss": 0.38167476654052734,
+        "noise_seed": 100054,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_object_demo_41",
+        "loss": 0.13013523817062378,
+        "noise_seed": 100055,
+        "observation_index": 74,
+        "time": 0.5,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_object_demo_41",
+        "loss": 0.20705556869506836,
+        "noise_seed": 100056,
+        "observation_index": 149,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_object_demo_42",
+        "loss": 0.32822009921073914,
+        "noise_seed": 100057,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_object_demo_42",
+        "loss": 0.24909210205078125,
+        "noise_seed": 100058,
+        "observation_index": 79,
+        "time": 0.5,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_object_demo_42",
+        "loss": 0.6375038027763367,
+        "noise_seed": 100059,
+        "observation_index": 158,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_object_demo_43",
+        "loss": 0.4513351023197174,
+        "noise_seed": 100060,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_object_demo_43",
+        "loss": 0.18086624145507812,
+        "noise_seed": 100061,
+        "observation_index": 74,
+        "time": 0.5,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_object_demo_43",
+        "loss": 0.09724633395671844,
+        "noise_seed": 100062,
+        "observation_index": 149,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_object_demo_44",
+        "loss": 0.5092090964317322,
+        "noise_seed": 100063,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_object_demo_44",
+        "loss": 0.31870266795158386,
+        "noise_seed": 100064,
+        "observation_index": 74,
+        "time": 0.5,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_object_demo_44",
+        "loss": 0.04883711412549019,
+        "noise_seed": 100065,
+        "observation_index": 148,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_object_demo_45",
+        "loss": 0.4548492133617401,
+        "noise_seed": 100066,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_object_demo_45",
+        "loss": 0.31441035866737366,
+        "noise_seed": 100067,
+        "observation_index": 73,
+        "time": 0.5,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_object_demo_45",
+        "loss": 0.0958685427904129,
+        "noise_seed": 100068,
+        "observation_index": 147,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_object_demo_46",
+        "loss": 0.3361591100692749,
+        "noise_seed": 100069,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_object_demo_46",
+        "loss": 0.38886532187461853,
+        "noise_seed": 100070,
+        "observation_index": 93,
+        "time": 0.5,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_object_demo_46",
+        "loss": 0.07188279926776886,
+        "noise_seed": 100071,
+        "observation_index": 187,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_object_demo_47",
+        "loss": 0.48317137360572815,
+        "noise_seed": 100072,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_object_demo_47",
+        "loss": 0.48591578006744385,
+        "noise_seed": 100073,
+        "observation_index": 97,
+        "time": 0.5,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_object_demo_47",
+        "loss": 0.10856360197067261,
+        "noise_seed": 100074,
+        "observation_index": 194,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_object_demo_48",
+        "loss": 0.5952526926994324,
+        "noise_seed": 100075,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_object_demo_48",
+        "loss": 0.2776847183704376,
+        "noise_seed": 100076,
+        "observation_index": 74,
+        "time": 0.5,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_object_demo_48",
+        "loss": 0.16731496155261993,
+        "noise_seed": 100077,
+        "observation_index": 149,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_object_demo_49",
+        "loss": 0.5131186842918396,
+        "noise_seed": 100078,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_object_demo_49",
+        "loss": 0.24540531635284424,
+        "noise_seed": 100079,
+        "observation_index": 73,
+        "time": 0.5,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_object_demo_49",
+        "loss": 1.6001386642456055,
+        "noise_seed": 100080,
+        "observation_index": 146,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_spatial_demo_41",
+        "loss": 0.37877798080444336,
+        "noise_seed": 100081,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_spatial_demo_41",
+        "loss": 0.5342313051223755,
+        "noise_seed": 100082,
+        "observation_index": 46,
+        "time": 0.5,
+        "valid_action_steps": 48
+      },
+      {
+        "demo_id": "libero_spatial_demo_41",
+        "loss": 0.19419978559017181,
+        "noise_seed": 100083,
+        "observation_index": 93,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_spatial_demo_42",
+        "loss": 0.5275720357894897,
+        "noise_seed": 100084,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_spatial_demo_42",
+        "loss": 0.8647937178611755,
+        "noise_seed": 100085,
+        "observation_index": 53,
+        "time": 0.5,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_spatial_demo_42",
+        "loss": 0.44505801796913147,
+        "noise_seed": 100086,
+        "observation_index": 107,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_spatial_demo_43",
+        "loss": 0.4847133159637451,
+        "noise_seed": 100087,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_spatial_demo_43",
+        "loss": 0.5068665742874146,
+        "noise_seed": 100088,
+        "observation_index": 47,
+        "time": 0.5,
+        "valid_action_steps": 48
+      },
+      {
+        "demo_id": "libero_spatial_demo_43",
+        "loss": 0.5651991963386536,
+        "noise_seed": 100089,
+        "observation_index": 94,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_spatial_demo_44",
+        "loss": 0.554011344909668,
+        "noise_seed": 100090,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_spatial_demo_44",
+        "loss": 0.7188721299171448,
+        "noise_seed": 100091,
+        "observation_index": 43,
+        "time": 0.5,
+        "valid_action_steps": 44
+      },
+      {
+        "demo_id": "libero_spatial_demo_44",
+        "loss": 0.7083449959754944,
+        "noise_seed": 100092,
+        "observation_index": 86,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_spatial_demo_45",
+        "loss": 0.4166799485683441,
+        "noise_seed": 100093,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_spatial_demo_45",
+        "loss": 0.6842787861824036,
+        "noise_seed": 100094,
+        "observation_index": 44,
+        "time": 0.5,
+        "valid_action_steps": 45
+      },
+      {
+        "demo_id": "libero_spatial_demo_45",
+        "loss": 0.4086153507232666,
+        "noise_seed": 100095,
+        "observation_index": 88,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_spatial_demo_46",
+        "loss": 0.5141467452049255,
+        "noise_seed": 100096,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_spatial_demo_46",
+        "loss": 0.6456274390220642,
+        "noise_seed": 100097,
+        "observation_index": 41,
+        "time": 0.5,
+        "valid_action_steps": 43
+      },
+      {
+        "demo_id": "libero_spatial_demo_46",
+        "loss": 1.1158206462860107,
+        "noise_seed": 100098,
+        "observation_index": 83,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_spatial_demo_47",
+        "loss": 0.6284288167953491,
+        "noise_seed": 100099,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_spatial_demo_47",
+        "loss": 0.6414911150932312,
+        "noise_seed": 100100,
+        "observation_index": 45,
+        "time": 0.5,
+        "valid_action_steps": 46
+      },
+      {
+        "demo_id": "libero_spatial_demo_47",
+        "loss": 1.0856400728225708,
+        "noise_seed": 100101,
+        "observation_index": 90,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_spatial_demo_48",
+        "loss": 0.562103807926178,
+        "noise_seed": 100102,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_spatial_demo_48",
+        "loss": 0.5919926762580872,
+        "noise_seed": 100103,
+        "observation_index": 47,
+        "time": 0.5,
+        "valid_action_steps": 48
+      },
+      {
+        "demo_id": "libero_spatial_demo_48",
+        "loss": 1.3046811819076538,
+        "noise_seed": 100104,
+        "observation_index": 94,
+        "time": 0.75,
+        "valid_action_steps": 1
+      },
+      {
+        "demo_id": "libero_spatial_demo_49",
+        "loss": 0.5850927233695984,
+        "noise_seed": 100105,
+        "observation_index": 0,
+        "time": 0.25,
+        "valid_action_steps": 50
+      },
+      {
+        "demo_id": "libero_spatial_demo_49",
+        "loss": 0.5892617106437683,
+        "noise_seed": 100106,
+        "observation_index": 45,
+        "time": 0.5,
+        "valid_action_steps": 46
+      },
+      {
+        "demo_id": "libero_spatial_demo_49",
+        "loss": 0.7938538193702698,
+        "noise_seed": 100107,
+        "observation_index": 90,
+        "time": 0.75,
+        "valid_action_steps": 1
+      }
+    ],
+    "selection_use": "diagnostic only; no checkpoint selection or early stopping",
+    "step": 2000
+  }
+}
